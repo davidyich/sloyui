@@ -1,0 +1,514 @@
+/* Generated V3. 12 steps, 18 accent modes, 24 appearance roles. */
+:root { color-scheme: light; }
+[data-theme="light"] { color-scheme: light; }
+[data-theme="dark"] { color-scheme: dark; }
+:root, [data-theme] {
+  --cap-font-sans: Inter, ui-sans-serif, system-ui;
+  --cap-font-serif: Georgia, serif;
+  --cap-font-mono: "Courier New", monospace;
+  --cap-spacing: .25rem;
+  --cap-font-weight-extralight: 200;
+  --cap-font-weight-light: 300;
+  --cap-font-weight-normal: 400;
+  --cap-font-weight-medium: 500;
+  --cap-font-weight-semibold: 600;
+  --cap-font-weight-bold: 700;
+  --cap-radius-xs: .125rem;
+  --cap-radius-sm: .25rem;
+  --cap-radius-md: .375rem;
+  --cap-radius-lg: .5rem;
+  --cap-radius-xl: .75rem;
+  --cap-radius-2xl: 1rem;
+  --cap-radius-3xl: 1.5rem;
+  --cap-shadow-xs: 0 1px 2px #00000001, 0 2px 4px #00000003, 0 3px 6px #00000001;
+  --cap-shadow-sm: 0 2px 3px #00000002, 0 3px 6px #00000004, 0 5px 9px #00000002;
+  --cap-shadow-md: 0 4px 7px #00000003, 0 7px 14px #00000006, 0 14px 20px #00000003;
+  --cap-shadow-lg: 0 6px 10px #00000004, 0 10px 20px #00000008, 0 20px 28px #00000004;
+  --cap-shadow-xl: 0 8px 14px #00000005, 0 14px 28px #0000000a, 0 28px 40px #00000005;
+  --cap-shadow-2xl: 0 12px 20px #00000006, 0 20px 40px #0000000d, 0 40px 56px #00000006;
+  --cap-default-transition-duration: .15s;
+  --cap-default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  --cap-shadow: 0 3px 5px #00000003, 0 5px 10px #00000005, 0 10px 14px #00000003;
+  --cap-font-size-xxs: .6875rem;
+  --cap-line-height-xxs: .875rem;
+  --cap-font-size-xs: .75rem;
+  --cap-line-height-xs: 1rem;
+  --cap-font-size-sm: .84375rem;
+  --cap-line-height-sm: 1.2rem;
+  --cap-font-size-sm-plus: .84375rem;
+  --cap-line-height-sm-plus: 1.2rem;
+  --cap-font-size-base: .9375rem;
+  --cap-line-height-base: 1.325rem;
+  --cap-font-size-md: 1rem;
+  --cap-line-height-md: 1.5rem;
+  --cap-font-size-lg: 1.125rem;
+  --cap-line-height-lg: 1.625rem;
+  --cap-font-size-xl: 1.25rem;
+  --cap-line-height-xl: 1.75rem;
+  --cap-font-size-2xl: 1.5rem;
+  --cap-line-height-2xl: 2rem;
+  --cap-font-size-3xl: 1.875rem;
+  --cap-line-height-3xl: 2.25rem;
+  --cap-font-size-4xl: 2.25rem;
+  --cap-line-height-4xl: 2.5rem;
+  --cap-font-size-5xl: 3rem;
+  --cap-line-height-5xl: 1;
+  --cap-font-size-6xl: 3.75rem;
+  --cap-line-height-6xl: 1;
+  --cap-font-size-7xl: 4.5rem;
+  --cap-line-height-7xl: 1;
+  --cap-font-size-8xl: 6rem;
+  --cap-line-height-8xl: 1;
+  --cap-font-size-9xl: 8rem;
+  --cap-line-height-9xl: 1;
+  --cap-font-size-05xl: 1.1875rem;
+  --cap-line-height-05xl: 1.75rem;
+  --cap-font-size-15xl: 1.365rem;
+  --cap-line-height-15xl: 1.9rem;
+  --cap-font-size-25xl: 1.65rem;
+  --cap-line-height-25xl: 2rem;
+  --cap-font-size-35xl: 2rem;
+  --cap-line-height-35xl: 1.1;
+  --cap-font-code: "Overpass Mono", "SF Mono", "SFMono-Regular", "JetBrains Mono NF", "JetBrains Mono", "Roboto Mono NF", "Roboto Mono", "Liberation Mono", Consolas, ui-monospace, monospace;
+  --cap-radius-base: var(--cap-border-radius-base);
+  --cap-radius-small: var(--cap-border-radius-small);
+  --cap-shadow-3xl: 0 16px 28px #00000008, 0 28px 56px #0000000f, 0 56px 80px #00000008;
+  --cap-shadow-xl-strong: 0 12px 25px -5px #0000001a, 0 2px 2px -1px #00000038;
+  --cap-el-h-xs: 1.375rem;
+  --cap-el-h-sm: 1.75rem;
+  --cap-el-h-base: 2rem;
+  --cap-el-h-lg: 2.25rem;
+  --cap-el-w-xs: 1.375rem;
+  --cap-el-w-sm: 1.75rem;
+  --cap-el-w-base: 2rem;
+  --cap-el-w-lg: 2.25rem;
+  --cap-border-radius-base: 0.5rem;
+  --cap-border-radius-small: 0.3rem;
+  --cap-space-0: 0px;
+  --cap-space-1: .25rem;
+  --cap-space-2: .5rem;
+  --cap-space-3: .75rem;
+  --cap-space-4: 1rem;
+  --cap-space-5: 1.25rem;
+  --cap-space-6: 1.5rem;
+  --cap-space-8: 2rem;
+  --cap-space-10: 2.5rem;
+  --cap-space-12: 3rem;
+  --cap-space-16: 4rem;
+  --cap-radius-full: 9999px;
+  --cap-duration-fast: 120ms;
+  --cap-duration-normal: 180ms;
+  --cap-duration-slow: 260ms;
+  --cap-ease-standard: cubic-bezier(.2, 0, 0, 1);
+  --cap-ease-out: cubic-bezier(.16, 1, .3, 1);
+  --cap-overlay-gutter: 12px;
+  --cap-overlay-padding: 8px;
+  --cap-focus-width: 2px;
+  --cap-focus-offset: 3px;
+  --cap-touch-target: 44px;
+  --cap-neutral-1: #ffffff;
+  --cap-neutral-2: #fafafa;
+  --cap-neutral-3: #f0f0f0;
+  --cap-neutral-4: #e5e5e5;
+  --cap-neutral-5: #d4d4d4;
+  --cap-neutral-6: #a3a3a3;
+  --cap-neutral-7: #666666;
+  --cap-neutral-8: #525252;
+  --cap-neutral-9: #343434;
+  --cap-neutral-10: #242424;
+  --cap-neutral-11: #181818;
+  --cap-neutral-12: #101010;
+}
+:root, [data-accent="neutral"], [data-color="neutral"], [data-color="gray"] {
+  --cap-accent-1: var(--cap-neutral-1);
+  --cap-accent-2: var(--cap-neutral-2);
+  --cap-accent-3: var(--cap-neutral-3);
+  --cap-accent-4: var(--cap-neutral-4);
+  --cap-accent-5: var(--cap-neutral-5);
+  --cap-accent-6: var(--cap-neutral-6);
+  --cap-accent-7: var(--cap-neutral-7);
+  --cap-accent-8: var(--cap-neutral-8);
+  --cap-accent-9: var(--cap-neutral-9);
+  --cap-accent-10: var(--cap-neutral-10);
+  --cap-accent-11: var(--cap-neutral-11);
+  --cap-accent-12: var(--cap-neutral-12);
+}
+[data-accent="rose"], [data-color="rose"] {
+  --cap-accent-1: oklch(0.9694 0.0151 12.12);
+  --cap-accent-2: oklch(0.9414 0.0298 12.44);
+  --cap-accent-3: oklch(0.9183 0.0426 10.68);
+  --cap-accent-4: oklch(0.8925 0.0559 9.93);
+  --cap-accent-5: oklch(0.8097 0.1061 11.61);
+  --cap-accent-6: oklch(0.7192 0.1690 13.41);
+  --cap-accent-7: oklch(0.6345 0.2004 15.44);
+  --cap-accent-8: oklch(0.5506 0.1836 13.60);
+  --cap-accent-9: oklch(0.4641 0.1446 10.22);
+  --cap-accent-10: oklch(0.4022 0.1030 5.67);
+  --cap-accent-11: oklch(0.3588 0.0694 1.78);
+  --cap-accent-12: oklch(0.2547 0.0409 2.34);
+}
+[data-accent="pink"], [data-color="pink"] {
+  --cap-accent-1: oklch(0.9714 0.0142 342.87);
+  --cap-accent-2: oklch(0.9482 0.0277 342.09);
+  --cap-accent-3: oklch(0.9242 0.0440 342.36);
+  --cap-accent-4: oklch(0.8994 0.0589 343.16);
+  --cap-accent-5: oklch(0.8228 0.1095 345.98);
+  --cap-accent-6: oklch(0.7253 0.1752 349.74);
+  --cap-accent-7: oklch(0.6464 0.1975 353.62);
+  --cap-accent-8: oklch(0.5627 0.1834 357.85);
+  --cap-accent-9: oklch(0.4779 0.1451 358.39);
+  --cap-accent-10: oklch(0.4103 0.1020 357.14);
+  --cap-accent-11: oklch(0.3612 0.0654 355.14);
+  --cap-accent-12: oklch(0.2655 0.0435 355.89);
+}
+[data-accent="fuchsia"], [data-color="fuchsia"] {
+  --cap-accent-1: oklch(0.9773 0.0174 319.83);
+  --cap-accent-2: oklch(0.9520 0.0360 318.75);
+  --cap-accent-3: oklch(0.9279 0.0554 319.39);
+  --cap-accent-4: oklch(0.9030 0.0733 319.57);
+  --cap-accent-5: oklch(0.8330 0.1322 321.41);
+  --cap-accent-6: oklch(0.7477 0.2070 322.15);
+  --cap-accent-7: oklch(0.6548 0.2419 322.21);
+  --cap-accent-8: oklch(0.5547 0.2118 323.20);
+  --cap-accent-9: oklch(0.4676 0.1627 324.14);
+  --cap-accent-10: oklch(0.3931 0.1141 324.82);
+  --cap-accent-11: oklch(0.3398 0.0709 324.87);
+  --cap-accent-12: oklch(0.2476 0.0501 325.33);
+}
+[data-accent="purple"], [data-color="purple"] {
+  --cap-accent-1: oklch(0.9768 0.0143 308.06);
+  --cap-accent-2: oklch(0.9464 0.0328 307.08);
+  --cap-accent-3: oklch(0.9253 0.0458 306.53);
+  --cap-accent-4: oklch(0.9024 0.0605 306.66);
+  --cap-accent-5: oklch(0.8268 0.1083 306.36);
+  --cap-accent-6: oklch(0.7217 0.1768 305.49);
+  --cap-accent-7: oklch(0.6212 0.2186 304.36);
+  --cap-accent-8: oklch(0.5418 0.2196 303.68);
+  --cap-accent-9: oklch(0.4727 0.1688 305.54);
+  --cap-accent-10: oklch(0.4129 0.1135 307.66);
+  --cap-accent-11: oklch(0.3493 0.0724 308.39);
+  --cap-accent-12: oklch(0.2692 0.0560 308.46);
+}
+[data-accent="violet"], [data-color="violet"] {
+  --cap-accent-1: oklch(0.9691 0.0161 293.61);
+  --cap-accent-2: oklch(0.9433 0.0285 294.51);
+  --cap-accent-3: oklch(0.9198 0.0409 293.18);
+  --cap-accent-4: oklch(0.8943 0.0550 293.25);
+  --cap-accent-5: oklch(0.8112 0.1014 293.55);
+  --cap-accent-6: oklch(0.7090 0.1592 293.53);
+  --cap-accent-7: oklch(0.6027 0.2044 293.24);
+  --cap-accent-8: oklch(0.5335 0.2132 294.83);
+  --cap-accent-9: oklch(0.4801 0.1717 297.43);
+  --cap-accent-10: oklch(0.4196 0.1217 298.90);
+  --cap-accent-11: oklch(0.3633 0.0794 300.55);
+  --cap-accent-12: oklch(0.2855 0.0516 299.57);
+}
+[data-accent="indigo"], [data-color="indigo"] {
+  --cap-accent-1: oklch(0.9619 0.0180 272.28);
+  --cap-accent-2: oklch(0.9299 0.0335 272.77);
+  --cap-accent-3: oklch(0.9014 0.0477 273.69);
+  --cap-accent-4: oklch(0.8699 0.0623 274.03);
+  --cap-accent-5: oklch(0.7853 0.1042 274.71);
+  --cap-accent-6: oklch(0.6801 0.1584 276.94);
+  --cap-accent-7: oklch(0.5837 0.1894 277.77);
+  --cap-accent-8: oklch(0.5057 0.1977 279.33);
+  --cap-accent-9: oklch(0.4601 0.1450 282.48);
+  --cap-accent-10: oklch(0.4027 0.0923 283.87);
+  --cap-accent-11: oklch(0.3522 0.0535 284.77);
+  --cap-accent-12: oklch(0.2606 0.0298 286.99);
+}
+[data-accent="blue"], [data-color="blue"] {
+  --cap-accent-1: oklch(0.9705 0.0143 254.66);
+  --cap-accent-2: oklch(0.9319 0.0317 255.61);
+  --cap-accent-3: oklch(0.9081 0.0440 253.63);
+  --cap-accent-4: oklch(0.8823 0.0571 254.14);
+  --cap-accent-5: oklch(0.8091 0.0957 251.83);
+  --cap-accent-6: oklch(0.7137 0.1435 254.63);
+  --cap-accent-7: oklch(0.6129 0.1750 259.87);
+  --cap-accent-8: oklch(0.5300 0.1820 262.97);
+  --cap-accent-9: oklch(0.4732 0.1411 266.08);
+  --cap-accent-10: oklch(0.4084 0.0948 268.99);
+  --cap-accent-11: oklch(0.3498 0.0543 269.40);
+  --cap-accent-12: oklch(0.2707 0.0290 270.12);
+}
+[data-accent="sky"], [data-color="sky"] {
+  --cap-accent-1: oklch(0.9771 0.0126 236.80);
+  --cap-accent-2: oklch(0.9514 0.0251 236.91);
+  --cap-accent-3: oklch(0.9263 0.0408 233.41);
+  --cap-accent-4: oklch(0.9014 0.0556 230.95);
+  --cap-accent-5: oklch(0.8276 0.1013 230.34);
+  --cap-accent-6: oklch(0.7535 0.1391 232.68);
+  --cap-accent-7: oklch(0.6587 0.1360 235.85);
+  --cap-accent-8: oklch(0.5414 0.1136 238.26);
+  --cap-accent-9: oklch(0.4387 0.0842 238.26);
+  --cap-accent-10: oklch(0.3717 0.0575 234.22);
+  --cap-accent-11: oklch(0.3160 0.0372 234.47);
+  --cap-accent-12: oklch(0.2445 0.0228 238.11);
+}
+[data-accent="cyan"], [data-color="cyan"] {
+  --cap-accent-1: oklch(0.9841 0.0189 201.11);
+  --cap-accent-2: oklch(0.9563 0.0444 203.48);
+  --cap-accent-3: oklch(0.9370 0.0617 203.79);
+  --cap-accent-4: oklch(0.9167 0.0772 205.09);
+  --cap-accent-5: oklch(0.8651 0.1154 207.11);
+  --cap-accent-6: oklch(0.7971 0.1339 211.56);
+  --cap-accent-7: oklch(0.6766 0.1167 214.15);
+  --cap-accent-8: oklch(0.5437 0.0922 218.99);
+  --cap-accent-9: oklch(0.4399 0.0657 218.87);
+  --cap-accent-10: oklch(0.3622 0.0423 219.72);
+  --cap-accent-11: oklch(0.3007 0.0267 224.29);
+  --cap-accent-12: oklch(0.2221 0.0175 222.51);
+}
+[data-accent="teal"], [data-color="teal"] {
+  --cap-accent-1: oklch(0.9836 0.0142 181.06);
+  --cap-accent-2: oklch(0.9526 0.0498 180.90);
+  --cap-accent-3: oklch(0.9319 0.0721 180.93);
+  --cap-accent-4: oklch(0.9099 0.0927 180.48);
+  --cap-accent-5: oklch(0.8549 0.1251 181.11);
+  --cap-accent-6: oklch(0.7845 0.1325 181.94);
+  --cap-accent-7: oklch(0.6738 0.1149 183.05);
+  --cap-accent-8: oklch(0.5461 0.0890 185.90);
+  --cap-accent-9: oklch(0.4434 0.0651 187.90);
+  --cap-accent-10: oklch(0.3652 0.0444 191.00);
+  --cap-accent-11: oklch(0.3125 0.0303 189.04);
+  --cap-accent-12: oklch(0.2296 0.0207 190.54);
+}
+[data-accent="emerald"], [data-color="emerald"] {
+  --cap-accent-1: oklch(0.9793 0.0207 166.35);
+  --cap-accent-2: oklch(0.9505 0.0507 163.15);
+  --cap-accent-3: oklch(0.9284 0.0708 164.29);
+  --cap-accent-4: oklch(0.9049 0.0895 164.20);
+  --cap-accent-5: oklch(0.8452 0.1299 165.01);
+  --cap-accent-6: oklch(0.7729 0.1535 163.25);
+  --cap-accent-7: oklch(0.6669 0.1375 163.89);
+  --cap-accent-8: oklch(0.5433 0.1076 166.04);
+  --cap-accent-9: oklch(0.4422 0.0793 169.66);
+  --cap-accent-10: oklch(0.3612 0.0568 170.41);
+  --cap-accent-11: oklch(0.3029 0.0391 174.11);
+  --cap-accent-12: oklch(0.2270 0.0243 177.31);
+}
+[data-accent="green"], [data-color="green"] {
+  --cap-accent-1: oklch(0.9819 0.0180 156.09);
+  --cap-accent-2: oklch(0.9624 0.0434 156.85);
+  --cap-accent-3: oklch(0.9449 0.0620 156.51);
+  --cap-accent-4: oklch(0.9250 0.0805 156.05);
+  --cap-accent-5: oklch(0.8712 0.1363 154.48);
+  --cap-accent-6: oklch(0.8003 0.1820 151.73);
+  --cap-accent-7: oklch(0.6981 0.1758 150.49);
+  --cap-accent-8: oklch(0.5834 0.1416 151.00);
+  --cap-accent-9: oklch(0.4780 0.1012 152.50);
+  --cap-accent-10: oklch(0.3988 0.0674 154.91);
+  --cap-accent-11: oklch(0.3406 0.0437 157.15);
+  --cap-accent-12: oklch(0.2531 0.0318 156.48);
+}
+[data-accent="lime"], [data-color="lime"] {
+  --cap-accent-1: oklch(0.9857 0.0309 120.86);
+  --cap-accent-2: oklch(0.9669 0.0659 122.38);
+  --cap-accent-3: oklch(0.9536 0.0948 123.39);
+  --cap-accent-4: oklch(0.9382 0.1216 124.35);
+  --cap-accent-5: oklch(0.8972 0.1785 126.69);
+  --cap-accent-6: oklch(0.8493 0.2073 128.87);
+  --cap-accent-7: oklch(0.7313 0.1880 130.19);
+  --cap-accent-8: oklch(0.5848 0.1461 130.45);
+  --cap-accent-9: oklch(0.4545 0.1000 129.67);
+  --cap-accent-10: oklch(0.3653 0.0648 128.67);
+  --cap-accent-11: oklch(0.3088 0.0412 127.78);
+  --cap-accent-12: oklch(0.2118 0.0243 129.89);
+}
+[data-accent="yellow"], [data-color="yellow"] {
+  --cap-accent-1: oklch(0.9873 0.0262 102.28);
+  --cap-accent-2: oklch(0.9729 0.0693 103.22);
+  --cap-accent-3: oklch(0.9597 0.0980 102.46);
+  --cap-accent-4: oklch(0.9451 0.1242 101.55);
+  --cap-accent-5: oklch(0.9053 0.1656 98.12);
+  --cap-accent-6: oklch(0.8606 0.1730 91.94);
+  --cap-accent-7: oklch(0.7610 0.1520 87.61);
+  --cap-accent-8: oklch(0.6219 0.1220 79.82);
+  --cap-accent-9: oklch(0.4859 0.0882 71.65);
+  --cap-accent-10: oklch(0.4065 0.0606 68.35);
+  --cap-accent-11: oklch(0.3495 0.0387 62.84);
+  --cap-accent-12: oklch(0.2497 0.0235 60.70);
+}
+[data-accent="amber"], [data-color="amber"] {
+  --cap-accent-1: oklch(0.9869 0.0213 95.33);
+  --cap-accent-2: oklch(0.9619 0.0579 95.64);
+  --cap-accent-3: oklch(0.9441 0.0877 95.79);
+  --cap-accent-4: oklch(0.9243 0.1151 95.76);
+  --cap-accent-5: oklch(0.8790 0.1533 91.61);
+  --cap-accent-6: oklch(0.8369 0.1643 84.43);
+  --cap-accent-7: oklch(0.7463 0.1550 72.02);
+  --cap-accent-8: oklch(0.6270 0.1328 63.60);
+  --cap-accent-9: oklch(0.5119 0.1049 54.34);
+  --cap-accent-10: oklch(0.4322 0.0729 51.31);
+  --cap-accent-11: oklch(0.3740 0.0489 49.61);
+  --cap-accent-12: oklch(0.2757 0.0320 47.50);
+}
+[data-accent="orange"], [data-color="orange"] {
+  --cap-accent-1: oklch(0.9796 0.0157 73.64);
+  --cap-accent-2: oklch(0.9542 0.0371 75.15);
+  --cap-accent-3: oklch(0.9281 0.0548 71.48);
+  --cap-accent-4: oklch(0.9015 0.0729 70.69);
+  --cap-accent-5: oklch(0.8366 0.1165 66.28);
+  --cap-accent-6: oklch(0.7577 0.1590 55.93);
+  --cap-accent-7: oklch(0.6867 0.1727 49.09);
+  --cap-accent-8: oklch(0.6078 0.1566 44.53);
+  --cap-accent-9: oklch(0.5068 0.1193 41.94);
+  --cap-accent-10: oklch(0.4236 0.0807 38.20);
+  --cap-accent-11: oklch(0.3606 0.0502 39.71);
+  --cap-accent-12: oklch(0.2588 0.0289 40.23);
+}
+[data-accent="red"], [data-color="red"] {
+  --cap-accent-1: oklch(0.9705 0.0129 17.04);
+  --cap-accent-2: oklch(0.9356 0.0309 17.58);
+  --cap-accent-3: oklch(0.9099 0.0448 17.92);
+  --cap-accent-4: oklch(0.8845 0.0592 18.27);
+  --cap-accent-5: oklch(0.8077 0.1035 19.54);
+  --cap-accent-6: oklch(0.7106 0.1661 22.20);
+  --cap-accent-7: oklch(0.6272 0.1917 24.54);
+  --cap-accent-8: oklch(0.5469 0.1781 25.30);
+  --cap-accent-9: oklch(0.4642 0.1345 23.97);
+  --cap-accent-10: oklch(0.4024 0.0923 22.07);
+  --cap-accent-11: oklch(0.3586 0.0571 20.25);
+  --cap-accent-12: oklch(0.2501 0.0335 19.67);
+}
+:root, [data-surface="base"] {
+  --cap-context-background-light: #fafafa;
+  --cap-context-background-dark: #181818;
+  --cap-context-fill-light: 7%;
+  --cap-context-fill-dark: 8%;
+  --cap-context-hover-light: 11%;
+  --cap-context-hover-dark: 12%;
+  --cap-context-active-light: 14%;
+  --cap-context-active-dark: 16%;
+  --cap-context-accent-light: 8%;
+  --cap-context-accent-dark: 13%;
+  --cap-context-secondary-light: #525252;
+  --cap-context-secondary-dark: #d4d4d4;
+  --cap-context-muted-light: #5b5b5b;
+  --cap-context-muted-dark: #ababab;
+}
+[data-surface="canvas"] {
+  --cap-context-background-light: #f0f0f0;
+  --cap-context-background-dark: #101010;
+  --cap-context-fill-light: 10%;
+  --cap-context-fill-dark: 5%;
+  --cap-context-hover-light: 15%;
+  --cap-context-hover-dark: 10%;
+  --cap-context-active-light: 19%;
+  --cap-context-active-dark: 14%;
+  --cap-context-accent-light: 14%;
+  --cap-context-accent-dark: 9%;
+  --cap-context-secondary-light: #343434;
+  --cap-context-secondary-dark: #c2c2c2;
+  --cap-context-muted-light: #4e4e4e;
+  --cap-context-muted-dark: #a3a3a3;
+}
+[data-surface="raised"] {
+  --cap-context-background-light: #ffffff;
+  --cap-context-background-dark: #242424;
+  --cap-context-fill-light: 5%;
+  --cap-context-fill-dark: 12%;
+  --cap-context-hover-light: 9%;
+  --cap-context-hover-dark: 17%;
+  --cap-context-active-light: 13%;
+  --cap-context-active-dark: 22%;
+  --cap-context-accent-light: 7%;
+  --cap-context-accent-dark: 20%;
+  --cap-context-secondary-light: #626262;
+  --cap-context-secondary-dark: #eeeeee;
+  --cap-context-muted-light: #606060;
+  --cap-context-muted-dark: #cbcbcb;
+}
+:root, [data-borders="off"] { --cap-outline-opacity: 0%; --cap-control-outline-light: 0%; --cap-control-outline-dark: 0%; }
+[data-borders="on"] { --cap-outline-opacity: 100%; --cap-control-outline-light: 75%; --cap-control-outline-dark: 45%; }
+:root, [data-theme], [data-accent], [data-color], [data-surface], [data-borders] {
+  --cap-surface-canvas: light-dark(var(--cap-neutral-3), var(--cap-neutral-12));
+  --cap-surface-base: light-dark(var(--cap-neutral-2), var(--cap-neutral-11));
+  --cap-surface-raised: light-dark(var(--cap-neutral-1), var(--cap-neutral-10));
+  --cap-surface-hover: light-dark(var(--cap-neutral-3), var(--cap-neutral-10));
+  --cap-surface-active: light-dark(var(--cap-neutral-4), var(--cap-neutral-9));
+  --cap-surface-input: light-dark(var(--cap-neutral-1), var(--cap-neutral-11));
+  --cap-content-primary: light-dark(var(--cap-neutral-10), var(--cap-neutral-2));
+  --cap-content-secondary: light-dark(var(--cap-neutral-8), var(--cap-neutral-5));
+  --cap-content-muted: light-dark(var(--cap-neutral-7), var(--cap-neutral-6));
+  --cap-border-default: light-dark(var(--cap-neutral-4), var(--cap-neutral-9));
+  --cap-border-strong: light-dark(var(--cap-neutral-5), var(--cap-neutral-8));
+  --cap-focus-ring: light-dark(var(--cap-neutral-8), var(--cap-neutral-5));
+  --cap-action-solid: light-dark(var(--cap-neutral-9), var(--cap-neutral-4));
+  --cap-action-hover: light-dark(var(--cap-neutral-8), var(--cap-neutral-3));
+  --cap-action-on-solid: light-dark(var(--cap-neutral-1), var(--cap-neutral-12));
+  --cap-accent-soft: light-dark(var(--cap-accent-1), var(--cap-accent-12));
+  --cap-accent-bg: light-dark(var(--cap-accent-2), var(--cap-accent-11));
+  --cap-accent-block: light-dark(var(--cap-accent-3), var(--cap-accent-10));
+  --cap-accent-border: light-dark(var(--cap-accent-4), var(--cap-accent-9));
+  --cap-accent-text: light-dark(var(--cap-accent-11), var(--cap-accent-2));
+  --cap-accent-ink: light-dark(var(--cap-accent-10), var(--cap-accent-3));
+  --cap-accent-solid: light-dark(var(--cap-accent-10), var(--cap-accent-4));
+  --cap-accent-solid-hover: light-dark(var(--cap-accent-11), var(--cap-accent-3));
+  --cap-accent-on-solid: light-dark(var(--cap-accent-1), var(--cap-accent-12));
+  --cap-surface-current: light-dark(var(--cap-context-background-light), var(--cap-context-background-dark));
+  --cap-content-secondary: light-dark(var(--cap-context-secondary-light), var(--cap-context-secondary-dark));
+  --cap-content-muted: light-dark(var(--cap-context-muted-light), var(--cap-context-muted-dark));
+  --cap-control-hover: light-dark(color-mix(in srgb, #000 var(--cap-context-hover-light), var(--cap-context-background-light)), color-mix(in srgb, #fff var(--cap-context-hover-dark), var(--cap-context-background-dark)));
+  --cap-control-active: light-dark(color-mix(in srgb, #000 var(--cap-context-active-light), var(--cap-context-background-light)), color-mix(in srgb, #fff var(--cap-context-active-dark), var(--cap-context-background-dark)));
+  --cap-control-bg: light-dark(color-mix(in srgb, var(--cap-context-background-light) var(--cap-control-outline-light), color-mix(in srgb, #000 var(--cap-context-fill-light), var(--cap-context-background-light))), color-mix(in srgb, var(--cap-context-background-dark) var(--cap-control-outline-dark), color-mix(in srgb, #fff var(--cap-context-fill-dark), var(--cap-context-background-dark))));
+  --cap-control-border: color-mix(in srgb, var(--cap-border-default) var(--cap-outline-opacity), transparent);
+  --cap-panel-border: color-mix(in srgb, var(--cap-border-default) var(--cap-outline-opacity), transparent);
+  --cap-control-border-strong: color-mix(in srgb, var(--cap-border-strong) var(--cap-outline-opacity), transparent);
+  --cap-accent-soft: light-dark(color-mix(in srgb, var(--cap-accent-9) calc(var(--cap-context-accent-light) + 0%), var(--cap-context-background-light)), color-mix(in srgb, var(--cap-accent-4) calc(var(--cap-context-accent-dark) + 0%), var(--cap-context-background-dark)));
+  --cap-accent-bg: light-dark(color-mix(in srgb, var(--cap-accent-9) calc(var(--cap-context-accent-light) + 3%), var(--cap-context-background-light)), color-mix(in srgb, var(--cap-accent-4) calc(var(--cap-context-accent-dark) + 3%), var(--cap-context-background-dark)));
+  --cap-accent-block: light-dark(color-mix(in srgb, var(--cap-accent-9) calc(var(--cap-context-accent-light) + 6%), var(--cap-context-background-light)), color-mix(in srgb, var(--cap-accent-4) calc(var(--cap-context-accent-dark) + 6%), var(--cap-context-background-dark)));
+  --cap-accent-border: color-mix(in srgb, light-dark(var(--cap-accent-4), var(--cap-accent-9)) var(--cap-outline-opacity), transparent);
+  --cap-status-danger-bg: light-dark(oklch(0.9705 0.0129 17.04), oklch(0.2501 0.0335 19.67));
+  --cap-status-danger-text: light-dark(oklch(0.3586 0.0571 20.25), oklch(0.9356 0.0309 17.58));
+  --cap-status-success-bg: light-dark(oklch(0.9819 0.0180 156.09), oklch(0.2531 0.0318 156.48));
+  --cap-status-success-text: light-dark(oklch(0.3406 0.0437 157.15), oklch(0.9624 0.0434 156.85));
+  --cap-status-warning-bg: light-dark(oklch(0.9869 0.0213 95.33), oklch(0.2757 0.0320 47.50));
+  --cap-status-warning-text: light-dark(oklch(0.3740 0.0489 49.61), oklch(0.9619 0.0579 95.64));
+  --cap-status-info-bg: light-dark(oklch(0.9705 0.0143 254.66), oklch(0.2707 0.0290 270.12));
+  --cap-status-info-text: light-dark(oklch(0.3498 0.0543 269.40), oklch(0.9319 0.0317 255.61));
+  --cap-bg-base: var(--cap-surface-base);
+  --cap-bg-back: var(--cap-surface-canvas);
+  --cap-bg-front: var(--cap-surface-raised);
+  --cap-bg-el: var(--cap-control-active);
+  --cap-bg-el-strong: var(--cap-control-active);
+  --cap-bg-el-subtle: var(--cap-control-bg);
+  --cap-bg-base-hover: var(--cap-control-hover);
+  --cap-bg-back-hover: var(--cap-control-hover);
+  --cap-bg-front-hover: var(--cap-control-hover);
+  --cap-bg-el-hover: var(--cap-control-hover);
+  --cap-bg-el-active: var(--cap-control-active);
+  --cap-bg-el-subtle-hover: var(--cap-control-hover);
+  --cap-bg-el-subtle-active: var(--cap-control-active);
+  --cap-bg-input: var(--cap-control-bg);
+  --cap-bg-input-hover: var(--cap-control-hover);
+  --cap-bg-input-active: var(--cap-control-bg);
+  --cap-text-primary: var(--cap-content-primary);
+  --cap-text-secondary: var(--cap-content-secondary);
+  --cap-text-muted: var(--cap-content-muted);
+  --cap-text-subtle: var(--cap-content-muted);
+  --cap-input-placeholder: var(--cap-content-muted);
+  --cap-bg-button-primary: var(--cap-action-solid);
+  --cap-bg-button-primary-hover: var(--cap-action-hover);
+  --cap-text-button-primary: var(--cap-action-on-solid);
+  --cap-text-button-primary-hover: var(--cap-action-on-solid);
+  --cap-border-button-primary: var(--cap-action-solid);
+  --cap-border-button-primary-hover: var(--cap-action-hover);
+  --cap-border-base: var(--cap-panel-border);
+  --cap-border-back: var(--cap-panel-border);
+  --cap-border-front: var(--cap-panel-border);
+  --cap-border-el-subtle: var(--cap-control-border);
+  --cap-border-base-strong: var(--cap-control-border-strong);
+  --cap-border-back-strong: var(--cap-control-border-strong);
+  --cap-border-front-strong: var(--cap-control-border-strong);
+  --cap-border-el: var(--cap-control-border-strong);
+  --cap-border-el-hover: var(--cap-focus-ring);
+  --cap-border-el-subtle-hover: var(--cap-control-border-strong);
+  --cap-border-state-active: var(--cap-focus-ring);
+  --cap-ring-state-active: var(--cap-focus-ring);
+  --cap-code-bg: var(--cap-surface-canvas);
+  --cap-code-border: var(--cap-panel-border);
+  --cap-code-text: var(--cap-content-primary);
+  --cap-bg-text-selection: color-mix(in srgb, var(--cap-accent-6) 32%, transparent);
+  --cap-overlay-dim: light-dark(#00000050, #00000094);
+}

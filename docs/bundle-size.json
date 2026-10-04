@@ -1,0 +1,26 @@
+{
+  "index.js": {
+    "bytes": 91672,
+    "gzipBytes": 21194
+  },
+  "styles.css": {
+    "bytes": 81369,
+    "gzipBytes": 15032
+  },
+  "tokens.css": {
+    "bytes": 22548,
+    "gzipBytes": 4977
+  },
+  "source-tokens.css": {
+    "bytes": 78897,
+    "gzipBytes": 14936
+  },
+  "button-only.js": {
+    "bytes": 1578,
+    "gzipBytes": 646
+  },
+  "all-components-minified.js": {
+    "bytes": 57134,
+    "gzipBytes": 18296
+  }
+}

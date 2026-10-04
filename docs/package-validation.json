@@ -1,0 +1,13 @@
+{
+  "package": "@personal/capacities-ui",
+  "componentCount": 59,
+  "isolatedArchiveConsumer": true,
+  "nodeNextTypes": true,
+  "exampleTypecheck": [
+    "ProjectBoard",
+    "WorkspaceV2"
+  ],
+  "serverRenderImport": true,
+  "fontAssets": 9,
+  "buttonGzipBytes": 646
+}

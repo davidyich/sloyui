@@ -1,0 +1,10 @@
+{
+  "name": "Capacities UI V2 — Variables",
+  "id": "capacities-ui-v2-variables-local",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": { "allowedDomains": ["none"] }
+}

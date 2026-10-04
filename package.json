@@ -1,0 +1,78 @@
+{
+  "name": "@personal/capacities-ui",
+  "version": "0.3.0",
+  "description": "A compact, agent-friendly React UI kit reconstructed from Capacities' visual system.",
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./tokens.css": "./dist/tokens.css",
+    "./source-tokens.css": "./dist/source-tokens.css",
+    "./fonts.css": "./dist/fonts.css",
+    "./tokens/*": "./dist/tokens/*",
+    "./agent-manifest.json": "./agent-manifest.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "DESIGN.md",
+    "AGENTS.md",
+    "llms.txt",
+    "agent-manifest.json",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "examples",
+    "docs/*.md",
+    "docs/*.json",
+    "figma",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4317 --strictPort",
+    "tokens": "node scripts/build-tokens.mjs && node scripts/build-figma.mjs",
+    "build": "npm run tokens && tsc -p tsconfig.build.json && node scripts/build.mjs",
+    "build:demo": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run tokens && npm run manifest && npm run typecheck && npm test && npm run build && npm run build:demo",
+    "pack:kit": "mkdir -p artifacts && npm pack --pack-destination artifacts",
+    "prepack": "npm run build",
+    "verify:package": "node scripts/verify-package.mjs",
+    "manifest": "node scripts/build-manifest.mjs"
+  },
+  "peerDependencies": {
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0"
+  },
+  "devDependencies": {
+    "@fontsource-variable/inter": "^5.2.0",
+    "@fontsource-variable/overpass-mono": "^5.2.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "axe-core": "^4.10.3",
+    "esbuild": "^0.25.0",
+    "jsdom": "^26.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.8.0",
+    "vite": "^7.0.0",
+    "vitest": "^4.1.11"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidyich/capacities-style.git"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "version": "0.3.0",
+  "appearanceRoles": 24,
+  "neutralSteps": 12,
+  "accentSteps": 12,
+  "accentModes": 18,
+  "figmaCollections": 3,
+  "figmaVariables": 48,
+  "crossCollectionAliases": true,
+  "matchingModes": true
+}

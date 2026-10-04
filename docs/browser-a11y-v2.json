@@ -1,0 +1,281 @@
+{
+  "desktop": [
+    {
+      "url": "#overview",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "url": "#colors",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "url": "#typography",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "url": "#geometry",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "url": "#behavior",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "url": "#buttons",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "url": "#forms",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "url": "#content",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "url": "#feedback",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "url": "#overlays",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "url": "#workbench",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "url": "#content-blocks",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "url": "#patterns",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "url": "#agents",
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "url": "#overview",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "url": "#colors",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "url": "#typography",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "url": "#geometry",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "url": "#behavior",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "url": "#buttons",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "url": "#forms",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "url": "#content",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "url": "#feedback",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "url": "#overlays",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "url": "#workbench",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "url": "#content-blocks",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "url": "#patterns",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "url": "#agents",
+      "theme": "dark",
+      "violations": []
+    }
+  ],
+  "mobile": [
+    {
+      "audit": {
+        "url": "#colors",
+        "theme": "dark",
+        "violations": []
+      },
+      "geometry": {
+        "document": 390,
+        "main": 376,
+        "mainClient": 376,
+        "width": 390
+      }
+    },
+    {
+      "audit": {
+        "url": "#content-blocks",
+        "theme": "dark",
+        "violations": []
+      },
+      "geometry": {
+        "document": 390,
+        "main": 376,
+        "mainClient": 376,
+        "width": 390
+      }
+    },
+    {
+      "audit": {
+        "url": "#workbench",
+        "theme": "dark",
+        "violations": []
+      },
+      "geometry": {
+        "document": 390,
+        "main": 376,
+        "mainClient": 376,
+        "width": 390
+      }
+    },
+    {
+      "audit": {
+        "url": "#overlays",
+        "theme": "dark",
+        "violations": []
+      },
+      "geometry": {
+        "document": 390,
+        "main": 376,
+        "mainClient": 376,
+        "width": 390
+      }
+    },
+    {
+      "audit": {
+        "url": "#forms",
+        "theme": "dark",
+        "violations": []
+      },
+      "geometry": {
+        "document": 390,
+        "main": 376,
+        "mainClient": 376,
+        "width": 390
+      }
+    },
+    {
+      "audit": {
+        "url": "#colors",
+        "theme": "light",
+        "violations": []
+      },
+      "geometry": {
+        "document": 390,
+        "main": 376,
+        "mainClient": 376,
+        "width": 390
+      }
+    },
+    {
+      "audit": {
+        "url": "#content-blocks",
+        "theme": "light",
+        "violations": []
+      },
+      "geometry": {
+        "document": 390,
+        "main": 376,
+        "mainClient": 376,
+        "width": 390
+      }
+    },
+    {
+      "audit": {
+        "url": "#workbench",
+        "theme": "light",
+        "violations": []
+      },
+      "geometry": {
+        "document": 390,
+        "main": 376,
+        "mainClient": 376,
+        "width": 390
+      }
+    },
+    {
+      "audit": {
+        "url": "#overlays",
+        "theme": "light",
+        "violations": []
+      },
+      "geometry": {
+        "document": 390,
+        "main": 376,
+        "mainClient": 376,
+        "width": 390
+      }
+    },
+    {
+      "audit": {
+        "url": "#forms",
+        "theme": "light",
+        "violations": []
+      },
+      "geometry": {
+        "document": 390,
+        "main": 376,
+        "mainClient": 376,
+        "width": 390
+      }
+    }
+  ],
+  "drawer": {
+    "url": "#overlays",
+    "theme": "dark",
+    "violations": []
+  }
+}

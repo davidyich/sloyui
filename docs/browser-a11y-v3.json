@@ -1,0 +1,936 @@
+{
+  "date": "2026-10-04",
+  "browser": "Codex In-app Browser",
+  "checks": [
+    {
+      "url": "#ActionBar",
+      "theme": "light",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#ActionBar",
+      "theme": "light",
+      "borders": "on",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Button",
+      "theme": "light",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Input",
+      "theme": "light",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Select",
+      "theme": "light",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Alert",
+      "theme": "light",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Toast",
+      "theme": "light",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#ScrollArea",
+      "theme": "light",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#SidebarPanel",
+      "theme": "light",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Calendar",
+      "theme": "light",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#ContentCard",
+      "theme": "light",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#MarkdownEditor",
+      "theme": "light",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Tabs",
+      "theme": "light",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Dialog",
+      "theme": "light",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#ActionBar",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Button",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Input",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Select",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Alert",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Toast",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#ScrollArea",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#SidebarPanel",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Calendar",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#ContentCard",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#MarkdownEditor",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Tabs",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Dialog",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#ActionBar",
+      "theme": "dark",
+      "borders": "on",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#ScrollArea",
+      "theme": "light",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#SidebarPanel",
+      "theme": "light",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Calendar",
+      "theme": "light",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#ContentCard",
+      "theme": "light",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#ActionBar",
+      "theme": "light",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": []
+    },
+    {
+      "url": "#Alert",
+      "theme": "light",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": []
+    },
+    {
+      "url": "#ScrollArea",
+      "theme": "light",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": []
+    },
+    {
+      "url": "#SidebarPanel",
+      "theme": "light",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": []
+    },
+    {
+      "url": "#Calendar",
+      "theme": "light",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": []
+    },
+    {
+      "url": "#MarkdownEditor",
+      "theme": "light",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": []
+    },
+    {
+      "url": "#Tabs",
+      "theme": "light",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": []
+    },
+    {
+      "url": "#Dialog",
+      "theme": "light",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": []
+    },
+    {
+      "url": "#Dialog",
+      "theme": "light",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": [],
+      "state": "open-dialog"
+    },
+    {
+      "url": "#ActionBar",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": []
+    },
+    {
+      "url": "#Alert",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": []
+    },
+    {
+      "url": "#ScrollArea",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": []
+    },
+    {
+      "url": "#SidebarPanel",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": []
+    },
+    {
+      "url": "#Calendar",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": []
+    },
+    {
+      "url": "#MarkdownEditor",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": []
+    },
+    {
+      "url": "#Tabs",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": []
+    },
+    {
+      "url": "#Dialog",
+      "theme": "dark",
+      "borders": "off",
+      "surface": "raised",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "main": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "violations": []
+    },
+    {
+      "url": "#Button",
+      "theme": "light",
+      "borders": "on",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Input",
+      "theme": "light",
+      "borders": "on",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Alert",
+      "theme": "light",
+      "borders": "on",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#ScrollArea",
+      "theme": "light",
+      "borders": "on",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Button",
+      "theme": "dark",
+      "borders": "on",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Input",
+      "theme": "dark",
+      "borders": "on",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#Alert",
+      "theme": "dark",
+      "borders": "on",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    },
+    {
+      "url": "#ScrollArea",
+      "theme": "dark",
+      "borders": "on",
+      "surface": "base",
+      "viewport": {
+        "width": 1131,
+        "height": 833
+      },
+      "documentWidth": 1131,
+      "main": {
+        "width": 895,
+        "scrollWidth": 895
+      },
+      "violations": []
+    }
+  ],
+  "contextProof": [
+    {
+      "background": "rgb(24, 24, 24)",
+      "secondary": "color(srgb 0.166588 0.166588 0.166588)",
+      "surface": "base"
+    },
+    {
+      "background": "rgb(16, 16, 16)",
+      "secondary": "color(srgb 0.109608 0.109608 0.109608)",
+      "surface": "canvas"
+    },
+    {
+      "background": "rgb(36, 36, 36)",
+      "secondary": "color(srgb 0.244235 0.244235 0.244235)",
+      "surface": "raised"
+    }
+  ]
+}

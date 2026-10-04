@@ -1,0 +1,98 @@
+{
+  "surface/canvas": {
+    "$type": "color",
+    "$value": "{Neutral.neutral.12}"
+  },
+  "surface/base": {
+    "$type": "color",
+    "$value": "{Neutral.neutral.11}"
+  },
+  "surface/raised": {
+    "$type": "color",
+    "$value": "{Neutral.neutral.10}"
+  },
+  "surface/hover": {
+    "$type": "color",
+    "$value": "{Neutral.neutral.10}"
+  },
+  "surface/active": {
+    "$type": "color",
+    "$value": "{Neutral.neutral.9}"
+  },
+  "surface/input": {
+    "$type": "color",
+    "$value": "{Neutral.neutral.11}"
+  },
+  "content/primary": {
+    "$type": "color",
+    "$value": "{Neutral.neutral.2}"
+  },
+  "content/secondary": {
+    "$type": "color",
+    "$value": "{Neutral.neutral.5}"
+  },
+  "content/muted": {
+    "$type": "color",
+    "$value": "{Neutral.neutral.6}"
+  },
+  "border/default": {
+    "$type": "color",
+    "$value": "{Neutral.neutral.9}"
+  },
+  "border/strong": {
+    "$type": "color",
+    "$value": "{Neutral.neutral.8}"
+  },
+  "focus/ring": {
+    "$type": "color",
+    "$value": "{Neutral.neutral.5}"
+  },
+  "action/solid": {
+    "$type": "color",
+    "$value": "{Neutral.neutral.4}"
+  },
+  "action/hover": {
+    "$type": "color",
+    "$value": "{Neutral.neutral.3}"
+  },
+  "action/on-solid": {
+    "$type": "color",
+    "$value": "{Neutral.neutral.12}"
+  },
+  "accent/soft": {
+    "$type": "color",
+    "$value": "{Accent.accent.12}"
+  },
+  "accent/bg": {
+    "$type": "color",
+    "$value": "{Accent.accent.11}"
+  },
+  "accent/block": {
+    "$type": "color",
+    "$value": "{Accent.accent.10}"
+  },
+  "accent/border": {
+    "$type": "color",
+    "$value": "{Accent.accent.9}"
+  },
+  "accent/text": {
+    "$type": "color",
+    "$value": "{Accent.accent.2}"
+  },
+  "accent/ink": {
+    "$type": "color",
+    "$value": "{Accent.accent.3}"
+  },
+  "accent/solid": {
+    "$type": "color",
+    "$value": "{Accent.accent.4}"
+  },
+  "accent/solid-hover": {
+    "$type": "color",
+    "$value": "{Accent.accent.3}"
+  },
+  "accent/on-solid": {
+    "$type": "color",
+    "$value": "{Accent.accent.12}"
+  }
+}

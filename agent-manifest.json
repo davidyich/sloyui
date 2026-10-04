@@ -1,0 +1,830 @@
+{
+  "package": "@personal/capacities-ui",
+  "version": "0.3.0",
+  "framework": "React >=19",
+  "module": "ESM",
+  "componentCount": 59,
+  "catalogue": {
+    "devUrl": "http://127.0.0.1:4317/",
+    "routePattern": "#ComponentName",
+    "caseSensitive": true,
+    "foundationRoutes": [
+      "#colors",
+      "#typography",
+      "#geometry",
+      "#behavior",
+      "#agents"
+    ],
+    "groups": [
+      {
+        "name": "Кнопки и действия",
+        "components": [
+          "Button",
+          "IconButton",
+          "Icon",
+          "Kbd",
+          "ButtonGroup",
+          "SplitButton",
+          "ActionBar",
+          "FloatingActionBar"
+        ]
+      },
+      {
+        "name": "Поля и выбор",
+        "components": [
+          "Input",
+          "FloatingField",
+          "Textarea",
+          "Select",
+          "Field",
+          "Checkbox",
+          "Radio",
+          "Switch",
+          "Slider",
+          "SegmentedControl",
+          "Calendar",
+          "DatePicker"
+        ]
+      },
+      {
+        "name": "Объекты и контент",
+        "components": [
+          "Badge",
+          "Tag",
+          "TypeLabel",
+          "IconBox",
+          "Avatar",
+          "Separator",
+          "Card",
+          "ObjectCard",
+          "CollectionRow",
+          "PropertyRow",
+          "Table",
+          "CodeBlock",
+          "MarkdownPreview",
+          "MarkdownEditor",
+          "ContentCard",
+          "TaskCard",
+          "KanbanColumn",
+          "KanbanBoard",
+          "DailyHeader"
+        ]
+      },
+      {
+        "name": "Навигация",
+        "components": [
+          "SidebarItem",
+          "Breadcrumbs",
+          "Accordion",
+          "Tabs",
+          "SidebarPanel",
+          "ScrollArea"
+        ]
+      },
+      {
+        "name": "Состояния",
+        "components": [
+          "Spinner",
+          "Skeleton",
+          "Progress",
+          "Callout",
+          "EmptyState",
+          "Toast",
+          "StatusBar",
+          "Alert"
+        ]
+      },
+      {
+        "name": "Окна и меню",
+        "components": [
+          "Dialog",
+          "Drawer",
+          "Tooltip",
+          "Menu",
+          "Popover",
+          "CommandPalette"
+        ]
+      }
+    ]
+  },
+  "imports": {
+    "components": "@personal/capacities-ui",
+    "css": "@personal/capacities-ui/styles.css",
+    "fontsOptional": "@personal/capacities-ui/fonts.css",
+    "legacySourceTokensOptional": "@personal/capacities-ui/source-tokens.css"
+  },
+  "theme": {
+    "target": "html[data-theme]",
+    "values": [
+      "light",
+      "dark"
+    ],
+    "default": "light",
+    "localOverrides": "data-theme on a subtree; custom portals copy the nearest theme/accent/borders and establish raised surface context",
+    "sourceNames": {
+      "light": "Light Dimmed inspired",
+      "dark": "Dark inspired"
+    }
+  },
+  "surface": {
+    "target": "[data-surface]",
+    "values": [
+      "base",
+      "canvas",
+      "raised"
+    ],
+    "default": "base",
+    "inherited": true,
+    "automaticBackgroundSampling": false,
+    "customContainer": "Set background:var(--cap-surface-current) to match the declared surface",
+    "ruleSource": "source/surface-rules.json",
+    "export": "tokens/surfaces.json",
+    "affects": [
+      "neutral control fills and hover/active states",
+      "soft accent fills",
+      "secondary and muted text"
+    ]
+  },
+  "borders": {
+    "target": "[data-borders]",
+    "values": [
+      "off",
+      "on"
+    ],
+    "default": "off",
+    "inherited": true,
+    "effect": "off makes decorative boundaries transparent; on restores boundaries and quieter neutral control fills without changing geometry",
+    "preserved": [
+      "focus",
+      "error",
+      "selection",
+      "checkbox",
+      "structural separators"
+    ]
+  },
+  "sizes": {
+    "xs": "22px",
+    "sm": "28px",
+    "md": "32px",
+    "lg": "36px",
+    "note": "at 16px root; touch targets expand separately; ActionBar and ButtonGroup size coordinate nested controls, while popup content keeps its own size"
+  },
+  "colors": [
+    "neutral",
+    "rose",
+    "pink",
+    "fuchsia",
+    "purple",
+    "violet",
+    "indigo",
+    "blue",
+    "sky",
+    "cyan",
+    "teal",
+    "emerald",
+    "green",
+    "lime",
+    "yellow",
+    "amber",
+    "orange",
+    "red"
+  ],
+  "accent": {
+    "target": "[data-accent]",
+    "modes": [
+      "neutral",
+      "rose",
+      "pink",
+      "fuchsia",
+      "purple",
+      "violet",
+      "indigo",
+      "blue",
+      "sky",
+      "cyan",
+      "teal",
+      "emerald",
+      "green",
+      "lime",
+      "yellow",
+      "amber",
+      "orange",
+      "red"
+    ],
+    "default": "neutral",
+    "compatibility": "data-color is an alias; gray aliases neutral",
+    "usage": "<section data-accent=\"teal\"><Badge>Inherited</Badge><Button variant=\"accent\">Create</Button></section>"
+  },
+  "tokens": {
+    "recommended": [
+      "--cap-surface-current",
+      "--cap-control-bg",
+      "--cap-control-hover",
+      "--cap-control-active",
+      "--cap-content-primary",
+      "--cap-content-muted",
+      "--cap-panel-border",
+      "--cap-control-border",
+      "--cap-focus-ring",
+      "--cap-accent-soft",
+      "--cap-accent-ink",
+      "--cap-accent-solid",
+      "--cap-accent-on-solid",
+      "--cap-radius-base",
+      "--cap-space-4"
+    ],
+    "architecture": "Base Figma graph: 12 fixed neutral variables + 12 shared accent variables across 18 modes + 24 light/dark roles. CSS adds explicit inherited surface/border context; that runtime layer is not included in the 48-variable graph.",
+    "cssOnly": "@personal/capacities-ui/tokens.css",
+    "json": [
+      "tokens/neutral.json",
+      "tokens/accents.json",
+      "tokens/light.json",
+      "tokens/dark.json",
+      "tokens/foundations.json",
+      "tokens/figma-modes.json",
+      "tokens/surfaces.json"
+    ],
+    "figma": {
+      "collections": [
+        {
+          "name": "Neutral",
+          "modes": [
+            "Base"
+          ],
+          "variables": 12
+        },
+        {
+          "name": "Accent",
+          "modes": [
+            "neutral",
+            "rose",
+            "pink",
+            "fuchsia",
+            "purple",
+            "violet",
+            "indigo",
+            "blue",
+            "sky",
+            "cyan",
+            "teal",
+            "emerald",
+            "green",
+            "lime",
+            "yellow",
+            "amber",
+            "orange",
+            "red"
+          ],
+          "variables": 12
+        },
+        {
+          "name": "Appearance",
+          "modes": [
+            "Light",
+            "Dark"
+          ],
+          "variables": 24
+        }
+      ],
+      "variableCount": 48,
+      "importer": "figma/importer/manifest.json",
+      "includesRuntimeSurfaceContext": false,
+      "actualDocumentUpdatedForVersion": false
+    },
+    "compatibility": "--cap-bg-*, --cap-text-* and established border aliases remain available. Full original per-hue/editor palettes are opt-in legacy audit data.",
+    "motion": {
+      "fast": "120ms",
+      "normal": "180ms",
+      "slow": "260ms",
+      "easing": [
+        "--cap-ease-standard",
+        "--cap-ease-out"
+      ],
+      "reducedMotion": "Animations and transitions respect prefers-reduced-motion."
+    }
+  },
+  "components": {
+    "Button": {
+      "purpose": "Action",
+      "props": "variant?: primary|secondary|outline|ghost|danger|accent; size?: xs|sm|md|lg; loading?: boolean; leading?, trailing?: ReactNode; native button props",
+      "example": "<Button variant=\"accent\" onClick={save}>Save</Button>",
+      "catalogueRoute": "#Button",
+      "catalogueGroup": "Кнопки и действия",
+      "behavior": "type=button by default; loading disables repeat activation. Neutral secondary fills use inherited surface/border context; accent variant inherits the nearest accent mode.",
+      "source": "src/components/primitives.tsx"
+    },
+    "IconButton": {
+      "purpose": "Icon-only action",
+      "props": "label: string; icon: IconName; ButtonProps",
+      "example": "<IconButton label=\"Search\" icon=\"search\" onClick={open} />",
+      "catalogueRoute": "#IconButton",
+      "catalogueGroup": "Кнопки и действия",
+      "source": "src/components/primitives.tsx"
+    },
+    "Icon": {
+      "purpose": "Decorative line icon",
+      "props": "name: IconName; size?: number; SVG props",
+      "example": "<Icon name=\"page\" size={16} />",
+      "catalogueRoute": "#Icon",
+      "catalogueGroup": "Кнопки и действия",
+      "source": "src/components/primitives.tsx"
+    },
+    "Spinner": {
+      "purpose": "Loading status",
+      "props": "label?: string; span props",
+      "example": "<Spinner label=\"Loading projects\" />",
+      "catalogueRoute": "#Spinner",
+      "catalogueGroup": "Состояния",
+      "source": "src/components/primitives.tsx"
+    },
+    "Badge": {
+      "purpose": "Short status",
+      "props": "color?: Color; variant?: soft|solid|outline; children; span props",
+      "example": "<Badge color=\"green\">Ready</Badge>",
+      "catalogueRoute": "#Badge",
+      "catalogueGroup": "Объекты и контент",
+      "behavior": "Omitting color inherits the nearest data-accent mode.",
+      "source": "src/components/primitives.tsx"
+    },
+    "Tag": {
+      "purpose": "Object tag",
+      "props": "color?: Color; onRemove?: () => void; children; span props",
+      "example": "<Tag color=\"purple\" onRemove={remove}>Research</Tag>",
+      "catalogueRoute": "#Tag",
+      "catalogueGroup": "Объекты и контент",
+      "behavior": "Omitting color inherits the nearest data-accent mode; removable tags add a separately labeled button.",
+      "source": "src/components/primitives.tsx"
+    },
+    "TypeLabel": {
+      "purpose": "Object type chip",
+      "props": "icon?: IconName; color?: Color; children; span props",
+      "example": "<TypeLabel icon=\"book\" color=\"purple\">Book</TypeLabel>",
+      "catalogueRoute": "#TypeLabel",
+      "catalogueGroup": "Объекты и контент",
+      "behavior": "Omitting color inherits the nearest data-accent mode.",
+      "source": "src/components/primitives.tsx"
+    },
+    "IconBox": {
+      "purpose": "Colored object icon",
+      "props": "icon: IconName; color?: Color; size?: xs|sm|md|lg",
+      "example": "<IconBox icon=\"cube\" color=\"teal\" />",
+      "catalogueRoute": "#IconBox",
+      "catalogueGroup": "Объекты и контент",
+      "behavior": "Omitting color inherits the nearest data-accent mode.",
+      "source": "src/components/primitives.tsx"
+    },
+    "Avatar": {
+      "purpose": "Person initials or image",
+      "props": "name: string; src?: string; size?: xs|sm|md|lg",
+      "example": "<Avatar name=\"Anna Kim\" />",
+      "catalogueRoute": "#Avatar",
+      "catalogueGroup": "Объекты и контент",
+      "source": "src/components/primitives.tsx"
+    },
+    "Kbd": {
+      "purpose": "Keyboard hint",
+      "props": "children; HTML props",
+      "example": "<Kbd>⌘ K</Kbd>",
+      "catalogueRoute": "#Kbd",
+      "catalogueGroup": "Кнопки и действия",
+      "source": "src/components/primitives.tsx"
+    },
+    "Separator": {
+      "purpose": "Horizontal divider",
+      "props": "hr props",
+      "example": "<Separator />",
+      "catalogueRoute": "#Separator",
+      "catalogueGroup": "Объекты и контент",
+      "source": "src/components/primitives.tsx"
+    },
+    "Skeleton": {
+      "purpose": "Decorative loading placeholder",
+      "props": "div props; style for dimensions",
+      "example": "<Skeleton style={{width: \"70%\"}} />",
+      "catalogueRoute": "#Skeleton",
+      "catalogueGroup": "Состояния",
+      "source": "src/components/primitives.tsx"
+    },
+    "Progress": {
+      "purpose": "Measured progress",
+      "props": "label: string; value: number (clamped 0–100); div props",
+      "example": "<Progress label=\"Upload\" value={64} />",
+      "catalogueRoute": "#Progress",
+      "catalogueGroup": "Состояния",
+      "source": "src/components/primitives.tsx"
+    },
+    "Input": {
+      "purpose": "Native text, date, time, file and other input types",
+      "props": "size?: xs|sm|md|lg; native input props except numeric size; ref",
+      "example": "<Input aria-label=\"Search\" type=\"search\" />",
+      "catalogueRoute": "#Input",
+      "catalogueGroup": "Поля и выбор",
+      "source": "src/components/forms.tsx"
+    },
+    "Textarea": {
+      "purpose": "Multi-line field",
+      "props": "native textarea props; ref",
+      "example": "<Textarea aria-label=\"Description\" rows={4} />",
+      "catalogueRoute": "#Textarea",
+      "catalogueGroup": "Поля и выбор",
+      "source": "src/components/forms.tsx"
+    },
+    "Select": {
+      "purpose": "Custom single-select popup with native form backing",
+      "props": "value?, defaultValue?: string|number; onValueChange?: (value: string) => void; options?: {value,label,disabled?,group?}[] or option children; size?: Size; placeholder?; native single-select props; ref: HTMLSelectElement",
+      "example": "<Select aria-label=\"Type\" value={type} onValueChange={setType} options={types} />",
+      "catalogueRoute": "#Select",
+      "catalogueGroup": "Поля и выбор",
+      "behavior": "Arrows/Home/End and typeahead navigate; Enter/Space choose; Escape dismisses. Hidden native select preserves form values, required validation, reset and change events.",
+      "source": "src/components/forms.tsx"
+    },
+    "Field": {
+      "purpose": "Accessible field wiring",
+      "props": "label: string; hint?, error?: string; required?: boolean; children: props => ReactNode",
+      "example": "<Field label=\"Name\">{p => <Input {...p} />}</Field>",
+      "catalogueRoute": "#Field",
+      "catalogueGroup": "Поля и выбор",
+      "source": "src/components/forms.tsx"
+    },
+    "Checkbox": {
+      "purpose": "Boolean or mixed choice",
+      "props": "label: ReactNode; indeterminate?: boolean; native input props",
+      "example": "<Checkbox label=\"Select all\" indeterminate />",
+      "catalogueRoute": "#Checkbox",
+      "catalogueGroup": "Поля и выбор",
+      "source": "src/components/forms.tsx"
+    },
+    "Radio": {
+      "purpose": "Exclusive choice",
+      "props": "label: ReactNode; native input props; shared name per group",
+      "example": "<Radio label=\"Private\" name=\"access\" value=\"private\" />",
+      "catalogueRoute": "#Radio",
+      "catalogueGroup": "Поля и выбор",
+      "source": "src/components/forms.tsx"
+    },
+    "Switch": {
+      "purpose": "Boolean setting",
+      "props": "label: ReactNode; native checkbox props",
+      "example": "<Switch label=\"Compact view\" defaultChecked />",
+      "catalogueRoute": "#Switch",
+      "catalogueGroup": "Поля и выбор",
+      "source": "src/components/forms.tsx"
+    },
+    "Slider": {
+      "purpose": "Native range",
+      "props": "label: string; native range props",
+      "example": "<Slider label=\"Density\" min={0} max={100} />",
+      "catalogueRoute": "#Slider",
+      "catalogueGroup": "Поля и выбор",
+      "source": "src/components/forms.tsx"
+    },
+    "SegmentedControl": {
+      "purpose": "Exclusive view/filter choice",
+      "props": "label: string; value: string; onValueChange: (value) => void; options: {value,label,disabled?,icon?}[]",
+      "example": "<SegmentedControl label=\"View\" value={view} onValueChange={setView} options={options} />",
+      "catalogueRoute": "#SegmentedControl",
+      "catalogueGroup": "Поля и выбор",
+      "source": "src/components/forms.tsx"
+    },
+    "Card": {
+      "purpose": "Non-interactive container",
+      "props": "variant?: default|subtle|elevated; div props",
+      "example": "<Card variant=\"subtle\">Content</Card>",
+      "catalogueRoute": "#Card",
+      "catalogueGroup": "Объекты и контент",
+      "behavior": "Own surface is raised for default/elevated and canvas for subtle; nested controls use that context. Decorative borders follow data-borders.",
+      "source": "src/components/layout.tsx"
+    },
+    "ObjectCard": {
+      "purpose": "Interactive object tile",
+      "props": "title: string; description?: string; icon?: IconName; color?: Color; meta?, cover?: ReactNode; button props",
+      "example": "<ObjectCard title=\"Project\" icon=\"cube\" color=\"teal\" onClick={open} />",
+      "catalogueRoute": "#ObjectCard",
+      "catalogueGroup": "Объекты и контент",
+      "source": "src/components/layout.tsx"
+    },
+    "CollectionRow": {
+      "purpose": "Interactive object row",
+      "props": "title: string; icon?: IconName; color?: Color; meta?: ReactNode; button props",
+      "example": "<CollectionRow title=\"Note\" meta={<Tag>Draft</Tag>} onClick={open} />",
+      "catalogueRoute": "#CollectionRow",
+      "catalogueGroup": "Объекты и контент",
+      "source": "src/components/layout.tsx"
+    },
+    "SidebarItem": {
+      "purpose": "Active navigation button",
+      "props": "icon?: IconName; active?: boolean; count?: number; children; button props",
+      "example": "<SidebarItem icon=\"page\" active count={12}>Pages</SidebarItem>",
+      "catalogueRoute": "#SidebarItem",
+      "catalogueGroup": "Навигация",
+      "source": "src/components/layout.tsx"
+    },
+    "PropertyRow": {
+      "purpose": "Label/value metadata",
+      "props": "label: string; icon?: IconName; children; div props",
+      "example": "<PropertyRow label=\"Status\"><Tag color=\"green\">Ready</Tag></PropertyRow>",
+      "catalogueRoute": "#PropertyRow",
+      "catalogueGroup": "Объекты и контент",
+      "source": "src/components/layout.tsx"
+    },
+    "Breadcrumbs": {
+      "purpose": "Location hierarchy",
+      "props": "items: {label,href?}[]; label?: string (unique across multiple navs)",
+      "example": "<Breadcrumbs items={[{label:\"Home\",href:\"/\"},{label:\"Projects\"}]} />",
+      "catalogueRoute": "#Breadcrumbs",
+      "catalogueGroup": "Навигация",
+      "source": "src/components/layout.tsx"
+    },
+    "Callout": {
+      "purpose": "Contextual information",
+      "props": "color?: Color; icon?: IconName; title?: string; children; div props",
+      "example": "<Callout color=\"amber\" title=\"Check this\">Useful context</Callout>",
+      "catalogueRoute": "#Callout",
+      "catalogueGroup": "Состояния",
+      "source": "src/components/layout.tsx"
+    },
+    "EmptyState": {
+      "purpose": "Empty or zero-search state",
+      "props": "title: string; icon?: IconName; description?: string; action?: ReactNode",
+      "example": "<EmptyState title=\"No projects\" action={<Button onClick={create}>Create</Button>} />",
+      "catalogueRoute": "#EmptyState",
+      "catalogueGroup": "Состояния",
+      "source": "src/components/layout.tsx"
+    },
+    "Accordion": {
+      "purpose": "Native disclosure",
+      "props": "title: ReactNode; children; native details props",
+      "example": "<Accordion title=\"Details\">More information</Accordion>",
+      "catalogueRoute": "#Accordion",
+      "catalogueGroup": "Навигация",
+      "source": "src/components/layout.tsx"
+    },
+    "Tabs": {
+      "purpose": "Controlled tab panels",
+      "props": "label: string; value: string; onValueChange: (value) => void; variant?: line|pills; items: {value,label,content,disabled?}[]",
+      "example": "<Tabs label=\"Project\" variant=\"pills\" value={tab} onValueChange={setTab} items={items} />",
+      "catalogueRoute": "#Tabs",
+      "catalogueGroup": "Навигация",
+      "behavior": "Arrows/Home/End skip disabled tabs; one active tab stop. Values must be unique and the active value valid.",
+      "source": "src/components/layout.tsx"
+    },
+    "Table": {
+      "purpose": "Static data table with scroll region",
+      "props": "caption: string; columns: string[]; rows: ReactNode[][]; className?",
+      "example": "<Table caption=\"Projects\" columns={[\"Name\"]} rows={[[\"Garden\"]]} />",
+      "catalogueRoute": "#Table",
+      "catalogueGroup": "Объекты и контент",
+      "source": "src/components/layout.tsx"
+    },
+    "CodeBlock": {
+      "purpose": "Escaped plain code (no syntax engine)",
+      "props": "children: string; label?: string",
+      "example": "<CodeBlock label=\"TSX\">{code}</CodeBlock>",
+      "catalogueRoute": "#CodeBlock",
+      "catalogueGroup": "Объекты и контент",
+      "source": "src/components/layout.tsx"
+    },
+    "Dialog": {
+      "purpose": "Custom inset modal with backdrop and focus restoration",
+      "props": "open: boolean; onOpenChange: (open) => void; title: string; description?: string; children; footer?: ReactNode; size?: sm|md|lg; closeLabel?: string; dismissOnOutside?: boolean",
+      "example": "<Dialog open={open} onOpenChange={setOpen} title=\"Create\">…</Dialog>",
+      "catalogueRoute": "#Dialog",
+      "catalogueGroup": "Окна и меню",
+      "behavior": "Controlled custom portal; Tab trapping, Escape, focus restoration, inert background and scroll locking. Own surface is raised; nearest theme/accent/borders are preserved. Overlay gutter is 12px.",
+      "source": "src/components/overlays.tsx"
+    },
+    "Drawer": {
+      "purpose": "Inset side panel with modal behavior",
+      "props": "DialogProps; side?: left|right|bottom (default right)",
+      "example": "<Drawer open={open} onOpenChange={setOpen} title=\"Properties\" side=\"right\">…</Drawer>",
+      "catalogueRoute": "#Drawer",
+      "catalogueGroup": "Окна и меню",
+      "behavior": "Same modal contract as Dialog, with left/right/bottom placement.",
+      "source": "src/components/overlays.tsx"
+    },
+    "Tooltip": {
+      "purpose": "Portaled hover/focus hint with optional keycaps",
+      "props": "content: ReactNode; shortcut?: string[]; children: one focusable ReactElement forwarding aria-describedby",
+      "example": "<Tooltip content=\"Focus mode\" shortcut={[\"⇧\", \"⌘\", \"M\"]}><IconButton label=\"Focus mode\" icon=\"grid\" /></Tooltip>",
+      "catalogueRoute": "#Tooltip",
+      "catalogueGroup": "Окна и меню",
+      "behavior": "Hover or focus shows the hint; Escape dismisses; keycaps are decorative hints, not registered shortcuts.",
+      "source": "src/components/overlays.tsx"
+    },
+    "Menu": {
+      "purpose": "Custom keyboard-accessible action popup",
+      "props": "label: string; icon?: IconName; disabled?: boolean; size?: Size; variant?: ButtonProps.variant; items: {id,label,icon?,shortcut?,disabled?,danger?,separator?,onSelect?}[]",
+      "example": "<Menu label=\"Actions\" items={items} />",
+      "catalogueRoute": "#Menu",
+      "catalogueGroup": "Окна и меню",
+      "behavior": "Arrows/Home/End/typeahead skip disabled entries; Escape restores trigger focus; outside pointer dismisses.",
+      "source": "src/components/overlays.tsx"
+    },
+    "Popover": {
+      "purpose": "Custom anchored information or form popup",
+      "props": "label: string; children: ReactNode; open?: boolean; onOpenChange?: (open) => void; align?: start|center|end; side?: top|bottom; disabled?: boolean; size?: Size (trigger only)",
+      "example": "<Popover label=\"About\">More information</Popover>",
+      "catalogueRoute": "#Popover",
+      "catalogueGroup": "Окна и меню",
+      "behavior": "Optional controlled state; Escape/outside dismiss; position is clamped to viewport gutters. Own raised surface preserves theme/accent/borders. size affects the trigger; popup content does not inherit toolbar sizing.",
+      "source": "src/components/overlays.tsx"
+    },
+    "CommandPalette": {
+      "purpose": "Local command search in a modal",
+      "props": "open: boolean; onOpenChange: (open) => void; items: {id,label,description?,icon?,shortcut?,onSelect}[]; placeholder?: string",
+      "example": "<CommandPalette open={open} onOpenChange={setOpen} items={commands} />",
+      "catalogueRoute": "#CommandPalette",
+      "catalogueGroup": "Окна и меню",
+      "behavior": "Filters locally; arrows select, Enter activates, Escape dismisses. The consumer registers any global shortcut.",
+      "source": "src/components/overlays.tsx"
+    },
+    "Toast": {
+      "purpose": "Status announcement (lifetime owned by consumer)",
+      "props": "title: string; description?: string; onDismiss?: () => void; div props",
+      "example": "<Toast title=\"Saved\" onDismiss={dismiss} />",
+      "catalogueRoute": "#Toast",
+      "catalogueGroup": "Состояния",
+      "source": "src/components/overlays.tsx"
+    },
+    "ScrollArea": {
+      "purpose": "Native scroll viewport with themed scrollbar and overflow shadows",
+      "props": "label: string; axis?: vertical|horizontal|both; scrollbar?: auto|hidden (default hidden for horizontal, auto otherwise); shadows?: boolean; viewportProps?, viewportClassName?, contentClassName?; onEdgesChange?: ({top,right,bottom,left}) => void; ref: scrolling div; root div props",
+      "example": "<ScrollArea label=\"Notes\" style={{height: 240}}>{notes}</ScrollArea>",
+      "catalogueRoute": "#ScrollArea",
+      "catalogueGroup": "Навигация",
+      "behavior": "Set a height or constrained parent for vertical overflow. Native wheel/touch/keyboard scrolling remains with scrollbar=auto or hidden. Horizontal defaults hidden; vertical/both auto. Edge masks reveal existing background, not a tinted overlay. Ref and viewportProps target the scrolling node.",
+      "source": "src/components/workbench.tsx"
+    },
+    "ButtonGroup": {
+      "purpose": "Composite group of separate actions",
+      "props": "label: string; attached?: boolean; size?: Size; orientation?: horizontal|vertical; prefix?: ReactNode; children; div props",
+      "example": "<ButtonGroup label=\"View\" prefix={count}><IconButton label=\"List\" icon=\"list\" /><IconButton label=\"Grid\" icon=\"grid\" /></ButtonGroup>",
+      "catalogueRoute": "#ButtonGroup",
+      "catalogueGroup": "Кнопки и действия",
+      "behavior": "Groups real buttons without nesting them; each button retains native keyboard behavior. size sets the outer height including attached-group padding; omitted size inherits the enclosing ActionBar or defaults to md.",
+      "source": "src/components/workbench.tsx"
+    },
+    "SplitButton": {
+      "purpose": "Primary action and separate custom action menu",
+      "props": "label: string; menuLabel?: string; items: MenuItem[]; ButtonProps except children/trailing",
+      "example": "<SplitButton label=\"Create\" onClick={create} items={createOptions} />",
+      "catalogueRoute": "#SplitButton",
+      "catalogueGroup": "Кнопки и действия",
+      "behavior": "Main action and menu are separate buttons; disabled/loading disables both.",
+      "source": "src/components/workbench.tsx"
+    },
+    "ActionBar": {
+      "purpose": "Keyboard-navigable toolbar",
+      "props": "label: string; size?: Size; orientation?: horizontal|vertical; rovingFocus?: boolean (default true); children; div props",
+      "example": "<ActionBar label=\"Editor actions\"><Button onClick={save}>Save</Button><Button onClick={copy}>Copy</Button></ActionBar>",
+      "catalogueRoute": "#ActionBar",
+      "catalogueGroup": "Кнопки и действия",
+      "behavior": "One tab stop by default; arrows/Home/End move across enabled actions. size unifies nested button/input heights; nested groups can override it. Set rovingFocus=false for forms and complex controls.",
+      "source": "src/components/workbench.tsx"
+    },
+    "FloatingActionBar": {
+      "purpose": "Inset rounded action toolbar",
+      "props": "ActionBarProps; position?: static|sticky (default sticky)",
+      "example": "<FloatingActionBar label=\"Workspace\"><IconButton label=\"Settings\" icon=\"settings\" onClick={openSettings} /></FloatingActionBar>",
+      "catalogueRoute": "#FloatingActionBar",
+      "catalogueGroup": "Кнопки и действия",
+      "behavior": "Positioning stays inside its container; it does not install a fixed viewport overlay. Uses raised surface context and inherited border mode; accepts ActionBar size.",
+      "source": "src/components/workbench.tsx"
+    },
+    "FloatingField": {
+      "purpose": "Input with persistent inside label and linked validation",
+      "props": "label: string; hint?: ReactNode; error?: string; leading?, trailing?: ReactNode; inputClassName?; native input props except size; ref: input",
+      "example": "<FloatingField label=\"Name\" value={name} onChange={e => setName(e.target.value)} error={error} />",
+      "catalogueRoute": "#FloatingField",
+      "catalogueGroup": "Поля и выбор",
+      "behavior": "Label/id, help/error descriptions and native required/disabled behavior are wired automatically.",
+      "source": "src/components/workbench.tsx"
+    },
+    "StatusBar": {
+      "purpose": "Compact status strip",
+      "props": "tone?: neutral|info|success|warning|danger; variant?: plain|surface (default plain); leading?, trailing?: ReactNode; busy?: boolean; children; div props",
+      "example": "<StatusBar tone=\"success\" trailing={<span>12 items</span>}>Saved locally</StatusBar>",
+      "catalogueRoute": "#StatusBar",
+      "catalogueGroup": "Состояния",
+      "behavior": "role=status with polite announcements; busy marks in-progress work. variant=plain is transparent by default; surface adds a context-aware fill.",
+      "source": "src/components/workbench.tsx"
+    },
+    "Alert": {
+      "purpose": "Status or alert with optional disclosure and dismissal",
+      "props": "title: ReactNode; tone?: FeedbackTone; icon?: ReactNode; expandable?: boolean; expanded?, defaultExpanded?: boolean; onExpandedChange?: (expanded) => void; onDismiss?: () => void; dismissLabel?: string; children; div props",
+      "example": "<Alert tone=\"success\" title=\"Saved\" expandable defaultExpanded>All changes are stored locally.</Alert>",
+      "catalogueRoute": "#Alert",
+      "catalogueGroup": "Состояния",
+      "behavior": "Optional controlled/uncontrolled expansion; collapsed content is inert and hidden from assistive technology. Dismiss button is separate from disclosure.",
+      "source": "src/components/workbench.tsx"
+    },
+    "SidebarPanel": {
+      "purpose": "Sidebar with fixed header/footer and scrollable middle",
+      "props": "label: string; header?, footer?: ReactNode; width?: CSSProperties.width; children; aside props",
+      "example": "<SidebarPanel label=\"Workspace\" style={{height: 480}} footer={<FloatingActionBar label=\"Tools\">…</FloatingActionBar>}><nav>…</nav></SidebarPanel>",
+      "catalogueRoute": "#SidebarPanel",
+      "catalogueGroup": "Навигация",
+      "behavior": "Constrain its height; header/footer stay outside the middle ScrollArea. Own surface is canvas.",
+      "source": "src/components/workbench.tsx"
+    },
+    "Calendar": {
+      "purpose": "Monday-first 6-week calendar with optional daily agenda",
+      "props": "onValueChange: (YYYY-MM-DD) => void; value?, defaultMonth?, today?, min?, max?: string; isDateUnavailable?: (date) => boolean; locale?: string; events?: {id,date,title,time?,color?}[]; showAgenda?: boolean; yearRange?: [number,number]; label?",
+      "example": "<Calendar value={date} onValueChange={setDate} events={events} showAgenda />",
+      "catalogueRoute": "#Calendar",
+      "catalogueGroup": "Поля и выбор",
+      "behavior": "Local date strings, Monday-first grid. Arrows move by day/week; Home/End by week; PageUp/PageDown by month (Shift: year); Enter/Space selects enabled dates.",
+      "source": "src/components/content.tsx"
+    },
+    "DatePicker": {
+      "purpose": "Calendar inside a custom dismissible popover",
+      "props": "CalendarProps; label defaults to date-picker label",
+      "example": "<DatePicker label=\"Deadline\" value={deadline} onValueChange={setDeadline} />",
+      "catalogueRoute": "#DatePicker",
+      "catalogueGroup": "Поля и выбор",
+      "behavior": "Uses Calendar in a custom Popover and closes after selection; no system date picker.",
+      "source": "src/components/content.tsx"
+    },
+    "MarkdownPreview": {
+      "purpose": "Safe lightweight Markdown subset renderer",
+      "props": "value: string; headingOffset?: 0|1|2|3 (default 1); div props",
+      "example": "<MarkdownPreview value={note} />",
+      "catalogueRoute": "#MarkdownPreview",
+      "catalogueGroup": "Объекты и контент",
+      "behavior": "Supports headings, paragraphs, emphasis, links, lists/tasks, quotes, code and dividers. Escapes HTML and filters link protocols; not a full CommonMark parser.",
+      "source": "src/components/content.tsx"
+    },
+    "MarkdownEditor": {
+      "purpose": "Controlled Markdown textarea with formatting and preview",
+      "props": "value: string; onValueChange: (value) => void; label: string; placeholder?: string; disabled?, readOnly?: boolean; defaultMode?: edit|preview|split; onSave?: () => void",
+      "example": "<MarkdownEditor label=\"Daily note\" value={note} onValueChange={setNote} defaultMode=\"split\" onSave={save} />",
+      "catalogueRoute": "#MarkdownEditor",
+      "catalogueGroup": "Объекты и контент",
+      "behavior": "Cmd/Ctrl+B and I format selection; Cmd/Ctrl+Enter calls onSave. State/persistence belongs to the consumer; edit/preview/split modes are local.",
+      "source": "src/components/content.tsx"
+    },
+    "ContentCard": {
+      "purpose": "Configurable article card with independent controls",
+      "props": "title: ReactNode; description?, header?, metadata?, footer?, cover?, actions?: ReactNode; onOpen?: () => void; selected?: boolean; onSelectedChange?: (selected) => void; selectionLabel?; density?: compact|comfortable; orientation?: vertical|horizontal; headingLevel?: 2|3|4; article props",
+      "example": "<ContentCard title=\"Project\" description=\"Next steps\" onOpen={open} selected={selected} onSelectedChange={setSelected} actions={<Menu label=\"Project actions\" items={actions} />} />",
+      "catalogueRoute": "#ContentCard",
+      "catalogueGroup": "Объекты и контент",
+      "behavior": "Article composition permits independent checkboxes/buttons/links. Own surface is raised. onOpen makes the title an action; the whole card is not a button.",
+      "source": "src/components/content.tsx"
+    },
+    "TaskCard": {
+      "purpose": "Task article with completion and action menu",
+      "props": "title: string; typeLabel?: string; color?: Color (default rose); completed?: boolean; onCompletedChange?: (completed) => void; menuItems?: MenuItem[]; other ContentCardProps except title/header/actions",
+      "example": "<TaskCard title=\"Plan the week\" completed={done} onCompletedChange={setDone} metadata={<Tag>Personal</Tag>} />",
+      "catalogueRoute": "#TaskCard",
+      "catalogueGroup": "Объекты и контент",
+      "behavior": "Completion, title action and menu are independent controls. Consumer owns completed state.",
+      "source": "src/components/content.tsx"
+    },
+    "KanbanColumn": {
+      "purpose": "Named column with count, action and empty state",
+      "props": "title: string; count?: number; action?, emptyState?: ReactNode; children; section props",
+      "example": "<KanbanColumn title=\"Next\" count={tasks.length}>{cards}</KanbanColumn>",
+      "catalogueRoute": "#KanbanColumn",
+      "catalogueGroup": "Объекты и контент",
+      "source": "src/components/content.tsx"
+    },
+    "KanbanBoard": {
+      "purpose": "Controlled task lanes with menu-based movement",
+      "props": "label: string; columns: {id,title,emptyMessage?}[]; items: {id,columnId,title,description?,completed?,color?,metadata?,footer?}[]; onMove?: (id,columnId) => void; onCompletedChange?: (id,completed) => void; onOpen?: (id) => void; onAdd?: (columnId) => void; renderCard?: (item) => ReactNode",
+      "example": "<KanbanBoard label=\"Tasks\" columns={columns} items={tasks} onMove={moveTask} onCompletedChange={completeTask} />",
+      "catalogueRoute": "#KanbanBoard",
+      "catalogueGroup": "Объекты и контент",
+      "behavior": "Consumer owns columns/items/moves. Default cards expose target-column actions in a keyboard-accessible menu; no drag-and-drop runtime.",
+      "source": "src/components/content.tsx"
+    },
+    "DailyHeader": {
+      "purpose": "Localized date, weekday and ISO week header",
+      "props": "date: YYYY-MM-DD; locale?: string; showWeek?: boolean; tags?, actions?: ReactNode; headingLevel?: 1|2|3; children; header props",
+      "example": "<DailyHeader date=\"2026-09-25\" tags={<TypeLabel color=\"rose\">Tasks</TypeLabel>} actions={<Button onClick={create}>New note</Button>} />",
+      "catalogueRoute": "#DailyHeader",
+      "catalogueGroup": "Объекты и контент",
+      "behavior": "Uses local YYYY-MM-DD dates and ISO week numbering; locale defaults to ru-RU.",
+      "source": "src/components/content.tsx"
+    }
+  },
+  "recipes": [
+    "docs/recipes.md",
+    "docs/surface-context.md",
+    "docs/behavior.md",
+    "docs/content-guide.md",
+    "examples/ProjectBoard.tsx",
+    "examples/WorkspaceV2.tsx"
+  ],
+  "constraints": [
+    "Use styles.css once; fonts are opt-in; no runtime dependencies beyond React peers",
+    "Prefer shared semantic roles and data-accent to per-hue tokens",
+    "Set global theme/borders on html; use explicit matching data-surface on custom containers; portals preserve local theme/accent/borders and use raised surface",
+    "Do not nest interactive elements inside ObjectCard or CollectionRow; use ContentCard for independent actions",
+    "Table does not sort or paginate by itself",
+    "Toast placement/lifetime, persistence, and global shortcuts belong to the consumer",
+    "Calendar/DatePicker replace system date UI; plain Input retains native input-type behavior",
+    "Source CSS and full original palettes are legacy audit data; read only when needed",
+    "Install a built .tgz from local pack or a release asset when available; git install is not supported because dist is ignored and prepare is absent"
+  ]
+}

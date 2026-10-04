@@ -1,0 +1,210 @@
+{
+  "capturedAt": "2026-10-03T21:28:22.817Z",
+  "engine": "axe-core",
+  "results": [
+    {
+      "url": "#overview",
+      "theme": "dark",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#colors",
+      "theme": "dark",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#typography",
+      "theme": "dark",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#geometry",
+      "theme": "dark",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#buttons",
+      "theme": "dark",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#forms",
+      "theme": "dark",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#content",
+      "theme": "dark",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#feedback",
+      "theme": "dark",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#overlays",
+      "theme": "dark",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#patterns",
+      "theme": "dark",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#agents",
+      "theme": "dark",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#overview",
+      "theme": "light",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#colors",
+      "theme": "light",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#typography",
+      "theme": "light",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#geometry",
+      "theme": "light",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#buttons",
+      "theme": "light",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#forms",
+      "theme": "light",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#content",
+      "theme": "light",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#feedback",
+      "theme": "light",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#overlays",
+      "theme": "light",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#patterns",
+      "theme": "light",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#agents",
+      "theme": "light",
+      "violations": [],
+      "viewport": "desktop"
+    },
+    {
+      "url": "#overview",
+      "theme": "light",
+      "violations": [],
+      "viewport": "390x844"
+    },
+    {
+      "url": "#colors",
+      "theme": "light",
+      "violations": [],
+      "viewport": "390x844"
+    },
+    {
+      "url": "#typography",
+      "theme": "light",
+      "violations": [],
+      "viewport": "390x844"
+    },
+    {
+      "url": "#geometry",
+      "theme": "light",
+      "violations": [],
+      "viewport": "390x844"
+    },
+    {
+      "url": "#buttons",
+      "theme": "light",
+      "violations": [],
+      "viewport": "390x844"
+    },
+    {
+      "url": "#forms",
+      "theme": "light",
+      "violations": [],
+      "viewport": "390x844"
+    },
+    {
+      "url": "#content",
+      "theme": "light",
+      "violations": [],
+      "viewport": "390x844"
+    },
+    {
+      "url": "#feedback",
+      "theme": "light",
+      "violations": [],
+      "viewport": "390x844"
+    },
+    {
+      "url": "#overlays",
+      "theme": "light",
+      "violations": [],
+      "viewport": "390x844"
+    },
+    {
+      "url": "#patterns",
+      "theme": "light",
+      "violations": [],
+      "viewport": "390x844"
+    },
+    {
+      "url": "#agents",
+      "theme": "light",
+      "violations": [],
+      "viewport": "390x844"
+    },
+    {
+      "url": "#colors",
+      "theme": "dark",
+      "violations": [],
+      "viewport": "390x844"
+    }
+  ]
+}
