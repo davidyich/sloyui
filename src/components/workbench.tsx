@@ -1,8 +1,11 @@
+import { FeedbackIcon, feedbackColor, type FeedbackStyleProps } from './feedback.js';
+import { MovingHighlight } from './moving-highlight.js';
 import {
-  forwardRef, useCallback, useEffect, useId, useLayoutEffect, useRef, useState,
-  type CSSProperties, type HTMLAttributes, type InputHTMLAttributes, type ReactNode,
+  Children, Fragment, isValidElement, forwardRef, useCallback, useEffect, useId, useLayoutEffect, useRef, useState,
+  type CSSProperties, type HTMLAttributes, type ReactNode,
 } from 'react';
-import { Button, Icon, IconButton, cx, type ButtonProps, type Color, type IconName, type Size } from './primitives.js';
+import { Counter, Button, Icon, IconButton, cx, type ButtonProps, type Color, type IconName, type Size } from './primitives.js';
+import { Input, type InputProps } from './forms.js';
 import { Menu, type MenuItem } from './overlays.js';
 
 export interface ScrollEdges { top: boolean; right: boolean; bottom: boolean; left: boolean }
@@ -15,13 +18,25 @@ export interface ScrollAreaProps extends HTMLAttributes<HTMLDivElement> {
   contentClassName?: string;
   viewportProps?: HTMLAttributes<HTMLDivElement>;
   onEdgesChange?: (edges: ScrollEdges) => void;
+  /** An overlay outside the clipped viewport. Its measured height reserves scroll clearance. */
+  floating?: ReactNode;
 }
 /** The ref points to the native scrolling viewport, not its decorative wrapper. */
 export const ScrollArea = /* @__PURE__ */ forwardRef<HTMLDivElement, ScrollAreaProps>(function ScrollArea({
   label, axis = 'vertical', scrollbar = axis === 'horizontal' ? 'hidden' : 'auto', shadows = true, viewportClassName, contentClassName, viewportProps,
-  onEdgesChange, children, className, ...props
+  onEdgesChange, floating, children, className, style, ...props
 }, ref) {
-  const viewport = useRef<HTMLDivElement>(null), content = useRef<HTMLDivElement>(null);
+  const viewport = useRef<HTMLDivElement>(null), content = useRef<HTMLDivElement>(null), floatingLayer = useRef<HTMLDivElement>(null);
+  const [floatingHeight, setFloatingHeight] = useState(0);
+  useLayoutEffect(() => {
+    const node = floatingLayer.current;
+    if (!node) { setFloatingHeight(0); return; }
+    const measureFloating = () => setFloatingHeight(node.getBoundingClientRect().height);
+    measureFloating();
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(measureFloating);
+    observer?.observe(node);
+    return () => observer?.disconnect();
+  }, [floating]);
   const notify = useRef(onEdgesChange); notify.current = onEdgesChange;
   const [edges, setEdges] = useState<ScrollEdges>({ top: false, right: false, bottom: false, left: false });
   const previous = useRef<ScrollEdges | null>(null);
@@ -53,13 +68,14 @@ export const ScrollArea = /* @__PURE__ */ forwardRef<HTMLDivElement, ScrollAreaP
   const { onScroll, className: viewportExtraClass, ...restViewport } = viewportProps ?? {};
   return <div className={cx('cap-scroll-area', className)} data-axis={axis} data-scrollbar={scrollbar} data-shadows={shadows || undefined}
     data-scroll-top={edges.top || undefined} data-scroll-right={edges.right || undefined}
-    data-scroll-bottom={edges.bottom || undefined} data-scroll-left={edges.left || undefined} {...props}>
+    data-scroll-bottom={edges.bottom || undefined} data-scroll-left={edges.left || undefined} data-floating={!!floating || undefined} style={{...style, '--cap-floating-height': `${floatingHeight}px`} as CSSProperties} {...props}>
     <div {...restViewport} ref={node => { viewport.current = node; if (typeof ref === 'function') ref(node); else if (ref) ref.current = node; }}
       className={cx('cap-scroll-viewport', viewportClassName, viewportExtraClass)} role={restViewport.role ?? 'region'}
       aria-label={restViewport['aria-label'] ?? label} tabIndex={restViewport.tabIndex ?? 0}
       onScroll={event => { measure(); onScroll?.(event); }}>
       <div ref={content} className={cx('cap-scroll-content', contentClassName)}>{children}</div>
     </div>
+    {floating && <div ref={floatingLayer} className="cap-scroll-floating">{floating}</div>}
   </div>;
 });
 
@@ -69,20 +85,23 @@ export interface ButtonGroupProps extends Omit<HTMLAttributes<HTMLDivElement>, '
   size?: Size;
   orientation?: 'horizontal' | 'vertical';
   prefix?: ReactNode;
+  color?: Color | 'inherit';
 }
-export function ButtonGroup({ label, attached = true, size, orientation = 'horizontal', prefix, className, children, ...props }: ButtonGroupProps) {
-  return <div role="group" aria-label={label} className={cx('cap-button-group', className)} data-attached={attached || undefined} data-size={size} data-orientation={orientation} {...props}>
-    {prefix !== undefined && <span className="cap-button-group-prefix">{prefix}</span>}{children}
+export function ButtonGroup({ label, attached = true, size, orientation = 'horizontal', prefix, color = 'neutral', className, children, ...props }: ButtonGroupProps) {
+  const track = useRef<HTMLDivElement>(null);
+  return <div role="group" aria-label={label} className={cx('cap-button-group', className)} data-attached={attached || undefined} data-size={size} data-orientation={orientation} data-color={color} data-accent={color === 'inherit' ? undefined : color} {...props}>
+    {prefix !== undefined && <span className="cap-button-group-prefix">{(typeof prefix === 'number' || typeof prefix === 'string') ? <Counter value={prefix} size={size ?? 'md'} variant="plain"/> : prefix}</span>}<div ref={track} className="cap-button-group-items" data-moving={attached||undefined}>{attached&&<MovingHighlight root={track} hover/>}{children}</div>
   </div>;
 }
 
 export interface SplitButtonProps extends Omit<ButtonProps, 'children' | 'trailing'> {
   label: string;
   menuLabel?: string;
+  layout?: 'joined' | 'separated';
   items: MenuItem[];
 }
-export function SplitButton({ label, menuLabel = `${label}: дополнительные действия`, items, className, size, variant = 'primary', disabled, loading, ...props }: SplitButtonProps) {
-  return <div className={cx('cap-split-button', className)} data-variant={variant} data-size={size} role="group" aria-label={label}>
+export function SplitButton({ label, menuLabel = `${label}: дополнительные действия`, items, className, size, layout = 'joined', variant = 'primary', disabled, loading, ...props }: SplitButtonProps) {
+  return <div className={cx('cap-split-button', className)} data-layout={layout} data-variant={variant} data-size={size} role="group" aria-label={label}>
     <Button {...props} size={size} variant={variant} disabled={disabled} loading={loading}>{label}</Button>
     <Menu label={menuLabel} icon="down" items={items} variant={variant} size={size} disabled={disabled || loading} />
   </div>;
@@ -122,58 +141,48 @@ export function ActionBar({ label, size, orientation = 'horizontal', rovingFocus
       activate(controls[next]); controls[next].focus();
     }}>{children}</div>;
 }
-export interface FloatingActionBarProps extends ActionBarProps { position?: 'static' | 'sticky' }
-export function FloatingActionBar({ position = 'sticky', className, ...props }: FloatingActionBarProps) {
-  return <ActionBar className={cx('cap-floating-action-bar', className)} data-position={position} data-surface="raised" {...props} />;
-}
-
-export interface FloatingFieldProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
-  label: string;
-  hint?: ReactNode;
-  error?: string;
+export interface FloatingActionBarProps extends ActionBarProps {
+  position?: 'static' | 'sticky';
   leading?: ReactNode;
   trailing?: ReactNode;
-  inputClassName?: string;
+  variant?: 'surface' | 'divided';
+  action?: {label:string; icon:import('./primitives.js').IconSource; onClick:()=>void; variant?: 'primary' | 'accent'; disabled?:boolean};
 }
-export const FloatingField = /* @__PURE__ */ forwardRef<HTMLInputElement, FloatingFieldProps>(function FloatingField({
-  label, hint, error, leading, trailing, id: suppliedId, className, inputClassName, placeholder, required, disabled,
-  'aria-describedby': describedBy, 'aria-invalid': invalid, type = 'text', ...props
-}, ref) {
-  const generatedId = useId(), id = suppliedId ?? generatedId, description = error || hint;
-  const persistent = !['text', 'email', 'password', 'search', 'tel', 'url', 'number'].includes(type);
-  return <div className={cx('cap-floating-field', className)} data-disabled={disabled || undefined} data-invalid={!!error || (invalid !== undefined && invalid !== false && invalid !== 'false') || undefined}>
-    <div className="cap-floating-control" data-leading={!!leading || undefined} data-trailing={!!trailing || undefined} data-persistent={persistent || undefined}>
-      {leading && <span className="cap-floating-leading" aria-hidden="true">{leading}</span>}
-      <input {...props} ref={ref} id={id} type={type} disabled={disabled} required={required} placeholder={placeholder ?? ' '}
-        aria-describedby={[describedBy, description && `${id}-description`].filter(Boolean).join(' ') || undefined}
-        aria-invalid={error ? true : invalid} className={cx('cap-floating-input', inputClassName)} />
-      <label htmlFor={id}>{label}{required && <span aria-hidden="true"> *</span>}</label>
-      {trailing && <span className="cap-floating-trailing">{trailing}</span>}
-    </div>
-    {description && <span id={`${id}-description`} className={cx('cap-field-hint', !!error && 'cap-error')} role={error ? 'alert' : undefined}>{description}</span>}
-  </div>;
+function floatingSegments(children: ReactNode): ReactNode[] {
+  return Children.toArray(children).flatMap(child => isValidElement<{children?: ReactNode}>(child) && child.type === Fragment
+    ? floatingSegments(child.props.children) : [child]);
+}
+export function FloatingActionBar({ position = 'sticky', size = 'md', leading, trailing, children, className, variant = 'surface', action, orientation = 'horizontal', ...props }: FloatingActionBarProps) {
+  const hoverRoot = useRef<HTMLDivElement>(null);
+  return <ActionBar className={cx('cap-floating-action-bar', className)} data-position={position} data-variant={variant} data-surface="floating" size={size} orientation={orientation} {...props}>
+    {leading && <div className="cap-floating-leading-slot">{leading}</div>}
+    <div ref={hoverRoot} className="cap-floating-items cap-shared-hover"><MovingHighlight root={hoverRoot} hover target=".cap-button:not(:disabled):not([data-variant=primary]):not([data-variant=accent])"/>{variant==='divided'?floatingSegments(children).map((child,index)=><div className="cap-floating-segment" key={isValidElement(child) ? child.key ?? index : index}>{child}</div>):children}</div>
+    {(action || (trailing && orientation==='horizontal')) && <div className="cap-floating-trailing-slot">{action ? orientation==='vertical' ? <IconButton label={action.label} icon={action.icon} variant={action.variant??'accent'} onClick={action.onClick} disabled={action.disabled}/> : <Button variant={action.variant??'accent'} onClick={action.onClick} disabled={action.disabled} leading={<Icon name={action.icon}/>}>{action.label}</Button> : trailing}</div>}
+  </ActionBar>;
+}
+
+/** Compatibility wrapper; all fields share labelPlacement="inside". */
+export interface FloatingFieldProps extends Omit<InputProps, 'labelPlacement'> { label: string; inputClassName?: string }
+export const FloatingField = /* @__PURE__ */ forwardRef<HTMLInputElement, FloatingFieldProps>(function FloatingField({ className, inputClassName, ...props }, ref) {
+  return <div className={cx('cap-floating-field',className)}><Input {...props} ref={ref} labelPlacement="inside" className={inputClassName}/></div>;
 });
 
-export type FeedbackTone = 'neutral' | 'info' | 'success' | 'warning' | 'danger';
-const toneColors: Record<FeedbackTone, Color> = { neutral: 'gray', info: 'blue', success: 'green', warning: 'amber', danger: 'red' };
-const toneIcons: Record<FeedbackTone, IconName> = { neutral: 'info', info: 'info', success: 'check', warning: 'warning', danger: 'warning' };
-export interface StatusBarProps extends HTMLAttributes<HTMLDivElement> {
-  tone?: FeedbackTone;
+export type { FeedbackTone } from './feedback.js';
+export interface StatusBarProps extends Omit<HTMLAttributes<HTMLDivElement>, 'color'>, FeedbackStyleProps {
   variant?: 'plain' | 'surface';
   leading?: ReactNode;
   trailing?: ReactNode;
   busy?: boolean;
 }
-export function StatusBar({ tone = 'neutral', variant = 'plain', leading, trailing, busy, children, className, ...props }: StatusBarProps) {
-  return <div className={cx('cap-status-bar', className)} role="status" aria-live="polite" aria-busy={busy || undefined} data-variant={variant} data-tone={tone} data-color={toneColors[tone]} {...props}>
-    <div className="cap-status-main">{leading ?? <span className="cap-status-dot" aria-hidden="true" />}<span>{children}</span></div>
+export function StatusBar({ tone = 'neutral', color, appearance = 'neutral', contrast = false, surface = 'inherit', variant = 'plain', leading, trailing, busy, children, className, ...props }: StatusBarProps) {
+  return <div className={cx('cap-status-bar', 'cap-feedback', variant === 'surface' && 'cap-surface-boundary', className)} role="status" aria-live="polite" aria-busy={busy || undefined} data-variant={variant} data-tone={tone} data-feedback-appearance={appearance} data-contrast={contrast || undefined} data-surface={surface === 'inherit' ? undefined : surface} data-accent={appearance === 'neutral' ? undefined : feedbackColor(tone,color)} {...props}>
+    <div className="cap-status-main">{leading ?? <FeedbackIcon className="cap-status-indicator" tone={tone} color={color} contrast={contrast}/>}<span>{children}</span></div>
     {trailing && <div className="cap-status-trailing">{trailing}</div>}
   </div>;
 }
 
-export interface AlertProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
+export interface AlertProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title' | 'color'>, FeedbackStyleProps {
   title: ReactNode;
-  tone?: FeedbackTone;
   icon?: ReactNode;
   expandable?: boolean;
   expanded?: boolean;
@@ -182,20 +191,24 @@ export interface AlertProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'
   onDismiss?: () => void;
   dismissLabel?: string;
 }
-export function Alert({ title, tone = 'info', icon, expandable = false, expanded, defaultExpanded = false, onExpandedChange,
+export function Alert({ title, tone = 'info', color, appearance = 'neutral', contrast = false, surface = 'inherit', icon, expandable = false, expanded, defaultExpanded = false, onExpandedChange,
   onDismiss, dismissLabel = 'Закрыть уведомление', children, className, ...props }: AlertProps) {
   const id = useId(), [internalExpanded, setInternalExpanded] = useState(defaultExpanded);
   const isExpanded = !expandable || (expanded ?? internalExpanded), hasBody = children !== undefined && children !== null;
-  const titleContent = <><span className="cap-alert-icon" aria-hidden="true">{icon ?? <Icon name={toneIcons[tone]} size={18} />}</span>
+  const toggleRef = useRef<HTMLButtonElement>(null), bodyRef = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    if (!isExpanded && bodyRef.current?.contains(document.activeElement)) toggleRef.current?.focus();
+  }, [isExpanded]);
+  const titleContent = <><FeedbackIcon className="cap-alert-icon" tone={tone} color={color} contrast={contrast}>{icon}</FeedbackIcon>
     <span className="cap-alert-title">{title}</span>{expandable && hasBody && <span className="cap-alert-action" aria-hidden="true"><Icon name="down" size={15} className="cap-alert-chevron" /></span>}</>;
-  return <div className={cx('cap-alert', className)} role={tone === 'danger' ? 'alert' : 'status'} data-tone={tone} data-color={toneColors[tone]} data-expanded={isExpanded || undefined} {...props}>
+  return <div className={cx('cap-alert', 'cap-feedback', 'cap-surface-boundary', className)} role={tone === 'danger' ? 'alert' : 'status'} data-tone={tone} data-feedback-appearance={appearance} data-contrast={contrast || undefined} data-surface={surface === 'inherit' ? undefined : surface} data-accent={appearance === 'neutral' ? undefined : feedbackColor(tone,color)} data-expanded={isExpanded || undefined} {...props}>
     <div className="cap-alert-header" data-dismissible={!!onDismiss || undefined}>
-      {expandable && hasBody ? <button type="button" className="cap-alert-toggle" aria-expanded={isExpanded} aria-controls={`${id}-body`} onClick={() => {
+      {expandable && hasBody ? <button ref={toggleRef} type="button" className="cap-alert-toggle" aria-expanded={isExpanded} aria-controls={`${id}-body`} onClick={() => {
         if (expanded === undefined) setInternalExpanded(!isExpanded); onExpandedChange?.(!isExpanded);
       }}>{titleContent}</button> : <div className="cap-alert-heading">{titleContent}</div>}
       {onDismiss && <IconButton className="cap-alert-dismiss" label={dismissLabel} icon="close" variant="ghost" size="sm" onClick={onDismiss} />}
     </div>
-    {hasBody && <div id={`${id}-body`} className="cap-alert-body" data-open={isExpanded || undefined} aria-hidden={!isExpanded} inert={!isExpanded}>
+    {hasBody && <div ref={bodyRef} id={`${id}-body`} className="cap-alert-body" data-open={isExpanded || undefined} aria-hidden={!isExpanded} inert={!isExpanded}>
       <div><div className="cap-alert-body-content">{children}</div></div>
     </div>}
   </div>;
@@ -205,12 +218,15 @@ export interface SidebarPanelProps extends HTMLAttributes<HTMLElement> {
   label: string;
   header?: ReactNode;
   footer?: ReactNode;
+  footerAlign?: 'start' | 'center' | 'end' | 'stretch';
   width?: CSSProperties['width'];
+  surface?: 'base' | 'canvas' | 'raised' | 'floating';
 }
-export function SidebarPanel({ label, header, footer, width, className, children, style, ...props }: SidebarPanelProps) {
-  return <aside aria-label={label} className={cx('cap-sidebar-panel', className)} data-surface="canvas" style={{ ...style, ...(width !== undefined ? { width } : {}) }} {...props}>
+export function SidebarPanel({ label, header, footer, footerAlign = 'start', width, surface = 'canvas', className, children, style, ...props }: SidebarPanelProps) {
+  const hoverRoot = useRef<HTMLDivElement>(null);
+  return <aside aria-label={label} className={cx('cap-sidebar-panel', className)} data-surface={surface} style={{ ...style, ...(width !== undefined ? { width } : {}) }} {...props}>
     {header && <div className="cap-sidebar-panel-header">{header}</div>}
-    <ScrollArea label={`${label}: содержимое`} className="cap-sidebar-panel-scroll" contentClassName="cap-sidebar-panel-content">{children}</ScrollArea>
-    {footer && <div className="cap-sidebar-panel-footer">{footer}</div>}
+    <ScrollArea label={`${label}: содержимое`} className="cap-sidebar-panel-scroll" contentClassName="cap-sidebar-panel-content"><div ref={hoverRoot} className="cap-sidebar-panel-items cap-shared-hover"><MovingHighlight root={hoverRoot} hover target=".cap-sidebar-item:not(:disabled),.cap-accordion[data-variant=navigation] > summary"/>{children}</div></ScrollArea>
+    {footer && <div className="cap-sidebar-panel-footer" data-align={footerAlign}>{footer}</div>}
   </aside>;
 }

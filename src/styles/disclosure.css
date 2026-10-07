@@ -1,0 +1,85 @@
+/* Native details keep their summary, keyboard behavior and hidden focus semantics. */
+@supports selector(::details-content) and (interpolate-size: allow-keywords) {
+  .cap-accordion { interpolate-size: allow-keywords; }
+  .cap-accordion::details-content {
+    block-size: 0;
+    overflow: clip;
+    opacity: 0;
+    transition: block-size var(--cap-duration-normal, 180ms) var(--cap-ease-out, ease-out),
+      opacity var(--cap-duration-normal, 180ms) ease,
+      content-visibility var(--cap-duration-normal, 180ms) allow-discrete;
+  }
+  .cap-accordion[open]::details-content { block-size: auto; opacity: 1; }
+}
+.cap-accordion[data-fallback] .cap-accordion-body {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: height var(--cap-duration-normal, 180ms) var(--cap-ease-out, ease-out),
+    opacity var(--cap-duration-normal, 180ms) ease;
+}
+.cap-accordion[data-fallback][data-expanded='true'] summary > svg { transform: rotate(90deg); }
+.cap-accordion[data-fallback][data-expanded='false'] summary > svg { transform: none; }
+.cap-chart-data { border-bottom: 0; }
+.cap-chart-data summary { padding: 4px 0; }
+.cap-chart-data .cap-accordion-content { padding: 0; overflow-x: auto; }
+
+/* Animate the complete row footprint, including spacing, so removal never jumps. */
+.cap-tree, .cap-tree[data-guides=true] { gap: 0; }
+.cap-tree-item[data-presence] { animation: none; }
+.cap-tree > .cap-tree-item, .cap-tree-entry { margin-block-end: 2px; }
+.cap-tree-entry { min-block-size: 0; transition: margin-block-end var(--cap-duration-normal, 180ms) ease; }
+.cap-tree-entry[data-presence='enter'], .cap-tree-entry[data-presence='exit'] { margin-block-end: 0; }
+:is(.cap-tree-item, .cap-json-row)[data-presence] {
+  box-sizing: border-box;
+  block-size: var(--cap-disclosure-row-height, 34px);
+  overflow: hidden;
+  transition: block-size var(--cap-duration-normal, 180ms) var(--cap-ease-out, ease-out),
+    min-block-size var(--cap-duration-normal, 180ms) var(--cap-ease-out, ease-out),
+    padding-block var(--cap-duration-normal, 180ms) var(--cap-ease-out, ease-out),
+    margin-block-end var(--cap-duration-normal, 180ms) ease,
+    opacity var(--cap-duration-normal, 180ms) ease;
+}
+.cap-tree[data-size='xs'] .cap-tree-item { --cap-disclosure-row-height: 24px; }
+.cap-tree[data-size='sm'] .cap-tree-item { --cap-disclosure-row-height: 28px; }
+.cap-tree[data-size='lg'] .cap-tree-item { --cap-disclosure-row-height: 40px; }
+.cap-tree[data-size='xl'] .cap-tree-item { --cap-disclosure-row-height: 48px; }
+.cap-json-row { --cap-disclosure-row-height: 29px; }
+/* Beat size and guide padding rules, which otherwise leave a 12px closing stub. */
+.cap-tree[data-size] .cap-tree-item:is([data-presence='enter'],[data-presence='exit']),
+.cap-json-row:is([data-presence='enter'],[data-presence='exit']) {
+  block-size: 0;
+  min-block-size: 0;
+  padding-block: 0;
+  margin-block-end: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cap-accordion::details-content,
+  .cap-accordion[data-fallback] .cap-accordion-body,
+  .cap-accordion summary > svg,
+  :is(.cap-tree-item, .cap-json-row, .cap-tree-entry)[data-presence] { transition: none; }
+}
+
+/* Hover covers the disclosure as one surface, including its expanded content. */
+.cap-accordion { border-radius:var(--cap-radius-base); transition:background-color var(--cap-motion-snap) ease-out; }
+.cap-accordion:is(:hover,:focus-within) { background:var(--cap-control-hover); }
+.cap-accordion > summary { align-items:center; }
+.cap-accordion > summary:hover { background:transparent; }
+.cap-accordion-title { flex:1; min-width:0; }
+.cap-accordion > summary > .cap-accordion-icon { flex:none; color:var(--cap-content-muted); transform:none; }
+.cap-accordion > summary > .cap-accordion-chevron { flex:none; transition:transform 300ms cubic-bezier(.2,1.5,.45,1); }
+.cap-accordion[data-variant='bouncy'] { margin-block:4px; border:1px solid var(--cap-panel-border); background:var(--cap-control-bg); border-radius:calc(var(--cap-radius-base) + 6px); }
+.cap-accordion[data-variant='bouncy']:is(:hover,:focus-within) { background:var(--cap-control-hover); }
+.cap-accordion[data-variant='bouncy'] > summary { padding:12px 14px; }
+.cap-accordion[data-variant='bouncy'] .cap-accordion-content { padding:0 14px 14px 38px; }
+.cap-accordion[data-variant='bouncy'][data-fallback] .cap-accordion-body { transition:height 360ms cubic-bezier(.18,1,.3,1),opacity 180ms ease-out; }
+.cap-accordion[data-variant='bouncy'][data-expanded='true'] .cap-accordion-content { animation:cap-accordion-settle 380ms both; }
+@keyframes cap-accordion-settle { 0% { opacity:0; transform:translateY(-5px); } 65% { opacity:1; transform:translateY(1px); } 100% { opacity:1; transform:translateY(0); } }
+@media (prefers-reduced-motion:reduce) {
+  .cap-accordion,.cap-accordion > summary > .cap-accordion-chevron,.cap-accordion[data-variant='bouncy'][data-fallback] .cap-accordion-body { transition:none; }
+  .cap-accordion[data-variant='bouncy'] .cap-accordion-content { animation:none; }
+}
+.cap-accordion[data-variant='bouncy'] > summary > .cap-accordion-chevron { order:3; }
+.cap-accordion[data-variant='bouncy']:not(:has(.cap-accordion-icon)) .cap-accordion-content { padding-inline-start:14px; }

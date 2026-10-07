@@ -1,7 +1,7 @@
 import { useId, useState } from 'react';
 import {
   ActionBar, Button, Calendar, DailyHeader, Dialog, FloatingField, Icon,
-  KanbanBoard, MarkdownEditor, ScrollArea, SplitButton, StatusBar, Tag,
+  KanbanBoard, RichTextEditor, markdownToRichText, richTextToMarkdown, ScrollArea, SplitButton, StatusBar, Tag,
   type KanbanTask,
 } from '@personal/capacities-ui';
 import '@personal/capacities-ui/styles.css';
@@ -17,6 +17,7 @@ export function WorkspaceV2() {
   const instanceId = useId();
   const [date, setDate] = useState('2026-09-25');
   const [note, setNote] = useState('## Планы на день\n\n- [ ] Сделать небольшой шаг к своему проекту');
+  const [noteDocument,setNoteDocument]=useState(()=>markdownToRichText(note));
   const [savedNote, setSavedNote] = useState(note);
   const [tasks, setTasks] = useState<KanbanTask[]>([
     { id: `${instanceId}-first`, title: 'Собрать референсы', columnId: 'inbox', color: 'rose' },
@@ -57,9 +58,8 @@ export function WorkspaceV2() {
       <Calendar label="Выбрать день" value={date} onValueChange={setDate} locale="ru-RU" showAgenda
         events={[{ id: `${instanceId}-event`, date: '2026-09-25', title: 'Время для проекта', time: '18:00–19:00', color: 'teal' }]} />
       <ScrollArea label="Заметка проекта" style={{ height: 360 }}>
-        <MarkdownEditor label="Заметка проекта" value={note} onValueChange={setNote} defaultMode="split" onSave={() => {
-          setSavedNote(note); setMessage('Заметка сохранена в памяти страницы');
-        }} />
+        <RichTextEditor label="Заметка проекта" value={noteDocument} onValueChange={value=>{setNoteDocument(value);setNote(richTextToMarkdown(value));}} />
+        <Button size="sm" onClick={()=>{setSavedNote(note);setMessage('Заметка сохранена в памяти страницы');}}>Сохранить заметку</Button>
       </ScrollArea>
     </div>
     <StatusBar tone={note === savedNote ? 'neutral' : 'info'} trailing={<span>{tasks.length} задач</span>}>

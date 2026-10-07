@@ -1,0 +1,20 @@
+.cap-reorderable { position:relative; min-width:0; width:100%; }
+.cap-reorderable-list { display:flex; flex-direction:column; gap:var(--cap-space-2); padding:0; margin:0; list-style:none; }
+.cap-reorderable-item { position:relative; display:flex; align-items:flex-start; gap:var(--cap-space-2); min-width:0; border-radius:var(--cap-radius-base); }
+.cap-reorderable-content { flex:1; min-width:0; }
+.cap-reorder-handle-wrap { display:inline-flex; flex:none; align-items:center; gap:var(--cap-item-gap); }
+.cap-reorder-handle { display:grid; place-items:center; flex:none; width:24px; height:28px; padding:0; border:0; border-radius:var(--cap-radius-small); background:transparent; color:var(--cap-content-muted); cursor:grab; touch-action:none; }
+.cap-reorder-handle:hover { background:var(--cap-reaction-hover); color:var(--cap-content-primary); }
+.cap-reorder-handle:active { cursor:grabbing; }
+.cap-reorder-handle:focus-visible { outline:var(--cap-focus-width) solid var(--cap-accent-solid-normal); outline-offset:2px; }
+.cap-reorder-handle:disabled { opacity:.4; cursor:default; }
+.cap-reorder-actions { display:inline-flex; gap:var(--cap-item-gap); }
+.cap-reorder-up svg { transform:rotate(-90deg); }
+.cap-reorderable-item[data-dragging] { opacity:.55; }
+.cap-reorderable-item[data-drop]::after { content:''; position:absolute; inset-inline:0; height:2px; background:var(--cap-accent-solid-normal); border-radius:var(--cap-radius-full); pointer-events:none; }
+.cap-reorderable-item[data-drop=before]::after { top:-5px; }
+.cap-reorderable-item[data-drop=after]::after { bottom:-5px; }
+
+/* FLIP moves rows as a group while their keyed contents retain state and focus. */
+.cap-reorderable-item { transition:opacity 120ms ease; }
+@media(prefers-reduced-motion:reduce) { .cap-reorderable-item { transition:none; } }

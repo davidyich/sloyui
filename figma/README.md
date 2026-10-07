@@ -1,22 +1,22 @@
-# Figma Variables · V2
+# Figma: основы и secondary-теги
 
-Модель генерируется из тех же данных, что CSS: `src/tokens/figma-modes.json`. Три коллекции с 48 Variables:
+Источник — `src/tokens/figma-modes.json`; генерация: `npm run tokens`.
 
-- **Neutral**: 12 grayscale-цветов, один Base mode.
-- **Accent**: 12 Variables `accent/1…12`, 18 модов: neutral и 17 акцентов. Neutral mode ссылается на Neutral collection.
-- **Appearance**: 24 Variables в Light/Dark. Роли нейтральных поверхностей ссылаются на Neutral, цветные роли — на Accent.
+| Коллекция | Количество | Режимы |
+| --- | ---: | --- |
+| Primitives | 597 | Value |
+| Theme | 1349 | Light / Dark |
+| Semantic | 731 | Base / Canvas / Raised / Floating |
+| Borders | 1 | Off / On |
 
-Установите Appearance mode на экран, Accent mode — на компонент/контейнер. Дочерние элементы наследуют оба. Цвет роли нельзя копировать hex-значением: привязывайте fill/text/stroke к Appearance Variables. Это сохраняет оба независимых переключателя.
+Три переключателя наследуются независимо. Semantic → Theme → Primitives; общие для поверхностей пары переиспользуются. Все 417 исходных цветов сохранены. Управляющие aliases не означают новые цвета. Есть number/opacity, alpha-нейтрали, number/border/width = 0.5, общие размеры контролов и font-группы.
 
-## Импорт
+В [Rebuildy](https://www.figma.com/design/HZ78ZQGF0MIjRviGpTwPis/Rebuildy?node-id=13-218) оставлены основы/стили, один Tag: 18 цветов × 4 размера × 4 состояния (288 вариантов) и пустые композиции поверхностей. 576 экземпляров показывают обе темы и четыре поверхности. Другие страницы компонентов удалены по текущему запросу; веб-кит сохраняет 61 основной компонент. Исходные пользовательские страницы сохранены.
 
-1. В Figma Desktop откройте целевой Design-файл.
-2. Plugins → Development → Import plugin from manifest → `figma/importer/manifest.json`.
-3. Запустите **Capacities UI V2 — Variables**. Выберите нужные моды и нажмите Create variables.
-4. В Local variables проверьте три коллекции `Capacities V2 · …`. WEB code syntax совпадает с CSS.
+[Примеры Tag с иконкой, счётчиком и действием](https://www.figma.com/design/HZ78ZQGF0MIjRviGpTwPis/Rebuildy?node-id=84-2162): 48 экземпляров, четыре размера, шесть сочетаний темы и поверхности. Label и Count — текстовые свойства; иконка, счётчик и действие включаются независимо.
 
-Полный набор содержит 18 Accent modes; доступное число modes зависит от вашего Figma-плана. В импортере можно выбрать меньшую палитру (например neutral, blue, purple, teal) без изменения имён Variables. При ограничении плана весь неудачный импорт удаляется, существующие данные не затрагиваются. Повторный импорт поверх тех же имён запрещён, чтобы случайно не заменить значения.
+Для нового файла подключите development plugin `figma/importer/manifest.json`. Он создаёт четыре коллекции; максимальное число режимов в одной — четыре. Ошибка откатывает только созданные этим запуском коллекции. Повторный импорт отклоняется; для существующего графа нужна миграция с сохранением IDs.
 
-Импортер не обращается к сети. Он создаёт настоящие VARIABLE_ALIAS, задаёт scopes и code syntax. Проверен на mock Plugin API: 48 Variables, aliases, повторный импорт, rollback при лимите modes. **В реальный Figma-файл эта версия пока не записана**: для записи нужен выбранный пользователем файл/проект.
+Figma не связывает альфа-канал COLOR со значением FLOAT. Для реакций применяйте отдельный слой: цвет `reaction/base`, opacity `reaction/hover-opacity` или `reaction/pressed-opacity`. CSS вычисляет alpha из числовых примитивов.
 
-После изменения токенов запустите `npm run tokens`; `figma/importer/code.js` обновится вместе с CSS. Сам генератор импорта: `figma/importer-core.js`.
+Проверенный объём: `docs/verification.md`. Публикация командной библиотеки не выполнялась.

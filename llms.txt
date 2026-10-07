@@ -1,6 +1,6 @@
 # Capacities UI 0.3
 
-React 19 + TypeScript + plain scoped CSS. 59 components. No runtime dependencies beyond React peers.
+React 19 + TypeScript + plain scoped CSS. No runtime dependencies beyond React peers.
 
 ## Read narrowly
 - AGENTS.md: invariants and workflow.
@@ -8,9 +8,19 @@ React 19 + TypeScript + plain scoped CSS. 59 components. No runtime dependencies
 - docs/recipes.md: basic forms and collections.
 - docs/content-guide.md: calendar, Markdown, configurable cards, Kanban.
 - docs/behavior.md: motion, state, responsive contracts.
-- docs/surface-context.md: exact surface/border context and runtime versus Figma graph.
+- docs/surface-context.md: exact surface/border context and shared CSS/Figma graph.
 - examples/WorkspaceV2.tsx: working controlled composition.
 - DESIGN.md: visual language and typography.
+- docs/component-registry.md: permanent IDs, status, multiple groups and archives; source/component-registry.json owns identity.
+- docs/selection-revision.md: Chip, MultiSelect, recent colors and Slider.
+- docs/editor-revision.md: RichTextEditor Markdown preservation and CodeBlock.
+- docs/navigation-motion-revision.md: shared hover, disclosures and Tabs overflow.
+- docs/content-revision.md: selectable cards, Kanban, ContentLayout axes and DataTable surfaces.
+- docs/feedback-revision.md: status styles, stack directions, AnnouncementBar and TextShimmer.
+- docs/new-components-revision.md: BottomSheet, FileTree and PreviewRail; needs-review until reviewed.
+- docs/overview.md: document map; component-guidelines.md, anti-patterns.md, examples.md contain reusable rules.
+- #agents: real files from demo/document-files.ts; Rich edit by default, Markdown toggle and revision-checked Save.
+- Update the relevant instruction when a change establishes a reusable rule; replace outdated text, avoid duplication.
 
 ## Import
 import { Button, Tag, Dialog, ScrollArea } from '@personal/capacities-ui';
@@ -18,36 +28,62 @@ import '@personal/capacities-ui/styles.css';
 Optional: '@personal/capacities-ui/fonts.css'. CSS is not imported from JS.
 
 ## Catalogue
-59 component pages, canonical route #ComponentName (case-sensitive), e.g. #Button, #ScrollArea, #Popover.
-Navigation groups actions, fields, content, navigation, feedback and overlays. Foundations: #colors, #typography, #geometry, #behavior, #agents.
-Each selected component record includes its catalogue route.
+Canonical component route #ComponentName (case-sensitive), e.g. #Button, #ScrollArea, #Popover.
+Navigation group order and all component memberships come from source/component-registry.json. MarkdownEditor remains a deprecated export, is excluded from canonical groups/count, and #MarkdownEditor redirects to #RichTextEditor. Foundations: #colors, #typography, #geometry, #layers, #behavior, #agents.
+Each selected component record includes its catalogue route. Every component page has a Playground with settings inside its side area (stacked on narrow screens); update its typed entry when props change.
 
 ## Theme, accent, surface and borders
 html data-theme="light" | "dark". Default light.
 Any subtree data-accent="neutral" | "blue" | other Color (17 chromatic choices).
-Tag/Badge/TypeLabel/IconBox inherit accent when color is omitted. gray aliases neutral.
-data-surface="base" | "canvas" | "raised" describes actual container background; default base. No DOM color sampling.
+Tag/IconBox inherit accent when color is omitted. gray aliases neutral. Chip and selected MultiSelect chips stay neutral. SidebarPanel.surface defaults canvas; DataTable and RichTextEditor inherit composition surface. Tooltip exposes side/align.
+data-surface="base" | "canvas" | "raised" | "floating" describes actual container background; default base. No DOM color sampling.
 For custom wrappers paint background:var(--cap-surface-current); built-in panels declare their own surface.
-data-borders="off" (default) makes decorative borders transparent; "on" restores borders and quieter neutral fills. Focus/error indicators remain.
+data-borders="off" (default) makes decorative borders transparent; "on" restores borders. Focus/error indicators remain.
 Use --cap-surface-current, --cap-control-bg/hover/active, --cap-content-primary/muted, --cap-control-border, --cap-panel-border.
-Accent uses --cap-accent-1..12 and semantic soft/bg/block/border/text/ink/solid/solid-hover/on-solid.
-Base Figma graph: 12 neutral variables + 12 accent variables + 24 appearance roles = 48 variables.
-Runtime surface/border context additionally adjusts control fills, accent tints and supporting text; it is not part of that Figma graph.
-Figma model: tokens/figma-modes.json. Importer and instructions: figma/. No actual Figma document update was performed for 0.3.
+Accent uses --cap-accent-normal/hover/pressed/text and --cap-accent-solid-normal/hover/pressed/text. Disabled uses --cap-disabled-background/text.
+Generated graph counts live in agent-manifest.json.
+Independent modes: Theme Light/Dark; Semantic Base/Canvas/Raised/Floating; Borders Off/On. Semantic → Theme → Primitives; palette steps and derived neutral alpha reactions; no kit colors.
+CSS and the Figma export share tokens/figma-modes.json; a generated export does not confirm a live Figma update.
+Tag disabled blocks selection and removal. Numeric control-size replaces duplicate el-h/el-w; typography lives in font subgroups.
 Do not use V1 per-hue role names. source-tokens.css is a historical audit export, not a runtime theme supplement.
 
 ## Interaction
-Custom Select/Menu/Popover/Tooltip/Dialog/Drawer; portals preserve local theme/accent/borders and establish their own raised surface.
+Custom Select/Menu/Popover/Tooltip/Dialog/Drawer; portals preserve local theme/accent/borders and establish their own floating surface.
 Dialogs controlled via open/onOpenChange. Focus containment, Escape, restore, scroll lock built in.
 ScrollArea ref points to scrolling viewport; give it a bounded height or width.
 scrollbar="auto" | "hidden"; horizontal defaults hidden, vertical/both auto. Edge fades use a mask, not colored overlays.
 Calendar uses YYYY-MM-DD local dates. Markdown preview renders a safe subset, never raw HTML.
 Kanban is controlled; move menu, not drag/drop. Consumer owns persistence.
-ButtonGroup is visual grouping; ActionBar adds roving keyboard focus. Both accept size and pass uniform sizing to nested controls; nested groups may override.
-Popover.size affects its trigger, not its portaled content. StatusBar.variant="plain" (default) | "surface".
+Size is xs/sm/md/lg/xl (22/28/32/36/44px); modal size controls width. See component-guidelines.md for optical scales and nested overrides.
+ButtonGroup is visual grouping; ActionBar adds roving keyboard focus. Both accept size and pass uniform sizing to nested controls; nested groups may override. ButtonGroup defaults to surface-aware neutral even inside an accented subtree; color="inherit" opts into the local accent and an explicit hue selects its own secondary accent pair.
+Popover.size affects its trigger, not its portaled content. StatusBar.variant="plain" (default) | "surface". Toast/Alert/StatusBar share tone/color/appearance/contrast/surface; neutral shells scope color to the status icon. Inline feedback inherits surface; Toast defaults floating. ToastStack/CardStack support expandDirection=up|down|left|right and controlled expansion.
 
 ## Validate
 npm run check; npm run pack:kit; npm run verify:package.
 Read docs/verification.md for actual scope and docs/bundle-size.json for measured costs.
 Rollback: versions/v0.2.0/README.md and versions/v0.1.0/README.md; frozen archives with SHA256SUMS.
 Installation recipe uses the local versioned npm archive; publication status is not inferred from a build.
+
+## Unified composition
+Tag replaces Badge and TypeLabel (compatibility wrappers stay exported). Use size, icon, count and action/onRemove; no nested buttons.
+Counter: neutral/translucent/accent/white/black/plain, round/rounded, content width >= height; soft aliases neutral. Tag.interactive=false is fully static; Tag.counter configures its count. TextAction highlights the area behind text. CodeBlock has a compact leading language chooser, optional label, trailing copy/contextual menu and wrap; use contextActions/onWrapChange instead of another wrap menu in actions; it defaults to plain text (or infers from filename), safely highlights JS/TS/TSX/JSON/CSS/Bash and copies unchanged source. Use defaultLanguage for initial selection or language + onLanguageChange for controlled selection; color defaults to neutral, accepts explicit accents or inherit.
+ContentLayout: concurrent left/right panes; orientation=horizontal|vertical uses width/onWidthChange or height/onHeightChange with separate axis bounds. divider=always|hover|none preserves resize semantics; stretch controls main content fill, contentWidth readable width. Small horizontal containers stack panes.
+Drawer.variant=inset|edge. Icon accepts a built-in name or imported Lucide component. IconPicker supports grid or combobox with visual alias search; the full catalogue is lazy demo code.
+See docs/component-guidelines.md and docs/examples.md for concise contracts.
+
+Switch supports size and color, accent (default) or neutral. Primary and accent Buttons share the solid pair of the nearest accent; use data-accent="neutral" for a neutral Primary. Checkbox, Radio and Switch default to the same solid Primary pair; contrast=false opts into vivid. Slider keeps vivid by default. Marks and thumbs use the matching text role selected by measured contrast to white/black, stable across normal/hover/pressed. The off Switch thumb uses control-text; disabled uses the explicit disabled pair. Neutral primary fades on hover/pressed. data-shadow=soft|compact is inherited by portals. CodeBlock.variant=auto uses an outline without fill when borders are on; surface, outline and filled-outline select explicit paint. CodeBlock.editor adapts the body to source editing.
+
+Input/Select/Textarea share labelPlacement=outside|inside, label/hint/error/size; FloatingField delegates to Input. EmptyState icons default neutral/muted, icon=false omits them.
+For finished UI use DatePicker for dates, NumberField for numbers, ColorPicker for colors, and Select/ComboBox for choices. Avoid visible browser-picker input types such as date, time, month, week, and color; native form semantics and hidden backing inputs remain supported.
+RichTextEditor stores JSON blocks; use markdownToRichText/richTextToMarkdown for strings, preserve block.markdown metadata, keep unsupported syntax as source blocks. MarkdownEditor compatibility value remains a string.
+ContentCard supports blocks/blockOrder/hiddenBlocks and optional selectable; false suppresses checkbox/selected paint, omitted enables selection through onSelectedChange; ReorderableList controls vertical order with stable IDs, grip-only drag, keyboard and click alternatives. See docs/content-guide.md.
+
+FloatingActionBar supports xs–xl, surface/divided, leading/trailing slots and action. Vertical action uses an icon; text actions belong to horizontal panels. Size does not change the action color; the catalogue keeps accent actions accent at lg. Use ScrollArea.floating for controls above a scroll viewport; it preserves shadows and reserves measured content clearance.
+
+Radius: data-radius=compact|default|rounded is inherited independently on html or a frame and through portals. Rounded also supplies --cap-radius-inset for optical padding in text controls and menu rows. Tag.shape=rounded|pill adjusts insets. Fields accept variant=surface|ghost; ghost fills on hover/focus. See component-guidelines.md for component selection, chart uses, editor and data contracts.
+
+Nested equal surfaces require a structural boundary even with decorative borders off: use cap-surface-boundary (built into Card and used by the Raised Instructions panel). Instructions navigation keeps filename extensions visible when truncating long basenames and exposes the full label in title. All disclosures animate both directions, retain closing content until motion ends, remove closing targets from focus immediately, and respect reduced motion.
+
+Field family focusRing={width,offset} overrides inherited --cap-field-focus-width/offset (default 1px/1px). Keyboard focus remains visible with borders off. Input type=search uses a neutral kit clear action, preserving onChange, refs and native form reset.
+
+Manifest componentCount counts canonical components; exportedComponentCount includes compatibility archive records. catalogue.groups keeps every registry membership; recipe links cover the revision contracts.

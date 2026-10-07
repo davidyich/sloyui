@@ -1,0 +1,17 @@
+.cap-modal-layer > .cap-bottom-sheet[data-side='bottom'] { width:min(48rem,100%); border-radius:calc(var(--cap-radius-base) + 12px); animation:cap-bottom-sheet-enter 280ms cubic-bezier(.16,1,.3,1) both; }
+.cap-modal-layer > .cap-bottom-sheet[data-variant='edge'] { border-bottom:0; border-end-start-radius:0; border-end-end-radius:0; padding-bottom:env(safe-area-inset-bottom); }
+.cap-modal-layer:has(> .cap-bottom-sheet)[data-state='closed'] > .cap-bottom-sheet { animation:cap-bottom-sheet-exit 180ms ease-in both; }
+.cap-bottom-sheet > .cap-dialog-header { padding-top:32px; }
+.cap-bottom-sheet > .cap-dialog-body { flex:1; }
+.cap-bottom-sheet-handle { position:absolute; top:3px; left:50%; transform:translateX(-50%); display:flex; align-items:center; justify-content:center; width:80px; height:26px; padding:0; border:0; background:transparent; border-radius:var(--cap-radius-base); cursor:grab; touch-action:none; user-select:none; -webkit-touch-callout:none; }
+.cap-bottom-sheet-handle > span { display:block; width:36px; height:4px; border-radius:var(--cap-radius-full); background:var(--cap-content-muted); opacity:.4; }
+.cap-bottom-sheet-handle:is(:hover,:focus-visible) > span { opacity:.75; }
+.cap-bottom-sheet-handle:focus-visible { outline:var(--cap-focus-width) solid var(--cap-focus-ring); outline-offset:0; }
+.cap-bottom-sheet-handle:disabled { cursor:default; }
+.cap-bottom-sheet[data-dragging] { animation:none; }
+.cap-bottom-sheet[data-dragging] .cap-bottom-sheet-handle { cursor:grabbing; }
+.cap-bottom-sheet-empty { color:var(--cap-content-muted); }
+@keyframes cap-bottom-sheet-enter { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+@keyframes cap-bottom-sheet-exit { from { opacity:1; transform:translateY(0); } to { opacity:0; transform:translateY(24px); } }
+@media(prefers-reduced-motion:reduce) { .cap-modal-layer > .cap-bottom-sheet[data-side='bottom'],.cap-modal-layer:has(> .cap-bottom-sheet)[data-state='closed'] > .cap-bottom-sheet { animation:none; } }
+@media(pointer:coarse) { .cap-bottom-sheet-handle { top:0; height:32px; } .cap-bottom-sheet > .cap-dialog-header { padding-top:38px; } }

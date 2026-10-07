@@ -13,7 +13,7 @@
 - `interaction.test.tsx`: loading, связь field/error, checkbox/switch, tabs/segments, menu, dialog, command palette, базовая axe-семантика.
 - `overlays-v2.test.tsx`: custom Select, disabled/typeahead/form reset, portal theme/accent, focus trap/restore, nested dialogs/popovers/menu, mobile positioning, быстрый reopen, inert/scroll lock.
 - `workbench.test.tsx`: overflow/shadows/resize/ref, split action/menu/disabled/loading, roving toolbar, floating field semantics, expandable/dismissible alerts.
-- `content.test.tsx`: даты и ограничения, календарная клавиатура, date picker, безопасный Markdown, редактирование выделения, карточки и управляемый канбан.
+- `content.test.tsx`: даты и ограничения календаря, клавиатура и кастомный `DatePicker` без браузерного date picker, безопасный Markdown, редактирование выделения, карточки и управляемый канбан.
 - `tokens.test.ts`: идентичные 12 путей Accent, 18 modes, 24 appearance роли, все aliases в 36 сочетаниях темы/акцента, grayscale и контраст основных текстовых пар ≥4.5:1.
 - `figma.test.ts`: 48 Variables/3 collections, scopes/code syntax, межколлекционные aliases, запрет дубликата, полный rollback при лимите modes.
 

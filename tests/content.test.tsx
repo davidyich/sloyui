@@ -34,6 +34,22 @@ describe('Content blocks', () => {
     expect(screen.getByText('Daily')).toBeInTheDocument();
     expect(screen.queryByText('Tomorrow')).not.toBeInTheDocument();
   });
+  it('uses calm scoped month/year menus while retaining selected options and calendar navigation', async () => {
+    const user = userEvent.setup();
+    render(<Calendar value="2024-02-29" today="2024-02-01" locale="en-US" onValueChange={() => {}} />);
+    const month = screen.getByRole('combobox', { name: 'Месяц' });
+    expect(month).toHaveAttribute('data-variant', 'ghost');
+    await user.click(month);
+    const monthList = screen.getByRole('listbox', { name: 'Месяц' });
+    expect(monthList).toHaveClass('cap-calendar-period-popup');
+    expect(within(monthList).getByRole('option', { name: 'February' })).toHaveAttribute('aria-selected', 'true');
+    await user.click(within(monthList).getByRole('option', { name: 'March' }));
+    expect(screen.getByRole('grid')).toHaveAccessibleName('March 2024');
+    await user.click(screen.getByRole('combobox', { name: 'Год' }));
+    const yearList = screen.getByRole('listbox', { name: 'Год' });
+    expect(screen.getByRole('combobox', { name: 'Год' }).tagName).toBe('INPUT');
+    expect(within(yearList).getByRole('option', { name: '2024' })).toHaveAttribute('aria-selected', 'true');
+  });
   it('renders a safe Markdown subset without evaluating raw HTML or unsafe links', () => {
     const { container } = render(<MarkdownPreview value={'# Title\n\n**Strong** and *soft* and `code`\n\n<script>alert(1)</script>\n\n[Unsafe](javascript:alert) [Safe](https://example.com)\n\n- [x] Done\n- Plain\n\n```html\n<img src=x onerror=alert(1)>\n```'} />);
     expect(screen.getByRole('heading', { name: 'Title', level: 2 })).toBeInTheDocument();

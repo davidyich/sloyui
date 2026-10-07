@@ -1,21 +1,29 @@
+import { arcComponents } from './catalog-arc';
 import type { ComponentType } from 'react';
 import manifest from '../agent-manifest.json';
 import * as Controls from './stories-controls';
 import * as Content from './stories-content';
+import * as Composition from './stories-composition';
+import { ChipStory } from './stories-selection';
+import { BottomSheetStory, FileTreeStory, PreviewRailStory } from './stories-revision';
 import * as Feedback from './stories-feedback';
 import * as Overlays from './stories-overlays';
 import type { StoryProps } from './stories-controls';
 
 export type ComponentName = keyof typeof manifest.components;
-export const componentGroups = ['Кнопки и действия','Поля и выбор','Объекты и контент','Навигация','Состояния','Окна и меню'] as const;
+export const componentGroups = ['Кнопки и действия','Поля и выбор','Объекты и контент','Навигация','Состояния','Окна и меню','Данные и графики'] as const;
 export type ComponentGroup = typeof componentGroups[number];
 interface CatalogRecord { group: ComponentGroup; description: string; render: ComponentType<StoryProps> }
 const entry = (group: ComponentGroup, description: string, render: ComponentType<StoryProps>): CatalogRecord => ({group,description,render});
 /** Every public component has one route and one focused, rendered story. */
 export const componentCatalog = {
+  ...arcComponents,
+  BottomSheet: entry('Окна и меню','Нижняя панель с отступом, фиксированными высотами и ручкой перемещения.',BottomSheetStory),
+  FileTree: entry('Навигация','Файлы и папки с клавиатурной навигацией, действиями и предпросмотром.',FileTreeStory),
+  PreviewRail: entry('Навигация','Компактная шкала направлений с плавным ховером и плавающим превью.',PreviewRailStory),
   Button: entry('Кнопки и действия','Действие с понятной иерархией, размерами и состояниями.',Controls.ButtonStory),
   IconButton: entry('Кнопки и действия','Компактное действие с иконкой и доступной подписью.',Controls.IconButtonStory),
-  Icon: entry('Кнопки и действия','Небольшой набор линейных SVG-иконок для интерфейса.',Controls.IconStory),
+  Icon: entry('Кнопки и действия','Иконки Lucide с единым штрихом и произвольным размером.',Controls.IconStory),
   ButtonGroup: entry('Кнопки и действия','Связанные кнопки в общей рамке или с небольшим промежутком.',Controls.ButtonGroupStory),
   SplitButton: entry('Кнопки и действия','Основное действие и дополнительные команды в одной кнопке.',Controls.SplitButtonStory),
   ActionBar: entry('Кнопки и действия','Панель инструментов с навигацией по действиям стрелками.',Controls.ActionBarStory),
@@ -33,9 +41,12 @@ export const componentCatalog = {
   SegmentedControl: entry('Поля и выбор','Небольшой набор взаимоисключающих вариантов.',Controls.SegmentedControlStory),
   Calendar: entry('Поля и выбор','Календарная сетка с выбором даты, ограничениями и событиями дня.',Controls.CalendarStory),
   DatePicker: entry('Поля и выбор','Выбор даты в привязанном к кнопке календаре.',Controls.DatePickerStory),
-  Badge: entry('Объекты и контент','Короткая метка статуса с общими акцентными модами.',Content.BadgeStory),
-  Tag: entry('Объекты и контент','Метка объекта с необязательным действием удаления.',Content.TagStory),
-  TypeLabel: entry('Объекты и контент','Название типа объекта с цветной иконкой.',Content.TypeLabelStory),
+  Chip: entry('Поля и выбор','Нейтральная выбранная метка с удалением, счётчиком и действием.',ChipStory),
+  Tag: entry('Объекты и контент','Универсальная метка: иконка, счётчик и действие в четырёх размерах.',Composition.TagStory),
+  Counter: entry('Объекты и контент','Счётчик с разными заливками, формой и размером.',Composition.CounterStory),
+  TextAction: entry('Кнопки и действия','Текстовая ссылка или действие с подсветкой области.',Composition.TextActionStory),
+  ContentLayout: entry('Навигация','Панели с изменяемой шириной или высотой и настраиваемым разделителем.',Composition.ContentLayoutStory),
+  IconPicker: entry('Кнопки и действия','Визуальный выбор из полной библиотеки Lucide.',Composition.IconPickerStory),
   IconBox: entry('Объекты и контент','Иконка объекта на мягкой акцентной подложке.',Content.IconBoxStory),
   Avatar: entry('Объекты и контент','Изображение человека или инициалы.',Content.AvatarStory),
   Separator: entry('Объекты и контент','Спокойный разделитель соседних групп содержимого.',Content.SeparatorStory),
@@ -47,7 +58,8 @@ export const componentCatalog = {
   CodeBlock: entry('Объекты и контент','Блок исходного кода с подписью и прокруткой длинных строк.',Content.CodeBlockStory),
   MarkdownPreview: entry('Объекты и контент','Безопасный просмотр базового Markdown без исполнения HTML.',Content.MarkdownPreviewStory),
   MarkdownEditor: entry('Объекты и контент','Редактирование Markdown, форматирование выделения и предпросмотр.',Content.MarkdownEditorStory),
-  ContentCard: entry('Объекты и контент','Карточка со слотами и независимыми действиями выбора и открытия.',Content.ContentCardStory),
+  ReorderableList: entry('Объекты и контент','Перестановка строк и карточек за ручку, кнопками или с клавиатуры.',Content.ReorderableListStory),
+  ContentCard: entry('Объекты и контент','Карточка с настраиваемым составом, порядком блоков и независимыми действиями.',Content.ContentCardStory),
   TaskCard: entry('Объекты и контент','Карточка задачи с завершением, свойствами и меню действий.',Content.TaskCardStory),
   KanbanColumn: entry('Объекты и контент','Колонка карточек с заголовком и пустым состоянием.',Content.KanbanColumnStory),
   KanbanBoard: entry('Объекты и контент','Управляемая доска с перемещением карточек через меню.',Content.KanbanBoardStory),
@@ -73,20 +85,26 @@ export const componentCatalog = {
   Popover: entry('Окна и меню','Небольшая панель рядом с действием, которое её открыло.',Overlays.PopoverStory),
   CommandPalette: entry('Окна и меню','Поиск по командам с выбором результата с клавиатуры.',Overlays.CommandPaletteStory),
 } satisfies Record<ComponentName,CatalogRecord>;
-export const componentNames = Object.keys(componentCatalog) as ComponentName[];
+export const componentNames = (Object.keys(componentCatalog) as ComponentName[]).filter(name=>manifest.components[name].status!=='archived');
+export const registryGroups = manifest.registry.groups;
+export const componentStatuses: Record<string,string> = manifest.registry.statuses;
+export type ComponentStatus = keyof typeof componentStatuses;
+export function componentMetadata(name: ComponentName) { return manifest.components[name]; }
 export const foundationPages = [
   {id:'colors',label:'Цвета и темы'},
   {id:'typography',label:'Типографика'},
   {id:'geometry',label:'Размеры и форма'},
+  {id:'layers',label:'Границы и слои'},
   {id:'behavior',label:'Поведение'},
-  {id:'agents',label:'Подключение'},
+  {id:'agents',label:'Инструкции'},
 ] as const;
 export type FoundationRoute = typeof foundationPages[number]['id'];
 export type CatalogRoute = ComponentName | FoundationRoute;
 export function isComponentRoute(route: CatalogRoute): route is ComponentName { return Object.hasOwn(componentCatalog,route); }
-const aliases: Record<string,CatalogRoute> = {overview:'Button',buttons:'Button',forms:'Input',content:'ContentCard',feedback:'Alert',overlays:'Dialog',workbench:'ActionBar','content-blocks':'Calendar',patterns:'KanbanBoard',rules:'behavior'};
+const aliases: Record<string,CatalogRoute> = {Badge:'Tag',TypeLabel:'Tag',badge:'Tag','type-label':'Tag',typelabel:'Tag',overview:'Button',buttons:'Button',forms:'Input',content:'ContentCard',feedback:'Alert',overlays:'Dialog',workbench:'ActionBar','content-blocks':'Calendar',patterns:'KanbanBoard',rules:'behavior'};
 export function resolveRoute(hash: string): CatalogRoute {
   let value=hash.replace(/^#/,''); try { value=decodeURIComponent(value); } catch { return 'Button'; }
+  if(value.toLowerCase().replaceAll('-','')==='markdowneditor') return 'RichTextEditor';
   if (Object.hasOwn(componentCatalog,value)) return value as ComponentName;
   if (foundationPages.some(page=>page.id===value)) return value as FoundationRoute;
   if (Object.hasOwn(aliases,value)) return aliases[value];

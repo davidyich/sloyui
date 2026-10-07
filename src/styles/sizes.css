@@ -1,0 +1,107 @@
+/* XL is the fifth control step. Composite controls keep their own optical scale. */
+:is(.cap-button,.cap-input)[data-size='xl'] { --cap-control-height:var(--cap-number-control-size-xl); font-size:var(--cap-font-size-base); }
+.cap-button[data-size='xl'] { gap:var(--cap-space-2); padding-inline:calc(var(--cap-space-4) + var(--cap-radius-inset)); }
+.cap-button[data-size='xl'] > :is(svg,.cap-spinner) { width:20px; height:20px; }
+.cap-icon-button[data-size='xl'] { padding:0; }
+.cap-input[data-size='xl'] { padding-inline:calc(var(--cap-space-4) + var(--cap-radius-inset)); }
+.cap-textarea[data-size='xl'] { min-height:128px; padding-block:var(--cap-space-3); }
+.cap-icon-box[data-size='xl'] { width:64px; height:64px; }
+.cap-avatar[data-size='xl'] { width:48px; height:48px; font-size:var(--cap-font-size-base); }
+.cap-tag[data-size='xl'] { --cap-tag-height:var(--cap-number-control-size-xl); --cap-tag-radius:var(--cap-number-radius-xl); --cap-tag-inset:6px; --cap-tag-icon:20px; --cap-tag-font:var(--cap-font-size-base); }
+.cap-tag[data-size='xl'] .cap-tag-label { gap:6px; padding-inline:6px; }
+.cap-tag[data-size='xl']:has(.cap-tag-remove) .cap-tag-label { padding-inline-end:0; }
+.cap-tag[data-size='xl'] .cap-tag-remove { width:32px; }
+.cap-counter[data-size='xl'] { --cap-counter-height:32px; padding-inline:8px; font-size:var(--cap-font-size-base); }
+.cap-tag[data-size='xl'] .cap-counter { --cap-counter-height:var(--cap-number-inline-counter-size-xl); padding-inline:5px; font-size:var(--cap-font-size-sm); }
+
+/* Toolbar size unifies icons, insets and counts as well as height. Explicit nested groups reset these variables. */
+:is(.cap-action-bar,.cap-button-group,.cap-split-button) .cap-button[data-size] { gap:var(--cap-toolbar-gap,6px); padding-inline:calc(var(--cap-toolbar-inset,10px) + var(--cap-radius-inset)); }
+:is(.cap-action-bar,.cap-button-group,.cap-split-button) .cap-icon-button[data-size] { padding:0; }
+:is(.cap-action-bar,.cap-button-group,.cap-split-button) .cap-button[data-size] > :is(svg,.cap-spinner) { width:var(--cap-toolbar-icon-size,16px); height:var(--cap-toolbar-icon-size,16px); }
+:is(.cap-action-bar,.cap-button-group,.cap-split-button) :is(.cap-button,.cap-input)[data-size] { --cap-control-height:var(--cap-toolbar-control-height,var(--cap-number-control-size-md)); font-size:var(--cap-toolbar-control-font-size,var(--cap-font-size-sm)); }
+.cap-button-group[data-attached] :is(.cap-button,.cap-input)[data-size] { --cap-control-height:calc(var(--cap-toolbar-control-height,var(--cap-number-control-size-md)) - 2 * var(--cap-item-gap)); }
+.cap-button-group-prefix > .cap-counter[data-size], :is(.cap-floating-leading-slot,.cap-floating-trailing-slot) > .cap-counter[data-size] { --cap-counter-height:var(--cap-toolbar-counter-height,24px); font-size:var(--cap-toolbar-control-font-size,var(--cap-font-size-sm)); }
+
+/* Shared labels and their slots fit the larger input; popup content owns its density. */
+.cap-labeled-field[data-size='xl'] { font-size:var(--cap-font-size-base); }
+.cap-labeled-field[data-size='xl'][data-label-placement='inside'] { --cap-inside-height:64px; }
+.cap-labeled-field[data-size='xl'][data-label-placement='inside'] :is(.cap-labeled-control > .cap-input,.cap-select-trigger) { padding-block:28px 10px; }
+.cap-labeled-field[data-size='xl'] .cap-labeled-control > label { font-size:var(--cap-font-size-sm); }
+.cap-labeled-field[data-size='xl'] :is(.cap-field-leading,.cap-field-trailing) > svg { width:20px; height:20px; }
+.cap-labeled-field[data-size='xl'] .cap-field-leading { inset-inline-start:calc(16px + var(--cap-radius-inset)); }
+.cap-labeled-field[data-size='xl'] .cap-field-trailing { inset-inline-end:calc(16px + var(--cap-radius-inset)); }
+.cap-labeled-field[data-size='xl'] .cap-labeled-control[data-leading] > :is(.cap-input,label) { padding-inline-start:calc(44px + var(--cap-radius-inset)); }
+.cap-labeled-field[data-size='xl'] .cap-labeled-control[data-leading] > label { padding-inline-start:0; inset-inline-start:calc(44px + var(--cap-radius-inset)); }
+.cap-labeled-field[data-size='xl'] .cap-labeled-control[data-trailing] > .cap-input { padding-inline-end:calc(48px + var(--cap-radius-inset)); }
+.cap-labeled-field[data-size='xl'] .cap-labeled-control[data-trailing] > label { inset-inline-end:calc(48px + var(--cap-radius-inset)); }
+.cap-labeled-field[data-size='xl'] :is(.cap-field-clear.cap-button,.cap-field-trailing-spacer) { width:28px; min-width:28px; height:28px; min-height:28px; }
+.cap-labeled-field[data-size='xl'] .cap-field-clear > svg { width:18px; height:18px; }
+
+:where(.cap-check-label,.cap-checkbox,.cap-radio,.cap-slider-field,.cap-slider)[data-size='xl'] { --cap-choice-size:var(--cap-number-selection-size-xl); --cap-thumb-size:var(--cap-number-slider-thumb-xl); --cap-track-size:var(--cap-number-slider-track-xl); --cap-field-height:var(--cap-number-control-size-xl); }
+:is(.cap-check-label,.cap-switch-label)[data-size='xl'] { min-height:var(--cap-number-control-size-xl); gap:var(--cap-space-3); font-size:var(--cap-font-size-base); }
+.cap-switch-label[data-size='xl'] { --cap-switch-height:32px; --cap-switch-width:56px; --cap-switch-inset:4px; }
+.cap-slider-field[data-size='xl'] .cap-slider-heading label { font-size:var(--cap-font-size-base); }
+.cap-slider-field[data-size='xl'] .cap-slider-heading output { font-size:var(--cap-font-size-sm); }
+
+.cap-selection-field[data-size='xl'] { --cap-selection-height:var(--cap-number-control-size-xl); font-size:var(--cap-font-size-base); }
+.cap-selection-field[data-size='xl'] :is(.cap-multiselect-box,.cap-tag-input-box) { gap:8px; padding:5px calc(12px + var(--cap-radius-inset)); }
+.cap-selection-field[data-size='xl'] :is(.cap-multiselect-search,.cap-tag-input) { min-height:32px; }
+.cap-selection-field[data-size='xl'] :is(.cap-combobox-clear,.cap-multiselect-clear) { width:28px; height:28px; }
+.cap-selection-field[data-size='xl'] .cap-combobox-clear { inset-inline-end:36px; }
+.cap-selection-field[data-size='xl'] .cap-combobox-input { padding-inline-end:calc(40px + var(--cap-radius-inset)); }
+.cap-selection-field[data-size='xl'] .cap-combobox-input:has(~ .cap-combobox-clear) { padding-inline-end:calc(72px + var(--cap-radius-inset)); }
+.cap-selection-field[data-size='xl'] .cap-combobox-leading + .cap-combobox-input { padding-inline-start:calc(44px + var(--cap-radius-inset)); }
+.cap-selection-field[data-size='xl'] :is(.cap-combobox-leading,.cap-combobox-chevron,.cap-combobox-clear svg,.cap-multiselect-clear svg,.cap-number-field button svg,.cap-color-trigger > svg) { width:20px; height:20px; }
+.cap-radio-group[data-size='xl'] .cap-radio { width:var(--cap-number-selection-size-xl); height:var(--cap-number-selection-size-xl); }
+.cap-radio-group[data-size='xl'] .cap-radio-option { gap:var(--cap-space-3); }
+.cap-radio-group[data-size='xl'][data-variant='cards'] .cap-radio-option { padding:calc(12px + var(--cap-radius-inset)); }
+.cap-radio-group[data-size='xl'] .cap-radio-heading > svg { width:20px; height:20px; }
+.cap-selection-field[data-size='xl'] .cap-number-field button { width:44px; }
+.cap-selection-field[data-size='xl'][data-compact] .cap-number-field button { width:36px; }
+.cap-selection-field[data-size='xl'] .cap-number-field input { width:80px; }
+.cap-selection-field[data-size='xl'][data-compact] .cap-number-field input { width:52px; }
+.cap-selection-field[data-size='xl'] .cap-color-trigger { padding-inline:calc(16px + var(--cap-radius-inset)); gap:12px; }
+.cap-selection-field[data-size='xl'] .cap-color-trigger-value { font-size:var(--cap-font-size-sm); }
+.cap-icon-picker[data-size='xl'] .cap-icon-picker-grid { grid-template-columns:repeat(auto-fill,minmax(52px,1fr)); gap:8px; }
+
+.cap-segmented[data-size='xl'] { --cap-segment-height:var(--cap-number-control-size-xl); }
+.cap-segmented[data-size='xl'] .cap-segment > span { padding-inline:calc(16px + var(--cap-radius-inset)); gap:8px; font-size:var(--cap-font-size-base); }
+.cap-segmented[data-size='xl'] .cap-segment svg { width:20px; height:20px; }
+.cap-tab-list[data-size='xl'] button { min-height:var(--cap-number-control-size-xl); padding-inline:calc(16px + var(--cap-radius-inset)); font-size:var(--cap-font-size-base); }
+.cap-tab-list[data-size='xl'] .cap-counter { --cap-counter-height:var(--cap-number-inline-counter-size-xl); font-size:var(--cap-font-size-sm); }
+.cap-tree[data-size='xl'] .cap-tree-item { min-height:48px; padding-block:8px; gap:12px; font-size:var(--cap-font-size-base); }
+.cap-tree[data-size='xl'] .cap-tree-item > svg { width:20px; height:20px; }
+.cap-tree[data-size='xl'] .cap-tree-arrow { width:16px; }
+.cap-tree[data-size='xl'] .cap-tree-arrow svg { width:16px; height:16px; }
+.cap-navigation-menu[data-size='xl'] .cap-navigation-items > .cap-text-action { min-height:var(--cap-number-control-size-xl); padding-inline:calc(16px + var(--cap-radius-inset)); font-size:var(--cap-font-size-base); }
+
+/* Modal size describes width, not type or control scale. Bottom edge drawers remain full width. */
+.cap-modal-layer > .cap-dialog[data-size='xl'] { width:min(64rem,100%); }
+.cap-modal-layer > .cap-drawer:not([data-side='bottom'])[data-size='sm'] { width:min(20rem,100%); }
+.cap-modal-layer > .cap-drawer:not([data-side='bottom'])[data-size='lg'] { width:min(36rem,100%); }
+.cap-modal-layer > .cap-drawer:not([data-side='bottom'])[data-size='xl'] { width:min(48rem,100%); }
+.cap-modal-layer > .cap-drawer[data-side='bottom'][data-size='sm'] { width:min(32rem,100%); }
+.cap-modal-layer > .cap-drawer[data-side='bottom'][data-size='lg'] { width:min(56rem,100%); }
+.cap-modal-layer > .cap-drawer[data-side='bottom'][data-size='xl'] { width:min(64rem,100%); }
+.cap-modal-layer > .cap-drawer[data-side='bottom'][data-variant='edge'][data-size] { width:100%; }
+
+/* Explicit round geometry and inside labels do not lose their contract at XL. */
+.cap-tag[data-size='xl'][data-shape='pill'] { --cap-tag-radius:var(--cap-radius-full); }
+.cap-labeled-field[data-size='xl'][data-label-placement='inside'] :is(.cap-labeled-control > .cap-input,.cap-select-trigger) { padding-inline-start:calc(16px + var(--cap-radius-inset)); }
+.cap-labeled-field[data-size='xl'][data-label-placement='inside'] .cap-labeled-control[data-leading] > .cap-input { padding-inline-start:calc(44px + var(--cap-radius-inset)); }
+.cap-labeled-field[data-size='xl'] .cap-labeled-control:not([data-leading]) > label { inset-inline-start:calc(16px + var(--cap-radius-inset)); }
+.cap-labeled-field[data-size='xl'] .cap-labeled-control:has(>textarea) > label { inset-inline:1px; padding-inline:calc(16px + var(--cap-radius-inset)); }
+.cap-labeled-field[data-size='xl'][data-label-placement='inside'] .cap-labeled-control > .cap-textarea { min-height:144px; }
+.cap-select-trigger[data-size='xl'] { --cap-select-end-inset:max(6px,calc((var(--cap-control-height) - 20px) / 2 - var(--cap-border-width))); padding-inline-end:var(--cap-select-end-inset); }
+.cap-select-trigger[data-size='xl'] > svg { width:20px; height:20px; }
+.cap-labeled-field[data-label-placement='inside'] .cap-select-trigger[data-size='xl'] { padding-inline-end:calc(32px + var(--cap-select-end-inset)); }
+.cap-labeled-field[data-label-placement='inside'] .cap-select-trigger[data-size='xl'] > svg { top:calc(50% - 10px); inset-inline-end:var(--cap-select-end-inset); }
+.cap-labeled-field[data-size='xl'] .cap-field-trailing-actions > svg { width:20px; height:20px; }
+.cap-labeled-field[data-size='xl'] .cap-labeled-control:has(.cap-field-trailing-actions > :nth-child(2)) > .cap-input { padding-inline-end:calc(76px + var(--cap-radius-inset)); }
+.cap-labeled-field[data-size='xl'] .cap-labeled-control:has(.cap-field-trailing-actions > :nth-child(2)) > label { inset-inline-end:calc(76px + var(--cap-radius-inset)); }
+.cap-icon-combobox .cap-labeled-field[data-size='xl'] .cap-field-leading > svg { width:var(--cap-picker-icon-size,20px); height:var(--cap-picker-icon-size,20px); }
+.cap-icon-combobox .cap-labeled-field[data-size='xl'] .cap-labeled-control[data-leading] > .cap-input { padding-inline-start:calc(24px + var(--cap-picker-icon-size,20px) + var(--cap-radius-inset)); }
+@media (pointer:coarse) {
+ .cap-button-group[data-attached] { height:auto; min-height:calc(var(--cap-touch-target) + 2 * var(--cap-item-gap)); }
+ .cap-button-group[data-attached] :is(.cap-button,.cap-input)[data-size] { --cap-control-height:max(var(--cap-touch-target),calc(var(--cap-toolbar-control-height,var(--cap-number-control-size-md)) - 2 * var(--cap-item-gap))); }
+}

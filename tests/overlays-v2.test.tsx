@@ -109,11 +109,13 @@ describe('Custom overlay contracts', () => {
     try {
       render(<Popover label="Mobile popup"><Input aria-label="Inside" /></Popover>); await userEvent.click(screen.getByRole('button', { name: 'Mobile popup' }));
       const popup = screen.getByRole('dialog', { name: 'Mobile popup' });
-      expect(parseFloat(popup.style.left)).toBe(138); expect(parseFloat(popup.style.top)).toBe(254); expect(parseFloat(popup.style.maxHeight)).toBeLessThanOrEqual(576);
+      expect(parseFloat(popup.style.left)).toBe(138);
+      expect(560 - (parseFloat(popup.style.top) + 300)).toBe(12);
+      expect(parseFloat(popup.style.maxHeight)).toBeLessThanOrEqual(360);
       expect(popup.style.transformOrigin).toBe('bottom center');
     } finally { rect.mockRestore(); Object.defineProperty(window, 'innerWidth', width); Object.defineProperty(window, 'innerHeight', height); }
   });
-  it.each(['menu', 'popover', 'select', 'tooltip', 'dialog'] as const)('preserves local border mode and establishes a raised %s surface in its portal', async kind => {
+  it.each(['menu', 'popover', 'select', 'tooltip', 'dialog'] as const)('preserves local border mode and establishes a floating %s surface in its portal', async kind => {
     const contents = {
       menu: <Menu label="Surface trigger" items={[{ id: 'copy', label: 'Copy' }]} />,
       popover: <Popover label="Surface trigger"><Input aria-label="Inside popup" /></Popover>,
@@ -121,13 +123,14 @@ describe('Custom overlay contracts', () => {
       tooltip: <Tooltip content="Surface tooltip"><Button>Surface trigger</Button></Tooltip>,
       dialog: <Dialog open onOpenChange={() => {}} title="Surface dialog"><Input aria-label="Inside dialog" /></Dialog>,
     };
-    render(<div data-theme="dark" data-accent="blue" data-borders="on" data-surface="canvas"><div data-borders="off">{contents[kind]}</div></div>);
+    render(<div data-theme="dark" data-accent="blue" data-borders="on" data-surface="canvas" data-shadow="soft"><div data-borders="off" data-shadow="compact">{contents[kind]}</div></div>);
     if (kind === 'tooltip') await userEvent.tab();
     else if (kind !== 'dialog') await userEvent.click(screen.getByRole(kind === 'select' ? 'combobox' : 'button', { name: 'Surface trigger' }));
     const role = kind === 'select' ? 'listbox' : kind === 'popover' || kind === 'dialog' ? 'dialog' : kind;
     const surface = screen.getByRole(role);
-    expect(surface).toHaveAttribute('data-surface', 'raised');
+    expect(surface).toHaveAttribute('data-surface', 'floating');
     expect(surface.closest('[data-borders]')).toHaveAttribute('data-borders', 'off');
+    expect(surface.closest('[data-shadow]')).toHaveAttribute('data-shadow', 'compact');
     expect(surface.closest('[data-theme]')).toHaveAttribute('data-theme', 'dark');
     expect(surface.closest('[data-accent]')).toHaveAttribute('data-accent', 'blue');
   });
@@ -138,7 +141,7 @@ describe('Custom overlay contracts', () => {
     expect(screen.getByRole('dialog')).toHaveAttribute('data-borders', 'off');
     rerender(<div data-borders="on" data-surface="base">{content}</div>);
     await waitFor(() => expect(screen.getByRole('dialog')).toHaveAttribute('data-borders', 'on'));
-    expect(screen.getByRole('dialog')).toHaveAttribute('data-surface', 'raised');
+    expect(screen.getByRole('dialog')).toHaveAttribute('data-surface', 'floating');
     expect(screen.getByRole('textbox')).toHaveFocus();
   });
   it('has no serious semantic accessibility issues for custom Select inside a modal', async () => {

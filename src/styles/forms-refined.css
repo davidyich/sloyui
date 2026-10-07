@@ -1,0 +1,109 @@
+/* Explicit contrast belongs to the selection control, independent of theme/accent. */
+:is(.cap-check-label,.cap-switch-label,.cap-slider-field) { --cap-selection-normal:var(--cap-accent-vivid-normal); --cap-selection-hover:var(--cap-accent-vivid-hover); --cap-selection-pressed:var(--cap-accent-vivid-pressed); --cap-selection-text:var(--cap-accent-vivid-text); }
+:is(.cap-check-label,.cap-switch-label,.cap-slider-field)[data-contrast=true] { --cap-selection-normal:var(--cap-accent-solid-normal); --cap-selection-hover:var(--cap-accent-solid-hover); --cap-selection-pressed:var(--cap-accent-solid-pressed); --cap-selection-text:var(--cap-accent-solid-text); }
+/* Native input behavior, shared optical sizes, explicit visual states. */
+:where(.cap-check-label,.cap-checkbox,.cap-radio,.cap-slider-field,.cap-slider)[data-size='xs'] { --cap-choice-size:var(--cap-number-selection-size-xs); --cap-thumb-size:var(--cap-number-slider-thumb-xs); --cap-track-size:var(--cap-number-slider-track-xs); --cap-field-height:var(--cap-number-control-size-xs); }
+:where(.cap-check-label,.cap-checkbox,.cap-radio,.cap-slider-field,.cap-slider)[data-size='sm'] { --cap-choice-size:var(--cap-number-selection-size-sm); --cap-thumb-size:var(--cap-number-slider-thumb-sm); --cap-track-size:var(--cap-number-slider-track-sm); --cap-field-height:var(--cap-number-control-size-sm); }
+:where(.cap-check-label,.cap-checkbox,.cap-radio,.cap-slider-field,.cap-slider)[data-size='md'] { --cap-choice-size:var(--cap-number-selection-size-md); --cap-thumb-size:var(--cap-number-slider-thumb-md); --cap-track-size:var(--cap-number-slider-track-md); --cap-field-height:var(--cap-number-control-size-md); }
+:where(.cap-check-label,.cap-checkbox,.cap-radio,.cap-slider-field,.cap-slider)[data-size='lg'] { --cap-choice-size:var(--cap-number-selection-size-lg); --cap-thumb-size:var(--cap-number-slider-thumb-lg); --cap-track-size:var(--cap-number-slider-track-lg); --cap-field-height:var(--cap-number-control-size-lg); }
+.cap-check-label { min-height:var(--cap-field-height); gap:var(--cap-space-2); }
+.cap-checkbox,.cap-radio { appearance:none; position:relative; display:inline-grid; place-items:center; width:var(--cap-choice-size); height:var(--cap-choice-size); border:var(--cap-border-width) solid var(--cap-content-muted); border-radius:var(--cap-radius-small); background:var(--cap-control-normal); color:var(--cap-selection-text); transition:background var(--cap-duration-fast),border-color var(--cap-duration-fast),box-shadow var(--cap-duration-fast); }
+.cap-radio { border-radius:var(--cap-radius-full); }
+:is(.cap-checkbox,.cap-radio):not(:disabled):hover { background:var(--cap-control-hover); box-shadow:0 0 0 var(--cap-item-gap) var(--cap-reaction-hover); }
+:is(.cap-checkbox,.cap-radio):not(:disabled):active { background:var(--cap-control-pressed); }
+:is(.cap-checkbox,.cap-radio):checked,.cap-checkbox:indeterminate { background:var(--cap-selection-normal); border-color:var(--cap-selection-normal); }
+:is(.cap-checkbox,.cap-radio):checked:not(:disabled):hover,.cap-checkbox:indeterminate:not(:disabled):hover { background:var(--cap-selection-hover); border-color:var(--cap-selection-hover); }
+:is(.cap-checkbox,.cap-radio):checked:not(:disabled):active,.cap-checkbox:indeterminate:not(:disabled):active { background:var(--cap-selection-pressed); border-color:var(--cap-selection-pressed); }
+.cap-checkbox::before { content:''; width:65%; height:65%; background:currentColor; clip-path:polygon(12% 44%,38% 69%,85% 17%,98% 29%,39% 94%,0 56%); opacity:0; }
+.cap-checkbox:indeterminate::before { clip-path:inset(42% 8% round 1px); }
+.cap-checkbox:is(:checked,:indeterminate)::before { opacity:1; }
+.cap-radio::before { content:''; width:42%; height:42%; background:currentColor; border-radius:inherit; opacity:0; }
+.cap-radio:checked::before { opacity:1; }
+:is(.cap-checkbox,.cap-radio):disabled { background:var(--cap-disabled-background); border-color:var(--cap-disabled-text); color:var(--cap-disabled-text); cursor:not-allowed; }
+.cap-slider-heading { display:flex; align-items:center; justify-content:space-between; gap:var(--cap-space-3); }
+.cap-slider-heading label { font-size:var(--cap-font-size-sm); color:var(--cap-content-primary); }
+.cap-slider-heading output { color:var(--cap-content-muted); font-size:var(--cap-font-size-xs); font-variant-numeric:tabular-nums; }
+.cap-slider-field { --cap-range-fill:var(--cap-selection-normal); --cap-range-thumb:var(--cap-selection-text); }
+.cap-slider-control { position:relative; min-height:var(--cap-field-height); }
+.cap-slider-rail { display:block; position:absolute; inset-inline:calc(var(--cap-thumb-size) / 2); top:50%; height:var(--cap-track-size); transform:translateY(-50%); border-radius:var(--cap-radius-full); background:var(--cap-control-active); pointer-events:none; }
+.cap-slider-fill { display:block; width:var(--cap-slider-progress); height:100%; border-radius:inherit; background:var(--cap-range-fill); }
+.cap-slider-thumb { display:block; position:absolute; left:var(--cap-slider-progress); top:50%; width:var(--cap-thumb-size); height:var(--cap-thumb-size); transform:translate(-50%,-50%); border:2px solid var(--cap-range-fill); border-radius:50%; background:var(--cap-range-thumb); box-shadow:0 1px 3px var(--cap-reaction-pressed); transition:box-shadow 120ms ease,border-color 120ms ease; }
+.cap-slider { appearance:none; position:absolute; inset:0; display:block; width:100%; height:100%; padding:0; margin:0; border:0; opacity:0; background:transparent; cursor:pointer; }
+.cap-slider::-webkit-slider-thumb { appearance:none; width:var(--cap-thumb-size); height:var(--cap-thumb-size); border:0; }
+.cap-slider::-moz-range-thumb { width:var(--cap-thumb-size); height:var(--cap-thumb-size); border:0; }
+.cap-slider-field:has(.cap-slider:not(:disabled):hover) { --cap-range-fill:var(--cap-selection-hover); }
+.cap-slider-field:has(.cap-slider:not(:disabled):active) { --cap-range-fill:var(--cap-selection-pressed); }
+.cap-slider-control:has(.cap-slider:focus-visible) .cap-slider-thumb { outline:var(--cap-field-focus-width,1px) solid var(--cap-focus-ring); outline-offset:calc(var(--cap-field-focus-offset,1px) + 2px); }
+.cap-slider-field[data-disabled] { --cap-range-fill:var(--cap-disabled-text); --cap-range-thumb:var(--cap-disabled-background); }
+.cap-slider:disabled { cursor:not-allowed; }
+.cap-slider-field[data-disabled] .cap-slider-heading :is(label,output) { color:var(--cap-disabled-text); }
+@media (forced-colors:active) { .cap-slider-rail { display:none; } .cap-slider { opacity:1; appearance:auto; } }
+@media (prefers-reduced-motion:reduce) { .cap-slider-thumb { transition:none; } }
+@media (pointer:coarse) { .cap-check-label,.cap-slider { min-height:var(--cap-touch-target); } }
+@media (forced-colors:active) { .cap-checkbox,.cap-radio,.cap-slider { appearance:auto; } .cap-checkbox::before,.cap-radio::before { display:none; } }
+
+/* A quiet track with a local accent and the same four size steps. */
+.cap-switch-label { --cap-switch-height:24px; --cap-switch-width:42px; --cap-switch-inset:3px; --cap-switch-on:var(--cap-selection-normal); --cap-switch-hover:var(--cap-selection-hover); --cap-switch-pressed:var(--cap-selection-pressed); --cap-switch-ink:var(--cap-selection-text); }
+.cap-switch-label[data-size='xs'] { --cap-switch-height:16px; --cap-switch-width:28px; --cap-switch-inset:2px; }
+.cap-switch-label[data-size='sm'] { --cap-switch-height:20px; --cap-switch-width:34px; }
+.cap-switch-label[data-size='lg'] { --cap-switch-height:28px; --cap-switch-width:50px; --cap-switch-inset:4px; }
+.cap-switch-label[data-variant='neutral'] { --cap-switch-on:var(--cap-action-normal); --cap-switch-hover:var(--cap-action-hover); --cap-switch-pressed:var(--cap-action-pressed); --cap-switch-ink:var(--cap-action-text); }
+.cap-switch-label .cap-switch { display:block; box-sizing:border-box; width:var(--cap-switch-width); height:var(--cap-switch-height); border:0; padding:var(--cap-switch-inset); background:var(--cap-control-pressed); }
+.cap-switch-label .cap-switch::before { width:calc(var(--cap-switch-height) - 2 * var(--cap-switch-inset)); height:calc(var(--cap-switch-height) - 2 * var(--cap-switch-inset)); background:var(--cap-control-text); box-shadow:none; }
+.cap-switch-label .cap-switch:not(:checked):not(:disabled):hover { background:var(--cap-control-hover); }
+.cap-switch-label .cap-switch:not(:checked):not(:disabled):active { background:var(--cap-control-pressed); }
+.cap-switch-label .cap-switch:checked { background:var(--cap-switch-on); }
+.cap-switch-label .cap-switch:checked::before { background:var(--cap-switch-ink); transform:translateX(calc(var(--cap-switch-width) - var(--cap-switch-height))); }
+.cap-switch-label .cap-switch:checked:not(:disabled):hover { background:var(--cap-switch-hover); }
+.cap-switch-label .cap-switch:checked:not(:disabled):active { background:var(--cap-switch-pressed); }
+.cap-switch-label .cap-switch:disabled { background:var(--cap-disabled-background); }
+.cap-switch-label .cap-switch:disabled::before { background:var(--cap-disabled-text); }
+@media (forced-colors:active) { .cap-switch-label .cap-switch { appearance:auto; padding:0; } .cap-switch-label .cap-switch::before { display:none; } }
+
+/* One label contract for native input, textarea and the custom select. */
+.cap-labeled-field { display:grid; min-width:0; gap:var(--cap-space-2); width:100%; font-size:var(--cap-font-size-sm); }
+.cap-labeled-field > label { font-weight:500; color:var(--cap-content-secondary); }
+.cap-labeled-control { position:relative; display:block; min-width:0; }
+.cap-labeled-control > label { position:absolute; inset-inline:calc(12px + var(--cap-radius-inset)); top:7px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:var(--cap-font-size-xs); line-height:16px; color:var(--cap-content-muted); cursor:text; }
+.cap-labeled-field[data-label-placement=inside] { --cap-inside-height:52px; }
+.cap-labeled-field[data-label-placement=inside][data-size=xs] { --cap-inside-height:44px; }
+.cap-labeled-field[data-label-placement=inside][data-size=sm] { --cap-inside-height:48px; }
+.cap-labeled-field[data-label-placement=inside][data-size=lg] { --cap-inside-height:56px; }
+.cap-labeled-field[data-label-placement=inside] .cap-labeled-control > .cap-input,
+.cap-labeled-field[data-label-placement=inside] .cap-select-trigger { height:var(--cap-inside-height); padding:23px calc(12px + var(--cap-radius-inset)) 5px; }
+.cap-labeled-field[data-label-placement=inside] .cap-select-trigger > .cap-icon { align-self:center; position:relative; top:-8px; }
+.cap-labeled-field[data-label-placement=inside] .cap-labeled-control > .cap-textarea { height:auto; min-height:calc(var(--cap-inside-height) + 48px); }
+.cap-labeled-control:has(>textarea) > label { pointer-events:none; top:1px; padding:6px calc(12px + var(--cap-radius-inset)) 2px; inset-inline:1px; background:var(--cap-bg-input); transition:background 120ms; border-radius:calc(var(--cap-radius-base) - 1px) calc(var(--cap-radius-base) - 1px) 0 0; }
+.cap-labeled-control:has(>textarea:focus) > label { background:var(--cap-bg-input-active); }
+.cap-labeled-control:has(>textarea:is(:hover,[data-state=hover])) > label { background:var(--cap-control-hover); }
+.cap-labeled-control:has(>textarea:is(:active,[data-state=pressed])) > label { background:var(--cap-control-pressed); }
+.cap-labeled-control:has(>textarea[data-variant=ghost]) > label { background:transparent; }
+.cap-labeled-control:has(>textarea[data-variant=ghost]:is(:hover,:focus)) > label { background:var(--cap-control-hover); }
+.cap-labeled-control:has(>textarea:disabled) > label { background:var(--cap-disabled-background); }
+.cap-field-leading,.cap-field-trailing { display:flex; align-items:center; position:absolute; top:0; bottom:0; color:var(--cap-content-muted); }
+.cap-field-leading { inset-inline-start:calc(12px + var(--cap-radius-inset)); pointer-events:none; }
+.cap-field-trailing { inset-inline-end:calc(12px + var(--cap-radius-inset)); }
+.cap-field-trailing-actions { display:inline-flex; align-items:center; gap:4px; pointer-events:auto; }
+.cap-field-trailing-spacer { display:block; width:24px; height:24px; visibility:hidden; }
+.cap-field-clear.cap-button[data-variant=ghost] { width:24px; min-width:24px; height:24px; min-height:24px; padding:0; border-radius:var(--cap-radius-small); color:var(--cap-content-muted); }
+.cap-field-clear.cap-button[data-variant=ghost]:hover { background:var(--cap-control-hover); color:var(--cap-content-primary); }
+.cap-input[type=search]::-webkit-search-cancel-button { appearance:none; -webkit-appearance:none; }
+.cap-input:focus-visible,.cap-select-trigger:focus-visible { outline:var(--cap-field-focus-width,1px) solid var(--cap-focus-ring); outline-offset:var(--cap-field-focus-offset,1px); }
+.cap-select-trigger:focus { border-color:var(--cap-control-border); }
+.cap-labeled-field .cap-labeled-control[data-leading] > .cap-input { padding-inline-start:calc(36px + var(--cap-radius-inset)); }
+.cap-labeled-control[data-leading] > label { inset-inline-start:calc(36px + var(--cap-radius-inset)); }
+.cap-labeled-field .cap-labeled-control[data-trailing] > .cap-input { padding-inline-end:calc(36px + var(--cap-radius-inset)); }
+.cap-labeled-control[data-trailing] > label { inset-inline-end:calc(36px + var(--cap-radius-inset)); }
+.cap-labeled-field[data-disabled] label { color:var(--cap-disabled-text); cursor:default; }
+:where(.cap-checkbox,.cap-radio) { --cap-choice-size:var(--cap-number-selection-size-md); }
+.cap-checkbox,.cap-radio { flex-shrink:0; }
+.cap-labeled-control > .cap-select-root { display:block; width:100%; }
+.cap-labeled-field[data-label-placement=inside] .cap-select-trigger { position:relative; padding-inline-end:calc(26px + var(--cap-select-end-inset)); }
+.cap-labeled-field[data-label-placement=inside] .cap-select-trigger > svg { position:absolute; inset-inline-end:var(--cap-select-end-inset); top:calc(50% - 7px); }
+
+/* Keep native number semantics and keyboard behavior, replace browser chrome. */
+.cap-input[type="number"] { appearance:textfield; -moz-appearance:textfield; }
+.cap-input[type="number"]::-webkit-inner-spin-button,.cap-input[type="number"]::-webkit-outer-spin-button { -webkit-appearance:none; margin:0; }
+
+/* Pointer selection must not inherit a previous keyboard focus ring. */
+.cap-select-trigger[data-pointer-focus]:focus-visible { outline:none; }

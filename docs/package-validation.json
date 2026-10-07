@@ -1,13 +1,56 @@
 {
   "package": "@personal/capacities-ui",
-  "componentCount": 59,
+  "componentCount": 98,
   "isolatedArchiveConsumer": true,
   "nodeNextTypes": true,
   "exampleTypecheck": [
     "ProjectBoard",
-    "WorkspaceV2"
+    "WorkspaceV2",
+    "IntegratedWorkspace",
+    "CalendarSchedule"
   ],
   "serverRenderImport": true,
+  "serverRenderedExports": [
+    "Button",
+    "ComboBox",
+    "MultiSelect",
+    "TagInput",
+    "RadioGroup",
+    "ColorPicker",
+    "NumberField",
+    "ValueScrubber",
+    "NavigationMenu",
+    "HoverPanel",
+    "TreeView",
+    "LineChart",
+    "BarChart",
+    "RichTextEditor",
+    "DataTable",
+    "ToastStack",
+    "Chip",
+    "BottomSheet",
+    "FileTree",
+    "PreviewRail",
+    "ContentLayout",
+    "ContentCard",
+    "KanbanColumn",
+    "Slider",
+    "Alert",
+    "StatusBar",
+    "Toast",
+    "AnnouncementBar",
+    "CardStack"
+  ],
+  "markdownBridgeExports": [
+    "markdownToRichText",
+    "richTextToMarkdown",
+    "preserveMarkdownSourceEdit"
+  ],
+  "closedBottomSheet": true,
+  "packageEntryInsideArchiveDist": true,
+  "verticalContentLayout": true,
+  "sliderNumericCallbacks": true,
+  "feedbackStyleApi": true,
   "fontAssets": 9,
-  "buttonGzipBytes": 646
+  "buttonGzipBytes": 1630
 }

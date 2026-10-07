@@ -1,11 +1,21 @@
 {
-  "version": "0.3.0",
-  "appearanceRoles": 24,
-  "neutralSteps": 12,
-  "accentSteps": 12,
+  "version": "0.4.0",
+  "sourceColorTokens": 783,
+  "paletteColors": 417,
+  "accentSteps": 22,
+  "graySteps": 41,
   "accentModes": 18,
-  "figmaCollections": 3,
-  "figmaVariables": 48,
-  "crossCollectionAliases": true,
-  "matchingModes": true
+  "contexts": 8,
+  "states": [
+    "normal",
+    "hover",
+    "pressed",
+    "disabled"
+  ],
+  "figmaCollections": 4,
+  "figmaVariables": 2707,
+  "secondaryCombinations": 576,
+  "minTextContrast": 4.557522040341649,
+  "minReactionContrast": 4.508967762137465,
+  "crossCollectionAliases": true
 }

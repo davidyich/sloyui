@@ -1,0 +1,6 @@
+/* Explicit structural edge for nested surfaces that intentionally share a surface role.
+   Use border properties so an existing elevation shadow and focus outline remain intact. */
+.cap-surface-boundary {
+  box-sizing: border-box;
+  border: var(--cap-border-width) solid var(--cap-border-subtle);
+}

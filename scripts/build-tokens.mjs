@@ -1,102 +1,116 @@
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import { srgb } from './token-utils.mjs';
-const read = async p => JSON.parse(await readFile(new URL('../' + p, import.meta.url), 'utf8'));
-const sources = { light: await read('source/light-css.json'), dark: await read('source/dark-css.json') };
-const rules = await read('source/token-rules.json');
-const surfaces = await read('source/surface-rules.json');
-const { version } = await read('package.json');
-const base = rules.find(r => r.selector === ':root, :host' && r.context === ' theme').variables;
-const prefix = name => name.replace(/^--/, '--cap-');
-const replaceRefs = value => value.replace(/var\((--[\w-]+)/g, (_, name) => `var(${prefix(name)}`);
-const foundations = Object.fromEntries(Object.entries(base).filter(([k]) => /^--(font-|line-height-|radius-|shadow|default-transition|spacing$)/.test(k)));
-for (const [k, v] of Object.entries(sources.dark.declared)) if (/^--(el-|border-radius)/.test(k)) foundations[k] = v;
-const space = { 0: '0px', 1: '.25rem', 2: '.5rem', 3: '.75rem', 4: '1rem', 5: '1.25rem', 6: '1.5rem', 8: '2rem', 10: '2.5rem', 12: '3rem', 16: '4rem' };
-for (const [k, v] of Object.entries(space)) foundations[`--space-${k}`] = v;
-foundations['--radius-full'] = '9999px';
-// V2 has two independent axes: appearance and locally inherited accent.
-const steps = Array.from({ length: 12 }, (_, i) => i + 1);
-const hues = 'neutral rose pink fuchsia purple violet indigo blue sky cyan teal emerald green lime yellow amber orange red'.split(' ');
-const sampled = [50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 900, 950];
-const neutralHex = ['#ffffff', '#fafafa', '#f0f0f0', '#e5e5e5', '#d4d4d4', '#a3a3a3', '#666666', '#525252', '#343434', '#242424', '#181818', '#101010'];
-const palettes = Object.fromEntries(hues.map(h => [h, Object.fromEntries(steps.map((step, i) => [step, h === 'neutral' ? neutralHex[i] : sources.light.declared[`--colors-${h}-${sampled[i]}`]]))]));
-const neutral = Object.fromEntries(steps.map((step, i) => [`neutral/${step}`, srgb(neutralHex[i])]));
-const appearance = {
-  'surface/canvas': [3, 12], 'surface/base': [2, 11], 'surface/raised': [1, 10],
-  'surface/hover': [3, 10], 'surface/active': [4, 9], 'surface/input': [1, 11],
-  'content/primary': [10, 2], 'content/secondary': [8, 5], 'content/muted': [7, 6],
-  'border/default': [4, 9], 'border/strong': [5, 8], 'focus/ring': [8, 5],
-  'action/solid': [9, 4], 'action/hover': [8, 3], 'action/on-solid': [1, 12],
-};
-const accentRoles = { soft: [1, 12], bg: [2, 11], block: [3, 10], border: [4, 9], text: [11, 2], ink: [10, 3], solid: [10, 4], 'solid-hover': [11, 3], 'on-solid': [1, 12] };
-const roleCSS = name => '--cap-' + name.replaceAll('/', '-');
-const alias = path => ({ alias: path });
-const appearances = Object.fromEntries(['light', 'dark'].map((theme, i) => [theme, {
-  ...Object.fromEntries(Object.entries(appearance).map(([name, pair]) => [name, alias(`Neutral/neutral/${pair[i]}`)])),
-  ...Object.fromEntries(Object.entries(accentRoles).map(([name, pair]) => [`accent/${name}`, alias(`Accent/accent/${pair[i]}`)])),
-}]));
-const collections = [
-  { name: 'Neutral', modes: { Base: neutral } },
-  { name: 'Accent', modes: Object.fromEntries(hues.map(h => [h, Object.fromEntries(steps.map(s => [`accent/${s}`, h === 'neutral' ? alias(`Neutral/neutral/${s}`) : srgb(palettes[h][s])]))])) },
-  { name: 'Appearance', modes: { Light: appearances.light, Dark: appearances.dark } },
-];
-const dtcg = value => ({ $type: 'color', $value: value.alias ? `{${value.alias.replaceAll('/', '.')}}` : value });
-for (const [mode, values] of Object.entries(appearances)) await writeFile(`src/tokens/${mode}.json`, JSON.stringify(Object.fromEntries(Object.entries(values).map(([name, value]) => [name, dtcg(value)])), null, 2) + '\n');
-await writeFile('src/tokens/neutral.json', JSON.stringify(Object.fromEntries(Object.entries(neutral).map(([name, value]) => [name, dtcg(value)])), null, 2) + '\n');
-await writeFile('src/tokens/accents.json', JSON.stringify(palettes, null, 2) + '\n');
-const graph = { version, steps, modes: hues, collections, note: 'Appearance controls light/dark. Accent overrides a subtree with the identical 12-step scale. Neutral remains fixed. Aliases cross collections.' };
-await writeFile('src/tokens/figma-modes.json', JSON.stringify(graph, null, 2) + '\n');
-Object.assign(foundations, { '--duration-fast': '120ms', '--duration-normal': '180ms', '--duration-slow': '260ms', '--ease-standard': 'cubic-bezier(.2, 0, 0, 1)', '--ease-out': 'cubic-bezier(.16, 1, .3, 1)', '--overlay-gutter': '12px', '--overlay-padding': '8px', '--focus-width': '2px', '--focus-offset': '3px', '--touch-target': '44px' });
-const block = obj => Object.entries(obj).map(([k, v]) => `  ${prefix(k)}: ${replaceRefs(v)};`).join('\n');
-let css = `/* Generated V3. 12 steps, 18 accent modes, 24 appearance roles. */\n:root { color-scheme: light; }\n[data-theme="light"] { color-scheme: light; }\n[data-theme="dark"] { color-scheme: dark; }\n:root, [data-theme] {\n${block(foundations)}\n${steps.map(s => `  --cap-neutral-${s}: ${palettes.neutral[s]};`).join('\n')}\n}\n`;
-css += ':root, [data-accent="neutral"], [data-color="neutral"], [data-color="gray"] {\n' + steps.map(s => `  --cap-accent-${s}: var(--cap-neutral-${s});`).join('\n') + '\n}\n';
-for (const hue of hues.filter(h => h !== 'neutral')) css += `[data-accent="${hue}"], [data-color="${hue}"] {\n${steps.map(s => `  --cap-accent-${s}: ${palettes[hue][s]};`).join('\n')}\n}\n`;
-// Surface context is explicit and inherited; it never samples the DOM background.
-for (const [name, surface] of Object.entries(surfaces)) {
-  css += `${name === 'base' ? ':root, ' : ''}[data-surface="${name}"] {\n`;
-  for (const [key, pair] of Object.entries(surface)) for (const [i, mode] of ['light', 'dark'].entries()) css += `  --cap-context-${key}-${mode}: ${pair[i]}${typeof pair[i] === 'number' ? '%' : ''};\n`;
-  css += '}\n';
+import { separateFigmaContexts } from './figma-context-graph.mjs';
+import { writeFile, mkdir } from 'node:fs/promises';
+import { readJSON, source, palette, hues, surfaces, themes, states, scales, surfaceRules, buildColorModel, hex } from './color-model.mjs';
+const {version}=readJSON('package.json');
+const {contexts,audit}=buildColorModel();
+const cssName=name=>'--cap-'+name.replaceAll('/','-');
+const alias=name=>({alias:name});
+const prim={...palette},metadata={},legacyNames={},alphaPrimitives={};
+const primitive=(name,value,type,scopes,unit)=>{prim[name]=value;metadata['Primitives/'+name]={type,scopes,unit,css:cssName(name)};};
+for(const name of Object.keys(palette))metadata['Primitives/'+name]={type:'COLOR',scopes:[],css:cssName(name)};
+const base=readJSON('source/token-rules.json').find(r=>r.selector===':root, :host'&&r.context===' theme').variables;
+const raw=readJSON('source/dark-css.json').declared;
+const px=value=>parseFloat(value)*(value.endsWith('rem')?16:1);
+for(const [key,value]of Object.entries(base)){
+ const m=/^--(font-size|line-height|font-weight|radius)-(.+)$/.exec(key);if(!m)continue;
+ const [,group,slug]=m;if(value.startsWith('var('))continue;let name=group==='radius'?'number/radius/'+slug:group.replace('font-size','font/size').replace('line-height','font/line-height').replace('font-weight','font/weight')+'/'+slug;
+ if(slug==='sm-plus')name=name.replace('/sm-plus','/sm');
+ const n=group==='line-height'&&!/[a-z]/i.test(value)?Number((parseFloat(value)*px(base['--font-size-'+slug])).toFixed(3)):px(value);
+ primitive(name,n,'FLOAT',group==='font-size'?['FONT_SIZE']:group==='line-height'?['LINE_HEIGHT']:group==='font-weight'?['FONT_WEIGHT']:['CORNER_RADIUS'],group==='font-weight'?'number':'px');legacyNames[key.slice(2)]=name;
 }
-css += ':root, [data-borders="off"] { --cap-outline-opacity: 0%; --cap-control-outline-light: 0%; --cap-control-outline-dark: 0%; }\n[data-borders="on"] { --cap-outline-opacity: 100%; --cap-control-outline-light: 75%; --cap-control-outline-dark: 45%; }\n';
-// Re-declare aliases on each scope: inherited CSS aliases otherwise freeze to their parent's accent.
-css += ':root, [data-theme], [data-accent], [data-color], [data-surface], [data-borders] {\n';
-for (const [name, pair] of Object.entries(appearance)) css += `  ${roleCSS(name)}: light-dark(var(--cap-neutral-${pair[0]}), var(--cap-neutral-${pair[1]}));\n`;
-for (const [name, pair] of Object.entries(accentRoles)) css += `  --cap-accent-${name}: light-dark(var(--cap-accent-${pair[0]}), var(--cap-accent-${pair[1]}));\n`;
-const surfaceMix = (key, dark) => `color-mix(in srgb, ${dark ? '#fff' : '#000'} var(--cap-context-${key}-${dark ? 'dark' : 'light'}), var(--cap-context-background-${dark ? 'dark' : 'light'}))`;
-css += `  --cap-surface-current: light-dark(var(--cap-context-background-light), var(--cap-context-background-dark));\n`;
-for (const role of ['secondary', 'muted']) css += `  --cap-content-${role}: light-dark(var(--cap-context-${role}-light), var(--cap-context-${role}-dark));\n`;
-for (const [role, key] of [['hover','hover'], ['active','active']]) css += `  --cap-control-${role}: light-dark(${surfaceMix(key, false)}, ${surfaceMix(key, true)});\n`;
-// Outlined controls have quieter fills; switching outlines changes the surface as well.
-css += '  --cap-control-bg: light-dark(color-mix(in srgb, var(--cap-context-background-light) var(--cap-control-outline-light), ' + surfaceMix('fill', false) + '), color-mix(in srgb, var(--cap-context-background-dark) var(--cap-control-outline-dark), ' + surfaceMix('fill', true) + '));\n';
-for (const [role, source] of [['control-border','border-default'], ['panel-border','border-default'], ['control-border-strong','border-strong']]) css += `  --cap-${role}: color-mix(in srgb, var(--cap-${source}) var(--cap-outline-opacity), transparent);\n`;
-for (const [role, delta] of [['soft',0],['bg',3],['block',6]]) css += `  --cap-accent-${role}: light-dark(color-mix(in srgb, var(--cap-accent-9) calc(var(--cap-context-accent-light) + ${delta}%), var(--cap-context-background-light)), color-mix(in srgb, var(--cap-accent-4) calc(var(--cap-context-accent-dark) + ${delta}%), var(--cap-context-background-dark)));\n`;
-css += '  --cap-accent-border: color-mix(in srgb, light-dark(var(--cap-accent-4), var(--cap-accent-9)) var(--cap-outline-opacity), transparent);\n';
-// Stable fixed feedback semantics. They do not follow an object's accent.
-for (const [tone, hue] of Object.entries({ danger: 'red', success: 'green', warning: 'amber', info: 'blue' })) {
-  css += `  --cap-status-${tone}-bg: light-dark(${palettes[hue][1]}, ${palettes[hue][12]});\n  --cap-status-${tone}-text: light-dark(${palettes[hue][11]}, ${palettes[hue][2]});\n`;
+for(const [size,n]of Object.entries({xs:22,sm:28,md:32,lg:36,xl:44})) {primitive('number/control-size/'+size,n,'FLOAT',['WIDTH_HEIGHT'],'px');legacyNames['el-h-'+(size==='md'?'base':size)]='number/control-size/'+size;legacyNames['el-w-'+(size==='md'?'base':size)]='number/control-size/'+size;}
+for(const n of [0,1,2,3,4,5,6,8,10,12,16]){primitive('number/spacing/'+n,n*4,'FLOAT',['GAP'],'px');legacyNames['space-'+n]='number/spacing/'+n;}
+for(const [size,n]of Object.entries({xs:14,sm:16,md:18,lg:20,xl:24}))primitive('number/inline-counter-size/'+size,n,'FLOAT',['WIDTH_HEIGHT'],'px');
+primitive('font/size/micro',9,'FLOAT',['FONT_SIZE'],'px');
+primitive('font/size/tiny',10,'FLOAT',['FONT_SIZE'],'px');
+primitive('number/border/width',.5,'FLOAT',['STROKE_FLOAT'],'px');
+primitive('number/border/none',0,'FLOAT',['STROKE_FLOAT'],'px');
+primitive('number/spacing/half',2,'FLOAT',['GAP'],'px');
+Object.assign(legacyNames,{'border-width':'number/border/width','item-gap':'number/spacing/half','item-gap-roomy':'number/spacing/1'});
+for(const [mode,factor] of Object.entries({compact:.6,default:1,rounded:1.75}))primitive('number/radius-scale/'+mode,factor,'FLOAT',[],'number');
+for(const [mode,inset] of Object.entries({compact:0,default:0,rounded:6}))primitive('number/radius-inset/'+mode,inset,'FLOAT',['GAP'],'px');
+primitive('number/radius/compact',4.8,'FLOAT',['CORNER_RADIUS'],'px');primitive('number/radius/full',9999,'FLOAT',['CORNER_RADIUS'],'px');
+Object.assign(legacyNames,{'border-radius-base':'number/radius/lg','border-radius-small':'number/radius/compact','radius-base':'number/radius/lg','radius-small':'number/radius/compact','radius-full':'number/radius/full'});
+for(const [size,diameter]of Object.entries({xs:14,sm:16,md:18,lg:22,xl:24})){primitive('number/selection-size/'+size,diameter,'FLOAT',['WIDTH_HEIGHT'],'px');primitive('number/slider-thumb/'+size,diameter,'FLOAT',['WIDTH_HEIGHT'],'px');primitive('number/slider-track/'+size,size==='xs'?3:size==='sm'?4:size==='md'?5:size==='lg'?6:8,'FLOAT',['WIDTH_HEIGHT'],'px');}
+for(const [name,value]of Object.entries({fast:120,normal:180,slow:260})){primitive('number/duration/'+name,value,'FLOAT',[],'ms');legacyNames['duration-'+name]='number/duration/'+name;}
+for(const [name,value]of Object.entries({'focus/width':2,'focus/offset':3,'overlay/gutter':12,'overlay/gap':12,'overlay/padding':8,'touch/target':44})){primitive('number/'+name,value,'FLOAT',name.startsWith('focus')?['STROKE_FLOAT']:['GAP'],'px');legacyNames[name.replaceAll('/','-')]='number/'+name;}
+for(const [name,value]of Object.entries({sans:'Inter',serif:'Georgia',mono:'Courier New',code:'Overpass Mono'})){primitive('font/family/'+name,value,'STRING',['FONT_FAMILY']);legacyNames['font-'+name]='font/family/'+name;}
+const elevation={floating:[[0,3,14,-2],[0,12,40,-8]],popover:[[0,4,18,-3],[0,16,56,-10]],modal:[[0,6,24,-4],[0,24,80,-12]]};
+for(const [role,layers]of Object.entries(elevation))for(const [i,layer]of layers.entries())for(const [j,field]of ['x','y','blur','spread'].entries())primitive(`number/elevation/${role}/${i?'ambient':'contact'}/${field}`,layer[j],'FLOAT',['EFFECT_FLOAT'],'px');
+for(const n of [0,2,4,6,8,10,12,16,24,32,48,64,100]){const step=String(n).padStart(2,'0');primitive('number/opacity/'+step,n,'FLOAT',['OPACITY'],'number');for(const neutral of ['black','white']){const name='alpha/'+neutral+'/'+step;primitive(name,{...palette['palette/'+neutral],alpha:n/100},'COLOR',[]);alphaPrimitives[name]={neutral,step};}}
+const semantic={};
+for(const [mode,ctx]of Object.entries(contexts)){
+ semantic[mode]=Object.fromEntries(Object.entries(ctx.values).map(([name,p])=>[name,alias('Primitives/'+p)]));
+ const neutral=ctx.theme==='Light'?'black':'white';for(const [state,step]of Object.entries({normal:'00',hover:ctx.theme==='Light'?'04':'06',pressed:ctx.theme==='Light'?'08':'10'})){semantic[mode]['reaction/'+state]=alias('Primitives/alpha/'+neutral+'/'+step);semantic[mode]['reaction/'+state+'-opacity']=alias('Primitives/number/opacity/'+step);metadata['Semantic/reaction/'+state+'-opacity']={type:'FLOAT',scopes:['OPACITY'],unit:'number',css:cssName('reaction/'+state+'-opacity')};}semantic[mode]['reaction/base']=alias('Primitives/palette/'+neutral);
+ const original=source[ctx.theme.toLowerCase()];
+ for(const [name,t]of Object.entries(original).filter(([n])=>!n.startsWith('palette/'))){let target;if(typeof t.$value==='string'){const ref=t.$value.slice(1,-1).replaceAll('.','/');target=ref.startsWith('palette/')?'Primitives/'+ref:'Semantic/source/'+ref;}else{const pn='source-literals/'+name+'/'+ctx.theme;primitive(pn,t.$value,'COLOR',[]);target='Primitives/'+pn;}semantic[mode]['source/'+name]=alias(target);metadata['Semantic/source/'+name]={type:'COLOR',scopes:[],css:cssName('source/'+name)};}
+ for(const [layer,alpha]of Object.entries({contact:ctx.theme==='Light'?.06:.10,ambient:ctx.theme==='Light'?.10:.14})){const name='effect/shadow/'+layer+'/'+ctx.theme;primitive(name,{colorSpace:'srgb',components:[0,0,0],alpha},'COLOR',['EFFECT_COLOR']);semantic[mode]['shadow/'+layer]=alias('Primitives/'+name);}
+ const dim='effect/overlay/'+ctx.theme;primitive(dim,{colorSpace:'srgb',components:[0,0,0],alpha:ctx.theme==='Light'?.32:.58},'COLOR',[]);semantic[mode]['overlay/dim']=alias('Primitives/'+dim);
 }
-const compat = {
-  'bg-base': 'surface-base', 'bg-back': 'surface-canvas', 'bg-front': 'surface-raised', 'bg-el': 'control-active', 'bg-el-strong': 'control-active', 'bg-el-subtle': 'control-bg',
-  'bg-base-hover': 'control-hover', 'bg-back-hover': 'control-hover', 'bg-front-hover': 'control-hover', 'bg-el-hover': 'control-hover', 'bg-el-active': 'control-active', 'bg-el-subtle-hover': 'control-hover', 'bg-el-subtle-active': 'control-active',
-  'bg-input': 'control-bg', 'bg-input-hover': 'control-hover', 'bg-input-active': 'control-bg',
-  'text-primary': 'content-primary', 'text-secondary': 'content-secondary', 'text-muted': 'content-muted', 'text-subtle': 'content-muted', 'input-placeholder': 'content-muted',
-  'bg-button-primary': 'action-solid', 'bg-button-primary-hover': 'action-hover', 'text-button-primary': 'action-on-solid', 'text-button-primary-hover': 'action-on-solid', 'border-button-primary': 'action-solid', 'border-button-primary-hover': 'action-hover',
-  'border-base': 'panel-border', 'border-back': 'panel-border', 'border-front': 'panel-border', 'border-el-subtle': 'control-border', 'border-base-strong': 'control-border-strong', 'border-back-strong': 'control-border-strong', 'border-front-strong': 'control-border-strong', 'border-el': 'control-border-strong', 'border-el-hover': 'focus-ring', 'border-el-subtle-hover': 'control-border-strong', 'border-state-active': 'focus-ring', 'ring-state-active': 'focus-ring',
-  'code-bg': 'surface-canvas', 'code-border': 'panel-border', 'code-text': 'content-primary',
+for(const name of Object.keys(Object.values(semantic)[0]))if(!metadata['Semantic/'+name])metadata['Semantic/'+name]={type:'COLOR',css:cssName(name),scopes:name.includes('text')||name.startsWith('content/')?['TEXT_FILL']:name.startsWith('border/')||name.includes('/border')||name.startsWith('focus/')?['STROKE_COLOR']:name.startsWith('shadow/')?['EFFECT_COLOR']:['FRAME_FILL','SHAPE_FILL']};
+for(const name of Object.keys(Object.values(semantic)[0]).filter(name=>name.startsWith('action-vivid/')))metadata['Semantic/'+name].css='--cap-accent-vivid-'+name.split('/').at(-1);
+const borders={Off:{'border/width':alias('Primitives/number/border/none')},On:{'border/width':alias('Primitives/number/border/width')}};
+metadata['Borders/border/width']={type:'FLOAT',scopes:['STROKE_FLOAT'],unit:'px',css:'--cap-decoration-width'};
+const graph={version,modes:hues,states,contexts:Object.fromEntries(Object.entries(contexts).map(([k,v])=>[k,{theme:v.theme,surface:v.surface}])),collections:[{name:'Primitives',modes:{Value:prim}},...separateFigmaContexts(semantic,metadata),{name:'Borders',modes:borders}],metadata,legacyNames,note:'Full original palettes and derived alpha neutrals. Theme Light/Dark, Semantic Base/Canvas/Raised/Floating and Borders Off/On inherit independently. Semantic aliases Theme aliases Primitives; shared roles are deduplicated across surfaces.'};
+const json=async(path,v)=>writeFile(path,JSON.stringify(v,null,2)+'\n');
+await mkdir('src/tokens',{recursive:true});
+await json('src/tokens/figma-modes.json',graph);
+await json('src/tokens/palettes.json',palette);
+await json('src/tokens/accents.json',Object.fromEntries(hues.map(h=>[h,Object.fromEntries(scales[h].map(p=>[p.name.split('/').at(-1),hex(p.color)]))])));
+await json('src/tokens/neutral.json',Object.fromEntries(scales.neutral.map(p=>[p.name,{$type:'color',$value:p.color}])));
+for(const theme of themes)await json('src/tokens/'+theme.toLowerCase()+'.json',Object.fromEntries(Object.entries(semantic[theme+' · Base']).map(([n,v])=>[n,{$type:metadata['Semantic/'+n].type==='FLOAT'?'number':'color',$value:'{'+v.alias.replaceAll('/','.')+'}'}])));
+await json('src/tokens/foundations.json',Object.fromEntries(Object.entries(prim).filter(([n])=>/^(number|font)\//.test(n)).map(([n,v])=>[n,{$type:metadata['Primitives/'+n].type,$value:v}])));
+await json('src/tokens/surfaces.json',Object.fromEntries(surfaces.map(s=>[s,{palette:surfaceRules[s].palette,background:themes.map((_,i)=>hex(palette['palette/'+surfaceRules[s].palette[i]]))}])));
+await json('src/tokens/element-states.json',audit);
+const colorCSS=c=>{const rgb=c.components.map(x=>+(x*255).toFixed(8)).join(' ');return c.alpha===1?`rgb(${rgb})`:`rgb(${rgb} / ${c.alpha})`;};
+const resolve=(path,mode,seen=[])=>{if(seen.includes(path))throw Error('Alias cycle '+path);const c=path.startsWith('Primitives/')?prim:semantic[mode],key=path.slice(path.indexOf('/')+1),v=c[key];if(v===undefined)throw Error('Missing '+path);return v.alias?resolve(v.alias,mode,[...seen,path]):v;};
+const sourceRef=(path,mode)=>{const key=path.slice(path.indexOf('/')+1);return path.startsWith('Primitives/')?`var(${cssName(key)})`:sourceRef(semantic[mode][key].alias,mode);};
+let css='/* Generated from full Capacities palettes. No shortened kit color scale. */\n:root { color-scheme: light; }\n[data-theme="light"] { color-scheme: light; }\n[data-theme="dark"] { color-scheme: dark; }\n:root {\n';
+for(const [n,v]of Object.entries(prim)){const m=metadata['Primitives/'+n];css+=`  ${cssName(n)}: ${m.type==='COLOR'?(alphaPrimitives[n]?`color-mix(in srgb, var(--cap-palette-${alphaPrimitives[n].neutral}) calc(var(--cap-number-opacity-${alphaPrimitives[n].step}) * 1%), transparent)`:colorCSS(v)):m.type==='STRING'?JSON.stringify(v):v+(m.unit==='number'?'':m.unit||'')};\n`;}
+for(const [old,name]of Object.entries(legacyNames))if(!old.startsWith('el-')&&cssName(name)!=='--cap-'+old)css+=`  --cap-${old}: var(${cssName(name)});\n`;
+for(const [name,value]of Object.entries(base).filter(([n])=>/^--shadow/.test(n)))css+=`  --cap-${name.slice(2)}: ${value};\n`;
+css+='  --cap-ease-standard: cubic-bezier(.2,0,0,1);\n  --cap-ease-out: cubic-bezier(.16,1,.3,1);\n}\n';
+// Each context axis is inherited separately. The 0/100% color-mix operations
+// below route one exact palette alias; they never blend intermediate shades.
+for(const surface of surfaces)css+=`${surface==='base'?':root, ':''}[data-surface="${surface}"] { --cap-is-canvas: ${surface==='canvas'?100:0}%; --cap-is-raised: ${surface==='raised'?100:0}%; --cap-is-floating: ${surface==='floating'?100:0}%; }\n`;
+const runtimeNames=Object.keys(Object.values(contexts)[0].values);
+for(const hue of hues){const selector=hue==='neutral'?':root, [data-accent="neutral"], [data-color="neutral"], [data-accent="gray"], [data-color="gray"]':`[data-accent="${hue}"], [data-color="${hue}"]`;css+=selector+' {\n';css+=`  --cap-accent-swatch: light-dark(var(--cap-palette-${hue==='neutral'?'gray-500':hue+'-450'}), var(--cap-selected-action-base-normal));\n`;for(const surface of surfaces){for(const kind of ['element','action','action-vivid'])for(const role of [...states,'text','disabled-text','border','border-hover','border-pressed']){const name=`${kind}/${hue}/${role}`;if(!runtimeNames.includes(name))continue;css+=`  --cap-selected-${kind}-${surface}-${role}: light-dark(${sourceRef('Semantic/'+name,'Light · '+surface[0].toUpperCase()+surface.slice(1))}, ${sourceRef('Semantic/'+name,'Dark · '+surface[0].toUpperCase()+surface.slice(1))});\n`;}}css+='}\n';}
+css+=':root, [data-theme], [data-accent], [data-color], [data-surface], [data-borders], [data-shadow] {\n';
+const route=(values)=>`color-mix(in srgb, ${values.floating} var(--cap-is-floating), color-mix(in srgb, ${values.canvas} var(--cap-is-canvas), color-mix(in srgb, ${values.raised} var(--cap-is-raised), ${values.base})))`;
+for(const name of runtimeNames.filter(n=>!n.startsWith('element/')&&!n.startsWith('action/')&&!n.startsWith('action-vivid/'))){const values=Object.fromEntries(surfaces.map(s=>[s,`light-dark(${sourceRef('Semantic/'+name,'Light · '+s[0].toUpperCase()+s.slice(1))}, ${sourceRef('Semantic/'+name,'Dark · '+s[0].toUpperCase()+s.slice(1))})`]));css+=`  ${cssName(name)}: ${route(values)};\n`;}
+for(const kind of ['element','action','action-vivid'])for(const role of [...states,'text','disabled-text','border','border-hover','border-pressed']){if(kind!=='element'&&['disabled','disabled-text','border','border-hover','border-pressed'].includes(role))continue;css+=`  --cap-${kind==='element'?'accent':kind==='action'?'accent-solid':'accent-vivid'}-${role}: ${route(Object.fromEntries(surfaces.map(s=>[s,`var(--cap-selected-${kind}-${s}-${role})`])))};\n`;}
+for(const role of ['normal','hover','pressed','text']){const name='action/neutral/'+role;css+=`  --cap-action-${role}: light-dark(${sourceRef('Semantic/'+name,'Light · Base')}, ${sourceRef('Semantic/'+name,'Dark · Base')});\n`;}
+for(const [role,layers]of Object.entries(elevation)){css+=`  --cap-shadow-${role}: `+layers.map((_,i)=>['x','y','blur','spread'].map(f=>f==='blur'?`calc(var(--cap-number-elevation-${role}-${i?'ambient':'contact'}-${f}) * var(--cap-shadow-blur-scale))`:`var(--cap-number-elevation-${role}-${i?'ambient':'contact'}-${f})`).join(' ')+` light-dark(var(--cap-effect-shadow-${i?'ambient':'contact'}-Light), var(--cap-effect-shadow-${i?'ambient':'contact'}-Dark))`).join(', ')+`;\n`;}
+for(const role of ['normal','hover','pressed','base'])css+=`  --cap-reaction-${role}: ${role.endsWith('opacity')?`light-dark(${sourceRef('Semantic/reaction/'+role,'Light · Base')}, ${sourceRef('Semantic/reaction/'+role,'Dark · Base')})`:`light-dark(${sourceRef('Semantic/reaction/'+role,'Light · Base')}, ${sourceRef('Semantic/reaction/'+role,'Dark · Base')})`};\n`;
+css+='  --cap-overlay-dim: light-dark(var(--cap-effect-overlay-Light), var(--cap-effect-overlay-Dark));\n';
+// Stable public semantic aliases keep consumers small while Figma exposes explicit roles.
+const compat={
+ 'control-bg':'control-normal','control-active':'control-pressed','accent-bg':'accent-normal','accent-soft':'accent-normal','accent-block':'accent-hover','accent-ink':'accent-text','accent-solid':'accent-solid-normal','accent-on-solid':'accent-solid-text',
+ 'action-solid':'action-normal','action-on-solid':'action-text',
+ 'bg-base':'surface-base','bg-back':'surface-canvas','bg-front':'surface-raised','bg-el':'control-pressed','bg-el-strong':'control-pressed','bg-el-subtle':'control-normal','bg-base-hover':'control-hover','bg-back-hover':'control-hover','bg-front-hover':'control-hover','bg-el-hover':'control-hover','bg-el-active':'control-pressed','bg-el-subtle-hover':'control-hover','bg-el-subtle-active':'control-pressed','bg-input':'control-normal','bg-input-hover':'control-hover','bg-input-active':'control-pressed',
+ 'text-primary':'content-primary','text-secondary':'content-secondary','text-muted':'content-muted','text-subtle':'content-muted','input-placeholder':'content-muted',
+ 'bg-button-primary':'action-normal','bg-button-primary-hover':'action-hover','text-button-primary':'action-text','text-button-primary-hover':'action-text','border-button-primary':'action-normal','border-button-primary-hover':'action-hover',
+ 'border-base':'panel-border','border-back':'panel-border','border-front':'panel-border','border-el-subtle':'control-border','border-base-strong':'control-border-strong','border-back-strong':'control-border-strong','border-front-strong':'control-border-strong','border-el':'control-border-strong','border-el-hover':'focus-ring','border-el-subtle-hover':'control-border-strong','border-state-active':'focus-ring','ring-state-active':'focus-ring',
+ 'counter-white-background':'palette-white','counter-white-text':'palette-black','counter-black-background':'palette-black','counter-black-text':'palette-white',
+ 'code-bg':'surface-current','code-border':'panel-border','code-text':'content-primary','bg-text-selection':'accent-pressed',
 };
-for (const [old, role] of Object.entries(compat)) css += `  --cap-${old}: var(--cap-${role});\n`;
-css += '  --cap-bg-text-selection: color-mix(in srgb, var(--cap-accent-6) 32%, transparent);\n  --cap-overlay-dim: light-dark(#00000050, #00000094);\n}\n';
-await writeFile('src/styles/tokens.css', css);
-await writeFile('src/tokens/surfaces.json', JSON.stringify(surfaces, null, 2) + '\n');
-// Source snapshots remain a separate opt-in, excluded from the default API and explorer.
-await writeFile('src/styles/source-tokens.css', Object.entries(sources).map(([mode, source]) => `${mode === 'light' ? ':root, ' : ''}[data-theme="${mode}"] {\n${block(source.declared)}\n}`).join('\n'));
-const catalog = Object.entries(appearance).map(([name, pair]) => ({ name: roleCSS(name), original: name, group: name.split('/')[0], light: palettes.neutral[pair[0]], dark: palettes.neutral[pair[1]], runtime: true }));
-for (const [name, pair] of Object.entries(accentRoles)) catalog.push({ name: `--cap-accent-${name}`, original: `accent/${name}`, group: 'accent', light: palettes.neutral[pair[0]], dark: palettes.neutral[pair[1]], runtime: true });
-await writeFile('src/tokens/catalog.json', JSON.stringify(catalog));
-const foundationTokens = Object.fromEntries(Object.entries(foundations).filter(([k, v]) => !v.includes('var(') && /^(--(space-|radius-|el-|border-radius-|font-size-))/.test(k)).map(([k, v]) => [k.slice(2), { $type: 'dimension', $value: { value: parseFloat(v), unit: v.endsWith('rem') ? 'rem' : 'px' } }]));
-for (const family of ['sans', 'serif', 'mono', 'code']) foundationTokens[`font-${family}`] = { $type: 'fontFamily', $value: foundations[`--font-${family}`].split(',').map(s => s.trim().replaceAll('"', '')) };
-for (const [k, v] of Object.entries(foundations)) if (k.startsWith('--font-weight-')) foundationTokens[k.slice(2)] = { $type: 'fontWeight', $value: Number(v) };
-for (const name of ['fast', 'normal', 'slow']) foundationTokens[`duration-${name}`] = { $type: 'duration', $value: { value: parseFloat(foundations[`--duration-${name}`]), unit: 'ms' } };
-await writeFile('src/tokens/foundations.json', JSON.stringify(foundationTokens, null, 2));
-await mkdir('docs', { recursive: true });
-await writeFile('docs/token-validation.json', JSON.stringify({ version: graph.version, appearanceRoles: catalog.length, neutralSteps: steps.length, accentSteps: steps.length, accentModes: hues.length, figmaCollections: collections.length, figmaVariables: collections.reduce((n,c) => n + Object.keys(Object.values(c.modes)[0]).length, 0), crossCollectionAliases: true, matchingModes: true }, null, 2));
-console.log(`V3: ${steps.length} neutral steps, ${hues.length} accent modes × ${steps.length} shared steps, ${catalog.length} appearance roles.`);
+for(const [old,n]of Object.entries(compat))css+=`  --cap-${old}: var(--cap-${n});\n`;
+for(const tone of ['danger','success','warning','info'])for(const [old,n]of Object.entries({bg:'normal',hover:'hover',pressed:'pressed',text:'text'}))css+=`  --cap-status-${tone}-${old}: var(--cap-feedback-${tone}-${n});\n`;
+for(const [name,role]of Object.entries({'panel-border':'border-panel','overlay-border':'border-overlay','control-border':'border-control','control-border-hover':'border-control-hover','control-border-pressed':'border-control-pressed','control-border-strong':'border-strong','accent-outline':'accent-border','accent-outline-hover':'accent-border-hover','accent-outline-pressed':'accent-border-pressed'}))css+=`  --cap-${name}: color-mix(in srgb, var(--cap-${role}) var(--cap-outline-opacity), transparent);\n`;
+css+='}\n';
+css+=':root, [data-theme="light"] { --cap-reaction-hover-opacity: calc(var(--cap-number-opacity-04) / 100); --cap-reaction-pressed-opacity: calc(var(--cap-number-opacity-08) / 100); }\n[data-theme="dark"] { --cap-reaction-hover-opacity: calc(var(--cap-number-opacity-06) / 100); --cap-reaction-pressed-opacity: calc(var(--cap-number-opacity-10) / 100); }\n';
+css=':root, [data-shadow=\"soft\"] { --cap-shadow-blur-scale:1; }\n[data-shadow=\"compact\"] { --cap-shadow-blur-scale:.55; }\n:root, [data-borders="off"] { --cap-outline-opacity: 0%; }\n[data-borders="on"] { --cap-outline-opacity: 100%; }\n'+css;
+css+=':root, [data-borders="off"] { --cap-code-fill-opacity:100%; }\n[data-borders="on"] { --cap-code-fill-opacity:0%; }\n';
+// Radius is a separate inherited context, independent of color and surface.
+css+=':root { --cap-radius-scale:var(--cap-number-radius-scale-default); --cap-radius-inset:var(--cap-number-radius-inset-default); }\n';
+for(const mode of ['compact','default','rounded'])css+=`[data-radius="${mode}"] { --cap-radius-scale:var(--cap-number-radius-scale-${mode}); --cap-radius-inset:var(--cap-number-radius-inset-${mode}); }\n`;
+css+=':root, [data-radius] {\n';
+for(const [name,value] of Object.entries(prim).filter(([name])=>name.startsWith('number/radius/')&&!name.endsWith('/full')))css+=`  ${cssName(name)}:calc(${value}px * var(--cap-radius-scale,1));\n`;
+for(const [old,name]of Object.entries(legacyNames))if(name.startsWith('number/radius/')&&cssName(name)!=='--cap-'+old)css+=`  --cap-${old}:var(${cssName(name)});\n`;
+css+='}\n';
+await writeFile('src/styles/tokens.css',css);
+await json('src/tokens/catalog.json',runtimeNames.filter(n=>!n.startsWith('element/')&&!n.startsWith('action/')&&!n.startsWith('action-vivid/')).map(name=>({name:cssName(name),original:name,group:name.split('/')[0],light:hex(resolve('Semantic/'+name,'Light · Base')),dark:hex(resolve('Semantic/'+name,'Dark · Base')),runtime:true})));
+const minContrast=Math.min(...audit.map(r=>r.contrast));
+await json('docs/token-validation.json',{version,sourceColorTokens:783,paletteColors:Object.keys(palette).length,accentSteps:22,graySteps:41,accentModes:18,contexts:Object.keys(contexts).length,states,figmaCollections:graph.collections.length,figmaVariables:graph.collections.reduce((n,c)=>n+Object.keys(Object.values(c.modes)[0]).length,0),secondaryCombinations:audit.length,minTextContrast:minContrast,minReactionContrast:Math.min(...audit.map(r=>r.reactionContrast)),crossCollectionAliases:true});
+await json('artifacts/figma-library/token-migration-graph.json',graph);
+console.log(`Full palette model: ${Object.keys(palette).length} colors, ${audit.length} secondary pairs, min text contrast ${minContrast.toFixed(3)}:1, independent Theme, Semantic surface and Borders modes.`);

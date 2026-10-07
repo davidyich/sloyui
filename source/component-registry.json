@@ -1,0 +1,1012 @@
+{
+  "schemaVersion": 1,
+  "statuses": {
+    "ready": "Готов",
+    "not-ready": "В доработке",
+    "needs-review": "Требует проверки",
+    "archived": "В архиве"
+  },
+  "groups": [
+    {
+      "id": "actions",
+      "label": "Действия"
+    },
+    {
+      "id": "fields",
+      "label": "Поля"
+    },
+    {
+      "id": "selection",
+      "label": "Выбор"
+    },
+    {
+      "id": "navigation",
+      "label": "Навигация"
+    },
+    {
+      "id": "layout",
+      "label": "Контейнеры"
+    },
+    {
+      "id": "content",
+      "label": "Контент и карточки"
+    },
+    {
+      "id": "editing",
+      "label": "Редактирование"
+    },
+    {
+      "id": "data",
+      "label": "Данные"
+    },
+    {
+      "id": "feedback",
+      "label": "Обратная связь"
+    },
+    {
+      "id": "overlays",
+      "label": "Окна и панели"
+    },
+    {
+      "id": "motion",
+      "label": "Движение"
+    },
+    {
+      "id": "charts",
+      "label": "Графики"
+    },
+    {
+      "id": "utilities",
+      "label": "Основные элементы"
+    }
+  ],
+  "components": {
+    "Button": {
+      "id": "cap-001",
+      "status": "needs-review",
+      "groups": [
+        "actions"
+      ],
+      "primaryGroup": "actions"
+    },
+    "IconButton": {
+      "id": "cap-002",
+      "status": "needs-review",
+      "groups": [
+        "actions"
+      ],
+      "primaryGroup": "actions"
+    },
+    "Icon": {
+      "id": "cap-003",
+      "status": "needs-review",
+      "groups": [
+        "utilities"
+      ],
+      "primaryGroup": "utilities"
+    },
+    "Spinner": {
+      "id": "cap-004",
+      "status": "needs-review",
+      "groups": [
+        "feedback"
+      ],
+      "primaryGroup": "feedback"
+    },
+    "Tag": {
+      "id": "cap-005",
+      "status": "needs-review",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content"
+    },
+    "Counter": {
+      "id": "cap-006",
+      "status": "needs-review",
+      "groups": [
+        "content",
+        "utilities"
+      ],
+      "primaryGroup": "content"
+    },
+    "TextAction": {
+      "id": "cap-007",
+      "status": "needs-review",
+      "groups": [
+        "actions"
+      ],
+      "primaryGroup": "actions"
+    },
+    "ContentLayout": {
+      "id": "cap-008",
+      "status": "ready",
+      "groups": [
+        "layout"
+      ],
+      "primaryGroup": "layout",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "IconPicker": {
+      "id": "cap-009",
+      "status": "needs-review",
+      "groups": [
+        "selection",
+        "utilities"
+      ],
+      "primaryGroup": "selection"
+    },
+    "IconBox": {
+      "id": "cap-010",
+      "status": "needs-review",
+      "groups": [
+        "content",
+        "utilities"
+      ],
+      "primaryGroup": "content"
+    },
+    "Avatar": {
+      "id": "cap-011",
+      "status": "needs-review",
+      "groups": [
+        "content",
+        "utilities"
+      ],
+      "primaryGroup": "content"
+    },
+    "Kbd": {
+      "id": "cap-012",
+      "status": "needs-review",
+      "groups": [
+        "utilities"
+      ],
+      "primaryGroup": "utilities"
+    },
+    "Separator": {
+      "id": "cap-013",
+      "status": "needs-review",
+      "groups": [
+        "layout",
+        "utilities"
+      ],
+      "primaryGroup": "layout"
+    },
+    "Skeleton": {
+      "id": "cap-014",
+      "status": "needs-review",
+      "groups": [
+        "feedback"
+      ],
+      "primaryGroup": "feedback"
+    },
+    "Progress": {
+      "id": "cap-015",
+      "status": "needs-review",
+      "groups": [
+        "feedback"
+      ],
+      "primaryGroup": "feedback"
+    },
+    "Input": {
+      "id": "cap-016",
+      "status": "needs-review",
+      "groups": [
+        "fields"
+      ],
+      "primaryGroup": "fields"
+    },
+    "Textarea": {
+      "id": "cap-017",
+      "status": "ready",
+      "groups": [
+        "fields"
+      ],
+      "primaryGroup": "fields",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "Select": {
+      "id": "cap-018",
+      "status": "needs-review",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields"
+    },
+    "Field": {
+      "id": "cap-019",
+      "status": "needs-review",
+      "groups": [
+        "fields"
+      ],
+      "primaryGroup": "fields"
+    },
+    "Checkbox": {
+      "id": "cap-020",
+      "status": "needs-review",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields"
+    },
+    "Radio": {
+      "id": "cap-021",
+      "status": "needs-review",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields"
+    },
+    "Switch": {
+      "id": "cap-022",
+      "status": "needs-review",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields"
+    },
+    "Slider": {
+      "id": "cap-023",
+      "status": "ready",
+      "groups": [
+        "fields"
+      ],
+      "primaryGroup": "fields",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "SegmentedControl": {
+      "id": "cap-024",
+      "status": "needs-review",
+      "groups": [
+        "selection"
+      ],
+      "primaryGroup": "selection"
+    },
+    "Card": {
+      "id": "cap-025",
+      "status": "needs-review",
+      "groups": [
+        "layout"
+      ],
+      "primaryGroup": "layout"
+    },
+    "ObjectCard": {
+      "id": "cap-026",
+      "status": "needs-review",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content"
+    },
+    "CollectionRow": {
+      "id": "cap-027",
+      "status": "needs-review",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content"
+    },
+    "SidebarItem": {
+      "id": "cap-028",
+      "status": "ready",
+      "groups": [
+        "navigation"
+      ],
+      "primaryGroup": "navigation",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "PropertyRow": {
+      "id": "cap-029",
+      "status": "needs-review",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content"
+    },
+    "Breadcrumbs": {
+      "id": "cap-030",
+      "status": "needs-review",
+      "groups": [
+        "navigation"
+      ],
+      "primaryGroup": "navigation"
+    },
+    "Callout": {
+      "id": "cap-031",
+      "status": "needs-review",
+      "groups": [
+        "feedback"
+      ],
+      "primaryGroup": "feedback"
+    },
+    "EmptyState": {
+      "id": "cap-032",
+      "status": "needs-review",
+      "groups": [
+        "content",
+        "feedback"
+      ],
+      "primaryGroup": "content"
+    },
+    "Accordion": {
+      "id": "cap-033",
+      "status": "ready",
+      "groups": [
+        "content",
+        "motion"
+      ],
+      "primaryGroup": "content",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "Tabs": {
+      "id": "cap-034",
+      "status": "ready",
+      "groups": [
+        "navigation",
+        "motion"
+      ],
+      "primaryGroup": "navigation",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "Table": {
+      "id": "cap-035",
+      "status": "needs-review",
+      "groups": [
+        "data"
+      ],
+      "primaryGroup": "data"
+    },
+    "CodeBlock": {
+      "id": "cap-036",
+      "status": "ready",
+      "groups": [
+        "editing"
+      ],
+      "primaryGroup": "editing",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "Dialog": {
+      "id": "cap-037",
+      "status": "needs-review",
+      "groups": [
+        "overlays"
+      ],
+      "primaryGroup": "overlays"
+    },
+    "Drawer": {
+      "id": "cap-038",
+      "status": "needs-review",
+      "groups": [
+        "layout",
+        "overlays"
+      ],
+      "primaryGroup": "layout"
+    },
+    "Tooltip": {
+      "id": "cap-039",
+      "status": "ready",
+      "groups": [
+        "feedback",
+        "overlays"
+      ],
+      "primaryGroup": "feedback",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "Menu": {
+      "id": "cap-040",
+      "status": "needs-review",
+      "groups": [
+        "actions",
+        "overlays"
+      ],
+      "primaryGroup": "actions"
+    },
+    "Popover": {
+      "id": "cap-041",
+      "status": "needs-review",
+      "groups": [
+        "overlays"
+      ],
+      "primaryGroup": "overlays"
+    },
+    "CommandPalette": {
+      "id": "cap-042",
+      "status": "needs-review",
+      "groups": [
+        "actions",
+        "navigation",
+        "overlays"
+      ],
+      "primaryGroup": "actions"
+    },
+    "Toast": {
+      "id": "cap-043",
+      "status": "ready",
+      "groups": [
+        "feedback"
+      ],
+      "primaryGroup": "feedback",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "ScrollArea": {
+      "id": "cap-044",
+      "status": "needs-review",
+      "groups": [
+        "layout"
+      ],
+      "primaryGroup": "layout"
+    },
+    "ButtonGroup": {
+      "id": "cap-045",
+      "status": "needs-review",
+      "groups": [
+        "actions"
+      ],
+      "primaryGroup": "actions"
+    },
+    "SplitButton": {
+      "id": "cap-046",
+      "status": "needs-review",
+      "groups": [
+        "actions"
+      ],
+      "primaryGroup": "actions"
+    },
+    "ActionBar": {
+      "id": "cap-047",
+      "status": "needs-review",
+      "groups": [
+        "actions"
+      ],
+      "primaryGroup": "actions"
+    },
+    "FloatingActionBar": {
+      "id": "cap-048",
+      "status": "ready",
+      "groups": [
+        "actions"
+      ],
+      "primaryGroup": "actions",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "FloatingField": {
+      "id": "cap-049",
+      "status": "needs-review",
+      "groups": [
+        "fields"
+      ],
+      "primaryGroup": "fields"
+    },
+    "StatusBar": {
+      "id": "cap-050",
+      "status": "ready",
+      "groups": [
+        "feedback"
+      ],
+      "primaryGroup": "feedback",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "Alert": {
+      "id": "cap-051",
+      "status": "ready",
+      "groups": [
+        "feedback"
+      ],
+      "primaryGroup": "feedback",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "SidebarPanel": {
+      "id": "cap-052",
+      "status": "ready",
+      "groups": [
+        "navigation",
+        "layout"
+      ],
+      "primaryGroup": "navigation",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "Calendar": {
+      "id": "cap-053",
+      "status": "ready",
+      "groups": [
+        "selection"
+      ],
+      "primaryGroup": "selection",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "DatePicker": {
+      "id": "cap-054",
+      "status": "needs-review",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields"
+    },
+    "MarkdownPreview": {
+      "id": "cap-055",
+      "status": "needs-review",
+      "groups": [
+        "editing"
+      ],
+      "primaryGroup": "editing"
+    },
+    "MarkdownEditor": {
+      "id": "cap-056",
+      "status": "archived",
+      "groups": [
+        "editing"
+      ],
+      "primaryGroup": "editing",
+      "replacement": "RichTextEditor"
+    },
+    "ReorderableList": {
+      "id": "cap-057",
+      "status": "ready",
+      "groups": [
+        "editing",
+        "motion"
+      ],
+      "primaryGroup": "editing",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "ContentCard": {
+      "id": "cap-058",
+      "status": "ready",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "TaskCard": {
+      "id": "cap-059",
+      "status": "ready",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "KanbanColumn": {
+      "id": "cap-060",
+      "status": "ready",
+      "groups": [
+        "layout"
+      ],
+      "primaryGroup": "layout",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "KanbanBoard": {
+      "id": "cap-061",
+      "status": "needs-review",
+      "groups": [
+        "layout"
+      ],
+      "primaryGroup": "layout"
+    },
+    "DailyHeader": {
+      "id": "cap-062",
+      "status": "needs-review",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content"
+    },
+    "TreeView": {
+      "id": "cap-063",
+      "status": "ready",
+      "groups": [
+        "navigation"
+      ],
+      "primaryGroup": "navigation",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "NavigationMenu": {
+      "id": "cap-064",
+      "status": "ready",
+      "groups": [
+        "navigation"
+      ],
+      "primaryGroup": "navigation",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "HoverPanel": {
+      "id": "cap-065",
+      "status": "needs-review",
+      "groups": [
+        "overlays"
+      ],
+      "primaryGroup": "overlays"
+    },
+    "ComboBox": {
+      "id": "cap-066",
+      "status": "needs-review",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields"
+    },
+    "MultiSelect": {
+      "id": "cap-067",
+      "status": "ready",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "TagInput": {
+      "id": "cap-068",
+      "status": "ready",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "RadioGroup": {
+      "id": "cap-069",
+      "status": "needs-review",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields"
+    },
+    "ColorPicker": {
+      "id": "cap-070",
+      "status": "ready",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "NumberField": {
+      "id": "cap-071",
+      "status": "needs-review",
+      "groups": [
+        "fields"
+      ],
+      "primaryGroup": "fields"
+    },
+    "ValueScrubber": {
+      "id": "cap-072",
+      "status": "needs-review",
+      "groups": [
+        "fields"
+      ],
+      "primaryGroup": "fields"
+    },
+    "RichTextEditor": {
+      "id": "cap-073",
+      "status": "ready",
+      "groups": [
+        "editing"
+      ],
+      "primaryGroup": "editing",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "DataTable": {
+      "id": "cap-074",
+      "status": "ready",
+      "groups": [
+        "data"
+      ],
+      "primaryGroup": "data",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "FilterToolbar": {
+      "id": "cap-075",
+      "status": "needs-review",
+      "groups": [
+        "selection",
+        "data"
+      ],
+      "primaryGroup": "selection"
+    },
+    "JsonViewer": {
+      "id": "cap-076",
+      "status": "needs-review",
+      "groups": [
+        "data"
+      ],
+      "primaryGroup": "data"
+    },
+    "ToastStack": {
+      "id": "cap-077",
+      "status": "ready",
+      "groups": [
+        "feedback",
+        "motion"
+      ],
+      "primaryGroup": "feedback",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "AnnouncementBar": {
+      "id": "cap-078",
+      "status": "ready",
+      "groups": [
+        "feedback"
+      ],
+      "primaryGroup": "feedback",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "CardStack": {
+      "id": "cap-079",
+      "status": "ready",
+      "groups": [
+        "content",
+        "motion"
+      ],
+      "primaryGroup": "content",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "TextShimmer": {
+      "id": "cap-080",
+      "status": "ready",
+      "groups": [
+        "motion",
+        "utilities"
+      ],
+      "primaryGroup": "motion",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "CommentThread": {
+      "id": "cap-081",
+      "status": "needs-review",
+      "groups": [
+        "editing"
+      ],
+      "primaryGroup": "editing"
+    },
+    "InlineComments": {
+      "id": "cap-082",
+      "status": "needs-review",
+      "groups": [
+        "editing"
+      ],
+      "primaryGroup": "editing"
+    },
+    "LineChart": {
+      "id": "cap-083",
+      "status": "needs-review",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "BarChart": {
+      "id": "cap-084",
+      "status": "needs-review",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "DonutChart": {
+      "id": "cap-085",
+      "status": "needs-review",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "Streamgraph": {
+      "id": "cap-086",
+      "status": "needs-review",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "BrushChart": {
+      "id": "cap-087",
+      "status": "needs-review",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "WaffleChart": {
+      "id": "cap-088",
+      "status": "needs-review",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "SlopeChart": {
+      "id": "cap-089",
+      "status": "needs-review",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "Sparkline": {
+      "id": "cap-090",
+      "status": "needs-review",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "Gauge": {
+      "id": "cap-091",
+      "status": "needs-review",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "ActivityHeatmap": {
+      "id": "cap-092",
+      "status": "needs-review",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "AnimatedCounter": {
+      "id": "cap-093",
+      "status": "needs-review",
+      "groups": [
+        "motion",
+        "charts"
+      ],
+      "primaryGroup": "motion"
+    },
+    "Ridgeline": {
+      "id": "cap-094",
+      "status": "needs-review",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "Treemap": {
+      "id": "cap-095",
+      "status": "needs-review",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "Chip": {
+      "id": "cap-096",
+      "status": "needs-review",
+      "groups": [
+        "selection",
+        "content"
+      ],
+      "primaryGroup": "selection",
+      "introduced": "2026-10-07"
+    },
+    "BottomSheet": {
+      "id": "cap-097",
+      "status": "needs-review",
+      "groups": [
+        "layout",
+        "overlays"
+      ],
+      "primaryGroup": "layout",
+      "introduced": "2026-10-07"
+    },
+    "FileTree": {
+      "id": "cap-098",
+      "status": "needs-review",
+      "groups": [
+        "navigation"
+      ],
+      "primaryGroup": "navigation",
+      "introduced": "2026-10-07"
+    },
+    "PreviewRail": {
+      "id": "cap-099",
+      "status": "needs-review",
+      "groups": [
+        "content",
+        "overlays",
+        "motion"
+      ],
+      "primaryGroup": "content",
+      "introduced": "2026-10-07"
+    }
+  }
+}

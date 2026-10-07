@@ -26,7 +26,7 @@ export function ThemeToggle() {
 
 ## Поверхность и локальные рамки
 
-Контекст описывает фактический фон контейнера. На собственном `section` задайте заливку через `--cap-surface-current`; встроенная Card создаёт собственный raised-контекст. Переключатель рамок меняет декоративные границы и плотность нейтральных заливок без изменения размеров. Popup сохраняет тему, акцент и режим рамок, а его поверхность остаётся raised.
+Контекст описывает фактический фон контейнера. На собственном `section` задайте заливку через `--cap-surface-current`; встроенная Card создаёт собственный raised-контекст. Переключатель рамок меняет декоративные границы без изменения размеров. Popup сохраняет тему, акцент и режим рамок, а его поверхность остаётся floating.
 
 ```tsx
 import { Button, Card, Popover, Switch, Tag } from '@personal/capacities-ui';
@@ -65,7 +65,7 @@ import { useState } from 'react';
 export function CollectionActions() {
   const [view, setView] = useState<'grid' | 'list'>('grid');
   return <ActionBar label="Представление коллекции" size="md" rovingFocus={false}>
-    <ButtonGroup label="Вид" prefix={28}>
+    <ButtonGroup label="Вид" prefix="99+">
       <IconButton label="Карточки" icon="grid" variant="ghost"
         aria-pressed={view === 'grid'} onClick={() => setView('grid')} />
       <IconButton label="Список" icon="list" variant="ghost"
@@ -151,13 +151,30 @@ Menu поддерживает стрелки, Home/End, выбор Enter/Space, 
 
 ```html
 <button class="cap-button" data-size="md" data-variant="primary" type="button">Создать</button>
-<span class="cap-tag" data-color="purple">Исследование</span>
+<span class="cap-tag" data-color="purple"><span class="cap-tag-label">Исследование</span></span>
 ```
 
 Сложные контролы требуют соответствующего поведения, ARIA и фокуса; один класс не превращает div в доступный диалог или меню.
 
 ## Контент и каталог
 
-Для локального цвета оберните группу в `<section data-accent="purple">`. `Tag`, `Badge`, `TypeLabel`, `IconBox` без color наследуют мод. Акцентное действие: `<Button variant="accent">`. Свет/темнота задаются независимо через data-theme.
+Для локального цвета оберните группу в `<section data-accent="purple">`. `Tag` и `IconBox` без color наследуют локальный акцент. `Badge` и `TypeLabel` сохранены только как совместимые обёртки Tag. Акцентное действие: `<Button variant="accent">`. Свет/темнота задаются независимо через data-theme.
 
-У каждого из 59 компонентов своя страница `#ComponentName`; переходите сразу к нужному примеру по маршруту из agent-manifest. Полная композиция: `examples/WorkspaceV2.tsx`. API контентных блоков: `docs/content-guide.md`. Контракт motion, состояний и адаптива: `docs/behavior.md`.
+У каждого из 61 компонента своя страница `#ComponentName`; переходите сразу к нужному примеру по маршруту из agent-manifest. Полная композиция: `examples/WorkspaceV2.tsx`. API контентных блоков: `docs/content-guide.md`. Контракт motion, состояний и адаптива: `docs/behavior.md`.
+
+## Настраиваемая карточка и перестановка
+
+```tsx
+const [items, setItems] = useState(projects); // unique stable id per item
+<ReorderableList label="Проекты" items={items} onOrderChange={setItems}
+  getItemLabel={item => item.title} handlePlacement="custom"
+  renderItem={(item, { handle }) => <ContentCard title={item.title}
+    dragHandle={handle} onOpen={() => open(item.id)}
+    blocks={[{ id: 'tags', content: <Tag>{item.tag}</Tag> }]}
+    blockOrder={['header', 'title', 'tags', 'description']}
+    hiddenBlocks={compact ? ['description'] : []}
+    description={item.description} />}
+/>
+```
+
+Для единой подписи семейства: `<Input label="Название" labelPlacement="inside" />`, `<Select label="Тип" labelPlacement="inside" options={types} />`, `<Textarea label="Описание" labelPlacement="inside" />`. Переключение на `outside` меняет только размещение подписи, не значение и не связь с полем.

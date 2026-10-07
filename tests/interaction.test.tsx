@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Button, Checkbox, CommandPalette, Dialog, Field, Input, Menu, SegmentedControl, Switch, Tabs } from '../src';
+import { Button, Checkbox, CommandPalette, Dialog, Field, Input, Menu, Radio, SegmentedControl, Switch, Tabs } from '../src';
 import axe from 'axe-core';
 describe('Interaction contracts', () => {
   it('prevents repeated actions while loading and preserves button type', async () => {
@@ -20,6 +20,21 @@ describe('Interaction contracts', () => {
     const checkbox = screen.getByRole('checkbox') as HTMLInputElement; expect(checkbox.indeterminate).toBe(true);
     await userEvent.click(screen.getByRole('switch', { name: 'Sync' })); expect(screen.getByRole('switch', { name: 'Sync' })).toBeChecked();
     await userEvent.click(screen.getByRole('switch', { name: 'Disabled' })); expect(screen.getByRole('switch', { name: 'Disabled' })).not.toBeChecked();
+  });
+  it('shares the Primary default without losing checkbox, radio, or switch keyboard semantics', async () => {
+    const user = userEvent.setup();
+    render(<><Checkbox label="Primary selection"/><Radio label="Private" name="access" defaultChecked/><Radio label="Team" name="access"/><Switch label="Sync"/><Switch label="Locked" disabled/><Checkbox label="Vivid selection" contrast={false}/><Radio label="Vivid radio" name="vivid" contrast={false}/><Switch label="Vivid switch" contrast={false}/></>);
+    for (const name of ['Primary selection','Private','Team','Sync']) expect(screen.getByLabelText(name).closest('label')).toHaveAttribute('data-contrast','true');
+    for (const name of ['Vivid selection','Vivid radio','Vivid switch']) expect(screen.getByLabelText(name).closest('label')).toHaveAttribute('data-contrast','false');
+    await user.tab(); await user.keyboard(' ');
+    expect(screen.getByRole('checkbox',{name:'Primary selection'})).toBeChecked();
+    await user.tab(); await user.keyboard('{ArrowRight}');
+    expect(screen.getByRole('radio',{name:'Team'})).toBeChecked();
+    expect(screen.getByRole('radio',{name:'Private'})).not.toBeChecked();
+    await user.tab(); await user.keyboard(' ');
+    expect(screen.getByRole('switch',{name:'Sync'})).toBeChecked();
+    await user.tab(); expect(screen.getByRole('checkbox',{name:'Vivid selection'})).toHaveFocus();
+    expect(screen.getByRole('switch',{name:'Locked'})).not.toBeChecked();
   });
   it('moves between enabled tabs with arrows, Home and End and reveals the right panel', async () => {
     function Example() { const [v, set] = useState('a'); return <Tabs label="Example" value={v} onValueChange={set} items={[{ value: 'a', label: 'One', content: 'First panel' }, { value: 'b', label: 'Locked', content: 'Locked panel', disabled: true }, { value: 'c', label: 'Three', content: 'Third panel' }]} />; }

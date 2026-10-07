@@ -3,18 +3,18 @@ version: alpha
 name: Capacities UI
 description: Independent UI kit with explicit surface context, local accents and optional borders.
 colors:
-  bg-back: "#f0f0f0"
-  bg-base: "#fafafa"
+  bg-back: "#f1f0ef"
+  bg-base: "#fbfaf9"
   bg-front: "#ffffff"
-  bg-el: "#d7d7d7"
-  bg-el-subtle: "#e9e9e9"
-  bg-button-primary: "#343434"
-  text-primary: "#242424"
-  text-secondary: "#525252"
-  text-subtle: "#606060"
+  bg-el: "#dcdbda"
+  bg-el-subtle: "#ecebea"
+  bg-button-primary: "#5c5959"
+  text-primary: "#232326"
+  text-secondary: "#454447"
+  text-subtle: "#565354"
   text-button-primary: "#ffffff"
-  border-base: "#e5e5e5"
-  border-front: "#e5e5e5"
+  border-base: "var(--cap-panel-border)"
+  border-front: "var(--cap-overlay-border)"
 typography:
   sans:
     fontFamily: Inter
@@ -72,29 +72,23 @@ components:
 
 ## Overview
 
-Реконструированный дизайн для интерфейсов с коллекциями объектов. Версия 0.3 использует спокойные заливки без декоративных рамок по умолчанию; границы доступны как отдельная настройка. Разделяйте боковую навигацию, основное содержимое и всплывающие панели поверхностями. Каталог содержит отдельную страницу каждого из 59 компонентов: `#ComponentName`.
+Реконструированный дизайн для интерфейсов с коллекциями объектов. Версия 0.3 использует спокойные заливки без декоративных рамок по умолчанию; границы доступны как отдельная настройка. Разделяйте боковую навигацию, основное содержимое и всплывающие панели поверхностями. Каталог содержит отдельную страницу каждого компонента: `#ComponentName`.
 
 ## Colors
 
-Различайте фоновый слой, основную панель и всплывающую поверхность с помощью `canvas`, `base` и `raised`. `data-surface` явно описывает реальный фон; `--cap-surface-current` даёт его текущую заливку. Нейтральные контролы используют `--cap-control-bg/hover/active`, цветные подложки — общие accent-роли. Контраст не определяется чтением DOM или автоматическим анализом CSS-фона. Primary-кнопка использует нейтральную инверсию текста и фона. Цветовые семейства применяйте к типам объектов, тегам и содержимому информационных блоков.
+Различайте фоновый слой, основную панель, приподнятую и плавающую поверхности с помощью `canvas`, `base`, `raised` и `floating`. `data-surface` явно описывает реальный фон; `--cap-surface-current` даёт его текущую заливку. Нейтральные контролы используют `--cap-control-bg/hover/active`, цветные подложки — общие accent-роли. Контраст не определяется чтением DOM или автоматическим анализом CSS-фона. Primary-кнопка использует нейтральную инверсию текста и фона. Цветовые семейства применяйте к типам объектов, тегам и содержимому информационных блоков.
 
 ## Themes
 
-Light/Dark и локальный Accent независимы. Базовый граф Figma хранит 12 фиксированных ступеней Neutral, 12 общих Accent Variables в 18 модах и 24 роли Appearance в Light/Dark: всего 48 Variables. Runtime дополнительно учитывает `data-surface` и `data-borders`, пересчитывая нейтральные заливки, мягкие акценты и второстепенный текст. Эти правила описаны в `source/surface-rules.json` и не входят в базовый граф Figma. Для 0.3 подготовлены локальные файлы; реальный документ Figma не обновлялся.
+Тема, поверхность, акцент и границы независимы в CSS. В Figma: Primitives — значения; Theme — пары Light/Dark; Semantic — роли с Base/Canvas/Raised/Floating; Borders — Off/On. Semantic → Theme → Primitives; общие для поверхностей пары переиспользуются. Исходные палитры сохранены; нейтральные alpha-цвета служат реакциями внутри цветных элементов. Группы kit нет.
 
-Ниже — основные поверхности и роли в контексте `base`. YAML выше показывает нейтральный Light/base с `data-borders="off"`; значения смешанных заливок округлены до sRGB HEX. Это не замена runtime-переменных.
-
-| Role | Light | Dark |
+| Поверхность | Light | Dark |
 | --- | --- | --- |
-| surface-canvas | #f0f0f0 | #101010 |
-| surface-base | #fafafa | #181818 |
-| surface-raised | #ffffff | #242424 |
-| content-primary | #242424 | #fafafa |
-| content-muted (base) | #606060 | #ababab |
-| border-default | #e5e5e5 | #343434 |
-| action-solid | #343434 | #e5e5e5 |
+| canvas | gray/125 · #F1F0EF | gray/950 · #111114 |
+| base | gray/50 · #FBFAF9 | gray/900 · #1A1A1D |
+| raised | gray/0 · #FFFFFF | gray/850 · #232326 |
 
-Акцентные роли text/ink/solid/solid-hover/on-solid ссылаются на выбранную шкалу. Мягкие soft/bg/block смешиваются с текущей поверхностью, а border учитывает выбранный режим границ. Не создавайте отдельный semantic token для каждого оттенка. Статусы success/warning/danger/info имеют фиксированный смысл и не меняются вместе с цветом объекта.
+Для вторичных элементов используются роли normal/hover/pressed/text; для disabled — отдельные нейтральные background/text. Выбор учитывает относительную яркость Y исходных RGB, монотонную смену состояния и контраст текста не ниже 4.5:1. Это ближайшие реальные ступени, поэтому яркость разных акцентов не обязана совпадать абсолютно. Статусы имеют фиксированный смысл и не меняются вместе с акцентом объекта.
 
 ## Typography
 
@@ -106,7 +100,7 @@ Light/Dark и локальный Accent независимы. Базовый г�
 
 ## Elevation & Depth
 
-`data-borders="off"` — вид по умолчанию: декоративные границы прозрачны, панели и контролы отделяются заливкой. `on` возвращает границы и уменьшает плотность нейтральных заливок. Геометрия контролов не меняется. Focus-visible и ошибки сохраняют собственные контуры независимо от режима.
+`data-borders="off"` — вид по умолчанию: декоративные границы прозрачны, панели и контролы отделяются заливкой. `on` возвращает границы. Геометрия контролов не меняется. Focus-visible и ошибки сохраняют собственные контуры независимо от режима.
 
 Используйте `--cap-panel-border` для панелей и `--cap-control-border` для контролов. Добавляйте тень всплывающим меню и диалогам. Portal переносит theme/accent/borders, но выбирает собственную поверхность `raised`, чтобы контраст содержимого соответствовал фону окна. Статические `border/default` и `border/strong` остаются базовыми цветами графа, а не глобальным переключателем рамок.
 
@@ -120,4 +114,4 @@ Light/Dark и локальный Accent независимы. Базовый г�
 
 ## Motion and responsive behavior
 
-Контекст поверхностей — `docs/surface-context.md`. Общий контракт поведения — `docs/behavior.md`: 120/180/260 ms, opacity/transform, reduced motion, 12 px viewport gutter, 44 px touch targets. ScrollArea ограничивает scroll локальным контейнером. Краевые маски открывают существующий фон только со сторон реального overflow. `scrollbar="auto" | "hidden"` управляет видимостью полосы; wheel/touch/keyboard сохраняются.
+Контекст поверхностей — `docs/surface-context.md`. Общий контракт поведения — `docs/behavior.md`: 120/180/260 ms, opacity/transform, reduced motion, 12 px viewport gutter, увеличенные основные touch-контролы. ScrollArea ограничивает scroll локальным контейнером. Краевые маски открывают существующий фон только со сторон реального overflow. `scrollbar="auto" | "hidden"` управляет видимостью полосы; wheel/touch/keyboard сохраняются.

@@ -12,16 +12,6 @@ const css = readFileSync('src/styles/tokens.css', 'utf8');
 type RGB = readonly [number, number, number];
 type Theme = 'light' | 'dark';
 type Scope = { surface: string; theme: Theme; borders: 'on' | 'off'; accent: string };
-const sourcePalettes = palettes as Record<string, Record<string, string>>;
-const swatches = new Map<string, RGB>();
-const accentCollection = graph.collections.find(collection => collection.name === 'Accent')!;
-const accentModes = accentCollection.modes as unknown as Record<string, Record<string, { components: number[] } | { alias: string }>>;
-// Use the generator's sampled sRGB gamut conversion; evaluate runtime color-mix
-// expressions independently below, rather than asserting snapshots of the rules.
-for (const [mode, values] of Object.entries(accentModes)) for (const [name, value] of Object.entries(values)) {
-  if ('components' in value) swatches.set(sourcePalettes[mode][name.split('/')[1]], value.components as unknown as RGB);
-}
-
 function splitOutsideFunctions(value: string, separator: ',' | ' '): string[] {
   let depth = 0, start = 0;
   const parts: string[] = [];
@@ -76,7 +66,7 @@ function resolveColor(scope: Scope) {
     }
     if (/^#[\da-f]{3}$/i.test(expression)) expression = '#' + [...expression.slice(1)].map(character => character + character).join('');
     if (/^#[\da-f]{6}$/i.test(expression)) return [1, 3, 5].map(index => parseInt(expression.slice(index, index + 2), 16) / 255) as unknown as RGB;
-    const sampled = swatches.get(expression); if (sampled) return sampled;
+    if(expression.startsWith('rgb(')) return expression.slice(4,-1).split(' / ')[0].split(' ').map(Number).map(n=>n/255) as unknown as RGB;
     throw new Error(`Unsupported generated color ${expression}`);
   };
   return (role: string) => evaluate(`var(--cap-${role})`);
@@ -108,11 +98,37 @@ describe('Contextual surfaces: normal-text readability', () => {
     const failures: string[] = [];
     for (const accent of graph.modes) {
       const color = resolveColor({ surface, theme, borders: 'off', accent });
-      for (const foreground of ['accent-ink', 'accent-text']) for (const background of ['accent-soft', 'accent-bg', 'accent-block']) {
+      for (const foreground of ['accent-ink', 'accent-text']) for (const background of ['accent-normal', 'accent-hover', 'accent-pressed']) {
         const ratio = contrast(color(foreground), color(background));
         if (ratio < 4.5) failures.push(`${accent}: ${foreground} on ${background} = ${ratio.toFixed(3)}:1`);
       }
     }
+    for(const accent of graph.modes){const color=resolveColor({surface,theme,borders:'off',accent});expect(contrast(color('disabled-text'),color('disabled-background'))).toBeGreaterThanOrEqual(4.5);expect(new Set(['accent-normal','accent-hover','accent-pressed'].map(n=>JSON.stringify(color(n)))).size).toBe(3);}
     expect(failures, 'Shared accent modes must remain readable on every declared surface.').toEqual([]);
   });
+});
+
+it('lifts dark floating surfaces above Raised and changes ButtonGroup fills with the real surface',()=>{
+ for(const theme of ['light','dark'] as const){
+  const fill=(surface:string)=>resolveColor({surface,theme,borders:'off',accent:'blue'});
+  const different=['base','canvas','raised'].map(surface=>JSON.stringify(fill(surface)('group-background')));
+  expect(new Set(different).size).toBe(3);
+  for(const surface of Object.keys(surfaces)){
+   const color=fill(surface);
+   expect(contrast(color('content-caption'),color('surface-current'))).toBeGreaterThanOrEqual(4.5);
+   expect(contrast(color('control-text'),color('group-background'))).toBeGreaterThanOrEqual(4.5);
+  }
+ }
+ const dark=(surface:string)=>resolveColor({surface,theme:'dark',borders:'off',accent:'blue'});
+ expect(luminance(dark('floating')('surface-current'))).toBeGreaterThan(luminance(dark('raised')('surface-current')));
+});
+
+it.each(contexts)('$surface / $theme: group reactions contrast against the actual group fill and remain readable',({surface,theme})=>{
+ for(const borders of ['off','on'] as const){
+  const color=resolveColor({surface,theme,borders,accent:'neutral'});
+  expect(contrast(color('group-background'),color('surface-current'))).toBeGreaterThanOrEqual(1.12);
+  expect(contrast(color('group-hover'),color('group-background'))).toBeGreaterThanOrEqual(1.12);
+  expect(contrast(color('group-pressed'),color('group-hover'))).toBeGreaterThanOrEqual(1.12);
+  for(const role of ['group-background','group-prefix','group-hover','group-pressed'])expect(contrast(color('group-text'),color(role))).toBeGreaterThanOrEqual(4.5);
+ }
 });
