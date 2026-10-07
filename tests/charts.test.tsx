@@ -195,7 +195,8 @@ describe('chart families',()=>{
   it('uses valid accessible semantics for heatmap and waffle cells',async()=>{
     const {container}=render(<><ActivityHeatmap label="Audit activity" year={2024} data={[]}/><WaffleChart label="Audit allocation" data={[{label:'A',value:1}]}/></>);
     expect((await axe.run(container,{rules:{'color-contrast':{enabled:false}}})).violations).toEqual([]);
-  });
+  // A full leap year plus waffle has 466 SVG controls; axe needs more time on CI CPUs.
+  },20_000);
 
   it('allocates exactly 100 waffle cells by largest remainder and activates data by keyboard',()=>{
     const select=vi.fn(),{container}=render(<WaffleChart label="Share" columns={8} data={[{label:'A',value:1},{label:'B',value:2}]} onSelect={select}/>);
