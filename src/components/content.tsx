@@ -2,7 +2,7 @@ import { useTranslate, useLocale } from './locale.js';
 import { ButtonGroup } from './workbench.js';
 import { CodeBlock, type CodeBlockProps } from './code-block.js';
 import { Fragment, useEffect, useId, useLayoutEffect, useRef, useState, type HTMLAttributes, type KeyboardEvent, type ReactNode } from 'react';
-import { Counter, TextAction, Button, Icon, IconButton, Tag, cx, type Color } from './primitives.js';
+import { Counter, TextAction, Button, Icon, IconButton, Tag, cx, type IconSource, type Color } from './primitives.js';
 import { Select, SegmentedControl } from './forms.js';
 import { ComboBox } from './selection.js';
 import { MovingHighlight } from './moving-highlight.js';
@@ -364,12 +364,12 @@ export function TaskCard({ title, typeLabel: suppliedTypeLabel, color = 'rose', 
 
   return <ContentCard {...props} className={cx('cap-task-card', className)} selectionLabel={props.selectionLabel ?? `${t("Выбрать ", "Select ")}${title}`} data-accent={color} data-completed={completed || undefined} header={<Tag color={color} icon="check">{typeLabel}</Tag>} actions={menuItems?.length ? <Menu label={`${t("Действия: ", "Actions: ")}${title}`} items={menuItems} /> : undefined} title={<span className="cap-task-title-row">{onCompletedChange && <input className="cap-task-checkbox" type="checkbox" aria-label={`${t("Завершить: ", "Complete: ")}${title}`} checked={!!completed} onChange={event => onCompletedChange(event.target.checked)} />}{onOpen ? <button type="button" className="cap-content-card-open" onClick={onOpen}>{title}</button> : <span>{title}</span>}</span>} />;
 }
-export interface KanbanColumnProps extends Omit<HTMLAttributes<HTMLElement>, 'color'> { title: string; count?: number; action?: ReactNode; emptyState?: ReactNode; color?: Color | 'inherit' }
-export function KanbanColumn({ title, count, action, emptyState, color = 'neutral', children, className, ...props }: KanbanColumnProps) {
+export interface KanbanColumnProps extends Omit<HTMLAttributes<HTMLElement>, 'color'> { title: string; count?: number; action?: ReactNode; footer?: ReactNode; icon?: IconSource; variant?: 'default' | 'framed'; emptyState?: ReactNode; color?: Color | 'inherit' }
+export function KanbanColumn({ title, count, action, footer, icon, variant = 'default', emptyState, color = 'neutral', children, className, ...props }: KanbanColumnProps) {
   const t = useTranslate();
 
   const id = useId();
-  return <section role="group" className={cx('cap-kanban-column', className)} aria-labelledby={id} {...props}><header className="cap-kanban-column-header"><h3 id={id} className="cap-kanban-column-title" data-accent={color === 'inherit' ? undefined : color}><span>{title}</span>{count !== undefined && <Counter value={count} size="xs" variant="translucent"/>}</h3>{action && <div className="cap-kanban-column-actions">{action}</div>}</header><div className="cap-kanban-column-body">{count === 0 ? emptyState ?? <EmptyState title={t("Здесь пока пусто", "Nothing here yet")} description={t("Переместите сюда карточку", "Move a card here")} /> : children}</div></section>;
+  return <section role="group" className={cx('cap-kanban-column', className)} data-variant={variant} data-surface={variant === 'framed' ? 'canvas' : undefined} aria-labelledby={id} {...props}><header className="cap-kanban-column-header"><h3 id={id} className="cap-kanban-column-title" data-accent={color === 'inherit' ? undefined : color}><span>{icon && <Icon name={icon}/>}<span>{title}</span></span>{count !== undefined && <Counter value={count} size="xs" variant={variant === 'framed' ? 'plain' : 'translucent'}/>}</h3>{action && <div className="cap-kanban-column-actions">{action}</div>}</header><div className="cap-kanban-column-body">{count === 0 ? emptyState ?? <EmptyState title={t("Здесь пока пусто", "Nothing here yet")} description={t("Переместите сюда карточку", "Move a card here")} /> : children}</div>{footer && <footer className="cap-kanban-column-footer">{footer}</footer>}</section>;
 }
 export interface KanbanLane { id: string; title: string; emptyMessage?: string; color?: Color | 'inherit' }
 export interface KanbanTask { id: string; columnId: string; title: string; description?: string; completed?: boolean; color?: Color; metadata?: ReactNode; footer?: ReactNode }

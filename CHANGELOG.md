@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0 · 2026-10-08
+
+- Added workspace Tabs with a short active underline, framed KanbanColumn groups and framed ButtonGroup actions.
+- Added MarkdownEditorV2 using the existing editor engine: selection toolbar, in-place text/highlight palettes, block types, links and editable Markdown tables. The classic editor remains available; the new component is marked needs-review.
+- Extended DataTable with two-axis scrolling, sticky header and summaries, left/right columns and top/bottom rows. Narrow containers release excess pins to keep a usable scroll lane. The 40-row example combines currency, segmented probability and mini charts.
+- Simplified catalogue navigation: plain group counts, language on the left, a version link to Changelog on the right and component IDs at the page bottom. Palette Columns always wraps without a redundant toggle.
+- Increased contrast of structural API/table boundaries independently of decorative borders. Updated typed playgrounds, generated API reference and agent contracts.
+
 ## 0.6.0 · 2026-10-08
 
 - Rebuilt the component overview with one centered example per plain preview and a compact caption. Overview and Changelog share the Docs navigation group.

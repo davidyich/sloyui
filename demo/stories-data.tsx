@@ -1,3 +1,4 @@
+import { AdvancedTableExample } from './AdvancedTableExample';
 import { useCatalogText, localizeCatalogueFixture } from './catalog-locale';
 import { useMemo, useState } from 'react';
 import { Tag } from '../src';
@@ -32,7 +33,7 @@ function DataExample({ labelPrefix }: { labelPrefix: string }) {
 }
 export function DataTableStory() {
  const ct=useCatalogText();
- return <StorySection title={ct("Сортировка, выбор и страницы")}><DataExample labelPrefix={ct("История DataTable")}/></StorySection>; }
+ return <><StorySection title={ct("Закрепление, прокрутка и итоги")}><AdvancedTableExample/></StorySection><StorySection title={ct("Сортировка, выбор и страницы")}><DataExample labelPrefix={ct("История DataTable")}/></StorySection></>; }
 export function FilterToolbarStory() {
  const ct=useCatalogText();
  return <StorySection title={ct("Поиск и фильтры")}><DataExample labelPrefix={ct("История FilterToolbar")}/></StorySection>; }

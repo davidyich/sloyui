@@ -1,3 +1,4 @@
+import { MarkdownEditorV2Example } from './MarkdownEditorV2Example';
 import {ResizablePanelGroupStory} from './ResizableExample';
 import { arcComponents } from './catalog-arc';
 import type { ComponentType } from 'react';
@@ -20,6 +21,7 @@ const entry = (group: ComponentGroup, description: string, render: ComponentType
 export const componentCatalog = {
   ResizablePanelGroup: entry('Навигация','Группа изменяемых панелей с вложенными осями и клавиатурным управлением.',ResizablePanelGroupStory),
   ...arcComponents,
+  MarkdownEditorV2: entry('Объекты и контент','Контекстный редактор Markdown с форматированием выделения и меню блоков.',MarkdownEditorV2Example),
   ResizableCard: entry('Объекты и контент','Карточка с изменением размера за угол и клавиатурным управлением.',Composition.ResizableCardStory),
   BottomSheet: entry('Окна и меню','Нижняя панель с отступом, фиксированными высотами и ручкой перемещения.',BottomSheetStory),
   FileTree: entry('Навигация','Файлы и папки с клавиатурной навигацией, действиями и предпросмотром.',FileTreeStory),

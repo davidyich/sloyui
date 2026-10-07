@@ -86,9 +86,9 @@ export function Accordion({ title, children, className, open, onToggle, variant 
     <div ref={body} className="cap-accordion-body" aria-hidden={!requestedOpen} inert={!requestedOpen}><div className="cap-accordion-content">{children}</div></div>
   </details>;
 }
-export interface TabItem { value: string; label: string; content: ReactNode; disabled?: boolean; count?: number; color?: Color | 'inherit' }
-export interface TabsProps { size?: Size; variant?: 'line' | 'pills' | 'segment' | 'outline' | 'accent'; items: TabItem[]; value: string; onValueChange: (v: string) => void; label: string; className?: string; scrollLabels?: { previous: string; next: string } }
-export function Tabs({ items, value, onValueChange, label, className, variant = 'line', size = 'md', scrollLabels: suppliedScrollLabels }: TabsProps) {
+export interface TabItem { value: string; label: string; icon?: IconSource; content: ReactNode; disabled?: boolean; count?: number; color?: Color | 'inherit' }
+export interface TabsProps { size?: Size; variant?: 'line' | 'pills' | 'segment' | 'outline' | 'accent' | 'workspace'; trailing?: ReactNode; items: TabItem[]; value: string; onValueChange: (v: string) => void; label: string; className?: string; scrollLabels?: { previous: string; next: string } }
+export function Tabs({ items, value, onValueChange, label, className, variant = 'line', size = 'md', trailing, scrollLabels: suppliedScrollLabels }: TabsProps) {
   const t = useTranslate();
   const scrollLabels = suppliedScrollLabels === undefined ? ({ previous: t("Прокрутить вкладки влево", "Scroll tabs left"), next: t("Прокрутить вкладки вправо", "Scroll tabs right") }) : suppliedScrollLabels;
 
@@ -145,12 +145,13 @@ export function Tabs({ items, value, onValueChange, label, className, variant = 
         const next = event.key === 'Home' ? enabled[0] : event.key === 'End' ? enabled.at(-1) : enabled[(index + direction + enabled.length) % enabled.length];
         if (next) { onValueChange(next.value); document.getElementById(`${id}-tab-${next.value}`)?.focus(); }
       }}>
-        {!['line', 'pills'].includes(variant) && <MovingHighlight root={track} selected="[role='tab'][aria-selected='true']" revision={value}/>}
+        {!['line', 'pills', 'workspace'].includes(variant) && <MovingHighlight root={track} selected="[role='tab'][aria-selected='true']" revision={value}/>}
         <MovingHighlight root={track} hover target="[role='tab']:not(:disabled):not([aria-selected='true'])"/>
-        {items.map(item => <button type="button" key={item.value} id={`${id}-tab-${item.value}`} role="tab" data-color={item.color === 'inherit' ? undefined : item.color} data-accented={item.color !== undefined && item.color !== 'neutral' && item.color !== 'gray' || undefined} aria-selected={value === item.value} aria-controls={`${id}-panel-${item.value}`} tabIndex={value === item.value ? 0 : -1} disabled={item.disabled} onClick={() => onValueChange(item.value)}><span>{item.label}</span>{item.count !== undefined && <Counter value={item.count} max={99} size="xs" variant="plain"/>}</button>)}
+        {items.map(item => <button type="button" key={item.value} id={`${id}-tab-${item.value}`} role="tab" data-color={item.color === 'inherit' ? undefined : item.color} data-accented={item.color !== undefined && item.color !== 'neutral' && item.color !== 'gray' || undefined} aria-selected={value === item.value} aria-controls={`${id}-panel-${item.value}`} tabIndex={value === item.value ? 0 : -1} disabled={item.disabled} onClick={() => onValueChange(item.value)}><span className="cap-tab-label">{item.icon && <Icon name={item.icon}/>}<span>{item.label}</span></span>{item.count !== undefined && <Counter value={item.count} max={99} size="xs" variant="plain"/>}</button>)}
       </div>
     </div>
     {edges.overflow && <button type="button" className="cap-tab-scroll" data-edge="right" aria-label={scrollLabels.next} aria-controls={`${id}-viewport`} disabled={!edges.right} onClick={() => scroll(1)}><Icon name="chevron"/></button>}
+    {trailing && <div className="cap-tab-trailing">{trailing}</div>}
   </div>{items.map(item => <div key={item.value} id={`${id}-panel-${item.value}`} role="tabpanel" aria-labelledby={`${id}-tab-${item.value}`} hidden={value !== item.value} tabIndex={0} className="cap-tab-panel">{item.content}</div>)}</div>;
 }
 export function Table({ caption, columns, rows, className }: { caption: string; columns: string[]; rows: ReactNode[][]; className?: string }) {

@@ -11,6 +11,7 @@ type PaletteView = 'rows' | 'columns';
 export default function ColorsV2({ theme, accent, copy }: { theme: 'light' | 'dark'; accent: Color; copy: (value: string) => void }) { const c=useCatalogText();
   const [paletteView, setPaletteView] = useState<PaletteView>('rows');
   const [wrapPalettes, setWrapPalettes] = useState(true);
+  const effectiveWrap = paletteView === 'columns' || wrapPalettes;
   const [actions, setActions] = useState(0);
   const [selectedShade, setSelectedShade] = useState<string | null>(null);
   const copyShade = (paletteName: Color, step: string) => copy(`var(--cap-palette-${paletteName === 'neutral' || paletteName === 'gray' ? 'gray' : paletteName}-${step})`);
@@ -24,13 +25,13 @@ export default function ColorsV2({ theme, accent, copy }: { theme: 'light' | 'da
     </div>;
   };
   return <><header className="page-intro"><div className="eyebrow">{c("ОСНОВЫ / ЦВЕТ")}</div><h1>{c("Полные палитры и состояния")}</h1><p>{c("417 исходных цветов. 17 акцентных растяжек по 22 оттенка, 41 оттенок gray и black / white. Вторичные элементы подобраны по относительной яркости для четырёх поверхностей в двух темах.")}</p></header>
-    <section className="v2-color-section cap-v2-palettes" data-wrap={wrapPalettes}>
+    <section className="v2-color-section cap-v2-palettes" data-wrap={effectiveWrap}>
       <div className="section-heading cap-v2-palettes-heading"><div><h2>{c("Полные палитры")}</h2><p className="muted">{c("Все оттенки рядом. Нажмите на образец, чтобы скопировать ссылку на токен.")}</p></div></div>
       <div className="cap-v2-palette-controls">
         <SegmentedControl label={c("Вид палитр")} value={paletteView} onValueChange={value => setPaletteView(value as PaletteView)} size="sm" options={[{ value: 'rows', label: c('Строки') }, { value: 'columns', label: c('Столбцы') }]}/>
-        <Switch label={c("Переносить по ширине")} size="sm" variant="neutral" checked={wrapPalettes} onChange={event => setWrapPalettes(event.target.checked)}/>
+        {paletteView === 'rows' && <Switch label={c("Переносить по ширине")} size="sm" variant="neutral" checked={wrapPalettes} onChange={event => setWrapPalettes(event.target.checked)}/>}
       </div>
-      <ScrollArea key={`${paletteView}-${wrapPalettes}`} className="cap-v2-palette-scroll" label={`${c("Все цветовые палитры по ")}${paletteView === 'rows' ? c('строкам') : c('столбцам')}`} axis="horizontal" scrollbar="hidden">
+      <ScrollArea key={`${paletteView}-${effectiveWrap}`} className="cap-v2-palette-scroll" label={`${c("Все цветовые палитры по ")}${paletteView === 'rows' ? c('строкам') : c('столбцам')}`} axis="horizontal" scrollbar="hidden">
         <div className={`cap-v2-palette-${paletteView}`}>{paletteNames.map(name => renderPalette(name, paletteView))}</div>
       </ScrollArea>
     </section>

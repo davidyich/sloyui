@@ -1027,6 +1027,15 @@
         "navigation"
       ],
       "introduced": "0.6.0"
+    },
+    "MarkdownEditorV2": {
+      "id": "cp-102",
+      "status": "needs-review",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content",
+      "introduced": "0.7.0"
     }
   }
 }

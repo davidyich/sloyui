@@ -24,10 +24,11 @@ try {
   }
   await writeFile(join(temp, 'consumer.tsx'), String.raw`
 import {
-  Alert, AnnouncementBar, BottomSheet, Button, CardStack, Chip, ColorPicker,
+  Alert, AnnouncementBar, BottomSheet, Button, ButtonGroup, CardStack, Chip, ColorPicker,
   ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, Dialog, Field, FileTree, Input, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
-  Popover, PreviewRail, RichTextEditor, Slider, StatusBar, Toast, ToastStack,
+  Popover, PreviewRail, MarkdownEditorV2, Tabs, RichTextEditor, Slider, StatusBar, Toast, ToastStack,
   markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit,
+  type MarkdownEditorV2Props, type TabsProps, type ButtonGroupProps, type KanbanColumnProps, type DataTableProps, type DataTableColumn,
   type BottomSheetProps, type ChipProps, type Color, type ContentLayoutProps,
   type FeedbackStyleProps, type FileTreeNode, type PreviewRailItem, type Size,
   type SliderProps, type ToastStackItem, type Locale, type ScrollAreaProps, type ScrollFadeDirection, type ScrollFadeSize,
@@ -56,10 +57,17 @@ const group = { label: 'Archive workspace', layout: [30, 70], onLayoutChange: (s
 const panel = { label: 'Outline', defaultSize: 30, minSize: 10, maxSize: 60, surface: 'canvas' } satisfies ResizablePanelProps;
 const handle = { withHandle: true, label: 'Resize outline', disabled: false } satisfies ResizableHandleProps;
 const editor = { label: 'Markdown note', value: document, onValueChange: (next: typeof document) => { const source: string = richTextToMarkdown(next); void source; }, showToolbar: true, toolbarSize: 'sm' } satisfies RichTextEditorProps;
+const markdownV2 = { label: 'Context note', value: markdown, onValueChange: (source: string) => { void source; }, toolbarSize: 'xs' } satisfies MarkdownEditorV2Props;
+const workspaceTabs = { label: 'Workspace tabs', variant: 'workspace', value: 'note', onValueChange: (value: string) => { void value; }, items: [{ value: 'note', label: 'Note', icon: 'page', content: <p>Note body</p> }], trailing: <Button>Add tab</Button> } satisfies TabsProps;
+const framedGroup = { label: 'Actions', appearance: 'framed', size: 'sm' } satisfies ButtonGroupProps;
+const framedColumn = { title: 'Active', variant: 'framed', icon: 'folder', footer: <Button>Add task</Button> } satisfies KanbanColumnProps;
+const pinnedColumns = [{ id: 'title', header: 'Title', value: (row: typeof rows[number]) => row.title, width: 180, pin: 'left', footer: (all: readonly typeof rows[number][]) => all.length }, { id: 'id', header: 'ID', value: (row: typeof rows[number]) => row.id, pin: 'right', footer: 'Archive total' }] satisfies DataTableColumn<typeof rows[number]>[];
+const pinnedTable = { label: 'Pinned rows', rows, columns: pinnedColumns, rowId: (row: typeof rows[number]) => row.id, maxHeight: 240, minWidth: 720, stickyHeader: true, pinnedRows: { top: ['task'], bottom: [] }, selectable: true, pinSelection: false } satisfies DataTableProps<typeof rows[number]>;
 function LocaleProbe() { const current: Locale = useLocale(), t = useTranslate(); return <span data-locale={current}>{t('Локализовано', 'Localized')}</span>; }
 
 export const demo = <Dialog size="xl" open={false} onOpenChange={() => {}} title="Test"><Field label="Title">{props => <Input {...props} size={size}/>}</Field><Button variant="outline" size={size}>{color}</Button></Dialog>;
 export const components = <>
+  <MarkdownEditorV2 {...markdownV2}/><Tabs {...workspaceTabs}/><ButtonGroup {...framedGroup}><Button>Save</Button></ButtonGroup><KanbanColumn {...framedColumn}>Task</KanbanColumn><DataTable {...pinnedTable}/>
   <Chip {...chip}>Archive chip</Chip><BottomSheet {...sheet}>Closed sheet body</BottomSheet>
   <FileTree label="Files" nodes={files} selectedId="app" expandedIds={['src']} onSelect={file => { const id: string = file.id; void id; }} onExpandedChange={ids => { const values: string[] = ids; void values; }}/>
   <PreviewRail label="Sections" items={rail} orientation="horizontal" previewSide="before" highlightActive onValueChange={id => { const value: string = id; void value; }}/>
@@ -89,7 +97,7 @@ void preserved;
 `);
   await writeFile(join(temp, 'tsconfig.json'), JSON.stringify({ compilerOptions: { target: 'ES2022', module: 'NodeNext', moduleResolution: 'NodeNext', jsx: 'react-jsx', strict: true, noEmit: true, skipLibCheck: false, lib: ['ES2022', 'DOM', 'DOM.Iterable'] }, include: ['*.tsx'] }));
   execFileSync(join(root, 'node_modules/.bin/tsc'), ['-p', join(temp, 'tsconfig.json')], { stdio: 'pipe' });
-  const serverRenderedExports = ['Button', 'ComboBox', 'MultiSelect', 'TagInput', 'RadioGroup', 'ColorPicker', 'NumberField', 'ValueScrubber', 'NavigationMenu', 'HoverPanel', 'TreeView', 'LineChart', 'BarChart', 'RichTextEditor', 'DataTable', 'ToastStack', 'Chip', 'BottomSheet', 'FileTree', 'PreviewRail', 'ContentLayout', 'ResizableCard', 'ContentCard', 'KanbanColumn', 'Slider', 'Alert', 'StatusBar', 'Toast', 'AnnouncementBar', 'CardStack', 'LocaleProvider', 'ResizablePanelGroup', 'ResizablePanel', 'ResizableHandle', 'ScrollArea', 'DailyHeader'];
+  const serverRenderedExports = ['Button', 'ComboBox', 'MultiSelect', 'TagInput', 'RadioGroup', 'ColorPicker', 'NumberField', 'ValueScrubber', 'NavigationMenu', 'HoverPanel', 'TreeView', 'LineChart', 'BarChart', 'RichTextEditor', 'DataTable', 'ToastStack', 'Chip', 'BottomSheet', 'FileTree', 'PreviewRail', 'ContentLayout', 'ResizableCard', 'ContentCard', 'KanbanColumn', 'Slider', 'Alert', 'StatusBar', 'Toast', 'AnnouncementBar', 'CardStack', 'LocaleProvider', 'ResizablePanelGroup', 'ResizablePanel', 'ResizableHandle', 'ScrollArea', 'DailyHeader', 'MarkdownEditorV2', 'Tabs', 'ButtonGroup'];
   const markdownBridgeExports = ['markdownToRichText', 'richTextToMarkdown', 'preserveMarkdownSourceEdit'];
   await writeFile(join(temp, 'render.mjs'), String.raw`
 import React from 'react';
@@ -97,10 +105,10 @@ import { renderToString } from 'react-dom/server';
 import { fileURLToPath } from 'node:url';
 import { resolve, sep } from 'node:path';
 import {
-  Alert, AnnouncementBar, BarChart, BottomSheet, Button, CardStack, Chip, ColorPicker,
+  Alert, AnnouncementBar, BarChart, BottomSheet, Button, ButtonGroup, CardStack, Chip, ColorPicker,
   ComboBox, ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, DailyHeader, FileTree, HoverPanel, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
   LineChart, MultiSelect, NavigationMenu, NumberField, PreviewRail, RadioGroup,
-  RichTextEditor, Slider, StatusBar, TagInput, Toast, ToastStack, TreeView, ValueScrubber,
+  MarkdownEditorV2, Tabs, RichTextEditor, Slider, StatusBar, TagInput, Toast, ToastStack, TreeView, ValueScrubber,
   markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit,
 } from '@personal/capacities-ui';
 const packageEntry = fileURLToPath(import.meta.resolve('@personal/capacities-ui'));
@@ -112,6 +120,24 @@ const markdown = '# Archive\n\n**Exact** source.\n\n~~~ts\nconst answer = 42;\n~
 const document = markdownToRichText(markdown);
 if (richTextToMarkdown(document) !== markdown) throw Error('Archive Markdown bridge changed untouched source');
 if (preserveMarkdownSourceEdit(markdown, markdown) !== markdown) throw Error('Archive source-edit bridge changed untouched source');
+const extendedSource = '| Name | Value |\n| :--- | ---: |\n| Alpha | 2 |\n\n<span data-cap-color="teal">Colored</span>\n';
+const extended = markdownToRichText(extendedSource, { extensions: true });
+if (!extended.blocks.some(block => block.type === 'table')) throw Error('Archive Markdown extensions did not parse table');
+if (!extended.blocks.some(block => (block.content ?? []).some(run => run.color === 'teal'))) throw Error('Archive Markdown extensions did not parse color');
+if (richTextToMarkdown(extended) !== extendedSource) throw Error('Archive Markdown extensions changed untouched table/color source');
+const v7 = renderToString(node(React.Fragment,null,
+  node(MarkdownEditorV2,{label:'Context note',value:extendedSource,onValueChange:noop,readOnly:true}),
+  node(Tabs,{label:'Workspace tabs',variant:'workspace',value:'note',onValueChange:noop,items:[{value:'note',label:'Note',icon:'page',content:'Archive tab body'}],trailing:node(Button,null,'Archive add tab')}),
+  node(ButtonGroup,{label:'Framed actions',appearance:'framed'},node(Button,null,'Save')),
+  node(KanbanColumn,{title:'Active',variant:'framed',icon:'folder',footer:'Archive column footer'},'Archive task'),
+  node(DataTable,{label:'Pinned tasks',rows:[...rows,{id:'b',name:'Second',value:3}],rowId:row=>row.id,columns:[{...columns[0],pin:'left',width:180,footer:'Archive total'},{...columns[1],pin:'right',footer:all=>all.reduce((sum,row)=>sum+row.value,0)}],maxHeight:240,minWidth:720,stickyHeader:true,pinnedRows:{top:['a'],bottom:['b']},selectable:true,pinSelection:true}),
+));
+for (const marker of ['cap-markdown-v2','cap-markdown-v2-table','Colored','data-variant="workspace"','cap-tab-trailing','Archive add tab','cap-button-group','data-appearance="framed"','data-variant="framed"','cap-kanban-column-footer','Archive column footer','data-pin="left"','data-pin="right"','data-row-pin="top"','data-row-pin="bottom"','data-sticky-header="true"','max-height:240px','min-width:720px','<tfoot>','Archive total']) {
+  if (!v7.includes(marker)) throw Error('Archive v0.7 SSR contract missing '+marker);
+}
+if (v7.includes('cap-rich-editor-tools')) throw Error('MarkdownEditorV2 rendered a static toolbar');
+const unpinned = renderToString(node(DataTable,{label:'Unpinned selection',rows,columns,rowId:row=>row.id,selectable:true,pinSelection:false,stickyHeader:false}));
+if (unpinned.includes('data-pin=') || unpinned.includes('data-sticky-header=')) throw Error('DataTable opt-out flags did not disable sticky selection/header');
 const feedback = { tone:'success', color:'teal', appearance:'soft', contrast:true, surface:'raised' };
 const closedSheet = renderToString(node(BottomSheet,{open:false,onOpenChange:noop,title:'Closed archive sheet',snapPoints:[0.3,0.8],snap:0,onSnapChange:noop},'Closed sheet body'));
 if (/cap-bottom-sheet|role="dialog"|Closed sheet body/.test(closedSheet)) throw Error('Closed BottomSheet rendered its modal body during SSR');
@@ -172,7 +198,7 @@ console.log('Archive dist SSR, localization, compound resize, optional toolbar a
   for (const path of fontPaths) await access(join(target, 'dist', path));
   const manifest = JSON.parse(await readFile(join(target, 'agent-manifest.json'), 'utf8'));
   const packed = await build({ stdin: { contents: "export { Button } from '@personal/capacities-ui';", resolveDir: temp }, bundle: true, write: false, minify: true, format: 'esm', external: ['react','react-dom','react/jsx-runtime'] });
-  const report = { package: manifest.package, componentCount: manifest.componentCount, isolatedArchiveConsumer: true, nodeNextTypes: true, exampleTypecheck: examples, serverRenderImport: true, serverRenderedExports, markdownBridgeExports, closedBottomSheet: true, packageEntryInsideArchiveDist: true, verticalContentLayout: true, sliderNumericCallbacks: true, feedbackStyleApi: true, localeProviderEnglish: true, defaultLocaleRussian: true, explicitIntlOverride: true, localeHooks: ['useLocale','useTranslate'], compoundResizablePanels: true, scrollFadeApi: true, richToolbarOptIn: true, fontAssets: fontPaths.length, buttonGzipBytes: gzipSync(packed.outputFiles[0].contents).length };
+  const report = { package: manifest.package, componentCount: manifest.componentCount, isolatedArchiveConsumer: true, nodeNextTypes: true, exampleTypecheck: examples, serverRenderImport: true, serverRenderedExports, markdownBridgeExports, closedBottomSheet: true, packageEntryInsideArchiveDist: true, verticalContentLayout: true, sliderNumericCallbacks: true, feedbackStyleApi: true, localeProviderEnglish: true, defaultLocaleRussian: true, explicitIntlOverride: true, localeHooks: ['useLocale','useTranslate'], compoundResizablePanels: true, scrollFadeApi: true, richToolbarOptIn: true, markdownEditorV2ControlledSource: true, markdownExtensionsTableColorRoundtrip: true, workspaceTabsIconTrailing: true, framedButtonGroup: true, framedKanbanFooter: true, dataTablePinnedColumnsRowsSummary: true, dataTableStickyOptOut: true, fontAssets: fontPaths.length, buttonGzipBytes: gzipSync(packed.outputFiles[0].contents).length };
   await writeFile(join(root, 'docs/package-validation.json'), JSON.stringify(report, null, 2) + '\n');
   console.log(report);
 } catch (error) {

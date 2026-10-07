@@ -2,6 +2,27 @@ import { useCallback } from 'react';
 import { useLocale } from '../src';
 /** Curated catalogue UI/metadata translations. Never applied to consumer content or DOM. */
 export const catalogueDictionary: Record<string,string> = {
+  "Контекстный редактор Markdown с форматированием выделения и меню блоков.": "Contextual Markdown editor with selection formatting and block menus.",
+  "Храните Markdown в value/onValueChange. Контекстное форматирование появляется при выделении; onCommentRequest передаёт выделенный текст приложению. Неподдерживаемый синтаксис сохраняется в исходнике.": "Keep Markdown in value/onValueChange. Selection reveals contextual formatting; onCommentRequest passes selected text to the application. Unsupported syntax stays in source.",
+  "Запрос комментария": "Comment request",
+  "Комментарий запрошен": "Comment requested",
+  "# Сад идей\n\nЗапишите следующий шаг.": "# Idea garden\n\nWrite down the next step.",
+  "Оформление": "Appearance",
+  "Итоги": "Summaries",
+  "Действие справа": "Trailing action",
+  "Рабочие разделы и группы": "Workspace sections and groups",
+  "Закрепление, прокрутка и итоги": "Pinning, scrolling and summaries",
+  "Иконки вкладок": "Tab icons",
+  "Добавить раздел": "Add section",
+  "Раздел добавлен": "Section added",
+  "Нижнее действие": "Footer action",
+  "Высота прокрутки": "Scroll height",
+  "Минимальная ширина": "Minimum width",
+  "Закрепить заголовок": "Pin header",
+  "Закрепить столбцы": "Pin columns",
+  "Закрепить крайние строки": "Pin edge rows",
+  "Закрепить выбор": "Pin selection",
+
   "Поля": "Fields",
   "Контейнеры": "Containers",
   "Контент и карточки": "Content and cards",
@@ -794,7 +815,7 @@ export const catalogueDictionary: Record<string,string> = {
   "Передавайте массив стабильных значений и onValueChange. Выбранные значения отображаются нейтральными Chip; цветные точки опциональны.": "Provide stable values and onValueChange. Selected values render as neutral Chip; colored dots are optional.",
   "Используйте value/onValueChange для цвета. Последние цвета включайте только при необходимости; предустановленная палитра не является обязательной частью выбора.": "Use value/onValueChange for color. Enable recent colors only when needed; preset swatches are optional.",
   "Храните JSON-блоки и стабильные ID. Для Markdown используйте markdownToRichText/richTextToMarkdown, сохраняя metadata; неподдерживаемый синтаксис остаётся исходником.": "Store JSON blocks and stable IDs. For Markdown use markdownToRichText/richTextToMarkdown, retaining metadata; unsupported syntax stays editable source.",
-  "Задавайте getRowId и столбцы с устойчивыми ID. Сортировка и выбор управляются через публичные props; проверяйте длинные ячейки на выбранной поверхности.": "Provide getRowId and columns with stable IDs. Sorting and selection use public props; check long cells on the chosen surface.",
+  "Задавайте rowId и столбцы с устойчивыми ID. Сортировка и выбор управляются через публичные props; проверяйте длинные ячейки на выбранной поверхности.": "Provide getRowId and columns with stable IDs. Sorting and selection use public props; check long cells on the chosen surface.",
   "Размещайте в ограниченной области с запасом под выбранное направление. Жизненным циклом и удалением уведомлений управляет приложение.": "Place within a bounded area with clearance for the chosen expansion direction. The application controls notification lifetime and removal.",
   "Используйте для последовательного просмотра или разбора. Выбирайте направление раскрытия под свободное место; сохраняйте решения в приложении через callback.": "Use for sequential viewing or review. Choose an expansion direction with available space; persist decisions in the application through callbacks.",
   "Сохраняйте понятное состояние без анимации. Используйте существующие настройки движения и системный reduced motion.": "Keep the state understandable without animation. Use existing motion settings and system reduced motion.",
@@ -804,8 +825,8 @@ export const catalogueDictionary: Record<string,string> = {
   "Нужно проверить": "Needs review",
   "Готов": "Ready",
   "Архивный": "Archived",
-  "Все цветовые палитры по ": "All color palettes in ",
-  "Скопировать ": "Copy ",
+  "Все цветовые палитры по": "All color palettes in",
+  "Скопировать": "Copy",
   " представление": " view",
   " фильтр": " filter",
   " карточки": " cards",
@@ -1424,7 +1445,13 @@ export function localizeCatalogueFixture<T>(fixture:T,translate:(text:string)=>s
 }
 
 /** Exact release-history translations; the repository Markdown remains unchanged. */
-export const changelogTranslations: Record<string,{ru:string;en:string}> = {"Rebuilt the component overview with one centered example per plain preview and a compact caption. Overview and Changelog share the Docs navigation group.":{"ru":"Обзор компонентов перестроен: один центрированный пример на простом превью и компактная подпись. Обзор и Changelog объединены в группу Docs.","en":"Rebuilt the component overview with one centered example per plain preview and a compact caption. Overview and Changelog share the Docs navigation group."},
+export const changelogTranslations: Record<string,{ru:string;en:string}> = {
+  "Added workspace Tabs with a short active underline, framed KanbanColumn groups and framed ButtonGroup actions.": {"ru": "Добавлены Tabs в стиле workspace с короткой отметкой активной вкладки, колонки KanbanColumn с рамками и групповые действия ButtonGroup.", "en": "Added workspace Tabs with a short active underline, framed KanbanColumn groups and framed ButtonGroup actions."},
+  "Added MarkdownEditorV2 using the existing editor engine: selection toolbar, in-place text/highlight palettes, block types, links and editable Markdown tables. The classic editor remains available; the new component is marked needs-review.": {"ru": "Добавлен MarkdownEditorV2 на общем движке: панель по выделению, палитры текста и фона внутри панели, типы блоков, ссылки и редактируемые Markdown-таблицы. Прежний редактор сохранён; новый компонент требует проверки.", "en": "Added MarkdownEditorV2 using the existing editor engine: selection toolbar, in-place text/highlight palettes, block types, links and editable Markdown tables. The classic editor remains available; the new component is marked needs-review."},
+  "Extended DataTable with two-axis scrolling, sticky header and summaries, left/right columns and top/bottom rows. Narrow containers release excess pins to keep a usable scroll lane. The 40-row example combines currency, segmented probability and mini charts.": {"ru": "DataTable получил прокрутку по двум осям, закреплённую шапку и итоги, колонки слева/справа и строки сверху/снизу. Узкие контейнеры снимают лишние закрепления. Пример на 40 строк включает суммы, сегменты вероятности и мини-графики.", "en": "Extended DataTable with two-axis scrolling, sticky header and summaries, left/right columns and top/bottom rows. Narrow containers release excess pins to keep a usable scroll lane. The 40-row example combines currency, segmented probability and mini charts."},
+  "Simplified catalogue navigation: plain group counts, language on the left, a version link to Changelog on the right and component IDs at the page bottom. Palette Columns always wraps without a redundant toggle.": {"ru": "Упрощена навигация каталога: счётчики без подложек, язык слева, ссылка версии на Changelog справа, ID внизу страницы. Столбцы палитр переносятся автоматически, лишний переключатель скрыт.", "en": "Simplified catalogue navigation: plain group counts, language on the left, a version link to Changelog on the right and component IDs at the page bottom. Palette Columns always wraps without a redundant toggle."},
+  "Increased contrast of structural API/table boundaries independently of decorative borders. Updated typed playgrounds, generated API reference and agent contracts.": {"ru": "Усилены структурные границы API и таблиц независимо от декоративных обводок. Обновлены песочницы, генерируемый API Reference и контракты для агентов.", "en": "Increased contrast of structural API/table boundaries independently of decorative borders. Updated typed playgrounds, generated API reference and agent contracts."},
+"Rebuilt the component overview with one centered example per plain preview and a compact caption. Overview and Changelog share the Docs navigation group.":{"ru":"Обзор компонентов перестроен: один центрированный пример на простом превью и компактная подпись. Обзор и Changelog объединены в группу Docs.","en":"Rebuilt the component overview with one centered example per plain preview and a compact caption. Overview and Changelog share the Docs navigation group."},
 "Added Russian/English runtime and catalogue localization, a persistent sidebar switch, locale-aware dates/numbers and portal inheritance. Consumer content and explicit formatters stay unchanged.":{"ru":"Добавлены русская/английская локализация библиотеки и каталога, сохраняемый переключатель в боковом меню, даты/числа по языку и наследование в порталах. Пользовательский контент и явные форматтеры сохраняются.","en":"Added Russian/English runtime and catalogue localization, a persistent sidebar switch, locale-aware dates/numbers and portal inheritance. Consumer content and explicit formatters stay unchanged."},
 "Reduced the active instruction set to six canonical files. Added local instruction creation/deletion with revision checks, draft preservation and protected core files; historical guides remain available in the reference archive.":{"ru":"Активные инструкции сокращены до шести канонических файлов. Добавлены локальное создание/удаление с ревизиями, сохранение черновиков и защита основных файлов; старые руководства сохранены в архиве.","en":"Reduced the active instruction set to six canonical files. Added local instruction creation/deletion with revision checks, draft preservation and protected core files; historical guides remain available in the reference archive."},
 "Added token-based directional ScrollArea fades with configurable depth and reveal distance. Floating actions, shadows and structural boundaries remain outside the mask.":{"ru":"Добавлены направленные затухания ScrollArea на токенах с настраиваемыми глубиной и расстоянием раскрытия. Плавающие действия, тени и структурные границы находятся вне маски.","en":"Added token-based directional ScrollArea fades with configurable depth and reveal distance. Floating actions, shadows and structural boundaries remain outside the mask."},

@@ -1,5 +1,5 @@
 import { useTranslate, useLocale } from './locale.js';
-import { useLayoutEffect, useMemo, useRef, useState, type ReactNode, type KeyboardEvent } from 'react';
+import { useLayoutEffect, useMemo, useRef, useState, type ReactNode, type CSSProperties, type KeyboardEvent } from 'react';
 import { ArrowDown, ArrowUp, ChevronDown, ChevronLeft, ChevronRight, Copy, Link2, Search } from 'lucide-react';
 import { Button, Icon, IconButton, Tag, type IconSource } from './primitives.js';
 import { Checkbox, Input } from './forms.js';
@@ -15,6 +15,10 @@ export interface DataTableColumn<T> {
   sortable?: boolean;
   numeric?: boolean;
   width?: string | number;
+  /** Freeze this column at the corresponding viewport edge. */
+  pin?: 'left' | 'right';
+  /** Summary of all supplied rows, rendered in the sticky table footer. */
+  footer?: ReactNode | ((rows: readonly T[]) => ReactNode);
 }
 export interface DataTableProps<T> {
   label: string;
@@ -34,6 +38,14 @@ export interface DataTableProps<T> {
   onPageChange?: (page: number) => void;
   emptyMessage?: string;
   className?: string;
+  /** Bound the viewport and enable vertical scrolling. */
+  maxHeight?: number | string;
+  minWidth?: number | string;
+  stickyHeader?: boolean;
+  /** Rows on the current page are moved to its top/bottom and remain visible while scrolling. */
+  pinnedRows?: { top?: readonly string[]; bottom?: readonly string[] };
+  /** Keep the selection checkbox column visible during horizontal scrolling. */
+  pinSelection?: boolean;
   /** Omit to inherit the composition's painted surface. */
   surface?: 'base' | 'canvas' | 'raised' | 'floating';
 }
@@ -44,7 +56,7 @@ function compareValues(a: string | number | Date | null | undefined, b: string |
   const result = typeof left === 'number' && typeof right === 'number' ? left - right : collator.compare(String(left), String(right));
   return direction === 'asc' ? result : -result;
 }
-export function DataTable<T>({ label, rows, columns, rowId, sort: controlledSort, defaultSort = null, onSortChange, selectable = false, selectedIds, defaultSelectedIds = [], onSelectedIdsChange, page: controlledPage, defaultPage = 1, pageSize, onPageChange, emptyMessage: suppliedEmptyMessage, className, surface }: DataTableProps<T>) {
+export function DataTable<T>({ label, rows, columns, rowId, sort: controlledSort, defaultSort = null, onSortChange, selectable = false, selectedIds, defaultSelectedIds = [], onSelectedIdsChange, page: controlledPage, defaultPage = 1, pageSize, onPageChange, emptyMessage: suppliedEmptyMessage, className, surface, maxHeight, minWidth, stickyHeader = true, pinnedRows, pinSelection = true }: DataTableProps<T>) {
   const locale = useLocale();
   const collator = useMemo(() => new Intl.Collator(locale, { numeric: true, sensitivity: 'base' }), [locale]);
   const t = useTranslate();
@@ -55,6 +67,7 @@ export function DataTable<T>({ label, rows, columns, rowId, sort: controlledSort
   const [internalPage, setInternalPage] = useState(defaultPage);
   const anchor = useRef<string | null>(null);
   const [announcement, setAnnouncement] = useState('');
+  useLayoutEffect(() => { setAnnouncement(''); }, [locale]);
   const sort = controlledSort === undefined ? internalSort : controlledSort;
   const selection = new Set(selectedIds ?? internalSelected);
   const sorted = useMemo(() => {
@@ -65,7 +78,66 @@ export function DataTable<T>({ label, rows, columns, rowId, sort: controlledSort
   const size = pageSize && pageSize > 0 ? Math.max(1, Math.floor(pageSize)) : 0;
   const pages = size ? Math.max(1, Math.ceil(sorted.length / size)) : 1;
   const page = Math.min(pages, Math.max(1, controlledPage ?? internalPage));
-  const visible = size ? sorted.slice((page - 1) * size, page * size) : sorted;
+  const pageRows = size ? sorted.slice((page - 1) * size, page * size) : sorted;
+  const topIds = new Set(pinnedRows?.top), bottomIds = new Set(pinnedRows?.bottom);
+  const visible = [...pageRows.filter(row => topIds.has(rowId(row))), ...pageRows.filter(row => !topIds.has(rowId(row)) && !bottomIds.has(rowId(row))), ...pageRows.filter(row => !topIds.has(rowId(row)) && bottomIds.has(rowId(row)))];
+  const viewport = useRef<HTMLDivElement>(null);
+  const hasSummary = columns.some(column => column.footer !== undefined);
+  const measureKey = `${selectable}:${pinSelection}:${stickyHeader}:${hasSummary}:${columns.map(c => `${c.id}:${c.pin}:${c.width}`).join('|')}:${visible.map(rowId).join('|')}:${[...topIds].join('|')}:${[...bottomIds].join('|')}`;
+  useLayoutEffect(() => {
+    const root = viewport.current;
+    if (!root) return;
+    const measure = () => {
+      const header = root.querySelector<HTMLTableRowElement>('thead tr');
+      const headers = [...root.querySelectorAll<HTMLTableCellElement>('thead th')];
+      let left = 0, right = 0;
+      // Reserve a useful scrolling lane; discard trailing left pins, then right pins,
+      // rather than letting frozen columns cover the entire narrow viewport.
+      let budget = Math.max(0, root.clientWidth - Math.min(240, Math.max(160, root.clientWidth * .35)));
+      const active = new Map<number, 'left' | 'right'>();
+      headers.forEach((cell, index) => {
+        const width = cell.getBoundingClientRect().width;
+        if (cell.dataset.pin === 'left' && width <= budget) { active.set(index, 'left'); budget -= width; }
+      });
+      headers.slice().reverse().forEach(cell => {
+        const index = headers.indexOf(cell), width = cell.getBoundingClientRect().width;
+        if (cell.dataset.pin === 'right' && width <= budget) { active.set(index, 'right'); budget -= width; }
+      });
+      const leftIndices = [...active].filter(([, pin]) => pin === 'left').map(([index]) => index);
+      const rightIndices = [...active].filter(([, pin]) => pin === 'right').map(([index]) => index);
+      headers.forEach((cell, index) => {
+        if (active.get(index) === 'left') { root.style.setProperty(`--cap-table-col-${index}`, `${left}px`); left += cell.getBoundingClientRect().width; }
+      });
+      headers.slice().reverse().forEach(cell => {
+        const index = headers.indexOf(cell);
+        if (active.get(index) === 'right') { root.style.setProperty(`--cap-table-col-${index}`, `${right}px`); right += cell.getBoundingClientRect().width; }
+      });
+      root.querySelectorAll<HTMLTableRowElement>('tr').forEach(row => {
+        [...row.cells].forEach((cell, index) => {
+          const pin = active.get(index);
+          if (pin) cell.dataset.pinActive = pin; else delete cell.dataset.pinActive;
+          if (pin === 'left' && index === Math.max(...leftIndices) || pin === 'right' && index === Math.min(...rightIndices)) cell.dataset.pinActiveEdge = 'true';
+          else delete cell.dataset.pinActiveEdge;
+        });
+      });
+      let top = stickyHeader ? header?.getBoundingClientRect().height ?? 0 : 0;
+      let bottom = root.querySelector('tfoot')?.getBoundingClientRect().height ?? 0;
+      const bodyRows = [...root.querySelectorAll<HTMLTableRowElement>('tbody tr[data-row-id]')];
+      bodyRows.forEach(row => { if (row.dataset.rowPin === 'top') { row.style.setProperty('--cap-table-row-offset', `${top}px`); top += row.getBoundingClientRect().height; } });
+      bodyRows.slice().reverse().forEach(row => { if (row.dataset.rowPin === 'bottom') { row.style.setProperty('--cap-table-row-offset', `${bottom}px`); bottom += row.getBoundingClientRect().height; } });
+    };
+    measure();
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(measure);
+    [root, ...root.querySelectorAll('th, tbody tr, tfoot')].forEach(element => observer?.observe(element));
+    window.addEventListener('resize', measure);
+    return () => { observer?.disconnect(); window.removeEventListener('resize', measure); };
+  }, [measureKey, locale]);
+  const cellProps = (column: DataTableColumn<T> | null, index: number) => {
+    const pin = column?.pin ?? (!column && pinSelection ? 'left' : undefined);
+    const neighbors = columns.filter(c => c.pin === pin);
+    const edge = pin === 'left' ? (column ? neighbors.at(-1)?.id === column.id : !neighbors.length) : pin === 'right' && neighbors[0]?.id === column?.id;
+    return { 'data-pin': pin, 'data-pin-edge': edge || undefined, style: { width: column?.width, ...(pin ? { [pin]: `var(--cap-table-col-${index}, 0px)` } : {}) } as CSSProperties };
+  };
   const visibleIds = visible.map(rowId);
   const selectedVisible = visibleIds.filter(id => selection.has(id)).length;
   const allVisible = visibleIds.length > 0 && selectedVisible === visibleIds.length;
@@ -91,19 +163,19 @@ export function DataTable<T>({ label, rows, columns, rowId, sort: controlledSort
   };
   const setPage = (next: number) => { const clamped = Math.min(pages, Math.max(1, next)); if (controlledPage === undefined) setInternalPage(clamped); onPageChange?.(clamped); };
   return <div className={`cap-data-table${className ? ` ${className}` : ''}`} data-surface={surface}>
-    <div className="cap-data-table-scroll cap-surface-boundary" role="region" aria-label={label} tabIndex={0}>
-      <table><caption className="cap-sr-only">{label}</caption><thead><tr>
-        {selectable && <th className="cap-data-table-select" scope="col"><span className="cap-sr-only">{t("Выбор строк", "Row selection")}</span><Checkbox label={t("Выбрать все строки на странице", "Select all rows on this page")} aria-label={t("Выбрать все строки на странице", "Select all rows on this page")} size="sm" checked={allVisible} indeterminate={selectedVisible > 0 && !allVisible} disabled={!visible.length} onChange={() => { const next = new Set(selection); visibleIds.forEach(id => allVisible ? next.delete(id) : next.add(id)); applySelection(next); }}/></th>}
-        {columns.map(column => <th key={column.id} scope="col" style={{ width: column.width }} aria-sort={sort?.id === column.id ? sort.direction === 'asc' ? 'ascending' : 'descending' : 'none'} data-numeric={column.numeric || undefined}>
+    <div ref={viewport} className="cap-data-table-scroll cap-surface-boundary" data-sticky-header={stickyHeader || undefined} style={{ maxHeight }} role="region" aria-label={label} tabIndex={0}>
+      <table style={{ minWidth }}><caption className="cap-sr-only">{label}</caption><thead><tr>
+        {selectable && <th className="cap-data-table-select" scope="col" {...cellProps(null, 0)}><span className="cap-sr-only">{t("Выбор строк", "Row selection")}</span><Checkbox label={t("Выбрать все строки на странице", "Select all rows on this page")} aria-label={t("Выбрать все строки на странице", "Select all rows on this page")} size="sm" checked={allVisible} indeterminate={selectedVisible > 0 && !allVisible} disabled={!visible.length} onChange={() => { const next = new Set(selection); visibleIds.forEach(id => allVisible ? next.delete(id) : next.add(id)); applySelection(next); }}/></th>}
+        {columns.map((column, index) => <th key={column.id} scope="col" {...cellProps(column, index + Number(selectable))} aria-sort={sort?.id === column.id ? sort.direction === 'asc' ? 'ascending' : 'descending' : 'none'} data-numeric={column.numeric || undefined}>
           {column.sortable === false ? column.header : <button type="button" className="cap-data-table-sort" onClick={() => setSort(column)}>{column.header}{sort?.id === column.id ? sort.direction === 'asc' ? <ArrowUp size={14}/> : <ArrowDown size={14}/> : <span className="cap-data-table-sort-hint" aria-hidden="true">↕</span>}</button>}
         </th>)}
       </tr></thead><tbody>
-        {visible.map(row => { const id = rowId(row); return <tr key={id} data-selected={selection.has(id) || undefined}>
-          {selectable && <td className="cap-data-table-select"><Checkbox label={`${t("Выбрать строку ", "Select row ")}${id}`} aria-label={`${t("Выбрать строку ", "Select row ")}${id}`} size="sm" checked={selection.has(id)} onChange={event => toggleRow(id, (event.nativeEvent as MouseEvent).shiftKey === true)}/></td>}
-          {columns.map(column => <td key={column.id} data-numeric={column.numeric || undefined}>{column.cell ? column.cell(row) : String(column.value(row) ?? '')}</td>)}
+        {visible.map(row => { const id = rowId(row); return <tr key={id} data-row-id={id} data-row-pin={topIds.has(id) ? 'top' : bottomIds.has(id) ? 'bottom' : undefined} data-selected={selection.has(id) || undefined}>
+          {selectable && <td className="cap-data-table-select" {...cellProps(null, 0)}><Checkbox label={`${t("Выбрать строку ", "Select row ")}${id}`} aria-label={`${t("Выбрать строку ", "Select row ")}${id}`} size="sm" checked={selection.has(id)} onChange={event => toggleRow(id, (event.nativeEvent as MouseEvent).shiftKey === true)}/></td>}
+          {columns.map((column, index) => <td key={column.id} {...cellProps(column, index + Number(selectable))} data-numeric={column.numeric || undefined}>{column.cell ? column.cell(row) : String(column.value(row) ?? '')}</td>)}
         </tr>; })}
         {!visible.length && <tr><td colSpan={columns.length + Number(selectable)} className="cap-data-table-empty">{emptyMessage}</td></tr>}
-      </tbody></table>
+      </tbody>{hasSummary && <tfoot><tr>{selectable && <td className="cap-data-table-select" {...cellProps(null, 0)}/>}{columns.map((column, index) => <td key={column.id} {...cellProps(column, index + Number(selectable))} data-numeric={column.numeric || undefined}>{typeof column.footer === 'function' ? column.footer(rows) : column.footer}</td>)}</tr></tfoot>}</table>
     </div>
     <div className="cap-data-table-footer"><span>{rows.length ? `${size ? (page-1)*size+1 : 1}–${size ? Math.min(page*size,sorted.length) : sorted.length}${t(" из ", " of ")}${sorted.length}` : t("0 строк", "0 rows")}{selectable && selection.size ? ` · ${selection.size}${t(" выбрано", " selected")}` : ''}</span>
       {size > 0 && pages > 1 && <nav aria-label={`${label}${t(": страницы", ": pages")}`} className="cap-data-table-pagination"><IconButton label={t("Предыдущая страница", "Previous page")} icon={ChevronLeft} size="sm" variant="ghost" disabled={page===1} onClick={()=>setPage(page-1)}/><span>{t("Страница", "Page")} {page} {t("из", "of")} {pages}</span><IconButton label={t("Следующая страница", "Next page")} icon={ChevronRight} size="sm" variant="ghost" disabled={page===pages} onClick={()=>setPage(page+1)}/></nav>}

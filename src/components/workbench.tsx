@@ -98,14 +98,15 @@ export const ScrollArea = /* @__PURE__ */ forwardRef<HTMLDivElement, ScrollAreaP
 export interface ButtonGroupProps extends Omit<HTMLAttributes<HTMLDivElement>, 'prefix'> {
   label: string;
   attached?: boolean;
+  appearance?: 'default' | 'framed';
   size?: Size;
   orientation?: 'horizontal' | 'vertical';
   prefix?: ReactNode;
   color?: Color | 'inherit';
 }
-export function ButtonGroup({ label, attached = true, size, orientation = 'horizontal', prefix, color = 'neutral', className, children, ...props }: ButtonGroupProps) {
+export function ButtonGroup({ label, attached = true, appearance = 'default', size, orientation = 'horizontal', prefix, color = 'neutral', className, children, ...props }: ButtonGroupProps) {
   const track = useRef<HTMLDivElement>(null);
-  return <div role="group" aria-label={label} className={cx('cap-button-group', className)} data-attached={attached || undefined} data-size={size} data-orientation={orientation} data-color={color} data-accent={color === 'inherit' ? undefined : color} {...props}>
+  return <div role="group" aria-label={label} className={cx('cap-button-group', className)} data-appearance={appearance} data-attached={attached || undefined} data-size={size} data-orientation={orientation} data-color={color} data-accent={color === 'inherit' ? undefined : color} {...props}>
     {prefix !== undefined && <span className="cap-button-group-prefix">{(typeof prefix === 'number' || typeof prefix === 'string') ? <Counter value={prefix} size={size ?? 'md'} variant="plain"/> : prefix}</span>}<div ref={track} className={cx("cap-button-group-items", attached && "cap-shared-hover")} data-moving={attached||undefined}>{attached&&<MovingHighlight root={track} hover/>}{children}</div>
   </div>;
 }

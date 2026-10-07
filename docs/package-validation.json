@@ -1,6 +1,6 @@
 {
   "package": "@personal/capacities-ui",
-  "componentCount": 100,
+  "componentCount": 101,
   "isolatedArchiveConsumer": true,
   "nodeNextTypes": true,
   "exampleTypecheck": [
@@ -46,7 +46,10 @@
     "ResizablePanel",
     "ResizableHandle",
     "ScrollArea",
-    "DailyHeader"
+    "DailyHeader",
+    "MarkdownEditorV2",
+    "Tabs",
+    "ButtonGroup"
   ],
   "markdownBridgeExports": [
     "markdownToRichText",
@@ -68,6 +71,13 @@
   "compoundResizablePanels": true,
   "scrollFadeApi": true,
   "richToolbarOptIn": true,
+  "markdownEditorV2ControlledSource": true,
+  "markdownExtensionsTableColorRoundtrip": true,
+  "workspaceTabsIconTrailing": true,
+  "framedButtonGroup": true,
+  "framedKanbanFooter": true,
+  "dataTablePinnedColumnsRowsSummary": true,
+  "dataTableStickyOptOut": true,
   "fontAssets": 9,
-  "buttonGzipBytes": 1829
+  "buttonGzipBytes": 1871
 }

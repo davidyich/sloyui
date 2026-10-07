@@ -6,10 +6,11 @@ import type { RichTextMarkdownSource } from './rich-text-markdown.js';
 import { useTranslate } from './locale.js';
 import { FloatingActionBar } from './workbench.js';
 import { flushSync } from 'react-dom';
+import { ContextToolbar } from './rich-text-context-toolbar.js';
 import { OverlayPortal, useAnchoredOverlay, useOverlayDismiss, useOverlayPresence, useOverlayScope } from './overlays.js';
 
-export type RichTextMark = 'bold' | 'italic' | 'strike' | 'code';
-export interface RichTextRun { text: string; marks?: RichTextMark[] }
+export type RichTextMark = 'bold' | 'italic' | 'strike' | 'code' | 'underline';
+export interface RichTextRun { text: string; marks?: RichTextMark[]; color?: string; highlight?: string; link?: string }
 export type RichTextBlockType = 'paragraph' | 'heading1' | 'heading2' | 'heading3' | 'bullet' | 'numbered' | 'quote' | 'code' | (string & {});
 export type RichTextJson = null | boolean | number | string | RichTextJson[] | { [key: string]: RichTextJson };
 export interface RichTextBlock { id: string; type: RichTextBlockType; content?: RichTextRun[]; data?: RichTextJson; markdown?: RichTextMarkdownSource }
@@ -31,6 +32,8 @@ export interface RichTextEditorProps {
   disabled?: boolean;
   readOnly?: boolean;
   showToolbar?: boolean;
+  uiVariant?: 'classic' | 'context';
+  onCommentRequest?: (text: string) => void;
   toolbarSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
 }
@@ -45,8 +48,8 @@ const builtins = (t: (ru: string, en: string) => string): RichTextPreset[] => [
   { type: 'quote', label: t('Цитата', 'Quote'), keywords: ['blockquote'], icon: Quote },
   { type: 'code', label: t('Код', 'Code'), keywords: ['pre', 'code'], icon: Code2 },
 ];
-const marks: RichTextMark[] = ['bold', 'italic', 'strike', 'code'];
-const markTags: Record<RichTextMark, string> = { bold: 'STRONG', italic: 'EM', strike: 'S', code: 'CODE' };
+const marks: RichTextMark[] = ['bold', 'italic', 'strike', 'code', 'underline'];
+const markTags: Record<RichTextMark, string> = { bold: 'STRONG', italic: 'EM', strike: 'S', code: 'CODE', underline: 'U' };
 let nextId = 0;
 export function createRichTextBlock(type: RichTextBlockType = 'paragraph', content: RichTextRun[] = []): RichTextBlock {
   return { id: typeof crypto !== 'undefined' && 'randomUUID' in crypto ? crypto.randomUUID() : `cap-rich-${++nextId}`, type, content };
@@ -60,22 +63,23 @@ function normalizeRuns(runs: RichTextRun[]): RichTextRun[] {
     if (!run.text) continue;
     const sorted = marks.filter(mark => run.marks?.includes(mark));
     const last = result[result.length - 1];
-    if (last && JSON.stringify(last.marks ?? []) === JSON.stringify(sorted)) last.text += run.text;
-    else result.push(sorted.length ? { text: run.text, marks: sorted } : { text: run.text });
+    if (last && JSON.stringify([last.marks ?? [], last.color, last.highlight, last.link]) === JSON.stringify([sorted, run.color, run.highlight, run.link])) last.text += run.text;
+    else result.push({ ...run, ...(sorted.length ? { marks: sorted } : { marks: undefined }) });
   }
   return result;
 }
 function readRuns(root: HTMLElement): RichTextRun[] {
   const found: RichTextRun[] = [];
-  const visit = (node: Node, active: RichTextMark[]) => {
-    if (node.nodeType === Node.TEXT_NODE) { found.push({ text: node.textContent ?? '', marks: active }); return; }
+  const visit = (node: Node, active: RichTextMark[], attrs: Pick<RichTextRun, 'color' | 'highlight' | 'link'> = {}) => {
+    if (node.nodeType === Node.TEXT_NODE) { found.push({ text: node.textContent ?? '', marks: active, ...attrs }); return; }
     if (node.nodeType !== Node.ELEMENT_NODE) return;
     const element = node as HTMLElement;
-    if (element.tagName === 'BR') { found.push({ text: '\n', marks: active }); return; }
+    if (element.tagName === 'BR') { found.push({ text: '\n', marks: active, ...attrs }); return; }
     const added = marks.find(mark => markTags[mark] === element.tagName)
       ?? (element.tagName === 'B' ? 'bold' : element.tagName === 'I' ? 'italic' : element.tagName === 'DEL' ? 'strike' : undefined);
     const next = added ? [...active, added] : active;
-    element.childNodes.forEach(child => visit(child, next));
+    const nextAttrs = { ...attrs, ...(element.dataset.capColor ? { color: element.dataset.capColor } : {}), ...(element.dataset.capHighlight ? { highlight: element.dataset.capHighlight } : {}), ...(element.tagName === 'A' ? { link: element.getAttribute('href') ?? undefined } : {}) };
+    element.childNodes.forEach(child => visit(child, next, nextAttrs));
   };
   root.childNodes.forEach(child => visit(child, []));
   return normalizeRuns(found);
@@ -90,6 +94,10 @@ function writeRuns(root: HTMLElement, runs: RichTextRun[]) {
       wrapper.append(node);
       node = wrapper;
     }
+    for (const [key, attr] of [['color', 'capColor'], ['highlight', 'capHighlight']] as const) {
+      if (run[key]) { const wrapper = document.createElement('span'); wrapper.dataset[attr] = run[key]; wrapper.dataset.accent = run[key]; wrapper.append(node); node = wrapper; }
+    }
+    if (run.link) { const wrapper = document.createElement('a'); wrapper.setAttribute('href', run.link); wrapper.append(node); node = wrapper; }
     root.append(node);
   }
 }
@@ -138,7 +146,9 @@ function renderStaticRuns(runs: RichTextRun[]): ReactNode {
   return runs.map((run, index) => {
     let content: ReactNode = run.text;
     for (const mark of run.marks ?? []) content = createElement(markTags[mark].toLowerCase(), null, content);
-    return <span key={index}>{content}</span>;
+    if (run.color) content = <span data-cap-color={run.color} data-accent={run.color}>{content}</span>;
+    if (run.highlight) content = <span data-cap-highlight={run.highlight} data-accent={run.highlight}>{content}</span>;
+    return <span key={index}>{run.link ? <a href={run.link}>{content}</a> : content}</span>;
   });
 }
 
@@ -148,6 +158,7 @@ function Editable({ block, label, placeholder, disabled, readOnly, slashListId, 
   onInput: (element: HTMLElement) => void; onKeyDown: (event: KeyboardEvent<HTMLElement>) => void;
   onPaste: (event: ClipboardEvent<HTMLElement>) => void; onFocus: (element: HTMLElement) => void;
 }) {
+  const t = useTranslate();
   const ref = useRef<HTMLElement>(null);
   const editing = !disabled && !readOnly;
   useLayoutEffect(() => {
@@ -172,9 +183,11 @@ function Editable({ block, label, placeholder, disabled, readOnly, slashListId, 
     const textbox = <div {...editProps}/>;
     if (block.type === 'bullet') return <ul><li>{textbox}</li></ul>;
     if (block.type === 'numbered') return <ol><li>{textbox}</li></ol>;
+    if (block.type === 'toggle') return <details open className="cap-markdown-v2-toggle"><summary>{t('Сворачиваемый блок', 'Toggle')}</summary>{textbox}</details>;
     return textbox;
   }
   const content = renderStaticRuns(block.content ?? []), disabledProps = disabled ? { 'aria-disabled': true } : {};
+  if (block.type === 'toggle') return <details open className="cap-markdown-v2-toggle"><summary>{t('Сворачиваемый блок', 'Toggle')}</summary><p {...disabledProps}>{content}</p></details>;
   if (block.type === 'bullet') return <ul><li data-block-type={block.type} {...disabledProps}>{content}</li></ul>;
   if (block.type === 'numbered') return <ol><li data-block-type={block.type} {...disabledProps}>{content}</li></ol>;
   return createElement(tag, { 'data-block-type': block.type, ...disabledProps }, content);
@@ -241,7 +254,7 @@ interface BlockDrag {
   beforeId: string | null; selection: { id: string; start: number; end: number } | null; handle: HTMLButtonElement;
 }
 
-export function RichTextEditor({ label, value, onValueChange, presets = [], placeholder, disabled = false, readOnly = false, toolbarSize = 'sm', showToolbar = false, className }: RichTextEditorProps) {
+export function RichTextEditor({ label, value, onValueChange, presets = [], placeholder, disabled = false, readOnly = false, toolbarSize = 'sm', showToolbar = false, uiVariant = 'classic', onCommentRequest, className }: RichTextEditorProps) {
   const t = useTranslate();
   const uid = useId();
   const valueRef = useRef(value);
@@ -284,6 +297,7 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
   const closeMenu = (restore = true) => { setMenuId(null); if (restore) menuAnchor.current?.focus({ preventScroll: true }); };
   const syncSelection = () => {
     const selection = window.getSelection(), root = editorRoot.current;
+    if (uiVariant === 'context' && selectionPanel.current?.contains(document.activeElement)) return;
     if (!editable || !root || !selection?.rangeCount || selection.isCollapsed) { multiSelection.current = null; setSelectedIds(previous => previous.length ? [] : previous); setSelectionToolbar(null); return; }
     const range = selection.getRangeAt(0), start = range.startContainer.nodeType === Node.ELEMENT_NODE ? range.startContainer as Element : range.startContainer.parentElement;
     const end = range.endContainer.nodeType === Node.ELEMENT_NODE ? range.endContainer as Element : range.endContainer.parentElement;
@@ -299,7 +313,7 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
         const ids = blocks.slice(a, b + 1).map(block => block.id);
         setSelectedIds(previous => previous.join() === ids.join() ? previous : ids);
       }
-      setSelectionToolbar(null); return;
+      if (uiVariant === 'context' && startId) { const rect = typeof range.getBoundingClientRect === 'function' ? range.getBoundingClientRect() : element.getBoundingClientRect(); setSelectionToolbar({ id: startId, left: rect.left + rect.width / 2, top: rect.bottom }); } else setSelectionToolbar(null); return;
     }
     multiSelection.current = null; setSelectedIds(previous => previous.length ? [] : previous);
     if (!element || !root.contains(element) || !element.contains(end) || !offsets(element)) { setSelectionToolbar(null); return; }
@@ -309,7 +323,7 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
     const rect = typeof range.getBoundingClientRect === 'function' ? range.getBoundingClientRect() : element.getBoundingClientRect();
     savedSelection.current = { id: block.dataset.blockId, start: rangeOffsets[0], end: rangeOffsets[1] };
     setActiveId(block.dataset.blockId);
-    const next = { id: block.dataset.blockId, left: rect.left + rect.width / 2, top: rect.top };
+    const next = { id: block.dataset.blockId, left: rect.left + rect.width / 2, top: uiVariant === 'context' ? rect.bottom : rect.top };
     setSelectionToolbar(previous => previous && previous.id === next.id && Math.abs(previous.left - next.left) < 1 && Math.abs(previous.top - next.top) < 1 ? previous : next);
   };
   useEffect(() => {
@@ -318,7 +332,7 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
     window.addEventListener('resize', syncSelection);
     syncSelection();
     return () => { document.removeEventListener('selectionchange', syncSelection); window.removeEventListener('scroll', syncSelection, true); window.removeEventListener('resize', syncSelection); };
-  }, [editable]);
+  }, [editable, uiVariant]);
   const caretAtPoint = (x: number, y: number) => {
     const owner = document as Document & { caretPositionFromPoint?: (x: number, y: number) => { offsetNode: Node; offset: number } | null; caretRangeFromPoint?: (x: number, y: number) => Range | null };
     const position = owner.caretPositionFromPoint?.(x, y);
@@ -439,7 +453,38 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
   }, [editable, value.blocks, menuId]);
   const undo = () => { const previous = history.current.pop(); if (!previous) return; future.current.push(valueRef.current); commit(previous, false); setSlash(null); };
   const redo = () => { const next = future.current.pop(); if (!next) return; history.current.push(valueRef.current); commit(next, false); setSlash(null); };
+  const editSelected = (edit: (run: RichTextRun) => RichTextRun) => {
+    if (!editable) return;
+    const multi = multiSelection.current, single = captureSelection() ?? savedSelection.current;
+    if (!multi && (!single || single.start === single.end)) return;
+    const blocks = valueRef.current.blocks, startId = multi?.startId ?? single!.id, endId = multi?.endId ?? single!.id;
+    const a = blocks.findIndex(block => block.id === startId), b = blocks.findIndex(block => block.id === endId);
+    const selection = window.getSelection();
+    const next = blocks.map((block, index) => {
+      if (index < a || index > b || ['code', 'markdown-source'].includes(block.type)) return block;
+      const start = index === a ? multi?.start ?? single!.start : 0;
+      const end = index === b ? multi?.end ?? single!.end : (block.content ?? []).reduce((n, run) => n + run.text.length, 0);
+      const [left, tail] = splitRuns(block.content ?? [], start), [middle, right] = splitRuns(tail, end - start);
+      return { ...block, content: normalizeRuns([...left, ...middle.map(edit), ...right]) };
+    });
+    commit({ blocks: next });
+    if (multi) { const first = elementFor(startId), last = elementFor(endId); if (first && last) { setCaret(first, multi.start); const start = window.getSelection()?.getRangeAt(0).cloneRange(); setCaret(last, multi.end); const finish = window.getSelection()?.getRangeAt(0); if (start && finish && selection) { start.setEnd(finish.endContainer, finish.endOffset); selection.removeAllRanges(); selection.addRange(start); } } }
+    else restoreSelection(single);
+  };
+  const selectedRuns = () => {
+    const multi = multiSelection.current, single = captureSelection() ?? savedSelection.current;
+    if (!multi && (!single || single.start === single.end)) return [];
+    const blocks = valueRef.current.blocks, a = blocks.findIndex(b => b.id === (multi?.startId ?? single!.id)), b = blocks.findIndex(b => b.id === (multi?.endId ?? single!.id));
+    return blocks.slice(a, b + 1).flatMap((block, index) => { const start = index === 0 ? multi?.start ?? single!.start : 0; const end = index === b - a ? multi?.end ?? single!.end : (block.content ?? []).reduce((n, run) => n + run.text.length, 0); const [, tail] = splitRuns(block.content ?? [], start); return splitRuns(tail, end - start)[0]; });
+  };
+  const contextRuns = uiVariant === 'context' && selectionToolbar ? selectedRuns() : [];
+  const selectedAttributes = { color: contextRuns.every(run => run.color === contextRuns[0]?.color) ? contextRuns[0]?.color : undefined, highlight: contextRuns.every(run => run.highlight === contextRuns[0]?.highlight) ? contextRuns[0]?.highlight : undefined };
+  const selectedMarks = marks.filter(mark => contextRuns.length > 0 && contextRuns.every(run => run.marks?.includes(mark)));
   const format = (mark: RichTextMark) => {
+    if (uiVariant === 'context') {
+      const runs = selectedRuns(), remove = runs.length > 0 && runs.every(run => run.marks?.includes(mark));
+      editSelected(run => ({ ...run, marks: marks.filter(item => item === mark ? !remove : run.marks?.includes(item)) })); return;
+    }
     if (!active || !editable || ['code', 'markdown-source'].includes(active.type)) return;
     const element = elementFor(active.id), live = element && offsets(element);
     const selection = live?.[0] !== live?.[1] ? live : savedSelection.current?.id === active.id ? [savedSelection.current.start, savedSelection.current.end] as [number,number] : live;
@@ -471,7 +516,7 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
   };
   const selectionToolbarOpen = selectionToolbar !== null && editable && !menuId && !dragView;
   const selectionScopeAnchor = useMemo(() => ({ get current() { return selectionAnchor.current; } }), [selectionToolbarOpen]);
-  const selectionScope = useOverlayScope(selectionScopeAnchor), selectionPosition = useAnchoredOverlay(selectionToolbarOpen, selectionAnchor, selectionPanel, { align: 'center', side: 'top' });
+  const selectionScope = useOverlayScope(selectionScopeAnchor), selectionPosition = useAnchoredOverlay(selectionToolbarOpen, selectionAnchor, selectionPanel, { align: 'center', side: uiVariant === 'context' ? 'bottom' : 'top' });
   useOverlayDismiss(selectionToolbarOpen, selectionPanel, selectionAnchor, restore => {
     const selectedId = selectionToolbar?.id;
     setSelectionToolbar(null);
@@ -533,6 +578,7 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
     }
     if (mod && key === 'z') { event.preventDefault(); event.shiftKey ? redo() : undo(); return; }
     if (mod && key === 'y') { event.preventDefault(); redo(); return; }
+    if (uiVariant === 'context' && mod && key === 'u') { event.preventDefault(); format('underline'); return; }
     if (mod && ['b', 'i'].includes(key) && !['code', 'markdown-source'].includes(block.type)) { event.preventDefault(); format(key === 'b' ? 'bold' : 'italic'); return; }
     if (mod && event.shiftKey && ['arrowup', 'arrowdown'].includes(key)) { event.preventDefault(); move(block.id, key === 'arrowup' ? -1 : 1); return; }
     const element = event.currentTarget, position = offsets(element);
@@ -595,12 +641,12 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
       { id: 'remove', label: t('Удалить блок', 'Delete block'), icon: Trash2, danger: true, onSelect: () => remove(menuBlock.id) },
     ] },
   ] : [];
-  return <section ref={editorRoot} className={`cap-rich-editor${className ? ` ${className}` : ''}`} data-rich-editor={uid} data-disabled={disabled || undefined} aria-label={label} onPointerDownCapture={event => {
+  return <section ref={editorRoot} className={`cap-rich-editor${uiVariant === 'context' ? ' cap-markdown-v2' : ''}${className ? ` ${className}` : ''}`} data-rich-editor={uid} data-disabled={disabled || undefined} aria-label={label} onPointerDownCapture={event => {
       const target = event.target as Element, block = target.closest<HTMLElement>('[contenteditable]')?.closest<HTMLElement>('[data-block-id]');
       const point = editable && event.button === 0 && block?.dataset.blockId ? caretAtPoint(event.clientX, event.clientY) : null;
       if (point && block?.dataset.blockId) pointerSelection.current = { pointerId: event.pointerId, ...point, blockId: block.dataset.blockId };
     }} onPointerMove={extendPointerSelection} onPointerUp={extendPointerSelection} onBeforeInput={event => { const native = event.nativeEvent as InputEvent; if (!native.isComposing && multiSelection.current && native.inputType?.startsWith('insert') && native.data !== null) { event.preventDefault(); replaceMultiSelection(native.data); } }} onCopy={event => { const text = multiSelectionText(); if (text === null) return; event.preventDefault(); event.clipboardData.setData('text/plain', text); }} onCut={event => { if (!editable) return; const text = multiSelectionText(); if (text === null) return; event.preventDefault(); event.clipboardData.setData('text/plain', text); replaceMultiSelection(''); }} onBlurCapture={event => { const target = event.relatedTarget as Node | null; if (!event.currentTarget.contains(target) && !slashPanel.current?.contains(target)) setSlash(null); }}>
-    {showToolbar && <div className="cap-rich-editor-tools">
+    {showToolbar && uiVariant === 'classic' && <div className="cap-rich-editor-tools">
       <FloatingActionBar label={`${label}: ${t('форматирование', 'formatting')}`} position="static" size={toolbarSize} rovingFocus={false}>
         <IconButton label={t('Отменить', 'Undo')} icon={Undo2} variant="ghost" size="sm" disabled={!editable || !history.current.length} onClick={undo}/>
         <IconButton label={t('Повторить', 'Redo')} icon={Redo2} variant="ghost" size="sm" disabled={!editable || !future.current.length} onClick={redo}/>
@@ -670,15 +716,15 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
     <BlockMenuOverlay anchor={menuAnchor} open={Boolean(menuId) && editable} id={`${uid}-block-menu`} groups={menuGroups} onClose={closeMenu}/>
     {selectionToolbarOpen && selectionToolbar && <>
       <span ref={selectionAnchor} className="cap-rich-editor-selection-anchor" aria-hidden="true" style={{ left: selectionToolbar.left, top: selectionToolbar.top }}/>
-      <OverlayPortal anchor={selectionAnchor} panel={selectionPanel}><div ref={selectionPanel} className="cap-rich-editor-selection-toolbar" data-state="open" style={selectionPosition} {...selectionScope}>
-        <FloatingActionBar label={`${label}: ${t('выделенный текст', 'selected text')}`} position="static" size={toolbarSize} rovingFocus={false}>
+      <OverlayPortal anchor={selectionAnchor} panel={selectionPanel}><div ref={selectionPanel} className={`cap-rich-editor-selection-toolbar${uiVariant === 'context' ? ' cap-markdown-v2-overlay' : ''}`} data-state="open" style={selectionPosition} {...selectionScope}>
+        {uiVariant === 'context' ? <ContextToolbar toolbarSize={toolbarSize} attributes={selectedAttributes} selectedMarks={selectedMarks} presets={allPresets} blockType={active?.type ?? 'paragraph'} onType={type => { const ids = multiSelection.current ? selectedIds : [savedSelection.current?.id ?? active?.id].filter(Boolean) as string[]; if (ids.length === 1) changeType(type, ids[0]); else commit({ blocks: valueRef.current.blocks.map(block => ids.includes(block.id) ? { ...block, type } : block) }); }} onMark={format} onAttribute={(key, val) => editSelected(run => key === 'clear' ? { text: run.text } : { ...run, [key]: val || undefined })} onTable={(rows, columns) => { const block = { ...createRichTextBlock('table'), data: { rows: Array.from({ length: rows }, () => Array(columns).fill('')) } }; const blocks = [...valueRef.current.blocks]; blocks.splice(Math.max(0, blocks.findIndex(b => b.id === active?.id) + 1), 0, block); commit({ blocks }); setSelectionToolbar(null); }} onComment={onCommentRequest ? () => onCommentRequest(multiSelectionText() ?? window.getSelection()?.toString() ?? '') : undefined} /> : <FloatingActionBar label={`${label}: ${t('выделенный текст', 'selected text')}`} position="static" size={toolbarSize} rovingFocus={false}>
           <IconButton label={t('Полужирный', 'Bold')} icon={Bold} variant="ghost" size="sm" onMouseDown={preserveSelection} onClick={()=>format('bold')}/>
           <IconButton label={t('Курсив', 'Italic')} icon={Italic} variant="ghost" size="sm" onMouseDown={preserveSelection} onClick={()=>format('italic')}/>
           <IconButton label={t('Зачёркнутый', 'Strikethrough')} icon={Strikethrough} variant="ghost" size="sm" onMouseDown={preserveSelection} onClick={()=>format('strike')}/>
           <IconButton label={t('Строчный код', 'Inline code')} icon={Code2} variant="ghost" size="sm" onMouseDown={preserveSelection} onClick={()=>format('code')}/>
-        </FloatingActionBar>
+        </FloatingActionBar>}
       </div></OverlayPortal>
     </>}
-    {editable && <div className="cap-rich-editor-footer"><Button variant="ghost" size="sm" leading={<Plus size={15}/>} onClick={()=>insert(blocks.at(-1)?.id ?? null)}>{t('Добавить блок', 'Add block')}</Button><span className="cap-rich-editor-hint">{t('/ — тип блока · ⌘/Ctrl+B/I — формат', '/ — block type · ⌘/Ctrl+B/I — format')}</span></div>}
+    {editable && uiVariant === 'classic' && <div className="cap-rich-editor-footer"><Button variant="ghost" size="sm" leading={<Plus size={15}/>} onClick={()=>insert(blocks.at(-1)?.id ?? null)}>{t('Добавить блок', 'Add block')}</Button><span className="cap-rich-editor-hint">{t('/ — тип блока · ⌘/Ctrl+B/I — формат', '/ — block type · ⌘/Ctrl+B/I — format')}</span></div>}
   </section>;
 }

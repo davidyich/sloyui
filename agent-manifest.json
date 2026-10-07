@@ -1,10 +1,10 @@
 {
   "package": "@personal/capacities-ui",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "framework": "React >=19",
   "module": "ESM",
-  "componentCount": 100,
-  "exportedComponentCount": 101,
+  "componentCount": 101,
+  "exportedComponentCount": 102,
   "compatibilityAliases": {
     "Badge": "Tag",
     "TypeLabel": "Tag with icon=page",
@@ -209,7 +209,8 @@
           "CardStack",
           "Chip",
           "PreviewRail",
-          "ResizableCard"
+          "ResizableCard",
+          "MarkdownEditorV2"
         ]
       },
       {
@@ -4889,11 +4890,11 @@
         "record": "docs/revision-2026-10-07.md"
       },
       "purpose": "Controlled tab panels",
-      "props": "label: string; value: string; onValueChange: (value:string)=>void; size?: Size; variant?: line|pills|segment|outline|accent; items: {value,label,content,disabled?,count?,color?:Color|inherit}[]; scrollLabels?: {previous:string,next:string}; className?",
+      "props": "label: string; value: string; onValueChange: (value:string)=>void; size?: Size; variant?: line|pills|segment|outline|accent|workspace; trailing?:ReactNode; items: {value,label,content,disabled?,count?,icon?:IconSource,color?:Color|inherit}[]; scrollLabels?: {previous:string,next:string}; className?",
       "example": "<Tabs label=\"Project\" variant=\"segment\" value={tab} onValueChange={setTab} items={items} />",
       "catalogueRoute": "#Tabs",
       "catalogueGroup": "Навигация",
-      "behavior": "Arrows/Home/End skip disabled tabs and select immediately; horizontal arrows respect RTL. One active tab stop; unique values and valid active value. Overflow adds physical edge controls/masks; selected and focused reveal scrolls only the local viewport.",
+      "behavior": "workspace provides a compact segmented workspace header; item.icon and trailing accept independent icon/action slots. Arrows/Home/End skip disabled tabs and select immediately; horizontal arrows respect RTL. One active tab stop; unique values and valid active value. Overflow adds physical edge controls/masks; selected and focused reveal scrolls only the local viewport.",
       "source": "src/components/layout.tsx",
       "api": [
         {
@@ -4905,7 +4906,7 @@
         },
         {
           "name": "variant",
-          "type": "\"outline\" | \"accent\" | \"line\" | \"pills\" | \"segment\"",
+          "type": "\"outline\" | \"accent\" | \"line\" | \"pills\" | \"segment\" | \"workspace\"",
           "required": false,
           "default": "'line'",
           "description": "Визуальный вариант компонента."
@@ -4923,6 +4924,13 @@
           "required": true,
           "default": null,
           "description": "Вызывается при изменении значения."
+        },
+        {
+          "name": "trailing",
+          "type": "ReactNode",
+          "required": false,
+          "default": null,
+          "description": "Слот после основного содержимого."
         },
         {
           "name": "items",
@@ -4954,7 +4962,7 @@
         }
       ],
       "usage": "Каждой вкладке задавайте уникальный value и содержимое. value должен существовать и быть доступным; длинные заголовки прокручиваются внутри полосы.",
-      "agentNotes": "Arrows/Home/End skip disabled tabs and select immediately; horizontal arrows respect RTL. One active tab stop; unique values and valid active value. Overflow adds physical edge controls/masks; selected and focused reveal scrolls only the local viewport.",
+      "agentNotes": "workspace provides a compact segmented workspace header; item.icon and trailing accept independent icon/action slots. Arrows/Home/End skip disabled tabs and select immediately; horizontal arrows respect RTL. One active tab stop; unique values and valid active value. Overflow adds physical edge controls/masks; selected and focused reveal scrolls only the local viewport.",
       "related": [
         "Breadcrumbs",
         "FileTree",
@@ -5999,7 +6007,7 @@
       ],
       "primaryGroup": "actions",
       "purpose": "Composite group of separate actions",
-      "props": "label: string; attached?: boolean; size?: Size; orientation?: horizontal|vertical; prefix?: ReactNode; color?: Color|inherit (neutral); children; div props",
+      "props": "label: string; attached?: boolean; appearance?:default|framed; size?: Size; orientation?: horizontal|vertical; prefix?: ReactNode; color?: Color|inherit (neutral); children; div props",
       "example": "<ButtonGroup label=\"View\" prefix={count}><IconButton label=\"List\" icon=\"list\" /><IconButton label=\"Grid\" icon=\"grid\" /></ButtonGroup>",
       "catalogueRoute": "#ButtonGroup",
       "catalogueGroup": "Действия",
@@ -6033,6 +6041,13 @@
           "required": false,
           "default": "true",
           "description": "Настройка attached; допустимые значения указаны в типе."
+        },
+        {
+          "name": "appearance",
+          "type": "\"default\" | \"framed\"",
+          "required": false,
+          "default": "'default'",
+          "description": "Стиль заливки сообщения."
         },
         {
           "name": "orientation",
@@ -8143,13 +8158,20 @@
         "record": "docs/revision-2026-10-07.md"
       },
       "purpose": "Named column with count, action and empty state",
-      "props": "title: string; count?: number; color?: Color|inherit (neutral); action?,emptyState?: ReactNode; children; section props including explicit data-surface (inherited by default)",
+      "props": "title: string; count?: number; color?: Color|inherit (neutral); variant?:default|framed; icon?:IconSource; action?,footer?,emptyState?: ReactNode; children; section props including explicit data-surface (inherited by default)",
       "example": "<KanbanColumn title=\"Next\" count={tasks.length}>{cards}</KanbanColumn>",
       "catalogueRoute": "#KanbanColumn",
       "catalogueGroup": "Контейнеры",
-      "behavior": "Inherits composition surface; heading color affects only heading/count. Omitted color is neutral; inherit uses the local accent. Own cards remain raised.",
+      "behavior": "variant=framed provides a shared frame; icon, action and footer are independent slots. Inherits composition surface; heading color affects only heading/count. Omitted color is neutral; inherit uses the local accent. Own cards remain raised.",
       "source": "src/components/content.tsx",
       "api": [
+        {
+          "name": "variant",
+          "type": "\"default\" | \"framed\"",
+          "required": false,
+          "default": "'default'",
+          "description": "Визуальный вариант компонента."
+        },
         {
           "name": "children",
           "type": "ReactNode",
@@ -8177,6 +8199,20 @@
           "required": false,
           "default": null,
           "description": "Настройка action; допустимые значения указаны в типе."
+        },
+        {
+          "name": "footer",
+          "type": "ReactNode",
+          "required": false,
+          "default": null,
+          "description": "Настройка footer; допустимые значения указаны в типе."
+        },
+        {
+          "name": "icon",
+          "type": "IconSource",
+          "required": false,
+          "default": null,
+          "description": "Иконка из набора или импортированный Lucide-компонент."
         },
         {
           "name": "emptyState",
@@ -8229,7 +8265,7 @@
         }
       ],
       "usage": "Задавайте контекст поверхности в композиции. Внутренний контент должен сжиматься по ширине; не скрывайте функциональные элементы через overflow.",
-      "agentNotes": "Inherits composition surface; heading color affects only heading/count. Omitted color is neutral; inherit uses the local accent. Own cards remain raised.",
+      "agentNotes": "variant=framed provides a shared frame; icon, action and footer are independent slots. Inherits composition surface; heading color affects only heading/count. Omitted color is neutral; inherit uses the local accent. Own cards remain raised.",
       "related": [
         "BottomSheet",
         "Card",
@@ -9749,11 +9785,11 @@
         "record": "docs/revision-2026-10-07.md"
       },
       "purpose": "Controlled block editor with grip-only drag, insertion marker, block menu, marks and slash presets",
-      "props": "label: string; value: RichTextDocument {blocks:RichTextBlock[]}; onValueChange: (document:RichTextDocument)=>void; presets?:RichTextPreset[] {type,label,keywords?,icon?,create?,render?}; placeholder?,disabled?,readOnly?,toolbarSize?:xs|sm|md|lg|xl,className?; source bridge exports: markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit; RichTextBlock.markdown? preserves exact source; showToolbar?:boolean(false)",
+      "props": "label: string; value: RichTextDocument {blocks:RichTextBlock[]}; onValueChange: (document:RichTextDocument)=>void; presets?:RichTextPreset[] {type,label,keywords?,icon?,create?,render?}; uiVariant?:classic|context(classic); onCommentRequest?:(request:RichTextCommentRequest)=>void; placeholder?,disabled?,readOnly?,toolbarSize?:xs|sm|md|lg|xl,className?; source bridge exports: markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit; RichTextBlock.markdown? preserves exact source; showToolbar?:boolean(false)",
       "example": "<RichTextEditor label=\"Note\" value={document} onValueChange={setDocument} />",
       "catalogueRoute": "#RichTextEditor",
       "catalogueGroup": "Редактирование",
-      "behavior": "Controlled blocks with stable IDs and Markdown-source metadata. showToolbar defaults false; enable it explicitly for the top toolbar. Native mouse and Shift selection can span text blocks; copy/cut/type/paste/delete replace only the selected text range. Grip-only block reorder has keyboard/menu alternatives and cancellation. Selection and document edits remain available without the top toolbar. Code/source blocks retain their editable source; unsupported Markdown is never silently normalized.",
+      "behavior": "uiVariant=context opts into contextual selection formatting and block menus; classic remains the default. Controlled blocks with stable IDs and Markdown-source metadata. showToolbar defaults false; enable it explicitly for the top toolbar. Native mouse and Shift selection can span text blocks; copy/cut/type/paste/delete replace only the selected text range. Grip-only block reorder has keyboard/menu alternatives and cancellation. Selection and document edits remain available without the top toolbar. Code/source blocks retain their editable source; unsupported Markdown is never silently normalized.",
       "source": "src/components/rich-text-editor.tsx",
       "api": [
         {
@@ -9813,6 +9849,20 @@
           "description": "Явно включает верхнюю панель форматирования; по умолчанию false. Редактирование и выделение остаются доступны без неё."
         },
         {
+          "name": "uiVariant",
+          "type": "\"classic\" | \"context\"",
+          "required": false,
+          "default": "'classic'",
+          "description": "Настройка uiVariant; допустимые значения указаны в типе."
+        },
+        {
+          "name": "onCommentRequest",
+          "type": "((text: string) => void)",
+          "required": false,
+          "default": null,
+          "description": "Обработчик события CommentRequest."
+        },
+        {
           "name": "toolbarSize",
           "type": "\"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\"",
           "required": false,
@@ -9828,7 +9878,7 @@
         }
       ],
       "usage": "Храните JSON-блоки и стабильные ID. showToolbar=true явно включает верхнюю панель; по умолчанию она скрыта. Mouse/Shift selection может охватывать несколько блоков; copy/cut/replace сохраняют границы остальных блоков. Для Markdown сохраняйте metadata и используйте bridge; неподдерживаемый синтаксис остаётся исходником.",
-      "agentNotes": "Controlled blocks with stable IDs and Markdown-source metadata. showToolbar defaults false; enable it explicitly for the top toolbar. Native mouse and Shift selection can span text blocks; copy/cut/type/paste/delete replace only the selected text range. Grip-only block reorder has keyboard/menu alternatives and cancellation. Selection and document edits remain available without the top toolbar. Code/source blocks retain their editable source; unsupported Markdown is never silently normalized.",
+      "agentNotes": "uiVariant=context opts into contextual selection formatting and block menus; classic remains the default. Controlled blocks with stable IDs and Markdown-source metadata. showToolbar defaults false; enable it explicitly for the top toolbar. Native mouse and Shift selection can span text blocks; copy/cut/type/paste/delete replace only the selected text range. Grip-only block reorder has keyboard/menu alternatives and cancellation. Selection and document edits remain available without the top toolbar. Code/source blocks retain their editable source; unsupported Markdown is never silently normalized.",
       "related": [
         "CodeBlock",
         "CommentThread",
@@ -9848,7 +9898,7 @@
         "record": "docs/revision-2026-10-07.md"
       },
       "purpose": "Typed sortable and selectable table with optional pagination",
-      "props": "label: string; rows: readonly T[]; columns: readonly DataTableColumn<T>[]; rowId: (row:T)=>string; sort?,defaultSort?,onSortChange?,selectable?,selectedIds?,defaultSelectedIds?,onSelectedIdsChange?,page?,defaultPage?,pageSize?,onPageChange?,emptyMessage?,className?; surface?:base|canvas|raised|floating (omitted: inherit)",
+      "props": "label: string; rows: readonly T[]; columns: readonly DataTableColumn<T>[]; rowId: (row:T)=>string; sort?,defaultSort?,onSortChange?,selectable?,selectedIds?,defaultSelectedIds?,onSelectedIdsChange?,page?,defaultPage?,pageSize?,onPageChange?,emptyMessage?,className?; maxHeight?,minWidth?:number|string; stickyHeader?:boolean(true); pinSelection?:boolean(true); pinnedRows?:{top?:readonly string[],bottom?:readonly string[]}; column.pin?:left|right; column.footer?:ReactNode|((rows:readonly T[])=>ReactNode); surface?:base|canvas|raised|floating (omitted: inherit)",
       "example": "<DataTable label=\"Projects\" rows={rows} columns={columns} rowId={row => row.id} selectable />",
       "catalogueRoute": "#DataTable",
       "catalogueGroup": "Данные",
@@ -9974,6 +10024,41 @@
           "description": "Дополнительный класс корневого элемента."
         },
         {
+          "name": "maxHeight",
+          "type": "string | number",
+          "required": false,
+          "default": null,
+          "description": "Bound the viewport and enable vertical scrolling."
+        },
+        {
+          "name": "minWidth",
+          "type": "string | number",
+          "required": false,
+          "default": null,
+          "description": "Настройка minWidth; допустимые значения указаны в типе."
+        },
+        {
+          "name": "stickyHeader",
+          "type": "boolean",
+          "required": false,
+          "default": "true",
+          "description": "Настройка stickyHeader; допустимые значения указаны в типе."
+        },
+        {
+          "name": "pinnedRows",
+          "type": "{ top?: readonly string[]; bottom?: readonly string[]; }",
+          "required": false,
+          "default": null,
+          "description": "Rows on the current page are moved to its top/bottom and remain visible while scrolling."
+        },
+        {
+          "name": "pinSelection",
+          "type": "boolean",
+          "required": false,
+          "default": "true",
+          "description": "Keep the selection checkbox column visible during horizontal scrolling."
+        },
+        {
           "name": "surface",
           "type": "\"base\" | \"canvas\" | \"raised\" | \"floating\"",
           "required": false,
@@ -9981,7 +10066,7 @@
           "description": "Omit to inherit the composition's painted surface."
         }
       ],
-      "usage": "Задавайте getRowId и столбцы с устойчивыми ID. Сортировка и выбор управляются через публичные props; проверяйте длинные ячейки на выбранной поверхности.",
+      "usage": "Задавайте rowId и столбцы с устойчивыми ID. Сортировка и выбор управляются через публичные props; проверяйте длинные ячейки на выбранной поверхности.",
       "agentNotes": "Use the exported DataTable component. Typed sortable and selectable table with optional pagination. Read its typed API and example; bind referenced data and callbacks in the consumer. Preserve accessible labels, keyboard behavior and reduced motion.",
       "related": [
         "JsonViewer",
@@ -12361,6 +12446,95 @@
         "BarChart",
         "BrushChart",
         "DonutChart"
+      ]
+    },
+    "MarkdownEditorV2": {
+      "id": "cp-102",
+      "status": "needs-review",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content",
+      "introduced": "0.7.0",
+      "purpose": "Controlled Markdown editor with contextual selection toolbar and block menus",
+      "props": "label:string; value:string; onValueChange:(value:string)=>void; onCommentRequest?:(selection:RichTextCommentRequest)=>void; placeholder?,disabled?,readOnly?,className?",
+      "example": "<MarkdownEditorV2 label=\"Note\" value={markdown} onValueChange={setMarkdown} />",
+      "catalogueRoute": "#MarkdownEditorV2",
+      "catalogueGroup": "Контент и карточки",
+      "behavior": "Controlled Markdown string wrapper; contextual editing is the default. Unsupported source stays editable. onCommentRequest delegates selected text to the consumer without persistence.",
+      "source": "src/components/markdown-editor-v2.tsx",
+      "api": [
+        {
+          "name": "value",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "description": "Текущее значение в управляемом режиме."
+        },
+        {
+          "name": "onValueChange",
+          "type": "(value: string) => void",
+          "required": true,
+          "default": null,
+          "description": "Вызывается при изменении значения."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "default": null,
+          "description": "Блокирует взаимодействие."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Дополнительный класс корневого элемента."
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "description": "Видимая или доступная подпись."
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Подсказка при пустом значении."
+        },
+        {
+          "name": "readOnly",
+          "type": "boolean",
+          "required": false,
+          "default": null,
+          "description": "Настройка readOnly; допустимые значения указаны в типе."
+        },
+        {
+          "name": "onCommentRequest",
+          "type": "((text: string) => void)",
+          "required": false,
+          "default": null,
+          "description": "Обработчик события CommentRequest."
+        },
+        {
+          "name": "toolbarSize",
+          "type": "\"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\"",
+          "required": false,
+          "default": "'xs'",
+          "description": "Настройка toolbarSize; допустимые значения указаны в типе."
+        }
+      ],
+      "usage": "Храните Markdown в value/onValueChange. Контекстное форматирование появляется при выделении; onCommentRequest передаёт выделенный текст приложению. Неподдерживаемый синтаксис сохраняется в исходнике.",
+      "agentNotes": "Controlled Markdown string wrapper; contextual editing is the default. Unsupported source stays editable. onCommentRequest delegates selected text to the consumer without persistence.",
+      "related": [
+        "RichTextEditor",
+        "MarkdownPreview",
+        "CodeBlock",
+        "CommentThread"
       ]
     },
     "BottomSheet": {

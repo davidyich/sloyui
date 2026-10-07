@@ -75,3 +75,6 @@ export type { Locale } from './components/locale.js';
 export { ResizablePanelGroup, ResizablePanel, ResizableHandle } from './components/resizable-group.js';
 export type { ResizablePanelGroupProps, ResizablePanelProps, ResizableHandleProps } from './components/resizable-group.js';
 export type { ScrollFadeDirection, ScrollFadeSize } from './components/scroll-fade.js';
+
+export { MarkdownEditorV2 } from './components/markdown-editor-v2.js';
+export type { MarkdownEditorV2Props } from './components/markdown-editor-v2.js';

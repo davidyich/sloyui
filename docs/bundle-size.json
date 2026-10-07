@@ -1,11 +1,11 @@
 {
   "index.js": {
-    "bytes": 587173,
-    "gzipBytes": 133884
+    "bytes": 623626,
+    "gzipBytes": 142368
   },
   "styles.css": {
-    "bytes": 457882,
-    "gzipBytes": 59647
+    "bytes": 466304,
+    "gzipBytes": 61011
   },
   "tokens.css": {
     "bytes": 217308,
@@ -16,11 +16,11 @@
     "gzipBytes": 14936
   },
   "button-only.js": {
-    "bytes": 6845,
-    "gzipBytes": 1774
+    "bytes": 7085,
+    "gzipBytes": 1815
   },
   "all-components-minified.js": {
-    "bytes": 353579,
-    "gzipBytes": 111991
+    "bytes": 376595,
+    "gzipBytes": 118889
   }
 }
