@@ -1,6 +1,6 @@
 {
   "package": "@personal/capacities-ui",
-  "componentCount": 101,
+  "componentCount": 102,
   "isolatedArchiveConsumer": true,
   "nodeNextTypes": true,
   "exampleTypecheck": [
@@ -49,7 +49,8 @@
     "DailyHeader",
     "MarkdownEditorV2",
     "Tabs",
-    "ButtonGroup"
+    "ButtonGroup",
+    "FileCard"
   ],
   "markdownBridgeExports": [
     "markdownToRichText",
@@ -75,9 +76,11 @@
   "markdownExtensionsTableColorRoundtrip": true,
   "workspaceTabsIconTrailing": true,
   "framedButtonGroup": true,
+  "fileCardIndependentActions": true,
+  "toastStackPlacement": true,
   "framedKanbanFooter": true,
   "dataTablePinnedColumnsRowsSummary": true,
   "dataTableStickyOptOut": true,
   "fontAssets": 9,
-  "buttonGzipBytes": 1871
+  "buttonGzipBytes": 1894
 }

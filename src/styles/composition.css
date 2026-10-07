@@ -115,7 +115,7 @@ button.cap-tag-label { cursor:pointer; }
 .cap-split-button[data-layout='joined'] > .cap-menu-root { position:relative; }
 .cap-split-button[data-layout='joined'] > .cap-menu-root > .cap-button { border-start-start-radius:0; border-end-start-radius:0; border-inline-start-color:transparent; }
 .cap-split-button[data-layout='joined'] > .cap-menu-root::after { content:''; position:absolute; inset-block:0; inset-inline-start:0; width:var(--cap-border-width); background:var(--cap-content-muted); opacity:.22; pointer-events:none; }
-.cap-split-button[data-layout='joined'][data-variant='primary'] > .cap-menu-root::after { background:var(--cap-action-neutral-text,var(--cap-accent-solid-text)); }
+.cap-split-button[data-layout='joined'][data-variant='primary'] > .cap-menu-root::after { background:var(--cap-action-text); }
 .cap-split-button[data-layout='joined'][data-variant='accent'] > .cap-menu-root::after { background:var(--cap-accent-solid-text); }
 .cap-empty-icon .cap-icon-box { background:var(--cap-control-bg); border-color:transparent; color:var(--cap-content-muted); }
 .cap-empty-icon svg { opacity:.65; }

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.0 · 2026-10-08
+
+- Separated visible 1 px control dividers from quiet 0.5 px panel lines; both adapt to surfaces and remain independent of decorative border settings. CodeBlock and API tables keep single, consistent boundaries.
+- Extended ToastStack with centered container/viewport placement, bounded scrolling, loading states and capsule shape; unread notices retain their lifetime.
+- Added FileCard for images, PDF, presentations, documents, spreadsheets and other formats with separate open/download/remove actions; marked needs-review.
+- Changed the compact language switch labels to RU and EN.
+
 ## 0.7.0 · 2026-10-08
 
 - Added workspace Tabs with a short active underline, framed KanbanColumn groups and framed ButtonGroup actions.

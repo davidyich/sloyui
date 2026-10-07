@@ -1,5 +1,5 @@
 {
-  "version": "0.7.0",
+  "version": "0.8.0",
   "modes": [
     "neutral",
     "rose",
@@ -4310,6 +4310,7 @@
           "font/size/micro": 9,
           "font/size/tiny": 10,
           "number/border/width": 0.5,
+          "number/divider/width": 1,
           "number/border/none": 0,
           "number/spacing/half": 2,
           "number/radius-scale/compact": 0.6,
@@ -6728,6 +6729,66 @@
           },
           "context/floating/border/strong": {
             "alias": "Primitives/palette/gray/325"
+          },
+          "context/base/divider/subtle": {
+            "alias": "Primitives/palette/gray/325"
+          },
+          "context/canvas/divider/subtle": {
+            "alias": "Primitives/palette/gray/325"
+          },
+          "context/raised/divider/subtle": {
+            "alias": "Primitives/palette/gray/300"
+          },
+          "context/floating/divider/subtle": {
+            "alias": "Primitives/palette/gray/300"
+          },
+          "context/base/divider/default": {
+            "alias": "Primitives/palette/gray/350"
+          },
+          "context/canvas/divider/default": {
+            "alias": "Primitives/palette/gray/375"
+          },
+          "context/raised/divider/default": {
+            "alias": "Primitives/palette/gray/350"
+          },
+          "context/floating/divider/default": {
+            "alias": "Primitives/palette/gray/350"
+          },
+          "context/base/divider/strong": {
+            "alias": "Primitives/palette/gray/400"
+          },
+          "context/canvas/divider/strong": {
+            "alias": "Primitives/palette/gray/425"
+          },
+          "context/raised/divider/strong": {
+            "alias": "Primitives/palette/gray/400"
+          },
+          "context/floating/divider/strong": {
+            "alias": "Primitives/palette/gray/400"
+          },
+          "context/base/divider/panel": {
+            "alias": "Primitives/palette/gray/175"
+          },
+          "context/canvas/divider/panel": {
+            "alias": "Primitives/palette/gray/225"
+          },
+          "context/raised/divider/panel": {
+            "alias": "Primitives/palette/gray/150"
+          },
+          "context/floating/divider/panel": {
+            "alias": "Primitives/palette/gray/150"
+          },
+          "context/base/divider/control": {
+            "alias": "Primitives/palette/gray/375"
+          },
+          "context/canvas/divider/control": {
+            "alias": "Primitives/palette/gray/400"
+          },
+          "context/raised/divider/control": {
+            "alias": "Primitives/palette/gray/375"
+          },
+          "context/floating/divider/control": {
+            "alias": "Primitives/palette/gray/375"
           },
           "context/base/border/emphasis": {
             "alias": "Primitives/palette/gray/450"
@@ -10817,6 +10878,66 @@
           "context/floating/border/strong": {
             "alias": "Primitives/palette/gray/650"
           },
+          "context/base/divider/subtle": {
+            "alias": "Primitives/palette/gray/750"
+          },
+          "context/canvas/divider/subtle": {
+            "alias": "Primitives/palette/gray/750"
+          },
+          "context/raised/divider/subtle": {
+            "alias": "Primitives/palette/gray/700"
+          },
+          "context/floating/divider/subtle": {
+            "alias": "Primitives/palette/gray/675"
+          },
+          "context/base/divider/default": {
+            "alias": "Primitives/palette/gray/675"
+          },
+          "context/canvas/divider/default": {
+            "alias": "Primitives/palette/gray/700"
+          },
+          "context/raised/divider/default": {
+            "alias": "Primitives/palette/gray/650"
+          },
+          "context/floating/divider/default": {
+            "alias": "Primitives/palette/gray/625"
+          },
+          "context/base/divider/strong": {
+            "alias": "Primitives/palette/gray/600"
+          },
+          "context/canvas/divider/strong": {
+            "alias": "Primitives/palette/gray/625"
+          },
+          "context/raised/divider/strong": {
+            "alias": "Primitives/palette/gray/575"
+          },
+          "context/floating/divider/strong": {
+            "alias": "Primitives/palette/gray/550"
+          },
+          "context/base/divider/panel": {
+            "alias": "Primitives/palette/gray/800"
+          },
+          "context/canvas/divider/panel": {
+            "alias": "Primitives/palette/gray/825"
+          },
+          "context/raised/divider/panel": {
+            "alias": "Primitives/palette/gray/750"
+          },
+          "context/floating/divider/panel": {
+            "alias": "Primitives/palette/gray/725"
+          },
+          "context/base/divider/control": {
+            "alias": "Primitives/palette/gray/600"
+          },
+          "context/canvas/divider/control": {
+            "alias": "Primitives/palette/gray/625"
+          },
+          "context/raised/divider/control": {
+            "alias": "Primitives/palette/gray/575"
+          },
+          "context/floating/divider/control": {
+            "alias": "Primitives/palette/gray/550"
+          },
           "context/base/border/emphasis": {
             "alias": "Primitives/palette/gray/550"
           },
@@ -13803,6 +13924,21 @@
           "border/strong": {
             "alias": "Theme/context/base/border/strong"
           },
+          "divider/subtle": {
+            "alias": "Theme/context/base/divider/subtle"
+          },
+          "divider/default": {
+            "alias": "Theme/context/base/divider/default"
+          },
+          "divider/strong": {
+            "alias": "Theme/context/base/divider/strong"
+          },
+          "divider/panel": {
+            "alias": "Theme/context/base/divider/panel"
+          },
+          "divider/control": {
+            "alias": "Theme/context/base/divider/control"
+          },
           "border/emphasis": {
             "alias": "Theme/context/base/border/emphasis"
           },
@@ -16009,6 +16145,21 @@
           },
           "border/strong": {
             "alias": "Theme/context/canvas/border/strong"
+          },
+          "divider/subtle": {
+            "alias": "Theme/context/canvas/divider/subtle"
+          },
+          "divider/default": {
+            "alias": "Theme/context/canvas/divider/default"
+          },
+          "divider/strong": {
+            "alias": "Theme/context/canvas/divider/strong"
+          },
+          "divider/panel": {
+            "alias": "Theme/context/canvas/divider/panel"
+          },
+          "divider/control": {
+            "alias": "Theme/context/canvas/divider/control"
           },
           "border/emphasis": {
             "alias": "Theme/context/canvas/border/emphasis"
@@ -18217,6 +18368,21 @@
           "border/strong": {
             "alias": "Theme/context/raised/border/strong"
           },
+          "divider/subtle": {
+            "alias": "Theme/context/raised/divider/subtle"
+          },
+          "divider/default": {
+            "alias": "Theme/context/raised/divider/default"
+          },
+          "divider/strong": {
+            "alias": "Theme/context/raised/divider/strong"
+          },
+          "divider/panel": {
+            "alias": "Theme/context/raised/divider/panel"
+          },
+          "divider/control": {
+            "alias": "Theme/context/raised/divider/control"
+          },
           "border/emphasis": {
             "alias": "Theme/context/raised/border/emphasis"
           },
@@ -20423,6 +20589,21 @@
           },
           "border/strong": {
             "alias": "Theme/context/floating/border/strong"
+          },
+          "divider/subtle": {
+            "alias": "Theme/context/floating/divider/subtle"
+          },
+          "divider/default": {
+            "alias": "Theme/context/floating/divider/default"
+          },
+          "divider/strong": {
+            "alias": "Theme/context/floating/divider/strong"
+          },
+          "divider/panel": {
+            "alias": "Theme/context/floating/divider/panel"
+          },
+          "divider/control": {
+            "alias": "Theme/context/floating/divider/control"
           },
           "border/emphasis": {
             "alias": "Theme/context/floating/border/emphasis"
@@ -24517,6 +24698,14 @@
       ],
       "unit": "px",
       "css": "--cap-number-border-width"
+    },
+    "Primitives/number/divider/width": {
+      "type": "FLOAT",
+      "scopes": [
+        "STROKE_FLOAT"
+      ],
+      "unit": "px",
+      "css": "--cap-number-divider-width"
     },
     "Primitives/number/border/none": {
       "type": "FLOAT",
@@ -29268,6 +29457,46 @@
         "STROKE_COLOR"
       ]
     },
+    "Semantic/divider/subtle": {
+      "type": "COLOR",
+      "css": "--cap-divider-subtle",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ]
+    },
+    "Semantic/divider/default": {
+      "type": "COLOR",
+      "css": "--cap-divider-default",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ]
+    },
+    "Semantic/divider/strong": {
+      "type": "COLOR",
+      "css": "--cap-divider-strong",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ]
+    },
+    "Semantic/divider/panel": {
+      "type": "COLOR",
+      "css": "--cap-divider-panel",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ]
+    },
+    "Semantic/divider/control": {
+      "type": "COLOR",
+      "css": "--cap-divider-control",
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ]
+    },
     "Semantic/border/emphasis": {
       "type": "COLOR",
       "css": "--cap-border-emphasis",
@@ -33163,6 +33392,106 @@
     "Theme/context/floating/border/strong": {
       "type": "COLOR",
       "css": "--cap-border-strong",
+      "scopes": []
+    },
+    "Theme/context/base/divider/subtle": {
+      "type": "COLOR",
+      "css": "--cap-divider-subtle",
+      "scopes": []
+    },
+    "Theme/context/canvas/divider/subtle": {
+      "type": "COLOR",
+      "css": "--cap-divider-subtle",
+      "scopes": []
+    },
+    "Theme/context/raised/divider/subtle": {
+      "type": "COLOR",
+      "css": "--cap-divider-subtle",
+      "scopes": []
+    },
+    "Theme/context/floating/divider/subtle": {
+      "type": "COLOR",
+      "css": "--cap-divider-subtle",
+      "scopes": []
+    },
+    "Theme/context/base/divider/default": {
+      "type": "COLOR",
+      "css": "--cap-divider-default",
+      "scopes": []
+    },
+    "Theme/context/canvas/divider/default": {
+      "type": "COLOR",
+      "css": "--cap-divider-default",
+      "scopes": []
+    },
+    "Theme/context/raised/divider/default": {
+      "type": "COLOR",
+      "css": "--cap-divider-default",
+      "scopes": []
+    },
+    "Theme/context/floating/divider/default": {
+      "type": "COLOR",
+      "css": "--cap-divider-default",
+      "scopes": []
+    },
+    "Theme/context/base/divider/strong": {
+      "type": "COLOR",
+      "css": "--cap-divider-strong",
+      "scopes": []
+    },
+    "Theme/context/canvas/divider/strong": {
+      "type": "COLOR",
+      "css": "--cap-divider-strong",
+      "scopes": []
+    },
+    "Theme/context/raised/divider/strong": {
+      "type": "COLOR",
+      "css": "--cap-divider-strong",
+      "scopes": []
+    },
+    "Theme/context/floating/divider/strong": {
+      "type": "COLOR",
+      "css": "--cap-divider-strong",
+      "scopes": []
+    },
+    "Theme/context/base/divider/panel": {
+      "type": "COLOR",
+      "css": "--cap-divider-panel",
+      "scopes": []
+    },
+    "Theme/context/canvas/divider/panel": {
+      "type": "COLOR",
+      "css": "--cap-divider-panel",
+      "scopes": []
+    },
+    "Theme/context/raised/divider/panel": {
+      "type": "COLOR",
+      "css": "--cap-divider-panel",
+      "scopes": []
+    },
+    "Theme/context/floating/divider/panel": {
+      "type": "COLOR",
+      "css": "--cap-divider-panel",
+      "scopes": []
+    },
+    "Theme/context/base/divider/control": {
+      "type": "COLOR",
+      "css": "--cap-divider-control",
+      "scopes": []
+    },
+    "Theme/context/canvas/divider/control": {
+      "type": "COLOR",
+      "css": "--cap-divider-control",
+      "scopes": []
+    },
+    "Theme/context/raised/divider/control": {
+      "type": "COLOR",
+      "css": "--cap-divider-control",
+      "scopes": []
+    },
+    "Theme/context/floating/divider/control": {
+      "type": "COLOR",
+      "css": "--cap-divider-control",
       "scopes": []
     },
     "Theme/context/base/border/emphasis": {

@@ -8,6 +8,6 @@
 .catalog-related-card { background:var(--cap-surface-current); }
 :where([data-borders='on']) .catalog-related-card { background:transparent; border-color:var(--cap-border-base); }
 /* Data boundaries carry meaning even when decorative control outlines are off. */
-.catalog-api-table thead { border-bottom:1px solid var(--cap-border-strong); }
-.catalog-api-table-wrap.cap-surface-boundary { border-color:var(--cap-border-strong); }
+.catalog-api-table thead { border-bottom:var(--cap-border-width) solid var(--cap-divider-panel); }
+.catalog-api-table-wrap.cap-surface-boundary { border-color:var(--cap-divider-panel); }
 .catalog-agent-guide { border-color:var(--cap-border-subtle); }

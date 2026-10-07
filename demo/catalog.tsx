@@ -1,3 +1,4 @@
+import { FileCardExample } from './FileCardExample';
 import { MarkdownEditorV2Example } from './MarkdownEditorV2Example';
 import {ResizablePanelGroupStory} from './ResizableExample';
 import { arcComponents } from './catalog-arc';
@@ -19,6 +20,7 @@ interface CatalogRecord { group: ComponentGroup; description: string; render: Co
 const entry = (group: ComponentGroup, description: string, render: ComponentType<StoryProps>): CatalogRecord => ({group,description,render});
 /** Every public component has one route and one focused, rendered story. */
 export const componentCatalog = {
+  FileCard: entry('Объекты и контент','Файл с превью, обозначением формата и независимыми действиями.',FileCardExample),
   ResizablePanelGroup: entry('Навигация','Группа изменяемых панелей с вложенными осями и клавиатурным управлением.',ResizablePanelGroupStory),
   ...arcComponents,
   MarkdownEditorV2: entry('Объекты и контент','Контекстный редактор Markdown с форматированием выделения и меню блоков.',MarkdownEditorV2Example),

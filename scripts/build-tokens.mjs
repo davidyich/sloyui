@@ -24,6 +24,7 @@ for(const [size,n]of Object.entries({xs:14,sm:16,md:18,lg:20,xl:24}))primitive('
 primitive('font/size/micro',9,'FLOAT',['FONT_SIZE'],'px');
 primitive('font/size/tiny',10,'FLOAT',['FONT_SIZE'],'px');
 primitive('number/border/width',.5,'FLOAT',['STROKE_FLOAT'],'px');
+primitive('number/divider/width',1,'FLOAT',['STROKE_FLOAT'],'px');
 primitive('number/border/none',0,'FLOAT',['STROKE_FLOAT'],'px');
 primitive('number/spacing/half',2,'FLOAT',['GAP'],'px');
 Object.assign(legacyNames,{'border-width':'number/border/width','item-gap':'number/spacing/half','item-gap-roomy':'number/spacing/1'});

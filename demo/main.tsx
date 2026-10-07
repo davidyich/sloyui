@@ -103,7 +103,7 @@ function FoundationPage({route,theme,accent,copy}:{route:FoundationRoute;theme:T
 function LanguageSwitch({locale,onLocale}:{locale:UI.Locale;onLocale:(locale:UI.Locale)=>void}) {
  const t=UI.useTranslate();
  const next=locale==='ru'?'en':'ru';
- return <UI.Button className="catalog-language" size="xs" variant="ghost" aria-label={t('Переключить на английский (en)','Switch to Russian (ru)')} onClick={()=>onLocale(next)}>{next}</UI.Button>;
+ return <UI.Button className="catalog-language" size="xs" variant="ghost" aria-label={t('Переключить на английский (EN)','Switch to Russian (RU)')} onClick={()=>onLocale(next)}>{next.toUpperCase()}</UI.Button>;
 }
 function LocalizedCatalogue(){
  const [locale,setLocale]=useState<UI.Locale>(()=>preference('cap-kit-locale','ru',['ru','en']));

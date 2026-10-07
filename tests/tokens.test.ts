@@ -41,6 +41,23 @@ describe('Canonical full palette graph',()=>{
   }
   expect(new Set(colorsByMode).size).toBe(7);
  });
+ it('keeps structural dividers visible on every surface independently of decorative strokes',()=>{
+  expect(resolve('Primitives/number/divider/width','Value')).toBe(1);
+  for(const mode of Object.keys(graph.contexts)){
+   const surface=resolve('Semantic/surface/current',mode) as RGB;
+   const contrasts=['subtle','default','strong'].map((role,index)=>{
+    const result=ratio(resolve('Semantic/divider/'+role,mode) as RGB,surface);
+    expect(result,mode+' '+role).toBeGreaterThanOrEqual([1.5,1.8,2.4][index]);
+    return result;
+   });
+   expect(contrasts[1]).toBeGreaterThan(contrasts[0]);
+   expect(contrasts[2]).toBeGreaterThan(contrasts[1]);
+   const panelContrast=ratio(resolve('Semantic/divider/panel',mode) as RGB,surface);
+   expect(panelContrast,mode).toBeGreaterThanOrEqual(mode.startsWith('Light')?1.15:1.25);
+   expect(panelContrast,mode).toBeLessThan(mode.startsWith('Light')?1.3:1.45);
+   expect(ratio(resolve('Semantic/divider/control',mode) as RGB,resolve('Semantic/control/normal',mode) as RGB),mode).toBeGreaterThanOrEqual(1.8);
+  }
+ });
  it('switches decorative stroke independently while retaining the width primitive',()=>{
   expect(resolve('Primitives/number/border/width','Value')).toBe(.5);
   expect(resolve('Borders/border/width','Off')).toBe(0);

@@ -1036,6 +1036,16 @@
       ],
       "primaryGroup": "content",
       "introduced": "0.7.0"
+    },
+    "FileCard": {
+      "id": "cp-103",
+      "status": "needs-review",
+      "groups": [
+        "content",
+        "data"
+      ],
+      "primaryGroup": "content",
+      "introduced": "0.8.0"
     }
   }
 }

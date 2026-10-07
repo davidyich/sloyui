@@ -1,10 +1,10 @@
 {
   "package": "@personal/capacities-ui",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "framework": "React >=19",
   "module": "ESM",
-  "componentCount": 101,
-  "exportedComponentCount": 102,
+  "componentCount": 102,
+  "exportedComponentCount": 103,
   "compatibilityAliases": {
     "Badge": "Tag",
     "TypeLabel": "Tag with icon=page",
@@ -210,7 +210,8 @@
           "Chip",
           "PreviewRail",
           "ResizableCard",
-          "MarkdownEditorV2"
+          "MarkdownEditorV2",
+          "FileCard"
         ]
       },
       {
@@ -234,7 +235,8 @@
           "Table",
           "DataTable",
           "FilterToolbar",
-          "JsonViewer"
+          "JsonViewer",
+          "FileCard"
         ]
       },
       {
@@ -471,7 +473,7 @@
           "modes": [
             "Value"
           ],
-          "variables": 609
+          "variables": 610
         },
         {
           "name": "Theme",
@@ -479,7 +481,7 @@
             "Light",
             "Dark"
           ],
-          "variables": 1362
+          "variables": 1382
         },
         {
           "name": "Semantic",
@@ -489,7 +491,7 @@
             "Raised",
             "Floating"
           ],
-          "variables": 735
+          "variables": 740
         },
         {
           "name": "Borders",
@@ -500,7 +502,7 @@
           "variables": 1
         }
       ],
-      "variableCount": 2707,
+      "variableCount": 2733,
       "importer": "figma/importer/manifest.json",
       "includesRuntimeSurfaceContext": true,
       "actualDocumentUpdatedForVersion": false,
@@ -566,6 +568,166 @@
     }
   },
   "components": {
+    "FileCard": {
+      "id": "cp-103",
+      "status": "needs-review",
+      "groups": [
+        "content",
+        "data"
+      ],
+      "primaryGroup": "content",
+      "introduced": "0.8.0",
+      "purpose": "File attachment with a thumbnail, format tile and independent actions",
+      "props": "name: string; sizeLabel?, mimeType?: string; kind?: FileKind; thumbnail?, thumbnailAlt?: string; size?: sm|md|lg (md); href?, downloadHref?: string; onOpen?, onDownload?, onRemove?: ()=>void; disabled?, loading?: boolean; div props",
+      "example": "<FileCard name=\"report.pdf\" sizeLabel=\"248 KB\" onOpen={openFile} onRemove={removeFile} />",
+      "catalogueRoute": "#FileCard",
+      "catalogueGroup": "Контент и карточки",
+      "behavior": "Neutral raised attachment shell with optional thumbnail; explicit kind overrides MIME and extension inference. Actions are siblings, never nested. Caller owns URLs, byte formatting, open/download/remove side effects. Loading and disabled block actions. Failed thumbnail falls back to format tile.",
+      "source": "src/components/file-card.tsx",
+      "api": [
+        {
+          "name": "size",
+          "type": "\"sm\" | \"md\" | \"lg\"",
+          "required": false,
+          "default": "'md'",
+          "description": "Размер элемента по общей шкале."
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "description": "Full filename, retained in the accessible name when visually truncated."
+        },
+        {
+          "name": "sizeLabel",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Display-ready size or other file metadata; no bytes are guessed."
+        },
+        {
+          "name": "mimeType",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Recognized MIME type takes precedence over the filename extension."
+        },
+        {
+          "name": "kind",
+          "type": "FileKind",
+          "required": false,
+          "default": null,
+          "description": "Overrides automatic format inference."
+        },
+        {
+          "name": "thumbnail",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Optional image URL; a failed image falls back to the format tile."
+        },
+        {
+          "name": "thumbnailAlt",
+          "type": "string",
+          "required": false,
+          "default": "''",
+          "description": "Keep empty when the thumbnail repeats the filename."
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Main file link; takes precedence over onOpen."
+        },
+        {
+          "name": "onOpen",
+          "type": "(() => void)",
+          "required": false,
+          "default": null,
+          "description": "Обработчик события Open."
+        },
+        {
+          "name": "downloadHref",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Separate download link; takes precedence over onDownload."
+        },
+        {
+          "name": "onDownload",
+          "type": "(() => void)",
+          "required": false,
+          "default": null,
+          "description": "Обработчик события Download."
+        },
+        {
+          "name": "onRemove",
+          "type": "(() => void)",
+          "required": false,
+          "default": null,
+          "description": "Обработчик удаления элемента."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "default": "false",
+          "description": "Блокирует взаимодействие."
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "required": false,
+          "default": "false",
+          "description": "Ожидание выполнения действия."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "default": "''",
+          "description": "Дополнительный класс корневого элемента."
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Идентификатор элемента."
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "default": null,
+          "description": "Настройка style; допустимые значения указаны в типе."
+        },
+        {
+          "name": "aria-label",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Настройка aria-label; допустимые значения указаны в типе."
+        },
+        {
+          "name": "…props",
+          "type": "Native element attributes",
+          "required": false,
+          "default": null,
+          "description": "Стандартные HTML/ARIA-атрибуты и обработчики базового элемента. Исключения заданы публичным TypeScript-типом."
+        }
+      ],
+      "usage": "Передайте имя и готовую строку размера файла. Тип определяется по MIME или расширению; kind задаёт его явно. Превью необязательно. Открытие, скачивание и удаление — независимые действия; приложение управляет файлами и URL.",
+      "agentNotes": "Neutral raised attachment shell with optional thumbnail; explicit kind overrides MIME and extension inference. Actions are siblings, never nested. Caller owns URLs, byte formatting, open/download/remove side effects. Loading and disabled block actions. Failed thumbnail falls back to format tile.",
+      "related": [
+        "ContentCard",
+        "PreviewRail",
+        "IconBox",
+        "FileTree"
+      ]
+    },
     "ResizablePanelGroup": {
       "id": "cp-101",
       "status": "needs-review",
@@ -1160,6 +1322,41 @@
           "description": "Визуальный вариант компонента."
         },
         {
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement>",
+          "required": false,
+          "default": null,
+          "description": "Обработчик активации."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Дополнительный класс корневого элемента."
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Идентификатор элемента."
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "default": null,
+          "description": "Настройка style; допустимые значения указаны в типе."
+        },
+        {
+          "name": "aria-label",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Настройка aria-label; допустимые значения указаны в типе."
+        },
+        {
           "name": "loading",
           "type": "boolean",
           "required": false,
@@ -1193,41 +1390,6 @@
           "required": false,
           "default": null,
           "description": "Настройка type; допустимые значения указаны в типе."
-        },
-        {
-          "name": "className",
-          "type": "string",
-          "required": false,
-          "default": null,
-          "description": "Дополнительный класс корневого элемента."
-        },
-        {
-          "name": "id",
-          "type": "string",
-          "required": false,
-          "default": null,
-          "description": "Идентификатор элемента."
-        },
-        {
-          "name": "style",
-          "type": "CSSProperties",
-          "required": false,
-          "default": null,
-          "description": "Настройка style; допустимые значения указаны в типе."
-        },
-        {
-          "name": "aria-label",
-          "type": "string",
-          "required": false,
-          "default": null,
-          "description": "Настройка aria-label; допустимые значения указаны в типе."
-        },
-        {
-          "name": "onClick",
-          "type": "MouseEventHandler<HTMLButtonElement>",
-          "required": false,
-          "default": null,
-          "description": "Обработчик активации."
         },
         {
           "name": "label",
@@ -2551,27 +2713,6 @@
           "description": "Толщина и отступ фокусной рамки в пикселях."
         },
         {
-          "name": "disabled",
-          "type": "boolean",
-          "required": false,
-          "default": null,
-          "description": "Блокирует взаимодействие."
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "required": false,
-          "default": null,
-          "description": "Имя для формы или идентификатор иконки."
-        },
-        {
-          "name": "type",
-          "type": "HTMLInputTypeAttribute",
-          "required": false,
-          "default": "'text'",
-          "description": "Настройка type; допустимые значения указаны в типе."
-        },
-        {
           "name": "defaultChecked",
           "type": "boolean",
           "required": false,
@@ -2612,6 +2753,27 @@
           "required": false,
           "default": null,
           "description": "Обработчик события Change."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "default": null,
+          "description": "Блокирует взаимодействие."
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Имя для формы или идентификатор иконки."
+        },
+        {
+          "name": "type",
+          "type": "HTMLInputTypeAttribute",
+          "required": false,
+          "default": "'text'",
+          "description": "Настройка type; допустимые значения указаны в типе."
         },
         {
           "name": "max",
@@ -2997,20 +3159,6 @@
           "description": "Толщина и отступ фокусной рамки в пикселях."
         },
         {
-          "name": "disabled",
-          "type": "boolean",
-          "required": false,
-          "default": null,
-          "description": "Блокирует взаимодействие."
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "required": false,
-          "default": null,
-          "description": "Имя для формы или идентификатор иконки."
-        },
-        {
           "name": "defaultChecked",
           "type": "boolean",
           "required": false,
@@ -3051,6 +3199,20 @@
           "required": false,
           "default": null,
           "description": "Обработчик события Change."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "default": null,
+          "description": "Блокирует взаимодействие."
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Имя для формы или идентификатор иконки."
         },
         {
           "name": "required",
@@ -3214,20 +3376,6 @@
           "description": "Начальное значение в неуправляемом режиме."
         },
         {
-          "name": "disabled",
-          "type": "boolean",
-          "required": false,
-          "default": null,
-          "description": "Блокирует взаимодействие."
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "required": false,
-          "default": null,
-          "description": "Имя для формы или идентификатор иконки."
-        },
-        {
           "name": "defaultChecked",
           "type": "boolean",
           "required": false,
@@ -3268,6 +3416,20 @@
           "required": false,
           "default": null,
           "description": "Обработчик события Change."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "default": null,
+          "description": "Блокирует взаимодействие."
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Имя для формы или идентификатор иконки."
         },
         {
           "name": "max",
@@ -3400,20 +3562,6 @@
           "description": "Начальное значение в неуправляемом режиме."
         },
         {
-          "name": "disabled",
-          "type": "boolean",
-          "required": false,
-          "default": null,
-          "description": "Блокирует взаимодействие."
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "required": false,
-          "default": null,
-          "description": "Имя для формы или идентификатор иконки."
-        },
-        {
           "name": "defaultChecked",
           "type": "boolean",
           "required": false,
@@ -3454,6 +3602,20 @@
           "required": false,
           "default": null,
           "description": "Обработчик события Change."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "default": null,
+          "description": "Блокирует взаимодействие."
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Имя для формы или идентификатор иконки."
         },
         {
           "name": "max",
@@ -3607,20 +3769,6 @@
           "description": "Усиливает контраст выбранного стиля."
         },
         {
-          "name": "disabled",
-          "type": "boolean",
-          "required": false,
-          "default": null,
-          "description": "Блокирует взаимодействие."
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "required": false,
-          "default": null,
-          "description": "Имя для формы или идентификатор иконки."
-        },
-        {
           "name": "defaultChecked",
           "type": "boolean",
           "required": false,
@@ -3661,6 +3809,20 @@
           "required": false,
           "default": null,
           "description": "Обработчик события Change."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "default": null,
+          "description": "Блокирует взаимодействие."
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Имя для формы или идентификатор иконки."
         },
         {
           "name": "max",
@@ -3825,20 +3987,6 @@
           "description": "Толщина и отступ фокусной рамки в пикселях."
         },
         {
-          "name": "disabled",
-          "type": "boolean",
-          "required": false,
-          "default": null,
-          "description": "Блокирует взаимодействие."
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "required": false,
-          "default": null,
-          "description": "Имя для формы или идентификатор иконки."
-        },
-        {
           "name": "defaultChecked",
           "type": "boolean",
           "required": false,
@@ -3879,6 +4027,20 @@
           "required": false,
           "default": null,
           "description": "Обработчик события Change."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "default": null,
+          "description": "Блокирует взаимодействие."
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Имя для формы или идентификатор иконки."
         },
         {
           "name": "max",
@@ -4157,18 +4319,11 @@
           "description": "Содержимое компонента."
         },
         {
-          "name": "disabled",
-          "type": "boolean",
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement>",
           "required": false,
           "default": null,
-          "description": "Блокирует взаимодействие."
-        },
-        {
-          "name": "type",
-          "type": "\"submit\" | \"reset\" | \"button\"",
-          "required": false,
-          "default": null,
-          "description": "Настройка type; допустимые значения указаны в типе."
+          "description": "Обработчик активации."
         },
         {
           "name": "className",
@@ -4206,11 +4361,18 @@
           "description": "Настройка aria-label; допустимые значения указаны в типе."
         },
         {
-          "name": "onClick",
-          "type": "MouseEventHandler<HTMLButtonElement>",
+          "name": "disabled",
+          "type": "boolean",
           "required": false,
           "default": null,
-          "description": "Обработчик активации."
+          "description": "Блокирует взаимодействие."
+        },
+        {
+          "name": "type",
+          "type": "\"submit\" | \"reset\" | \"button\"",
+          "required": false,
+          "default": null,
+          "description": "Настройка type; допустимые значения указаны в типе."
         },
         {
           "name": "description",
@@ -4286,18 +4448,11 @@
           "description": "Содержимое компонента."
         },
         {
-          "name": "disabled",
-          "type": "boolean",
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement>",
           "required": false,
           "default": null,
-          "description": "Блокирует взаимодействие."
-        },
-        {
-          "name": "type",
-          "type": "\"submit\" | \"reset\" | \"button\"",
-          "required": false,
-          "default": null,
-          "description": "Настройка type; допустимые значения указаны в типе."
+          "description": "Обработчик активации."
         },
         {
           "name": "className",
@@ -4335,11 +4490,18 @@
           "description": "Настройка aria-label; допустимые значения указаны в типе."
         },
         {
-          "name": "onClick",
-          "type": "MouseEventHandler<HTMLButtonElement>",
+          "name": "disabled",
+          "type": "boolean",
           "required": false,
           "default": null,
-          "description": "Обработчик активации."
+          "description": "Блокирует взаимодействие."
+        },
+        {
+          "name": "type",
+          "type": "\"submit\" | \"reset\" | \"button\"",
+          "required": false,
+          "default": null,
+          "description": "Настройка type; допустимые значения указаны в типе."
         },
         {
           "name": "icon",
@@ -4433,18 +4595,11 @@
           "description": "Локальный цвет или наследование акцента."
         },
         {
-          "name": "disabled",
-          "type": "boolean",
+          "name": "onClick",
+          "type": "MouseEventHandler<HTMLButtonElement>",
           "required": false,
           "default": null,
-          "description": "Блокирует взаимодействие."
-        },
-        {
-          "name": "type",
-          "type": "\"submit\" | \"reset\" | \"button\"",
-          "required": false,
-          "default": null,
-          "description": "Настройка type; допустимые значения указаны в типе."
+          "description": "Обработчик активации."
         },
         {
           "name": "className",
@@ -4475,11 +4630,18 @@
           "description": "Настройка aria-label; допустимые значения указаны в типе."
         },
         {
-          "name": "onClick",
-          "type": "MouseEventHandler<HTMLButtonElement>",
+          "name": "disabled",
+          "type": "boolean",
           "required": false,
           "default": null,
-          "description": "Обработчик активации."
+          "description": "Блокирует взаимодействие."
+        },
+        {
+          "name": "type",
+          "type": "\"submit\" | \"reset\" | \"button\"",
+          "required": false,
+          "default": null,
+          "description": "Настройка type; допустимые значения указаны в типе."
         },
         {
           "name": "…props",
@@ -5018,8 +5180,8 @@
       "related": [
         "DataTable",
         "JsonViewer",
-        "FilterToolbar",
-        "Accordion"
+        "FileCard",
+        "FilterToolbar"
       ]
     },
     "CodeBlock": {
@@ -6173,20 +6335,6 @@
           "description": "Элементы со стабильными уникальными идентификаторами."
         },
         {
-          "name": "loading",
-          "type": "boolean",
-          "required": false,
-          "default": null,
-          "description": "Ожидание выполнения действия."
-        },
-        {
-          "name": "leading",
-          "type": "ReactNode",
-          "required": false,
-          "default": null,
-          "description": "Слот перед основным содержимым."
-        },
-        {
           "name": "className",
           "type": "string",
           "required": false,
@@ -6213,6 +6361,20 @@
           "required": false,
           "default": null,
           "description": "Настройка aria-label; допустимые значения указаны в типе."
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "required": false,
+          "default": null,
+          "description": "Ожидание выполнения действия."
+        },
+        {
+          "name": "leading",
+          "type": "ReactNode",
+          "required": false,
+          "default": null,
+          "description": "Слот перед основным содержимым."
         },
         {
           "name": "…props",
@@ -6525,41 +6687,6 @@
           "description": "Настройка inputClassName; допустимые значения указаны в типе."
         },
         {
-          "name": "leading",
-          "type": "ReactNode",
-          "required": false,
-          "default": null,
-          "description": "Слот перед основным содержимым."
-        },
-        {
-          "name": "trailing",
-          "type": "ReactNode",
-          "required": false,
-          "default": null,
-          "description": "Слот после основного содержимого."
-        },
-        {
-          "name": "disabled",
-          "type": "boolean",
-          "required": false,
-          "default": null,
-          "description": "Блокирует взаимодействие."
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "required": false,
-          "default": null,
-          "description": "Имя для формы или идентификатор иконки."
-        },
-        {
-          "name": "type",
-          "type": "HTMLInputTypeAttribute",
-          "required": false,
-          "default": null,
-          "description": "Настройка type; допустимые значения указаны в типе."
-        },
-        {
           "name": "defaultChecked",
           "type": "boolean",
           "required": false,
@@ -6600,6 +6727,41 @@
           "required": false,
           "default": null,
           "description": "Обработчик события Change."
+        },
+        {
+          "name": "leading",
+          "type": "ReactNode",
+          "required": false,
+          "default": null,
+          "description": "Слот перед основным содержимым."
+        },
+        {
+          "name": "trailing",
+          "type": "ReactNode",
+          "required": false,
+          "default": null,
+          "description": "Слот после основного содержимого."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "default": null,
+          "description": "Блокирует взаимодействие."
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Имя для формы или идентификатор иконки."
+        },
+        {
+          "name": "type",
+          "type": "HTMLInputTypeAttribute",
+          "required": false,
+          "default": null,
+          "description": "Настройка type; допустимые значения указаны в типе."
         },
         {
           "name": "max",
@@ -9585,20 +9747,6 @@
           "description": "Толщина и отступ фокусной рамки в пикселях."
         },
         {
-          "name": "disabled",
-          "type": "boolean",
-          "required": false,
-          "default": null,
-          "description": "Блокирует взаимодействие."
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "required": false,
-          "default": null,
-          "description": "Имя для формы или идентификатор иконки."
-        },
-        {
           "name": "defaultChecked",
           "type": "boolean",
           "required": false,
@@ -9632,6 +9780,20 @@
           "required": false,
           "default": null,
           "description": "Настройка aria-label; допустимые значения указаны в типе."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "default": null,
+          "description": "Блокирует взаимодействие."
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Имя для формы или идентификатор иконки."
         },
         {
           "name": "checked",
@@ -9864,7 +10026,7 @@
         },
         {
           "name": "toolbarSize",
-          "type": "\"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\"",
+          "type": "\"sm\" | \"md\" | \"lg\" | \"xs\" | \"xl\"",
           "required": false,
           "default": "'sm'",
           "description": "Настройка toolbarSize; допустимые значения указаны в типе."
@@ -10071,8 +10233,8 @@
       "related": [
         "JsonViewer",
         "Table",
-        "FilterToolbar",
-        "Accordion"
+        "FileCard",
+        "FilterToolbar"
       ]
     },
     "FilterToolbar": {
@@ -10295,8 +10457,8 @@
       "related": [
         "DataTable",
         "Table",
-        "FilterToolbar",
-        "Accordion"
+        "FileCard",
+        "FilterToolbar"
       ]
     },
     "ToastStack": {
@@ -10312,7 +10474,7 @@
         "record": "docs/revision-2026-10-07.md"
       },
       "purpose": "Positioned stack of actionable notices",
-      "props": "items: ToastStackItem[] {id,title,description?,duration?,action?,tone?: neutral|info|success|warning|danger; color?: Color|inherit; appearance?: neutral|soft|solid (neutral); contrast?: boolean (false); surface?: inherit|base|canvas|raised|floating}; onDismiss: (id:string)=>void; position?:top-left|top-center|top-right|bottom-left|bottom-center|bottom-right|inline; expandDirection?:up|down|left|right; expanded?:boolean; onExpandedChange?: (expanded:boolean)=>void; label?,limit?,className?",
+      "props": "items: ToastStackItem[] {id,title,description?,duration?,action?,icon?:ReactNode|false,loading?:boolean,tone?: neutral|info|success|warning|danger; color?: Color|inherit; appearance?: neutral|soft|solid (neutral); contrast?: boolean (false); surface?: inherit|base|canvas|raised|floating}; onDismiss: (id:string)=>void; shape?:rounded|pill (rounded); scope?:viewport|container (viewport); position?:top-left|top-center|top-right|bottom-left|bottom-center|bottom-right|inline; expandDirection?:up|down|left|right; expanded?:boolean; onExpandedChange?: (expanded:boolean)=>void; label?,limit?,className?",
       "example": "<ToastStack items={toasts} onDismiss={dismissToast} />",
       "catalogueRoute": "#ToastStack",
       "catalogueGroup": "Обратная связь",
@@ -10338,6 +10500,20 @@
           "required": false,
           "default": "'bottom-right'",
           "description": "Настройка position; допустимые значения указаны в типе."
+        },
+        {
+          "name": "scope",
+          "type": "\"viewport\" | \"container\"",
+          "required": false,
+          "default": "'viewport'",
+          "description": "Настройка scope; допустимые значения указаны в типе."
+        },
+        {
+          "name": "shape",
+          "type": "\"rounded\" | \"pill\"",
+          "required": false,
+          "default": "'rounded'",
+          "description": "Форма элемента."
         },
         {
           "name": "expandDirection",
@@ -10382,13 +10558,13 @@
           "description": "Дополнительный класс корневого элемента."
         }
       ],
-      "usage": "Размещайте в ограниченной области с запасом под выбранное направление. Жизненным циклом и удалением уведомлений управляет приложение.",
+      "usage": "Для стопки по центру выберите top-center или bottom-center. scope=container размещает её в родителе с position:relative и заданной высотой, viewport — на экране. Загрузка, действия и скрытые сообщения не закрываются по таймеру. Удаляйте элементы в onDismiss.",
       "agentNotes": "Use the exported ToastStack component. Positioned stack of actionable notices. Read its typed API and example; bind referenced data and callbacks in the consumer. Preserve accessible labels, keyboard behavior and reduced motion.",
       "related": [
+        "Toast",
         "Alert",
-        "AnnouncementBar",
-        "Callout",
-        "Progress"
+        "StatusBar",
+        "AnnouncementBar"
       ]
     },
     "AnnouncementBar": {
@@ -12479,18 +12655,18 @@
           "description": "Вызывается при изменении значения."
         },
         {
-          "name": "disabled",
-          "type": "boolean",
-          "required": false,
-          "default": null,
-          "description": "Блокирует взаимодействие."
-        },
-        {
           "name": "className",
           "type": "string",
           "required": false,
           "default": null,
           "description": "Дополнительный класс корневого элемента."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "default": null,
+          "description": "Блокирует взаимодействие."
         },
         {
           "name": "label",
@@ -12522,7 +12698,7 @@
         },
         {
           "name": "toolbarSize",
-          "type": "\"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\"",
+          "type": "\"sm\" | \"md\" | \"lg\" | \"xs\" | \"xl\"",
           "required": false,
           "default": "'xs'",
           "description": "Настройка toolbarSize; допустимые значения указаны в типе."

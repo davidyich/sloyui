@@ -1087,6 +1087,26 @@
     "$type": "color",
     "$value": "{Primitives.palette.gray.325}"
   },
+  "divider/subtle": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.325}"
+  },
+  "divider/default": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "divider/strong": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.400}"
+  },
+  "divider/panel": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.175}"
+  },
+  "divider/control": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.375}"
+  },
   "border/emphasis": {
     "$type": "color",
     "$value": "{Primitives.palette.gray.450}"

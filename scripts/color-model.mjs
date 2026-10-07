@@ -61,6 +61,11 @@ export function buildColorModel(){
   // Decorative edges follow the actual surface/fill. Meaningful focus stays ≥3:1.
   const edge=(bg,ratio,scale=scales.neutral)=>choose(scale.filter(p=>ti?p.Y>bg:p.Y<bg),ti?(bg+.05)*ratio-.05:(bg+.05)/ratio-.05);
   for(const [role,ratio]of Object.entries({subtle:1.14,default:1.3,strong:1.65}))values['border/'+role]=edge(surfaceY,ratio).name;
+  // Structural dividers are opaque and independent of decorative border visibility.
+  const divider=(backgroundY,minimumRatio)=>choose(scales.neutral.filter(p=>(ti?p.Y>backgroundY:p.Y<backgroundY)&&contrast(p.Y,backgroundY)>=minimumRatio),ti?(backgroundY+.05)*minimumRatio-.05:(backgroundY+.05)/minimumRatio-.05);
+  for(const [role,ratio]of Object.entries({subtle:1.5,default:1.8,strong:2.4}))values['divider/'+role]=divider(surfaceY,ratio).name;
+  values['divider/panel']=divider(surfaceY,ti?1.25:1.15).name;
+  values['divider/control']=divider(luminance(palette[values['control/normal']]),1.8).name;
   const emphasis=choose(scales.neutral.filter(p=>contrast(p.Y,surfaceY)>=3&&(ti?p.Y>surfaceY:p.Y<surfaceY)),ti?(surfaceY+.05)*3.1-.05:(surfaceY+.05)/3.1-.05);
   values['border/emphasis']=emphasis.name;values['focus/ring']=emphasis.name;
   values['border/panel']=values['border/subtle'];values['border/overlay']=values['border/default'];

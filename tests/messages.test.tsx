@@ -7,13 +7,13 @@ if(!window.PointerEvent)Object.defineProperty(window,'PointerEvent',{value:Mouse
 afterEach(()=>vi.useRealTimers());
 describe('message components',()=>{
   it('pauses toast expiry while hovered and never auto-dismisses actionable toasts',()=>{
-    vi.useFakeTimers();const dismiss=vi.fn(),action=vi.fn();const items=[{id:'short',title:'Saved',duration:1000},{id:'actionable',title:'Archived',duration:1000,action:{label:'Undo',onAction:action}}];
+    vi.useFakeTimers();const dismiss=vi.fn(),action=vi.fn();const items=[{id:'actionable',title:'Archived',duration:1000,action:{label:'Undo',onAction:action}},{id:'short',title:'Saved',duration:1000}];
     render(<ToastStack items={items} onDismiss={dismiss} position="inline"/>);
     const region=screen.getByLabelText('Notifications');fireEvent.mouseEnter(region);act(()=>vi.advanceTimersByTime(1500));expect(dismiss).not.toHaveBeenCalled();fireEvent.mouseLeave(region);act(()=>vi.advanceTimersByTime(1000));expect(dismiss).toHaveBeenCalledWith('short');expect(dismiss).not.toHaveBeenCalledWith('actionable');
-    fireEvent.click(screen.getByRole('button',{name:'Undo'}));expect(action).toHaveBeenCalledOnce();
+    fireEvent.mouseEnter(region);fireEvent.click(screen.getByRole('button',{name:'Undo'}));expect(action).toHaveBeenCalledOnce();
   });
   it('keeps toast timers paused while keyboard focus remains after hover ends',()=>{
-    vi.useFakeTimers();const dismiss=vi.fn(),items=[{id:'short',title:'Saved',duration:1000},{id:'action',title:'Archived',action:{label:'Undo',onAction:()=>{}}}];render(<ToastStack items={items} onDismiss={dismiss} position="inline"/>);const region=screen.getByLabelText('Notifications');fireEvent.mouseEnter(region);fireEvent.focus(screen.getByRole('button',{name:'Undo'}));fireEvent.mouseLeave(region);act(()=>vi.advanceTimersByTime(1400));expect(dismiss).not.toHaveBeenCalled();fireEvent.blur(region);act(()=>vi.advanceTimersByTime(1000));expect(dismiss).toHaveBeenCalledWith('short');
+    vi.useFakeTimers();const dismiss=vi.fn(),items=[{id:'action',title:'Archived',action:{label:'Undo',onAction:()=>{}}},{id:'short',title:'Saved',duration:1000}];render(<ToastStack items={items} onDismiss={dismiss} position="inline"/>);const region=screen.getByLabelText('Notifications');fireEvent.mouseEnter(region);fireEvent.focus(screen.getByRole('button',{name:'Undo'}));fireEvent.mouseLeave(region);act(()=>vi.advanceTimersByTime(1400));expect(dismiss).not.toHaveBeenCalled();fireEvent.blur(region);act(()=>vi.advanceTimersByTime(1000));expect(dismiss).toHaveBeenCalledWith('short');
   });
   it('makes a dismissed toast inert during exit and can restore the same id',()=>{
     vi.useFakeTimers();

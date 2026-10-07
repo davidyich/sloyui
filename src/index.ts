@@ -78,3 +78,6 @@ export type { ScrollFadeDirection, ScrollFadeSize } from './components/scroll-fa
 
 export { MarkdownEditorV2 } from './components/markdown-editor-v2.js';
 export type { MarkdownEditorV2Props } from './components/markdown-editor-v2.js';
+
+export { FileCard, inferFileKind } from './components/file-card.js';
+export type { FileCardProps, FileKind } from './components/file-card.js';

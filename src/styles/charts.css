@@ -32,7 +32,7 @@
 .cap-chart-data { margin-top:.5rem; color:var(--cap-content-muted); font-size:12px; }
 .cap-chart-data summary { cursor:pointer; width:max-content; }
 .cap-chart-data table { border-collapse:collapse; margin-top:.5rem; width:100%; text-align:left; }
-.cap-chart-data th,.cap-chart-data td { padding:4px 8px; border-bottom:1px solid var(--cap-control-border); }
+.cap-chart-data th,.cap-chart-data td { padding:4px 8px; border-bottom:var(--cap-border-width) solid var(--cap-divider-panel); }
 .cap-chart-interactive { min-width:0; }
 .cap-chart-legend { display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:6px; }
 .cap-chart-legend button { display:inline-flex; min-height:28px; align-items:center; gap:6px; border:0; border-radius:var(--cap-radius-small); padding:3px 6px; background:transparent; color:var(--cap-content-secondary); font:inherit; font-size:var(--cap-font-size-xs); cursor:pointer; }

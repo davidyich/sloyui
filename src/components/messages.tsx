@@ -1,25 +1,25 @@
 import { useTranslate } from './locale.js';
-import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import type { CSSProperties, PointerEvent as ReactPointerEvent, ReactNode } from 'react';
-import { Button, Icon } from './primitives.js';
+import { Button, Icon, Spinner } from './primitives.js';
 import { stackLayout, type StackDirection, type StackSize } from './stack-layout.js';
 import { useFrameResize } from './resize-utils.js';
 import type { FeedbackStyleProps } from './feedback.js';
-import { Toast, useOverlayPresence } from './overlays.js';
+import { OverlayPortal, Toast, useOverlayPresence, useOverlayScope } from './overlays.js';
 import { useDisclosurePresence, type DisclosurePhase } from './disclosure.js';
 
 export type { StackDirection } from './stack-layout.js';
-export interface ToastStackItem extends FeedbackStyleProps { id:string; title:string; description?:string; duration?:number; action?:{label:string;onAction:()=>void} }
-export interface ToastStackProps { items:ToastStackItem[]; onDismiss:(id:string)=>void; position?:'top-left'|'top-center'|'top-right'|'bottom-left'|'bottom-center'|'bottom-right'|'inline'; expandDirection?:StackDirection; expanded?:boolean; onExpandedChange?:(expanded:boolean)=>void; label?:string; limit?:number; className?:string }
+export interface ToastStackItem extends FeedbackStyleProps { id:string; title:string; description?:string; duration?:number; icon?:ReactNode; loading?:boolean; action?:{label:string;onAction:()=>void} }
+export interface ToastStackProps { items:ToastStackItem[]; onDismiss:(id:string)=>void; position?:'top-left'|'top-center'|'top-right'|'bottom-left'|'bottom-center'|'bottom-right'|'inline'; scope?:'viewport'|'container'; shape?:'rounded'|'pill'; expandDirection?:StackDirection; expanded?:boolean; onExpandedChange?:(expanded:boolean)=>void; label?:string; limit?:number; className?:string }
 
-function useStackSizes(ref: React.RefObject<HTMLDivElement | null>, signature: string, selector: string, fallbackHeight: number, horizontalPeek = 0) {
+function useStackSizes(ref: React.RefObject<HTMLDivElement | null>, signature: string, selector: string, fallbackHeight: number, horizontalPeek = 0, mountedNode?: HTMLDivElement | null) {
   const [state,setState] = useState<{width:number;sizes:Record<string,StackSize>}>({width:320,sizes:{}});
   useLayoutEffect(()=>{
-    const root=ref.current;if(!root)return;
+    const root=mountedNode??ref.current;if(!root)return;
     const measure=()=>{const style=getComputedStyle(root),width=Math.max(1,((root.clientWidth-(parseFloat(style.paddingLeft)||0)-(parseFloat(style.paddingRight)||0))||320)-horizontalPeek);const sizes=Object.fromEntries(Array.from(root.querySelectorAll<HTMLElement>(selector)).map(node=>[node.dataset.stackKey!,{width,height:node.offsetHeight||fallbackHeight}]));setState(previous=>JSON.stringify(previous)===JSON.stringify({width,sizes})?previous:{width,sizes});};
     measure();if(typeof ResizeObserver==='undefined')return;
     const observer=new ResizeObserver(measure);observer.observe(root);root.querySelectorAll(selector).forEach(node=>observer.observe(node));return()=>observer.disconnect();
-  },[signature,selector,fallbackHeight,horizontalPeek]);
+  },[signature,selector,fallbackHeight,horizontalPeek,mountedNode]);
   return state;
 }
 /** Reflow the deck atomically: animated normalization plus an immediate scroll jump clips the front card. */
@@ -40,30 +40,43 @@ function alignStackViewport(viewport: HTMLDivElement | null, geometry: StackSize
   viewport.scrollLeft = expanded && direction === 'left' ? Math.max(0, geometry.width - innerWidth) : 0;
   viewport.scrollTop = expanded && direction === 'up' ? Math.max(0, geometry.height - innerHeight) : 0;
 }
-function TimedToast({item,onDismiss,paused,depth,expanded,position,phase,x,y,width}:{item:ToastStackItem;onDismiss:(id:string)=>void;paused:boolean;depth:number;expanded:boolean;position:ToastStackProps['position'];phase:DisclosurePhase;x:number;y:number;width:number}){
+function TimedToast({item,onDismiss,paused,depth,expanded,position,phase,x,y,width,shellHeight}:{item:ToastStackItem;onDismiss:(id:string)=>void;paused:boolean;depth:number;expanded:boolean;position:ToastStackProps['position'];phase:DisclosurePhase;x:number;y:number;width:number;shellHeight:number}){
   const remaining=useRef(item.duration??5000),started=useRef(0);
-  useEffect(()=>{if(phase==='exit'||item.action||item.duration===Infinity||paused||remaining.current<=0)return;started.current=performance.now();const timer=setTimeout(()=>onDismiss(item.id),remaining.current);return()=>{clearTimeout(timer);remaining.current=Math.max(0,remaining.current-(performance.now()-started.current))}},[item.id,item.duration,item.action,paused,onDismiss,phase]);
-  return <li className="cap-toast-stack-item" data-toast-id={item.id} data-stack-key={item.id} data-depth={depth} data-phase={phase} data-expanded={expanded||undefined} aria-hidden={phase==='exit'||depth>0&&!expanded||undefined} inert={phase==='exit'||depth>0&&!expanded} style={{'--cap-toast-depth':depth,'--cap-toast-x':`${x}px`,'--cap-toast-y':`${y}px`,width} as CSSProperties}><Toast tone={item.tone} color={item.color} appearance={item.appearance} contrast={item.contrast} surface={item.surface??(position==='inline'?'inherit':'floating')} title={item.title} description={item.description} onDismiss={()=>onDismiss(item.id)} action={item.action&&<Button size="sm" variant="ghost" onClick={item.action.onAction}>{item.action.label}</Button>}/></li>
+  useEffect(()=>{if(phase==='exit'||item.loading||item.action||item.duration===Infinity||paused||depth>0&&!expanded||remaining.current<=0)return;started.current=performance.now();const timer=setTimeout(()=>onDismiss(item.id),remaining.current);return()=>{clearTimeout(timer);remaining.current=Math.max(0,remaining.current-(performance.now()-started.current))}},[item.id,item.duration,item.loading,item.action,paused,depth,expanded,onDismiss,phase]);
+  return <li className="cap-toast-stack-item" data-toast-id={item.id} data-stack-key={item.id} data-depth={depth} data-phase={phase} data-expanded={expanded||undefined} aria-hidden={phase==='exit'||depth>0&&!expanded||undefined} inert={phase==='exit'||depth>0&&!expanded} style={{'--cap-toast-depth':depth,'--cap-toast-shell-height':`${shellHeight}px`,'--cap-toast-x':`${x}px`,'--cap-toast-y':`${y}px`,width} as CSSProperties}><Toast icon={item.loading?<Spinner aria-hidden="true" role="presentation"/>:item.icon} aria-busy={item.loading||undefined} tone={item.tone} color={item.color} appearance={item.appearance} contrast={item.contrast} surface={item.surface??(position==='inline'?'inherit':'floating')} title={item.title} description={item.description} onDismiss={()=>onDismiss(item.id)} action={item.action&&<Button size="sm" variant="ghost" onClick={item.action.onAction}>{item.action.label}</Button>}/></li>
 }
-export function ToastStack({items,onDismiss,position='bottom-right',expandDirection,expanded:controlledExpanded,onExpandedChange,label: suppliedLabel,limit=4,className=''}:ToastStackProps){
+export function ToastStack({items,onDismiss,position='bottom-right',scope='viewport',shape='rounded',expandDirection,expanded:controlledExpanded,onExpandedChange,label: suppliedLabel,limit=4,className=''}:ToastStackProps){
   const t = useTranslate();
   const label = suppliedLabel === undefined ? (t("Уведомления", "Notifications")) : suppliedLabel;
 
   const [hovered,setHovered]=useState(false),[focused,setFocused]=useState(false),[manuallyExpanded,setManuallyExpanded]=useState<boolean|null>(null),[hidden,setHidden]=useState(false);
-  const viewport=useRef<HTMLDivElement>(null);
+  const viewport=useRef<HTMLDivElement>(null), panel=useRef<HTMLDivElement>(null), anchor=useRef<HTMLSpanElement>(null);
+  const [viewportNode,setViewportNode]=useState<HTMLDivElement|null>(null);
+  const mountViewport=useCallback((node:HTMLDivElement|null)=>{viewport.current=node;setViewportNode(node)},[]);
+  const overlayScope=useOverlayScope(anchor);
+  const [availableHeight,setAvailableHeight]=useState<number>();
+  useLayoutEffect(()=>{
+    if(scope!=='container'||position==='inline'){setAvailableHeight(undefined);return;}
+    const parent=panel.current?.offsetParent as HTMLElement|null;if(!parent)return;
+    const measure=()=>setAvailableHeight(Math.max(0,parent.clientHeight-32));
+    measure();if(typeof ResizeObserver==='undefined')return;
+    const observer=new ResizeObserver(measure);observer.observe(parent);return()=>observer.disconnect();
+  },[scope,position,viewportNode]);
   useEffect(()=>{const change=()=>setHidden(document.hidden);document.addEventListener('visibilitychange',change);change();return()=>document.removeEventListener('visibilitychange',change)},[]);
   const shown=items.slice(-Math.max(1,limit)).reverse(),present=useDisclosurePresence(shown,item=>item.id);
   const direction=expandDirection??(position.startsWith('bottom')?'up':'down'),expanded=controlledExpanded??(manuallyExpanded??(hovered||focused)),paused=expanded||hovered||focused||hidden;
-  const signature=present.map(entry=>entry.key).join('\u0000'),measurement=useStackSizes(viewport,signature,'.cap-toast-stack-item',80,!expanded&&(direction==='left'||direction==='right')?Math.max(0,present.length-1)*8:0);
-  const geometry=stackLayout(present.map(entry=>measurement.sizes[entry.key]??{width:measurement.width,height:80}),direction,expanded);
-  const reflow = useStackReflow(`${direction}:${expanded}:${measurement.width}:${geometry.width}:${geometry.height}`);
-  useLayoutEffect(()=>alignStackViewport(viewport.current,geometry,direction,expanded),[expanded,direction,geometry.width,geometry.height]);
+  const signature=present.map(entry=>entry.key).join('\u0000'),measurement=useStackSizes(viewport,signature,'.cap-toast-stack-item',80,!expanded&&(direction==='left'||direction==='right')?Math.max(0,present.length-1)*8:0,viewportNode);
+  const frontHeight=measurement.sizes[present[0]?.key]?.height??80;
+  const geometry=stackLayout(present.map(entry=>{const size=measurement.sizes[entry.key]??{width:measurement.width,height:80};return expanded?size:{...size,height:frontHeight}}),direction,expanded);
+  const reflow = useStackReflow(`${direction}:${measurement.width}:${direction==='up'||direction==='left'?`${expanded}:${geometry.width}:${geometry.height}`:''}`);
+  useLayoutEffect(()=>alignStackViewport(viewport.current,geometry,direction,expanded),[expanded,direction,geometry.width,geometry.height,viewportNode]);
   const changeExpanded=(next:boolean)=>{if(controlledExpanded===undefined)setManuallyExpanded(next);onExpandedChange?.(next)};
   const hover=(next:boolean)=>{setHovered(next);if(controlledExpanded===undefined&&!next&&manuallyExpanded===false)setManuallyExpanded(null)};
-  return <div className={`cap-toast-stack ${className}`} role="region" aria-label={label} data-position={position} data-direction={direction} data-expanded={expanded||undefined} onPointerEnter={e=>{if(e.pointerType==='mouse')hover(true)}} onPointerLeave={e=>{if(e.pointerType==='mouse')hover(false)}} onMouseEnter={()=>hover(true)} onMouseLeave={()=>hover(false)} onFocusCapture={event=>setFocused(!!(event.target as Element).closest('.cap-toast-stack-item'))} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node|null))setFocused(false)}}>
+  const stack=<div ref={panel} {...(scope==='viewport'&&position!=='inline'?overlayScope:{})} style={availableHeight===undefined?undefined:{maxHeight:availableHeight}} className={`cap-toast-stack ${className}`} role="region" aria-label={label} data-position={position} data-scope={scope} data-shape={shape} data-direction={direction} data-expanded={expanded||undefined} onPointerEnter={e=>{if(e.pointerType==='mouse')hover(true)}} onPointerLeave={e=>{if(e.pointerType==='mouse')hover(false)}} onMouseEnter={()=>hover(true)} onMouseLeave={()=>hover(false)} onFocusCapture={event=>setFocused(!!(event.target as Element).closest('.cap-toast-stack-item'))} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node|null))setFocused(false)}}>
     {present.length>1&&<Button className="cap-toast-stack-expand" size="xs" variant="ghost" aria-expanded={expanded} onClick={()=>changeExpanded(!expanded)}>{expanded?t("Свернуть уведомления", "Collapse notifications"):t("Развернуть уведомления", "Expand notifications")}</Button>}
-    <div ref={viewport} className="cap-toast-stack-viewport" data-reflow={reflow||undefined}><ol className="cap-toast-stack-list" style={{width:geometry.width,height:geometry.height,'--cap-toast-inline-clearance':`${geometry.height}px`} as CSSProperties}>{present.map(({key,item,phase},i)=><TimedToast key={key} item={item} onDismiss={onDismiss} paused={paused} depth={i} expanded={expanded} position={position} phase={phase} x={geometry.positions[i]?.x??0} y={geometry.positions[i]?.y??0} width={measurement.width}/>)}</ol></div>
+    <div ref={mountViewport} style={availableHeight===undefined?undefined:{maxHeight:Math.max(0,availableHeight-(present.length>1?32:0))}} className="cap-toast-stack-viewport" data-reflow={reflow||undefined}><ol className="cap-toast-stack-list" style={{width:geometry.width,height:geometry.height,'--cap-toast-inline-clearance':`${geometry.height}px`} as CSSProperties}>{present.map(({key,item,phase},i)=><TimedToast key={key} item={item} onDismiss={onDismiss} paused={paused} depth={i} expanded={expanded} position={position} phase={phase} x={geometry.positions[i]?.x??0} y={geometry.positions[i]?.y??0} width={measurement.width} shellHeight={frontHeight}/>)}</ol></div>
   </div>;
+  return <><span hidden ref={anchor}/>{scope==='viewport'&&position!=='inline'?<OverlayPortal anchor={anchor} panel={panel}>{stack}</OverlayPortal>:stack}</>;
 }
 
 export interface AnnouncementAction { label:string; href?:string; onClick?:()=>void }

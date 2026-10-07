@@ -1,5 +1,5 @@
 {
-  "version": "0.7.0",
+  "version": "0.8.0",
   "sourceColorTokens": 783,
   "paletteColors": 417,
   "accentSteps": 22,
@@ -13,7 +13,7 @@
     "disabled"
   ],
   "figmaCollections": 4,
-  "figmaVariables": 2707,
+  "figmaVariables": 2733,
   "secondaryCombinations": 576,
   "minTextContrast": 4.557522040341649,
   "minReactionContrast": 4.508967762137465,

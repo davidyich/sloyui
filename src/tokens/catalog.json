@@ -160,6 +160,46 @@
     "runtime": true
   },
   {
+    "name": "--cap-divider-subtle",
+    "original": "divider/subtle",
+    "group": "divider",
+    "light": "#C8C5C4",
+    "dark": "#39393D",
+    "runtime": true
+  },
+  {
+    "name": "--cap-divider-default",
+    "original": "divider/default",
+    "group": "divider",
+    "light": "#BDB8B7",
+    "dark": "#4A4A4C",
+    "runtime": true
+  },
+  {
+    "name": "--cap-divider-strong",
+    "original": "divider/strong",
+    "group": "divider",
+    "light": "#A7A2A1",
+    "dark": "#5C5959",
+    "runtime": true
+  },
+  {
+    "name": "--cap-divider-panel",
+    "original": "divider/panel",
+    "group": "divider",
+    "light": "#E8E7E6",
+    "dark": "#2D2D31",
+    "runtime": true
+  },
+  {
+    "name": "--cap-divider-control",
+    "original": "divider/control",
+    "group": "divider",
+    "light": "#B1ACAC",
+    "dark": "#5C5959",
+    "runtime": true
+  },
+  {
     "name": "--cap-border-emphasis",
     "original": "border/emphasis",
     "group": "border",

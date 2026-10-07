@@ -299,6 +299,10 @@
     "$type": "FLOAT",
     "$value": 0.5
   },
+  "number/divider/width": {
+    "$type": "FLOAT",
+    "$value": 1
+  },
   "number/border/none": {
     "$type": "FLOAT",
     "$value": 0

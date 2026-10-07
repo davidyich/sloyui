@@ -5,11 +5,11 @@
 .catalog-reference-section > h2,.catalog-agent-guide h2,.catalog-overview-group h2 { margin:0; font-size:18px; line-height:1.4; font-weight:500; letter-spacing:-.2px; }
 .catalog-reference-section > p { margin:0; color:var(--cap-content-secondary); line-height:1.7; max-width:80ch; }
 .catalog-reference-section > .cap-code { width:100%; min-width:0; }
-.catalog-api-table-wrap { background:var(--cap-surface-current); border:1px solid var(--cap-border-strong); border-radius:var(--cap-radius-xl); overflow:hidden; }
+.catalog-api-table-wrap { background:var(--cap-surface-current); border:var(--cap-border-width) solid var(--cap-divider-panel); border-radius:var(--cap-radius-xl); overflow:hidden; }
 .catalog-api-table { width:100%; border-collapse:collapse; table-layout:fixed; font-size:12px; line-height:1.6; text-align:left; }
 .catalog-api-table thead { color:var(--cap-content-muted); background:var(--cap-control-bg); }
 .catalog-api-table th,.catalog-api-table td { padding:16px; vertical-align:top; overflow-wrap:anywhere; font-weight:400; }
-.catalog-api-table tbody tr + tr { border-top:1px solid var(--cap-border-strong); }
+.catalog-api-table tbody tr + tr { border-top:var(--cap-border-width) solid var(--cap-divider-panel); }
 .catalog-api-table th:nth-child(1) { width:19%; }
 .catalog-api-table th:nth-child(2) { width:33%; }
 .catalog-api-table th:nth-child(3) { width:17%; }

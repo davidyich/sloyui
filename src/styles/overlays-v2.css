@@ -10,7 +10,7 @@
 .cap-modal-layer .cap-dialog-header h2 { overflow-wrap: anywhere; }
 .cap-modal-layer .cap-dialog-header > .cap-button { flex-shrink: 0; }
 .cap-modal-layer .cap-dialog-body { min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 16px; scrollbar-width: thin; scrollbar-color: var(--cap-border-front-strong) transparent; }
-.cap-modal-layer .cap-dialog-footer { padding: 12px 16px; flex-shrink: 0; flex-wrap: wrap; background: transparent; border-top-color: var(--cap-overlay-border); }
+.cap-modal-layer .cap-dialog-footer { padding: 12px 16px; flex-shrink: 0; flex-wrap: wrap; background: transparent; border-top-color: var(--cap-divider-panel); }
 .cap-modal-layer[data-side='left'] { justify-items: start; }
 .cap-modal-layer[data-side='right'] { justify-items: end; }
 .cap-modal-layer[data-side='bottom'] { align-items: end; }
@@ -28,7 +28,7 @@
 .cap-menu-v2 .cap-menu-item[data-danger] > svg { color: inherit; }
 .cap-menu-v2 .cap-menu-item[data-danger]:is(:hover, :focus) { background: var(--cap-status-danger-bg); }
 .cap-menu-v2 .cap-menu-item:disabled { cursor: not-allowed; }
-.cap-menu-v2 .cap-separator { margin: 5px 6px; border-color: var(--cap-overlay-border); }
+.cap-menu-v2 .cap-separator { margin: 5px 6px; background:var(--cap-divider-default); }
 .cap-menu-v2 .cap-kbd { flex-shrink: 0; }
 .cap-popover-v2 { width: min(22rem, calc(100vw - var(--cap-overlay-gutter, 12px) * 2)); padding: 12px; outline: none; }
 .cap-popover-v2:focus-visible { outline: var(--cap-focus-width) solid var(--cap-ring-state-active); outline-offset: 2px; }

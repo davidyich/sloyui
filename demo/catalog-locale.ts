@@ -2,6 +2,22 @@ import { useCallback } from 'react';
 import { useLocale } from '../src';
 /** Curated catalogue UI/metadata translations. Never applied to consumer content or DOM. */
 export const catalogueDictionary: Record<string,string> = {
+  "Передайте имя и готовую строку размера файла. Тип определяется по MIME или расширению; kind задаёт его явно. Превью необязательно. Открытие, скачивание и удаление — независимые действия; приложение управляет файлами и URL.": "Pass a name and display-ready file size. MIME or extension determines the format; kind overrides it. A preview is optional. Open, download and remove are independent actions; the application owns files and URLs.",
+  "Для стопки по центру выберите top-center или bottom-center. scope=container размещает её в родителе с position:relative и заданной высотой, viewport — на экране. Загрузка, действия и скрытые сообщения не закрываются по таймеру. Удаляйте элементы в onDismiss.": "Choose top-center or bottom-center for a centered stack. scope=container uses a positioned parent with a bounded height; viewport uses the screen. Loading, actionable and unread messages do not expire. Remove items in onDismiss.",
+  "Превью URL": "Preview URL",
+  "Файл с превью, обозначением формата и независимыми действиями.": "File with a preview, format tile and independent actions.",
+  "Имя файла": "File name",
+  "Размер файла": "File size",
+  "Формат файла": "File format",
+  "Вернуть файл": "Restore file",
+  "Открытие": "Open action",
+  "Скачивание": "Download action",
+  "Файл открыт": "File opened",
+  "Файл подготовлен к скачиванию": "File ready to download",
+  "Область размещения": "Placement scope",
+  "Публикуем проект…": "Deploying to production\u2026",
+  "Скрыть все": "Dismiss all",
+
   "Контекстный редактор Markdown с форматированием выделения и меню блоков.": "Contextual Markdown editor with selection formatting and block menus.",
   "Храните Markdown в value/onValueChange. Контекстное форматирование появляется при выделении; onCommentRequest передаёт выделенный текст приложению. Неподдерживаемый синтаксис сохраняется в исходнике.": "Keep Markdown in value/onValueChange. Selection reveals contextual formatting; onCommentRequest passes selected text to the application. Unsupported syntax stays in source.",
   "Запрос комментария": "Comment request",
@@ -1446,6 +1462,11 @@ export function localizeCatalogueFixture<T>(fixture:T,translate:(text:string)=>s
 
 /** Exact release-history translations; the repository Markdown remains unchanged. */
 export const changelogTranslations: Record<string,{ru:string;en:string}> = {
+"Separated visible 1 px control dividers from quiet 0.5 px panel lines; both adapt to surfaces and remain independent of decorative border settings. CodeBlock and API tables keep single, consistent boundaries.": {"ru": "Самостоятельные разделители остаются заметными, а линии панелей и составных контролов стали мягче. Границы адаптируются к поверхности, сохраняются без декоративных рамок и не удваиваются.", "en": "Separated visible 1 px control dividers from quiet 0.5 px panel lines; both adapt to surfaces and remain independent of decorative border settings. CodeBlock and API tables keep single, consistent boundaries."},
+"Extended ToastStack with centered container/viewport placement, bounded scrolling, loading states and capsule shape; unread notices retain their lifetime.": {"ru": "ToastStack получил размещение по центру экрана или блока, ограниченную прокрутку, состояние загрузки и форму капсулы; непрочитанные уведомления сохраняют время показа.", "en": "Extended ToastStack with centered container/viewport placement, bounded scrolling, loading states and capsule shape; unread notices retain their lifetime."},
+"Added FileCard for images, PDF, presentations, documents, spreadsheets and other formats with separate open/download/remove actions; marked needs-review.": {"ru": "Добавлена FileCard для изображений, PDF, презентаций, документов, таблиц и других форматов с отдельными действиями открытия, скачивания и удаления; статус — требует проверки.", "en": "Added FileCard for images, PDF, presentations, documents, spreadsheets and other formats with separate open/download/remove actions; marked needs-review."},
+"Changed the compact language switch labels to RU and EN.": {"ru": "Подписи компактного переключателя языка изменены на RU и EN.", "en": "Changed the compact language switch labels to RU and EN."},
+
   "Added workspace Tabs with a short active underline, framed KanbanColumn groups and framed ButtonGroup actions.": {"ru": "Добавлены Tabs в стиле workspace с короткой отметкой активной вкладки, колонки KanbanColumn с рамками и групповые действия ButtonGroup.", "en": "Added workspace Tabs with a short active underline, framed KanbanColumn groups and framed ButtonGroup actions."},
   "Added MarkdownEditorV2 using the existing editor engine: selection toolbar, in-place text/highlight palettes, block types, links and editable Markdown tables. The classic editor remains available; the new component is marked needs-review.": {"ru": "Добавлен MarkdownEditorV2 на общем движке: панель по выделению, палитры текста и фона внутри панели, типы блоков, ссылки и редактируемые Markdown-таблицы. Прежний редактор сохранён; новый компонент требует проверки.", "en": "Added MarkdownEditorV2 using the existing editor engine: selection toolbar, in-place text/highlight palettes, block types, links and editable Markdown tables. The classic editor remains available; the new component is marked needs-review."},
   "Extended DataTable with two-axis scrolling, sticky header and summaries, left/right columns and top/bottom rows. Narrow containers release excess pins to keep a usable scroll lane. The 40-row example combines currency, segmented probability and mini charts.": {"ru": "DataTable получил прокрутку по двум осям, закреплённую шапку и итоги, колонки слева/справа и строки сверху/снизу. Узкие контейнеры снимают лишние закрепления. Пример на 40 строк включает суммы, сегменты вероятности и мини-графики.", "en": "Extended DataTable with two-axis scrolling, sticky header and summaries, left/right columns and top/bottom rows. Narrow containers release excess pins to keep a usable scroll lane. The 40-row example combines currency, segmented probability and mini charts."},

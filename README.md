@@ -17,7 +17,7 @@ npm run dev
 npm run pack:kit
 ```
 
-В своём проекте установите локальный `artifacts/personal-capacities-ui-0.7.0.tgz` командой `npm install /absolute/path/to/personal-capacities-ui-0.7.0.tgz`. Поддерживаемый способ установки — готовый `.tgz`: локально собранный или скачанный из [GitHub Release v0.7.0](https://github.com/davidyich/capacities-style/releases/tag/v0.7.0). `git install` не является установочным контрактом: `dist` не хранится в Git, а `prepare` отсутствует. Публикация в npm registry не требуется.
+В своём проекте установите локальный `artifacts/personal-capacities-ui-0.8.0.tgz` командой `npm install /absolute/path/to/personal-capacities-ui-0.8.0.tgz`. Поддерживаемый способ установки — готовый `.tgz`: локально собранный или скачанный из [GitHub Release v0.8.0](https://github.com/davidyich/capacities-style/releases/tag/v0.8.0). `git install` не является установочным контрактом: `dist` не хранится в Git, а `prepare` отсутствует. Публикация в npm registry не требуется.
 
 ```tsx
 import { Button, Tag, FloatingField, ScrollArea } from '@personal/capacities-ui';
@@ -80,6 +80,7 @@ CSS и Figma используют [единую модель](src/tokens/figma-m
 | Контент | Calendar, DailyHeader, RichTextEditor, MarkdownPreview, ContentCard, TaskCard, KanbanBoard, KanbanColumn |
 | Навигация | SidebarItem, NavigationMenu, TreeView, FileTree, PreviewRail, Breadcrumbs, Tabs, Accordion |
 | Объекты | Card, ObjectCard, CollectionRow, PropertyRow, Tag, Counter, IconBox, Avatar |
+| Файлы | FileCard, FileTree |
 | Обратная связь | StatusBar, Alert, Toast, ToastStack, AnnouncementBar, TextShimmer, Callout, EmptyState, Progress |
 | Данные | DataTable, JsonViewer, графики и таблицы данных |
 | Основа | Icon, Kbd, Separator, Table, CodeBlock |

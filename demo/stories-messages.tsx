@@ -1,12 +1,11 @@
+import { ToastStackExample } from './ToastStackExample';
 import { useCatalogText, localizeCatalogueFixture } from './catalog-locale';
 import { useState } from 'react';
 import { Button, Select } from '../src';
 import { AnnouncementBar, CardStack, TextShimmer, ToastStack, type ToastStackItem } from '../src/components/messages';
 import { Sample, StorySection } from './stories-controls';
 
-export function ToastStackStory(){
- const ct=useCatalogText();
-const [direction,setDirection]=useState<'up'|'down'|'left'|'right'>('down');const [items,setItems]=useState<ToastStackItem[]>([{id:'saved',title:'Changes saved',description:'Your workspace is up to date.',tone:'success'},{id:'undo',title:'Item archived',description:'It is in the archive.',tone:'info',contrast:true,action:{label:'Undo',onAction:()=>setItems(v=>v.filter(x=>x.id!=='undo'))}}]);return <StorySection><div className="catalog-narrow catalog-stack"><Select label={ct("Направление раскрытия")} value={direction} onValueChange={value=>setDirection(value as typeof direction)} options={['up','down','left','right'].map(value=>({value,label:value}))}/><ToastStack position="inline" expandDirection={direction} items={items} onDismiss={id=>setItems(v=>v.filter(x=>x.id!==id))}/><Button size="sm" onClick={()=>setItems(v=>[...v,{id:crypto.randomUUID(),title:'New update',description:'A sample notification.'}])}>Add notification</Button></div></StorySection>}
+export function ToastStackStory(){ return <StorySection><ToastStackExample/></StorySection> }
 export function AnnouncementBarStory(){
  const ct=useCatalogText();
 const [index,setIndex]=useState(0),[open,setOpen]=useState(true),[details,setDetails]=useState(false);return <StorySection><div className="catalog-stack"><AnnouncementBar label={ct("Объявления рабочего пространства")} open={open} onOpenChange={setOpen} index={index} onIndexChange={setIndex} autoPlay={false} controls messages={[{id:'release',message:'A new workspace update is ready.',action:{label:'See what changed',onClick:()=>setDetails(true)}},{id:'offer',message:'Your early access ends in:',countdown:{to:Date.now()+86400000,label:'Early access time left'}}]}/>{details&&<p role="status">The update adds faster search and saved filters.</p>}<Button size="sm" variant="ghost" onClick={()=>setOpen(true)}>Show announcement</Button></div></StorySection>}

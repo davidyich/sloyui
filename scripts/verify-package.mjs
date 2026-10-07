@@ -25,7 +25,7 @@ try {
   await writeFile(join(temp, 'consumer.tsx'), String.raw`
 import {
   Alert, AnnouncementBar, BottomSheet, Button, ButtonGroup, CardStack, Chip, ColorPicker,
-  ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, Dialog, Field, FileTree, Input, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
+  ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, Dialog, Field, FileCard, FileTree, Input, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
   Popover, PreviewRail, MarkdownEditorV2, Tabs, RichTextEditor, Slider, StatusBar, Toast, ToastStack,
   markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit,
   type MarkdownEditorV2Props, type TabsProps, type ButtonGroupProps, type KanbanColumnProps, type DataTableProps, type DataTableColumn,
@@ -79,7 +79,8 @@ export const components = <>
   <DataTable surface="base" label="Rows" rows={rows} rowId={row => row.id} columns={[{id:'title',header:'Title',value:row => row.title}]}/>
   <Alert {...feedback} title="Saved" expandable expanded onExpandedChange={expanded => { void expanded; }}>Alert detail</Alert>
   <StatusBar {...feedback} variant="surface" busy={false}>Ready</StatusBar><Toast {...feedback} title="Saved" onDismiss={() => {}}/>
-  <ToastStack items={notifications} position="inline" expandDirection="left" expanded onExpandedChange={expanded => { void expanded; }} onDismiss={id => { void id; }}/>
+  <FileCard name="report.pdf" sizeLabel="248 KB" onOpen={() => {}} onRemove={() => {}}/>
+  <ToastStack scope="container" shape="pill" items={notifications} position="inline" expandDirection="left" expanded onExpandedChange={expanded => { void expanded; }} onDismiss={id => { void id; }}/>
   <AnnouncementBar surface="canvas" messages={[{id:'news',message:'News',action:{label:'Read',href:'#news'}}]} id="archive-news" autoPlay={false} controls onAction={message => { void message.id; }}/>
   <CardStack items={rows} getKey={row => row.id} renderCard={row => <ContentCard title={row.title}/>} expandDirection="right" expanded review onDecide={(row,decision) => { const value: 'left' | 'right' = decision; void row.id; void value; }} onReset={() => {}}/>
   <LocaleProvider locale={locale}>
@@ -97,7 +98,7 @@ void preserved;
 `);
   await writeFile(join(temp, 'tsconfig.json'), JSON.stringify({ compilerOptions: { target: 'ES2022', module: 'NodeNext', moduleResolution: 'NodeNext', jsx: 'react-jsx', strict: true, noEmit: true, skipLibCheck: false, lib: ['ES2022', 'DOM', 'DOM.Iterable'] }, include: ['*.tsx'] }));
   execFileSync(join(root, 'node_modules/.bin/tsc'), ['-p', join(temp, 'tsconfig.json')], { stdio: 'pipe' });
-  const serverRenderedExports = ['Button', 'ComboBox', 'MultiSelect', 'TagInput', 'RadioGroup', 'ColorPicker', 'NumberField', 'ValueScrubber', 'NavigationMenu', 'HoverPanel', 'TreeView', 'LineChart', 'BarChart', 'RichTextEditor', 'DataTable', 'ToastStack', 'Chip', 'BottomSheet', 'FileTree', 'PreviewRail', 'ContentLayout', 'ResizableCard', 'ContentCard', 'KanbanColumn', 'Slider', 'Alert', 'StatusBar', 'Toast', 'AnnouncementBar', 'CardStack', 'LocaleProvider', 'ResizablePanelGroup', 'ResizablePanel', 'ResizableHandle', 'ScrollArea', 'DailyHeader', 'MarkdownEditorV2', 'Tabs', 'ButtonGroup'];
+  const serverRenderedExports = ['Button', 'ComboBox', 'MultiSelect', 'TagInput', 'RadioGroup', 'ColorPicker', 'NumberField', 'ValueScrubber', 'NavigationMenu', 'HoverPanel', 'TreeView', 'LineChart', 'BarChart', 'RichTextEditor', 'DataTable', 'ToastStack', 'Chip', 'BottomSheet', 'FileTree', 'PreviewRail', 'ContentLayout', 'ResizableCard', 'ContentCard', 'KanbanColumn', 'Slider', 'Alert', 'StatusBar', 'Toast', 'AnnouncementBar', 'CardStack', 'LocaleProvider', 'ResizablePanelGroup', 'ResizablePanel', 'ResizableHandle', 'ScrollArea', 'DailyHeader', 'MarkdownEditorV2', 'Tabs', 'ButtonGroup', 'FileCard'];
   const markdownBridgeExports = ['markdownToRichText', 'richTextToMarkdown', 'preserveMarkdownSourceEdit'];
   await writeFile(join(temp, 'render.mjs'), String.raw`
 import React from 'react';
@@ -106,7 +107,7 @@ import { fileURLToPath } from 'node:url';
 import { resolve, sep } from 'node:path';
 import {
   Alert, AnnouncementBar, BarChart, BottomSheet, Button, ButtonGroup, CardStack, Chip, ColorPicker,
-  ComboBox, ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, DailyHeader, FileTree, HoverPanel, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
+  ComboBox, ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, DailyHeader, FileCard, FileTree, HoverPanel, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
   LineChart, MultiSelect, NavigationMenu, NumberField, PreviewRail, RadioGroup,
   MarkdownEditorV2, Tabs, RichTextEditor, Slider, StatusBar, TagInput, Toast, ToastStack, TreeView, ValueScrubber,
   markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit,
@@ -162,7 +163,8 @@ const html = renderToString(node(React.Fragment,null,
   node(Slider,{label:'Density',defaultValue:0.5,min:0,max:1,step:0.1,formatValue:value=>value*100+'%',onValueChange:noop,onValueCommit:noop}),
   node(Alert,{...feedback,title:'Saved',expandable:true,expanded:true,onExpandedChange:noop},'Alert detail'),
   node(StatusBar,{...feedback,variant:'surface'},'Ready'),node(Toast,{...feedback,title:'Saved',onDismiss:noop}),
-  node(ToastStack,{items:[{id:'saved',title:'Saved',duration:Infinity,...feedback}],position:'inline',expandDirection:'left',expanded:true,onExpandedChange:noop,onDismiss:noop}),
+  node(FileCard,{name:'report.pdf',sizeLabel:'248 KB',onOpen:noop,onDownload:noop,onRemove:noop}),
+  node(ToastStack,{scope:'container',shape:'pill',items:[{id:'saved',title:'Saved',duration:Infinity,...feedback}],position:'inline',expandDirection:'left',expanded:true,onExpandedChange:noop,onDismiss:noop}),
   node(AnnouncementBar,{surface:'canvas',id:'archive-news',autoPlay:false,controls:true,messages:[{id:'news',message:'News'}]}),
   node(CardStack,{items:rows,getKey:row=>row.id,renderCard:row=>node(ContentCard,{title:row.name}),expandDirection:'right',expanded:true,review:true,onDecide:noop,onReset:noop}),
 ));
@@ -198,7 +200,7 @@ console.log('Archive dist SSR, localization, compound resize, optional toolbar a
   for (const path of fontPaths) await access(join(target, 'dist', path));
   const manifest = JSON.parse(await readFile(join(target, 'agent-manifest.json'), 'utf8'));
   const packed = await build({ stdin: { contents: "export { Button } from '@personal/capacities-ui';", resolveDir: temp }, bundle: true, write: false, minify: true, format: 'esm', external: ['react','react-dom','react/jsx-runtime'] });
-  const report = { package: manifest.package, componentCount: manifest.componentCount, isolatedArchiveConsumer: true, nodeNextTypes: true, exampleTypecheck: examples, serverRenderImport: true, serverRenderedExports, markdownBridgeExports, closedBottomSheet: true, packageEntryInsideArchiveDist: true, verticalContentLayout: true, sliderNumericCallbacks: true, feedbackStyleApi: true, localeProviderEnglish: true, defaultLocaleRussian: true, explicitIntlOverride: true, localeHooks: ['useLocale','useTranslate'], compoundResizablePanels: true, scrollFadeApi: true, richToolbarOptIn: true, markdownEditorV2ControlledSource: true, markdownExtensionsTableColorRoundtrip: true, workspaceTabsIconTrailing: true, framedButtonGroup: true, framedKanbanFooter: true, dataTablePinnedColumnsRowsSummary: true, dataTableStickyOptOut: true, fontAssets: fontPaths.length, buttonGzipBytes: gzipSync(packed.outputFiles[0].contents).length };
+  const report = { package: manifest.package, componentCount: manifest.componentCount, isolatedArchiveConsumer: true, nodeNextTypes: true, exampleTypecheck: examples, serverRenderImport: true, serverRenderedExports, markdownBridgeExports, closedBottomSheet: true, packageEntryInsideArchiveDist: true, verticalContentLayout: true, sliderNumericCallbacks: true, feedbackStyleApi: true, localeProviderEnglish: true, defaultLocaleRussian: true, explicitIntlOverride: true, localeHooks: ['useLocale','useTranslate'], compoundResizablePanels: true, scrollFadeApi: true, richToolbarOptIn: true, markdownEditorV2ControlledSource: true, markdownExtensionsTableColorRoundtrip: true, workspaceTabsIconTrailing: true, framedButtonGroup: true, fileCardIndependentActions: true, toastStackPlacement: true, framedKanbanFooter: true, dataTablePinnedColumnsRowsSummary: true, dataTableStickyOptOut: true, fontAssets: fontPaths.length, buttonGzipBytes: gzipSync(packed.outputFiles[0].contents).length };
   await writeFile(join(root, 'docs/package-validation.json'), JSON.stringify(report, null, 2) + '\n');
   console.log(report);
 } catch (error) {
