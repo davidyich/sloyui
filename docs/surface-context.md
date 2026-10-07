@@ -54,7 +54,7 @@ Figma: Primitives / Value содержит palette, number, font. Две пре�
 
 Тени: `data-shadow="soft" | "compact"` наследуется и переносится в портал. Soft — широкий мягкий blur по умолчанию; compact использует те же цвета и 55% blur. У CodeBlock auto при Borders On заливка прозрачна, поэтому он сохраняет контекст окружающей поверхности.
 
-`Button variant="primary"` и `variant="accent"` используют `--cap-accent-solid-normal/hover/pressed/text`; включённые Checkbox, Radio и Switch по умолчанию используют ту же пару. `data-accent="neutral"` выбирает нейтральный Primary, а `Switch variant="neutral"` использует нейтральные action-роли. `contrast={false}` явно выбирает vivid; Slider сохраняет vivid по умолчанию. Знак, текст и бегунок используют парную text-роль без условий по теме. Выключенный Switch использует `--cap-control-text` на нейтральном треке; disabled всегда использует `--cap-disabled-background/text`.
+`Button` и `IconButton` с `variant="primary"` всегда используют нейтральные `--cap-action-normal/hover/pressed/text`, независимо от `data-accent`; `secondary` использует нейтральную control-пару. `accent` выбирает `--cap-accent-solid-normal/hover/pressed/text`, `accent-secondary` — мягкую `--cap-accent-normal/hover/pressed/text`. Включённые Checkbox, Radio и Switch используют локальную solid accent-пару; `Switch variant="neutral"` выбирает нейтральные action-роли. `contrast={false}` явно выбирает vivid; Slider сохраняет vivid по умолчанию. Знак, текст и бегунок используют парную text-роль без условий по теме. Выключенный Switch использует `--cap-control-text` на нейтральном треке; disabled всегда использует `--cap-disabled-background/text`.
 
 ## Контекст каталога
 

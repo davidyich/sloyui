@@ -1,6 +1,8 @@
 export const documentFiles = [
  {path:'docs/overview.md',label:'overview.md'},
  {path:'docs/component-guidelines.md',label:'component-guidelines.md'},
+ {path:'docs/catalogue-reference.md',label:'catalogue-reference.md'},
+ {path:'docs/resizing.md',label:'resizing.md'},
  {path:'docs/component-registry.md',label:'component-registry.md'},
  {path:'docs/selection-revision.md',label:'selection-revision.md'},
  {path:'docs/editor-revision.md',label:'editor-revision.md'},

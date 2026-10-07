@@ -18,7 +18,7 @@ export function Spinner({ className, label = 'Загрузка', ...props }: HTM
   return <span role="status" className={cx('cap-spinner', className)} {...props}><span className="cap-sr-only">{label}</span></span>;
 }
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'ghost' | 'outline' | 'danger' | 'accent'; size?: Size; loading?: boolean; leading?: ReactNode; trailing?: ReactNode;
+  variant?: 'primary' | 'secondary' | 'ghost' | 'outline' | 'danger' | 'accent' | 'accent-secondary'; size?: Size; loading?: boolean; leading?: ReactNode; trailing?: ReactNode;
 }
 export const Button = /* @__PURE__ */ forwardRef<HTMLButtonElement, ButtonProps>(function Button({ variant = 'secondary', size = 'md', loading, leading, trailing, className, children, disabled, type = 'button', ...props }, ref) {
   return <button ref={ref} type={type} className={cx('cap-button', className)} data-variant={variant} data-size={size} disabled={disabled || loading} aria-busy={loading || undefined} {...props}>{loading ? <Spinner /> : leading}{children}{trailing}</button>;

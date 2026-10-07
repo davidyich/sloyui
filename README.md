@@ -1,4 +1,4 @@
-# Capacities UI · 0.4
+# Capacities UI · 0.5
 
 Лёгкий UI-kit для персональных проектов: React 19+, TypeScript и обычный CSS. Две темы, локальные акцентные моды, собственные всплывающие поверхности. Runtime-зависимостей кроме React/React DOM нет.
 
@@ -9,7 +9,7 @@ npm ci
 npm run dev
 ```
 
-Открыть [каталог](http://127.0.0.1:4317/). У каждого компонента отдельная страница с адресом `#ComponentName`: например, [Button](http://127.0.0.1:4317/#Button), [ScrollArea](http://127.0.0.1:4317/#ScrollArea) и [Popover](http://127.0.0.1:4317/#Popover). Боковая навигация группирует кнопки, поля, контент, навигацию, состояния и окна. Цвета, типографика, геометрия и правила поведения вынесены в отдельные страницы. `Cmd/Ctrl+K` открывает поиск. Данные примеров хранятся в памяти страницы.
+Открыть [обзор компонентов](http://127.0.0.1:4317/#overview) или [changelog](http://127.0.0.1:4317/#changelog). У каждого компонента отдельная страница с адресом `#ComponentName`: например, [Button](http://127.0.0.1:4317/#Button), [ScrollArea](http://127.0.0.1:4317/#ScrollArea) и [Popover](http://127.0.0.1:4317/#Popover). Боковая навигация группирует кнопки, поля, контент, навигацию, состояния и окна. Цвета, типографика, геометрия и правила поведения вынесены в отдельные страницы. `Cmd/Ctrl+K` открывает поиск. Данные примеров хранятся в памяти страницы. Каждая страница содержит API Reference из TypeScript, пример кода, инструкции для человека и агента и связанные компоненты.
 
 ## Подключение
 
@@ -17,7 +17,7 @@ npm run dev
 npm run pack:kit
 ```
 
-В своём проекте установите локальный `artifacts/personal-capacities-ui-0.4.1.tgz` командой `npm install /absolute/path/to/personal-capacities-ui-0.4.1.tgz`. Поддерживаемый способ установки — готовый `.tgz`: локально собранный или скачанный из [GitHub Release v0.4.1](https://github.com/davidyich/capacities-style/releases/tag/v0.4.1). `git install` не является установочным контрактом: `dist` не хранится в Git, а `prepare` отсутствует. Публикация в npm registry не требуется.
+В своём проекте установите локальный `artifacts/personal-capacities-ui-0.5.0.tgz` командой `npm install /absolute/path/to/personal-capacities-ui-0.5.0.tgz`. Поддерживаемый способ установки — готовый `.tgz`: локально собранный или скачанный из [GitHub Release v0.5.0](https://github.com/davidyich/capacities-style/releases/tag/v0.5.0). `git install` не является установочным контрактом: `dist` не хранится в Git, а `prepare` отсутствует. Публикация в npm registry не требуется.
 
 ```tsx
 import { Button, Tag, FloatingField, ScrollArea } from '@personal/capacities-ui';

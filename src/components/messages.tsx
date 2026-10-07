@@ -2,6 +2,7 @@ import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import type { CSSProperties, PointerEvent as ReactPointerEvent, ReactNode } from 'react';
 import { Button, Icon } from './primitives.js';
 import { stackLayout, type StackDirection, type StackSize } from './stack-layout.js';
+import { useFrameResize } from './resize-utils.js';
 import type { FeedbackStyleProps } from './feedback.js';
 import { Toast, useOverlayPresence } from './overlays.js';
 import { useDisclosurePresence, type DisclosurePhase } from './disclosure.js';
@@ -10,15 +11,33 @@ export type { StackDirection } from './stack-layout.js';
 export interface ToastStackItem extends FeedbackStyleProps { id:string; title:string; description?:string; duration?:number; action?:{label:string;onAction:()=>void} }
 export interface ToastStackProps { items:ToastStackItem[]; onDismiss:(id:string)=>void; position?:'top-left'|'top-center'|'top-right'|'bottom-left'|'bottom-center'|'bottom-right'|'inline'; expandDirection?:StackDirection; expanded?:boolean; onExpandedChange?:(expanded:boolean)=>void; label?:string; limit?:number; className?:string }
 
-function useStackSizes(ref: React.RefObject<HTMLDivElement | null>, signature: string, selector: string, fallbackHeight: number) {
+function useStackSizes(ref: React.RefObject<HTMLDivElement | null>, signature: string, selector: string, fallbackHeight: number, horizontalPeek = 0) {
   const [state,setState] = useState<{width:number;sizes:Record<string,StackSize>}>({width:320,sizes:{}});
   useLayoutEffect(()=>{
     const root=ref.current;if(!root)return;
-    const measure=()=>{const style=getComputedStyle(root),width=(root.clientWidth-(parseFloat(style.paddingLeft)||0)-(parseFloat(style.paddingRight)||0))||320;const sizes=Object.fromEntries(Array.from(root.querySelectorAll<HTMLElement>(selector)).map(node=>[node.dataset.stackKey!,{width,height:node.offsetHeight||fallbackHeight}]));setState(previous=>JSON.stringify(previous)===JSON.stringify({width,sizes})?previous:{width,sizes});};
+    const measure=()=>{const style=getComputedStyle(root),width=Math.max(1,((root.clientWidth-(parseFloat(style.paddingLeft)||0)-(parseFloat(style.paddingRight)||0))||320)-horizontalPeek);const sizes=Object.fromEntries(Array.from(root.querySelectorAll<HTMLElement>(selector)).map(node=>[node.dataset.stackKey!,{width,height:node.offsetHeight||fallbackHeight}]));setState(previous=>JSON.stringify(previous)===JSON.stringify({width,sizes})?previous:{width,sizes});};
     measure();if(typeof ResizeObserver==='undefined')return;
     const observer=new ResizeObserver(measure);observer.observe(root);root.querySelectorAll(selector).forEach(node=>observer.observe(node));return()=>observer.disconnect();
-  },[signature,selector,fallbackHeight]);
+  },[signature,selector,fallbackHeight,horizontalPeek]);
   return state;
+}
+/** Reflow the deck atomically: animated normalization plus an immediate scroll jump clips the front card. */
+function useStackReflow(key: string) {
+  const [state, setState] = useState({ key, settling: false });
+  useLayoutEffect(() => {
+    setState({ key, settling: true });
+    const timer = setTimeout(() => setState({ key, settling: false }), 200);
+    return () => clearTimeout(timer);
+  }, [key]);
+  return state.key !== key || state.settling;
+}
+function alignStackViewport(viewport: HTMLDivElement | null, geometry: StackSize, direction: StackDirection, expanded: boolean) {
+  if (!viewport) return;
+  const style = getComputedStyle(viewport);
+  const innerWidth = viewport.clientWidth - (parseFloat(style.paddingLeft) || 0) - (parseFloat(style.paddingRight) || 0);
+  const innerHeight = viewport.clientHeight - (parseFloat(style.paddingTop) || 0) - (parseFloat(style.paddingBottom) || 0);
+  viewport.scrollLeft = expanded && direction === 'left' ? Math.max(0, geometry.width - innerWidth) : 0;
+  viewport.scrollTop = expanded && direction === 'up' ? Math.max(0, geometry.height - innerHeight) : 0;
 }
 function TimedToast({item,onDismiss,paused,depth,expanded,position,phase,x,y,width}:{item:ToastStackItem;onDismiss:(id:string)=>void;paused:boolean;depth:number;expanded:boolean;position:ToastStackProps['position'];phase:DisclosurePhase;x:number;y:number;width:number}){
   const remaining=useRef(item.duration??5000),started=useRef(0);
@@ -30,15 +49,16 @@ export function ToastStack({items,onDismiss,position='bottom-right',expandDirect
   const viewport=useRef<HTMLDivElement>(null);
   useEffect(()=>{const change=()=>setHidden(document.hidden);document.addEventListener('visibilitychange',change);change();return()=>document.removeEventListener('visibilitychange',change)},[]);
   const shown=items.slice(-Math.max(1,limit)).reverse(),present=useDisclosurePresence(shown,item=>item.id);
-  const direction=expandDirection??(position.startsWith('bottom')?'up':'down'),expanded=controlledExpanded??(manuallyExpanded??(hovered||focused)),paused=expanded||hidden;
-  const signature=present.map(entry=>entry.key).join('\u0000'),measurement=useStackSizes(viewport,signature,'.cap-toast-stack-item',80);
+  const direction=expandDirection??(position.startsWith('bottom')?'up':'down'),expanded=controlledExpanded??(manuallyExpanded??(hovered||focused)),paused=expanded||hovered||focused||hidden;
+  const signature=present.map(entry=>entry.key).join('\u0000'),measurement=useStackSizes(viewport,signature,'.cap-toast-stack-item',80,!expanded&&(direction==='left'||direction==='right')?Math.max(0,present.length-1)*8:0);
   const geometry=stackLayout(present.map(entry=>measurement.sizes[entry.key]??{width:measurement.width,height:80}),direction,expanded);
-  useLayoutEffect(()=>{if(viewport.current)viewport.current.scrollLeft=expanded&&direction==='left'?Math.max(0,geometry.width-viewport.current.clientWidth):0},[expanded,direction,geometry.width]);
+  const reflow = useStackReflow(`${direction}:${expanded}:${measurement.width}:${geometry.width}:${geometry.height}`);
+  useLayoutEffect(()=>alignStackViewport(viewport.current,geometry,direction,expanded),[expanded,direction,geometry.width,geometry.height]);
   const changeExpanded=(next:boolean)=>{if(controlledExpanded===undefined)setManuallyExpanded(next);onExpandedChange?.(next)};
-  const hover=(next:boolean)=>{if(controlledExpanded!==undefined)return;setHovered(next);if(!next&&manuallyExpanded===false)setManuallyExpanded(null)};
+  const hover=(next:boolean)=>{setHovered(next);if(controlledExpanded===undefined&&!next&&manuallyExpanded===false)setManuallyExpanded(null)};
   return <div className={`cap-toast-stack ${className}`} role="region" aria-label={label} data-position={position} data-direction={direction} data-expanded={expanded||undefined} onPointerEnter={e=>{if(e.pointerType==='mouse')hover(true)}} onPointerLeave={e=>{if(e.pointerType==='mouse')hover(false)}} onMouseEnter={()=>hover(true)} onMouseLeave={()=>hover(false)} onFocusCapture={event=>setFocused(!!(event.target as Element).closest('.cap-toast-stack-item'))} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node|null))setFocused(false)}}>
     {present.length>1&&<Button className="cap-toast-stack-expand" size="xs" variant="ghost" aria-expanded={expanded} onClick={()=>changeExpanded(!expanded)}>{expanded?'Свернуть уведомления':'Развернуть уведомления'}</Button>}
-    <div ref={viewport} className="cap-toast-stack-viewport"><ol className="cap-toast-stack-list" style={{width:geometry.width,height:geometry.height,'--cap-toast-inline-clearance':`${geometry.height}px`} as CSSProperties}>{present.map(({key,item,phase},i)=><TimedToast key={key} item={item} onDismiss={onDismiss} paused={paused} depth={i} expanded={expanded} position={position} phase={phase} x={geometry.positions[i]?.x??0} y={geometry.positions[i]?.y??0} width={measurement.width}/>)}</ol></div>
+    <div ref={viewport} className="cap-toast-stack-viewport" data-reflow={reflow||undefined}><ol className="cap-toast-stack-list" style={{width:geometry.width,height:geometry.height,'--cap-toast-inline-clearance':`${geometry.height}px`} as CSSProperties}>{present.map(({key,item,phase},i)=><TimedToast key={key} item={item} onDismiss={onDismiss} paused={paused} depth={i} expanded={expanded} position={position} phase={phase} x={geometry.positions[i]?.x??0} y={geometry.positions[i]?.y??0} width={measurement.width}/>)}</ol></div>
   </div>;
 }
 
@@ -93,51 +113,55 @@ export interface CardStackProps<T> {
 }
 type CardHistory<T> = { index: number; item: T; decision: CardDecision };
 export function CardStack<T>({items,expandDirection='down',expanded:controlledExpanded,defaultExpanded=false,onExpandedChange,activeIndex,defaultIndex=0,onActiveIndexChange,renderCard,getKey,getLabel=(_,i)=>`Card ${i+1}`,review=false,labels={left:'Pass',right:'Keep'},onDecision,onDecide,onUndo,onReset,renderEmpty,label='Card review',className=''}:CardStackProps<T>){
-  const [inner,setInner]=useState(defaultIndex),[history,setHistory]=useState<Array<CardHistory<T>>>([]),[dragX,setDragX]=useState(0),[returnDirection,setReturnDirection]=useState(-1),[returning,setReturning]=useState(false),[exit,setExit]=useState<{item:T;index:number;direction:number;x:number;y:number}|null>(null),[message,setMessage]=useState('');
-  const drag=useRef<{pointerId:number;startX:number;width:number}|null>(null),exitTimer=useRef<ReturnType<typeof setTimeout>|null>(null),returnTimer=useRef<ReturnType<typeof setTimeout>|null>(null);
+  const [inner,setInner]=useState(defaultIndex),[history,setHistory]=useState<Array<CardHistory<T>>>([]),[dragX,setDragX]=useState(0),[returnDirection,setReturnDirection]=useState(-1),[returning,setReturning]=useState(false),[exit,setExit]=useState<{item:T;index:number;direction:number;x:number;y:number;height:number}|null>(null),[message,setMessage]=useState('');
+  const drag=useRef<{pointerId:number;startX:number;width:number;handle:HTMLDivElement}|null>(null),exitTimer=useRef<ReturnType<typeof setTimeout>|null>(null),returnTimer=useRef<ReturnType<typeof setTimeout>|null>(null);
   const viewport=useRef<HTMLDivElement>(null),[innerExpanded,setInnerExpanded]=useState(defaultExpanded);
+  const dragFrames=useFrameResize<number>(setDragX);
+  const stopDrag=()=>{dragFrames.clear();const active=drag.current;drag.current=null;setDragX(0);if(active?.handle.hasPointerCapture?.(active.pointerId))active.handle.releasePointerCapture?.(active.pointerId)};
   const expanded=controlledExpanded??innerExpanded;
   const current=Math.max(0,Math.min(review?items.length:Math.max(0,items.length-1),activeIndex??inner)),deck=items.slice(current,current+3),complete=review&&current>=items.length;
   const signature=deck.map((item,index)=>getKey?.(item,current+index)??String(current+index)).join('\u0000');
-  const measurement=useStackSizes(viewport,signature,'.cap-card-stack-card[data-depth]',196);
+  const measurement=useStackSizes(viewport,signature,'.cap-card-stack-card[data-depth]',196,!expanded&&(expandDirection==='left'||expandDirection==='right')?Math.max(0,deck.length-1)*10:0);
   const geometry=stackLayout(deck.map((item,index)=>measurement.sizes[getKey?.(item,current+index)??String(current+index)]??{width:measurement.width,height:196}),expandDirection,expanded,10);
-  useLayoutEffect(()=>{if(viewport.current)viewport.current.scrollLeft=expanded&&expandDirection==='left'?Math.max(0,geometry.width-viewport.current.clientWidth):0},[expanded,expandDirection,geometry.width]);
+  const reflow = useStackReflow(`${expandDirection}:${expanded}:${measurement.width}:${geometry.width}:${geometry.height}`);
+  useLayoutEffect(()=>alignStackViewport(viewport.current,geometry,expandDirection,expanded),[expanded,expandDirection,geometry.width,geometry.height]);
+  useEffect(()=>{stopDrag()},[signature]);
   useEffect(()=>()=>{if(exitTimer.current)clearTimeout(exitTimer.current);if(returnTimer.current)clearTimeout(returnTimer.current)},[]);
   const setIndex=(index:number)=>{if(activeIndex===undefined)setInner(index);onActiveIndexChange?.(index)};
   const clearExit=()=>{if(exitTimer.current)clearTimeout(exitTimer.current);exitTimer.current=setTimeout(()=>setExit(null),210)};
   const decide=(decision:CardReviewDecision)=>{
     if(!review||complete||!items[current])return;
-    const item=items[current],direction=decision==='left'?-1:1;
-    setExit({item,index:current,direction,x:geometry.positions[0]?.x??0,y:geometry.positions[0]?.y??0});clearExit();setHistory(previous=>[...previous,{index:current,item,decision}]);setIndex(current+1);setDragX(0);
+    stopDrag();const item=items[current],direction=decision==='left'?-1:1;
+    setExit({item,index:current,direction,x:geometry.positions[0]?.x??0,y:geometry.positions[0]?.y??0,height:geometry.height});clearExit();setHistory(previous=>[...previous,{index:current,item,decision}]);setIndex(current+1);setDragX(0);
     setMessage(`${getLabel(item,current)}: ${labels[decision]}. ${items.length-current-1} remaining.`);
     onDecision?.(item,decision);onDecide?.(item,decision);
   };
   const move=(next:number,decision:'previous'|'next')=>{
     if(review||!items.length)return;
     const index=Math.max(0,Math.min(items.length-1,next));if(index===current)return;
-    const item=items[current],direction=decision==='next'?-1:1;
-    setExit({item,index:current,direction,x:geometry.positions[0]?.x??0,y:geometry.positions[0]?.y??0});clearExit();setHistory(previous=>[...previous,{index:current,item,decision}]);setIndex(index);setDragX(0);
+    stopDrag();const item=items[current],direction=decision==='next'?-1:1;
+    setExit({item,index:current,direction,x:geometry.positions[0]?.x??0,y:geometry.positions[0]?.y??0,height:geometry.height});clearExit();setHistory(previous=>[...previous,{index:current,item,decision}]);setIndex(index);setDragX(0);
     setMessage(`${getLabel(item,current)}: ${decision}.`);onDecision?.(item,decision);
   };
   const undo=()=>{
-    const last=history.at(-1);if(!last)return;
+    const last=history.at(-1);if(!last)return;stopDrag();
     if(exitTimer.current)clearTimeout(exitTimer.current);setExit(null);setReturnDirection(last.decision==='next'||last.decision==='left'?-1:1);setReturning(true);
     if(returnTimer.current)clearTimeout(returnTimer.current);returnTimer.current=setTimeout(()=>setReturning(false),210);
     setHistory(previous=>previous.slice(0,-1));setIndex(last.index);setMessage(`${getLabel(last.item,last.index)} restored.`);onUndo?.(last.item,last.decision);
   };
-  const reset=()=>{if(!review)return;if(exitTimer.current)clearTimeout(exitTimer.current);setExit(null);setHistory([]);setIndex(0);setDragX(0);setMessage('All cards restored.');onReset?.()};
+  const reset=()=>{if(!review)return;stopDrag();if(exitTimer.current)clearTimeout(exitTimer.current);setExit(null);setHistory([]);setIndex(0);setDragX(0);setMessage('All cards restored.');onReset?.()};
   const interactiveTarget=(target:EventTarget|null)=>target instanceof Element&&!!target.closest('button,a,input,textarea,select,[contenteditable="true"],[role="button"],[role="link"]');
-  const down=(e:ReactPointerEvent<HTMLDivElement>)=>{if(e.button!==0||interactiveTarget(e.target)||!deck.length)return;drag.current={pointerId:e.pointerId,startX:e.clientX,width:e.currentTarget.getBoundingClientRect().width||320};e.currentTarget.setPointerCapture?.(e.pointerId)};
-  const movePointer=(e:ReactPointerEvent<HTMLDivElement>)=>{if(drag.current?.pointerId===e.pointerId)setDragX(e.clientX-drag.current.startX)};
-  const up=(e:ReactPointerEvent<HTMLDivElement>)=>{const state=drag.current;if(!state||state.pointerId!==e.pointerId)return;const delta=e.clientX-state.startX;drag.current=null;if(Math.abs(delta)>Math.min(64,state.width*.22)){if(review)decide(delta<0?'left':'right');else move(current+(delta<0?1:-1),delta<0?'next':'previous')}else setDragX(0)};
-  const cancel=(e:ReactPointerEvent<HTMLDivElement>)=>{if(drag.current?.pointerId!==e.pointerId)return;drag.current=null;setDragX(0)};
+  const down=(e:ReactPointerEvent<HTMLDivElement>)=>{if(e.button!==0||interactiveTarget(e.target)||!deck.length)return;drag.current={pointerId:e.pointerId,startX:e.clientX,width:measurement.width,handle:e.currentTarget};e.currentTarget.setPointerCapture?.(e.pointerId)};
+  const movePointer=(e:ReactPointerEvent<HTMLDivElement>)=>{if(drag.current?.pointerId===e.pointerId)dragFrames.queue(Math.max(-24,Math.min(24,(e.clientX-drag.current.startX)*.35)))};
+  const up=(e:ReactPointerEvent<HTMLDivElement>)=>{const state=drag.current;if(!state||state.pointerId!==e.pointerId)return;const delta=e.clientX-state.startX;dragFrames.clear();drag.current=null;if(e.currentTarget.hasPointerCapture?.(e.pointerId))e.currentTarget.releasePointerCapture?.(e.pointerId);if(Math.abs(delta)>Math.min(64,state.width*.22)){if(review)decide(delta<0?'left':'right');else move(current+(delta<0?1:-1),delta<0?'next':'previous')}else setDragX(0)};
+  const cancel=(e:ReactPointerEvent<HTMLDivElement>)=>{if(drag.current?.pointerId!==e.pointerId)return;stopDrag()};
   const onKeyDown=(e:React.KeyboardEvent<HTMLDivElement>)=>{if(e.target!==e.currentTarget)return;if(e.key==='ArrowRight'){e.preventDefault();review?decide('right'):move(current+1,'next')}else if(e.key==='ArrowLeft'){e.preventDefault();review?decide('left'):move(current-1,'previous')}else if((e.key==='Backspace'||((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='z'))&&history.length){e.preventDefault();undo()}};
   const empty=typeof renderEmpty==='function'?renderEmpty(reset):renderEmpty;
   if(!items.length)return <section className={`cap-card-stack ${className}`} role="region" aria-label={label}>{empty??<p>No cards</p>}</section>;
   return <section className={`cap-card-stack ${className}`} role="region" aria-label={label} data-review={review||undefined} data-expanded={expanded||undefined} data-direction={expandDirection}>
-    <div ref={viewport} className="cap-card-stack-viewport"><div className="cap-card-stack-stage" style={{width:geometry.width||measurement.width,height:geometry.height||196}} role="group" aria-roledescription="card stack" aria-label={label} tabIndex={0} onKeyDown={onKeyDown} onPointerDown={down} onPointerMove={movePointer} onPointerUp={up} onPointerCancel={cancel}>
-      {deck.slice().reverse().map((item,reverseIndex)=>{const depth=deck.length-1-reverseIndex,index=current+depth,active=depth===0,offset=active?dragX:0,lift=drag.current?Math.min(1,Math.abs(dragX)/120):0;return <div key={getKey?.(item,index)??index} className={`cap-card-stack-card${active&&returning?' cap-card-stack-returning':''}`} data-depth={depth} data-stack-key={getKey?.(item,index)??String(index)} data-dragging={active&&drag.current!==null||undefined} data-surface="raised" aria-label={`${getLabel(item,index)}, ${index+1} of ${items.length}`} aria-hidden={!active&&!expanded||undefined} inert={!active} style={{'--cap-card-depth':depth,width:measurement.width,'--cap-card-x':`${(geometry.positions[depth]?.x??0)+offset}px`,'--cap-card-y':`${geometry.positions[depth]?.y??0}px`,'--cap-card-scale':expanded?1:1-depth*.025+lift*depth*.015,'--cap-card-rotation':`${offset*.035}deg`,'--cap-card-return-x':`${returnDirection*26}px`} as CSSProperties}>{renderCard(item,index)}{review&&active&&Math.abs(offset)>24&&<span className="cap-card-stack-stamp" data-surface="floating" data-direction={offset<0?'left':'right'} aria-hidden="true">{labels[offset<0?'left':'right']}</span>}</div>})}
-      {exit&&<div key={`exit-${getKey?.(exit.item,exit.index)??exit.index}`} className="cap-card-stack-card cap-card-stack-exit" data-surface="raised" aria-hidden="true" inert style={{width:measurement.width,'--cap-card-x':`calc(${exit.x}px + ${exit.direction*110}%)`,'--cap-card-y':`${exit.y}px`,'--cap-card-exit-start-x':`${exit.x}px`,'--cap-card-exit-start-y':`${exit.y}px`,'--cap-card-rotation':`${exit.direction*8}deg`} as CSSProperties}>{renderCard(exit.item,exit.index)}</div>}
+    <div ref={viewport} className="cap-card-stack-viewport" data-reflow={reflow||undefined}><div className="cap-card-stack-stage" style={{width:geometry.width||measurement.width,height:Math.max(geometry.height||196,exit?.height??0)}} role="group" aria-roledescription="card stack" aria-label={label} tabIndex={0} onKeyDown={onKeyDown} onPointerDown={down} onPointerMove={movePointer} onPointerUp={up} onPointerCancel={cancel} onLostPointerCapture={cancel}>
+      {deck.slice().reverse().map((item,reverseIndex)=>{const depth=deck.length-1-reverseIndex,index=current+depth,active=depth===0,offset=active?dragX:0,lift=drag.current?Math.min(1,Math.abs(dragX)/120):0;return <div key={getKey?.(item,index)??index} className={`cap-card-stack-card${active&&returning?' cap-card-stack-returning':''}`} data-depth={depth} data-stack-key={getKey?.(item,index)??String(index)} data-dragging={active&&drag.current!==null||undefined} data-surface="raised" aria-label={`${getLabel(item,index)}, ${index+1} of ${items.length}`} aria-hidden={!active&&!expanded||undefined} inert={!active} style={{'--cap-card-depth':depth,width:measurement.width,'--cap-card-x':`${(geometry.positions[depth]?.x??0)+offset}px`,'--cap-card-y':`${geometry.positions[depth]?.y??0}px`,'--cap-card-scale':expanded?1:1-depth*.025+lift*depth*.015,'--cap-card-rotation':`${offset*.035}deg`,'--cap-card-return-x':`${returnDirection*12}px`} as CSSProperties}>{renderCard(item,index)}{review&&active&&Math.abs(offset)>12&&<span className="cap-card-stack-stamp" data-surface="floating" data-direction={offset<0?'left':'right'} aria-hidden="true">{labels[offset<0?'left':'right']}</span>}</div>})}
+      {exit&&<div key={`exit-${getKey?.(exit.item,exit.index)??exit.index}`} className="cap-card-stack-card cap-card-stack-exit" data-surface="raised" aria-hidden="true" inert style={{width:measurement.width,'--cap-card-x':`${exit.x+exit.direction*12}px`,'--cap-card-y':`${exit.y}px`,'--cap-card-exit-start-x':`${exit.x}px`,'--cap-card-exit-start-y':`${exit.y}px`,'--cap-card-rotation':`${exit.direction*1.5}deg`} as CSSProperties}>{renderCard(exit.item,exit.index)}</div>}
       {complete&&!exit&&<div className="cap-card-stack-empty">{empty??<><p>All cards reviewed</p><Button type="button" variant="ghost" size="sm" onClick={reset}>Start over</Button></>}</div>}
     </div>
     </div><div className="cap-card-stack-controls">

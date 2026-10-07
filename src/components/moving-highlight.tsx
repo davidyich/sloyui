@@ -9,8 +9,8 @@ export interface MovingHighlightProps {
   revision?: unknown;
 }
 type Geometry = { x: number; y: number; width: number; height: number; radius: string };
-const defaultTarget = 'button:not(:disabled),a[href],summary,label:has(input:not(:disabled))';
-const controls = 'button,a,summary,label,[role="treeitem"],[role="option"],[role="menuitem"]';
+const defaultTarget = 'button:not(:disabled),a[href],summary,label:has(input:not(:disabled)),.cap-combobox-input-wrap:not(:has(input:disabled))';
+const controls = 'button,a,summary,label,input,[role="treeitem"],[role="option"],[role="menuitem"]';
 const translate = (box: Geometry) => `translate3d(${box.x}px,${box.y}px,0)`;
 const sameBox = (a: Geometry | null, b: Geometry) => a && a.x === b.x && a.y === b.y && a.width === b.width && a.height === b.height && a.radius === b.radius;
 
@@ -34,13 +34,16 @@ export function MovingHighlight({ root, selected, hover = false, target: selecto
     let afterScroll = false;
     const trackTarget = (next: HTMLElement | null) => {
       if (target === next) return;
-      if (target) observer?.unobserve(target);
+      if (target) { observer?.unobserve(target); target.removeAttribute('data-shared-hover-target'); }
       target = next;
-      if (target) observer?.observe(target);
+      if (target) { observer?.observe(target); if (hover) target.setAttribute('data-shared-hover-target', 'true'); }
     };
     const eligible = (element: EventTarget | null) => {
       const node = element instanceof Element ? element.closest<HTMLElement>(selector) : null;
       if (!node || !parent?.contains(node) || node.closest('[inert],[aria-disabled="true"]') || node.matches(':disabled')) return null;
+      // Filled buttons own their local pair; a neutral shared layer must not
+      // borrow or suppress primary, solid accent, or secondary accent reactions.
+      if (hover && node.matches('.cap-button:is([data-variant="primary"],[data-variant="accent"],[data-variant="accent-secondary"])')) return null;
       const scope = node.closest('.cap-shared-hover');
       return scope && scope !== parent && parent.contains(scope) ? null : node;
     };
@@ -56,7 +59,23 @@ export function MovingHighlight({ root, selected, hover = false, target: selecto
       element.style.width = `${box.width}px`;
       element.style.height = `${box.height}px`;
       element.style.transform = translate(box);
-      element.style.borderRadius = box.radius;
+      // Canonical segments inherit their CSS radius directly; freezing a resolved
+      // pixel value would make a context update depend on observer timing.
+      if (box.radius === 'inherit') element.style.removeProperty('border-radius');
+      else element.style.borderRadius = box.radius;
+    };
+    const syncAccent = (node: HTMLElement) => {
+      const element = layer.current;
+      if (!element) return;
+      const accented = node.hasAttribute('data-accented');
+      element.toggleAttribute('data-accented', accented);
+      let accent: string | undefined;
+      if (accented) for (let context: HTMLElement | null = node; context && context !== parent; context = context.parentElement) {
+        const explicit = context.dataset.accent ?? context.dataset.color;
+        if (explicit && explicit !== 'inherit') { accent = explicit; break; }
+      }
+      if (accent) element.dataset.accent = accent;
+      else delete element.dataset.accent;
     };
     const hide = () => {
       const element = layer.current;
@@ -79,8 +98,8 @@ export function MovingHighlight({ root, selected, hover = false, target: selecto
       const container = parent.getBoundingClientRect(), bounds = node.getBoundingClientRect();
       const to: Geometry = { x: bounds.left - container.left + parent.scrollLeft - parent.clientLeft,
         y: bounds.top - container.top + parent.scrollTop - parent.clientTop, width: bounds.width, height: bounds.height,
-        radius: getComputedStyle(painted).borderRadius };
-      if (visible && sameBox(geometry, to)) return;
+        radius: node.matches('label.cap-segment') ? 'inherit' : getComputedStyle(painted).borderRadius };
+      if (visible && sameBox(geometry, to)) { syncAccent(node); return; }
       const reduced = globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
       const fading = !visible && geometry && Number.parseFloat(getComputedStyle(element).opacity) > 0;
       const from = visible || fading ? visualBox() : null;
@@ -88,6 +107,8 @@ export function MovingHighlight({ root, selected, hover = false, target: selecto
       const moving = !!(animate && !reduced && from);
       element.toggleAttribute('data-moving', moving);
       paint(to); element.style.opacity = '1'; element.setAttribute('data-visible', 'true');
+      // Keep declared secondary accents, while inherited axes stay inherited.
+      syncAccent(node);
       geometry = to; visible = true;
       if (moving && element.animate && from && from.width && from.height && to.width && to.height) {
         animation = element.animate([
@@ -156,6 +177,7 @@ export function MovingHighlight({ root, selected, hover = false, target: selecto
     return () => {
       alive = false; refresh.current = null;
       if (frame !== undefined) cancelAnimationFrame(frame);
+      target?.removeAttribute('data-shared-hover-target');
       animation?.cancel(); observer?.disconnect(); contextObserver?.disconnect(); clearTimeout(resizeTimer);
       parent?.removeEventListener('pointerover', enter);
       parent?.removeEventListener('pointermove', reconnectPointer);

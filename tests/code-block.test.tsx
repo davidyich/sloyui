@@ -3,7 +3,43 @@ import { cleanup, render, screen, within, waitFor } from '@testing-library/react
 import userEvent from '@testing-library/user-event';
 import { CodeBlock } from '../src/components/code-block';
 
-afterEach(() => { cleanup(); vi.restoreAllMocks(); });
+afterEach(() => { cleanup(); vi.restoreAllMocks(); vi.unstubAllGlobals(); });
+
+it('keeps numbered multiline syntax, CRLF, trailing lines and copied source exact without rendering source HTML', async () => {
+  const source = '/* first\r\n second */\r\nconst html = "<img onerror=alert(1)>";\r\n';
+  const user = userEvent.setup(), writeText = vi.fn().mockResolvedValue(undefined);
+  Object.defineProperty(navigator, 'clipboard', { configurable: true, value: { writeText } });
+  const { container, rerender } = render(<CodeBlock filename="safe.ts" label="legacy.js" lineNumbers wrap>{source}</CodeBlock>);
+  expect(container.querySelector('.cap-code-label')).toHaveTextContent('safe.ts');
+  expect(container.querySelector('code')?.textContent).toBe(source);
+  expect(container.querySelectorAll('.cap-code-line-number')).toHaveLength(4);
+  expect(container.querySelector('.cap-code-gutter')).toHaveAttribute('aria-hidden', 'true');
+  expect(container.querySelectorAll('.cap-code-comment')).toHaveLength(2);
+  expect(container.querySelector('img')).toBeNull();
+  expect(container.querySelector('.cap-code-numbered')).toHaveAttribute('aria-label', 'safe.ts');
+  await user.click(screen.getByRole('button', { name: 'Копировать код' }));
+  expect(writeText).toHaveBeenCalledWith(source);
+  rerender(<CodeBlock lineNumbers showLanguageSelector={false} copyable={false}>{''}</CodeBlock>);
+  expect(container.querySelectorAll('.cap-code-line-number')).toHaveLength(1);
+  expect(container.querySelector('code')?.textContent).toBe('');
+});
+
+it('aligns numbers with wrapped source rows, disconnects the observer and preserves the editable slot', () => {
+  let notify: ResizeObserverCallback | undefined;
+  const disconnect = vi.fn(), observe = vi.fn();
+  vi.stubGlobal('ResizeObserver', class { constructor(callback: ResizeObserverCallback) { notify = callback; } observe = observe; disconnect = disconnect; });
+  const { container, rerender } = render(<CodeBlock filename="file.ts" lineNumbers wrap>{'const long = true;\nnext();'}</CodeBlock>);
+  const rows = container.querySelectorAll<HTMLElement>('.cap-code-source-line');
+  rows.forEach((row, index) => vi.spyOn(row, 'getBoundingClientRect').mockReturnValue({ height: index ? 24 : 48 } as DOMRect));
+  notify?.([], {} as ResizeObserver);
+  expect(container.querySelector<HTMLElement>('.cap-code-line-number')?.style.height).toBe('48px');
+  expect(observe).toHaveBeenCalledTimes(2);
+  rerender(<CodeBlock lineNumbers editor={<textarea aria-label="Editable source" defaultValue="source"/>}>{'source'}</CodeBlock>);
+  expect(disconnect).toHaveBeenCalledOnce();
+  expect(container.querySelector('.cap-code-gutter')).toBeNull();
+  expect(screen.getByRole('textbox', { name: 'Editable source' })).toHaveValue('source');
+  vi.unstubAllGlobals();
+});
 
 it('supports controlled and default language selection with dependency-free syntax tokens', async () => {
   const user = userEvent.setup(), changed = vi.fn();

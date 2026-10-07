@@ -1,6 +1,6 @@
 # Component identity and review
 
-`source/component-registry.json` owns permanent IDs, review statuses and multiple group memberships. `npm run manifest` copies this metadata into `agent-manifest.json`; the catalogue reads the generated metadata. Never regenerate IDs from names or list position. Renames keep the same ID; retired entries remain `archived` with a replacement when available.
+`source/component-registry.json` owns permanent `cp-001` style IDs, review statuses and multiple group memberships. `npm run manifest` copies this metadata into `agent-manifest.json`; the catalogue reads the generated metadata. Never regenerate IDs from names or list position. Renames keep the same ID; retired entries remain `archived` with a replacement when available.
 
 - `not-ready`: a known issue remains under correction.
 - `needs-review`: implementation is available, awaiting design review. This is mandatory for newly introduced components.

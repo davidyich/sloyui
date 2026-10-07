@@ -18,6 +18,7 @@ const entry = (group: ComponentGroup, description: string, render: ComponentType
 /** Every public component has one route and one focused, rendered story. */
 export const componentCatalog = {
   ...arcComponents,
+  ResizableCard: entry('Объекты и контент','Карточка с изменением размера за угол и клавиатурным управлением.',Composition.ResizableCardStory),
   BottomSheet: entry('Окна и меню','Нижняя панель с отступом, фиксированными высотами и ручкой перемещения.',BottomSheetStory),
   FileTree: entry('Навигация','Файлы и папки с клавиатурной навигацией, действиями и предпросмотром.',FileTreeStory),
   PreviewRail: entry('Навигация','Компактная шкала направлений с плавным ховером и плавающим превью.',PreviewRailStory),
@@ -99,13 +100,16 @@ export const foundationPages = [
   {id:'agents',label:'Инструкции'},
 ] as const;
 export type FoundationRoute = typeof foundationPages[number]['id'];
-export type CatalogRoute = ComponentName | FoundationRoute;
+export const overviewPages = [{id:"overview",label:"Обзор компонентов"},{id:"changelog",label:"Changelog"}] as const;
+export type OverviewRoute = typeof overviewPages[number]["id"];
+export type CatalogRoute = ComponentName | FoundationRoute | OverviewRoute;
 export function isComponentRoute(route: CatalogRoute): route is ComponentName { return Object.hasOwn(componentCatalog,route); }
-const aliases: Record<string,CatalogRoute> = {Badge:'Tag',TypeLabel:'Tag',badge:'Tag','type-label':'Tag',typelabel:'Tag',overview:'Button',buttons:'Button',forms:'Input',content:'ContentCard',feedback:'Alert',overlays:'Dialog',workbench:'ActionBar','content-blocks':'Calendar',patterns:'KanbanBoard',rules:'behavior'};
+const aliases: Record<string,CatalogRoute> = {Badge:'Tag',TypeLabel:'Tag',badge:'Tag','type-label':'Tag',typelabel:'Tag',buttons:'Button',forms:'Input',content:'ContentCard',feedback:'Alert',overlays:'Dialog',workbench:'ActionBar','content-blocks':'Calendar',patterns:'KanbanBoard',rules:'behavior'};
 export function resolveRoute(hash: string): CatalogRoute {
   let value=hash.replace(/^#/,''); try { value=decodeURIComponent(value); } catch { return 'Button'; }
   if(value.toLowerCase().replaceAll('-','')==='markdowneditor') return 'RichTextEditor';
   if (Object.hasOwn(componentCatalog,value)) return value as ComponentName;
+  if (overviewPages.some(page=>page.id===value)) return value as OverviewRoute;
   if (foundationPages.some(page=>page.id===value)) return value as FoundationRoute;
   if (Object.hasOwn(aliases,value)) return aliases[value];
   return componentNames.find(name=>name.toLowerCase()===value.toLowerCase()||name.replace(/([a-z0-9])([A-Z])/g,'$1-$2').toLowerCase()===value.toLowerCase())??'Button';

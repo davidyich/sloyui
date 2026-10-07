@@ -1,0 +1,12 @@
+.cap-resizable-card-frame { width:100%; max-width:100%; min-width:0; align-self:start; }
+.cap-resizable-card { position:relative; display:flex; flex-direction:column; box-sizing:border-box; padding:calc(16px + var(--cap-radius-inset)); min-width:0; max-width:100%; }
+.cap-resizable-card-body { flex:1; min-width:0; min-height:0; overflow:auto; padding-inline-end:12px; padding-block-end:16px; overflow-wrap:anywhere; }
+.cap-resizable-card-handle { position:absolute; inset-inline-end:4px; inset-block-end:4px; display:grid; place-items:center; width:28px; height:28px; padding:0; border:0; border-radius:var(--cap-radius-base); background:var(--cap-control-bg); color:var(--cap-content-muted); cursor:nwse-resize; touch-action:none; opacity:0; transition:opacity 120ms ease,background 120ms ease; }
+.cap-resizable-card:is(:hover,:focus-within,[data-resizing]) > .cap-resizable-card-handle { opacity:1; }
+.cap-resizable-card-handle:hover { background:var(--cap-control-hover); color:var(--cap-content-primary); }
+.cap-resizable-card-handle:focus-visible { outline:var(--cap-focus-width) solid var(--cap-focus-ring); outline-offset:2px; }
+.cap-resizable-card-handle:disabled { cursor:default; opacity:0; }
+.cap-resizable-card[data-resizing] { user-select:none; }
+@media (pointer:coarse) { .cap-resizable-card-handle { width:40px; height:40px; opacity:1; } .cap-resizable-card-body { padding-inline-end:24px; padding-block-end:24px; } }
+@media (prefers-reduced-motion:reduce) { .cap-resizable-card-handle { transition:none; } }
+@media (forced-colors:active) { .cap-resizable-card-handle { color:ButtonText; background:ButtonFace; } }

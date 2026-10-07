@@ -9,6 +9,8 @@
 @import './forms-refined.css';
 
 @import './composition.css';
+@import './content-layout.css';
+@import './resizable-card.css';
 @import './reorderable.css';
 
 @import './selection.css';

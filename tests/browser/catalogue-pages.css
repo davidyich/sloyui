@@ -1,0 +1,6 @@
+html,body { height:auto; overflow:auto; }
+#root { height:auto; overflow:visible; }
+#controls { position:sticky;top:0;z-index:10000;background:var(--cap-surface-base);padding:8px; }
+#controls span { margin-left:12px; }
+#controls pre { white-space:pre-wrap;overflow-wrap:anywhere; }
+.catalog-page { max-width:1100px; }

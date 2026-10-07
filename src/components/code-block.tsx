@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
 import { IconButton, cx, type Color } from './primitives.js';
 import { Select } from './forms.js';
 import { Menu, type MenuItem } from './overlays.js';
@@ -7,6 +7,10 @@ export type CodeLanguage = 'text' | 'js' | 'ts' | 'tsx' | 'json' | 'css' | 'bash
 export interface CodeBlockProps {
   children: string;
   label?: string;
+  /** Optional filename; takes precedence over the compatible `label` alias. */
+  filename?: string;
+  /** Decorative line numbers; never included in code text or clipboard source. */
+  lineNumbers?: boolean;
   /** Controlled language selection. */
   language?: CodeLanguage;
   /** Initial language when `language` is uncontrolled; otherwise inferred from `label` or `text`. */
@@ -121,9 +125,55 @@ export function highlightCode(source: string, language: CodeLanguage) {
     : token.text);
 }
 
+/** Split the already tokenized source so multiline comments/strings keep their syntax kind. */
+function codeLines(source: string, language: CodeLanguage): CodeToken[][] {
+  const tokens = tokenize(source, language), lines: CodeToken[][] = [];
+  const endings = [...source.matchAll(/\r\n|\r|\n/g)].map(match => (match.index ?? 0) + match[0].length);
+  endings.push(source.length);
+  let start = 0, tokenIndex = 0, tokenStart = 0;
+  for (const end of endings) {
+    const line: CodeToken[] = [];
+    while (tokenIndex < tokens.length && tokenStart < end) {
+      const token = tokens[tokenIndex], tokenEnd = tokenStart + token.text.length;
+      const text = token.text.slice(Math.max(0, start - tokenStart), Math.min(token.text.length, end - tokenStart));
+      if (text) line.push({ text, kind: token.kind });
+      if (tokenEnd > end) break;
+      tokenStart = tokenEnd; tokenIndex++;
+    }
+    lines.push(line); start = end;
+  }
+  return lines;
+}
+
+function NumberedCode({ source, language, wrap, label }: { source: string; language: CodeLanguage; wrap: boolean; label?: string }) {
+  const preRef = useRef<HTMLPreElement>(null), lines = codeLines(source, language);
+  useLayoutEffect(() => {
+    const pre = preRef.current;
+    if (!pre) return;
+    const rows = [...pre.querySelectorAll<HTMLElement>('.cap-code-source-line')];
+    const numbers = [...pre.querySelectorAll<HTMLElement>('.cap-code-line-number')];
+    const align = () => {
+      const heights = rows.map(row => row.getBoundingClientRect().height);
+      heights.forEach((height, index) => {
+        const number = numbers[index], value = `${height}px`;
+        if (height > 0 && number && number.style.height !== value) number.style.height = value;
+      });
+    };
+    align();
+    const observer = typeof ResizeObserver === 'undefined' ? undefined : new ResizeObserver(align);
+    rows.forEach(row => observer?.observe(row));
+    return () => observer?.disconnect();
+  }, [source, language, wrap]);
+  return <pre ref={preRef} className="cap-code-numbered" tabIndex={0} aria-label={label ?? `${language} code`}>
+    <span className="cap-code-gutter" aria-hidden="true">{lines.map((_, index) => <span key={index} className="cap-code-line-number">{index + 1}</span>)}</span>
+    <code className={`language-${language}`}>{lines.map((line, index) => <span key={index} className="cap-code-source-line">{line.map((token, tokenIndex) => token.kind ? <span key={tokenIndex} className={`cap-code-${token.kind}`} data-token={token.kind}>{token.text}</span> : token.text)}</span>)}</code>
+  </pre>;
+}
+
 /** A small, dependency-free code surface with safe syntax tokens and optional copy/language controls. */
-export function CodeBlock({ children, label, language: controlledLanguage, defaultLanguage, onLanguageChange, showLanguageSelector = true, color, copyable = true, actions, wrap: controlledWrap, onWrapChange, showActionsMenu = copyable, contextActions = [], editor, variant = 'auto', className }: CodeBlockProps) {
-  const [internalLanguage, setInternalLanguage] = useState<CodeLanguage>(defaultLanguage ?? inferLanguage(label));
+export function CodeBlock({ children, label, filename, lineNumbers = false, language: controlledLanguage, defaultLanguage, onLanguageChange, showLanguageSelector = true, color, copyable = true, actions, wrap: controlledWrap, onWrapChange, showActionsMenu = copyable, contextActions = [], editor, variant = 'auto', className }: CodeBlockProps) {
+  const title = filename ?? label;
+  const [internalLanguage, setInternalLanguage] = useState<CodeLanguage>(defaultLanguage ?? inferLanguage(title));
   const [status, setStatus] = useState('');
   const [internalWrap, setInternalWrap] = useState(false);
   const wrap = controlledWrap ?? internalWrap;
@@ -141,10 +191,10 @@ export function CodeBlock({ children, label, language: controlledLanguage, defau
     onLanguageChange?.(next);
   };
   return <figure className={cx('cap-code', className)} data-variant={variant} data-wrap={wrap || undefined} data-color={color ?? 'neutral'} data-accent={color === 'inherit' ? undefined : color ?? 'neutral'}>
-    {(showLanguageSelector || label || copyable || actions || showActionsMenu) && <figcaption>
+    {(showLanguageSelector || title || copyable || actions || showActionsMenu) && <figcaption>
       <span className="cap-code-heading">
         {showLanguageSelector && <Select aria-label="Язык кода" className="cap-code-language-select" popupClassName="cap-code-language-popup" size="xs" variant="ghost" value={language} onValueChange={changeLanguage} options={languageOptions}/>}
-        {label && <span className="cap-code-label" title={label}>{label}</span>}
+        {title && <span className="cap-code-label" title={title}>{title}</span>}
       </span>
       <span className="cap-code-actions">
         {copyable && <IconButton className="cap-code-copy" size="sm" variant="ghost" icon={status === 'Скопировано' ? 'check' : 'copy'} label="Копировать код" onClick={async () => { try { await navigator.clipboard.writeText(children); setStatus('Скопировано'); } catch { setStatus('Не удалось скопировать. Выделите код вручную.'); } }}/>}
@@ -152,7 +202,7 @@ export function CodeBlock({ children, label, language: controlledLanguage, defau
         {actions}
       </span>
     </figcaption>}
-    {editor ? <div className="cap-code-editor">{editor}</div> : <pre tabIndex={0} aria-label={label ?? `${language} code`}><code className={`language-${language}`}>{highlightCode(children, language)}</code></pre>}
+    {editor ? <div className="cap-code-editor">{editor}</div> : lineNumbers ? <NumberedCode source={children} language={language} wrap={wrap} label={title}/> : <pre tabIndex={0} aria-label={title ?? `${language} code`}><code className={`language-${language}`}>{highlightCode(children, language)}</code></pre>}
     <span role="status" className="cap-sr-only">{status}</span>
   </figure>;
 }

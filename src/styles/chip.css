@@ -1,13 +1,13 @@
-.cap-chip { --cap-chip-height:var(--cap-number-control-size-sm); --cap-chip-padding:8px; display:inline-flex; max-width:100%; min-width:0; min-height:var(--cap-chip-height); align-items:center; gap:0; border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-radius-small); background:var(--cap-control-bg); color:var(--cap-content-primary); font:400 var(--cap-font-size-sm)/var(--cap-line-height-sm) var(--cap-font-sans),sans-serif; vertical-align:middle; transition:background-color 120ms ease; }
-.cap-chip[data-size=xs] { --cap-chip-height:var(--cap-number-control-size-xs); --cap-chip-padding:6px; font-size:var(--cap-font-size-xs); }
-.cap-chip[data-size=md] { --cap-chip-height:var(--cap-number-control-size-md); }
-.cap-chip[data-size=lg] { --cap-chip-height:var(--cap-number-control-size-lg); --cap-chip-padding:10px; }
-.cap-chip[data-size=xl] { --cap-chip-height:var(--cap-number-control-size-xl); --cap-chip-padding:12px; font-size:var(--cap-font-size-base); }
+.cap-chip { --cap-chip-height:calc(var(--cap-number-control-size-sm) + 4px); --cap-chip-padding:8px; display:inline-flex; max-width:100%; min-width:0; min-height:var(--cap-chip-height); align-items:center; gap:0; border:var(--cap-border-width) solid var(--cap-control-border); border-radius:min(calc(var(--cap-chip-height) / 2),calc(var(--cap-chip-height) * .3 * var(--cap-radius-scale,1))); background:var(--cap-control-bg); color:var(--cap-content-primary); font:400 var(--cap-font-size-sm)/var(--cap-line-height-sm) var(--cap-font-sans),sans-serif; vertical-align:middle; transition:background-color 120ms ease; }
+.cap-chip[data-size=xs] { --cap-chip-height:calc(var(--cap-number-control-size-xs) + 4px); --cap-chip-padding:6px; font-size:var(--cap-font-size-xs); line-height:var(--cap-line-height-xs); }
+.cap-chip[data-size=md] { --cap-chip-height:calc(var(--cap-number-control-size-md) + 4px); }
+.cap-chip[data-size=lg] { --cap-chip-height:calc(var(--cap-number-control-size-lg) + 4px); --cap-chip-padding:10px; }
+.cap-chip[data-size=xl] { --cap-chip-height:calc(var(--cap-number-control-size-xl) + 4px); --cap-chip-padding:12px; font-size:var(--cap-font-size-base); }
 .cap-chip[data-shape=pill] { border-radius:var(--cap-radius-full); }
 .cap-chip[data-selected] { background:var(--cap-control-active); box-shadow:inset 0 0 0 1px var(--cap-border-subtle); }
 .cap-chip[data-interactive]:not([aria-disabled=true]):hover { background:var(--cap-control-hover); }
 .cap-chip[data-interactive]:not([aria-disabled=true]):active { background:var(--cap-control-active); }
-.cap-chip-label { display:inline-flex; min-width:0; min-height:calc(var(--cap-chip-height) - 2 * var(--cap-border-width)); align-items:center; gap:6px; padding:2px calc(var(--cap-chip-padding) + var(--cap-radius-inset)); border:0; border-radius:inherit; background:transparent; color:inherit; font:inherit; text-align:inherit; }
+.cap-chip-label { display:inline-flex; min-width:0; min-height:calc(var(--cap-chip-height) - 2 * var(--cap-border-width)); align-items:center; gap:6px; padding:4px calc(var(--cap-chip-padding) + var(--cap-radius-inset)); border:0; border-radius:inherit; background:transparent; color:inherit; font:inherit; text-align:inherit; }
 .cap-chip-text { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .cap-chip-label > .cap-icon { width:14px; height:14px; flex:none; }
 .cap-chip:has(.cap-chip-action) > .cap-chip-label { padding-inline-end:4px; }

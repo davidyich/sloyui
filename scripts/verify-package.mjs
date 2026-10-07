@@ -25,7 +25,7 @@ try {
   await writeFile(join(temp, 'consumer.tsx'), String.raw`
 import {
   Alert, AnnouncementBar, BottomSheet, Button, CardStack, Chip, ColorPicker,
-  ContentCard, ContentLayout, DataTable, Dialog, Field, FileTree, Input, KanbanColumn,
+  ContentCard, ContentLayout, ResizableCard, DataTable, Dialog, Field, FileTree, Input, KanbanColumn,
   Popover, PreviewRail, RichTextEditor, Slider, StatusBar, Toast, ToastStack,
   markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit,
   type BottomSheetProps, type ChipProps, type Color, type ContentLayoutProps,
@@ -55,6 +55,7 @@ export const components = <>
   <Chip {...chip}>Archive chip</Chip><BottomSheet {...sheet}>Closed sheet body</BottomSheet>
   <FileTree label="Files" nodes={files} selectedId="app" expandedIds={['src']} onSelect={file => { const id: string = file.id; void id; }} onExpandedChange={ids => { const values: string[] = ids; void values; }}/>
   <PreviewRail label="Sections" items={rail} orientation="horizontal" previewSide="before" highlightActive onValueChange={id => { const value: string = id; void value; }}/>
+  <ResizableCard defaultSize={{width:320,height:200}}>Resize me</ResizableCard>
   <ContentLayout {...layout} style={{height:640}}><ContentCard title="Main" selectable={false}/></ContentLayout>
   <Slider {...slider}/><ColorPicker label="Color" showRecent/>
   <Popover label="Filter" triggerIcon="filter"><Input label="Search" data-radius="compact" data-borders="off"/></Popover>
@@ -72,7 +73,7 @@ void preserved;
 `);
   await writeFile(join(temp, 'tsconfig.json'), JSON.stringify({ compilerOptions: { target: 'ES2022', module: 'NodeNext', moduleResolution: 'NodeNext', jsx: 'react-jsx', strict: true, noEmit: true, skipLibCheck: false, lib: ['ES2022', 'DOM', 'DOM.Iterable'] }, include: ['*.tsx'] }));
   execFileSync(join(root, 'node_modules/.bin/tsc'), ['-p', join(temp, 'tsconfig.json')], { stdio: 'pipe' });
-  const serverRenderedExports = ['Button', 'ComboBox', 'MultiSelect', 'TagInput', 'RadioGroup', 'ColorPicker', 'NumberField', 'ValueScrubber', 'NavigationMenu', 'HoverPanel', 'TreeView', 'LineChart', 'BarChart', 'RichTextEditor', 'DataTable', 'ToastStack', 'Chip', 'BottomSheet', 'FileTree', 'PreviewRail', 'ContentLayout', 'ContentCard', 'KanbanColumn', 'Slider', 'Alert', 'StatusBar', 'Toast', 'AnnouncementBar', 'CardStack'];
+  const serverRenderedExports = ['Button', 'ComboBox', 'MultiSelect', 'TagInput', 'RadioGroup', 'ColorPicker', 'NumberField', 'ValueScrubber', 'NavigationMenu', 'HoverPanel', 'TreeView', 'LineChart', 'BarChart', 'RichTextEditor', 'DataTable', 'ToastStack', 'Chip', 'BottomSheet', 'FileTree', 'PreviewRail', 'ContentLayout', 'ResizableCard', 'ContentCard', 'KanbanColumn', 'Slider', 'Alert', 'StatusBar', 'Toast', 'AnnouncementBar', 'CardStack'];
   const markdownBridgeExports = ['markdownToRichText', 'richTextToMarkdown', 'preserveMarkdownSourceEdit'];
   await writeFile(join(temp, 'render.mjs'), String.raw`
 import React from 'react';
@@ -81,7 +82,7 @@ import { fileURLToPath } from 'node:url';
 import { resolve, sep } from 'node:path';
 import {
   Alert, AnnouncementBar, BarChart, BottomSheet, Button, CardStack, Chip, ColorPicker,
-  ComboBox, ContentCard, ContentLayout, DataTable, FileTree, HoverPanel, KanbanColumn,
+  ComboBox, ContentCard, ContentLayout, ResizableCard, DataTable, FileTree, HoverPanel, KanbanColumn,
   LineChart, MultiSelect, NavigationMenu, NumberField, PreviewRail, RadioGroup,
   RichTextEditor, Slider, StatusBar, TagInput, Toast, ToastStack, TreeView, ValueScrubber,
   markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit,
@@ -113,6 +114,7 @@ const html = renderToString(node(React.Fragment,null,
   node(Chip,{selected:true,onClick:noop,onRemove:noop},'Archive chip'),
   node(FileTree,{label:'Files',selectedId:'app',defaultExpandedIds:['src'],nodes:[{id:'src',name:'src',type:'folder',children:[{id:'app',name:'App.tsx',type:'file',preview:'Archive file preview'}]}]}),
   node(PreviewRail,{label:'Sections',orientation:'horizontal',highlightActive:true,items:[{id:'overview',label:'Overview'},{id:'details',label:'Details'}]}),
+  node(ResizableCard,{defaultSize:{width:320,height:200},label:'Resizable note'},'Content'),
   node(ContentLayout,{orientation:'vertical',divider:'none',left:{label:'Before',height:120,onHeightChange:noop,content:'Outline'},right:{label:'After',defaultHeight:140,content:'Properties'}},node(ContentCard,{title:'Main',selectable:false})),
   node(KanbanColumn,{title:'Active',count:1,color:'blue'},node(ContentCard,{title:'Task',selectable:true})),
   node(Slider,{label:'Density',defaultValue:0.5,min:0,max:1,step:0.1,formatValue:value=>value*100+'%',onValueChange:noop,onValueCommit:noop}),

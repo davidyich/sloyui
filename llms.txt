@@ -1,4 +1,4 @@
-# Capacities UI 0.3
+# Capacities UI
 
 React 19 + TypeScript + plain scoped CSS. No runtime dependencies beyond React peers.
 
@@ -15,6 +15,7 @@ React 19 + TypeScript + plain scoped CSS. No runtime dependencies beyond React p
 - docs/selection-revision.md: Chip, MultiSelect, recent colors and Slider.
 - docs/editor-revision.md: RichTextEditor Markdown preservation and CodeBlock.
 - docs/navigation-motion-revision.md: shared hover, disclosures and Tabs overflow.
+- docs/resizing.md: ContentLayout bounds, ResizableCard corner resize and stack preview clearance.
 - docs/content-revision.md: selectable cards, Kanban, ContentLayout axes and DataTable surfaces.
 - docs/feedback-revision.md: status styles, stack directions, AnnouncementBar and TextShimmer.
 - docs/new-components-revision.md: BottomSheet, FileTree and PreviewRail; needs-review until reviewed.
@@ -28,6 +29,7 @@ import '@personal/capacities-ui/styles.css';
 Optional: '@personal/capacities-ui/fonts.css'. CSS is not imported from JS.
 
 ## Catalogue
+Overview: #overview; release history: #changelog. Each component record includes generated api, usage, agentNotes and related. Read docs/catalogue-reference.md for the generator contract. IDs use cp-001; ready entries have no sidebar marker.
 Canonical component route #ComponentName (case-sensitive), e.g. #Button, #ScrollArea, #Popover.
 Navigation group order and all component memberships come from source/component-registry.json. MarkdownEditor remains a deprecated export, is excluded from canonical groups/count, and #MarkdownEditor redirects to #RichTextEditor. Foundations: #colors, #typography, #geometry, #layers, #behavior, #agents.
 Each selected component record includes its catalogue route. Every component page has a Playground with settings inside its side area (stacked on narrow screens); update its typed entry when props change.
@@ -71,7 +73,7 @@ ContentLayout: concurrent left/right panes; orientation=horizontal|vertical uses
 Drawer.variant=inset|edge. Icon accepts a built-in name or imported Lucide component. IconPicker supports grid or combobox with visual alias search; the full catalogue is lazy demo code.
 See docs/component-guidelines.md and docs/examples.md for concise contracts.
 
-Switch supports size and color, accent (default) or neutral. Primary and accent Buttons share the solid pair of the nearest accent; use data-accent="neutral" for a neutral Primary. Checkbox, Radio and Switch default to the same solid Primary pair; contrast=false opts into vivid. Slider keeps vivid by default. Marks and thumbs use the matching text role selected by measured contrast to white/black, stable across normal/hover/pressed. The off Switch thumb uses control-text; disabled uses the explicit disabled pair. Neutral primary fades on hover/pressed. data-shadow=soft|compact is inherited by portals. CodeBlock.variant=auto uses an outline without fill when borders are on; surface, outline and filled-outline select explicit paint. CodeBlock.editor adapts the body to source editing.
+Switch supports size and color, accent (default) or neutral. Button/IconButton primary always uses the neutral high-contrast pair, independent of data-accent; secondary is neutral. accent uses local solid color and accent-secondary uses local soft color. Checkbox, Radio and Switch default to the local solid accent pair; contrast=false opts into vivid. Slider keeps vivid by default. Marks and thumbs use the matching text role selected by measured contrast to white/black, stable across normal/hover/pressed. The off Switch thumb uses control-text; disabled uses the explicit disabled pair. Neutral primary fades on hover/pressed. data-shadow=soft|compact is inherited by portals. CodeBlock.variant=auto uses an outline without body fill when borders are on; surface, outline and filled-outline select explicit paint. filename is optional (label remains an alias); lineNumbers adds a decorative gutter without changing source or copying. CodeBlock.editor adapts the body to source editing. Chip is 4px taller than Tag at the same size; default soft corners become pill in rounded radius mode.
 
 Input/Select/Textarea share labelPlacement=outside|inside, label/hint/error/size; FloatingField delegates to Input. EmptyState icons default neutral/muted, icon=false omits them.
 For finished UI use DatePicker for dates, NumberField for numbers, ColorPicker for colors, and Select/ComboBox for choices. Avoid visible browser-picker input types such as date, time, month, week, and color; native form semantics and hidden backing inputs remain supported.

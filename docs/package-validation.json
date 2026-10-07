@@ -1,6 +1,6 @@
 {
   "package": "@personal/capacities-ui",
-  "componentCount": 98,
+  "componentCount": 99,
   "isolatedArchiveConsumer": true,
   "nodeNextTypes": true,
   "exampleTypecheck": [
@@ -32,6 +32,7 @@
     "FileTree",
     "PreviewRail",
     "ContentLayout",
+    "ResizableCard",
     "ContentCard",
     "KanbanColumn",
     "Slider",
@@ -52,5 +53,5 @@
   "sliderNumericCallbacks": true,
   "feedbackStyleApi": true,
   "fontAssets": 9,
-  "buttonGzipBytes": 1627
+  "buttonGzipBytes": 1674
 }

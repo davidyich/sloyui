@@ -1,8 +1,11 @@
+import { ComponentReference } from './ComponentReference';
+import { Overview,Changelog } from './Overview';
+import { version } from '../package.json';
 import { Playground } from './Playground';
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
 import * as UI from '../src';
-import { componentCatalog, componentMetadata, componentStatuses, registryGroups, componentNames, componentReference, foundationPages, isComponentRoute, resolveRoute, type CatalogRoute, type FoundationRoute } from './catalog';
+import { componentCatalog, componentMetadata, componentStatuses, registryGroups, componentNames, overviewPages, foundationPages, isComponentRoute, resolveRoute, type CatalogRoute, type FoundationRoute } from './catalog';
 import ColorsV2 from './ColorsV2';
 import { Radius } from 'lucide-react';
 import Layers from './Layers';
@@ -11,6 +14,7 @@ import RulesV2 from './RulesV2';
 import '../src/styles/styles.css';
 import '../src/styles/fonts.css';
 import './catalog.css';
+import './reference.css';
 if (import.meta.env.DEV && new URLSearchParams(location.search).has('audit')) import('./audit');
 
 type Theme = 'light' | 'dark';
@@ -28,9 +32,9 @@ function Navigation({ route, onNavigate }: { route: CatalogRoute; onNavigate: (r
     return (status==='all'||metadata.status===status)&&(group==='all'||(metadata.groups as string[]).includes(group))&&`${name} ${metadata.id} ${componentCatalog[name].description} ${metadata.groups.join(' ')}`.toLocaleLowerCase().includes(term);
   });
   const groups=registryGroups.filter(item=>group==='all'||item.id===group);
-  const nodes:UI.TreeNode[]=[...(!filtered?[{id:'foundations',label:'Основы',icon:false as const,children:foundationPages.map(page=>({id:page.id,label:page.label,href:`#${page.id}`,icon:false as const}))}]:[]),...groups.map(item=>({id:item.id,label:item.label,icon:false as const,children:matches.filter(name=>group!=='all'||componentMetadata(name).primaryGroup===item.id).map(name=>{
-    const meta=componentMetadata(name);return {id:name,label:name,href:`#${name}`,icon:false as const,meta:<span className="catalog-review-dot" data-status={meta.status} role="img" aria-label={componentStatuses[meta.status]} title={`${meta.id} · ${componentStatuses[meta.status]}`}/>};
-  })})).filter(node=>node.children.length)];
+  const nodes:UI.TreeNode[]=[...(!filtered?[...overviewPages.map(page=>({id:page.id,label:page.label,href:`#${page.id}`,icon:false as const})),{id:'foundations',label:'Основы',icon:false as const,children:foundationPages.map(page=>({id:page.id,label:page.label,href:`#${page.id}`,icon:false as const}))}]:[]),...groups.map(item=>({id:item.id,label:item.label,icon:false as const,children:matches.filter(name=>group!=='all'||componentMetadata(name).primaryGroup===item.id).map(name=>{
+    const meta=componentMetadata(name);return {id:name,label:name,href:`#${name}`,icon:false as const,meta:meta.status!=='ready'&&<span className="catalog-review-dot" data-status={meta.status} role="img" aria-label={componentStatuses[meta.status]} title={`${meta.id} · ${componentStatuses[meta.status]}`}/>};
+  })})).filter(node=>!('children' in node)||node.children.length)];
   return <div className="catalog-navigation"><div className="catalog-search-row"><div className="catalog-search"><UI.Input leading={<UI.Icon name="search" size={15}/>} type="search" aria-label="Найти компонент" placeholder="Поиск" value={query} onChange={event=>setQuery(event.target.value)}/></div><UI.Popover label="Фильтры компонентов" triggerIcon="filter"><div className="catalog-filter-fields"><UI.Select label="Статус компонента" value={status} onValueChange={setStatus} options={[{value:'all',label:'Все статусы'},...Object.entries(componentStatuses).filter(([key])=>key!=='archived').map(([value,label])=>({value,label}))]}/><UI.Select label="Группа компонентов" value={group} onValueChange={setGroup} options={[{value:'all',label:'Все группы'},...registryGroups.map(item=>({value:item.id,label:item.label}))]}/><UI.Button variant="ghost" onClick={()=>{setStatus('all');setGroup('all');}}>Сбросить фильтры</UI.Button></div></UI.Popover></div>{filtered&&<div className="catalog-filter-summary"><span>{matches.length} компонентов</span><UI.Button variant="ghost" size="xs" onClick={()=>{setQuery('');setStatus('all');setGroup('all');}}>Сбросить</UI.Button></div>}<nav aria-label="Каталог компонентов" className="catalog-nav-scroll"><UI.TreeView showGuides nodes={nodes} label="Компоненты и основы" selectedId={route} expandedIds={filtered?nodes.map(node=>node.id):expanded} onExpandedChange={setExpanded} onSelect={node=>onNavigate(node.id as CatalogRoute)}/>{!matches.length&&<p className="catalog-search-empty">Ничего не найдено</p>}</nav></div>;
 }
 function PreviewControls({theme,onTheme,borders,onBorders,surface,onSurface,accent,onAccent,onMenu,radius,onRadius}:{radius:string;onRadius:(value:string)=>void;theme:Theme;onTheme:(value:Theme)=>void;borders:boolean;onBorders:(value:boolean)=>void;surface:Surface;onSurface:(value:Surface)=>void;accent:UI.Color;onAccent:(value:UI.Color)=>void;onMenu:()=>void}) {
@@ -53,7 +57,7 @@ function App(){
   const [mobile,setMobile]=useState(false),[command,setCommand]=useState(false),[notice,setNotice]=useState('');
   const main=useRef<HTMLElement>(null);
   const component=isComponentRoute(route)?componentCatalog[route]:undefined;
-  const title=isComponentRoute(route)?route:foundationPages.find(page=>page.id===route)?.label??route;
+  const title=isComponentRoute(route)?route:[...overviewPages,...foundationPages].find(page=>page.id===route)?.label??route;
   const notify=(message:string)=>setNotice(message);
   const navigate=(next:CatalogRoute)=>{setRoute(next);setMobile(false);location.hash=next;main.current?.scrollTo({top:0});};
   useEffect(()=>{const sync=()=>{const next=resolveRoute(location.hash);setRoute(next);setMobile(false);main.current?.scrollTo({top:0});if(location.hash!==`#${next}`)history.replaceState(null,'',`${location.pathname}${location.search}#${next}`);};sync();window.addEventListener('hashchange',sync);return()=>window.removeEventListener('hashchange',sync);},[]);
@@ -66,13 +70,13 @@ function App(){
   useEffect(()=>{const keydown=(event:KeyboardEvent)=>{if((event.metaKey||event.ctrlKey)&&event.key.toLowerCase()==='k'){event.preventDefault();setMobile(false);setCommand(current=>!current);}};window.addEventListener('keydown',keydown);return()=>window.removeEventListener('keydown',keydown);},[]);
   useEffect(()=>{if(!notice)return;const timeout=setTimeout(()=>setNotice(''),4500);return()=>clearTimeout(timeout);},[notice]);
   const copy=async(value:string)=>{try{await navigator.clipboard.writeText(value);notify('Скопировано');}catch{notify('Скопируйте текст вручную');}};
-  const commands=useMemo(()=>[...foundationPages.map(page=>({id:page.id,label:page.label,description:'Основы',icon:'layers' as const,onSelect:()=>navigate(page.id)})),...componentNames.map(name=>({id:name,label:name,description:componentCatalog[name].description,icon:'cube' as const,onSelect:()=>navigate(name)}))],[]);
+  const commands=useMemo(()=>[...[...overviewPages,...foundationPages].map(page=>({id:page.id,label:page.label,description:'Основы',icon:'layers' as const,onSelect:()=>navigate(page.id)})),...componentNames.map(name=>({id:name,label:name,description:componentCatalog[name].description,icon:'cube' as const,onSelect:()=>navigate(name)}))],[]);
   const Story=component?.render;
   return <div className="catalog-app"><a className="catalog-skip" href="#catalog-main" onClick={event=>{event.preventDefault();main.current?.focus();}}>К содержимому</a>
-    <aside data-surface="canvas" className="catalog-sidebar" aria-label="Библиотека"><a className="catalog-brand" href="#Button" onClick={event=>{event.preventDefault();navigate('Button');}}><UI.Icon name="layers" size={21}/><span>Capacities <strong>UI</strong></span></a><Navigation route={route} onNavigate={navigate}/><div className="catalog-sidebar-footer"><span>v0.4.1</span></div></aside>
+    <aside data-surface="canvas" className="catalog-sidebar" aria-label="Библиотека"><a className="catalog-brand" href="#overview" onClick={event=>{event.preventDefault();navigate('overview');}}><UI.Icon name="layers" size={21}/><span>Capacities <strong>UI</strong></span></a><Navigation route={route} onNavigate={navigate}/><div className="catalog-sidebar-footer"><span>v{version}</span></div></aside>
     <div data-surface="base" className="catalog-main-shell">
-      <main ref={main} id="catalog-main" className="catalog-main" data-surface="raised" tabIndex={-1}><div className="catalog-page" key={route} data-accent={accent}>
-        {Story&&isComponentRoute(route)?<><header className="catalog-page-heading"><div className="catalog-page-title"><h1>{route}</h1><span className="catalog-component-id">{componentMetadata(route).id}</span><UI.Tag color="neutral" size="xs" interactive={false}>{componentStatuses[componentMetadata(route).status]}</UI.Tag></div><p>{componentCatalog[route].description}</p></header><Playground key={route} name={route} notify={notify} surface={surface}/><div className="catalog-preview cap-surface-boundary" data-surface={surface} data-accent={accent}><Story notify={notify}/></div><ComponentAPI name={route} surface={surface}/></>:<FoundationPage route={route as FoundationRoute} theme={theme} accent={accent} copy={copy}/>}
+      <main ref={main} id="catalog-main" className="catalog-main" data-surface="base" tabIndex={-1}><div className="catalog-page" key={route} data-accent={accent}>
+        {Story&&isComponentRoute(route)?<><header className="catalog-page-heading"><div className="catalog-page-title"><h1>{route}</h1><UI.Tag color="neutral" size="xs" interactive={false}>{componentStatuses[componentMetadata(route).status]}</UI.Tag></div><p>{componentCatalog[route].description}</p><span className="catalog-component-id" aria-hidden="true">{componentMetadata(route).id}</span></header><Playground key={route} name={route} notify={notify} surface={surface}/><div className="catalog-preview cap-surface-boundary" data-surface={surface} data-accent={accent}><Story notify={notify}/></div><ComponentReference name={route} surface={surface}/></>:route==='overview'?<Overview/>:route==='changelog'?<Changelog/>:<FoundationPage route={route as FoundationRoute} theme={theme} accent={accent} copy={copy}/>}
       </div></main>
       <aside className="catalog-preview-dock" aria-label="Настройки каталога"><PreviewControls radius={radius} onRadius={setRadius} theme={theme} onTheme={setTheme} borders={borders} onBorders={setBorders} surface={surface} onSurface={setSurface} accent={accent} onAccent={setAccent} onMenu={()=>setMobile(true)}/></aside>
     </div>
@@ -81,7 +85,6 @@ function App(){
     {notice&&<div className="catalog-notice"><UI.Toast title={notice} onDismiss={()=>setNotice('')}/></div>}
   </div>;
 }
-function ComponentAPI({name,surface}:{name:keyof typeof componentCatalog;surface:Surface}){const reference=componentReference(name);return <UI.Accordion className="catalog-api cap-surface-boundary" data-surface={surface} title="Использование в коде"><p className="catalog-api-props">{reference.props}</p><UI.CodeBlock label={`${name}.tsx`} defaultLanguage="tsx">{`import { ${name} } from '@personal/capacities-ui';\n\n${reference.example}`}</UI.CodeBlock></UI.Accordion>;}
 function FoundationHeader({title,children}:{title:string;children:ReactNode}){return <header className="page-intro"><h1>{title}</h1><p>{children}</p></header>;}
 function FoundationPage({route,theme,accent,copy}:{route:FoundationRoute;theme:Theme;accent:UI.Color;copy:(value:string)=>void}){
   if(route==='layers')return <Layers/>;

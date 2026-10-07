@@ -1,3 +1,4 @@
+import { ControlList } from './ControlList';
 import { useId, useState, type ReactNode } from 'react';
 import { Button, Checkbox, Input, Select, Tag, colors, type Color } from '../src';
 import * as Navigation from '../src/components/navigation-menu';
@@ -27,7 +28,7 @@ const b = (p: Values, key: string) => p[key] === true;
 const size = option('size', 'Размер', ['xs','sm','md','lg','xl'], 'md');
 const disabled = toggle('disabled','Недоступен');
 const fieldVariant = option('fieldVariant','Подложка',['surface','ghost']);
-const focusControls = [number('focusWidth','Толщина фокуса',1,1,4),number('focusOffset','Отступ фокуса',1,0,4)];
+const focusControls = [number('focusWidth','Толщина',1,1,4),number('focusOffset','Отступ',1,0,4)];
 const focusRing = (p: Values) => ({width:n(p,'focusWidth'),offset:n(p,'focusOffset')});
 const sampleOptions: Selection.SelectionOption[] = [
   { value: 'project', label: 'Проект', icon: 'folder', aliases: ['workspace'] },
@@ -103,20 +104,20 @@ export function ArcPlayground({ name, notify, surface = 'base' }: { name: ArcCom
   const initial = () => Object.fromEntries(spec.controls.map(control => [control.key, control.initial])) as Values;
   const [values, setValues] = useState<Values>(initial), [revision, setRevision] = useState(0);
   const set = (key: string, value: Value) => setValues(previous => ({ ...previous, [key]: value }));
-  return <section className="catalog-playground cap-surface-boundary" data-surface="canvas" aria-labelledby={`${id}-arc-title`}>
+  return <section className="catalog-playground cap-surface-boundary" data-surface="canvas" data-component={name} aria-labelledby={`${id}-arc-title`}>
     <div className="playground-layout">
       <div className="playground-preview" data-surface={surface} role="group" aria-label={`${name}: интерактивный пример`} key={revision}><h2 className="cap-sr-only">Интерактивный пример</h2>{spec.render(values, { set, notify })}</div>
       <div className="playground-settings" data-surface="raised">
         <header><h2 id={`${id}-arc-title`}>Параметры</h2><Button variant="ghost" size="sm" onClick={() => { setValues(initial()); setRevision(value => value + 1); }}>Сбросить</Button></header>
         <div className="playground-controls" role="group" aria-label={`Параметры ${name}`}>
-          {spec.controls.map(control => typeof control.initial === 'boolean'
+          <ControlList controls={spec.controls} render={control => typeof control.initial === 'boolean'
             ? <Checkbox key={control.key} label={control.label} size="sm" checked={b(values,control.key)} onChange={event=>set(control.key,event.target.checked)}/>
             : control.options
               ? <Select key={control.key} label={control.label} size="sm" value={s(values,control.key)} options={control.options.map(value=>({value,label:value||'Не выбрано'}))} onValueChange={value=>set(control.key,value)}/>
               : typeof control.initial === 'number'
                 ? <Selection.NumberField key={control.key} label={control.label} size="sm" compact scrubbable value={n(values,control.key)} min={control.min} max={control.max} step={control.step} onValueChange={value=>set(control.key,value)}/>
                 : <Input key={control.key} label={control.label} size="sm" value={s(values,control.key)} onChange={event=>set(control.key,event.target.value)}/>
-          )}
+          }/>
         </div>
       </div>
     </div>

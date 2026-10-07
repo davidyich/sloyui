@@ -8,6 +8,8 @@
 
 /* Sidebar groups reuse the same disclosure behavior as content accordions. */
 .cap-accordion[data-variant='navigation'] { border: 0; }
+.cap-sidebar-panel-items .cap-accordion[data-variant='navigation']:is(:hover,:focus-within) { background:transparent; }
+.cap-sidebar-panel-items:has(> .cap-moving-highlight[data-visible]) .cap-accordion[data-variant='navigation'] > summary[data-shared-hover-target] { background:transparent; }
 .cap-accordion[data-variant='navigation'] > summary { align-items: center; min-height: var(--cap-number-control-size-sm); padding: 4px 8px; color: var(--cap-content-caption); font-size: var(--cap-font-size-xxs); font-weight: 400; line-height: var(--cap-font-line-height-xxs); }
 .cap-accordion[data-variant='navigation'] > summary > svg { width: 12px; height: 12px; flex: none; }
 .cap-accordion[data-variant='navigation'] .cap-accordion-content { padding: 4px 0; }

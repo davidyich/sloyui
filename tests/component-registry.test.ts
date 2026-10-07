@@ -10,7 +10,7 @@ describe('Persistent component registry',()=>{
    const records=Object.values(registry.components);
    expect(new Set(records.map(record=>record.id)).size).toBe(records.length);
    for(const record of records){
-     expect(record.id).toMatch(/^cap-\d{3}$/);
+     expect(record.id).toMatch(/^cp-\d{3}$/);
      expect(record.groups).toContain(record.primaryGroup);
      for(const group of record.groups)expect(registry.groups.some(item=>item.id===group)).toBe(true);
      expect(Object.keys(registry.statuses)).toContain(record.status);

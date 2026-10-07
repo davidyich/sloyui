@@ -1,0 +1,15 @@
+body { margin:0; padding:24px; background:var(--cap-surface-base); color:var(--cap-content-primary); font-family:var(--cap-font-family-sans),sans-serif; }
+.resize-audit { display:grid; gap:24px; width:100%; max-width:1100px; margin:auto; min-width:0; }
+.resize-audit h1,.resize-audit h2,.resize-audit h3,.resize-audit p { margin:0; }
+.resize-audit h1 { font-size:22px; font-weight:600; }
+.resize-audit h2 { font-size:17px; font-weight:500; }
+.resize-audit-section { display:grid; gap:12px; min-width:0; }
+.resize-audit-controls { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.resize-audit-controls .cap-select { width:180px; }
+.resize-audit-copy { display:grid; gap:12px; }
+.resize-audit-card-host { width:100%; max-width:520px; min-width:0; }
+.resize-audit-stacks { display:grid; gap:24px; width:min(100%,520px); min-width:0; }
+.resize-audit-stack-copy { padding:20px; display:grid; gap:12px; }
+.resize-audit details { min-width:0; }
+.resize-audit pre { white-space:pre-wrap; overflow-wrap:anywhere; }
+@media(max-width:600px) { body { padding:12px; } }

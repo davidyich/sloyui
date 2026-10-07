@@ -4,6 +4,11 @@ import { useRef, useState } from 'react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { Accordion, SidebarItem, Tabs } from '../src/components/layout';
 import { MovingHighlight } from '../src/components/moving-highlight';
+import { FloatingActionBar, SidebarPanel } from '../src/components/workbench';
+import { Button, IconButton } from '../src/components/primitives';
+import { SegmentedControl, Select } from '../src/components/forms';
+import { ComboBox } from '../src/components/selection';
+import { Calendar } from '../src/components/content';
 
 const rect = (left: number, top: number, width: number, height: number) => ({ left, top, width, height, right: left + width, bottom: top + height, x: left, y: top, toJSON() {} }) as DOMRect;
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); });
@@ -178,6 +183,84 @@ describe('local shared hover motion', () => {
       expect(layer.style.borderRadius).toBe('16px');
       expect(animate).not.toHaveBeenCalled();
     } finally { delete (Element.prototype as unknown as { animate?: unknown }).animate; }
+  });
+});
+
+describe('composite shared surfaces', () => {
+  it('preserves filled secondary accent reactions instead of borrowing the neutral moving layer', async () => {
+    const {container}=render(<FloatingActionBar label="Mixed accents" position="static"><IconButton label="Neutral tool" icon="list" variant="ghost"/><Button variant="accent-secondary" color="purple">Colored action</Button></FloatingActionBar>);
+    await act(async()=>{});
+    const layer=container.querySelector('.cap-moving-highlight')!;
+    fireEvent.pointerOver(screen.getByRole('button',{name:'Neutral tool'}));
+    expect(layer).toHaveAttribute('data-visible','true');
+    const colored=screen.getByRole('button',{name:'Colored action'});
+    fireEvent.pointerOver(colored);
+    expect(layer).not.toHaveAttribute('data-visible');
+    expect(colored).not.toHaveAttribute('data-shared-hover-target');
+    expect(colored).toHaveAttribute('data-variant','accent-secondary');
+  });
+  it('moves one floating layer from a button through two Selects and the painted ComboBox wrapper', async () => {
+    const animate = vi.fn(() => ({ cancel: vi.fn() }));
+    Object.defineProperty(Element.prototype, 'animate', { configurable:true,value:animate });
+    vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(function(this: HTMLElement) {
+      return rect(this.getAttribute('aria-label') === 'First choice' ? 40 : this.getAttribute('aria-label') === 'Second choice' ? 140 : this.classList.contains('cap-combobox-input-wrap') ? 240 : 0, 0, 100, 32);
+    });
+    try {
+      const options=[{value:'one',label:'One'},{value:'two',label:'Two'}];
+      const {container}=render(<FloatingActionBar label="Mixed tools" position="static" variant="divided"><IconButton label="Tool" icon="list" variant="ghost"/><Select aria-label="First choice" variant="ghost" options={options}/><Select aria-label="Second choice" variant="ghost" options={options}/><ComboBox label="Third choice" variant="ghost" options={options}/></FloatingActionBar>);
+      await act(async()=>{});
+      const layer=container.querySelector<HTMLElement>('.cap-floating-items > .cap-moving-highlight')!;
+      fireEvent.pointerOver(screen.getByRole('button',{name:'Tool'}));
+      for(const name of ['First choice','Second choice']) {
+        const trigger=screen.getByRole('combobox',{name});
+        fireEvent.pointerOver(trigger.querySelector('span')!);
+        expect(trigger).toHaveAttribute('data-shared-hover-target','true');
+        expect(layer).toHaveAttribute('data-visible','true');
+      }
+      const input=screen.getByRole('combobox',{name:'Third choice'}),painted=input.closest('.cap-combobox-input-wrap')!;
+      fireEvent.pointerOver(input);
+      expect(painted).toHaveAttribute('data-shared-hover-target','true');
+      expect(layer.style.transform).toBe('translate3d(240px,0px,0)');
+      expect(animate).toHaveBeenCalledTimes(3);
+      fireEvent.pointerOver(painted.querySelector('svg')!);
+      expect(animate).toHaveBeenCalledTimes(3);
+    } finally { delete (Element.prototype as unknown as {animate?:unknown}).animate; }
+  });
+  it('lets calendar month/year controls share their period layer', async () => {
+    const {container}=render(<Calendar label="Calendar" defaultMonth="2026-10-01" onValueChange={()=>{}}/>);
+    await act(async()=>{});
+    const layer=container.querySelector<HTMLElement>('.cap-calendar-period .cap-moving-highlight')!;
+    const month=screen.getByRole('combobox',{name:'Месяц'}),year=screen.getByRole('combobox',{name:'Год'});
+    fireEvent.pointerOver(month);
+    expect(layer).toHaveAttribute('data-visible','true');
+    fireEvent.pointerOver(year);
+    expect(layer).toHaveAttribute('data-visible','true');
+    expect(year.closest('.cap-combobox-input-wrap')).toHaveAttribute('data-shared-hover-target','true');
+  });
+  it('preserves one sidebar layer across summaries and secondary colored rows without freezing an inherited accent', async () => {
+    const {container}=render(<div data-accent="blue"><SidebarPanel label="Space"><Accordion title="Work" variant="navigation" defaultOpen><SidebarItem icon="page">Notes</SidebarItem><SidebarItem color="purple">Projects</SidebarItem><SidebarItem color="inherit">Inherited</SidebarItem></Accordion></SidebarPanel></div>);
+    await act(async()=>{});
+    const layer=container.querySelector<HTMLElement>('.cap-sidebar-panel-items > .cap-moving-highlight')!;
+    fireEvent.pointerOver(screen.getByText('Work'));
+    expect(screen.getByText('Work').closest('summary')).toHaveAttribute('data-shared-hover-target','true');
+    fireEvent.pointerOver(screen.getByText('Projects'));
+    expect(layer).toHaveAttribute('data-visible','true');
+    expect(layer).toHaveAttribute('data-accent','purple');
+    fireEvent.pointerOver(screen.getByText('Inherited'));
+    expect(layer).toHaveAttribute('data-accented');
+    expect(layer).not.toHaveAttribute('data-accent');
+    fireEvent.pointerOver(screen.getByText('Notes'));
+    expect(layer).not.toHaveAttribute('data-accented');
+  });
+  it('keeps the selected segment radius in CSS so global radius changes cannot leave a frozen inline corner', async () => {
+    const {container}=render(<SegmentedControl label="View" value="one" onValueChange={()=>{}} options={[{value:'one',label:'One'},{value:'two',label:'Two'}]}/>);
+    await act(async()=>{});
+    const layer=container.querySelector<HTMLElement>('.cap-moving-highlight')!;
+    expect(layer.style.borderRadius).toBe('');
+    document.documentElement.dataset.radius='rounded';
+    await act(async()=>{});
+    expect(layer.style.borderRadius).toBe('');
+    delete document.documentElement.dataset.radius;
   });
 });
 

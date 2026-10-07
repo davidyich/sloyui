@@ -8,4 +8,8 @@ body { margin:0; padding:24px; background:var(--cap-surface-base); color:var(--c
 .hover-fixture-outer { display:grid; gap:16px; }
 .hover-fixture-direct { display:flex; gap:8px; }
 .hover-fixture pre { max-height:50vh; overflow:auto; white-space:pre-wrap; font:12px/1.5 monospace; padding:16px; background:var(--cap-surface-raised); border-radius:var(--cap-radius-base); }
+.hover-fixture h2 { font-size:18px; font-weight:500; margin-block:24px 12px; }
+.hover-fixture-expanded { display:grid; grid-template-columns:minmax(0,1fr) minmax(220px,1fr); gap:24px; }
+#composite-tools .cap-selection-field { width:100px; }
 @media(max-width:700px) { body { padding:12px; } .hover-fixture-frame { grid-template-columns:minmax(0,1fr); } }
+@media(max-width:700px) { .hover-fixture-expanded { grid-template-columns:minmax(0,1fr); } }

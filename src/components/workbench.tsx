@@ -90,7 +90,7 @@ export interface ButtonGroupProps extends Omit<HTMLAttributes<HTMLDivElement>, '
 export function ButtonGroup({ label, attached = true, size, orientation = 'horizontal', prefix, color = 'neutral', className, children, ...props }: ButtonGroupProps) {
   const track = useRef<HTMLDivElement>(null);
   return <div role="group" aria-label={label} className={cx('cap-button-group', className)} data-attached={attached || undefined} data-size={size} data-orientation={orientation} data-color={color} data-accent={color === 'inherit' ? undefined : color} {...props}>
-    {prefix !== undefined && <span className="cap-button-group-prefix">{(typeof prefix === 'number' || typeof prefix === 'string') ? <Counter value={prefix} size={size ?? 'md'} variant="plain"/> : prefix}</span>}<div ref={track} className="cap-button-group-items" data-moving={attached||undefined}>{attached&&<MovingHighlight root={track} hover/>}{children}</div>
+    {prefix !== undefined && <span className="cap-button-group-prefix">{(typeof prefix === 'number' || typeof prefix === 'string') ? <Counter value={prefix} size={size ?? 'md'} variant="plain"/> : prefix}</span>}<div ref={track} className={cx("cap-button-group-items", attached && "cap-shared-hover")} data-moving={attached||undefined}>{attached&&<MovingHighlight root={track} hover/>}{children}</div>
   </div>;
 }
 
@@ -156,7 +156,7 @@ export function FloatingActionBar({ position = 'sticky', size = 'md', leading, t
   const hoverRoot = useRef<HTMLDivElement>(null);
   return <ActionBar className={cx('cap-floating-action-bar', className)} data-position={position} data-variant={variant} data-surface="floating" size={size} orientation={orientation} {...props}>
     {leading && <div className="cap-floating-leading-slot">{leading}</div>}
-    <div ref={hoverRoot} className="cap-floating-items cap-shared-hover"><MovingHighlight root={hoverRoot} hover target=".cap-button:not(:disabled):not([data-variant=primary]):not([data-variant=accent])"/>{variant==='divided'?floatingSegments(children).map((child,index)=><div className="cap-floating-segment" key={isValidElement(child) ? child.key ?? index : index}>{child}</div>):children}</div>
+    <div ref={hoverRoot} className="cap-floating-items cap-shared-hover"><MovingHighlight root={hoverRoot} hover target=".cap-button:not(:disabled):not([data-variant=primary]):not([data-variant=accent]):not([data-variant=accent-secondary]),.cap-select-trigger:not(:disabled),.cap-combobox-input-wrap:not(:has(input:disabled))"/>{variant==='divided'?floatingSegments(children).map((child,index)=><div className="cap-floating-segment" key={isValidElement(child) ? child.key ?? index : index}>{child}</div>):children}</div>
     {(action || (trailing && orientation==='horizontal')) && <div className="cap-floating-trailing-slot">{action ? orientation==='vertical' ? <IconButton label={action.label} icon={action.icon} variant={action.variant??'accent'} onClick={action.onClick} disabled={action.disabled}/> : <Button variant={action.variant??'accent'} onClick={action.onClick} disabled={action.disabled} leading={<Icon name={action.icon}/>}>{action.label}</Button> : trailing}</div>}
   </ActionBar>;
 }

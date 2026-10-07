@@ -1,6 +1,6 @@
 # Selection controls
 
-`Chip` is a neutral selection token for tag clouds and selected choices. Use `selected` with `onClick` for toggles; `onRemove` or `action` creates a separate sibling action. `interactive={false}` makes every slot static. It inherits surface, borders and radius; it does not inherit a chromatic accent.
+`Chip` is a neutral selection token for tag clouds and selected choices. Use `selected` with `onClick` for toggles; `onRemove` or `action` creates a separate sibling action. `interactive={false}` makes every slot static. It inherits surface, borders and radius; it does not inherit a chromatic accent. At the same size Chip is 4px taller than Tag, with more vertical padding. Its default shape has soft corners; local `data-radius="rounded"` makes it fully pill, while explicit `shape="pill"` remains pill in every radius mode.
 
 `MultiSelect` uses neutral Chip values. Add `group`, `description`, `icon` or optional semantic `color` to individual options. A color renders an 8px decorative dot. The legacy component `color` prop remains accepted but no longer colors chips. Disabled options remain selected and cannot be removed via Backspace or bulk clear. Unique option values are required. `maxVisible` limits rendered chips, while every selected value remains in native form data.
 

@@ -19,7 +19,7 @@
 .cap-segmented .cap-segment { z-index:1; }
 .cap-segmented .cap-segment > span { min-height:var(--cap-segment-height); justify-content:center; width:100%; padding:0 calc(10px + var(--cap-radius-inset)); border-radius:var(--cap-radius-base); font-size:var(--cap-font-size-sm); }
 .cap-segmented .cap-segment input:checked + span { background:transparent; box-shadow:none; }
-.cap-segmented > .cap-moving-highlight { background:var(--cap-surface-raised); box-shadow:0 1px 3px var(--cap-reaction-hover); }
+.cap-segmented > .cap-moving-highlight { border-radius:var(--cap-radius-base); background:var(--cap-surface-raised); box-shadow:0 1px 3px var(--cap-reaction-hover); }
 .cap-segmented[data-variant='outline'] { background:transparent; border-color:var(--cap-control-border); }
 .cap-segmented[data-variant='accent'] > .cap-moving-highlight { background:var(--cap-accent-normal); }
 .cap-segmented[data-variant='accent'] .cap-segment input:checked + span { color:var(--cap-accent-text); }
@@ -93,6 +93,13 @@
 :where(.cap-shared-hover) { position:relative; isolation:isolate; }
 .cap-shared-hover > :not(.cap-moving-highlight,.cap-tree-selection-indicator,.cap-tree-active-guide-indicator) { position:relative; z-index:1; }
 .cap-shared-hover > .cap-moving-highlight[data-kind='hover'] { background:var(--cap-control-hover); }
+.cap-shared-hover > .cap-moving-highlight[data-kind='hover'][data-accented] { background:var(--cap-accent-hover); }
+/* The actual painted target can be wrapped by a field or disclosure. Its marker
+   replaces only transient paint; expanded/pressed/active states stay explicit. */
+.cap-shared-hover [data-shared-hover-target],
+.cap-shared-hover [data-shared-hover-target] > .cap-combobox-input { transition-property:border-color,color,opacity,transform; }
+.cap-shared-hover:has(> .cap-moving-highlight[data-kind='hover'][data-visible]) :is(.cap-select-trigger,.cap-sidebar-item,.cap-combobox-input-wrap)[data-shared-hover-target]:not(:disabled):not([aria-current='page']):not([aria-expanded='true']):not([aria-pressed='true']),
+.cap-shared-hover:has(> .cap-moving-highlight[data-kind='hover'][data-visible]) .cap-combobox-input-wrap[data-shared-hover-target]:not(:has(input[aria-expanded='true'])) > .cap-combobox-input { background:transparent; }
 .cap-shared-hover:has(> .cap-moving-highlight[data-kind='hover'][data-visible]) :is(.cap-sidebar-item,.cap-tree-item,.cap-menu-item,.cap-select-option,.cap-button[data-variant='ghost'],.cap-button[data-variant='secondary']):not(:disabled):not([aria-disabled='true']):not([aria-current='page']):not([aria-selected='true']):not([aria-pressed='true']):not([data-accented]):is(:hover,:focus-visible,[data-active='true']) { background:transparent; }
 .cap-navigation-items:has(> .cap-moving-highlight[data-visible]) > a:not([aria-current='page']):is(:hover,:focus-visible),
 .cap-navigation-panel:has(> .cap-moving-highlight[data-visible]) .cap-navigation-grid > a:is(:hover,:focus-visible) { background:transparent; }

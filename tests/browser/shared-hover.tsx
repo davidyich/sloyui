@@ -4,7 +4,11 @@ import { flushSync } from 'react-dom';
 import { Button, IconButton } from '../../src/components/primitives';
 import { TreeView, type TreeNode } from '../../src/components/tree-view';
 import { NavigationMenu } from '../../src/components/navigation-menu';
-import { FloatingActionBar } from '../../src/components/workbench';
+import { FloatingActionBar, SidebarPanel } from '../../src/components/workbench';
+import { Accordion, SidebarItem } from '../../src/components/layout';
+import { Select, SegmentedControl } from '../../src/components/forms';
+import { ComboBox } from '../../src/components/selection';
+import { Calendar } from '../../src/components/content';
 import { MovingHighlight } from '../../src/components/moving-highlight';
 import '../../src/styles/styles.css';
 import '../../src/styles/fonts.css';
@@ -37,12 +41,15 @@ function instrument(layer: HTMLElement) {
 
 function Fixture() {
   const [selected,setSelected]=useState('colors'),[running,setRunning]=useState(false),[result,setResult]=useState(''),[status,setStatus]=useState('Ready');
+  const [period,setPeriod]=useState('week'),[view,setView]=useState('board'),[year,setYear]=useState('2026'),[segment,setSegment]=useState('one'),[date,setDate]=useState('2026-10-08');
+  const [nativeExpanded,setNativeExpanded]=useState(false);
   const outer=useRef<HTMLDivElement>(null),sidebar=useRef<HTMLDivElement>(null);
   async function run() {
     setRunning(true);setResult('');setStatus('Running finite hover sequence');
     const record: Record<string,unknown>={viewport:{width:innerWidth,height:innerHeight},reducedMotion:matchMedia('(prefers-reduced-motion: reduce)').matches};
     const checks: Record<string,boolean>={};
     const restored: (()=>void)[]=[];
+    const originalRadius=document.documentElement.getAttribute('data-radius');
     try {
       const tree=sidebar.current!.querySelector<HTMLElement>('.cap-tree')!,scroll=sidebar.current!.querySelector<HTMLElement>('.hover-fixture-scroll')!;
       scroll.scrollTop=0; flushSync(()=>setSelected('colors'));
@@ -108,17 +115,87 @@ function Fixture() {
         pointer(scope,'pointerleave');
       }
       record.nestedScopes=scopes;checks.nestedScopesOwnTheirMotion=scopes.every(scope=>scope.entered&&scope.outerHidden&&scope.noNestedRestart);
+      async function composite(selector:string,targets:HTMLElement[],key:string) {
+        const scope=document.querySelector<HTMLElement>(selector)!,localLayer=scope.querySelector<HTMLElement>(':scope > .cap-moving-highlight')!;
+        pointer(scope,'pointerleave');await pause(140);
+        const localMotion=instrument(localLayer);restored.push(localMotion.restore);
+        const phases=[];
+        for (const [index,target] of targets.entries()) {
+          pointer(target);await pause(35);
+          const painted=target.closest<HTMLElement>('[data-shared-hover-target]')??target;
+          const count=localMotion.calls();pointer(target.querySelector('svg')??target);
+          phases.push({index,name:target.getAttribute('aria-label')??target.textContent,paintedClass:painted.className,
+            marked:painted.hasAttribute('data-shared-hover-target'),fill:getComputedStyle(painted).backgroundColor,
+            noRestart:count===localMotion.calls(),...localMotion.sample()});
+        }
+        await pause(250);
+        const painted=targets.at(-1)!.closest<HTMLElement>('[data-shared-hover-target]')??targets.at(-1)!;
+        const difference=distance(bounds(localLayer),bounds(painted));
+        record[key]={phases,finalGeometryDifference:difference};
+        checks[`${key}Continuous`]=phases.every(phase=>phase.visible&&phase.marked&&phase.noRestart)&&difference<=1;
+        checks[`${key}PaintOwnedByLayer`]=phases.every(phase=>phase.fill==='rgba(0, 0, 0, 0)'||phase.fill==='transparent');
+        return {layer:localLayer,painted};
+      }
+      const mixed=document.querySelector<HTMLElement>('#composite-tools .cap-floating-items')!;
+      const mixedTargets=[mixed.querySelector<HTMLElement>('[aria-label="Mixed button"]')!,mixed.querySelector<HTMLElement>('button[aria-label="First Select"]')!,mixed.querySelector<HTMLElement>('button[aria-label="Second Select"]')!,mixed.querySelector<HTMLElement>('[aria-label="Year choice"]')!];
+      const mixedResult=await composite('#composite-tools .cap-floating-items',mixedTargets,'mixedControls');
+      pointer(mixed.querySelector('button[aria-label="Disabled choice"]')!);
+      checks.disabledCompositeClearsHover=!mixedResult.layer.hasAttribute('data-visible');
+      pointer(mixedTargets[0]);
+      const secondaryAccent=mixed.querySelector<HTMLElement>('[data-variant="accent-secondary"]')!;
+      pointer(secondaryAccent);
+      checks.secondaryAccentKeepsOwnReaction=!mixedResult.layer.hasAttribute('data-visible')&&!secondaryAccent.hasAttribute('data-shared-hover-target');
+      const calendar=document.querySelector<HTMLElement>('#calendar-check .cap-calendar-period .cap-button-group-items')!;
+      const calendarTargets=[calendar.querySelector<HTMLElement>('button[aria-label="Месяц"]')!,calendar.querySelector<HTMLElement>('input[aria-label="Год"]')!];
+      const calendarResult=await composite('#calendar-check .cap-button-group-items',calendarTargets,'calendarPeriod');
+      const panel=document.querySelector<HTMLElement>('#sidebar-check .cap-sidebar-panel-items')!;
+      const sidebarTargets=[panel.querySelector<HTMLElement>('summary')!,panel.querySelector<HTMLElement>('[data-sidebar-row="neutral"]')!,panel.querySelector<HTMLElement>('[data-sidebar-row="colored"]')!];
+      const sidebarResult=await composite('#sidebar-check .cap-sidebar-panel-items',sidebarTargets,'sidebarRows');
+      checks.sidebarAccentPreserved=sidebarResult.layer.dataset.accent==='purple'&&sidebarResult.layer.hasAttribute('data-accented');
+      const segmentRoot=document.querySelector<HTMLElement>('#segment-global .cap-segmented')!,segmentLayer=segmentRoot.querySelector<HTMLElement>('.cap-moving-highlight')!;
+      const segmentPaint=segmentRoot.querySelector<HTMLElement>('.cap-segment:has(input:checked) > span')!;
+      const radiusSamples=[];
+      for (const radius of ['compact','default','rounded']) {
+        document.documentElement.dataset.radius=radius;await frame();await frame();
+        const global={radius,outer:getComputedStyle(segmentRoot).borderRadius,expected:getComputedStyle(segmentPaint).borderRadius,actual:getComputedStyle(segmentLayer).borderRadius,inline:segmentLayer.style.borderRadius};
+        const local=[];
+        for (const id of ['composite-tools','calendar-check','sidebar-check','segment-local']) {
+          const context=document.getElementById(id)!;context.dataset.radius=radius;await frame();await frame();
+          const localLayer=context.querySelector<HTMLElement>(id==='segment-local'?'.cap-segmented > .cap-moving-highlight':id==='sidebar-check'?'.cap-sidebar-panel-items > .cap-moving-highlight':id==='calendar-check'?'.cap-button-group-items > .cap-moving-highlight':'.cap-floating-items > .cap-moving-highlight')!;
+          const painted=id==='segment-local'?context.querySelector<HTMLElement>('.cap-segment:has(input:checked) > span')!:id==='sidebar-check'?sidebarResult.painted:id==='calendar-check'?calendarResult.painted:mixedResult.painted;
+          // Re-enter a disabled-cleared mixed scope before inspecting its radius.
+          if(id==='composite-tools') pointer(mixedTargets.at(-1)!);
+          local.push({id,expected:getComputedStyle(painted).borderRadius,actual:getComputedStyle(localLayer).borderRadius});
+        }
+        radiusSamples.push({global,local});
+      }
+      record.compositeRadius=radiusSamples;
+      checks.segmentGlobalRadiusFollowsCSS=radiusSamples.every(sample=>sample.global.expected===sample.global.actual&&sample.global.inline==='')&&new Set(radiusSamples.map(sample=>sample.global.actual)).size===3;
+      checks.compositeLocalRadiiMatch=radiusSamples.every(sample=>sample.local.every(local=>local.expected===local.actual));
+      const details=document.querySelector<HTMLDetailsElement>('#native-accordion-check details')!,summary=details.querySelector<HTMLElement>('summary')!;
+      if(details.open) {summary.click();await pause(250);}
+      summary.querySelector<HTMLElement>('span')!.click();await pause(250);
+      const nativeOpen=details.open&&details.dataset.expanded==='true';
+      summary.querySelector<HTMLElement>('span')!.click();await pause(250);
+      const nativeClosed=!details.open&&details.dataset.expanded==='false';
+      record.nativeAccordion={fallback:details.hasAttribute('data-fallback'),nativeOpen,nativeClosed};
+      checks.nativeDisclosureClickDoesNotDoubleToggle=nativeOpen&&nativeClosed;
       setResult(JSON.stringify({date:new Date().toISOString(),passed:Object.values(checks).every(Boolean),checks,record},null,2));
       setStatus(Object.values(checks).every(Boolean)?'All hover checks passed':'Hover checks need review');
     } catch(error) {setStatus(`Failed: ${String(error)}`);setResult(JSON.stringify({passed:false,error:String(error),checks,record},null,2));}
-    finally {restored.forEach(restore=>restore());setRunning(false);}
+    finally {restored.forEach(restore=>restore());if(originalRadius===null)delete document.documentElement.dataset.radius;else document.documentElement.dataset.radius=originalRadius;setRunning(false);}
   }
   return <main className="hover-fixture"><h1>Shared hover verification</h1><Button disabled={running} onClick={run}>Run hover sequence</Button><p id="hover-status" role="status">{status}</p>
     <div ref={outer} className="hover-fixture-outer cap-shared-hover"><MovingHighlight root={outer} hover/>
       <div className="hover-fixture-direct"><Button variant="ghost" data-direct="one">Outer one</Button><Button variant="ghost">Outer two</Button></div>
       <div className="hover-fixture-frame" data-surface="raised"><aside ref={sidebar} className="hover-fixture-sidebar" data-radius="default"><div className="hover-fixture-scroll"><TreeView label="Catalogue navigation" nodes={nodes} selectedId={selected} onSelect={node=>setSelected(node.id)} defaultExpandedIds={['foundation','nested','components']} showGuides/></div></aside>
       <div className="hover-fixture-tools"><NavigationMenu label="Nested navigation" activeId="overview" items={[{id:'overview',label:'Overview',href:'#Overview'},{id:'activity',label:'Activity',href:'#Activity'},{id:'reports',label:'Reports',href:'#Reports'}]}/><FloatingActionBar label="Nested floating tools" position="static" variant="divided"><IconButton label="List view" icon="list"/><IconButton label="Grid view" icon="grid"/><IconButton label="Filter" icon="filter"/></FloatingActionBar></div></div>
-    </div><pre id="hover-result">{result}</pre>
+    </div>
+    <div id="composite-tools" data-radius="default"><h2>Mixed floating controls</h2><FloatingActionBar label="Mixed controls" position="static" variant="divided"><IconButton label="Mixed button" icon="list" variant="ghost"/><Select aria-label="First Select" variant="ghost" value={period} onValueChange={setPeriod} options={[{value:'week',label:'Week'},{value:'month',label:'Month'}]}/><Select aria-label="Second Select" variant="ghost" value={view} onValueChange={setView} options={[{value:'board',label:'Board'},{value:'list',label:'List'}]}/><ComboBox label="Year choice" variant="ghost" value={year} onValueChange={setYear} clearable={false} options={[{value:'2026',label:'2026'},{value:'2027',label:'2027'}]}/><Select aria-label="Disabled choice" variant="ghost" disabled options={[{value:'locked',label:'Locked'}]}/><Button variant="accent-secondary" color="purple">Colored action</Button></FloatingActionBar></div>
+    <div className="hover-fixture-expanded"><div id="calendar-check" data-radius="default"><h2>Calendar period</h2><Calendar label="Calendar checks" defaultMonth="2026-10-01" today="2026-10-08" value={date} onValueChange={setDate}/></div><div id="sidebar-check" data-radius="default"><h2>Sidebar groups</h2><SidebarPanel label="Sidebar checks" header="Workspace"><Accordion title="Working group" variant="navigation" defaultOpen><SidebarItem icon="page" data-sidebar-row="neutral">Neutral row</SidebarItem><SidebarItem icon="folder" color="purple" data-sidebar-row="colored">Colored row</SidebarItem><SidebarItem active>Active static row</SidebarItem></Accordion></SidebarPanel></div></div>
+    <div id="segment-global"><h2>Segmented global radius</h2><SegmentedControl label="Global segments" value={segment} onValueChange={setSegment} options={[{value:'one',label:'One'},{value:'two',label:'Two'}]}/></div><div id="segment-local" data-radius="default"><h2>Segmented local radius</h2><SegmentedControl label="Local segments" value={segment} onValueChange={setSegment} options={[{value:'one',label:'One'},{value:'two',label:'Two'}]}/></div>
+    <div id="native-accordion-check"><h2>Native disclosure</h2><Accordion title="Native disclosure check" onOpenChange={setNativeExpanded}><p>Disclosure content stays open after a real browser click.</p></Accordion><p id="native-disclosure-status">{nativeExpanded?'Expanded':'Collapsed'}</p></div>
+    <pre id="hover-result">{result}</pre>
   </main>;
 }
 createRoot(document.getElementById('root')!).render(<Fixture/>);

@@ -11,6 +11,22 @@ import { ToastStack } from '../src/components/messages';
 
 afterEach(() => { vi.unstubAllGlobals(); vi.useRealTimers(); });
 
+it('prevents the browser default from toggling an uncontrolled native accordion a second time', async () => {
+  vi.stubGlobal('CSS', { supports: () => true });
+  const user=userEvent.setup(),changed=vi.fn();
+  const {container}=render(<Accordion title={<span>Native title</span>} onOpenChange={changed}><button>Native action</button></Accordion>);
+  const details=container.querySelector('details')!;
+  expect(details).not.toHaveAttribute('data-fallback');
+  await user.click(screen.getByText('Native title'));
+  expect(details).toHaveAttribute('open');
+  expect(details).toHaveAttribute('data-expanded','true');
+  expect(changed).toHaveBeenLastCalledWith(true);
+  await user.click(screen.getByText('Native title'));
+  expect(details).not.toHaveAttribute('open');
+  expect(details).toHaveAttribute('data-expanded','false');
+  expect(changed.mock.calls).toEqual([[true],[false]]);
+});
+
 it('keeps native accordion keyboard behavior and hides closing content before the fallback transition ends', async () => {
   const user = userEvent.setup();
   const { container } = render(<Accordion title="Details"><button type="button">Inner action</button></Accordion>);

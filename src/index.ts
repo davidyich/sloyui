@@ -66,3 +66,6 @@ export type { PreviewRailProps, PreviewRailItem } from './components/preview-rai
 export type { ToastProps } from './components/overlays.js';
 export type { FeedbackStyleProps, FeedbackSurface } from './components/feedback.js';
 export type { StackDirection } from './components/stack-layout.js';
+
+export { ResizableCard } from './components/resizable-card.js';
+export type { ResizableCardProps, ResizableCardSize } from './components/resizable-card.js';
