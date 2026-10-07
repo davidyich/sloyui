@@ -9,3 +9,5 @@ The same manifest records own `usage`, `agentNotes` and `related`. Concise guida
 `ControlList` keeps size first in both Playground registries and places field focus width/offset together at the end. Do not duplicate global appearance/accent/surface/border/radius controls in a component's settings.
 
 The catalogue sidebar paints Canvas, content paints Base. Preview context is independent. Use the full-width Playground layout for ContentLayout so resize handles have room; keep demonstration controls separated from their panels by a real gap. Overview thumbnails are noninteractive, lazy rendered previews, while component pages remain interactive.
+
+The palette viewer uses the standard surface SegmentedControl on its own responsive controls row. “Переносить по ширине” defaults on: row mode wraps shade cells; column mode wraps complete palettes. Turning it off preserves a continuous horizontal strip with edge fades and a hidden scrollbar. Switching layout resets only that scroll viewport, keeping the selected shade.

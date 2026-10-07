@@ -1,5 +1,5 @@
 import { useState, type CSSProperties } from 'react';
-import { Badge, Button, IconBox, SegmentedControl, ScrollArea, Tag, TypeLabel, colors, type Color } from '../src';
+import { Badge, Button, IconBox, SegmentedControl, ScrollArea, Switch, Tag, TypeLabel, colors, type Color } from '../src';
 import { Input } from '../src/components/forms';
 import palettes from '../src/tokens/accents.json';
 import './palette-layout.css';
@@ -9,6 +9,7 @@ const paletteNames: Color[] = ['neutral', ...colors.filter(color => color !== 'n
 type PaletteView = 'rows' | 'columns';
 export default function ColorsV2({ theme, accent, copy }: { theme: 'light' | 'dark'; accent: Color; copy: (value: string) => void }) {
   const [paletteView, setPaletteView] = useState<PaletteView>('rows');
+  const [wrapPalettes, setWrapPalettes] = useState(true);
   const [actions, setActions] = useState(0);
   const [selectedShade, setSelectedShade] = useState<string | null>(null);
   const copyShade = (paletteName: Color, step: string) => copy(`var(--cap-palette-${paletteName === 'neutral' || paletteName === 'gray' ? 'gray' : paletteName}-${step})`);
@@ -22,10 +23,15 @@ export default function ColorsV2({ theme, accent, copy }: { theme: 'light' | 'da
     </div>;
   };
   return <><header className="page-intro"><div className="eyebrow">ОСНОВЫ / ЦВЕТ</div><h1>Полные палитры и состояния</h1><p>417 исходных цветов. 17 акцентных растяжек по 22 оттенка, 41 оттенок gray и black / white. Вторичные элементы подобраны по относительной яркости для четырёх поверхностей в двух темах.</p></header>
-    <section className="v2-color-section cap-v2-palettes">
-      <div className="section-heading cap-v2-palettes-heading"><div><h2>Полные палитры</h2><p className="muted">Все оттенки рядом. Нажмите на образец, чтобы скопировать ссылку на токен.</p></div><SegmentedControl label="Вид палитр" value={paletteView} onValueChange={value => setPaletteView(value as PaletteView)} variant="ghost" size="sm" options={[{ value: 'rows', label: 'Строки' }, { value: 'columns', label: 'Столбцы' }]}/></div>
-      {paletteView === 'rows' ? <ScrollArea className="cap-v2-palette-scroll" label="Все цветовые палитры по строкам" axis="horizontal" scrollbar="auto"><div className="cap-v2-palette-rows">{paletteNames.map(name => renderPalette(name, 'rows'))}</div></ScrollArea>
-        : <ScrollArea className="cap-v2-palette-scroll" label="Все цветовые палитры по столбцам" axis="horizontal" scrollbar="auto"><div className="cap-v2-palette-columns">{paletteNames.map(name => renderPalette(name, 'columns'))}</div></ScrollArea>}
+    <section className="v2-color-section cap-v2-palettes" data-wrap={wrapPalettes}>
+      <div className="section-heading cap-v2-palettes-heading"><div><h2>Полные палитры</h2><p className="muted">Все оттенки рядом. Нажмите на образец, чтобы скопировать ссылку на токен.</p></div></div>
+      <div className="cap-v2-palette-controls">
+        <SegmentedControl label="Вид палитр" value={paletteView} onValueChange={value => setPaletteView(value as PaletteView)} size="sm" options={[{ value: 'rows', label: 'Строки' }, { value: 'columns', label: 'Столбцы' }]}/>
+        <Switch label="Переносить по ширине" size="sm" variant="neutral" checked={wrapPalettes} onChange={event => setWrapPalettes(event.target.checked)}/>
+      </div>
+      <ScrollArea key={`${paletteView}-${wrapPalettes}`} className="cap-v2-palette-scroll" label={`Все цветовые палитры по ${paletteView === 'rows' ? 'строкам' : 'столбцам'}`} axis="horizontal" scrollbar="hidden">
+        <div className={`cap-v2-palette-${paletteView}`}>{paletteNames.map(name => renderPalette(name, paletteView))}</div>
+      </ScrollArea>
     </section>
     <section className="v2-color-section"><h2>Компоненты на каждой поверхности · {theme}</h2><p className="muted">Эти семантические роли используют все компоненты. Переключите тему в плавающей панели, чтобы проверить вторую половину матрицы. Disabled сохраняет читаемый текст и блокирует действия.</p><div className="v3-surface-comparison">{surfaces.map(surface => <section className="state-surface" key={surface} data-surface={surface} data-accent={accent} style={{background:'var(--cap-surface-current)',color:'var(--cap-content-primary)',padding:20,borderRadius:'var(--cap-radius-md)'}}><h3>{surface}</h3>{states.map(state => <div className="state-component-row" key={state} data-audit-state={state}><small>{state}</small><Button data-state={state} disabled={state === 'disabled'}>Secondary</Button><Button variant="accent" data-state={state} disabled={state === 'disabled'}>Action</Button><Button variant="danger" data-state={state} disabled={state === 'disabled'}>Danger</Button><Input aria-label={`${surface} ${state}`} placeholder="Поле" data-state={state} disabled={state === 'disabled'}/><Tag data-state={state} disabled={state === 'disabled'} onClick={() => setActions(n=>n+1)} onRemove={() => setActions(n=>n+1)}>Tag</Tag></div>)}<div className="demo-row"><Badge>Badge</Badge><TypeLabel>TypeLabel</TypeLabel><IconBox icon="cube"/></div></section>)}</div><p role="status">Действия тегов: {actions}</p></section>
     <section className="v2-color-section"><h2>Все акценты · четыре состояния</h2><p className="muted">Столбцы: normal, hover, pressed, disabled. Цветной текст сохраняется в трёх активных состояниях; disabled получает общую нейтральную пару.</p><div className="tag-matrix-grid" role="region" aria-label="Акценты на четырёх поверхностях" tabIndex={0}>{surfaces.map(surface => <section key={surface} data-surface={surface} className="state-surface" style={{background:'var(--cap-surface-current)',color:'var(--cap-content-primary)',padding:20,borderRadius:'var(--cap-radius-md)'}}><h3>{surface}</h3><div className="tag-matrix-header">{states.map(s=><small key={s}>{s}</small>)}</div>{colors.map(color=><div className="tag-matrix-row" key={color} data-audit-color={color}>{states.map(state=><Tag interactive key={state} color={color} data-state={state} disabled={state==='disabled'}>{color}</Tag>)}</div>)}</section>)}</div></section>
