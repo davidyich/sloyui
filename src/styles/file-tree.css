@@ -2,7 +2,7 @@
 .cap-file-tree-list { min-width:0; }
 .cap-file-tree .cap-tree-item > svg { color:var(--cap-content-muted); }
 .cap-file-tree .cap-tree-label { font-family:var(--cap-font-sans); }
-.cap-file-tree-preview { min-width:0; padding:16px; color:var(--cap-content-primary); background:var(--cap-surface-current); border:1px solid var(--cap-panel-border); border-radius:calc(var(--cap-radius-base) + 8px); }
+.cap-file-tree-preview { min-width:0; padding:16px; color:var(--cap-content-primary); background:var(--cap-surface-current); border:var(--cap-border-width) solid var(--cap-panel-border); border-radius:calc(var(--cap-radius-base) + 8px); }
 .cap-file-tree-preview-heading { display:flex; align-items:center; gap:8px; min-width:0; }
 .cap-file-tree-preview-heading > svg { flex:none; color:var(--cap-content-muted); }
 .cap-file-tree-preview-heading > strong { min-width:0; overflow-wrap:anywhere; font-size:var(--cap-font-size-sm); font-weight:500; }

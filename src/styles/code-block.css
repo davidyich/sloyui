@@ -19,7 +19,6 @@
 .cap-code[data-wrap] pre{white-space:pre-wrap;overflow-wrap:anywhere}
 .cap-code code::selection,.cap-code code span::selection{background:var(--cap-accent-solid-normal);color:var(--cap-accent-solid-text)}
 .cap-code[data-variant=surface],.cap-code[data-variant=filled-outline]{--cap-code-fill-opacity:100%}
-.cap-code[data-variant=auto],.cap-code[data-variant=filled-outline]{border-color:var(--cap-code-boundary)}
 .cap-code[data-variant=outline]{background:color-mix(in srgb,var(--cap-code-background) var(--cap-code-fill-opacity),transparent)}
 .cap-code[data-variant=filled-outline]{border-color:var(--cap-code-boundary)}
 .cap-code[data-variant=outline]{--cap-code-fill-opacity:0%;--cap-code-border:var(--cap-border-strong)}

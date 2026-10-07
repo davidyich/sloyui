@@ -10,4 +10,8 @@
 
 Color palette catalogue selection and keyboard focus outline only the painted swatch. Keep shade/value labels outside the outline. Inside Textarea labels must let pointer events pass through and match the textarea's actual paint state.
 
+Borders Off hides decorative field, popup and Chip contours through `--cap-control-border` / `--cap-panel-border`. Keep meaningful choice outlines, Chip selection, Tag structural boundaries, focus/error indicators and explicit outline Buttons. Calendar previous/next actions use neutral `secondary` Buttons and follow Borders mode. Composite errors surround the whole field; disabled composites retain the opaque disabled pair even in ghost mode.
+
+Control and popup radii follow local `data-radius`; XS composite fields use the same small radius as Input. Derive inset option and step-button corners from the outer radius and clearance. Keep circle/pill geometry explicit, and add `--cap-radius-inset` to text spacing in rounded mode. Portals preserve the closest border/radius context, including changes while open.
+
 Reference direction: [Arc color picker](https://github.com/kuratlielia/arc-library/blob/439ed0ddc86d39babcfe97738f633fb361a892a5/registry/components/color-picker/color-picker.tsx) and [beUI multi-select](https://beui.dev/components/motion/multi-select). Implementations use this kit's components and native semantics without Motion or shadcn runtime dependencies.

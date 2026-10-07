@@ -67,7 +67,7 @@
 .cap-treemap-path { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:0 0 6px; color:var(--cap-content-muted); font-size:var(--cap-font-size-xs); }
 .cap-treemap-path button { border:0; border-radius:var(--cap-radius-small); padding:3px 5px; background:transparent; color:var(--cap-content-secondary); font:inherit; cursor:pointer; }
 .cap-treemap-path button:hover,.cap-treemap-path button:focus-visible { background:var(--cap-reaction-hover); color:var(--cap-content-primary); }
-.cap-treemap-item rect { vector-effect:non-scaling-stroke; }
+.cap-treemap-item rect { rx:calc((var(--cap-number-radius-xs) + var(--cap-number-radius-sm)) / 2); vector-effect:non-scaling-stroke; }
 .cap-treemap-label,.cap-treemap-value { font-size:calc(12px * var(--cap-chart-text-scale,1)); pointer-events:none; }
 .cap-treemap-label { font-weight:600; }
 .cap-treemap-value { font-weight:400; font-variant-numeric:tabular-nums; }
@@ -86,7 +86,7 @@
 .cap-counter-digit { display:inline-block; height:1em; min-width:.62ch; overflow:hidden; vertical-align:bottom; text-align:center; }
 .cap-counter-wheel { display:block; transition:transform calc(180ms * var(--cap-chart-motion,1)) cubic-bezier(.16,1,.3,1); will-change:transform; }
 .cap-counter-wheel > span { display:block; height:1em; line-height:1em; }
-.cap-heatmap-level-0,.cap-heatmap-level-1,.cap-heatmap-level-2,.cap-heatmap-level-3,.cap-heatmap-level-4 { rx:2px; transition:fill calc(180ms * var(--cap-chart-motion,1)) cubic-bezier(.16,1,.3,1),opacity calc(180ms * var(--cap-chart-motion,1)) cubic-bezier(.16,1,.3,1); }
+.cap-heatmap-level-0,.cap-heatmap-level-1,.cap-heatmap-level-2,.cap-heatmap-level-3,.cap-heatmap-level-4 { rx:var(--cap-number-radius-xs); transition:fill calc(180ms * var(--cap-chart-motion,1)) cubic-bezier(.16,1,.3,1),opacity calc(180ms * var(--cap-chart-motion,1)) cubic-bezier(.16,1,.3,1); }
 .cap-heatmap-level-0 { fill:var(--cap-control-bg); stroke:var(--cap-control-border); stroke-width:.5; }
 .cap-heatmap-level-1 { fill:var(--cap-accent-solid-normal); opacity:.28; }
 .cap-heatmap-level-2 { fill:var(--cap-accent-solid-normal); opacity:.5; }

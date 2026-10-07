@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.1 · 2026-10-07
+
+- Исправлены независимые Borders/Radius в полях, комментариях, сообщениях, коде, календаре, SVG-графиках и открытых порталах. Декоративные оболочки больше не получают постоянный структурный контур; Card и явные контуры сохраняют свой контракт.
+- Shared hover непрерывен через промежутки и дочерние иконки/текст, корректно прерывается и восстанавливается после скролла. Активные отметки бокового меню не анимируют смену выбора.
+- Поиск каталога и фильтр выровнены; `Popover.triggerIcon` предоставляет настоящий иконочный триггер. Добавлены воспроизводимые browser fixtures для всех 98 компонентов, открытых порталов и реальных WAAPI-переходов.
+
 ## 0.4.0 · 2026-10-07
 
 - Made clean checkout validation deterministic: token diagnostics create their directory; catalogue self-imports resolve to source before dist exists. Release CI also validates isolated archive consumption.

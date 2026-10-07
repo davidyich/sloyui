@@ -33,10 +33,10 @@
 .cap-calendar[data-months='2'] > .cap-calendar-body { flex-basis:40rem; }
 .cap-calendar-period.cap-button-group > .cap-button-group-items {
   background:var(--cap-control-bg);
-  outline:1px solid var(--cap-control-border);
-  outline-offset:-1px;
+  outline:var(--cap-border-width) solid var(--cap-control-border);
+  outline-offset:calc(-1 * var(--cap-border-width));
 }
-.cap-calendar-period-divider { width:1px; height:60%; flex:none; background:var(--cap-control-border); }
+.cap-calendar-period-divider { width:var(--cap-border-width); height:60%; flex:none; background:var(--cap-control-border); }
 .cap-calendar-period .cap-calendar-year { flex:0 1 6rem; width:6rem; min-width:4.5rem; gap:0; }
 .cap-calendar-year > .cap-selection-label { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
 .cap-calendar-period .cap-calendar-year .cap-combobox-wrap,
@@ -97,7 +97,3 @@
 @media (prefers-reduced-motion:reduce) {
   .cap-calendar-week > [role='gridcell'],.cap-calendar-months > .cap-moving-highlight { transition:none; }
 }
-
-/* Previous/next controls use the independently inherited decorative border mode. */
-.cap-calendar-toolbar > .cap-button[data-variant='outline'],
-.cap-calendar-toolbar > .cap-button[data-variant='outline']:disabled { border-color:var(--cap-control-border); }

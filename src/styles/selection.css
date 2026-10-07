@@ -1,6 +1,6 @@
-.cap-selection-field { display:grid; gap:var(--cap-space-2); min-width:0; width:100%; color:var(--cap-content-primary); font:400 var(--cap-font-size-sm)/var(--cap-line-height-sm) var(--cap-font-sans),sans-serif; }
+.cap-selection-field { --cap-selection-radius:var(--cap-radius-base); display:grid; gap:var(--cap-space-2); min-width:0; width:100%; color:var(--cap-content-primary); font:400 var(--cap-font-size-sm)/var(--cap-line-height-sm) var(--cap-font-sans),sans-serif; }
 .cap-selection-label { color:var(--cap-content-secondary); font-weight:500; }
-.cap-selection-field[data-size=xs] { --cap-selection-height:var(--cap-number-control-size-xs); }
+.cap-selection-field[data-size=xs] { --cap-selection-height:var(--cap-number-control-size-xs); --cap-selection-radius:var(--cap-radius-small); }
 .cap-selection-field[data-size=sm] { --cap-selection-height:var(--cap-number-control-size-sm); }
 .cap-selection-field[data-size=md] { --cap-selection-height:var(--cap-number-control-size-md); }
 .cap-selection-field[data-size=lg] { --cap-selection-height:var(--cap-number-control-size-lg); }
@@ -8,7 +8,7 @@
 .cap-selection-field[data-size=sm] :is(.cap-multiselect-box,.cap-tag-input-box) { min-height:var(--cap-number-control-size-sm); }
 .cap-selection-field[data-size=lg] :is(.cap-multiselect-box,.cap-tag-input-box) { min-height:var(--cap-number-control-size-lg); }
 .cap-combobox-wrap,.cap-combobox-input-wrap { position:relative; min-width:0; }
-.cap-combobox-input-wrap { display:flex; align-items:center; gap:8px; border-radius:var(--cap-radius-base); transition:background-color 120ms ease; }
+.cap-combobox-input-wrap { display:flex; align-items:center; gap:8px; border-radius:var(--cap-selection-radius); transition:background-color 120ms ease; }
 .cap-combobox-input { width:100%; min-width:0; padding-inline-end:calc(34px + var(--cap-radius-inset)); }
 .cap-combobox-input:has(~ .cap-combobox-clear) { padding-inline-end:calc(58px + var(--cap-radius-inset)); }
 .cap-combobox-clear { position:absolute; inset-inline-end:30px; display:grid; width:22px; height:22px; place-items:center; border:0; border-radius:var(--cap-radius-small); background:transparent; color:var(--cap-content-muted); cursor:pointer; }
@@ -23,8 +23,8 @@
 .cap-selection-popup[data-state=closed] { animation:cap-selection-exit 100ms ease both; }
 @keyframes cap-selection-enter { from { opacity:0; transform:translateY(-4px) scale(.99) } to { opacity:1; transform:translateY(0) scale(1) } }
 @keyframes cap-selection-exit { to { opacity:0; transform:translateY(-3px) scale(.99) } }
-.cap-selection-option { display:flex; width:100%; min-height:36px; align-items:center; gap:9px; border:0; border-radius:var(--cap-radius-small); padding:6px 9px; background:transparent; color:inherit; font:inherit; text-align:left; cursor:pointer; transition:background-color 100ms ease,color 100ms ease; }
-.cap-selection-group { padding:8px 9px 4px; color:var(--cap-content-muted); font-size:var(--cap-font-size-xs); font-weight:600; }
+.cap-selection-option { display:flex; width:100%; min-height:36px; align-items:center; gap:9px; border:0; border-radius:max(0px,calc(var(--cap-radius-xl) - 4px - var(--cap-border-width))); padding:6px calc(9px + var(--cap-radius-inset)); background:transparent; color:inherit; font:inherit; text-align:left; cursor:pointer; transition:background-color 100ms ease,color 100ms ease; }
+.cap-selection-group { padding:8px calc(9px + var(--cap-radius-inset)) 4px; color:var(--cap-content-muted); font-size:var(--cap-font-size-xs); font-weight:600; }
 .cap-selection-option[data-active=true],.cap-selection-option:hover:not(:disabled) { background:var(--cap-reaction-hover); }
 .cap-selection-option[aria-selected=true]:not(:disabled) { background:var(--cap-reaction-pressed); }
 .cap-selection-option:disabled { color:var(--cap-disabled-text); cursor:not-allowed; }
@@ -32,11 +32,11 @@
 .cap-selection-option-copy small,.cap-selection-empty { color:var(--cap-content-muted); font-size:var(--cap-font-size-xs); }
 .cap-selection-empty { margin:0; padding:12px; }
 .cap-selection-error { color:var(--cap-status-danger-text); font-size:var(--cap-font-size-xs); }
-.cap-multiselect-box,.cap-tag-input-box { display:flex; min-height:var(--cap-selection-height,var(--cap-number-control-size-md)); min-width:0; flex-wrap:wrap; align-items:center; gap:5px; border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-number-radius-lg); padding:5px calc(8px + var(--cap-radius-inset)); background:var(--cap-control-bg); }
+.cap-multiselect-box,.cap-tag-input-box { display:flex; min-height:var(--cap-selection-height,var(--cap-number-control-size-md)); min-width:0; flex-wrap:wrap; align-items:center; gap:5px; border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-selection-radius); padding:5px calc(8px + var(--cap-radius-inset)); background:var(--cap-control-bg); }
 .cap-multiselect-box:has(.cap-multiselect-search:focus-visible),.cap-tag-input-box:has(.cap-tag-input:focus-visible),.cap-number-field:has(input:focus-visible) { outline:var(--cap-field-focus-width,1px) solid var(--cap-focus-ring); outline-offset:var(--cap-field-focus-offset,1px); border-color:var(--cap-control-border); }
-.cap-selection-field[data-variant=ghost] :is(.cap-combobox-input,.cap-multiselect-box,.cap-tag-input-box,.cap-number-field,.cap-color-custom > input) { background:transparent; }
-.cap-selection-field[data-variant=ghost] :is(.cap-combobox-input-wrap:hover,.cap-multiselect-box:hover,.cap-tag-input-box:hover,.cap-number-field:hover,.cap-multiselect-box:focus-within,.cap-tag-input-box:focus-within,.cap-number-field:focus-within) { background:var(--cap-control-hover); }
-.cap-selection-field:not([data-variant=ghost]) :is(.cap-multiselect-box,.cap-tag-input-box,.cap-number-field):is(:hover,:focus-within) { background:var(--cap-control-hover); }
+.cap-selection-field[data-variant=ghost] :is(.cap-combobox-input,.cap-multiselect-box,.cap-tag-input-box,.cap-number-field,.cap-color-trigger):not(:disabled):not([data-disabled]) { background:transparent; }
+.cap-selection-field[data-variant=ghost] :is(.cap-combobox-input-wrap:not(:has(input:disabled)),.cap-multiselect-box:not([data-disabled]),.cap-tag-input-box:not([data-disabled]),.cap-number-field:not([data-disabled]),.cap-color-trigger:not(:disabled)):is(:hover,:focus-within) { background:var(--cap-control-hover); }
+.cap-selection-field:not([data-variant=ghost]) :is(.cap-multiselect-box,.cap-tag-input-box,.cap-number-field):not([data-disabled]):is(:hover,:focus-within) { background:var(--cap-control-hover); }
 .cap-selection-field[data-variant=ghost] .cap-number-field input { background:transparent; }
 .cap-selection-field[data-variant=ghost] .cap-color-custom :is(button,input):is(:hover,:focus-visible,:focus) { background:var(--cap-control-hover); }
 .cap-selection-chip-wrap { display:inline-flex; max-width:min(100%,18rem); min-width:0; flex:none; animation:cap-selection-enter 120ms ease both; }
@@ -81,7 +81,7 @@
 .cap-radio-group .cap-radio:checked { border-color:var(--cap-accent-normal); background:var(--cap-accent-normal); box-shadow:inset 0 0 0 4px var(--cap-surface-raised); }
 .cap-radio-group .cap-radio:focus-visible,.cap-color-swatch:focus-visible,.cap-number-field button:focus-visible { outline:var(--cap-field-focus-width,1px) solid var(--cap-focus-ring); outline-offset:var(--cap-field-focus-offset,1px); }
 .cap-color-picker { max-width:280px; }
-.cap-color-trigger { display:flex; width:100%; min-height:var(--cap-selection-height,var(--cap-number-control-size-md)); align-items:center; gap:9px; border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-number-radius-lg); padding:5px calc(10px + var(--cap-radius-inset)); background:var(--cap-control-bg); color:var(--cap-content-primary); font:inherit; text-align:left; cursor:pointer; transition:background-color 120ms ease; }
+.cap-color-trigger { display:flex; width:100%; min-height:var(--cap-selection-height,var(--cap-number-control-size-md)); align-items:center; gap:9px; border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-selection-radius); padding:5px calc(10px + var(--cap-radius-inset)); background:var(--cap-control-bg); color:var(--cap-content-primary); font:inherit; text-align:left; cursor:pointer; transition:background-color 120ms ease; }
 .cap-color-trigger:hover:not(:disabled) { background:var(--cap-control-hover); }
 .cap-color-trigger-value { flex:1; font-family:var(--cap-font-sans),sans-serif; font-size:var(--cap-font-size-sm); }
 .cap-color-trigger > svg { color:var(--cap-content-muted); }
@@ -105,7 +105,7 @@
 .cap-color-saved-item > button:last-child { display:grid; width:16px; height:20px; place-items:center; border:0; background:transparent; color:var(--cap-content-muted); cursor:pointer; }
 .cap-color-saved-item > button:focus-visible,.cap-color-saved > button:focus-visible,.cap-color-editor-head button:focus-visible { outline:var(--cap-field-focus-width,1px) solid var(--cap-focus-ring); outline-offset:var(--cap-field-focus-offset,1px); }
 .cap-color-palette { display:flex; flex-wrap:wrap; gap:8px; padding:2px; }
-.cap-color-swatch { display:grid; width:24px; height:24px; place-items:center; border:1px solid var(--cap-control-border); border-radius:var(--cap-radius-full); background:var(--cap-swatch); color:var(--cap-swatch-ink); cursor:pointer; transition:box-shadow 120ms ease; }
+.cap-color-swatch { display:grid; width:24px; height:24px; place-items:center; border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-radius-full); background:var(--cap-swatch); color:var(--cap-swatch-ink); cursor:pointer; transition:box-shadow 120ms ease; }
 .cap-color-swatch:hover:not(:disabled) { box-shadow:0 0 0 2px var(--cap-surface-floating),0 0 0 3px var(--cap-content-muted); }
 .cap-color-swatch[aria-checked=true] { outline:2px solid var(--cap-surface-floating); box-shadow:0 0 0 3px var(--cap-content-primary); }
 .cap-color-custom { display:flex; align-items:center; gap:6px; min-width:0; }
@@ -113,15 +113,17 @@
 .cap-color-custom .cap-color-format-select { font:500 var(--cap-font-size-xs)/1 var(--cap-font-sans),sans-serif; padding-inline:8px 24px; }
 .cap-color-custom .cap-selection-error { flex-basis:100%; }
 .cap-color-contrast { color:var(--cap-content-muted); font-size:var(--cap-font-size-xs); font-variant-numeric:tabular-nums; }
-.cap-color-current { display:block; width:18px; height:18px; flex:none; border:1px solid var(--cap-control-border); border-radius:var(--cap-radius-full); background:var(--cap-swatch); }
-.cap-color-custom > input { min-width:0; height:32px; border:1px solid var(--cap-control-border); border-radius:var(--cap-radius-small); padding:0 7px; background:var(--cap-control-bg); color:var(--cap-content-primary); font:inherit; }
+.cap-color-current { display:block; width:18px; height:18px; flex:none; border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-radius-full); background:var(--cap-swatch); }
+.cap-color-custom > input { min-width:0; height:32px; border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-radius-base); padding:0 calc(7px + var(--cap-radius-inset)); background:var(--cap-control-bg); color:var(--cap-content-primary); font:inherit; }
 .cap-color-custom > input { flex:1; width:0; font:400 var(--cap-font-size-xs)/var(--cap-line-height-sm) var(--cap-font-sans),sans-serif; font-variant-numeric:tabular-nums; }
 .cap-color-alpha-caption { display:flex; justify-content:space-between; margin-block-start:-3px; color:var(--cap-content-muted); font-size:var(--cap-font-size-xs); }
 .cap-color-alpha-caption output { font-variant-numeric:tabular-nums; }
 .cap-color-recent-label { flex-basis:100%; margin-inline-end:3px; color:var(--cap-content-muted); font-size:var(--cap-font-size-xs); }
-.cap-number-field { display:flex; width:max-content; min-width:132px; min-height:var(--cap-selection-height); align-items:center; border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-number-radius-lg); background:var(--cap-control-bg); }
+.cap-number-field { display:flex; width:max-content; min-width:132px; min-height:var(--cap-selection-height); align-items:center; border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-selection-radius); background:var(--cap-control-bg); }
 .cap-number-field:has(input:focus-visible) { border-color:var(--cap-control-border); }
 .cap-number-field button { display:grid; width:32px; align-self:stretch; flex:none; place-items:center; border:0; background:transparent; color:var(--cap-content-muted); cursor:pointer; }
+.cap-number-field > button:first-child { border-start-start-radius:max(0px,calc(var(--cap-selection-radius) - var(--cap-border-width))); border-end-start-radius:max(0px,calc(var(--cap-selection-radius) - var(--cap-border-width))); }
+.cap-number-field > button:last-child { border-start-end-radius:max(0px,calc(var(--cap-selection-radius) - var(--cap-border-width))); border-end-end-radius:max(0px,calc(var(--cap-selection-radius) - var(--cap-border-width))); }
 .cap-number-field button:hover:not(:disabled) { background:var(--cap-reaction-hover); color:var(--cap-content-primary); }
 .cap-number-field button:disabled { color:var(--cap-disabled-text); cursor:not-allowed; }
 .cap-number-field input { width:64px; min-width:40px; border:0; outline:0; background:transparent; color:var(--cap-content-primary); font:inherit; text-align:center; font-variant-numeric:tabular-nums; }
@@ -140,10 +142,11 @@
 @media (prefers-reduced-motion:reduce) { .cap-selection-popup,.cap-selection-option,.cap-selection-chip-wrap,.cap-combobox-autosize,.cap-radio-group[data-variant=cards] .cap-radio-option,.cap-color-swatch { animation-duration:1ms!important; transition-duration:1ms!important; } }
 
 /* Selected values stay neutral across the local accent and field hover. */
-.cap-multiselect-box .cap-chip { background:var(--cap-surface-current); border-color:var(--cap-border-subtle); }
+.cap-multiselect-box .cap-chip { background:var(--cap-surface-current); border-color:var(--cap-control-border); }
 .cap-multiselect-box .cap-chip:not([aria-disabled=true]):hover { background:var(--cap-control-hover); }
 .cap-multiselect-chevron { flex:none; color:var(--cap-content-muted); pointer-events:none; }
-.cap-multiselect-box[data-disabled] { background:var(--cap-disabled-background); color:var(--cap-disabled-text); cursor:not-allowed; }
+.cap-multiselect-box[data-disabled],.cap-tag-input-box[data-disabled],.cap-number-field[data-disabled],.cap-color-trigger:disabled { background:var(--cap-disabled-background); color:var(--cap-disabled-text); cursor:not-allowed; }
+.cap-selection-field :is(.cap-tag-input-box,.cap-number-field)[data-disabled] input { color:inherit; }
 .cap-multiselect-box[data-disabled] .cap-chip { background:var(--cap-disabled-background); }
 .cap-multiselect-option[aria-selected=true]:not(:disabled) { background:transparent; }
 .cap-multiselect-option[aria-selected=true]:not(:disabled):is(:hover,[data-active=true]) { background:var(--cap-reaction-hover); }
@@ -156,3 +159,6 @@
 .cap-selection-popup.cap-shared-hover:has(> .cap-moving-highlight[data-kind=hover][data-visible]) .cap-selection-option:not(:disabled):is(:hover,[data-active=true]) { background:transparent; }
 /* The format picker must fit its grid cell and match the adjacent value field. */
 .cap-color-custom .cap-select-trigger { min-width:0; width:100%; height:32px; }
+/* Composite fields paint one meaningful error contour around the whole control. */
+.cap-selection-field :is(.cap-multiselect-box,.cap-tag-input-box,.cap-number-field):has(input[aria-invalid=true]),.cap-color-trigger[aria-invalid=true],.cap-color-custom > input[aria-invalid=true] { border-color:var(--cap-status-danger-text); }
+.cap-color-trigger:focus-visible { outline:var(--cap-field-focus-width,1px) solid var(--cap-focus-ring); outline-offset:var(--cap-field-focus-offset,1px); }

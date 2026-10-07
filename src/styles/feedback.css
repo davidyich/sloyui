@@ -10,11 +10,11 @@
 .cap-toast-action{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .cap-feedback[data-feedback-appearance=solid] .cap-button,.cap-feedback[data-feedback-appearance=soft][data-contrast] .cap-button{color:inherit}
 .cap-status-bar[data-feedback-appearance=neutral][data-variant=plain]{background:transparent}
-.cap-status-bar[data-feedback-appearance=neutral][data-variant=surface]{background:var(--cap-surface-current)}
+.cap-status-bar[data-feedback-appearance=neutral][data-variant=surface]{background:var(--cap-control-bg)}
 .cap-status-bar:not([data-feedback-appearance=neutral]){border-radius:var(--cap-radius-base)}
 .cap-status-indicator{width:18px;height:18px}
 .cap-status-bar[aria-busy=true] .cap-status-indicator{animation:cap-pulse 1.8s ease-in-out infinite}
 .cap-alert .cap-alert-icon{width:var(--cap-alert-icon-size);height:var(--cap-alert-icon-size)}
-.cap-alert[data-feedback-appearance=neutral]{color:var(--cap-content-primary);background:var(--cap-surface-current)}
+.cap-alert[data-feedback-appearance=neutral]{color:var(--cap-content-primary);background:var(--cap-control-bg)}
 @media(prefers-reduced-motion:reduce){.cap-status-bar[aria-busy=true] .cap-status-indicator{animation:none}}
 @media(forced-colors:active){.cap-feedback{background:Canvas;color:CanvasText}.cap-feedback-icon{color:CanvasText}.cap-feedback-icon[data-contrast]{background:Canvas;color:CanvasText;border:1px solid CanvasText}}

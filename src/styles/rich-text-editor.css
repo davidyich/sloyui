@@ -12,7 +12,7 @@
 .cap-rich-editor-row[data-dragging] .cap-rich-editor-handle{cursor:grabbing}
 .cap-rich-editor-row:not(:has(.cap-rich-editor-row-actions)){grid-template-columns:minmax(0,1fr)}
 .cap-rich-editor-row:has(.cap-rich-editor-handle:hover)>.cap-rich-editor-block,.cap-rich-editor-row[data-dragging]>.cap-rich-editor-block{background:var(--cap-reaction-hover);box-shadow:inset 0 0 0 var(--cap-border-width) var(--cap-border-subtle);border-radius:var(--cap-radius-sm)}
-.cap-rich-editor-drop-marker{position:absolute;inset-inline:38px 0;top:-2px;height:2px;background:var(--cap-focus-ring);border-radius:999px;z-index:2;pointer-events:none}
+.cap-rich-editor-drop-marker{position:absolute;inset-inline:38px 0;top:-2px;height:2px;background:var(--cap-focus-ring);border-radius:var(--cap-radius-full);z-index:2;pointer-events:none}
 .cap-rich-editor-drop-marker[data-position=end]{top:auto;bottom:-2px}
 .cap-rich-editor-document[data-dragging]{user-select:none}
 .cap-rich-editor-block{min-width:0;position:relative}

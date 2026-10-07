@@ -76,9 +76,9 @@
 .cap-tooltip-body{padding:8px 10px;max-height:inherit;overflow:auto;overflow-wrap:anywhere;border-radius:inherit}
 .cap-tooltip-caption{margin-bottom:3px;font-size:var(--cap-font-size-tiny);font-weight:400;color:var(--cap-content-caption)}
 .cap-tooltip-description{margin-top:4px;font-weight:400;color:var(--cap-content-muted)}
-.cap-tooltip-v2[data-variant=inverse]{--cap-tooltip-background:var(--cap-content-primary);--cap-tooltip-foreground:var(--cap-surface-current);border-color:var(--cap-tooltip-background)}
+.cap-tooltip-v2[data-variant=inverse]{--cap-tooltip-background:var(--cap-content-primary);--cap-tooltip-foreground:var(--cap-surface-current);border-color:color-mix(in srgb,var(--cap-tooltip-background) var(--cap-outline-opacity),transparent)}
 .cap-tooltip-v2[data-variant=inverse] :is(.cap-tooltip-caption,.cap-tooltip-description){color:inherit;opacity:.85}
-.cap-tooltip-v2[data-variant=inverse] .cap-kbd{background:color-mix(in srgb,currentColor 12%,transparent);color:inherit;border-color:color-mix(in srgb,currentColor 25%,transparent)}
+.cap-tooltip-v2[data-variant=inverse] .cap-kbd{background:color-mix(in srgb,currentColor 12%,transparent);color:inherit;border-color:color-mix(in srgb,currentColor calc(var(--cap-outline-opacity) * .25),transparent)}
 .cap-tooltip-v2[data-arrow]::after{content:'';position:absolute;pointer-events:none;left:clamp(14px,var(--cap-tooltip-arrow-x,50%),calc(100% - 14px));width:10px;height:10px;box-sizing:border-box;transform:translateX(-50%) rotate(45deg);background:var(--cap-tooltip-background,var(--cap-surface-current));border-color:inherit;border-style:solid;border-width:0}
 .cap-tooltip-v2[data-arrow][data-side=top]::after{top:calc(100% - 5px);border-right-width:var(--cap-border-width);border-bottom-width:var(--cap-border-width)}
 .cap-tooltip-v2[data-arrow][data-side=bottom]::after{bottom:calc(100% - 5px);border-left-width:var(--cap-border-width);border-top-width:var(--cap-border-width)}

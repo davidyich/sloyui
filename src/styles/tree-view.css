@@ -19,5 +19,5 @@
 .cap-tree-guide[data-continues=true] { inset-block-end:-2px; }
 .cap-tree-guide::before { position:absolute; inset:0; width:1px; background:color-mix(in srgb,var(--cap-content-muted) 24%,transparent); content:""; }
 .cap-tree-active-guide-indicator[data-visible] { z-index:2; width:1px; height:18px; visibility:visible; background:var(--cap-content-primary); }
-.cap-tree-active-guide-indicator[data-ready=true] { transition:transform var(--cap-motion-morph) var(--cap-ease-organic); }
+.cap-tree-active-guide-indicator[data-ready=true] { transition:none; }
 @media (prefers-reduced-motion:reduce) { .cap-tree-selection-indicator[data-ready=true],.cap-tree-active-guide-indicator[data-ready=true] { transition:none; } }

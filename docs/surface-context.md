@@ -11,7 +11,7 @@ CSS и Figma строятся из одной модели. Источники: 
 </html>
 ```
 
-`data-theme` выбирает light/dark, `data-accent` — neutral или один из 17 акцентов, `data-surface` — реальную поверхность canvas/base/raised/floating. Атрибут поверхности наследуется, но сам не рисует произвольный контейнер. Card задаёт raised, SidebarPanel — canvas, окна и FloatingActionBar — floating. Portal сохраняет локальные тему, акцент и границы; его содержимое рассчитывается относительно floating.
+`data-theme` выбирает light/dark, `data-accent` — neutral или один из 17 акцентов, `data-surface` — реальную поверхность canvas/base/raised/floating. Атрибут поверхности наследуется, но сам не рисует произвольный контейнер. Card задаёт raised, SidebarPanel — canvas, окна и FloatingActionBar — floating. Portal сохраняет локальные тему, акцент, границы, скругления и тени, включая изменение открытой панели; его содержимое рассчитывается относительно floating.
 
 | Поверхность | Light | Dark |
 | --- | --- | --- |
@@ -40,7 +40,7 @@ Disabled использует непрозрачную нейтральную п
 
 `data-borders="off|on"` управляет только декоративными границами. Геометрия и пары состояний не меняются. Используйте `--cap-panel-border` и `--cap-control-border`, а для значимых границ и фокуса — `--cap-border-strong` и `--cap-focus-ring`. `--cap-control-bg/active`, `--cap-accent-soft/bg/block/ink` остаются совместимыми aliases.
 
-Card всегда рисует структурный контур толщиной `--cap-border-width` цветом `--cap-border-subtle`; он остаётся видимым при `data-borders="off"`, в том числе если Card Raised вложен в Raised-контейнер. Для других дочерних поверхностей с намеренно совпадающей ролью используйте `.cap-surface-boundary`. Не пытайтесь определять совпадение по вычисленному DOM-цвету: `data-surface` задаётся контекстом композиции. Контур не меняет тень и `outline` фокуса.
+Card всегда рисует структурный контур толщиной `--cap-border-width` цветом `--cap-border-subtle`; он остаётся видимым при `data-borders="off"`, в том числе если Card Raised вложен в Raised-контейнер. Для других дочерних поверхностей с намеренно совпадающей ролью используйте `.cap-surface-boundary`. Не пытайтесь определять совпадение по вычисленному DOM-цвету: `data-surface` задаётся контекстом композиции. Контур не меняет тень и `outline` фокуса. Не назначайте `.cap-surface-boundary` автоматически сообщениям, тостам и комментариям: их декоративные оболочки следуют Borders Off/On. Если вложенные панели намеренно имеют одинаковую поверхность, структурный контур задаёт композиция через `className`.
 
 Figma: Primitives / Value содержит palette, number, font. Две прежние группы el-h/el-w объединены в number/control-size. Theme имеет Light/Dark, Semantic — независимые Base/Canvas/Raised/Floating, Borders — Off/On. Задавайте параметры на родительском фрейме. Semantic ссылается на Theme, Theme — на Primitives; общие пары переиспользуются. Группы element и action содержат пары для каждого акцента, а source сохраняет 366 исходных ролей для сверки и скрыт из публикации. В веб-компонентах применяйте общие CSS-роли и локальный data-accent, а не прямые цвета палитры.
 

@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { createRef, type ChangeEvent } from 'react';
 import { Checkbox, Input, Radio, Select, Slider, Switch, Textarea } from '../src/components/forms';
 import { ComboBox, ColorPicker, MultiSelect, NumberField, TagInput } from '../src/components/selection';
+import { FloatingField } from '../src/components/workbench';
 afterEach(cleanup);
 describe('Refined native choice controls',()=>{
  it('retains keyboard selection, mixed state and disabled behavior across sizes',async()=>{
@@ -27,6 +28,56 @@ describe('Refined native choice controls',()=>{
 });
 
 describe('Field clear and focus-ring contracts',()=>{
+ it.each(['number','checkbox','radio','switch','slider'] as const)('shares direct runtime contexts with the %s shell and retains native actions',kind=>{
+  const changed=vi.fn(),focused=vi.fn();
+  const axes={'data-theme':'dark','data-accent':'purple','data-color':'purple','data-surface':'canvas','data-borders':'on','data-radius':'rounded','data-shadow':'compact'} as const;
+  const common={...axes,'aria-describedby':'extra',onFocus:focused};
+  const element=kind==='number'?<NumberField {...common} label="Local" defaultValue={1} onValueChange={changed}/> : kind==='checkbox'?<Checkbox {...common} label="Local" onChange={changed}/> : kind==='radio'?<Radio {...common} label="Local" name="choice" onChange={changed}/> : kind==='switch'?<Switch {...common} label="Local" onChange={changed}/> : <Slider {...common} label="Local" defaultValue={1} onChange={changed}/>;
+  render(<div data-theme="light" data-accent="green" data-color="green" data-surface="base" data-borders="off" data-radius="compact" data-shadow="soft"><span id="extra">Description</span>{element}</div>);
+  const role=kind==='number'?'spinbutton':kind==='slider'?'slider':kind==='radio'?'radio':kind==='switch'?'switch':'checkbox';
+  const native=screen.getByRole(role,{name:'Local'}),shell=native.closest(kind==='number'?'.cap-selection-field':kind==='slider'?'.cap-slider-field':'label')!;
+  for(const [axis,value] of Object.entries(axes)){expect(shell).toHaveAttribute(axis,value);expect(native).toHaveAttribute(axis,value);}
+  expect(native).toHaveAttribute('aria-describedby','extra');expect(shell).not.toHaveAttribute('aria-describedby');expect(shell).not.toHaveAttribute('id');
+  fireEvent.focus(native);expect(focused).toHaveBeenCalledOnce();
+  if(kind==='number'||kind==='slider')fireEvent.change(native,{target:{value:'7'}});else fireEvent.click(native);
+  expect(changed).toHaveBeenCalledOnce();
+  if(kind==='number')expect(changed).toHaveBeenLastCalledWith(7);else if(kind!=='slider')expect(native).toBeChecked();
+ });
+ it('preserves explicit Switch color and neutral variant over native context attributes',()=>{
+  const {rerender}=render(<Switch label="Local" color="green" data-accent="purple" data-color="orange" variant="neutral"/>);
+  const native=screen.getByRole('switch',{name:'Local'}),shell=native.closest('label')!;
+  expect(shell).toHaveAttribute('data-color','green');expect(shell).not.toHaveAttribute('data-accent');expect(shell).toHaveAttribute('data-variant','neutral');
+  expect(native).toHaveAttribute('data-accent','purple');expect(native).toHaveAttribute('data-color','orange');
+  rerender(<Switch label="Local" data-accent="purple" data-color="purple"/>);
+  expect(shell).toHaveAttribute('data-accent','purple');expect(shell).toHaveAttribute('data-color','purple');expect(shell).toHaveAttribute('data-variant','accent');
+ });
+ it.each(['input','textarea','select','floating'] as const)('shares direct runtime contexts with the %s label wrapper without duplicating native wiring',kind=>{
+  const changed=vi.fn(),ref=createRef<HTMLInputElement>();
+  const axes={'data-theme':'dark','data-accent':'purple','data-color':'purple','data-surface':'canvas','data-borders':'on','data-radius':'rounded','data-shadow':'compact'} as const;
+  const element=kind==='input'?<Input {...axes} ref={ref} id="local-field" label="Local" labelPlacement="inside" aria-describedby="extra" onChange={changed}/> : kind==='textarea'?<Textarea {...axes} id="local-field" label="Local" labelPlacement="inside" size="xs" aria-describedby="extra" onChange={changed}/> : kind==='select'?<Select {...axes} id="local-field" label="Local" labelPlacement="inside" aria-describedby="extra" onChange={changed} options={[{value:'a',label:'A'},{value:'b',label:'B'}]}/> : <FloatingField {...axes} ref={ref} id="local-field" label="Local" aria-describedby="extra" onChange={changed}/>;
+  const {container}=render(<div data-theme="light" data-borders="off" data-radius="compact"><span id="extra">Description</span>{element}</div>);
+  const field=screen.getByLabelText('Local'),wrapper=field.closest('.cap-labeled-field')!;
+  const native=kind==='select'?wrapper.querySelector('select')!:field;
+  for(const [axis,value] of Object.entries(axes)){expect(wrapper).toHaveAttribute(axis,value);expect(native).toHaveAttribute(axis,value);}
+  expect(field).toHaveAttribute('aria-describedby','extra');
+  expect(wrapper).not.toHaveAttribute('id'); expect(wrapper).not.toHaveAttribute('aria-describedby');
+  expect(container.querySelectorAll('#local-field')).toHaveLength(1);
+  expect(wrapper.querySelector('label')).toHaveAttribute('for','local-field');
+  fireEvent.change(native,{target:{value:kind==='select'?'b':'updated'}});
+  expect(changed).toHaveBeenCalledOnce();
+  if(kind==='input'||kind==='floating')expect(ref.current).toBe(native);
+ });
+ it('keeps a Select context with no ControlField wrapper and forwards it to the floating panel',async()=>{
+  const {container,rerender}=render(<Select aria-label="Local select" data-theme="dark" data-borders="on" data-radius="rounded" options={[{value:'a',label:'A'}]}/>);
+  expect(container.querySelector('.cap-labeled-field')).toBeNull();
+  const trigger=screen.getByRole('combobox',{name:'Local select'});
+  expect(trigger.closest('[data-radius]')).toHaveAttribute('data-radius','rounded');
+  fireEvent.click(trigger);
+  const panel=screen.getByRole('listbox');
+  expect(panel).toHaveAttribute('data-theme','dark');expect(panel).toHaveAttribute('data-borders','on');expect(panel).toHaveAttribute('data-radius','rounded');
+  rerender(<Select aria-label="Local select" data-theme="light" data-borders="off" data-radius="compact" options={[{value:'a',label:'A'}]}/>);
+  await waitFor(()=>{expect(panel).toHaveAttribute('data-theme','light');expect(panel).toHaveAttribute('data-borders','off');expect(panel).toHaveAttribute('data-radius','compact');});
+ });
  it('clears uncontrolled search through input events, keeps its ref/form value and resets to its default',async()=>{
   const user=userEvent.setup(), ref=createRef<HTMLInputElement>(), seenValues:string[]=[], changed=vi.fn((event:ChangeEvent<HTMLInputElement>)=>seenValues.push(event.currentTarget.value));
   const {container}=render(<form><Input ref={ref} type="search" name="query" defaultValue="design systems" onChange={changed}/></form>);

@@ -1,6 +1,6 @@
 {
   "package": "@personal/capacities-ui",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "framework": "React >=19",
   "module": "ESM",
   "componentCount": 98,
@@ -1140,11 +1140,11 @@
       ],
       "primaryGroup": "overlays",
       "purpose": "Custom anchored information or form popup",
-      "props": "label: string; triggerContent?: ReactNode; children: ReactNode; open?: boolean; onOpenChange?: (open) => void; align?: start|center|end; side?: top|bottom; disabled?: boolean; size?: Size (trigger only); className?",
+      "props": "label: string; triggerContent?: ReactNode; triggerIcon?: IconSource; children: ReactNode; open?: boolean; onOpenChange?: (open) => void; align?: start|center|end; side?: top|bottom; disabled?: boolean; size?: Size (trigger only); className?",
       "example": "<Popover label=\"About\">More information</Popover>",
       "catalogueRoute": "#Popover",
       "catalogueGroup": "Окна и панели",
-      "behavior": "triggerContent customizes its accessible labelled trigger. Optional controlled state; Escape/outside dismiss; position is clamped to viewport gutters. Own floating surface preserves theme/accent/borders. size affects the trigger; popup content does not inherit toolbar sizing.",
+      "behavior": "triggerContent customizes its accessible labelled trigger; triggerIcon renders a labelled IconButton without a chevron. Optional controlled state; Escape/outside dismiss; position is clamped to viewport gutters. Own floating surface preserves theme/accent/borders/radius/shadow. size affects the trigger; popup content does not inherit toolbar sizing.",
       "source": "src/components/overlays.tsx"
     },
     "CommandPalette": {

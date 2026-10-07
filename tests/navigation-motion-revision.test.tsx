@@ -61,6 +61,124 @@ describe('local shared hover motion', () => {
       expect(animate).not.toHaveBeenCalled();
     } finally { delete (Element.prototype as unknown as { animate?: unknown }).animate; }
   });
+  function ContinuousScope({ revision = 0 }: { revision?: number }) {
+    const root = useRef<HTMLDivElement>(null), nested = useRef<HTMLDivElement>(null);
+    return <div ref={root} className="cap-shared-hover" data-testid="scope"><MovingHighlight root={root} hover target="button:not(:disabled)" revision={revision}/>
+      <button style={{ borderRadius: '8px' }}><span>One</span><span aria-hidden="true">Icon</span></button>
+      <div data-testid="gap"/>
+      <div><button aria-selected="true" style={{ borderRadius: '9999px' }}>Selected</button></div>
+      <button disabled>Disabled</button>
+      <div ref={nested} className="cap-shared-hover" data-testid="nested"><MovingHighlight root={nested} hover/><button>Nested action</button></div>
+    </div>;
+  }
+  function movingRects() {
+    vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(function(this: HTMLElement) {
+      if (this.classList.contains('cap-moving-highlight')) return rect(0, 42, 130, 32);
+      if (this.tagName === 'BUTTON') return rect(0, this.textContent === 'Selected' ? 70 : 30, 160, 32);
+      return rect(0, 0, 220, 150);
+    });
+  }
+  it('does not restart for nested text/icons, bridges gaps, and retains ownership through revisions', async () => {
+    const animate = vi.fn(() => ({ cancel: vi.fn() }));
+    Object.defineProperty(Element.prototype, 'animate', { configurable: true, value: animate });
+    movingRects();
+    try {
+      const { container, rerender } = render(<ContinuousScope/>);
+      await act(async () => {});
+      const layer = container.querySelector<HTMLElement>('.cap-moving-highlight')!;
+      fireEvent.pointerOver(screen.getByText('One'));
+      expect(layer.style.transform).toBe('translate3d(0px,30px,0)');
+      expect(layer.style.borderRadius).toBe('8px');
+      fireEvent.pointerOver(screen.getByText('Icon'));
+      fireEvent.pointerOver(screen.getByTestId('gap'));
+      expect(layer).toHaveAttribute('data-visible', 'true');
+      expect(animate).not.toHaveBeenCalled();
+      rerender(<ContinuousScope revision={1}/>);
+      expect(layer).toHaveAttribute('data-visible', 'true');
+      expect(animate).not.toHaveBeenCalled();
+      fireEvent.pointerOver(screen.getByRole('button', { name: 'Selected' }));
+      expect(layer.style.borderRadius).toBe('9999px');
+      expect(animate).toHaveBeenCalledTimes(1);
+      expect(screen.getByRole('button', { name: 'Selected' })).toHaveAttribute('aria-selected', 'true');
+    } finally { delete (Element.prototype as unknown as { animate?: unknown }).animate; }
+  });
+  it('freezes the current visual geometry on interruption and starts the next move there', async () => {
+    const cancel = vi.fn(), animate = vi.fn(() => ({ cancel }));
+    Object.defineProperty(Element.prototype, 'animate', { configurable: true, value: animate });
+    movingRects();
+    try {
+      const { container } = render(<ContinuousScope/>);
+      await act(async () => {});
+      const layer = container.querySelector<HTMLElement>('.cap-moving-highlight')!;
+      fireEvent.pointerOver(screen.getByText('One'));
+      fireEvent.pointerOver(screen.getByText('Selected'));
+      fireEvent.pointerOver(screen.getByText('One'));
+      expect(animate).toHaveBeenLastCalledWith([
+        { transform: 'translate3d(0px,42px,0) scale(0.8125,1)' },
+        { transform: 'translate3d(0px,30px,0) scale(1,1)' },
+      ], { duration: 220, easing: 'cubic-bezier(.16,1,.3,1)' });
+      fireEvent.pointerLeave(screen.getByTestId('scope'));
+      expect(layer).not.toHaveAttribute('data-visible');
+      expect(layer.style.transform).toBe('translate3d(0px,42px,0)');
+      expect(layer.style.width).toBe('130px');
+      expect(cancel).toHaveBeenCalledTimes(2);
+      animate.mockClear();
+      fireEvent.pointerOver(screen.getByText('Selected'));
+      expect(animate).not.toHaveBeenCalled();
+      expect(layer.style.transform).toBe('translate3d(0px,70px,0)');
+    } finally { delete (Element.prototype as unknown as { animate?: unknown }).animate; }
+  });
+  it('keeps nested scopes and disabled controls from borrowing the outer layer', async () => {
+    const { container } = render(<ContinuousScope/>);
+    await act(async () => {});
+    const layers = container.querySelectorAll('.cap-moving-highlight');
+    fireEvent.pointerOver(screen.getByText('One'));
+    fireEvent.pointerOver(screen.getByText('Nested action'));
+    expect(layers[0]).not.toHaveAttribute('data-visible');
+    expect(layers[1]).toHaveAttribute('data-visible', 'true');
+    fireEvent.pointerOver(screen.getByText('One'));
+    fireEvent.pointerOver(screen.getByRole('button', { name: 'Disabled' }));
+    expect(layers[0]).not.toHaveAttribute('data-visible');
+  });
+  it('hides stale hover on scroll and reacquires once without a scroll-driven animation', async () => {
+    const animate = vi.fn(() => ({ cancel: vi.fn() }));
+    Object.defineProperty(Element.prototype, 'animate', { configurable: true, value: animate });
+    movingRects();
+    try {
+      const { container } = render(<ContinuousScope/>);
+      await act(async () => {});
+      const layer = container.querySelector('.cap-moving-highlight')!;
+      fireEvent.pointerOver(screen.getByText('One'));
+      fireEvent.scroll(screen.getByTestId('scope'));
+      expect(layer).not.toHaveAttribute('data-visible');
+      fireEvent.pointerMove(screen.getByText('Selected'));
+      expect(layer).toHaveAttribute('data-visible', 'true');
+      expect(animate).not.toHaveBeenCalled();
+    } finally { delete (Element.prototype as unknown as { animate?: unknown }).animate; }
+  });
+  it('remeasures a settled resize and local radius changes without animating layout', async () => {
+    const callbacks: ResizeObserverCallback[] = [];
+    vi.stubGlobal('ResizeObserver', class { constructor(callback: ResizeObserverCallback) { callbacks.push(callback); } observe() {} unobserve() {} disconnect() {} });
+    const animate = vi.fn(() => ({ cancel: vi.fn() }));
+    Object.defineProperty(Element.prototype, 'animate', { configurable: true, value: animate });
+    movingRects();
+    try {
+      const { container } = render(<ContinuousScope/>);
+      await act(async () => {});
+      const layer = container.querySelector<HTMLElement>('.cap-moving-highlight')!;
+      fireEvent.pointerOver(screen.getByText('One'));
+      const row = screen.getByRole('button', { name: 'One' });
+      row.style.borderRadius = '4px';
+      screen.getByTestId('scope').setAttribute('data-radius', 'compact');
+      await act(async () => {});
+      expect(layer.style.borderRadius).toBe('4px');
+      row.style.borderRadius = '16px';
+      act(() => callbacks.forEach(callback => callback([], {} as ResizeObserver)));
+      await act(async () => { await new Promise(resolve => setTimeout(resolve, 75)); });
+      expect(layer.style.borderRadius).toBe('16px');
+      expect(animate).not.toHaveBeenCalled();
+    } finally { delete (Element.prototype as unknown as { animate?: unknown }).animate; }
+  });
 });
 
 describe('overflow tabs', () => {
@@ -71,7 +189,7 @@ describe('overflow tabs', () => {
       return rect(0, 0, 160, 32);
     });
     const frames: ResizeObserverCallback[] = [];
-    vi.stubGlobal('ResizeObserver', class { constructor(callback: ResizeObserverCallback) { frames.push(callback); } observe() {} disconnect() {} });
+    vi.stubGlobal('ResizeObserver', class { constructor(callback: ResizeObserverCallback) { frames.push(callback); } observe() {} unobserve() {} disconnect() {} });
     function Example() {
       const [value, setValue] = useState('first');
       return <Tabs label="Sections" value={value} onValueChange={setValue} items={[{value:'first',label:'First',content:'First panel'}, {value:'locked',label:'Locked',disabled:true,content:'Locked panel'}, {value:'last',label:'Last',content:'Last panel'}]}/>;

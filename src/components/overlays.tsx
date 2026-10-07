@@ -26,6 +26,7 @@ export function useOverlayPresence(open: boolean) {
 export function useOverlayScope(anchor: RefObject<HTMLElement | null>) {
   const [scope, setScope] = useState<Scope>({ 'data-surface': 'floating' });
   useLayoutEffect(() => {
+    let observed: HTMLElement[] = [];
     const read = () => {
       const next: Scope = { 'data-surface': 'floating' };
       const radius = anchor.current?.closest('[data-radius]')?.getAttribute('data-radius');
@@ -36,16 +37,24 @@ export function useOverlayScope(anchor: RefObject<HTMLElement | null>) {
       if (borders) next['data-borders'] = borders;
       const shadow = anchor.current?.closest('[data-shadow]')?.getAttribute('data-shadow');
       if (shadow) next['data-shadow'] = shadow;
-      const accent = anchor.current?.closest('[data-accent],[data-color]:not([data-color="inherit"])');
-      if (accent?.hasAttribute('data-accent')) next['data-accent'] = accent.getAttribute('data-accent')!;
-      else if (accent?.hasAttribute('data-color')) next['data-color'] = accent.getAttribute('data-color')!;
+      const accent = anchor.current?.closest('[data-accent]:not([data-accent="inherit"]),[data-color]:not([data-color="inherit"])');
+      const accentValue = accent?.getAttribute('data-accent'), colorValue = accent?.getAttribute('data-color');
+      if (accentValue && accentValue !== 'inherit') next['data-accent'] = accentValue;
+      else if (colorValue && colorValue !== 'inherit') next['data-color'] = colorValue;
       setScope(previous => JSON.stringify(previous) === JSON.stringify(next) ? previous : next);
+      const ancestors: HTMLElement[] = [];
+      for (let element = anchor.current; element; element = element.parentElement) ancestors.push(element);
+      if (ancestors.length !== observed.length || ancestors.some((element, index) => element !== observed[index])) {
+        observer.disconnect();
+        // A moved/replaced anchor must observe its new inheritance chain too.
+        for (const element of ancestors) observer.observe(element, { attributes: true, childList: true, attributeFilter: ['data-theme', 'data-accent', 'data-color', 'data-borders', 'data-shadow', 'data-radius'] });
+        observed = ancestors;
+      }
     };
-    read();
     const observer = new MutationObserver(read);
-    for (let element = anchor.current; element; element = element.parentElement) observer.observe(element, { attributes: true, attributeFilter: ['data-theme', 'data-accent', 'data-color', 'data-borders', 'data-shadow', 'data-radius'] });
+    read();
     return () => observer.disconnect();
-  }, [anchor]);
+  });
   return scope;
 }
 export function OverlayPortal({ anchor, panel, children }: { anchor: RefObject<HTMLElement | null>; panel: RefObject<HTMLElement | null>; children: ReactNode }) {
@@ -240,8 +249,8 @@ export function Menu({ label, items, icon = 'more', disabled, size, variant = 'g
   };
   return <span className="cap-menu-root"><IconButton ref={trigger} label={label} icon={icon} variant={variant} size={size} disabled={disabled} aria-haspopup="menu" aria-expanded={open} aria-controls={open ? id : undefined} onClick={() => { startAtEnd.current = false; setOpen(!open); }} onKeyDown={e => { if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); startAtEnd.current = e.key === 'ArrowUp'; setOpen(true); } }} />{present && <OverlayPortal anchor={trigger} panel={panel}><div ref={panel} role="menu" aria-hidden={!open || undefined} inert={!open} data-state={open ? 'open' : 'closed'} aria-label={label} id={id} className={cx('cap-menu', 'cap-menu-v2', className)} style={position} {...scope} onKeyDown={onKeyDown} onBlur={e => { if (e.relatedTarget && !e.currentTarget.contains(e.relatedTarget) && e.relatedTarget !== trigger.current) close(false); }}><div ref={hoverRoot} className="cap-menu-items cap-shared-hover"><MovingHighlight root={hoverRoot} hover target=".cap-menu-item:not(:disabled)"/>{items.map(item => <div key={item.id} role="none">{item.separator && <hr className="cap-separator" />}<button type="button" role="menuitem" className="cap-menu-item" tabIndex={-1} data-label={item.label} data-danger={item.danger || undefined} disabled={item.disabled} onClick={() => { close(); item.onSelect?.(); }}>{item.icon && <Icon name={item.icon} />}<span>{item.label}</span>{item.shortcut && <Kbd>{item.shortcut}</Kbd>}</button></div>)}</div></div></OverlayPortal>}</span>;
 }
-export interface PopoverProps { label: string; triggerContent?: ReactNode; children: ReactNode; open?: boolean; onOpenChange?: (open: boolean) => void; className?: string; align?: 'start' | 'center' | 'end'; side?: 'top' | 'bottom'; disabled?: boolean; size?: Size }
-export function Popover({ label, triggerContent, children, open: controlledOpen, onOpenChange, className, align, side, disabled, size = 'md' }: PopoverProps) {
+export interface PopoverProps { label: string; triggerContent?: ReactNode; triggerIcon?: IconSource; children: ReactNode; open?: boolean; onOpenChange?: (open: boolean) => void; className?: string; align?: 'start' | 'center' | 'end'; side?: 'top' | 'bottom'; disabled?: boolean; size?: Size }
+export function Popover({ label, triggerContent, triggerIcon, children, open: controlledOpen, onOpenChange, className, align, side, disabled, size = 'md' }: PopoverProps) {
   const [internal, setInternal] = useState(false), open = controlledOpen ?? internal;
   const id = useId(), trigger = useRef<HTMLButtonElement>(null), panel = useRef<HTMLDivElement>(null);
   const scope = useOverlayScope(trigger), position = useAnchoredOverlay(open, trigger, panel, { align, side }), present = useOverlayPresence(open);
@@ -251,7 +260,8 @@ export function Popover({ label, triggerContent, children, open: controlledOpen,
   useOverlayDismiss(open, panel, trigger, close);
   useEffect(() => { if (!open) return; return () => { if (restoreFocus.current && trigger.current?.isConnected) trigger.current.focus({ preventScroll: true }); }; }, [open]);
   useEffect(() => { if (open && panel.current && position.visibility === 'visible') (focusables(panel.current)[0] ?? panel.current).focus({ preventScroll: true }); }, [open, position.visibility]);
-  return <span className="cap-popover-root"><Button ref={trigger} disabled={disabled} size={size} aria-label={triggerContent ? label : undefined} aria-haspopup="dialog" aria-expanded={open} aria-controls={open ? id : undefined} onClick={() => setOpen(!open)}>{triggerContent ?? label}<Icon name="down" size={12} /></Button>{present && <OverlayPortal anchor={trigger} panel={panel}><div ref={panel} id={id} role="dialog" aria-hidden={!open || undefined} inert={!open} data-state={open ? 'open' : 'closed'} aria-label={label} tabIndex={-1} className={cx('cap-popover', 'cap-popover-v2', className)} style={position} {...scope} onBlur={e => { if (e.relatedTarget && !e.currentTarget.contains(e.relatedTarget) && !trigger.current?.contains(e.relatedTarget) && !childSurfaceContains(panel.current, e.relatedTarget) && !panel.current?.closest('.cap-modal-layer')?.contains(e.relatedTarget)) close(false); }} onKeyDown={e => {
+  const triggerProps = { ref: trigger, disabled, size, 'aria-haspopup': 'dialog' as const, 'aria-expanded': open, 'aria-controls': open ? id : undefined, onClick: () => setOpen(!open) };
+  return <span className="cap-popover-root">{triggerIcon ? <IconButton {...triggerProps} label={label} icon={triggerIcon} /> : <Button {...triggerProps} aria-label={triggerContent ? label : undefined}>{triggerContent ?? label}<Icon name="down" size={12} /></Button>}{present && <OverlayPortal anchor={trigger} panel={panel}><div ref={panel} id={id} role="dialog" aria-hidden={!open || undefined} inert={!open} data-state={open ? 'open' : 'closed'} aria-label={label} tabIndex={-1} className={cx('cap-popover', 'cap-popover-v2', className)} style={position} {...scope} onBlur={e => { if (e.relatedTarget && !e.currentTarget.contains(e.relatedTarget) && !trigger.current?.contains(e.relatedTarget) && !childSurfaceContains(panel.current, e.relatedTarget) && !panel.current?.closest('.cap-modal-layer')?.contains(e.relatedTarget)) close(false); }} onKeyDown={e => {
     if (e.key !== 'Tab' || !panel.current) return;
     const choices = focusables(panel.current), active = document.activeElement;
     if (e.shiftKey && (active === choices[0] || active === panel.current)) { e.preventDefault(); close(); }
@@ -280,5 +290,5 @@ export interface ToastProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'
   action?: ReactNode;
 }
 export function Toast({ title, description, onDismiss, icon, action, tone = 'success', color, appearance = 'neutral', contrast = false, surface = 'floating', className, ...props }: ToastProps) {
-  return <div className={cx('cap-toast', 'cap-feedback', 'cap-surface-boundary', className)} data-surface={surface === 'inherit' ? undefined : surface} data-tone={tone} data-feedback-appearance={appearance} data-contrast={contrast || undefined} data-accent={appearance === 'neutral' ? undefined : feedbackColor(tone,color)} role="status" {...props}><FeedbackIcon tone={tone} color={color} contrast={contrast}>{icon}</FeedbackIcon><div className="cap-toast-content"><strong>{title}</strong>{description && <p>{description}</p>}{action && <div className="cap-toast-action">{action}</div>}</div>{onDismiss && <IconButton label="Скрыть уведомление" icon="close" size="sm" variant="ghost" onClick={onDismiss} />}</div>;
+  return <div className={cx('cap-toast', 'cap-feedback', className)} data-surface={surface === 'inherit' ? undefined : surface} data-tone={tone} data-feedback-appearance={appearance} data-contrast={contrast || undefined} data-accent={appearance === 'neutral' ? undefined : feedbackColor(tone,color)} role="status" {...props}><FeedbackIcon tone={tone} color={color} contrast={contrast}>{icon}</FeedbackIcon><div className="cap-toast-content"><strong>{title}</strong>{description && <p>{description}</p>}{action && <div className="cap-toast-action">{action}</div>}</div>{onDismiss && <IconButton label="Скрыть уведомление" icon="close" size="sm" variant="ghost" onClick={onDismiss} />}</div>;
 }

@@ -181,13 +181,13 @@ export function Calendar(props: CalendarSelectionProps) {
   return <section className={cx('cap-calendar', className)} aria-label={label} data-months={numberOfMonths} data-mode={mode} data-agenda-position={showAgenda ? agendaPosition : undefined}>
     <div className="cap-calendar-body">
       <div className="cap-calendar-toolbar">
-        <IconButton label="Предыдущий месяц" icon="chevron" variant="outline" className="cap-calendar-prev" onClick={() => changeMonth(addMonths(month, -1))} />
+        <IconButton label="Предыдущий месяц" icon="chevron" variant="secondary" className="cap-calendar-prev" onClick={() => changeMonth(addMonths(month, -1))} />
         <ButtonGroup label="Месяц и год" className="cap-calendar-period" size="md">
           <Select aria-label="Месяц" variant="ghost" popupClassName="cap-calendar-period-popup" size="md" value={month.getMonth()} onChange={event => changeMonth(new Date(month.getFullYear(), Number(event.target.value), 1, 12))}>{Array.from({ length: 12 }, (_, index) => <option key={index} value={index}>{new Intl.DateTimeFormat(locale, { month: 'long' }).format(new Date(2026, index, 1))}</option>)}</Select>
           <span className="cap-calendar-period-divider" aria-hidden="true" />
           <ComboBox label="Год" className="cap-calendar-year" variant="ghost" size="md" clearable={false} value={String(month.getFullYear())} options={Array.from({ length: toYear - fromYear + 1 }, (_, index) => ({ value: String(fromYear + index), label: String(fromYear + index) }))} onValueChange={year => changeMonth(new Date(Number(year), month.getMonth(), 1, 12))} />
         </ButtonGroup>
-        <IconButton label="Следующий месяц" icon="chevron" variant="outline" onClick={() => changeMonth(addMonths(month, 1))} />
+        <IconButton label="Следующий месяц" icon="chevron" variant="secondary" onClick={() => changeMonth(addMonths(month, 1))} />
       </div>
       <span className="cap-sr-only" aria-live="polite">{visibleMonths.map(date => monthFormat.format(date)).join(' — ')}</span>
       {mode === 'range' && <p id={`${id}-instruction`} className="cap-calendar-instruction" aria-live="polite">{notice || rangePrompt}</p>}

@@ -175,7 +175,7 @@ export interface StatusBarProps extends Omit<HTMLAttributes<HTMLDivElement>, 'co
   busy?: boolean;
 }
 export function StatusBar({ tone = 'neutral', color, appearance = 'neutral', contrast = false, surface = 'inherit', variant = 'plain', leading, trailing, busy, children, className, ...props }: StatusBarProps) {
-  return <div className={cx('cap-status-bar', 'cap-feedback', variant === 'surface' && 'cap-surface-boundary', className)} role="status" aria-live="polite" aria-busy={busy || undefined} data-variant={variant} data-tone={tone} data-feedback-appearance={appearance} data-contrast={contrast || undefined} data-surface={surface === 'inherit' ? undefined : surface} data-accent={appearance === 'neutral' ? undefined : feedbackColor(tone,color)} {...props}>
+  return <div className={cx('cap-status-bar', 'cap-feedback', className)} role="status" aria-live="polite" aria-busy={busy || undefined} data-variant={variant} data-tone={tone} data-feedback-appearance={appearance} data-contrast={contrast || undefined} data-surface={surface === 'inherit' ? undefined : surface} data-accent={appearance === 'neutral' ? undefined : feedbackColor(tone,color)} {...props}>
     <div className="cap-status-main">{leading ?? <FeedbackIcon className="cap-status-indicator" tone={tone} color={color} contrast={contrast}/>}<span>{children}</span></div>
     {trailing && <div className="cap-status-trailing">{trailing}</div>}
   </div>;
@@ -201,7 +201,7 @@ export function Alert({ title, tone = 'info', color, appearance = 'neutral', con
   }, [isExpanded]);
   const titleContent = <><FeedbackIcon className="cap-alert-icon" tone={tone} color={color} contrast={contrast}>{icon}</FeedbackIcon>
     <span className="cap-alert-title">{title}</span>{expandable && hasBody && <span className="cap-alert-action" aria-hidden="true"><Icon name="down" size={15} className="cap-alert-chevron" /></span>}</>;
-  return <div className={cx('cap-alert', 'cap-feedback', 'cap-surface-boundary', className)} role={tone === 'danger' ? 'alert' : 'status'} data-tone={tone} data-feedback-appearance={appearance} data-contrast={contrast || undefined} data-surface={surface === 'inherit' ? undefined : surface} data-accent={appearance === 'neutral' ? undefined : feedbackColor(tone,color)} data-expanded={isExpanded || undefined} {...props}>
+  return <div className={cx('cap-alert', 'cap-feedback', className)} role={tone === 'danger' ? 'alert' : 'status'} data-tone={tone} data-feedback-appearance={appearance} data-contrast={contrast || undefined} data-surface={surface === 'inherit' ? undefined : surface} data-accent={appearance === 'neutral' ? undefined : feedbackColor(tone,color)} data-expanded={isExpanded || undefined} {...props}>
     <div className="cap-alert-header" data-dismissible={!!onDismiss || undefined}>
       {expandable && hasBody ? <button ref={toggleRef} type="button" className="cap-alert-toggle" aria-expanded={isExpanded} aria-controls={`${id}-body`} onClick={() => {
         if (expanded === undefined) setInternalExpanded(!isExpanded); onExpandedChange?.(!isExpanded);

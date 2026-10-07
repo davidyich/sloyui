@@ -2,9 +2,11 @@
 
 `Toast`, `Alert` и `StatusBar` принимают `tone="neutral|info|success|warning|danger"`, `color={Color|"inherit"}`, `appearance="neutral|soft|solid"`, `contrast` и `surface="inherit|base|canvas|raised|floating"`. Tone определяет смысл и стандартную иконку; color меняет статусный цвет. Appearance выбирает нейтральную поверхность, вторичную заливку или solid-пару. Contrast повышает контраст soft-заливки; у нейтральной оболочки он заполняет только статусную иконку.
 
+Рамки сообщений следуют Borders Off/On; постоянный структурный контур добавляется только явно через `className="cap-surface-boundary"`. Neutral Alert, StatusBar surface и AnnouncementBar отделяются от родителя нейтральной заливкой даже без рамки.
+
 Нейтральная оболочка не переопределяет локальный акцент. Статусный цвет ограничен `.cap-feedback-icon`; вложенные действия продолжают использовать акцент потребителя. Soft/solid явно устанавливают акцент своей оболочки. Все цвета берутся из существующих surface-aware semantic ролей, без отдельной палитры.
 
-Toast по умолчанию floating; для вставки в текст/панель используйте `surface="inherit"` или явный контекст. Inline ToastStack автоматически наследует поверхность, фиксированный ToastStack использует floating. Alert и StatusBar наследуют поверхность по умолчанию. StatusBar сохраняет `variant="plain|surface"`: plain нейтрален и прозрачен, surface рисует текущую поверхность. Toast поддерживает `icon` и `action` как слоты; сохраняйте доступные имена действий.
+Toast по умолчанию floating; для вставки в текст/панель используйте `surface="inherit"` или явный контекст. Inline ToastStack автоматически наследует поверхность, фиксированный ToastStack использует floating. Alert и StatusBar наследуют поверхность по умолчанию. StatusBar сохраняет `variant="plain|surface"`: plain нейтрален и прозрачен, surface рисует нейтральную вторичную заливку текущего контекста. Toast поддерживает `icon` и `action` как слоты; сохраняйте доступные имена действий.
 
 ## Стеки
 

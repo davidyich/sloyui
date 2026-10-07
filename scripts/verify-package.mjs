@@ -26,7 +26,7 @@ try {
 import {
   Alert, AnnouncementBar, BottomSheet, Button, CardStack, Chip, ColorPicker,
   ContentCard, ContentLayout, DataTable, Dialog, Field, FileTree, Input, KanbanColumn,
-  PreviewRail, RichTextEditor, Slider, StatusBar, Toast, ToastStack,
+  Popover, PreviewRail, RichTextEditor, Slider, StatusBar, Toast, ToastStack,
   markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit,
   type BottomSheetProps, type ChipProps, type Color, type ContentLayoutProps,
   type FeedbackStyleProps, type FileTreeNode, type PreviewRailItem, type Size,
@@ -57,6 +57,7 @@ export const components = <>
   <PreviewRail label="Sections" items={rail} orientation="horizontal" previewSide="before" highlightActive onValueChange={id => { const value: string = id; void value; }}/>
   <ContentLayout {...layout} style={{height:640}}><ContentCard title="Main" selectable={false}/></ContentLayout>
   <Slider {...slider}/><ColorPicker label="Color" showRecent/>
+  <Popover label="Filter" triggerIcon="filter"><Input label="Search" data-radius="compact" data-borders="off"/></Popover>
   <KanbanColumn title="Active" count={1} color={color}><ContentCard title="Task" selectable onSelectedChange={selected => { const value: boolean = selected; void value; }}/></KanbanColumn>
   <DataTable surface="base" label="Rows" rows={rows} rowId={row => row.id} columns={[{id:'title',header:'Title',value:row => row.title}]}/>
   <Alert {...feedback} title="Saved" expandable expanded onExpandedChange={expanded => { void expanded; }}>Alert detail</Alert>
