@@ -2,6 +2,7 @@
 
 ## 0.4.0 · 2026-10-07
 
+- Made clean checkout validation deterministic: token diagnostics create their directory; catalogue self-imports resolve to source before dist exists. Release CI also validates isolated archive consumption.
 - Added permanent component IDs, review statuses, multiple group memberships and catalogue filters: 98 active pages, one archived MarkdownEditor compatibility export. New Chip, BottomSheet, FileTree and PreviewRail require review.
 - Reworked ColorPicker, Slider, neutral selection chips, palette reactions, CodeBlock and Rich/Markdown instruction editing; untouched Markdown round-trips exactly.
 - Added moving shared hover, overflow Tabs, bouncy Accordion, vertical ContentLayout with optional divider, optional card selection and surface-aware Kanban/DataTable/Sidebar.

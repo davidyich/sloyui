@@ -112,5 +112,6 @@ await writeFile('src/styles/tokens.css',css);
 await json('src/tokens/catalog.json',runtimeNames.filter(n=>!n.startsWith('element/')&&!n.startsWith('action/')&&!n.startsWith('action-vivid/')).map(name=>({name:cssName(name),original:name,group:name.split('/')[0],light:hex(resolve('Semantic/'+name,'Light · Base')),dark:hex(resolve('Semantic/'+name,'Dark · Base')),runtime:true})));
 const minContrast=Math.min(...audit.map(r=>r.contrast));
 await json('docs/token-validation.json',{version,sourceColorTokens:783,paletteColors:Object.keys(palette).length,accentSteps:22,graySteps:41,accentModes:18,contexts:Object.keys(contexts).length,states,figmaCollections:graph.collections.length,figmaVariables:graph.collections.reduce((n,c)=>n+Object.keys(Object.values(c.modes)[0]).length,0),secondaryCombinations:audit.length,minTextContrast:minContrast,minReactionContrast:Math.min(...audit.map(r=>r.reactionContrast)),crossCollectionAliases:true});
+await mkdir('artifacts/figma-library',{recursive:true});
 await json('artifacts/figma-library/token-migration-graph.json',graph);
 console.log(`Full palette model: ${Object.keys(palette).length} colors, ${audit.length} secondary pairs, min text contrast ${minContrast.toFixed(3)}:1, independent Theme, Semantic surface and Borders modes.`);
