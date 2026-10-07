@@ -111,7 +111,7 @@
 .cap-tab-list button[aria-selected='true'] { color: var(--cap-text-primary); border-bottom-color: var(--cap-text-primary); }
 .cap-tab-list button:disabled { cursor: not-allowed; }
 .cap-tab-panel { padding: 1rem 0; font-size: var(--cap-font-size-sm); color: var(--cap-text-secondary); }
-.cap-table-wrap { width: 100%; overflow-x: auto; border: var(--cap-border-width) solid var(--cap-border-base); border-radius: var(--cap-radius-base); }
+.cap-table-wrap { width: 100%; overflow-x: auto; border: var(--cap-border-width) solid var(--cap-border-subtle); border-radius: var(--cap-radius-base); }
 .cap-table { width: 100%; border-collapse: collapse; color: var(--cap-text-primary); font-size: var(--cap-font-size-sm); text-align: left; }
 .cap-table th { background: var(--cap-bg-back); color: var(--cap-text-muted); font-weight: 400; }
 .cap-table td, .cap-table th { padding: .625rem .875rem; border-bottom: var(--cap-border-width) solid var(--cap-border-base); white-space: nowrap; }

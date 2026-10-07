@@ -1,3 +1,4 @@
+import { useTranslate } from './locale.js';
 import { useEffect, useId, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type PointerEvent, type ReactNode } from 'react';
 import { cx } from './primitives.js';
 
@@ -97,11 +98,13 @@ export interface ValueScrubberProps extends Omit<ValueScrubberOptions, 'keyboard
 }
 /** Standalone accessible value control. Alt-drag scrubs; arrows and Home/End work without a pointer. */
 export function ValueScrubber({ label, value, min = 0, max = 100, step = 1, disabled, orientation = 'horizontal', onValueChange, formatValue, className }: ValueScrubberProps) {
+  const t = useTranslate();
+
   const id=useId(),bindings = useValueScrubber({ value, min, max, step, disabled, orientation, keyboard: true, onValueChange });
   const low = finiteOr(min, 0), high = finiteOr(max, 100), now = Math.min(high, Math.max(low, Number.isFinite(value) ? value : low));
   return <div className={cx('cap-value-scrubber',className)} data-orientation={orientation}>
     <span className="cap-value-scrubber-label">{label}</span>
-    <span className="cap-sr-only" id={`${id}-hint`}>Удерживайте Alt и перемещайте указатель, чтобы изменить значение. Стрелки меняют значение на один шаг; Shift уменьшает шаг в десять раз. Home и End устанавливают границы.</span>
+    <span className="cap-sr-only" id={`${id}-hint`}>{t("Удерживайте Alt и перемещайте указатель, чтобы изменить значение. Стрелки меняют значение на один шаг; Shift уменьшает шаг в десять раз. Home и End устанавливают границы.", "Hold Alt and move the pointer to change the value. Arrow keys change it by one step; Shift reduces the step tenfold. Home and End set the limits.")}</span>
     <div {...bindings} className="cap-value-scrubber-control" role="slider" aria-label={label} aria-describedby={`${id}-hint`} aria-orientation={orientation} aria-valuemin={Number.isFinite(low)?low:undefined} aria-valuemax={Number.isFinite(high)?high:undefined} aria-valuenow={now} aria-valuetext={formatValue ? String(formatValue(now)) : String(now)} aria-disabled={disabled||undefined} tabIndex={disabled?-1:0} data-disabled={disabled||undefined}>
       <span>{formatValue ? formatValue(now) : now}</span>
     </div>

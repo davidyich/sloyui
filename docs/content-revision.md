@@ -1,17 +1,5 @@
-# Контент, панели и перестановка
+# Reference moved
 
-`ContentCard` и `TaskCard` по умолчанию не показывают выбор. `selectable={true}` включает его явно; переданный `onSelectedChange` тоже включает выбор, если `selectable` не указан. `selectable={false}` подавляет и checkbox, и обводку выбранного состояния. `selected` управляет состоянием; без него явный `selectable` работает локально. Завершение задачи через `completed/onCompletedChange` независимо от выбора карточки. Структурная граница карточки сохраняется при Borders Off.
+Canonical instructions: [component guidelines](component-guidelines.md), [surface context](surface-context.md), and [recipes](recipes.md).
 
-`KanbanColumn` объединяет заголовок и `count` в одной подложке. `color` по умолчанию `neutral`, явный `Color` задаёт вторичный акцент только заголовку; `inherit` использует ближайший акцент. `KanbanLane.color` передаётся заголовку через `KanbanBoard`. Карточки и действия колонки сохраняют свой контекст.
-
-`ContentLayout.orientation="horizontal"` располагает `left/right` по сторонам основного контента. При `vertical` те же слоты стоят до и после него. Для горизонтального размера используйте `width/defaultWidth/minWidth/maxWidth/onWidthChange`, для вертикального — `height/defaultHeight/minHeight/maxHeight/onHeightChange`. Размеры двух осей хранятся независимо. В ограниченной вертикальной композиции задайте высоту layout, например `style={{height:760}}`.
-
-`divider="always" | "hover" | "none"` меняет видимость линии, сохраняя ручку изменения размера и клавиатуру. По умолчанию `hover`. Стрелки меняют размер по текущей оси, Shift увеличивает шаг, Home/End переходят к границам. В узком горизонтальном layout панели складываются и ручки скрываются; явный вертикальный layout сохраняет вертикальное изменение размера. `stretch` по умолчанию заполняет доступное место главным контентом; ширина ограничивается через `contentWidth`. Карточки сохраняют свою естественную высоту.
-
-`ReorderableList` остаётся контролируемым. Grip, клавиатура и кнопки перемещения вызывают `onOrderChange`; потребитель сохраняет новый порядок. FLIP-анимация перемещает только затронутые строки, сохраняет keyed содержимое и фокус. Перетаскивание фиксируется при отпускании, Escape/cancel не меняют порядок. Reduced motion отключает перестановочную анимацию, изменение предпочтения отменяет уже запущенную.
-
-`DataTable` наследует поверхность композиции; необязательный `surface` задаёт её явно. Заголовок использует ту же `--cap-surface-current`, чтобы нейтральный control background не превращался в контрастную плашку на Dark Base.
-
-Панель инструментов и следующая поверхность должны иметь отдельный gap; в примерах — 16px. В `CodeBlock` используйте встроенный actions menu, `onWrapChange` и `contextActions`; не добавляйте второе меню с тем же назначением через `actions`.
-
-`MarkdownEditor` сохранён как deprecated API для Markdown-строк. Для нового интерфейса используйте `RichTextEditor`, `markdownToRichText` для импорта и `richTextToMarkdown` для обратной записи; точный контракт сохранения исходных блоков находится в [editor-revision.md](editor-revision.md). Не подменяйте совместимый MarkdownEditor вызовом RichTextEditor с другим форматом value.
+Historical detail and audit evidence: [reference/content-revision.md](reference/content-revision.md). Read it only when auditing that topic.

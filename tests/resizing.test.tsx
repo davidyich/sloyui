@@ -101,7 +101,7 @@ describe('stack viewport bounds',()=>{
   it('pauses controlled-collapsed toasts on hover without changing the expansion prop',()=>{
     vi.useFakeTimers(); const dismiss=vi.fn(),expand=vi.fn();
     render(<ToastStack expanded={false} onExpandedChange={expand} position="inline" items={[{id:'a',title:'A',duration:1000}]} onDismiss={dismiss}/>);
-    const region=screen.getByRole('region',{name:'Notifications'}); fireEvent.mouseEnter(region); act(()=>vi.advanceTimersByTime(1500)); expect(dismiss).not.toHaveBeenCalled(); expect(expand).not.toHaveBeenCalled(); expect(region).not.toHaveAttribute('data-expanded');
+    const region=screen.getByRole('region',{name:'Уведомления'}); fireEvent.mouseEnter(region); act(()=>vi.advanceTimersByTime(1500)); expect(dismiss).not.toHaveBeenCalled(); expect(expand).not.toHaveBeenCalled(); expect(region).not.toHaveAttribute('data-expanded');
     fireEvent.mouseLeave(region); act(()=>vi.advanceTimersByTime(1000)); expect(dismiss).toHaveBeenCalledWith('a');
   });
 });

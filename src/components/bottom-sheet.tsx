@@ -1,3 +1,4 @@
+import { useTranslate } from './locale.js';
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode, type PointerEvent } from 'react';
 import { Drawer, type DrawerProps } from './overlays.js';
 import { cx } from './primitives.js';
@@ -19,7 +20,10 @@ type Gesture = { id: number; y: number; lastY: number; lastAt: number; velocity:
 const defaultPoints = [0.5, 0.85];
 
 /** Drawer supplies the only portal, modal focus trap, inert background and scroll lock. */
-export function BottomSheet({ open, onOpenChange, title, children, className, variant = 'inset', edgeGap = 12, snapPoints = defaultPoints, snap, defaultSnap = 0, onSnapChange, dismissThreshold = 120, draggable = true, handleLabel = 'Высота панели. Стрелки вверх и вниз изменяют высоту', ...props }: BottomSheetProps) {
+export function BottomSheet({ open, onOpenChange, title, children, className, variant = 'inset', edgeGap = 12, snapPoints = defaultPoints, snap, defaultSnap = 0, onSnapChange, dismissThreshold = 120, draggable = true, handleLabel: suppliedHandleLabel, ...props }: BottomSheetProps) {
+  const t = useTranslate();
+  const handleLabel = suppliedHandleLabel === undefined ? (t("Высота панели. Стрелки вверх и вниз изменяют высоту", "Panel height. Up and down arrow keys change height")) : suppliedHandleLabel;
+
   const points = [...new Set(snapPoints.filter(Number.isFinite).map(point => Math.max(0.1, Math.min(0.95, point))))].sort((a, b) => a - b);
   if (!points.length) points.push(0.5);
   const [internal, setInternal] = useState(defaultSnap);
@@ -112,6 +116,6 @@ export function BottomSheet({ open, onOpenChange, title, children, className, va
         setSnap(event.key === 'Home' ? 0 : event.key === 'End' ? points.length - 1 : index + (event.key === 'ArrowUp' ? 1 : -1));
       }
     }}><span aria-hidden="true"/></button>
-    {children ?? <p className="cap-bottom-sheet-empty">Нет содержимого</p>}
+    {children ?? <p className="cap-bottom-sheet-empty">{t("Нет содержимого", "No content")}</p>}
   </Drawer>;
 }

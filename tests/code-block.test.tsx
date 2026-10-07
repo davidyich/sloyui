@@ -118,7 +118,7 @@ it('keeps the chooser optional, color-scoped and copy feedback accessible', asyn
   expect(screen.getByRole('status')).toHaveTextContent('Скопировано');
 
   rerender(<CodeBlock label="Plain text" defaultLanguage="text" color="inherit">{'No highlighting'}</CodeBlock>);
-  expect(within(container).getByRole('combobox', { name: 'Язык кода' })).toHaveTextContent('Plain text');
+  expect(within(container).getByRole('combobox', { name: 'Язык кода' })).toHaveTextContent('Обычный текст');
   expect(container.querySelector('.cap-code')).toHaveAttribute('data-color', 'inherit');
   expect(container.querySelector('.language-text .cap-code-keyword')).toBeNull();
 });

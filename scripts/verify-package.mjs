@@ -25,12 +25,13 @@ try {
   await writeFile(join(temp, 'consumer.tsx'), String.raw`
 import {
   Alert, AnnouncementBar, BottomSheet, Button, CardStack, Chip, ColorPicker,
-  ContentCard, ContentLayout, ResizableCard, DataTable, Dialog, Field, FileTree, Input, KanbanColumn,
+  ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, Dialog, Field, FileTree, Input, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
   Popover, PreviewRail, RichTextEditor, Slider, StatusBar, Toast, ToastStack,
   markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit,
   type BottomSheetProps, type ChipProps, type Color, type ContentLayoutProps,
   type FeedbackStyleProps, type FileTreeNode, type PreviewRailItem, type Size,
-  type SliderProps, type ToastStackItem,
+  type SliderProps, type ToastStackItem, type Locale, type ScrollAreaProps, type ScrollFadeDirection, type ScrollFadeSize,
+  type ResizablePanelGroupProps, type ResizablePanelProps, type ResizableHandleProps, type RichTextEditorProps,
 } from '@personal/capacities-ui';
 import { IntegratedWorkspace } from './IntegratedWorkspace.js';
 import '@personal/capacities-ui/styles.css';
@@ -49,6 +50,13 @@ const saved: string = richTextToMarkdown(document);
 const preserved: string = preserveMarkdownSourceEdit(saved, saved);
 const notifications: ToastStackItem[] = [{ id: 'saved', title: 'Saved', description: 'Archive consumer', duration: Infinity, ...feedback }];
 const rows = [{ id: 'task', title: 'Task' }];
+const locale: Locale = 'en', fade: ScrollFadeDirection = 'end', fadeSize: ScrollFadeSize = 24;
+const scroll = { label: 'Archive scroll', axis: 'horizontal', fade, fadeSize, fadeReveal: 96, floating: <Button>Floating action</Button>, style: { height: 160 } } satisfies ScrollAreaProps;
+const group = { label: 'Archive workspace', layout: [30, 70], onLayoutChange: (sizes: number[]) => { void sizes; }, onLayoutCommit: (sizes: number[]) => { void sizes; }, step: 2 } satisfies ResizablePanelGroupProps;
+const panel = { label: 'Outline', defaultSize: 30, minSize: 10, maxSize: 60, surface: 'canvas' } satisfies ResizablePanelProps;
+const handle = { withHandle: true, label: 'Resize outline', disabled: false } satisfies ResizableHandleProps;
+const editor = { label: 'Markdown note', value: document, onValueChange: (next: typeof document) => { const source: string = richTextToMarkdown(next); void source; }, showToolbar: true, toolbarSize: 'sm' } satisfies RichTextEditorProps;
+function LocaleProbe() { const current: Locale = useLocale(), t = useTranslate(); return <span data-locale={current}>{t('Локализовано', 'Localized')}</span>; }
 
 export const demo = <Dialog size="xl" open={false} onOpenChange={() => {}} title="Test"><Field label="Title">{props => <Input {...props} size={size}/>}</Field><Button variant="outline" size={size}>{color}</Button></Dialog>;
 export const components = <>
@@ -66,14 +74,22 @@ export const components = <>
   <ToastStack items={notifications} position="inline" expandDirection="left" expanded onExpandedChange={expanded => { void expanded; }} onDismiss={id => { void id; }}/>
   <AnnouncementBar surface="canvas" messages={[{id:'news',message:'News',action:{label:'Read',href:'#news'}}]} id="archive-news" autoPlay={false} controls onAction={message => { void message.id; }}/>
   <CardStack items={rows} getKey={row => row.id} renderCard={row => <ContentCard title={row.title}/>} expandDirection="right" expanded review onDecide={(row,decision) => { const value: 'left' | 'right' = decision; void row.id; void value; }} onReset={() => {}}/>
-  <RichTextEditor label="Markdown note" value={document} onValueChange={next => { const source: string = richTextToMarkdown(next); void source; }}/>
+  <LocaleProvider locale={locale}>
+    <LocaleProbe/><ScrollArea {...scroll}><p>Wide content</p></ScrollArea>
+    <ResizablePanelGroup {...group} style={{ height: 400 }}>
+      <ResizablePanel {...panel}>Outline</ResizablePanel><ResizableHandle {...handle}/>
+      <ResizablePanel label="Content" minSize={20}><ResizablePanelGroup orientation="vertical" defaultLayout={[60,40]} label="Content and details">
+        <ResizablePanel minSize={15}>Content</ResizablePanel><ResizableHandle withHandle/><ResizablePanel>Details</ResizablePanel>
+      </ResizablePanelGroup></ResizablePanel>
+    </ResizablePanelGroup><RichTextEditor {...editor}/>
+  </LocaleProvider>
 </>;
 export const integrated = <IntegratedWorkspace/>;
 void preserved;
 `);
   await writeFile(join(temp, 'tsconfig.json'), JSON.stringify({ compilerOptions: { target: 'ES2022', module: 'NodeNext', moduleResolution: 'NodeNext', jsx: 'react-jsx', strict: true, noEmit: true, skipLibCheck: false, lib: ['ES2022', 'DOM', 'DOM.Iterable'] }, include: ['*.tsx'] }));
   execFileSync(join(root, 'node_modules/.bin/tsc'), ['-p', join(temp, 'tsconfig.json')], { stdio: 'pipe' });
-  const serverRenderedExports = ['Button', 'ComboBox', 'MultiSelect', 'TagInput', 'RadioGroup', 'ColorPicker', 'NumberField', 'ValueScrubber', 'NavigationMenu', 'HoverPanel', 'TreeView', 'LineChart', 'BarChart', 'RichTextEditor', 'DataTable', 'ToastStack', 'Chip', 'BottomSheet', 'FileTree', 'PreviewRail', 'ContentLayout', 'ResizableCard', 'ContentCard', 'KanbanColumn', 'Slider', 'Alert', 'StatusBar', 'Toast', 'AnnouncementBar', 'CardStack'];
+  const serverRenderedExports = ['Button', 'ComboBox', 'MultiSelect', 'TagInput', 'RadioGroup', 'ColorPicker', 'NumberField', 'ValueScrubber', 'NavigationMenu', 'HoverPanel', 'TreeView', 'LineChart', 'BarChart', 'RichTextEditor', 'DataTable', 'ToastStack', 'Chip', 'BottomSheet', 'FileTree', 'PreviewRail', 'ContentLayout', 'ResizableCard', 'ContentCard', 'KanbanColumn', 'Slider', 'Alert', 'StatusBar', 'Toast', 'AnnouncementBar', 'CardStack', 'LocaleProvider', 'ResizablePanelGroup', 'ResizablePanel', 'ResizableHandle', 'ScrollArea', 'DailyHeader'];
   const markdownBridgeExports = ['markdownToRichText', 'richTextToMarkdown', 'preserveMarkdownSourceEdit'];
   await writeFile(join(temp, 'render.mjs'), String.raw`
 import React from 'react';
@@ -82,7 +98,7 @@ import { fileURLToPath } from 'node:url';
 import { resolve, sep } from 'node:path';
 import {
   Alert, AnnouncementBar, BarChart, BottomSheet, Button, CardStack, Chip, ColorPicker,
-  ComboBox, ContentCard, ContentLayout, ResizableCard, DataTable, FileTree, HoverPanel, KanbanColumn,
+  ComboBox, ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, DailyHeader, FileTree, HoverPanel, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
   LineChart, MultiSelect, NavigationMenu, NumberField, PreviewRail, RadioGroup,
   RichTextEditor, Slider, StatusBar, TagInput, Toast, ToastStack, TreeView, ValueScrubber,
   markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit,
@@ -130,7 +146,25 @@ for (const token of ['cap-button','cap-selection-field','cap-value-scrubber','ca
 for (const marker of ['data-orientation="vertical"','aria-label="Высота: Before"','aria-valuetext="50%"','Archive file preview','data-feedback-appearance="soft"']) {
   if (!html.includes(marker)) throw Error('SSR contract missing '+marker);
 }
-console.log('Archive dist SSR and Markdown bridge passed, including closed BottomSheet');
+function LocaleProbe() { const locale = useLocale(), t = useTranslate(); return node('span',{'data-locale':locale},t('Локализовано','Localized')); }
+const defaultLocale = renderToString(node(LocaleProbe));
+if (!defaultLocale.includes('data-locale="ru"') || !defaultLocale.includes('Локализовано')) throw Error('Default library locale is not Russian');
+if (html.includes('cap-rich-editor-tools')) throw Error('RichTextEditor top toolbar is not opt-in');
+const english = renderToString(node(LocaleProvider,{locale:'en'},
+  node(LocaleProbe),
+  node(CardStack,{items:['Не переводить этот текст','Second'],getKey:item=>item,renderCard:item=>node('p',null,item)}),
+  node(RichTextEditor,{label:'Archive note',value:document,onValueChange:noop,showToolbar:true,toolbarSize:'sm'}),
+  node(DailyHeader,{date:'2026-01-15',locale:'de-DE'}),
+  node(ScrollArea,{label:'Archive scroll',axis:'horizontal',fade:'end',fadeSize:24,fadeReveal:96,style:{height:160},floating:node(Button,null,'Floating action')},'Wide content'),
+  node(ResizablePanelGroup,{label:'Archive workspace',defaultLayout:[30,70],style:{height:400}},
+    node(ResizablePanel,{label:'Outline',minSize:10,maxSize:60},'Outline'),node(ResizableHandle,{withHandle:true}),
+    node(ResizablePanel,{label:'Content'},node(ResizablePanelGroup,{orientation:'vertical',defaultLayout:[60,40],label:'Content and details'},
+      node(ResizablePanel,{minSize:15},'Content'),node(ResizableHandle,{withHandle:true}),node(ResizablePanel,null,'Details')))),
+));
+for (const marker of ['data-locale="en"','Localized','>Previous<','>Next<','>Undo<','Не переводить этот текст','Donnerstag','Week','cap-rich-editor-tools','Archive note: formatting','aria-label="New block"','cap-resizable-group','cap-resizable-panel','cap-resizable-handle','aria-label="Resize panels"','data-with-handle="true"','data-orientation="vertical"','cap-scroll-viewport','data-fade="end"','--cap-scroll-fade-size:24px']) {
+  if (!english.includes(marker)) throw Error('Localized compound SSR contract missing '+marker);
+}
+console.log('Archive dist SSR, localization, compound resize, optional toolbar and Markdown bridge passed, including closed BottomSheet');
 `);
   execFileSync(process.execPath, [join(temp, 'render.mjs')], { stdio: 'pipe' });
   const fontCss = await readFile(join(target, 'dist/fonts.css'), 'utf8');
@@ -138,7 +172,7 @@ console.log('Archive dist SSR and Markdown bridge passed, including closed Botto
   for (const path of fontPaths) await access(join(target, 'dist', path));
   const manifest = JSON.parse(await readFile(join(target, 'agent-manifest.json'), 'utf8'));
   const packed = await build({ stdin: { contents: "export { Button } from '@personal/capacities-ui';", resolveDir: temp }, bundle: true, write: false, minify: true, format: 'esm', external: ['react','react-dom','react/jsx-runtime'] });
-  const report = { package: manifest.package, componentCount: manifest.componentCount, isolatedArchiveConsumer: true, nodeNextTypes: true, exampleTypecheck: examples, serverRenderImport: true, serverRenderedExports, markdownBridgeExports, closedBottomSheet: true, packageEntryInsideArchiveDist: true, verticalContentLayout: true, sliderNumericCallbacks: true, feedbackStyleApi: true, fontAssets: fontPaths.length, buttonGzipBytes: gzipSync(packed.outputFiles[0].contents).length };
+  const report = { package: manifest.package, componentCount: manifest.componentCount, isolatedArchiveConsumer: true, nodeNextTypes: true, exampleTypecheck: examples, serverRenderImport: true, serverRenderedExports, markdownBridgeExports, closedBottomSheet: true, packageEntryInsideArchiveDist: true, verticalContentLayout: true, sliderNumericCallbacks: true, feedbackStyleApi: true, localeProviderEnglish: true, defaultLocaleRussian: true, explicitIntlOverride: true, localeHooks: ['useLocale','useTranslate'], compoundResizablePanels: true, scrollFadeApi: true, richToolbarOptIn: true, fontAssets: fontPaths.length, buttonGzipBytes: gzipSync(packed.outputFiles[0].contents).length };
   await writeFile(join(root, 'docs/package-validation.json'), JSON.stringify(report, null, 2) + '\n');
   console.log(report);
 } catch (error) {

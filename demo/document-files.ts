@@ -1,22 +1,10 @@
-export const documentFiles = [
- {path:'docs/overview.md',label:'overview.md'},
- {path:'docs/component-guidelines.md',label:'component-guidelines.md'},
- {path:'docs/catalogue-reference.md',label:'catalogue-reference.md'},
- {path:'docs/resizing.md',label:'resizing.md'},
- {path:'docs/component-registry.md',label:'component-registry.md'},
- {path:'docs/selection-revision.md',label:'selection-revision.md'},
- {path:'docs/editor-revision.md',label:'editor-revision.md'},
- {path:'docs/navigation-motion-revision.md',label:'navigation-motion-revision.md'},
- {path:'docs/content-revision.md',label:'content-revision.md'},
- {path:'docs/feedback-revision.md',label:'feedback-revision.md'},
- {path:'docs/new-components-revision.md',label:'new-components-revision.md'},
- {path:'docs/anti-patterns.md',label:'anti-patterns.md'},
- {path:'docs/examples.md',label:'examples.md'},
- {path:'AGENTS.md',label:'AGENTS.md'},
- {path:'llms.txt',label:'llms.txt'},
- {path:'DESIGN.md',label:'DESIGN.md'},
- {path:'docs/recipes.md',label:'recipes.md'},
- {path:'docs/surface-context.md',label:'surface-context.md'},
- {path:'docs/behavior.md',label:'behavior.md'},
- {path:'docs/content-guide.md',label:'content-guide.md'},
-] as const;
+export type DocumentFile = { path: string; label: string; protected: boolean };
+/** The small canonical instruction set. Detailed audit/reference notes stay outside this editor. */
+export const documentFiles: DocumentFile[] = [
+ {path:'AGENTS.md',label:'AGENTS.md',protected:true},
+ {path:'llms.txt',label:'llms.txt',protected:true},
+ {path:'DESIGN.md',label:'DESIGN.md',protected:true},
+ {path:'docs/component-guidelines.md',label:'component-guidelines.md',protected:true},
+ {path:'docs/surface-context.md',label:'surface-context.md',protected:true},
+ {path:'docs/recipes.md',label:'recipes.md',protected:true},
+];

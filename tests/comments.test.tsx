@@ -1,4 +1,5 @@
-import { fireEvent, render, screen, act } from '@testing-library/react';
+import { LocaleProvider } from '../src/components/locale';
+import { fireEvent, render as baseRender, screen, act } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import axe from 'axe-core';
 import { CommentThread, InlineComments, type ThreadComment } from '../src/components/comments';
@@ -85,3 +86,5 @@ describe('inline comments overlay',()=>{
     } finally { vi.useRealTimers(); }
   });
 });
+
+const render = (ui: React.ReactNode, options?: import('@testing-library/react').RenderOptions) => baseRender(ui, { wrapper: ({ children }) => <LocaleProvider locale="en">{children}</LocaleProvider>, ...options });

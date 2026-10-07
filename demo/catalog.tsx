@@ -1,3 +1,4 @@
+import {ResizablePanelGroupStory} from './ResizableExample';
 import { arcComponents } from './catalog-arc';
 import type { ComponentType } from 'react';
 import manifest from '../agent-manifest.json';
@@ -17,6 +18,7 @@ interface CatalogRecord { group: ComponentGroup; description: string; render: Co
 const entry = (group: ComponentGroup, description: string, render: ComponentType<StoryProps>): CatalogRecord => ({group,description,render});
 /** Every public component has one route and one focused, rendered story. */
 export const componentCatalog = {
+  ResizablePanelGroup: entry('Навигация','Группа изменяемых панелей с вложенными осями и клавиатурным управлением.',ResizablePanelGroupStory),
   ...arcComponents,
   ResizableCard: entry('Объекты и контент','Карточка с изменением размера за угол и клавиатурным управлением.',Composition.ResizableCardStory),
   BottomSheet: entry('Окна и меню','Нижняя панель с отступом, фиксированными высотами и ручкой перемещения.',BottomSheetStory),

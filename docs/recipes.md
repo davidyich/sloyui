@@ -24,6 +24,29 @@ export function ThemeToggle() {
 }
 ```
 
+## Язык встроенного интерфейса
+
+Без provider встроенный интерфейс русский. LocaleProvider требует locale="ru" или "en"; ближайший provider задаёт язык подписи действий и стандартного Intl-форматирования. Пользовательские подписи и данные не переводятся. Явный locale у Calendar/DatePicker/DailyHeader или поддерживаемый format callback меняет формат данных, сохраняя язык интерфейса.
+
+```tsx
+import { DailyHeader, LocaleProvider, useLocale, useTranslate } from '@personal/capacities-ui';
+
+function LocalizedWorkspace() {
+  const locale = useLocale();
+  const t = useTranslate();
+  return <section lang={locale}>
+    <h2>{t('Мои заметки', 'My notes')}</h2>
+    <DailyHeader date="2026-01-15" locale="de-DE" />
+  </section>;
+}
+
+export function EnglishWorkspace() {
+  return <LocaleProvider locale="en"><LocalizedWorkspace /></LocaleProvider>;
+}
+```
+
+useTranslate возвращает t(ru, en) для собственных строк приложения. LocaleProvider/useLocale/useTranslate — утилиты; отдельные страницы компонентов им не нужны.
+
 ## Поверхность и локальные рамки
 
 Контекст описывает фактический фон контейнера. На собственном `section` задайте заливку через `--cap-surface-current`; встроенная Card создаёт собственный raised-контекст. Переключатель рамок меняет декоративные границы без изменения размеров. Popup сохраняет тему, акцент и режим рамок, а его поверхность остаётся floating.
@@ -83,16 +106,51 @@ export function CollectionActions() {
 ## Прокрутка без цветной подложки
 
 ```tsx
-import { ScrollArea } from '@personal/capacities-ui';
+import { Button, Card, ScrollArea } from '@personal/capacities-ui';
 
 export function Notes({ notes }: { notes: string[] }) {
-  return <ScrollArea label="Заметки" scrollbar="auto" style={{ height: 240 }}>
-    {notes.map((note, index) => <p key={index}>{note}</p>)}
-  </ScrollArea>;
+  return <Card>
+    <ScrollArea label="Заметки" scrollbar="auto" fade="vertical"
+      fadeSize={24} fadeReveal={96} style={{ height: 240 }}
+      floating={<Button onClick={() => window.print()}>Печать</Button>}>
+      {notes.map((note, index) => <p key={index}>{note}</p>)}
+    </ScrollArea>
+  </Card>;
 }
 ```
 
-`scrollbar="hidden"` скрывает полосу, сохраняя wheel/touch/keyboard. Горизонтальный режим по умолчанию hidden, vertical/both — auto. Краевые маски открывают реальный фон по сторонам overflow; `shadows={false}` отключает их. `ref` указывает на внутренний viewport — вызывайте `scrollTo` и измеряйте прокрутку именно у него. Пример: `#ScrollArea`.
+`scrollbar="hidden"` скрывает полосу, сохраняя wheel/touch/keyboard. Горизонтальный режим по умолчанию hidden, vertical/both — auto. Краевые маски открывают реальный фон по сторонам overflow; без overflow содержимое не затемняется. `fade={false}`/`"none"` отключает маски, явный fade имеет приоритет над совместимым shadows. fade принимает ось, физический край или start/end с учётом RTL. fadeSize — число px или CSS length, по умолчанию min(12%, space-10); fadeReveal — расстояние плавного раскрытия, по умолчанию 2 × space-12, 0 — сразу. floating находится вне маски и сохраняет тень; встроенный запас места учитывает его высоту. `ref` указывает на внутренний viewport — вызывайте `scrollTo` и измеряйте прокрутку именно у него. Пример: `#ScrollArea`.
+
+## Вложенные изменяемые панели
+
+Размеры ResizablePanelGroup — числовые проценты доступного места после ручек. Содержимое не должно задавать минимальную ширину всей композиции. Для вертикальной группы ограничьте высоту родителя; локальную прокрутку задавайте через ScrollArea. Группа состоит из прямых Panel/Handle children, другую группу вкладывайте внутрь Panel.
+
+```tsx
+import { ResizableHandle, ResizablePanel, ResizablePanelGroup, ScrollArea } from '@personal/capacities-ui';
+import { useState } from 'react';
+
+export function SplitWorkspace() {
+  const [layout, setLayout] = useState([30, 70]);
+  return <ResizablePanelGroup label="Рабочая область" layout={layout}
+    onLayoutChange={setLayout} style={{ height: 420 }}>
+    <ResizablePanel label="Навигация" minSize={15} maxSize={45} surface="canvas">
+      <ScrollArea label="Список проектов" style={{ height: '100%' }}>Проекты</ScrollArea>
+    </ResizablePanel>
+    <ResizableHandle withHandle label="Ширина навигации" />
+    <ResizablePanel label="Основное содержимое" minSize={35} surface="base">
+      <ResizablePanelGroup label="Документ и свойства" orientation="vertical" defaultLayout={[65, 35]}>
+        <ResizablePanel label="Документ" minSize={20}>
+          <ScrollArea label="Документ" style={{ height: '100%' }}>Содержимое</ScrollArea>
+        </ResizablePanel>
+        <ResizableHandle withHandle label="Высота документа" />
+        <ResizablePanel label="Свойства" minSize={15}>Свойства документа</ResizablePanel>
+      </ResizablePanelGroup>
+    </ResizablePanel>
+  </ResizablePanelGroup>;
+}
+```
+
+Panel defaultSize/minSize/maxSize задаёт начальный размер и границы в процентах; незаданные начальные размеры делят остаток. Управляемому layout нужен onLayoutChange; onLayoutCommit подходит для сохранения завершённого изменения. Стрелки меняют step (по умолчанию 1%), Shift — ×10, Home/End — границы пары, Escape отменяет drag. withHandle показывает grip; скрытый grip сохраняет доступный separator. surface по умолчанию inherit, собственную структурную границу добавляйте через cap-surface-boundary только для намеренно совпадающих вложенных поверхностей. Для боковых панелей в px с адаптивным складыванием используйте ContentLayout, для одной карточки — ResizableCard.
 
 ## Форма с валидацией
 
@@ -160,7 +218,7 @@ Menu поддерживает стрелки, Home/End, выбор Enter/Space, 
 
 Для локального цвета оберните группу в `<section data-accent="purple">`. `Tag` и `IconBox` без color наследуют локальный акцент. `Badge` и `TypeLabel` сохранены только как совместимые обёртки Tag. Акцентное действие: `<Button variant="accent">`. Свет/темнота задаются независимо через data-theme.
 
-У каждого из 61 компонента своя страница `#ComponentName`; переходите сразу к нужному примеру по маршруту из agent-manifest. Полная композиция: `examples/WorkspaceV2.tsx`. API контентных блоков: `docs/content-guide.md`. Контракт motion, состояний и адаптива: `docs/behavior.md`.
+У каждого канонического компонента своя страница `#ComponentName`; переходите сразу к нужному примеру по маршруту из agent-manifest. Полная композиция: `examples/WorkspaceV2.tsx`. API контентных блоков: `docs/content-guide.md`. Контракт motion, состояний и адаптива: `docs/behavior.md`.
 
 ## Настраиваемая карточка и перестановка
 

@@ -1,3 +1,4 @@
+import { useTranslate } from './locale.js';
 import { useEffect, useId, useRef, useState, type CSSProperties, type HTMLAttributes } from 'react';
 import { Card } from './layout.js';
 import { cx } from './primitives.js';
@@ -14,7 +15,10 @@ export interface ResizableCardProps extends HTMLAttributes<HTMLDivElement> {
   variant?: 'default' | 'subtle' | 'elevated';
 }
 /** A Card surface with an accessible resize corner. Parent width wins over minWidth. */
-export function ResizableCard({ size, defaultSize = { width: 360, height: 240 }, onSizeChange, onSizeCommit, minWidth, maxWidth, minHeight, maxHeight, step = 10, resizable = true, disabled = false, label = 'Карточка', variant = 'default', children, className, style, ...props }: ResizableCardProps) {
+export function ResizableCard({ size, defaultSize = { width: 360, height: 240 }, onSizeChange, onSizeCommit, minWidth, maxWidth, minHeight, maxHeight, step = 10, resizable = true, disabled = false, label: suppliedLabel, variant = 'default', children, className, style, ...props }: ResizableCardProps) {
+  const t = useTranslate();
+  const label = suppliedLabel === undefined ? (t("Карточка", "Card")) : suppliedLabel;
+
   const frame = useRef<HTMLDivElement>(null), space = useResizeSpace(frame), id = useId();
   const [inner, setInner] = useState(defaultSize), [dragging, setDragging] = useState(false);
   const widthBounds = resizeBounds(minWidth, maxWidth, 160, 800), heightBounds = resizeBounds(minHeight, maxHeight, 120, 800);
@@ -41,7 +45,7 @@ export function ResizableCard({ size, defaultSize = { width: 360, height: 240 },
   useEffect(() => { if (!enabled) { scheduled.clear(); const active = drag.current; drag.current = null; setDragging(false); if (active?.handle.hasPointerCapture?.(active.pointerId)) active.handle.releasePointerCapture?.(active.pointerId); } }, [enabled, scheduled.clear]);
   return <div ref={frame} className="cap-resizable-card-frame"><Card {...props} role={props.role ?? 'group'} aria-label={props['aria-label'] ?? label} variant={variant} className={cx('cap-resizable-card', className)} data-resizing={dragging || undefined} style={{ ...style, width: rendered.width, height: rendered.height } as CSSProperties}>
     <div className="cap-resizable-card-body">{children}</div>
-    {resizable && <><span id={`${id}-resize-help`} className="cap-sr-only">Ширина {rendered.width} px, высота {rendered.height} px. Перетащите угол или используйте стрелки. Shift увеличивает шаг. Home задаёт минимальный размер, End — максимальный. Escape отменяет перетаскивание.</span><button type="button" className="cap-resizable-card-handle" disabled={!enabled} aria-label={`Изменить размер: ${label}`} aria-describedby={`${id}-resize-help`} onPointerDown={event => {
+    {resizable && <><span id={`${id}-resize-help`} className="cap-sr-only">{t('Ширина', 'Width')} {rendered.width} {t(" px, высота ", " px, height ")}{rendered.height} {t(" px. Перетащите угол или используйте стрелки. Shift увеличивает шаг. Home задаёт минимальный размер, End — максимальный. Escape отменяет перетаскивание.", " px. Drag the corner or use arrow keys. Shift increases the step. Home sets minimum size, End maximum size. Escape cancels dragging.")}</span><button type="button" className="cap-resizable-card-handle" disabled={!enabled} aria-label={`${t("Изменить размер: ", "Resize: ")}${label}`} aria-describedby={`${id}-resize-help`} onPointerDown={event => {
       if (event.button !== 0 || drag.current || !enabled) return; event.preventDefault(); event.currentTarget.focus({ preventScroll: true });
       drag.current = { pointerId: event.pointerId, x: event.clientX, y: event.clientY, initial: rendered, desired, handle: event.currentTarget }; setDragging(true); event.currentTarget.setPointerCapture?.(event.pointerId);
     }} onPointerMove={event => { const active = drag.current; if (active?.pointerId === event.pointerId) scheduled.queue({ width: active.initial.width + event.clientX - active.x, height: active.initial.height + event.clientY - active.y }); }} onPointerUp={event => { if (drag.current?.pointerId === event.pointerId) finish(); }} onPointerCancel={event => { if (drag.current?.pointerId === event.pointerId) finish(true); }} onLostPointerCapture={event => { if (drag.current?.pointerId === event.pointerId) finish(true); }} onKeyDown={event => {

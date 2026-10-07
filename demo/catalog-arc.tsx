@@ -1,3 +1,4 @@
+import {useCatalogText} from './catalog-locale';
 import { useState, type ComponentType } from 'react';
 import { MessageCircle } from 'lucide-react';
 import { TreeView } from '../src/components/tree-view';
@@ -17,22 +18,28 @@ export interface ArcCatalogRecord { group: ArcGroup; description: string; render
 const entry = (group: ArcGroup, description: string, render: ComponentType<StoryProps>): ArcCatalogRecord => ({ group, description, render });
 
 function TreeViewStory() {
+ const c=useCatalogText();
+
   const [selected, setSelected] = useState('garden');
-  const nodes = [{ id: 'projects', label: 'Проекты', icon: 'folder' as const, children: [{ id: 'garden', label: 'Сад идей', icon: 'page' as const }, { id: 'archive', label: 'Визуальный архив', icon: 'page' as const }] }, { id: 'notes', label: 'Заметки', icon: 'book' as const, children: [{ id: 'today', label: 'Сегодня' }, { id: 'drafts', label: 'Черновики' }] }];
-  return <StorySection title="Дерево разделов"><div className="catalog-narrow"><TreeView label="Разделы проекта" nodes={nodes} selectedId={selected} defaultExpandedIds={['projects']} onSelect={node => setSelected(node.id)}/><p className="catalog-muted">Выбрано: {selected}. Стрелки перемещают фокус и раскрывают ветки.</p></div></StorySection>;
+  const nodes = [{ id: 'projects', label: c('Проекты'), icon: 'folder' as const, children: [{ id: 'garden', label: c('Сад идей'), icon: 'page' as const }, { id: 'archive', label: c('Визуальный архив'), icon: 'page' as const }] }, { id: 'notes', label: c('Заметки'), icon: 'book' as const, children: [{ id: 'today', label: c('Сегодня') }, { id: 'drafts', label: c('Черновики') }] }];
+  return <StorySection title={c("Дерево разделов")}><div className="catalog-narrow"><TreeView label={c("Разделы проекта")} nodes={nodes} selectedId={selected} defaultExpandedIds={['projects']} onSelect={node => setSelected(node.id)}/><p className="catalog-muted">{c("Выбрано: ")}{selected}{c(". Стрелки перемещают фокус и раскрывают ветки.")}</p></div></StorySection>;
 }
 function NavigationMenuStory() {
+ const c=useCatalogText();
+
   const resources = <div className="cap-navigation-grid">
-    <a href="#RichTextEditor"><Icon name="book"/><span><strong>Документация</strong><small>Блоки, форматирование и команды</small></span></a>
-    <a href="#TreeView"><Icon name="folder"/><span><strong>Структура</strong><small>Разделы и вложенные страницы</small></span></a>
-    <a href="#DataTable"><Icon name="table"/><span><strong>Таблицы</strong><small>Фильтры и сортировка данных</small></span></a>
-    <a href="#CommentThread"><Icon name={MessageCircle}/><span><strong>Обсуждения</strong><small>Ответы и комментарии на холсте</small></span></a>
+    <a href="#RichTextEditor"><Icon name="book"/><span><strong>{c("Документация")}</strong><small>{c("Блоки, форматирование и команды")}</small></span></a>
+    <a href="#TreeView"><Icon name="folder"/><span><strong>{c("Структура")}</strong><small>{c("Разделы и вложенные страницы")}</small></span></a>
+    <a href="#DataTable"><Icon name="table"/><span><strong>{c("Таблицы")}</strong><small>{c("Фильтры и сортировка данных")}</small></span></a>
+    <a href="#CommentThread"><Icon name={MessageCircle}/><span><strong>{c("Обсуждения")}</strong><small>{c("Ответы и комментарии на холсте")}</small></span></a>
   </div>;
-  return <StorySection title="Ссылки с описаниями"><NavigationMenu label="Разделы рабочего пространства" activeId="projects" leading={<strong className="cap-navigation-brand">Пространство</strong>} trailing={<Button size="sm" variant="accent">Создать</Button>} items={[{ id: 'projects', label: 'Проекты', content: resources }, { id: 'library', label: 'Материалы', content: resources }, { id: 'calendar', label: 'Календарь', href: '#Calendar' }]}/></StorySection>;
+  return <StorySection title={c("Ссылки с описаниями")}><NavigationMenu label={c("Разделы рабочего пространства")} activeId="projects" leading={<strong className="cap-navigation-brand">{c("Пространство")}</strong>} trailing={<Button size="sm" variant="accent">{c("Создать")}</Button>} items={[{ id: 'projects', label: c('Проекты'), content: resources }, { id: 'library', label: c('Материалы'), content: resources }, { id: 'calendar', label: c('Календарь'), href: '#Calendar' }]}/></StorySection>;
 }
 function HoverPanelStory() {
+ const c=useCatalogText();
+
   const [open, setOpen] = useState(false);
-  return <StorySection title="Предпросмотр объекта"><HoverPanel label="Сад идей: предпросмотр" summary="Сад идей" open={open} onOpenChange={setOpen}><div className="catalog-stack"><strong>Сад идей</strong><p>Наблюдения, решения и заметки проекта.</p><Tag interactive={false} size="sm">12 заметок</Tag><Button size="sm" onClick={() => setOpen(false)}>Закрыть</Button></div></HoverPanel></StorySection>;
+  return <StorySection title={c("Предпросмотр объекта")}><HoverPanel label={c("Сад идей: предпросмотр")} summary={c("Сад идей")} open={open} onOpenChange={setOpen}><div className="catalog-stack"><strong>{c("Сад идей")}</strong><p>{c("Наблюдения, решения и заметки проекта.")}</p><Tag interactive={false} size="sm">{c("12 заметок")}</Tag><Button size="sm" onClick={() => setOpen(false)}>{c("Закрыть")}</Button></div></HoverPanel></StorySection>;
 }
 
 /** Independent routes for every additional public component. The root catalogue merges this map. */

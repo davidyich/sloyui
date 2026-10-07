@@ -24,7 +24,7 @@
 - Use `--cap-content-muted` (or compatible `--cap-text-muted`) for supporting text.
 - Card always draws `.cap-surface-boundary`; add the same class to other nested surfaces that intentionally match their parent. It remains visible with `data-borders="off"`.
 - Set surface context from composition; never infer matching surfaces by sampling DOM colors.
-- Tag/IconBox inherit the local accent when color is omitted; gray is a legacy alias for neutral. Chip and selected MultiSelect chips stay neutral; use Tag for chromatic labels. See docs/selection-revision.md.
+- Tag/IconBox inherit the local accent when color is omitted; gray is a legacy alias for neutral. Chip and selected MultiSelect chips stay neutral; use Tag for chromatic labels. See docs/component-guidelines.md.
 - Use Inter, existing size tokens, and weight 400/500/600 for normal interfaces.
 - Use real data/state and meaningful actions. Keep empty, loading, disabled and error states in scope.
 - CSS classes are prefixed `cap-`; layout and application-specific state belong to the consumer.
@@ -47,19 +47,19 @@
 - Select is custom visually; its hidden native select preserves form submission.
 - ActionBar/ButtonGroup/SplitButton accept size; a nested group can override it. Popover.size affects only its trigger.
 - ScrollArea has scrollbar=auto|hidden; horizontal defaults hidden, vertical/both auto. Its ref targets the scrolling viewport; edge fades reveal the existing background.
-- Read docs/behavior.md for motion/state/responsive rules; docs/content-guide.md for calendar/editor/cards. Revision contracts are mapped in docs/overview.md; read only the relevant one.
-- RichTextEditor is canonical. For Markdown strings use the exported bridge helpers and retain block.markdown metadata; unsupported syntax stays editable source. MarkdownEditor is an archived compatibility export, with its route redirected to RichTextEditor. See docs/editor-revision.md.
+- Read docs/component-guidelines.md for behavior, content and composition; llms.txt maps the six canonical instruction files. Historical revision detail in docs/reference is audit-only.
+- RichTextEditor is canonical. For Markdown strings use the exported bridge helpers and retain block.markdown metadata; unsupported syntax stays editable source. MarkdownEditor is an archived compatibility export, with its route redirected to RichTextEditor. See docs/component-guidelines.md.
 - Tooltip takes one focusable React element forwarding `aria-describedby`.
 - Tabs require unique item values, a valid active value and an accessible group label.
 - Radio inputs in one choice group share a `name`; separate groups use distinct names.
 - ObjectCard and CollectionRow render buttons; do not nest buttons/links inside their content.
-- Toast is a presentation component with `role="status"`; consumer controls placement, lifetime and dismissal. Do not auto-dismiss actionable content before it can be used. Toast/Alert/StatusBar share tone/color/appearance/contrast/surface; neutral shells color only the status icon. Inline feedback inherits surface, Toast defaults floating; stacks expose expansion direction and measured geometry. See docs/feedback-revision.md.
+- Toast is a presentation component with `role="status"`; consumer controls placement, lifetime and dismissal. Do not auto-dismiss actionable content before it can be used. Toast/Alert/StatusBar share tone/color/appearance/contrast/surface; neutral shells color only the status icon. Inline feedback inherits surface, Toast defaults floating; stacks expose expansion direction and measured geometry. See docs/component-guidelines.md.
 - Keep reduced motion and native keyboard behavior intact.
 
 ## Maintain concise instructions
 
-- When a system change establishes a reusable rule, update its canonical document in the same task: `docs/component-guidelines.md` for composition, `docs/anti-patterns.md` for recurring mistakes, `docs/examples.md` for small examples, or the existing detailed contract. Do not leave durable rules only in chat.
-- Replace outdated guidance; avoid appending duplicates. Keep each rule short, actionable and linked to its source. `docs/overview.md` and `llms.txt` are maps, not copies of all rules. Read only relevant documents.
+- When a system change establishes a reusable rule, update its canonical document in the same task: `docs/component-guidelines.md` for component rules, `docs/surface-context.md` for paint/context, or `docs/recipes.md` for examples. Do not leave durable rules only in chat.
+- Replace outdated guidance; avoid appending duplicates. Keep each rule short, actionable and linked to its source. `llms.txt` is a map, not copies of all rules. Read only relevant documents.
 - Keep `demo/document-files.ts` aligned with user-editable instructions. The local catalogue editor writes those real files with revision checks; do not create a separate editable copy or silently overwrite concurrent changes.
 - Figma scope is foundations/styles, universal secondary tags and empty surface compositions. Other components remain in the web kit until explicitly requested for Figma.
 
@@ -75,8 +75,8 @@ Frozen rollback snapshots live in `versions/v0.2.0` and `versions/v0.1.0`; do no
 
 Global user rules still apply. This file governs only this UI-kit and its intentional use.
 
-- Keep floating shadows outside clipped/masked scroll viewports: use `ScrollArea.floating`, reserve content clearance, and verify small screens. Do not disable scrolling to hide clipping. See `docs/anti-patterns.md`.
-- Keep identity, status, group order and all memberships in source/component-registry.json; IDs never change on rename/reorder. Archived records remain exported but leave canonical groups/count; new components stay needs-review until reviewed. Regenerate the manifest after changes and keep one canonical page. See docs/component-registry.md.
+- Keep floating shadows outside clipped/masked scroll viewports: use `ScrollArea.floating`, reserve content clearance, and verify small screens. Do not disable scrolling to hide clipping. See `docs/component-guidelines.md`.
+- Keep identity, status, group order and all memberships in source/component-registry.json; IDs never change on rename/reorder. Archived records remain exported but leave canonical groups/count; new components stay needs-review until reviewed. Regenerate the manifest after changes and keep one canonical page. See docs/component-guidelines.md.
 - Maintain one typed Playground entry per canonical component in `demo/Playground.tsx` or `demo/PlaygroundArc.tsx`. Expose meaningful public props and slot combinations; do not duplicate global context controls. Update it when APIs change. Keep settings on their own painted surface; use searchable visual IconPicker controls for icons, including aliases.
 - Floating overlays establish `data-surface="floating"`; static cards remain raised. Small menu captions use `--cap-content-caption`, inline Tag counts use `number/inline-counter-size`.
 

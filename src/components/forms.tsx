@@ -1,3 +1,4 @@
+import { useTranslate } from './locale.js';
 import { MovingHighlight } from './moving-highlight.js';
 import { Children, isValidElement, forwardRef, useEffect, useLayoutEffect, useId, useRef, useState, type OptionHTMLAttributes, type InputHTMLAttributes, type SelectHTMLAttributes, type TextareaHTMLAttributes, type ReactNode, type HTMLAttributes, type CSSProperties, type ChangeEvent } from 'react';
 import { cx, Icon, IconButton, type Size, type Color } from './primitives.js';
@@ -42,6 +43,8 @@ function descriptionIds(id: string, describedBy: string | undefined, hint: React
   return [describedBy, (error || hint) && `${id}-description`].filter(Boolean).join(' ') || undefined;
 }
 export const Input = /* @__PURE__ */ forwardRef<HTMLInputElement, InputProps>(function Input({ size = 'md', variant = 'surface', label, labelPlacement, hint, error, leading, trailing, focusRing, id: suppliedId, className, type = 'text', value, defaultValue, onChange, onResetCapture, style, 'aria-describedby': describedBy, 'aria-invalid': invalid, ...props }, ref) {
+  const t = useTranslate();
+
   const generatedId = useId(), id = suppliedId ?? generatedId;
   const input = useRef<HTMLInputElement>(null), [searchInternal, setSearchInternal] = useState(String(defaultValue ?? ''));
   const searchText = String(value ?? searchInternal), showSearchClear = type === 'search' && searchText.length > 0;
@@ -52,7 +55,7 @@ export const Input = /* @__PURE__ */ forwardRef<HTMLInputElement, InputProps>(fu
     const reset = () => { timer = setTimeout(() => { const resetValue = String(defaultValue ?? ''); setSearchInternal(resetValue); if (input.current) input.current.value = resetValue; }, 0); };
     form.addEventListener('reset', reset); return () => { form.removeEventListener('reset', reset); clearTimeout(timer); };
   }, [type, value, defaultValue]);
-  const trailingContent = showSearchClear ? <span className="cap-field-trailing-actions">{trailing}<IconButton className="cap-field-clear" size="xs" variant="ghost" icon="close" label="Очистить поиск" disabled={props.disabled || props.readOnly} onMouseDown={event => event.preventDefault()} onClick={() => {
+  const trailingContent = showSearchClear ? <span className="cap-field-trailing-actions">{trailing}<IconButton className="cap-field-clear" size="xs" variant="ghost" icon="close" label={t("Очистить поиск", "Clear search")} disabled={props.disabled || props.readOnly} onMouseDown={event => event.preventDefault()} onClick={() => {
     const element = input.current; if (!element || props.disabled || props.readOnly) return;
     const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')?.set;
     setter?.call(element, ''); element.dispatchEvent(new Event('input', { bubbles: true })); element.focus();
@@ -78,6 +81,8 @@ function readOptions(children: ReactNode, group?: string, disabledGroup = false)
 }
 /** Custom single-select UI; the hidden select preserves native forms, refs and change events. */
 export const Select = /* @__PURE__ */ forwardRef<HTMLSelectElement, SelectProps>(function Select({ size = 'md', variant = 'surface', className, popupClassName, children, options: suppliedOptions, onValueChange, value, defaultValue, onChange, id: suppliedId, disabled, required, autoFocus, placeholder, label, labelPlacement, hint, error, scrubbable = false, scrubOrientation = 'vertical', focusRing, ...props }, ref) {
+  const t = useTranslate();
+
   const options = suppliedOptions ?? readOptions(children), generatedId = useId(), id = suppliedId ?? generatedId;
   const [pointerFocus, setPointerFocus] = useState(false);
   const native = useRef<HTMLSelectElement>(null), trigger = useRef<HTMLButtonElement>(null), panel = useRef<HTMLDivElement>(null);
@@ -127,7 +132,7 @@ export const Select = /* @__PURE__ */ forwardRef<HTMLSelectElement, SelectProps>
       if (!open) show(); if (match !== undefined) setActive(match);
       searchTimer.current = setTimeout(() => { search.current = ''; }, 600);
     }
-  }} style={fieldFocusStyle(props.style, focusRing)}><span data-placeholder={!current || !selected || undefined}>{current?.label ?? placeholder ?? 'Выберите…'}</span><Icon name="down" size={14} /></button>{present && <OverlayPortal anchor={trigger} panel={panel}><div role="region" aria-label={`Варианты: ${label ?? props['aria-label'] ?? 'выбор'}`} aria-hidden={!open || undefined} inert={!open}><div ref={panel} id={`${id}-listbox`} role="listbox" aria-hidden={!open || undefined} inert={!open} data-state={open ? 'open' : 'closed'} aria-label={props['aria-label'] ?? (typeof document !== 'undefined' ? trigger.current?.labels?.[0]?.textContent ?? 'Варианты' : 'Варианты')} aria-labelledby={props['aria-labelledby'] ?? (label ? `${id}-label` : undefined)} className={cx('cap-select-popup','cap-shared-hover',popupClassName)} style={position} {...scope}><MovingHighlight root={panel} hover target=".cap-select-option:not([aria-disabled=true])"/>{options.map((option, index) => <div key={`${option.value}-${index}`} role="none">{option.group && option.group !== options[index - 1]?.group && <div className="cap-select-group" aria-hidden="true">{option.group}</div>}<div id={`${id}-option-${index}`} role="option" aria-selected={option.value === selected} aria-disabled={option.disabled || undefined} data-active={active === index || undefined} className="cap-select-option" onPointerMove={() => { if (!option.disabled) setActive(index); }} onMouseDown={event => event.preventDefault()} onClick={() => choose(option)}><span>{option.label}</span>{option.value === selected && <Icon name="check" size={14} />}</div></div>)}</div></div></OverlayPortal>}</span></ControlField>;
+  }} style={fieldFocusStyle(props.style, focusRing)}><span data-placeholder={!current || !selected || undefined}>{current?.label ?? placeholder ?? t("Выберите…", "Choose…")}</span><Icon name="down" size={14} /></button>{present && <OverlayPortal anchor={trigger} panel={panel}><div role="region" aria-label={`${t("Варианты: ", "Options: ")}${label ?? props['aria-label'] ?? t("выбор", "selection")}`} aria-hidden={!open || undefined} inert={!open}><div ref={panel} id={`${id}-listbox`} role="listbox" aria-hidden={!open || undefined} inert={!open} data-state={open ? 'open' : 'closed'} aria-label={props['aria-label'] ?? (typeof document !== 'undefined' ? trigger.current?.labels?.[0]?.textContent ?? t("Варианты", "Options") : t("Варианты", "Options"))} aria-labelledby={props['aria-labelledby'] ?? (label ? `${id}-label` : undefined)} className={cx('cap-select-popup','cap-shared-hover',popupClassName)} style={position} {...scope}><MovingHighlight root={panel} hover target=".cap-select-option:not([aria-disabled=true])"/>{options.map((option, index) => <div key={`${option.value}-${index}`} role="none">{option.group && option.group !== options[index - 1]?.group && <div className="cap-select-group" aria-hidden="true">{option.group}</div>}<div id={`${id}-option-${index}`} role="option" aria-selected={option.value === selected} aria-disabled={option.disabled || undefined} data-active={active === index || undefined} className="cap-select-option" onPointerMove={() => { if (!option.disabled) setActive(index); }} onMouseDown={event => event.preventDefault()} onClick={() => choose(option)}><span>{option.label}</span>{option.value === selected && <Icon name="check" size={14} />}</div></div>)}</div></div></OverlayPortal>}</span></ControlField>;
 });
 export function Field({ label, hint, error, required, children, className }: { label: string; hint?: string; error?: string; required?: boolean; className?: string; children: (props: { id: string; 'aria-describedby'?: string; 'aria-invalid'?: true; required?: boolean }) => ReactNode }) {
   const id = useId(), description = error || hint;

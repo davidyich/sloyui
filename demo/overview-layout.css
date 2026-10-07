@@ -1,0 +1,9 @@
+/* Documentation entries have the same type scale as component entries. */
+.catalog-nav-scroll .cap-tree-item[aria-level='1']:not([aria-expanded]) { font-size:12.5px; font-weight:400; }
+.catalog-language { margin-inline-start:auto; }
+.catalog-language.cap-button { min-width:28px; padding-inline:6px; color:var(--cap-content-muted); }
+.catalog-related-card { background:var(--cap-surface-current); }
+:where([data-borders='on']) .catalog-related-card { background:transparent; border-color:var(--cap-border-base); }
+/* Data boundaries carry meaning even when decorative control outlines are off. */
+.catalog-api-table thead { border-bottom:1px solid var(--cap-border-subtle); }
+.catalog-api-table-wrap,.catalog-agent-guide { border-color:var(--cap-border-subtle); }

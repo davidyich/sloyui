@@ -1,3 +1,4 @@
+import { useTranslate } from './locale.js';
 import { FeedbackIcon, feedbackColor, type FeedbackStyleProps } from './feedback.js';
 import { MovingHighlight } from './moving-highlight.js';
 import { createContext, useContext, useMemo, cloneElement, useEffect, useLayoutEffect, useId, useRef, useState, type CSSProperties, type ReactNode, type ReactElement, type HTMLAttributes, type KeyboardEvent, type RefObject } from 'react';
@@ -186,7 +187,10 @@ function useModalFocus(open: boolean, layer: RefObject<HTMLDivElement | null>, p
 }
 export interface DialogProps { open: boolean; onOpenChange: (open: boolean) => void; title: string; description?: string; children: ReactNode; footer?: ReactNode; className?: string; size?: 'sm' | 'md' | 'lg' | 'xl'; closeLabel?: string; dismissOnOutside?: boolean }
 export interface DrawerProps extends DialogProps { side?: 'left' | 'right' | 'bottom'; variant?: 'inset' | 'edge' }
-function Modal({ open, onOpenChange, title, description, children, footer, className, size = 'md', closeLabel = 'Закрыть', dismissOnOutside = true, side, variant = 'inset' }: DrawerProps) {
+function Modal({ open, onOpenChange, title, description, children, footer, className, size = 'md', closeLabel: suppliedCloseLabel, dismissOnOutside = true, side, variant = 'inset' }: DrawerProps) {
+  const t = useTranslate();
+  const closeLabel = suppliedCloseLabel === undefined ? (t("Закрыть", "Close")) : suppliedCloseLabel;
+
   const anchor = useRef<HTMLSpanElement>(null), layer = useRef<HTMLDivElement>(null), panel = useRef<HTMLDivElement>(null), id = useId();
   const scope = useOverlayScope(anchor), present = useOverlayPresence(open), wasOpen = useRef(false), opener = useRef<HTMLElement | null>(null);
   const parents = useContext(OverlayParents), descendants = useMemo(() => [...parents, panel], [parents, panel]);
@@ -269,7 +273,10 @@ export function Popover({ label, triggerContent, triggerIcon, children, open: co
   }}>{children}</div></OverlayPortal>}</span>;
 }
 export interface CommandItem { id: string; label: string; description?: string; icon?: IconSource; shortcut?: string; onSelect: () => void }
-export function CommandPalette({ open, onOpenChange, items, placeholder = 'Найти команду или объект…' }: { open: boolean; onOpenChange: (open: boolean) => void; items: CommandItem[]; placeholder?: string }) {
+export function CommandPalette({ open, onOpenChange, items, placeholder: suppliedPlaceholder }: { open: boolean; onOpenChange: (open: boolean) => void; items: CommandItem[]; placeholder?: string }) {
+  const t = useTranslate();
+  const placeholder = suppliedPlaceholder === undefined ? (t("Найти команду или объект…", "Find a command or object…")) : suppliedPlaceholder;
+
   const [query, setQuery] = useState(''), [active, setActive] = useState(0), id = useId();
   const input = useRef<HTMLInputElement>(null), hoverRoot = useRef<HTMLDivElement>(null);
   const filtered = items.filter(i => `${i.label} ${i.description ?? ''}`.toLocaleLowerCase().includes(query.toLocaleLowerCase()));
@@ -277,10 +284,10 @@ export function CommandPalette({ open, onOpenChange, items, placeholder = 'На�
   const choose = (item: CommandItem) => { onOpenChange(false); item.onSelect(); };
   const index = Math.min(active, Math.max(0, filtered.length - 1));
   useEffect(() => { if (open) document.getElementById(`${id}-${index}`)?.scrollIntoView?.({ block: 'nearest' }); }, [id, index, open]);
-  return <Dialog open={open} onOpenChange={onOpenChange} title="Быстрый поиск" className="cap-command" footer={<span className="cap-command-help"><Kbd>↑↓</Kbd> навигация <Kbd>↵</Kbd> выбрать <Kbd>esc</Kbd> закрыть</span>}><div className="cap-command-input"><Icon name="search" size={20} /><input ref={input} autoFocus role="combobox" aria-label="Поиск команд" aria-expanded={true} aria-controls={`${id}-list`} aria-autocomplete="list" aria-activedescendant={filtered.length ? `${id}-${index}` : undefined} value={query} placeholder={placeholder} onChange={e => { setQuery(e.target.value); setActive(0); }} onKeyDown={e => {
+  return <Dialog open={open} onOpenChange={onOpenChange} title={t("Быстрый поиск", "Quick search")} className="cap-command" footer={<span className="cap-command-help"><Kbd>↑↓</Kbd> {t("навигация", "navigate")}<Kbd>↵</Kbd> {t("выбрать", "select")}<Kbd>esc</Kbd> {t("закрыть", "close")}</span>}><div className="cap-command-input"><Icon name="search" size={20} /><input ref={input} autoFocus role="combobox" aria-label={t("Поиск команд", "Search commands")} aria-expanded={true} aria-controls={`${id}-list`} aria-autocomplete="list" aria-activedescendant={filtered.length ? `${id}-${index}` : undefined} value={query} placeholder={placeholder} onChange={e => { setQuery(e.target.value); setActive(0); }} onKeyDown={e => {
     if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); setActive(filtered.length ? (index + (e.key === 'ArrowDown' ? 1 : -1) + filtered.length) % filtered.length : 0); }
     if (e.key === 'Enter' && !e.nativeEvent.isComposing && filtered[index]) { e.preventDefault(); choose(filtered[index]); }
-  }} /></div><div id={`${id}-list`} role="listbox" aria-label="Результаты поиска" ref={hoverRoot} className="cap-command-list cap-shared-hover"><MovingHighlight root={hoverRoot} selected="[aria-selected=true]" hover target=".cap-command-item" revision={`${query}:${index}`}/>{filtered.map((item, i) => <div key={item.id} id={`${id}-${i}`} role="option" aria-selected={i === index} className="cap-command-item" onPointerMove={() => setActive(i)} onMouseDown={e => e.preventDefault()} onClick={() => choose(item)}>{item.icon && <Icon name={item.icon} />}<span>{item.label}{item.description && <small>{item.description}</small>}</span>{item.shortcut && <Kbd>{item.shortcut}</Kbd>}</div>)}</div>{!filtered.length && <p className="cap-command-empty" role="status">Ничего не найдено</p>}</Dialog>;
+  }} /></div><div id={`${id}-list`} role="listbox" aria-label={t("Результаты поиска", "Search results")} ref={hoverRoot} className="cap-command-list cap-shared-hover"><MovingHighlight root={hoverRoot} selected="[aria-selected=true]" hover target=".cap-command-item" revision={`${query}:${index}`}/>{filtered.map((item, i) => <div key={item.id} id={`${id}-${i}`} role="option" aria-selected={i === index} className="cap-command-item" onPointerMove={() => setActive(i)} onMouseDown={e => e.preventDefault()} onClick={() => choose(item)}>{item.icon && <Icon name={item.icon} />}<span>{item.label}{item.description && <small>{item.description}</small>}</span>{item.shortcut && <Kbd>{item.shortcut}</Kbd>}</div>)}</div>{!filtered.length && <p className="cap-command-empty" role="status">{t("Ничего не найдено", "No results")}</p>}</Dialog>;
 }
 export interface ToastProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title' | 'color'>, FeedbackStyleProps {
   title: string;
@@ -290,5 +297,7 @@ export interface ToastProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'
   action?: ReactNode;
 }
 export function Toast({ title, description, onDismiss, icon, action, tone = 'success', color, appearance = 'neutral', contrast = false, surface = 'floating', className, ...props }: ToastProps) {
-  return <div className={cx('cap-toast', 'cap-feedback', className)} data-surface={surface === 'inherit' ? undefined : surface} data-tone={tone} data-feedback-appearance={appearance} data-contrast={contrast || undefined} data-accent={appearance === 'neutral' ? undefined : feedbackColor(tone,color)} role="status" {...props}><FeedbackIcon tone={tone} color={color} contrast={contrast}>{icon}</FeedbackIcon><div className="cap-toast-content"><strong>{title}</strong>{description && <p>{description}</p>}{action && <div className="cap-toast-action">{action}</div>}</div>{onDismiss && <IconButton label="Скрыть уведомление" icon="close" size="sm" variant="ghost" onClick={onDismiss} />}</div>;
+  const t = useTranslate();
+
+  return <div className={cx('cap-toast', 'cap-feedback', className)} data-surface={surface === 'inherit' ? undefined : surface} data-tone={tone} data-feedback-appearance={appearance} data-contrast={contrast || undefined} data-accent={appearance === 'neutral' ? undefined : feedbackColor(tone,color)} role="status" {...props}><FeedbackIcon tone={tone} color={color} contrast={contrast}>{icon}</FeedbackIcon><div className="cap-toast-content"><strong>{title}</strong>{description && <p>{description}</p>}{action && <div className="cap-toast-action">{action}</div>}</div>{onDismiss && <IconButton label={t("Скрыть уведомление", "Dismiss notification")} icon="close" size="sm" variant="ghost" onClick={onDismiss} />}</div>;
 }

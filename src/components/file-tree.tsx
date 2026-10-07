@@ -1,3 +1,4 @@
+import { useTranslate } from './locale.js';
 import { useState, type ReactNode } from 'react';
 import { FileCode2, FileJson2, FolderOpen, Image as ImageIcon } from 'lucide-react';
 import { TreeView, type TreeNode } from './tree-view.js';
@@ -44,7 +45,10 @@ function fileIcon(node: FileTreeNode, open: boolean): IconSource | false {
 }
 
 /** TreeView owns branch motion and complete tree keyboard navigation; actions are outside tree buttons. */
-export function FileTree({ nodes, label, selectedId, defaultSelectedId, onSelect, expandedIds, defaultExpandedIds = [], onExpandedChange, size = 'md', showGuides = true, showPreview = true, emptyLabel = 'Нет файлов', className }: FileTreeProps) {
+export function FileTree({ nodes, label, selectedId, defaultSelectedId, onSelect, expandedIds, defaultExpandedIds = [], onExpandedChange, size = 'md', showGuides = true, showPreview = true, emptyLabel: suppliedEmptyLabel, className }: FileTreeProps) {
+  const t = useTranslate();
+  const emptyLabel = suppliedEmptyLabel === undefined ? (t("Нет файлов", "No files")) : suppliedEmptyLabel;
+
   const [internalSelection, setInternalSelection] = useState(defaultSelectedId), [internalExpanded, setInternalExpanded] = useState(defaultExpandedIds);
   const expanded = expandedIds ?? internalExpanded, expandedSet = new Set(expanded);
   const byId = new Map<string, FileTreeNode>();
@@ -66,12 +70,12 @@ export function FileTree({ nodes, label, selectedId, defaultSelectedId, onSelect
     <div className="cap-file-tree-list">
       {nodes.length ? <TreeView label={label} nodes={treeNodes} selectedId={selected?.id} onSelect={choose} expandedIds={expanded} onExpandedChange={ids => { if (expandedIds === undefined) setInternalExpanded(ids); onExpandedChange?.(ids); }} size={size} showGuides={showGuides}/> : <EmptyState title={emptyLabel} icon={false}/>}
     </div>
-    {showPreview && <section className="cap-file-tree-preview cap-surface-boundary" data-surface="raised" aria-label={`${label}: предпросмотр`}>
+    {showPreview && <section className="cap-file-tree-preview cap-surface-boundary" data-surface="raised" aria-label={`${label}${t(": предпросмотр", ": preview")}`}>
       {selected && !selected.disabled ? <div key={selected.id} className="cap-file-tree-preview-content"><div className="cap-file-tree-preview-heading">{fileIcon(selected, expandedSet.has(selected.id)) !== false && <Icon name={fileIcon(selected, expandedSet.has(selected.id)) as IconSource}/>}<strong>{selected.name}</strong></div>
         {selected.description && <div className="cap-file-tree-description">{selected.description}</div>}
-        <div className="cap-file-tree-preview-body">{selected.preview ?? <p>Для этого файла нет предпросмотра.</p>}</div>
-      </div> : <EmptyState title={nodes.length ? 'Выберите файл' : emptyLabel} description={nodes.length ? 'Стрелки перемещают фокус, Enter или пробел выбирают файл.' : undefined} icon={false}/>}
+        <div className="cap-file-tree-preview-body">{selected.preview ?? <p>{t("Для этого файла нет предпросмотра.", "No preview is available for this file.")}</p>}</div>
+      </div> : <EmptyState title={nodes.length ? t("Выберите файл", "Choose a file") : emptyLabel} description={nodes.length ? t("Стрелки перемещают фокус, Enter или пробел выбирают файл.", "Arrow keys move focus; Enter or Space selects a file.") : undefined} icon={false}/>}
     </section>}
-    {!!selected?.actions?.length && !selected.disabled && <div role="group" aria-label={`${selected.name}: действия`} className="cap-file-tree-actions">{selected.actions.map(action => <Button key={action.id} variant="ghost" size="sm" leading={action.icon && <Icon name={action.icon}/>} disabled={action.disabled} onClick={() => action.onSelect(selected)}>{action.label}</Button>)}</div>}
+    {!!selected?.actions?.length && !selected.disabled && <div role="group" aria-label={`${selected.name}${t(": действия", ": actions")}`} className="cap-file-tree-actions">{selected.actions.map(action => <Button key={action.id} variant="ghost" size="sm" leading={action.icon && <Icon name={action.icon}/>} disabled={action.disabled} onClick={() => action.onSelect(selected)}>{action.label}</Button>)}</div>}
   </div>;
 }

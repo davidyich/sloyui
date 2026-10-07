@@ -36,14 +36,12 @@ describe('Persistent component registry',()=>{
    }
    expect(manifest.catalogue.groups.filter(group=>group.components.includes('MultiSelect')).map(group=>group.id)).toEqual(registry.components.MultiSelect.groups);
  });
- it('maps revision instructions to real editable files and manifest recipes',()=>{
+ it('keeps a minimal canonical editable instruction set',()=>{
+   expect(documentFiles).toHaveLength(6);
    expect(new Set(documentFiles.map(file=>file.path)).size).toBe(documentFiles.length);
-   for(const file of documentFiles)expect(existsSync(file.path),file.path).toBe(true);
-   for(const stem of ['selection','editor','navigation-motion','content','feedback','new-components']){
-     const path=`docs/${stem}-revision.md`;
-     expect(documentFiles.some(file=>file.path===path)).toBe(true);
-     expect(manifest.recipes).toContain(path);
-   }
+   for(const file of documentFiles){expect(existsSync(file.path),file.path).toBe(true);expect(file.protected).toBe(true);}
+   expect(documentFiles.map(file=>file.path)).toContain('docs/component-guidelines.md');
+   expect(documentFiles.some(file=>file.path.endsWith('-revision.md'))).toBe(false);
  });
  it('requires design review for every newly introduced component',()=>{
    for(const record of Object.values(registry.components))if('introduced' in record)expect(record.status).toBe('needs-review');

@@ -67,7 +67,7 @@ it('renders cyclic and undefined data, searches deep keys, pages children and co
   expect(screen.getByText(/Показать ещё 1 из/)).toBeInTheDocument();
   await user.click(screen.getByRole('treeitem', { name: /Показать ещё/ }));
   await user.click(screen.getByRole('treeitem', { name: /Показать ещё/ }));
-  expect(screen.getByRole('treeitem', { name: /self/ })).toHaveTextContent('[Circular]');
+  expect(screen.getByRole('treeitem', { name: /self/ })).toHaveTextContent('[Циклическая ссылка]');
   await user.type(screen.getByRole('textbox', { name: 'Поиск в JSON' }), 'target');
   expect(screen.getByRole('treeitem', { name: /target/ })).toBeInTheDocument();
   await user.click(screen.getByRole('button', { name: 'Копировать путь root.items[1].name' }));

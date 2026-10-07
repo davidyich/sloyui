@@ -1,3 +1,4 @@
+import { useTranslate } from './locale.js';
 import type { ButtonHTMLAttributes, HTMLAttributes, ReactNode } from 'react';
 import { Counter, Icon, cx, type CounterProps, type IconSource, type Size } from './primitives.js';
 
@@ -19,8 +20,10 @@ export interface ChipProps extends Omit<HTMLAttributes<HTMLSpanElement>, 'onClic
 
 /** Neutral, button-like selection token. Label and trailing action are sibling controls. */
 export function Chip({ children, size = 'sm', shape = 'rounded', icon, count, counter, selected, disabled = false, interactive, onClick, onRemove, action, className, ...props }: ChipProps) {
+  const t = useTranslate();
+
   const active = interactive ?? !!(onClick || onRemove || action);
-  const endAction = action ?? (onRemove ? { icon: 'close' as const, label: `Удалить ${typeof children === 'string' ? children : 'элемент'}`, onClick: onRemove } : undefined);
+  const endAction = action ?? (onRemove ? { icon: 'close' as const, label: `${t("Удалить ", "Remove ")}${typeof children === 'string' ? children : t("элемент", "item")}`, onClick: onRemove } : undefined);
   const content = <>{icon && <Icon name={icon} aria-hidden="true" />}<span className="cap-chip-text">{children}</span>{count !== undefined && <Counter value={count} size={size} variant="translucent" {...counter} />}</>;
   return <span {...props} className={cx('cap-chip', className)} data-size={size} data-shape={shape} data-selected={selected || undefined} data-interactive={active || undefined} aria-disabled={disabled || undefined}>
     {active && onClick ? <button type="button" className="cap-chip-label" disabled={disabled} aria-pressed={selected} onClick={onClick}>{content}</button> : <span className="cap-chip-label">{content}</span>}

@@ -1,3 +1,4 @@
+import { useTranslate } from './locale.js';
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
 import { IconButton, cx, type Color } from './primitives.js';
 import { Select } from './forms.js';
@@ -146,6 +147,7 @@ function codeLines(source: string, language: CodeLanguage): CodeToken[][] {
 }
 
 function NumberedCode({ source, language, wrap, label }: { source: string; language: CodeLanguage; wrap: boolean; label?: string }) {
+  const t = useTranslate();
   const preRef = useRef<HTMLPreElement>(null), lines = codeLines(source, language);
   useLayoutEffect(() => {
     const pre = preRef.current;
@@ -164,7 +166,7 @@ function NumberedCode({ source, language, wrap, label }: { source: string; langu
     rows.forEach(row => observer?.observe(row));
     return () => observer?.disconnect();
   }, [source, language, wrap]);
-  return <pre ref={preRef} className="cap-code-numbered" tabIndex={0} aria-label={label ?? `${language} code`}>
+  return <pre ref={preRef} className="cap-code-numbered" tabIndex={0} aria-label={label ?? `${language} ${t('код', 'code')}`}>
     <span className="cap-code-gutter" aria-hidden="true">{lines.map((_, index) => <span key={index} className="cap-code-line-number">{index + 1}</span>)}</span>
     <code className={`language-${language}`}>{lines.map((line, index) => <span key={index} className="cap-code-source-line">{line.map((token, tokenIndex) => token.kind ? <span key={tokenIndex} className={`cap-code-${token.kind}`} data-token={token.kind}>{token.text}</span> : token.text)}</span>)}</code>
   </pre>;
@@ -172,16 +174,18 @@ function NumberedCode({ source, language, wrap, label }: { source: string; langu
 
 /** A small, dependency-free code surface with safe syntax tokens and optional copy/language controls. */
 export function CodeBlock({ children, label, filename, lineNumbers = false, language: controlledLanguage, defaultLanguage, onLanguageChange, showLanguageSelector = true, color, copyable = true, actions, wrap: controlledWrap, onWrapChange, showActionsMenu = copyable, contextActions = [], editor, variant = 'auto', className }: CodeBlockProps) {
+  const t = useTranslate();
+
   const title = filename ?? label;
   const [internalLanguage, setInternalLanguage] = useState<CodeLanguage>(defaultLanguage ?? inferLanguage(title));
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState<'idle' | 'copied' | 'error'>('idle');
   const [internalWrap, setInternalWrap] = useState(false);
   const wrap = controlledWrap ?? internalWrap;
   const toggleWrap = () => { const next = !wrap; if (controlledWrap === undefined) setInternalWrap(next); onWrapChange?.(next); };
-  useEffect(() => { setStatus(''); }, [children]);
+  useEffect(() => { setStatus('idle'); }, [children]);
   useEffect(() => {
-    if (!status) return;
-    const timer = setTimeout(() => setStatus(''), 4000);
+    if (status === 'idle') return;
+    const timer = setTimeout(() => setStatus('idle'), 4000);
     return () => clearTimeout(timer);
   }, [status]);
   const language = controlledLanguage ?? internalLanguage;
@@ -193,16 +197,16 @@ export function CodeBlock({ children, label, filename, lineNumbers = false, lang
   return <figure className={cx('cap-code', className)} data-variant={variant} data-wrap={wrap || undefined} data-color={color ?? 'neutral'} data-accent={color === 'inherit' ? undefined : color ?? 'neutral'}>
     {(showLanguageSelector || title || copyable || actions || showActionsMenu) && <figcaption>
       <span className="cap-code-heading">
-        {showLanguageSelector && <Select aria-label="Язык кода" className="cap-code-language-select" popupClassName="cap-code-language-popup" size="xs" variant="ghost" value={language} onValueChange={changeLanguage} options={languageOptions}/>}
+        {showLanguageSelector && <Select aria-label={t("Язык кода", "Code language")} className="cap-code-language-select" popupClassName="cap-code-language-popup" size="xs" variant="ghost" value={language} onValueChange={changeLanguage} options={languageOptions.map(option => option.value === 'text' ? { ...option, label: t('Обычный текст', 'Plain text') } : option)}/>}
         {title && <span className="cap-code-label" title={title}>{title}</span>}
       </span>
       <span className="cap-code-actions">
-        {copyable && <IconButton className="cap-code-copy" size="sm" variant="ghost" icon={status === 'Скопировано' ? 'check' : 'copy'} label="Копировать код" onClick={async () => { try { await navigator.clipboard.writeText(children); setStatus('Скопировано'); } catch { setStatus('Не удалось скопировать. Выделите код вручную.'); } }}/>}
-        {showActionsMenu && <Menu label="Действия с кодом" size="sm" items={[{ id: 'wrap', label: wrap ? 'Отключить перенос строк' : 'Переносить строки', icon: 'code', onSelect: toggleWrap }, ...contextActions]}/>}
+        {copyable && <IconButton className="cap-code-copy" size="sm" variant="ghost" icon={status === 'copied' ? 'check' : 'copy'} label={t("Копировать код", "Copy code")} onClick={async () => { try { await navigator.clipboard.writeText(children); setStatus('copied'); } catch { setStatus('error'); } }}/>}
+        {showActionsMenu && <Menu label={t("Действия с кодом", "Code actions")} size="sm" items={[{ id: 'wrap', label: wrap ? t("Отключить перенос строк", "Disable line wrapping") : t("Переносить строки", "Wrap lines"), icon: 'code', onSelect: toggleWrap }, ...contextActions]}/>}
         {actions}
       </span>
     </figcaption>}
-    {editor ? <div className="cap-code-editor">{editor}</div> : lineNumbers ? <NumberedCode source={children} language={language} wrap={wrap} label={title}/> : <pre tabIndex={0} aria-label={title ?? `${language} code`}><code className={`language-${language}`}>{highlightCode(children, language)}</code></pre>}
-    <span role="status" className="cap-sr-only">{status}</span>
+    {editor ? <div className="cap-code-editor">{editor}</div> : lineNumbers ? <NumberedCode source={children} language={language} wrap={wrap} label={title}/> : <pre tabIndex={0} aria-label={title ?? `${language} ${t('код', 'code')}`}><code className={`language-${language}`}>{highlightCode(children, language)}</code></pre>}
+    <span role="status" className="cap-sr-only">{status === 'copied' ? t('Скопировано', 'Copied') : status === 'error' ? t('Не удалось скопировать. Выделите код вручную.', 'Could not copy. Select the code manually.') : ''}</span>
   </figure>;
 }

@@ -1,6 +1,15 @@
 # Changelog
 
-## Unreleased
+## 0.6.0 · 2026-10-08
+
+- Rebuilt the component overview with one centered example per plain preview and a compact caption. Overview and Changelog share the Docs navigation group.
+- Added Russian/English runtime and catalogue localization, a persistent sidebar switch, locale-aware dates/numbers and portal inheritance. Consumer content and explicit formatters stay unchanged.
+- Reduced the active instruction set to six canonical files. Added local instruction creation/deletion with revision checks, draft preservation and protected core files; historical guides remain available in the reference archive.
+- Added token-based directional ScrollArea fades with configurable depth and reveal distance. Floating actions, shadows and structural boundaries remain outside the mask.
+- Added ResizablePanelGroup, ResizablePanel and ResizableHandle: percentage layouts, nested axes, min/max limits, pointer and keyboard resizing, RTL and controlled/uncontrolled state. The new canonical component is marked needs-review.
+- Preserved structural table/API boundaries with decorative borders off; related cards use a raised surface and respect outlined mode.
+- Made the RichTextEditor toolbar opt-in, simplified block actions into submenus, spaced adjacent code blocks and fixed popup border inheritance. Cross-block pointer/keyboard selection supports copying and editing partial ranges.
+
 
 - Исправлен сегмент просмотра палитр: стабильная подложка и отдельная строка управления. Добавлен перенос по ширине для оттенков в строках и целых палитр в столбцах; непрерывный режим доступен переключателем.
 

@@ -1,5 +1,6 @@
+import { LocaleProvider } from '../src/components/locale';
 import { useState } from 'react';
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render as baseRender, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { Toast } from '../src/components/overlays';
 import { Alert, StatusBar } from '../src/components/workbench';
@@ -15,13 +16,13 @@ describe('measured directional stack layout',()=>{
  });
  it('can expand the inline toast stack through its touch/keyboard control',()=>{
   render(<ToastStack position="inline" expandDirection="left" items={[{id:'a',title:'First',duration:Infinity},{id:'b',title:'Second',duration:Infinity}]} onDismiss={()=>{}}/>);
-  const region=screen.getByRole('region',{name:'Notifications'}),button=screen.getByRole('button',{name:'Развернуть уведомления'});
+  const region=screen.getByRole('region',{name:'Notifications'}),button=screen.getByRole('button',{name:'Expand notifications'});
   fireEvent.focus(button);fireEvent.click(button);expect(region).toHaveAttribute('data-expanded');expect(region).toHaveAttribute('data-direction','left');
-  fireEvent.click(screen.getByRole('button',{name:'Свернуть уведомления'}));expect(region).not.toHaveAttribute('data-expanded');
+  fireEvent.click(screen.getByRole('button',{name:'Collapse notifications'}));expect(region).not.toHaveAttribute('data-expanded');
  });
  it('keeps controlled expansion under the consumer and uses the specified direction',()=>{
   const changed=vi.fn();const view=render(<ToastStack position="inline" expandDirection="right" expanded={false} onExpandedChange={changed} items={[{id:'a',title:'First',duration:Infinity},{id:'b',title:'Second',duration:Infinity}]} onDismiss={()=>{}}/>);
-  fireEvent.click(screen.getByRole('button',{name:'Развернуть уведомления'}));expect(changed).toHaveBeenCalledWith(true);expect(screen.getByRole('region',{name:'Notifications'})).not.toHaveAttribute('data-expanded');
+  fireEvent.click(screen.getByRole('button',{name:'Expand notifications'}));expect(changed).toHaveBeenCalledWith(true);expect(screen.getByRole('region',{name:'Notifications'})).not.toHaveAttribute('data-expanded');
   view.rerender(<ToastStack position="inline" expandDirection="right" expanded items={[{id:'a',title:'First',duration:Infinity},{id:'b',title:'Second',duration:Infinity}]} onDismiss={()=>{}}/>);expect(screen.getByRole('region',{name:'Notifications'})).toHaveAttribute('data-expanded');
  });
  it('keeps controlled expansion pinned across pointer/mouse exit and emits changes only for explicit actions',()=>{
@@ -31,11 +32,11 @@ describe('measured directional stack layout',()=>{
   const region=screen.getByRole('region',{name:'Notifications'});
   fireEvent.mouseEnter(region);fireEvent.pointerEnter(region,{pointerType:'mouse'});
   expect(region).not.toHaveAttribute('data-expanded');expect(changed).not.toHaveBeenCalled();
-  fireEvent.click(screen.getByRole('button',{name:'Развернуть уведомления'}));
+  fireEvent.click(screen.getByRole('button',{name:'Expand notifications'}));
   expect(region).toHaveAttribute('data-expanded');expect(changed).toHaveBeenCalledExactlyOnceWith(true);
   fireEvent.mouseLeave(region);fireEvent.pointerLeave(region,{pointerType:'mouse'});
   expect(region).toHaveAttribute('data-expanded');expect(changed).toHaveBeenCalledOnce();
-  fireEvent.click(screen.getByRole('button',{name:'Свернуть уведомления'}));
+  fireEvent.click(screen.getByRole('button',{name:'Collapse notifications'}));
   expect(region).not.toHaveAttribute('data-expanded');expect(changed.mock.calls).toEqual([[true],[false]]);
   fireEvent.mouseEnter(region);fireEvent.mouseLeave(region);
   expect(region).not.toHaveAttribute('data-expanded');expect(changed).toHaveBeenCalledTimes(2);
@@ -43,10 +44,10 @@ describe('measured directional stack layout',()=>{
  it('keeps uncontrolled explicit expansion pinned and permits temporary hover after an explicit collapse',()=>{
   render(<ToastStack position="inline" items={[{id:'a',title:'First',duration:Infinity},{id:'b',title:'Second',duration:Infinity}]} onDismiss={()=>{}}/>);
   const region=screen.getByRole('region',{name:'Notifications'});
-  fireEvent.click(screen.getByRole('button',{name:'Развернуть уведомления'}));
+  fireEvent.click(screen.getByRole('button',{name:'Expand notifications'}));
   fireEvent.mouseEnter(region);fireEvent.mouseLeave(region);
   expect(region).toHaveAttribute('data-expanded');
-  fireEvent.click(screen.getByRole('button',{name:'Свернуть уведомления'}));
+  fireEvent.click(screen.getByRole('button',{name:'Collapse notifications'}));
   expect(region).not.toHaveAttribute('data-expanded');
   fireEvent.mouseEnter(region);expect(region).not.toHaveAttribute('data-expanded');
   fireEvent.mouseLeave(region);fireEvent.mouseEnter(region);expect(region).toHaveAttribute('data-expanded');
@@ -54,7 +55,7 @@ describe('measured directional stack layout',()=>{
  });
  it('expands a review deck without consuming a card and retains decision/undo controls',()=>{
   const decide=vi.fn();render(<CardStack review expandDirection="up" items={['A','B']} renderCard={item=><div style={{padding:20}}>{item}</div>} onDecide={decide}/>);
-  fireEvent.click(screen.getByRole('button',{name:'Развернуть карточки'}));expect(screen.getByRole('region',{name:'Card review'})).toHaveAttribute('data-expanded');expect(decide).not.toHaveBeenCalled();
+  fireEvent.click(screen.getByRole('button',{name:'Expand cards'}));expect(screen.getByRole('region',{name:'Card review'})).toHaveAttribute('data-expanded');expect(decide).not.toHaveBeenCalled();
   fireEvent.click(screen.getByRole('button',{name:'Keep'}));expect(decide).toHaveBeenCalledWith('A','right');fireEvent.click(screen.getByRole('button',{name:'Undo'}));expect(screen.getByText('A')).toBeInTheDocument();
  });
 });
@@ -67,7 +68,7 @@ it('preserves the neutral shell accent and colors only its status icon on every 
 it('supports explicit colored surfaces, high contrast, an action slot and ordinary dismissal',()=>{
  const dismiss=vi.fn(),action=vi.fn();render(<Toast title="Failed" tone="danger" color="violet" appearance="solid" contrast surface="raised" action={<button onClick={action}>Retry</button>} onDismiss={dismiss}/>);
  const shell=screen.getByRole('status');expect(shell).toHaveAttribute('data-accent','violet');expect(shell).toHaveAttribute('data-surface','raised');expect(shell).toHaveAttribute('data-feedback-appearance','solid');
- fireEvent.click(screen.getByRole('button',{name:'Retry'}));expect(action).toHaveBeenCalledOnce();fireEvent.click(screen.getByRole('button',{name:'Скрыть уведомление'}));expect(dismiss).toHaveBeenCalledOnce();
+ fireEvent.click(screen.getByRole('button',{name:'Retry'}));expect(action).toHaveBeenCalledOnce();fireEvent.click(screen.getByRole('button',{name:'Dismiss notification'}));expect(dismiss).toHaveBeenCalledOnce();
 });
 
 it('reobserves shimmer after a tag change and pauses without removing its visual treatment',()=>{
@@ -83,3 +84,5 @@ it('keeps announcement action and dismiss independent with long arbitrary conten
  const action=vi.fn();function Example(){const [open,setOpen]=useState(true);return <AnnouncementBar surface="raised" open={open} onOpenChange={setOpen} autoPlay={false} messages={[{id:'a',message:<span>{'Long text '.repeat(30)}</span>,action:{label:'Read details',onClick:action}}]}/>}
  render(<Example/>);const shell=screen.getByRole('region',{name:'Announcement'});expect(shell).toHaveAttribute('data-surface','raised');fireEvent.click(screen.getByRole('button',{name:'Read details'}));expect(action).toHaveBeenCalledOnce();expect(shell).toHaveAttribute('data-state','open');fireEvent.click(screen.getByRole('button',{name:'Dismiss announcement'}));expect(shell).toHaveAttribute('inert');
 });
+
+const render = (ui: React.ReactNode, options?: import('@testing-library/react').RenderOptions) => baseRender(ui, { wrapper: ({ children }) => <LocaleProvider locale="en">{children}</LocaleProvider>, ...options });

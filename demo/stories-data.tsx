@@ -1,3 +1,4 @@
+import { useCatalogText, localizeCatalogueFixture } from './catalog-locale';
 import { useMemo, useState } from 'react';
 import { Tag } from '../src';
 import { DataTable, FilterToolbar, JsonViewer, type ActiveFilter, type DataTableColumn } from '../src/components/data-table';
@@ -23,13 +24,21 @@ const fields = [
   { id: 'owner', label: 'Автор', options: [{ value: 'Анна', label: 'Анна' }, { value: 'Илья', label: 'Илья' }, { value: 'Маша', label: 'Маша' }] },
 ];
 function DataExample({ labelPrefix }: { labelPrefix: string }) {
+ const ct=useCatalogText();
+
   const [query,setQuery] = useState(''), [filters,setFilters] = useState<ActiveFilter[]>([]), [selection,setSelection] = useState<string[]>([]);
-  const rows = useMemo(() => projects.filter(project => project.name.toLocaleLowerCase().includes(query.toLocaleLowerCase()) && filters.every(filter => String(project[filter.fieldId as 'status'|'owner'])===filter.value)), [query,filters]);
-  return <div style={{display:'grid',gap:12}}><FilterToolbar label={`${labelPrefix}: фильтры проектов`} fields={fields} filters={filters} onFiltersChange={setFilters} query={query} onQueryChange={setQuery}/><DataTable label={`${labelPrefix}: таблица проектов`} rows={rows} columns={columns} rowId={row=>row.id} selectable selectedIds={selection} onSelectedIdsChange={setSelection} pageSize={3}/></div>;
+  const rows = useMemo(() => localizeCatalogueFixture(projects,ct).filter(project => project.name.toLocaleLowerCase().includes(query.toLocaleLowerCase()) && filters.every(filter => String(project[filter.fieldId as 'status'|'owner'])===filter.value)), [query,filters]);
+  return <div style={{display:'grid',gap:12}}><FilterToolbar label={`${labelPrefix}${ct(": фильтры проектов")}`} fields={localizeCatalogueFixture(fields,ct)} filters={filters} onFiltersChange={setFilters} query={query} onQueryChange={setQuery}/><DataTable label={`${labelPrefix}${ct(": таблица проектов")}`} rows={rows.map(row=>({...row,name:ct(row.name)}))} columns={localizeCatalogueFixture(columns,ct).map(column=>column.id==='status'?{...column,cell:(row:Project)=><Tag size="xs" interactive={false} color={row.status==='active'?'blue':row.status==='done'?'green':undefined}>{ct(statusText[row.status])}</Tag>}:column)} rowId={row=>row.id} selectable selectedIds={selection} onSelectedIdsChange={setSelection} pageSize={3}/></div>;
 }
-export function DataTableStory() { return <StorySection title="Сортировка, выбор и страницы"><DataExample labelPrefix="История DataTable"/></StorySection>; }
-export function FilterToolbarStory() { return <StorySection title="Поиск и фильтры"><DataExample labelPrefix="История FilterToolbar"/></StorySection>; }
+export function DataTableStory() {
+ const ct=useCatalogText();
+ return <StorySection title={ct("Сортировка, выбор и страницы")}><DataExample labelPrefix={ct("История DataTable")}/></StorySection>; }
+export function FilterToolbarStory() {
+ const ct=useCatalogText();
+ return <StorySection title={ct("Поиск и фильтры")}><DataExample labelPrefix={ct("История FilterToolbar")}/></StorySection>; }
 export function JsonViewerStory() {
-  const data = { project: 'Сад идей', status: 'active', score: 92, owner: { name: 'Анна', team: 'Дизайн' }, tags: ['исследование','UI','заметки','каталог','проект'], published: false, extra: null };
-  return <StorySection title="Дерево данных"><JsonViewer label="История JsonViewer: данные проекта" data={data} pageSize={3} maxHeight={360}/></StorySection>;
+ const ct=useCatalogText();
+
+  const data = { project: ct('Сад идей'), status: 'active', score: 92, owner: { name: ct('Анна'), team: ct('Дизайн') }, tags: [ct('исследование'),'UI',ct('заметки'),ct('каталог'),ct('проект')], published: false, extra: null };
+  return <StorySection title={ct("Дерево данных")}><JsonViewer label={ct("История JsonViewer: данные проекта")} data={data} pageSize={3} maxHeight={360}/></StorySection>;
 }

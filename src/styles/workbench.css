@@ -1,5 +1,5 @@
 /* Content fades reveal the existing surface underneath; no colored overlays or extra layers. */
-.cap-scroll-area { --cap-scroll-fade-top: 0px; --cap-scroll-fade-right: 0px; --cap-scroll-fade-bottom: 0px; --cap-scroll-fade-left: 0px; --cap-scrollbar-thumb: color-mix(in srgb, var(--cap-content-muted) 45%, transparent); position: relative; display: grid; grid-template-rows: minmax(0, 1fr); min-width: 0; min-height: 0; border-radius: inherit; }
+.cap-scroll-area { --cap-scroll-fade-size:min(12%,var(--cap-space-10)); --cap-scroll-fade-top-progress:0; --cap-scroll-fade-right-progress:0; --cap-scroll-fade-bottom-progress:0; --cap-scroll-fade-left-progress:0; --cap-scrollbar-thumb: color-mix(in srgb, var(--cap-content-muted) 45%, transparent); position: relative; display: grid; grid-template-rows: minmax(0, 1fr); min-width: 0; min-height: 0; border-radius: inherit; }
 .cap-scroll-viewport { min-width: 0; min-height: 0; max-height: inherit; max-width: 100%; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--cap-scrollbar-thumb) transparent; border-radius: inherit; scroll-padding: 16px; }
 .cap-scroll-area[data-axis='vertical'] > .cap-scroll-viewport { overflow-x: hidden; }
 .cap-scroll-area[data-axis='horizontal'] > .cap-scroll-viewport { overflow-y: hidden; overscroll-behavior-y: auto; }
@@ -13,11 +13,14 @@
 .cap-scroll-area[data-scrollbar='hidden'] > .cap-scroll-viewport { scrollbar-width: none; }
 .cap-scroll-area[data-scrollbar='hidden'] > .cap-scroll-viewport::-webkit-scrollbar { display: none; width: 0; height: 0; }
 .cap-scroll-content { min-width: 0; display: flow-root; }
-.cap-scroll-area[data-scroll-top] { --cap-scroll-fade-top: 16px; }
-.cap-scroll-area[data-scroll-right] { --cap-scroll-fade-right: 16px; }
-.cap-scroll-area[data-scroll-bottom] { --cap-scroll-fade-bottom: 16px; }
-.cap-scroll-area[data-scroll-left] { --cap-scroll-fade-left: 16px; }
-.cap-scroll-area[data-shadows] > .cap-scroll-viewport { mask-image: linear-gradient(to right, transparent, #000 var(--cap-scroll-fade-left), #000 calc(100% - var(--cap-scroll-fade-right)), transparent), linear-gradient(to bottom, transparent, #000 var(--cap-scroll-fade-top), #000 calc(100% - var(--cap-scroll-fade-bottom)), transparent); mask-composite: intersect; mask-size: 100% 100%; mask-repeat: no-repeat; }
+/* Mask the inner viewport only: structural borders, focus and floating controls remain crisp. */
+.cap-scroll-area:not([data-fade=none]) > .cap-scroll-viewport {
+  --cap-scroll-fade-mask-x:linear-gradient(to right,rgb(0 0 0 / calc(1 - var(--cap-scroll-fade-left-progress))),#000 var(--cap-scroll-fade-left-size,var(--cap-scroll-fade-size)),#000 calc(100% - var(--cap-scroll-fade-right-size,var(--cap-scroll-fade-size))),rgb(0 0 0 / calc(1 - var(--cap-scroll-fade-right-progress))));
+  --cap-scroll-fade-mask-y:linear-gradient(to bottom,rgb(0 0 0 / calc(1 - var(--cap-scroll-fade-top-progress))),#000 var(--cap-scroll-fade-top-size,var(--cap-scroll-fade-size)),#000 calc(100% - var(--cap-scroll-fade-bottom-size,var(--cap-scroll-fade-size))),rgb(0 0 0 / calc(1 - var(--cap-scroll-fade-bottom-progress))));
+  -webkit-mask-image:var(--cap-scroll-fade-mask-x),var(--cap-scroll-fade-mask-y); mask-image:var(--cap-scroll-fade-mask-x),var(--cap-scroll-fade-mask-y);
+  -webkit-mask-composite:source-in; mask-composite:intersect; mask-size:100% 100%; mask-repeat:no-repeat;
+}
+
 
 /* One outer control height: grouping never adds padding outside that size. */
 :is(.cap-action-bar, .cap-button-group, .cap-split-button)[data-size='xs'] { --cap-toolbar-control-height: var(--cap-number-control-size-xs); --cap-toolbar-control-font-size: var(--cap-font-size-xs); --cap-toolbar-icon-size:12px; --cap-toolbar-inset:6px; --cap-toolbar-gap:4px; --cap-toolbar-counter-height:16px; }

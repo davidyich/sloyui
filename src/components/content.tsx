@@ -1,3 +1,4 @@
+import { useTranslate, useLocale } from './locale.js';
 import { ButtonGroup } from './workbench.js';
 import { CodeBlock, type CodeBlockProps } from './code-block.js';
 import { Fragment, useEffect, useId, useLayoutEffect, useRef, useState, type HTMLAttributes, type KeyboardEvent, type ReactNode } from 'react';
@@ -82,7 +83,10 @@ function CalendarEventList({ events, emphasis }: { events: readonly CalendarEven
   })}</ul>;
 }
 export function Calendar(props: CalendarSelectionProps) {
-  const { value, onValueChange, range, onRangeChange, mode = 'single', defaultMonth, today, min, max, isDateUnavailable, locale = 'ru-RU', events = [], showAgenda = false, agendaPosition = 'bottom', eventEmphasis = 'title', showEventPreview = true, highlightedDates = [], numberOfMonths = mode === 'range' ? 2 : 1, yearRange, className, label = 'Календарь' } = props;
+  const providerLocale = useLocale();
+  const t = useTranslate();
+
+  const { value, onValueChange, range, onRangeChange, mode = 'single', defaultMonth, today, min, max, isDateUnavailable, locale = providerLocale, events = [], showAgenda = false, agendaPosition = 'bottom', eventEmphasis = 'title', showEventPreview = true, highlightedDates = [], numberOfMonths = mode === 'range' ? 2 : 1, yearRange, className, label = t("Календарь", "Calendar") } = props;
   const todayDate = parseDate(today) ?? new Date(), todayKey = dateKey(todayDate);
   const selectionKey = mode === 'range' ? range?.start : value, selected = parseDate(selectionKey);
   const initial = parseDate(defaultMonth?.length === 7 ? `${defaultMonth}-01` : defaultMonth) ?? selected ?? todayDate;
@@ -151,7 +155,7 @@ export function Calendar(props: CalendarSelectionProps) {
       if (!start || end) onRangeChange?.({ start: key });
       else {
         const from = key < start ? key : start, to = key > start ? key : start;
-        if (crossesUnavailable(from, to)) { onRangeChange?.({ start: key }); setNotice('Период не может включать недоступные дни. Выбрано новое начало.'); }
+        if (crossesUnavailable(from, to)) { onRangeChange?.({ start: key }); setNotice(t("Период не может включать недоступные дни. Выбрано новое начало.", "The range cannot include unavailable days. A new start was selected.")); }
         else onRangeChange?.({ start: from, end: to });
       }
     } else onValueChange?.(key);
@@ -176,18 +180,18 @@ export function Calendar(props: CalendarSelectionProps) {
   };
   const fromYear = Math.min(yearRange?.[0] ?? todayDate.getFullYear() - 10, month.getFullYear());
   const toYear = Math.max(yearRange?.[1] ?? todayDate.getFullYear() + 10, month.getFullYear());
-  const rangePrompt = end ? 'Период выбран. Выберите новое начало.' : start ? 'Выберите конец периода' : 'Выберите начало периода';
-  const selectionLabel = mode === 'range' ? start ? `${shortDate.format(parseDate(start)!)}${end ? ` — ${shortDate.format(parseDate(end)!)}` : ' — …'}` : 'Выберите период' : selected ? shortDate.format(selected) : 'Выберите дату';
+  const rangePrompt = end ? t("Период выбран. Выберите новое начало.", "Range selected. Choose a new start.") : start ? t("Выберите конец периода", "Choose range end") : t("Выберите начало периода", "Choose range start");
+  const selectionLabel = mode === 'range' ? start ? `${shortDate.format(parseDate(start)!)}${end ? ` — ${shortDate.format(parseDate(end)!)}` : ' — …'}` : t("Выберите период", "Choose a range") : selected ? shortDate.format(selected) : t("Выберите дату", "Choose a date");
   return <section className={cx('cap-calendar', className)} aria-label={label} data-months={numberOfMonths} data-mode={mode} data-agenda-position={showAgenda ? agendaPosition : undefined}>
     <div className="cap-calendar-body">
       <div className="cap-calendar-toolbar">
-        <IconButton label="Предыдущий месяц" icon="chevron" variant="secondary" className="cap-calendar-prev" onClick={() => changeMonth(addMonths(month, -1))} />
-        <ButtonGroup label="Месяц и год" className="cap-calendar-period" size="md">
-          <Select aria-label="Месяц" variant="ghost" popupClassName="cap-calendar-period-popup" size="md" value={month.getMonth()} onChange={event => changeMonth(new Date(month.getFullYear(), Number(event.target.value), 1, 12))}>{Array.from({ length: 12 }, (_, index) => <option key={index} value={index}>{new Intl.DateTimeFormat(locale, { month: 'long' }).format(new Date(2026, index, 1))}</option>)}</Select>
+        <IconButton label={t("Предыдущий месяц", "Previous month")} icon="chevron" variant="secondary" className="cap-calendar-prev" onClick={() => changeMonth(addMonths(month, -1))} />
+        <ButtonGroup label={t("Месяц и год", "Month and year")} className="cap-calendar-period" size="md">
+          <Select aria-label={t("Месяц", "Month")} variant="ghost" popupClassName="cap-calendar-period-popup" size="md" value={month.getMonth()} onChange={event => changeMonth(new Date(month.getFullYear(), Number(event.target.value), 1, 12))}>{Array.from({ length: 12 }, (_, index) => <option key={index} value={index}>{new Intl.DateTimeFormat(locale, { month: 'long' }).format(new Date(2026, index, 1))}</option>)}</Select>
           <span className="cap-calendar-period-divider" aria-hidden="true" />
-          <ComboBox label="Год" className="cap-calendar-year" variant="ghost" size="md" clearable={false} value={String(month.getFullYear())} options={Array.from({ length: toYear - fromYear + 1 }, (_, index) => ({ value: String(fromYear + index), label: String(fromYear + index) }))} onValueChange={year => changeMonth(new Date(Number(year), month.getMonth(), 1, 12))} />
+          <ComboBox label={t("Год", "Year")} className="cap-calendar-year" variant="ghost" size="md" clearable={false} value={String(month.getFullYear())} options={Array.from({ length: toYear - fromYear + 1 }, (_, index) => ({ value: String(fromYear + index), label: String(fromYear + index) }))} onValueChange={year => changeMonth(new Date(Number(year), month.getMonth(), 1, 12))} />
         </ButtonGroup>
-        <IconButton label="Следующий месяц" icon="chevron" variant="secondary" onClick={() => changeMonth(addMonths(month, 1))} />
+        <IconButton label={t("Следующий месяц", "Next month")} icon="chevron" variant="secondary" onClick={() => changeMonth(addMonths(month, 1))} />
       </div>
       <span className="cap-sr-only" aria-live="polite">{visibleMonths.map(date => monthFormat.format(date)).join(' — ')}</span>
       {mode === 'range' && <p id={`${id}-instruction`} className="cap-calendar-instruction" aria-live="polite">{notice || rangePrompt}</p>}
@@ -204,7 +208,7 @@ export function Calendar(props: CalendarSelectionProps) {
               const inRange = mode === 'range' && !!start && !!end && key >= start && key <= end;
               const endpoint = mode === 'range' ? key === start || key === end : key === value;
               const inPreview = !!validPreview && key >= previewStart! && key <= previewEnd!;
-              const button = <button type="button" className="cap-calendar-day" data-date={key} data-outside={outside || undefined} data-selected={endpoint || undefined} data-highlighted={!!highlight || undefined} data-accent={highlight?.color} aria-current={key === todayKey ? 'date' : undefined} aria-label={`${longDate.format(date)}${highlight ? ` · ${highlight.label ?? 'Отмеченная дата'}` : ''}${dayEvents.length ? ` · ${dayEvents.length} событий` : ''}`} tabIndex={key === currentKey ? 0 : -1} disabled={isDisabled(key)} onMouseEnter={() => setPreview(key)} onFocus={() => { setFocused(key); setPreview(key); }} onKeyDown={event => onDayKeyDown(event, date)} onClick={() => selectDate(key)}>{date.getDate()}{dayEvents.length > 0 && <span className="cap-calendar-dot" aria-hidden="true" />}{highlight && <span className="cap-calendar-date-mark" aria-hidden="true" />}</button>;
+              const button = <button type="button" className="cap-calendar-day" data-date={key} data-outside={outside || undefined} data-selected={endpoint || undefined} data-highlighted={!!highlight || undefined} data-accent={highlight?.color} aria-current={key === todayKey ? 'date' : undefined} aria-label={`${longDate.format(date)}${highlight ? ` · ${highlight.label ?? t("Отмеченная дата", "Highlighted date")}` : ''}${dayEvents.length ? ` · ${dayEvents.length}${t(" событий", " events")}` : ''}`} tabIndex={key === currentKey ? 0 : -1} disabled={isDisabled(key)} onMouseEnter={() => setPreview(key)} onFocus={() => { setFocused(key); setPreview(key); }} onKeyDown={event => onDayKeyDown(event, date)} onClick={() => selectDate(key)}>{date.getDate()}{dayEvents.length > 0 && <span className="cap-calendar-dot" aria-hidden="true" />}{highlight && <span className="cap-calendar-date-mark" aria-hidden="true" />}</button>;
               return <div role="gridcell" aria-selected={inRange || endpoint} key={key} data-in-range={inRange || undefined} data-preview={inPreview || undefined}>
                 {showEventPreview && dayEvents.length ? <Tooltip content={<div className="cap-calendar-event-preview"><strong className="cap-calendar-preview-date">{longDate.format(date)}</strong><CalendarEventList events={dayEvents} emphasis={eventEmphasis} /></div>}>{button}</Tooltip> : button}
               </div>;
@@ -212,14 +216,17 @@ export function Calendar(props: CalendarSelectionProps) {
           </div>
         </div>)}
       </div>
-      <div className="cap-calendar-footer"><Button variant="ghost" size="sm" disabled={isDisabled(todayKey)} onClick={() => selectDate(todayKey)}>Сегодня</Button><span aria-live="polite">{selectionLabel}</span></div>
+      <div className="cap-calendar-footer"><Button variant="ghost" size="sm" disabled={isDisabled(todayKey)} onClick={() => selectDate(todayKey)}>{t("Сегодня", "Today")}</Button><span aria-live="polite">{selectionLabel}</span></div>
     </div>
-    {showAgenda && <div className="cap-calendar-agenda" role="region" aria-label={`${label}: события выбранного дня`}><div className="cap-calendar-agenda-date">{agendaKey && parseDate(agendaKey) ? shortDate.format(parseDate(agendaKey)!) : 'События дня'}</div>{agenda.length ? <CalendarEventList events={agenda} emphasis={eventEmphasis} /> : <p>На этот день событий нет</p>}</div>}
+    {showAgenda && <div className="cap-calendar-agenda" role="region" aria-label={`${label}${t(": события выбранного дня", ": selected day events")}`}><div className="cap-calendar-agenda-date">{agendaKey && parseDate(agendaKey) ? shortDate.format(parseDate(agendaKey)!) : t("События дня", "Day events")}</div>{agenda.length ? <CalendarEventList events={agenda} emphasis={eventEmphasis} /> : <p>{t("На этот день событий нет", "No events on this day")}</p>}</div>}
   </section>;
 }
 export function DatePicker(props: CalendarSelectionProps) {
+  const providerLocale = useLocale();
+  const t = useTranslate();
+
   const [open, setOpen] = useState(false);
-  const { label = props.mode === 'range' ? 'Выбрать период' : 'Выбрать дату', locale = 'ru-RU' } = props;
+  const { label = props.mode === 'range' ? t("Выбрать период", "Choose a range") : t("Выбрать дату", "Choose a date"), locale = providerLocale } = props;
   const format = (value?: string) => { const date = parseDate(value); return date ? new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'short', year: 'numeric' }).format(date) : ''; };
   const selection = props.mode === 'range' ? props.range ? `${format(props.range.start)} — ${format(props.range.end) || '…'}` : '' : format(props.value);
   const months = props.numberOfMonths ?? (props.mode === 'range' ? 2 : 1);
@@ -242,6 +249,8 @@ function inlineMarkdown(text: string): ReactNode[] {
 }
 export interface MarkdownPreviewProps extends HTMLAttributes<HTMLDivElement> { value: string; headingOffset?: 0 | 1 | 2 | 3 }
 export function MarkdownPreview({ value, headingOffset = 1, className, ...props }: MarkdownPreviewProps) {
+  const t = useTranslate();
+
   const lines = value.replace(/\r\n?/g, '\n').split('\n'), nodes: ReactNode[] = [];
   let index = 0;
   while (index < lines.length) {
@@ -251,7 +260,7 @@ export function MarkdownPreview({ value, headingOffset = 1, className, ...props 
       const language = line.slice(3).trim(), code: string[] = []; index++;
       while (index < lines.length && !lines[index].startsWith('```')) code.push(lines[index++]);
       if (index < lines.length) index++;
-      nodes.push(<CodeBlock key={key} label={language || 'Code'} language={(['tsx','ts','js','json','css','bash'].includes(language) ? language : 'text') as CodeBlockProps['language']}>{code.join('\n')}</CodeBlock>); continue;
+      nodes.push(<CodeBlock key={key} label={language || t('Код', 'Code')} language={(['tsx','ts','js','json','css','bash'].includes(language) ? language : 'text') as CodeBlockProps['language']}>{code.join('\n')}</CodeBlock>); continue;
     }
     const heading = /^(#{1,6})\s+(.+)$/.exec(line);
     if (heading) { const Heading = `h${Math.min(6, heading[1].length + headingOffset)}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'; nodes.push(<Heading key={key}>{inlineMarkdown(heading[2])}</Heading>); index++; continue; }
@@ -270,7 +279,7 @@ export function MarkdownPreview({ value, headingOffset = 1, className, ...props 
     while (index < lines.length && lines[index].trim() && !/^(#{1,6}\s|```|>\s?|[-*+]\s|\d+\.\s|\s*([-*_])(?:\s*\2){2,}\s*$)/.test(lines[index])) paragraph.push(lines[index++]);
     nodes.push(<p key={key}>{inlineMarkdown(paragraph.join('\n'))}</p>);
   }
-  return <div className={cx('cap-markdown', className)} {...props}>{nodes.length ? nodes : <p className="cap-markdown-placeholder">Здесь появится ваша заметка</p>}</div>;
+  return <div className={cx('cap-markdown', className)} {...props}>{nodes.length ? nodes : <p className="cap-markdown-placeholder">{t("Здесь появится ваша заметка", "Your note will appear here")}</p>}</div>;
 }
 /** @deprecated Use RichTextEditor for new editors; keep MarkdownEditor for Markdown-string compatibility. */
 export interface MarkdownEditorProps {
@@ -285,11 +294,14 @@ export interface MarkdownEditorProps {
   className?: string;
 }
 /** @deprecated Use RichTextEditor (./rich-text-editor.js). See docs/content-revision.md for the compatibility bridge. */
-export function MarkdownEditor({ value, onValueChange, label, placeholder = 'Начните писать…', disabled, readOnly, defaultMode = 'edit', onSave, className }: MarkdownEditorProps) {
+export function MarkdownEditor({ value, onValueChange, label, placeholder: suppliedPlaceholder, disabled, readOnly, defaultMode = 'edit', onSave, className }: MarkdownEditorProps) {
+  const t = useTranslate();
+  const placeholder = suppliedPlaceholder === undefined ? (t("Начните писать…", "Start writing…")) : suppliedPlaceholder;
+
   const [mode, setMode] = useState(defaultMode), textarea = useRef<HTMLTextAreaElement>(null), id = useId();
   const selection = useRef<readonly [number, number] | null>(null);
   useLayoutEffect(() => { if (selection.current && textarea.current) { textarea.current.focus(); textarea.current.setSelectionRange(...selection.current); selection.current = null; } }, [value, mode]);
-  const format = (before: string, after = before, fallback = 'текст') => {
+  const format = (before: string, after = before, fallback = t("текст", "text")) => {
     if (disabled || readOnly) return;
     const start = textarea.current?.selectionStart ?? value.length, end = textarea.current?.selectionEnd ?? value.length;
     const selected = value.slice(start, end) || fallback;
@@ -299,9 +311,9 @@ export function MarkdownEditor({ value, onValueChange, label, placeholder = 'Н�
   };
   const toolsDisabled = disabled || readOnly || mode === 'preview';
   return <div className={cx('cap-markdown-editor', className)} data-surface="raised" data-mode={mode} data-disabled={disabled || undefined}>
-    <div className="cap-markdown-toolbar" data-surface="canvas"><div role="group" aria-label="Форматирование Markdown"><Button size="sm" variant="ghost" aria-label="Жирный текст" disabled={toolsDisabled} onClick={() => format('**')}><strong>B</strong></Button><Button size="sm" variant="ghost" aria-label="Курсив" disabled={toolsDisabled} onClick={() => format('*')}><em>I</em></Button><Button size="sm" variant="ghost" aria-label="Заголовок" disabled={toolsDisabled} onClick={() => format('\n## ', '\n', 'Заголовок')}>H</Button><IconButton size="sm" variant="ghost" label="Маркированный список" icon="list" disabled={toolsDisabled} onClick={() => format('\n- ', '\n', 'Пункт списка')} /><IconButton size="sm" variant="ghost" label="Код" icon="code" disabled={toolsDisabled} onClick={() => format('`', '`', 'code')} /><IconButton size="sm" variant="ghost" label="Ссылка" icon="external" disabled={toolsDisabled} onClick={() => format('[', '](https://example.com)', 'Название ссылки')} /></div><SegmentedControl label="Режим редактора" value={mode} onValueChange={next => setMode(next as typeof mode)} options={[{ value: 'edit', label: 'Текст' }, { value: 'preview', label: 'Просмотр' }, { value: 'split', label: 'Рядом' }]} /></div>
-    <div className="cap-markdown-editor-body">{mode !== 'preview' && <div className="cap-markdown-input"><label htmlFor={id} className="cap-sr-only">{label}</label><textarea ref={textarea} id={id} value={value} placeholder={placeholder} disabled={disabled} readOnly={readOnly} spellCheck onChange={event => onValueChange(event.target.value)} onKeyDown={event => { if (!(event.metaKey || event.ctrlKey) || event.altKey || event.nativeEvent.isComposing) return; if (event.key.toLowerCase() === 'b') { event.preventDefault(); format('**'); } else if (event.key.toLowerCase() === 'i') { event.preventDefault(); format('*'); } else if (event.key === 'Enter' && onSave && !disabled && !readOnly) { event.preventDefault(); onSave(); } }} /></div>}{mode !== 'edit' && <MarkdownPreview value={value} className="cap-markdown-editor-preview" role="region" aria-label={`Просмотр: ${label}`} />}</div>
-    <div className="cap-markdown-status"><span>Markdown · {value.length.toLocaleString()} символов</span>{onSave ? <Button variant="ghost" size="xs" onClick={onSave} disabled={disabled || readOnly}>Сохранить</Button> : <span>Текст · ссылки · списки · код</span>}</div>
+    <div className="cap-markdown-toolbar" data-surface="canvas"><div role="group" aria-label={t("Форматирование Markdown", "Markdown formatting")}><Button size="sm" variant="ghost" aria-label={t("Жирный текст", "Bold text")} disabled={toolsDisabled} onClick={() => format('**')}><strong>B</strong></Button><Button size="sm" variant="ghost" aria-label={t("Курсив", "Italic")} disabled={toolsDisabled} onClick={() => format('*')}><em>I</em></Button><Button size="sm" variant="ghost" aria-label={t("Заголовок", "Heading")} disabled={toolsDisabled} onClick={() => format('\n## ', '\n', t("Заголовок", "Heading"))}>H</Button><IconButton size="sm" variant="ghost" label={t("Маркированный список", "Bullet list")} icon="list" disabled={toolsDisabled} onClick={() => format('\n- ', '\n', t("Пункт списка", "List item"))} /><IconButton size="sm" variant="ghost" label={t("Код", "Code")} icon="code" disabled={toolsDisabled} onClick={() => format('`', '`', 'code')} /><IconButton size="sm" variant="ghost" label={t("Ссылка", "Link")} icon="external" disabled={toolsDisabled} onClick={() => format('[', '](https://example.com)', t("Название ссылки", "Link label"))} /></div><SegmentedControl label={t("Режим редактора", "Editor mode")} value={mode} onValueChange={next => setMode(next as typeof mode)} options={[{ value: 'edit', label: t("Текст", "Text") }, { value: 'preview', label: t("Просмотр", "Preview") }, { value: 'split', label: t("Рядом", "Side by side") }]} /></div>
+    <div className="cap-markdown-editor-body">{mode !== 'preview' && <div className="cap-markdown-input"><label htmlFor={id} className="cap-sr-only">{label}</label><textarea ref={textarea} id={id} value={value} placeholder={placeholder} disabled={disabled} readOnly={readOnly} spellCheck onChange={event => onValueChange(event.target.value)} onKeyDown={event => { if (!(event.metaKey || event.ctrlKey) || event.altKey || event.nativeEvent.isComposing) return; if (event.key.toLowerCase() === 'b') { event.preventDefault(); format('**'); } else if (event.key.toLowerCase() === 'i') { event.preventDefault(); format('*'); } else if (event.key === 'Enter' && onSave && !disabled && !readOnly) { event.preventDefault(); onSave(); } }} /></div>}{mode !== 'edit' && <MarkdownPreview value={value} className="cap-markdown-editor-preview" role="region" aria-label={`${t("Просмотр: ", "Preview: ")}${label}`} />}</div>
+    <div className="cap-markdown-status"><span>Markdown · {value.length.toLocaleString()} {t("символов", "characters")}</span>{onSave ? <Button variant="ghost" size="xs" onClick={onSave} disabled={disabled || readOnly}>{t("Сохранить", "Save")}</Button> : <span>{t("Текст · ссылки · списки · код", "Text · links · lists · code")}</span>}</div>
   </div>;
 }
 
@@ -318,6 +330,8 @@ export interface ContentCardProps extends Omit<HTMLAttributes<HTMLElement>, 'tit
   density?: 'compact' | 'comfortable'; orientation?: 'vertical' | 'horizontal'; headingLevel?: 2 | 3 | 4;
 }
 export function ContentCard({ title, description, header, metadata, footer, cover, actions, blocks = [], blockOrder = [], hiddenBlocks = [], dragHandle, onOpen, selectable, selected, onSelectedChange, selectionLabel, selectionPosition = 'top-start', density = 'comfortable', orientation = 'vertical', headingLevel = 3, children, className, ...props }: ContentCardProps) {
+  const t = useTranslate();
+
   const Heading = `h${headingLevel}` as 'h2' | 'h3' | 'h4';
   const selectionEnabled = selectable ?? !!onSelectedChange;
   const [internalSelected, setInternalSelected] = useState(false);
@@ -337,20 +351,25 @@ export function ContentCard({ title, description, header, metadata, footer, cove
   const leadingCover = ordered[0]?.id === 'cover' ? ordered[0] : undefined;
   const renderBlock = (block: ContentCardBlock) => <div key={block.id} data-card-block={block.id} className={cx('cap-content-card-block',block.id === 'cover' && 'cap-content-card-cover',block.kind === 'metadata' && 'cap-content-card-metadata',block.kind === 'footer' && 'cap-content-card-footer')}>{block.content}</div>;
   return <article className={cx('cap-content-card','cap-surface-boundary', className)} data-surface="raised" data-density={density} data-orientation={orientation} data-selected={currentSelected || undefined} data-selectable={selectionEnabled || undefined} data-leading-cover={!!leadingCover || undefined} {...props}>
-    {selectionEnabled && <label className="cap-content-card-selection" data-position={selectionPosition} data-contrast="true"><input className="cap-checkbox" data-size="sm" type="checkbox" aria-label={selectionLabel ?? `Выбрать ${typeof title === 'string' ? title : 'карточку'}`} checked={currentSelected} onChange={event => { if (selected === undefined) setInternalSelected(event.target.checked); onSelectedChange?.(event.target.checked); }} /></label>}
+    {selectionEnabled && <label className="cap-content-card-selection" data-position={selectionPosition} data-contrast="true"><input className="cap-checkbox" data-size="sm" type="checkbox" aria-label={selectionLabel ?? `${t("Выбрать ", "Select ")}${typeof title === 'string' ? title : t("карточку", "card")}`} checked={currentSelected} onChange={event => { if (selected === undefined) setInternalSelected(event.target.checked); onSelectedChange?.(event.target.checked); }} /></label>}
     {leadingCover && renderBlock(leadingCover)}<div className="cap-content-card-body">{ordered.filter(block => block !== leadingCover).map(renderBlock)}</div>
   </article>;
 }
 export interface TaskCardProps extends Omit<ContentCardProps, 'title' | 'header' | 'actions'> {
   title: string; typeLabel?: string; color?: Color; completed?: boolean; onCompletedChange?: (completed: boolean) => void; menuItems?: MenuItem[];
 }
-export function TaskCard({ title, typeLabel = 'Задача', color = 'rose', completed, onCompletedChange, menuItems, onOpen, className, ...props }: TaskCardProps) {
-  return <ContentCard {...props} className={cx('cap-task-card', className)} selectionLabel={props.selectionLabel ?? `Выбрать ${title}`} data-accent={color} data-completed={completed || undefined} header={<Tag color={color} icon="check">{typeLabel}</Tag>} actions={menuItems?.length ? <Menu label={`Действия: ${title}`} items={menuItems} /> : undefined} title={<span className="cap-task-title-row">{onCompletedChange && <input className="cap-task-checkbox" type="checkbox" aria-label={`Завершить: ${title}`} checked={!!completed} onChange={event => onCompletedChange(event.target.checked)} />}{onOpen ? <button type="button" className="cap-content-card-open" onClick={onOpen}>{title}</button> : <span>{title}</span>}</span>} />;
+export function TaskCard({ title, typeLabel: suppliedTypeLabel, color = 'rose', completed, onCompletedChange, menuItems, onOpen, className, ...props }: TaskCardProps) {
+  const t = useTranslate();
+  const typeLabel = suppliedTypeLabel === undefined ? (t("Задача", "Task")) : suppliedTypeLabel;
+
+  return <ContentCard {...props} className={cx('cap-task-card', className)} selectionLabel={props.selectionLabel ?? `${t("Выбрать ", "Select ")}${title}`} data-accent={color} data-completed={completed || undefined} header={<Tag color={color} icon="check">{typeLabel}</Tag>} actions={menuItems?.length ? <Menu label={`${t("Действия: ", "Actions: ")}${title}`} items={menuItems} /> : undefined} title={<span className="cap-task-title-row">{onCompletedChange && <input className="cap-task-checkbox" type="checkbox" aria-label={`${t("Завершить: ", "Complete: ")}${title}`} checked={!!completed} onChange={event => onCompletedChange(event.target.checked)} />}{onOpen ? <button type="button" className="cap-content-card-open" onClick={onOpen}>{title}</button> : <span>{title}</span>}</span>} />;
 }
 export interface KanbanColumnProps extends Omit<HTMLAttributes<HTMLElement>, 'color'> { title: string; count?: number; action?: ReactNode; emptyState?: ReactNode; color?: Color | 'inherit' }
 export function KanbanColumn({ title, count, action, emptyState, color = 'neutral', children, className, ...props }: KanbanColumnProps) {
+  const t = useTranslate();
+
   const id = useId();
-  return <section role="group" className={cx('cap-kanban-column', className)} aria-labelledby={id} {...props}><header className="cap-kanban-column-header"><h3 id={id} className="cap-kanban-column-title" data-accent={color === 'inherit' ? undefined : color}><span>{title}</span>{count !== undefined && <Counter value={count} size="xs" variant="translucent"/>}</h3>{action && <div className="cap-kanban-column-actions">{action}</div>}</header><div className="cap-kanban-column-body">{count === 0 ? emptyState ?? <EmptyState title="Здесь пока пусто" description="Переместите сюда карточку" /> : children}</div></section>;
+  return <section role="group" className={cx('cap-kanban-column', className)} aria-labelledby={id} {...props}><header className="cap-kanban-column-header"><h3 id={id} className="cap-kanban-column-title" data-accent={color === 'inherit' ? undefined : color}><span>{title}</span>{count !== undefined && <Counter value={count} size="xs" variant="translucent"/>}</h3>{action && <div className="cap-kanban-column-actions">{action}</div>}</header><div className="cap-kanban-column-body">{count === 0 ? emptyState ?? <EmptyState title={t("Здесь пока пусто", "Nothing here yet")} description={t("Переместите сюда карточку", "Move a card here")} /> : children}</div></section>;
 }
 export interface KanbanLane { id: string; title: string; emptyMessage?: string; color?: Color | 'inherit' }
 export interface KanbanTask { id: string; columnId: string; title: string; description?: string; completed?: boolean; color?: Color; metadata?: ReactNode; footer?: ReactNode }
@@ -359,15 +378,21 @@ export interface KanbanBoardProps {
   onOpen?: (id: string) => void; onAdd?: (columnId: string) => void; renderCard?: (item: KanbanTask) => ReactNode; className?: string;
 }
 export function KanbanBoard({ label, columns, items, onMove, onCompletedChange, onOpen, onAdd, renderCard, className }: KanbanBoardProps) {
+  const t = useTranslate();
+
   return <div className={cx('cap-kanban-board', className)} role="region" aria-label={label} tabIndex={0}>{columns.map(column => {
     const columnItems = items.filter(item => item.columnId === column.id);
-    return <KanbanColumn key={column.id} title={column.title} color={column.color} count={columnItems.length} action={onAdd && <IconButton label={`Добавить в ${column.title}`} icon="plus" size="sm" variant="ghost" onClick={() => onAdd(column.id)} />} emptyState={<EmptyState title={column.emptyMessage ?? 'Пока нет задач'} description={onMove ? 'В меню карточки выберите эту колонку' : undefined} />}>{columnItems.map(item => <Fragment key={item.id}>{renderCard ? renderCard(item) : <TaskCard title={item.title} description={item.description} completed={item.completed} color={item.color} metadata={item.metadata} footer={item.footer} onOpen={onOpen ? () => onOpen(item.id) : undefined} onCompletedChange={onCompletedChange ? completed => onCompletedChange(item.id, completed) : undefined} menuItems={onMove ? columns.filter(target => target.id !== column.id).map(target => ({ id: target.id, label: `В ${target.title}`, icon: 'arrow', onSelect: () => onMove(item.id, target.id) })) : undefined} />}</Fragment>)}</KanbanColumn>;
+    return <KanbanColumn key={column.id} title={column.title} color={column.color} count={columnItems.length} action={onAdd && <IconButton label={`${t("Добавить в ", "Add to ")}${column.title}`} icon="plus" size="sm" variant="ghost" onClick={() => onAdd(column.id)} />} emptyState={<EmptyState title={column.emptyMessage ?? t("Пока нет задач", "No tasks yet")} description={onMove ? t("В меню карточки выберите эту колонку", "Choose this column in the card menu") : undefined} />}>{columnItems.map(item => <Fragment key={item.id}>{renderCard ? renderCard(item) : <TaskCard title={item.title} description={item.description} completed={item.completed} color={item.color} metadata={item.metadata} footer={item.footer} onOpen={onOpen ? () => onOpen(item.id) : undefined} onCompletedChange={onCompletedChange ? completed => onCompletedChange(item.id, completed) : undefined} menuItems={onMove ? columns.filter(target => target.id !== column.id).map(target => ({ id: target.id, label: `${t("В ", "To ")}${target.title}`, icon: 'arrow', onSelect: () => onMove(item.id, target.id) })) : undefined} />}</Fragment>)}</KanbanColumn>;
   })}</div>;
 }
 export interface DailyHeaderProps extends HTMLAttributes<HTMLElement> { date: string; locale?: string; showWeek?: boolean; tags?: ReactNode; actions?: ReactNode; headingLevel?: 1 | 2 | 3 }
-export function DailyHeader({ date, locale = 'ru-RU', showWeek = true, tags, actions, headingLevel = 2, className, children, ...props }: DailyHeaderProps) {
+export function DailyHeader({ date, locale: suppliedLocale, showWeek = true, tags, actions, headingLevel = 2, className, children, ...props }: DailyHeaderProps) {
+  const providerLocale = useLocale();
+  const locale = suppliedLocale ?? providerLocale;
+  const t = useTranslate();
+
   const parsed = parseDate(date) ?? new Date(), Heading = `h${headingLevel}` as 'h1' | 'h2' | 'h3';
   const thursday = addDays(parsed, 3 - mondayIndex(parsed)), yearStart = new Date(thursday.getFullYear(), 0, 1, 12);
   const week = Math.ceil(((Date.UTC(thursday.getFullYear(), thursday.getMonth(), thursday.getDate()) - Date.UTC(yearStart.getFullYear(), 0, 1)) / 86400000 + 1) / 7);
-  return <header className={cx('cap-daily-header', className)} {...props}><div className="cap-daily-header-top"><div><div className="cap-daily-weekday">{new Intl.DateTimeFormat(locale, { weekday: 'long' }).format(parsed)}</div><div className="cap-daily-date"><Heading><time dateTime={dateKey(parsed)}>{new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'short', year: 'numeric' }).format(parsed)}</time></Heading>{showWeek && <span>Неделя {week}</span>}</div></div>{actions && <div className="cap-daily-actions">{actions}</div>}</div>{tags && <div className="cap-daily-tags">{tags}</div>}{children}</header>;
+  return <header className={cx('cap-daily-header', className)} {...props}><div className="cap-daily-header-top"><div><div className="cap-daily-weekday">{new Intl.DateTimeFormat(locale, { weekday: 'long' }).format(parsed)}</div><div className="cap-daily-date"><Heading><time dateTime={dateKey(parsed)}>{new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'short', year: 'numeric' }).format(parsed)}</time></Heading>{showWeek && <span>{t("Неделя", "Week")} {week}</span>}</div></div>{actions && <div className="cap-daily-actions">{actions}</div>}</div>{tags && <div className="cap-daily-tags">{tags}</div>}{children}</header>;
 }

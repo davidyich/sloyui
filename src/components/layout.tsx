@@ -1,3 +1,4 @@
+import { useTranslate } from './locale.js';
 import { MovingHighlight } from './moving-highlight.js';
 import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState, type HTMLAttributes, type ReactNode, type ButtonHTMLAttributes } from 'react';
 import { cx, Icon, IconBox, Counter, TextAction, type Color, type IconSource, type Size } from './primitives.js';
@@ -15,7 +16,10 @@ export function CollectionRow({ title, icon = 'page', color = 'gray', meta, clas
 export function PropertyRow({ label, icon, children, className, ...props }: HTMLAttributes<HTMLDivElement> & { label: string; icon?: IconSource }) {
   return <div className={cx('cap-property-row', className)} {...props}><span className="cap-property-label">{icon && <Icon name={icon} />}{label}</span><div>{children}</div></div>;
 }
-export function Breadcrumbs({ items, label = 'Хлебные крошки' }: { items: { label: string; href?: string }[]; label?: string }) {
+export function Breadcrumbs({ items, label: suppliedLabel }: { items: { label: string; href?: string }[]; label?: string }) {
+  const t = useTranslate();
+  const label = suppliedLabel === undefined ? (t("Хлебные крошки", "Breadcrumbs")) : suppliedLabel;
+
   return <nav aria-label={label} className="cap-breadcrumbs"><ol>{items.map((item, i) => <li key={i}>{i > 0 && <Icon name="chevron" size={12} />}{item.href && i < items.length - 1 ? <TextAction href={item.href}>{item.label}</TextAction> : <span aria-current={i === items.length - 1 ? 'page' : undefined}>{item.label}</span>}</li>)}</ol></nav>;
 }
 export function Callout({ color = 'blue', icon = 'info', title, children, className, ...props }: Omit<HTMLAttributes<HTMLDivElement>, 'color'> & { color?: Color; icon?: IconSource; title?: string }) {
@@ -84,7 +88,10 @@ export function Accordion({ title, children, className, open, onToggle, variant 
 }
 export interface TabItem { value: string; label: string; content: ReactNode; disabled?: boolean; count?: number; color?: Color | 'inherit' }
 export interface TabsProps { size?: Size; variant?: 'line' | 'pills' | 'segment' | 'outline' | 'accent'; items: TabItem[]; value: string; onValueChange: (v: string) => void; label: string; className?: string; scrollLabels?: { previous: string; next: string } }
-export function Tabs({ items, value, onValueChange, label, className, variant = 'line', size = 'md', scrollLabels = { previous: 'Прокрутить вкладки влево', next: 'Прокрутить вкладки вправо' } }: TabsProps) {
+export function Tabs({ items, value, onValueChange, label, className, variant = 'line', size = 'md', scrollLabels: suppliedScrollLabels }: TabsProps) {
+  const t = useTranslate();
+  const scrollLabels = suppliedScrollLabels === undefined ? ({ previous: t("Прокрутить вкладки влево", "Scroll tabs left"), next: t("Прокрутить вкладки вправо", "Scroll tabs right") }) : suppliedScrollLabels;
+
   const id = useId(), track = useRef<HTMLDivElement>(null), viewport = useRef<HTMLDivElement>(null);
   const [edges, setEdges] = useState({ overflow: false, left: false, right: false });
   const enabled = items.filter(item => !item.disabled);
@@ -147,5 +154,5 @@ export function Tabs({ items, value, onValueChange, label, className, variant = 
   </div>{items.map(item => <div key={item.value} id={`${id}-panel-${item.value}`} role="tabpanel" aria-labelledby={`${id}-tab-${item.value}`} hidden={value !== item.value} tabIndex={0} className="cap-tab-panel">{item.content}</div>)}</div>;
 }
 export function Table({ caption, columns, rows, className }: { caption: string; columns: string[]; rows: ReactNode[][]; className?: string }) {
-  return <div className={cx('cap-table-wrap', className)} tabIndex={0} role="region" aria-label={caption}><table className="cap-table"><caption className="cap-sr-only">{caption}</caption><thead><tr>{columns.map(c => <th key={c} scope="col">{c}</th>)}</tr></thead><tbody>{rows.map((row, i) => <tr key={i}>{row.map((cell, j) => <td key={j}>{cell}</td>)}</tr>)}</tbody></table></div>;
+  return <div className={cx('cap-table-wrap', 'cap-surface-boundary', className)} tabIndex={0} role="region" aria-label={caption}><table className="cap-table"><caption className="cap-sr-only">{caption}</caption><thead><tr>{columns.map(c => <th key={c} scope="col">{c}</th>)}</tr></thead><tbody>{rows.map((row, i) => <tr key={i}>{row.map((cell, j) => <td key={j}>{cell}</td>)}</tr>)}</tbody></table></div>;
 }

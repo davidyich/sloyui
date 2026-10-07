@@ -3,6 +3,7 @@ import { Bold, Italic, Strikethrough, Code2, Pilcrow, Heading1, Heading2, Headin
 import { Button, Icon, IconButton, type IconSource } from './primitives.js';
 import { CodeBlock, type CodeLanguage } from './code-block.js';
 import type { RichTextMarkdownSource } from './rich-text-markdown.js';
+import { useTranslate } from './locale.js';
 import { FloatingActionBar } from './workbench.js';
 import { flushSync } from 'react-dom';
 import { OverlayPortal, useAnchoredOverlay, useOverlayDismiss, useOverlayPresence, useOverlayScope } from './overlays.js';
@@ -29,19 +30,20 @@ export interface RichTextEditorProps {
   placeholder?: string;
   disabled?: boolean;
   readOnly?: boolean;
+  showToolbar?: boolean;
   toolbarSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
 }
 
-const builtins: RichTextPreset[] = [
-  { type: 'paragraph', label: 'Текст', keywords: ['paragraph', 'text'], icon: Pilcrow },
-  { type: 'heading1', label: 'Заголовок 1', keywords: ['h1', 'heading'], icon: Heading1 },
-  { type: 'heading2', label: 'Заголовок 2', keywords: ['h2', 'heading'], icon: Heading2 },
-  { type: 'heading3', label: 'Заголовок 3', keywords: ['h3', 'heading'], icon: Heading3 },
-  { type: 'bullet', label: 'Маркированный список', keywords: ['list', 'bullet'], icon: List },
-  { type: 'numbered', label: 'Нумерованный список', keywords: ['list', 'ordered'], icon: ListOrdered },
-  { type: 'quote', label: 'Цитата', keywords: ['blockquote'], icon: Quote },
-  { type: 'code', label: 'Код', keywords: ['pre', 'code'], icon: Code2 },
+const builtins = (t: (ru: string, en: string) => string): RichTextPreset[] => [
+  { type: 'paragraph', label: t('Текст', 'Text'), keywords: ['paragraph', 'text'], icon: Pilcrow },
+  { type: 'heading1', label: t('Заголовок 1', 'Heading 1'), keywords: ['h1', 'heading'], icon: Heading1 },
+  { type: 'heading2', label: t('Заголовок 2', 'Heading 2'), keywords: ['h2', 'heading'], icon: Heading2 },
+  { type: 'heading3', label: t('Заголовок 3', 'Heading 3'), keywords: ['h3', 'heading'], icon: Heading3 },
+  { type: 'bullet', label: t('Маркированный список', 'Bullet list'), keywords: ['list', 'bullet'], icon: List },
+  { type: 'numbered', label: t('Нумерованный список', 'Numbered list'), keywords: ['list', 'ordered'], icon: ListOrdered },
+  { type: 'quote', label: t('Цитата', 'Quote'), keywords: ['blockquote'], icon: Quote },
+  { type: 'code', label: t('Код', 'Code'), keywords: ['pre', 'code'], icon: Code2 },
 ];
 const marks: RichTextMark[] = ['bold', 'italic', 'strike', 'code'];
 const markTags: Record<RichTextMark, string> = { bold: 'STRONG', italic: 'EM', strike: 'S', code: 'CODE' };
@@ -182,22 +184,25 @@ function SlashMenuOverlay({ anchor, panel, open, id, options, activeIndex, onSel
   anchor: RefObject<HTMLElement | null>; panel: RefObject<HTMLDivElement | null>; open: boolean; id: string;
   options: RichTextPreset[]; activeIndex: number; onSelect: (type: string) => void; onClose: () => void;
 }) {
+  const t = useTranslate();
   const scopeAnchor = useMemo(() => ({ get current() { return anchor.current; } }), [anchor, open]);
   const scope = useOverlayScope(scopeAnchor), position = useAnchoredOverlay(open, anchor, panel, { side: 'bottom' }), present = useOverlayPresence(open);
   useOverlayDismiss(open, panel, anchor, restore => { onClose(); if (restore) requestAnimationFrame(() => anchor.current?.focus()); });
   if (!present) return null;
-  return <OverlayPortal anchor={anchor} panel={panel}><div ref={panel} id={id} className="cap-rich-editor-slash" role="listbox" aria-label="Тип блока" data-state={open ? 'open' : 'closed'} aria-hidden={!open || undefined} inert={!open} style={position} {...scope}>
+  return <OverlayPortal anchor={anchor} panel={panel}><div ref={panel} id={id} className="cap-rich-editor-slash" role="listbox" aria-label={t('Тип блока', 'Block type')} data-state={open ? 'open' : 'closed'} aria-hidden={!open || undefined} inert={!open} style={position} {...scope}>
     {options.length ? options.map((item, index) => <button key={item.type} id={`${id}-${index}`} type="button" role="option" aria-selected={index === activeIndex} className="cap-rich-editor-option" onMouseDown={event => event.preventDefault()} onClick={() => onSelect(item.type)}>
       {item.icon && <span className="cap-rich-editor-option-icon"><Icon name={item.icon} /></span>}<span>{item.label}</span>
-    </button>) : <div className="cap-rich-editor-no-results">Ничего не найдено</div>}
+    </button>) : <div className="cap-rich-editor-no-results">{t('Ничего не найдено', 'No results')}</div>}
   </div></OverlayPortal>;
 }
 
-interface BlockMenuAction { id: string; label: string; icon?: IconSource; checked?: boolean; disabled?: boolean; danger?: boolean; onSelect: () => void }
+interface BlockMenuAction { id: string; label: string; icon?: IconSource; checked?: boolean; disabled?: boolean; danger?: boolean; onSelect: () => void; children?: BlockMenuAction[] }
 function BlockMenuOverlay({ anchor, open, id, groups, onClose }: {
   anchor: RefObject<HTMLButtonElement | null>; open: boolean; id: string;
   groups: { label: string; items: BlockMenuAction[] }[]; onClose: (restore?: boolean) => void;
 }) {
+  const t = useTranslate();
+  const [submenu, setSubmenu] = useState<BlockMenuAction | null>(null);
   const panel = useRef<HTMLDivElement>(null), search = useRef(''), searchedAt = useRef(0);
   const lastGroups = useRef(groups);
   if (open) lastGroups.current = groups;
@@ -205,13 +210,16 @@ function BlockMenuOverlay({ anchor, open, id, groups, onClose }: {
   const scope = useOverlayScope(scopeAnchor), position = useAnchoredOverlay(open, anchor, panel, { align: 'start' }), present = useOverlayPresence(open);
   const buttons = () => Array.from(panel.current?.querySelectorAll<HTMLButtonElement>('[role^="menuitem"]:not(:disabled)') ?? []);
   useOverlayDismiss(open, panel, anchor, onClose);
-  useEffect(() => { if (open && position.visibility === 'visible') buttons()[0]?.focus({ preventScroll: true }); }, [open, position.visibility]);
+  useEffect(() => { if (!open) setSubmenu(null); }, [open]);
+  useEffect(() => { if (open && position.visibility === 'visible') buttons()[0]?.focus({ preventScroll: true }); }, [open, position.visibility, submenu]);
   if (!present) return null;
-  return <OverlayPortal anchor={anchor} panel={panel}><div ref={panel} id={id} role="menu" tabIndex={0} aria-label="Действия с блоком" className="cap-rich-editor-slash cap-rich-editor-menu" data-state={open ? 'open' : 'closed'} aria-hidden={!open || undefined} inert={!open} style={position} {...scope}
+  return <OverlayPortal anchor={anchor} panel={panel}><div ref={panel} id={id} role="menu" tabIndex={0} aria-label={t('Действия с блоком', 'Block actions')} className="cap-rich-editor-slash cap-rich-editor-menu" data-state={open ? 'open' : 'closed'} aria-hidden={!open || undefined} inert={!open} style={position} {...scope}
     onFocus={event => { if (event.target === event.currentTarget) buttons()[0]?.focus(); }}
     onBlur={event => { if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget) && event.relatedTarget !== anchor.current) onClose(false); }}
     onKeyDown={event => {
       const choices = buttons(), current = choices.indexOf(document.activeElement as HTMLButtonElement);
+      if (event.key === 'ArrowLeft' && submenu) { event.preventDefault(); setSubmenu(null); return; }
+      if (event.key === 'ArrowRight') { event.preventDefault(); const item = document.activeElement as HTMLButtonElement | null; if (item?.getAttribute('aria-haspopup') === 'menu') item.click(); return; }
       if (event.key === 'Tab') { event.preventDefault(); onClose(); return; }
       if (['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) {
         event.preventDefault(); choices[event.key === 'Home' ? 0 : event.key === 'End' ? choices.length - 1 : (current + (event.key === 'ArrowDown' ? 1 : -1) + choices.length) % choices.length]?.focus();
@@ -221,8 +229,9 @@ function BlockMenuOverlay({ anchor, open, id, groups, onClose }: {
         [...choices.slice(current + 1), ...choices.slice(0, current + 1)].find(button => button.textContent?.toLocaleLowerCase().startsWith(term))?.focus();
       }
     }}>
-    {lastGroups.current.map(group => <div role="group" aria-label={group.label} key={group.label}><div className="cap-rich-editor-menu-caption">{group.label}</div>{group.items.map(item => <button key={item.id} type="button" role={item.checked === undefined ? 'menuitem' : 'menuitemradio'} aria-checked={item.checked} tabIndex={-1} disabled={item.disabled} data-danger={item.danger || undefined} className="cap-rich-editor-option" onClick={() => { onClose(false); item.onSelect(); }}>
-      {item.icon && <span className="cap-rich-editor-option-icon"><Icon name={item.icon}/></span>}<span>{item.label}</span>{item.checked && <span className="cap-rich-editor-menu-check" aria-hidden="true">✓</span>}
+    {submenu && <button type="button" role="menuitem" className="cap-rich-editor-option" onClick={() => setSubmenu(null)}>← {t('Назад', 'Back')}</button>}
+    {(submenu ? [{ label: submenu.label, items: submenu.children ?? [] }] : lastGroups.current).map(group => <div role="group" className="cap-rich-editor-menu-group" aria-label={group.label} key={group.label}>{submenu && <div className="cap-rich-editor-menu-caption">{group.label}</div>}{group.items.map(item => <button key={item.id} type="button" role={item.checked === undefined ? 'menuitem' : 'menuitemradio'} aria-checked={item.checked} tabIndex={-1} aria-haspopup={item.children ? 'menu' : undefined} disabled={item.disabled} data-danger={item.danger || undefined} className="cap-rich-editor-option" onClick={() => { if (item.children) setSubmenu(item); else { onClose(false); item.onSelect(); } }}>
+      {item.icon && <span className="cap-rich-editor-option-icon"><Icon name={item.icon}/></span>}<span>{item.label}</span>{item.children && <span className="cap-rich-editor-menu-check" aria-hidden="true">›</span>}{item.checked && <span className="cap-rich-editor-menu-check" aria-hidden="true">✓</span>}
     </button>)}</div>)}
   </div></OverlayPortal>;
 }
@@ -232,7 +241,8 @@ interface BlockDrag {
   beforeId: string | null; selection: { id: string; start: number; end: number } | null; handle: HTMLButtonElement;
 }
 
-export function RichTextEditor({ label, value, onValueChange, presets = [], placeholder = 'Начните писать или введите /', disabled = false, readOnly = false, toolbarSize = 'sm', className }: RichTextEditorProps) {
+export function RichTextEditor({ label, value, onValueChange, presets = [], placeholder, disabled = false, readOnly = false, toolbarSize = 'sm', showToolbar = false, className }: RichTextEditorProps) {
+  const t = useTranslate();
   const uid = useId();
   const valueRef = useRef(value);
   const history = useRef<RichTextDocument[]>([]);
@@ -249,9 +259,12 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
   const emptyBlock = useRef<RichTextBlock>(createRichTextBlock());
   const editorRoot = useRef<HTMLElement | null>(null), slashAnchor = useRef<HTMLElement | null>(null), slashPanel = useRef<HTMLDivElement | null>(null);
   const selectionAnchor = useRef<HTMLSpanElement | null>(null), selectionPanel = useRef<HTMLDivElement | null>(null);
+  const pointerSelection = useRef<{ pointerId: number; node: Node; offset: number; blockId: string } | null>(null);
+  const multiSelection = useRef<{ startId: string; endId: string; start: number; end: number } | null>(null);
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [selectionToolbar, setSelectionToolbar] = useState<{ id: string; left: number; top: number } | null>(null);
   valueRef.current = value;
-  const allPresets = useMemo(() => [...builtins, ...presets.filter(preset => !builtins.some(item => item.type === preset.type))], [presets]);
+  const allPresets = useMemo(() => [...builtins(t), ...presets.filter(preset => !builtins(t).some(item => item.type === preset.type))], [presets, t]);
   const filtered = useMemo(() => slash === null ? [] : allPresets.filter(preset => `${preset.label} ${preset.type} ${(preset.keywords ?? []).join(' ')}`.toLocaleLowerCase().includes(slash.toLocaleLowerCase())), [allPresets, slash]);
   const active = value.blocks.find(block => block.id === activeId) ?? value.blocks[0];
   const editable = !disabled && !readOnly;
@@ -271,10 +284,24 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
   const closeMenu = (restore = true) => { setMenuId(null); if (restore) menuAnchor.current?.focus({ preventScroll: true }); };
   const syncSelection = () => {
     const selection = window.getSelection(), root = editorRoot.current;
-    if (!editable || !root || !selection?.rangeCount || selection.isCollapsed) { setSelectionToolbar(null); return; }
+    if (!editable || !root || !selection?.rangeCount || selection.isCollapsed) { multiSelection.current = null; setSelectedIds(previous => previous.length ? [] : previous); setSelectionToolbar(null); return; }
     const range = selection.getRangeAt(0), start = range.startContainer.nodeType === Node.ELEMENT_NODE ? range.startContainer as Element : range.startContainer.parentElement;
     const end = range.endContainer.nodeType === Node.ELEMENT_NODE ? range.endContainer as Element : range.endContainer.parentElement;
     const element = start?.closest<HTMLElement>('[contenteditable]');
+    const endElement = end?.closest<HTMLElement>('[contenteditable]');
+    if (element && endElement && element !== endElement && root.contains(element) && root.contains(endElement)) {
+      const startId = element.closest<HTMLElement>('[data-block-id]')?.dataset.blockId, endId = endElement.closest<HTMLElement>('[data-block-id]')?.dataset.blockId;
+      if (startId && endId) {
+        const prefix = range.cloneRange(); prefix.selectNodeContents(element); prefix.setEnd(range.startContainer, range.startOffset);
+        const suffix = range.cloneRange(); suffix.selectNodeContents(endElement); suffix.setEnd(range.endContainer, range.endOffset);
+        multiSelection.current = { startId, endId, start: prefix.toString().length, end: suffix.toString().length };
+        const blocks = valueRef.current.blocks, a = blocks.findIndex(block => block.id === startId), b = blocks.findIndex(block => block.id === endId);
+        const ids = blocks.slice(a, b + 1).map(block => block.id);
+        setSelectedIds(previous => previous.join() === ids.join() ? previous : ids);
+      }
+      setSelectionToolbar(null); return;
+    }
+    multiSelection.current = null; setSelectedIds(previous => previous.length ? [] : previous);
     if (!element || !root.contains(element) || !element.contains(end) || !offsets(element)) { setSelectionToolbar(null); return; }
     const rangeOffsets = offsets(element), block = element.closest<HTMLElement>('[data-block-id]');
     if (['code', 'markdown-source'].includes(block?.dataset.blockType ?? '')) { setSelectionToolbar(null); return; }
@@ -292,6 +319,32 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
     syncSelection();
     return () => { document.removeEventListener('selectionchange', syncSelection); window.removeEventListener('scroll', syncSelection, true); window.removeEventListener('resize', syncSelection); };
   }, [editable]);
+  const caretAtPoint = (x: number, y: number) => {
+    const owner = document as Document & { caretPositionFromPoint?: (x: number, y: number) => { offsetNode: Node; offset: number } | null; caretRangeFromPoint?: (x: number, y: number) => Range | null };
+    const position = owner.caretPositionFromPoint?.(x, y);
+    if (position) return { node: position.offsetNode, offset: position.offset };
+    const range = owner.caretRangeFromPoint?.(x, y);
+    return range ? { node: range.startContainer, offset: range.startOffset } : null;
+  };
+  const extendPointerSelection = (event: React.PointerEvent<HTMLElement>) => {
+    const anchor = pointerSelection.current, point = caretAtPoint(event.clientX, event.clientY), root = editorRoot.current;
+    if (!anchor || anchor.pointerId !== event.pointerId || !point || !root?.contains(point.node) || !root.contains(anchor.node)) return;
+    const element = point.node.nodeType === Node.ELEMENT_NODE ? point.node as Element : point.node.parentElement;
+    if (!element?.closest('[contenteditable]') || element.closest<HTMLElement>('[data-block-id]')?.dataset.blockId === anchor.blockId) return;
+    const apply = () => {
+      if (!root.contains(anchor.node) || !root.contains(point.node)) return;
+      window.getSelection()?.setBaseAndExtent(anchor.node, anchor.offset, point.node, point.offset);
+      syncSelection();
+    };
+    apply();
+    // Browser selection normally stays inside its first editing host. Apply after its native drag step too.
+    requestAnimationFrame(() => { if (event.type === 'pointerup' || pointerSelection.current === anchor) apply(); });
+  };
+  useEffect(() => {
+    const clear = () => { pointerSelection.current = null; };
+    document.addEventListener('pointerup', clear); document.addEventListener('pointercancel', clear);
+    return () => { document.removeEventListener('pointerup', clear); document.removeEventListener('pointercancel', clear); };
+  }, []);
   const focusBlock = (id: string, point = 0) => { const element = elementFor(id); if (element) { element.focus(); setCaret(element, point); } else handleFor(id)?.focus(); };
   const commit = (next: RichTextDocument, record: boolean | string = true) => {
     if (JSON.stringify(next) === JSON.stringify(valueRef.current)) return;
@@ -336,7 +389,7 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
     commit({ blocks });
     if (focusHandle) { restoreSelection(selection); handleFor(id)?.focus({ preventScroll: true }); }
     else if (selection) restoreSelection(selection); else focusBlock(id);
-    setAnnouncement(`Блок перемещён: ${target + 1} из ${blocks.length}`);
+    setAnnouncement(`${t('Блок перемещён', 'Block moved')}: ${target + 1} ${t('из', 'of')} ${blocks.length}`);
   };
   const finishDrag = (cancel = false) => {
     const current = drag.current;
@@ -349,9 +402,9 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
       const blocks = [...valueRef.current.blocks], index = blocks.findIndex(block => block.id === current.id);
       if (index >= 0 && current.beforeId !== current.id) {
         const [block] = blocks.splice(index, 1), target = current.beforeId === null ? blocks.length : blocks.findIndex(item => item.id === current.beforeId);
-        if (target >= 0) { blocks.splice(target, 0, block); commit({ blocks }); setAnnouncement(`Блок перемещён: ${target + 1} из ${blocks.length}`); }
+        if (target >= 0) { blocks.splice(target, 0, block); commit({ blocks }); setAnnouncement(`${t('Блок перемещён', 'Block moved')}: ${target + 1} ${t('из', 'of')} ${blocks.length}`); }
       }
-    } else setAnnouncement('Перемещение отменено');
+    } else setAnnouncement(t('Перемещение отменено', 'Move cancelled'));
     current.handle.focus({ preventScroll: true });
     restoreSelection(current.selection);
   };
@@ -424,10 +477,42 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
     setSelectionToolbar(null);
     if (restore && selectedId) requestAnimationFrame(() => focusBlock(selectedId, savedSelection.current?.start ?? 0));
   });
+  const multiSelectionText = () => {
+    const selected = multiSelection.current;
+    if (!selected) return null;
+    const source = valueRef.current.blocks, a = source.findIndex(block => block.id === selected.startId), b = source.findIndex(block => block.id === selected.endId);
+    if (a < 0 || b < a) return null;
+    return source.slice(a, b + 1).map((block, index) => {
+      const text = (block.content ?? []).map(run => run.text).join('');
+      return text.slice(index === 0 ? selected.start : 0, index === b - a ? selected.end : undefined);
+    }).join('\n');
+  };
+  const replaceMultiSelection = (text: string) => {
+    const selected = multiSelection.current;
+    if (!selected) return false;
+    const blocks = [...valueRef.current.blocks], a = blocks.findIndex(block => block.id === selected.startId), b = blocks.findIndex(block => block.id === selected.endId);
+    if (a < 0 || b <= a) return false;
+    const [before] = splitRuns(blocks[a].content ?? [], selected.start), [, after] = splitRuns(blocks[b].content ?? [], selected.end);
+    const content = normalizeRuns([...before, { text }, ...after]);
+    blocks.splice(a, b - a + 1, { ...blocks[a], content });
+    multiSelection.current = null; setSelectedIds([]); window.getSelection()?.removeAllRanges();
+    commit({ blocks }); focusBlock(selected.startId, selected.start + text.length); return true;
+  };
+  useEffect(() => {
+    const root = editorRoot.current;
+    const beforeInput = (event: InputEvent) => {
+      if (!editable || event.isComposing || !multiSelection.current) return;
+      if (event.inputType.startsWith('insert') && event.data !== null) { event.preventDefault(); replaceMultiSelection(event.data); }
+      else if (event.inputType.startsWith('delete')) { event.preventDefault(); replaceMultiSelection(''); }
+    };
+    root?.addEventListener('beforeinput', beforeInput);
+    return () => root?.removeEventListener('beforeinput', beforeInput);
+  });
   const paste = (event: ClipboardEvent<HTMLElement>) => {
     if (!editable) return;
     event.preventDefault();
     const text = event.clipboardData.getData('text/plain').replace(/\r\n?/g, '\n');
+    if (replaceMultiSelection(text)) return;
     const selection = window.getSelection();
     if (!selection?.rangeCount) return;
     const range = selection.getRangeAt(0);
@@ -439,6 +524,8 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
     if (!editable) return;
     if (event.nativeEvent.isComposing) return;
     const key = event.key.toLowerCase(), mod = event.metaKey || event.ctrlKey;
+    if (multiSelection.current && ['Backspace', 'Delete', 'Enter'].includes(event.key)) { event.preventDefault(); replaceMultiSelection(event.key === 'Enter' ? '\n' : ''); return; }
+    if (multiSelection.current && event.key === 'Escape') { event.preventDefault(); const id = multiSelection.current.startId; multiSelection.current = null; setSelectedIds([]); focusBlock(id); return; }
     if (slash !== null && block.id === activeId) {
       if (event.key === 'ArrowDown' || event.key === 'ArrowUp') { event.preventDefault(); setSlashIndex(index => (index + (event.key === 'ArrowDown' ? 1 : -1) + filtered.length) % Math.max(filtered.length, 1)); return; }
       if (event.key === 'Escape') { event.preventDefault(); setSlash(null); return; }
@@ -449,6 +536,26 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
     if (mod && ['b', 'i'].includes(key) && !['code', 'markdown-source'].includes(block.type)) { event.preventDefault(); format(key === 'b' ? 'bold' : 'italic'); return; }
     if (mod && event.shiftKey && ['arrowup', 'arrowdown'].includes(key)) { event.preventDefault(); move(block.id, key === 'arrowup' ? -1 : 1); return; }
     const element = event.currentTarget, position = offsets(element);
+    if (event.shiftKey && !mod && ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
+      const selection = window.getSelection(), source = valueRef.current.blocks;
+      const focusElement = selection?.focusNode?.nodeType === Node.ELEMENT_NODE ? selection.focusNode as Element : selection?.focusNode?.parentElement;
+      const focusId = focusElement?.closest<HTMLElement>('[data-block-id]')?.dataset.blockId ?? block.id;
+      const index = source.findIndex(item => item.id === focusId);
+      const direction = ['ArrowUp', 'ArrowLeft'].includes(event.key) ? -1 : 1;
+      const length = (block.content ?? []).reduce((count, run) => count + run.text.length, 0);
+      const crosses = ['ArrowUp', 'ArrowDown'].includes(event.key) || (direction < 0 ? position?.[0] === 0 : position?.[1] === length);
+      const target = crosses && source[index + direction] && elementFor(source[index + direction].id);
+      if (target && selection?.anchorNode) {
+        event.preventDefault();
+        const anchorNode = selection.anchorNode, anchorOffset = selection.anchorOffset;
+        const targetPoint = direction < 0 ? target.textContent?.length ?? 0 : 0;
+        setCaret(target, targetPoint);
+        const focusNode = selection.focusNode, focusOffset = selection.focusOffset;
+        if (focusNode) selection.setBaseAndExtent(anchorNode, anchorOffset, focusNode, focusOffset);
+        syncSelection(); return;
+      }
+    }
+
     if (event.key === 'Enter' && (['code', 'markdown-source'].includes(block.type) ? mod : !event.shiftKey)) {
       event.preventDefault();
       const current = readRuns(element), start = position?.[0] ?? current.map(run => run.text.length).reduce((a,b)=>a+b,0), end = position?.[1] ?? start;
@@ -476,31 +583,37 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
   const blocks = value.blocks.length ? value.blocks : [emptyBlock.current];
   const menuBlock = blocks.find(block => block.id === menuId), menuIndex = blocks.findIndex(block => block.id === menuId);
   const menuGroups = menuBlock ? [
-    { label: 'Тип блока', items: allPresets.map(preset => ({ id: preset.type, label: preset.label, icon: preset.icon, checked: preset.type === menuBlock.type, onSelect: () => changeType(preset.type, menuBlock.id) })) },
-    { label: savedSelection.current?.id === menuId && savedSelection.current.start !== savedSelection.current.end ? 'Формат выделения' : 'Формат блока', items: [
-      { id: 'bold', label: 'Полужирный', icon: Bold }, { id: 'italic', label: 'Курсив', icon: Italic }, { id: 'strike', label: 'Зачёркнутый', icon: Strikethrough }, { id: 'code', label: 'Строчный код', icon: Code2 },
-    ].map(item => ({ ...item, disabled: ['code', 'markdown-source'].includes(menuBlock.type) || Boolean(allPresets.find(preset => preset.type === menuBlock.type)?.render) || !menuBlock.content?.some(run => run.text), onSelect: () => formatBlock(menuBlock.id, item.id as RichTextMark) })) },
-    { label: 'Действия', items: [
-      { id: 'up', label: 'Переместить вверх', icon: ArrowUp, disabled: menuIndex === 0, onSelect: () => move(menuBlock.id, -1, true) },
-      { id: 'down', label: 'Переместить вниз', icon: ArrowDown, disabled: menuIndex === blocks.length - 1, onSelect: () => move(menuBlock.id, 1, true) },
-      { id: 'remove', label: 'Удалить блок', icon: Trash2, danger: true, onSelect: () => remove(menuBlock.id) },
+    { label: t('Тип блока', 'Block type'), items: [{ id: 'hierarchy', label: t('Иерархия', 'Hierarchy'), icon: Pilcrow, children: allPresets.filter(preset => ['paragraph', 'heading1', 'heading2', 'heading3'].includes(preset.type)).map(preset => ({ id: preset.type, label: preset.label, icon: preset.icon, checked: preset.type === menuBlock.type, onSelect: () => changeType(preset.type, menuBlock.id) })), onSelect: () => {} }, { id: 'lists', label: t('Список', 'List'), icon: List, children: allPresets.filter(preset => ['bullet', 'numbered'].includes(preset.type)).map(preset => ({ id: preset.type, label: preset.label, icon: preset.icon, checked: preset.type === menuBlock.type, onSelect: () => changeType(preset.type, menuBlock.id) })), onSelect: () => {} }, ...allPresets.filter(preset => !['paragraph', 'heading1', 'heading2', 'heading3', 'bullet', 'numbered'].includes(preset.type)).map(preset => ({ id: preset.type, label: preset.label, icon: preset.icon, checked: preset.type === menuBlock.type, onSelect: () => changeType(preset.type, menuBlock.id) }))] },
+    { label: savedSelection.current?.id === menuId && savedSelection.current.start !== savedSelection.current.end ? t('Формат выделения', 'Selection format') : t('Формат блока', 'Block format'), items: [{ id: 'format', label: t('Формат', 'Format'), icon: Bold, onSelect: () => {}, children: [
+      { id: 'bold', label: t('Полужирный', 'Bold'), icon: Bold }, { id: 'italic', label: t('Курсив', 'Italic'), icon: Italic }, { id: 'strike', label: t('Зачёркнутый', 'Strikethrough'), icon: Strikethrough }, { id: 'code', label: t('Строчный код', 'Inline code'), icon: Code2 },
+    ].map(item => ({ ...item, disabled: ['code', 'markdown-source'].includes(menuBlock.type) || Boolean(allPresets.find(preset => preset.type === menuBlock.type)?.render) || !menuBlock.content?.some(run => run.text), onSelect: () => formatBlock(menuBlock.id, item.id as RichTextMark) })) }] },
+    { label: t('Действия', 'Actions'), items: [
+      { id: 'copy', label: t('Копировать', 'Copy'), icon: Code2, onSelect: () => { void navigator.clipboard?.writeText((menuBlock.content ?? []).map(run => run.text).join('')); } },
+      { id: 'duplicate', label: t('Дублировать', 'Duplicate'), icon: Plus, onSelect: () => { const next = [...valueRef.current.blocks], copy = { ...menuBlock, id: createRichTextBlock().id }; next.splice(menuIndex + 1, 0, copy); commit({ blocks: next }); focusBlock(copy.id); } },
+      { id: 'up', label: t('Переместить вверх', 'Move up'), icon: ArrowUp, disabled: menuIndex === 0, onSelect: () => move(menuBlock.id, -1, true) },
+      { id: 'down', label: t('Переместить вниз', 'Move down'), icon: ArrowDown, disabled: menuIndex === blocks.length - 1, onSelect: () => move(menuBlock.id, 1, true) },
+      { id: 'remove', label: t('Удалить блок', 'Delete block'), icon: Trash2, danger: true, onSelect: () => remove(menuBlock.id) },
     ] },
   ] : [];
-  return <section ref={editorRoot} className={`cap-rich-editor${className ? ` ${className}` : ''}`} data-rich-editor={uid} data-disabled={disabled || undefined} aria-label={label} onBlurCapture={event => { const target = event.relatedTarget as Node | null; if (!event.currentTarget.contains(target) && !slashPanel.current?.contains(target)) setSlash(null); }}>
-    <div className="cap-rich-editor-tools">
-      <FloatingActionBar label={`${label}: форматирование`} position="static" size={toolbarSize} rovingFocus={false}>
-        <IconButton label="Отменить" icon={Undo2} variant="ghost" size="sm" disabled={!editable || !history.current.length} onClick={undo}/>
-        <IconButton label="Повторить" icon={Redo2} variant="ghost" size="sm" disabled={!editable || !future.current.length} onClick={redo}/>
+  return <section ref={editorRoot} className={`cap-rich-editor${className ? ` ${className}` : ''}`} data-rich-editor={uid} data-disabled={disabled || undefined} aria-label={label} onPointerDownCapture={event => {
+      const target = event.target as Element, block = target.closest<HTMLElement>('[contenteditable]')?.closest<HTMLElement>('[data-block-id]');
+      const point = editable && event.button === 0 && block?.dataset.blockId ? caretAtPoint(event.clientX, event.clientY) : null;
+      if (point && block?.dataset.blockId) pointerSelection.current = { pointerId: event.pointerId, ...point, blockId: block.dataset.blockId };
+    }} onPointerMove={extendPointerSelection} onPointerUp={extendPointerSelection} onBeforeInput={event => { const native = event.nativeEvent as InputEvent; if (!native.isComposing && multiSelection.current && native.inputType?.startsWith('insert') && native.data !== null) { event.preventDefault(); replaceMultiSelection(native.data); } }} onCopy={event => { const text = multiSelectionText(); if (text === null) return; event.preventDefault(); event.clipboardData.setData('text/plain', text); }} onCut={event => { if (!editable) return; const text = multiSelectionText(); if (text === null) return; event.preventDefault(); event.clipboardData.setData('text/plain', text); replaceMultiSelection(''); }} onBlurCapture={event => { const target = event.relatedTarget as Node | null; if (!event.currentTarget.contains(target) && !slashPanel.current?.contains(target)) setSlash(null); }}>
+    {showToolbar && <div className="cap-rich-editor-tools">
+      <FloatingActionBar label={`${label}: ${t('форматирование', 'formatting')}`} position="static" size={toolbarSize} rovingFocus={false}>
+        <IconButton label={t('Отменить', 'Undo')} icon={Undo2} variant="ghost" size="sm" disabled={!editable || !history.current.length} onClick={undo}/>
+        <IconButton label={t('Повторить', 'Redo')} icon={Redo2} variant="ghost" size="sm" disabled={!editable || !future.current.length} onClick={redo}/>
         <span className="cap-rich-editor-divider" aria-hidden="true"/>
-        <IconButton label="Полужирный" icon={Bold} variant="ghost" size="sm" disabled={!editable} onMouseDown={preserveSelection} onClick={()=>format('bold')}/>
-        <IconButton label="Курсив" icon={Italic} variant="ghost" size="sm" disabled={!editable} onMouseDown={preserveSelection} onClick={()=>format('italic')}/>
-        <IconButton label="Зачёркнутый" icon={Strikethrough} variant="ghost" size="sm" disabled={!editable} onMouseDown={preserveSelection} onClick={()=>format('strike')}/>
-        <IconButton label="Строчный код" icon={Code2} variant="ghost" size="sm" disabled={!editable} onMouseDown={preserveSelection} onClick={()=>format('code')}/>
+        <IconButton label={t('Полужирный', 'Bold')} icon={Bold} variant="ghost" size="sm" disabled={!editable} onMouseDown={preserveSelection} onClick={()=>format('bold')}/>
+        <IconButton label={t('Курсив', 'Italic')} icon={Italic} variant="ghost" size="sm" disabled={!editable} onMouseDown={preserveSelection} onClick={()=>format('italic')}/>
+        <IconButton label={t('Зачёркнутый', 'Strikethrough')} icon={Strikethrough} variant="ghost" size="sm" disabled={!editable} onMouseDown={preserveSelection} onClick={()=>format('strike')}/>
+        <IconButton label={t('Строчный код', 'Inline code')} icon={Code2} variant="ghost" size="sm" disabled={!editable} onMouseDown={preserveSelection} onClick={()=>format('code')}/>
         <span className="cap-rich-editor-divider" aria-hidden="true"/>
-        <IconButton label="Новый блок" icon={Plus} variant="ghost" size="sm" disabled={!editable} onClick={()=>insert(active?.id ?? null)}/>
+        <IconButton label={t('Новый блок', 'New block')} icon={Plus} variant="ghost" size="sm" disabled={!editable} onClick={()=>insert(active?.id ?? null)}/>
       </FloatingActionBar>
-    </div>
-    <span className="cap-sr-only" id={`${uid}-handle-help`}>Перетащите для перемещения. Нажмите для меню. Alt+↑/↓ перемещает блок, Escape отменяет перетаскивание.</span>
+    </div>}
+    <span className="cap-sr-only" id={`${uid}-handle-help`}>{t('Перетащите для перемещения. Нажмите для меню. Alt+↑/↓ перемещает блок, Escape отменяет перетаскивание.', 'Drag to move. Click for menu. Alt+↑/↓ moves the block, Escape cancels dragging.')}</span>
     <span className="cap-sr-only" role="status" aria-live="polite">{announcement}</span>
     <div className="cap-rich-editor-document" data-revision={revision} data-dragging={Boolean(dragView) || undefined}>
       {blocks.map((block, index) => {
@@ -511,14 +624,14 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
         const codeData = block.data as { codeLanguage?: string } | undefined;
         const rawLanguage = codeData?.codeLanguage ?? block.markdown?.language ?? 'text';
         const codeLanguage = ['text', 'js', 'ts', 'tsx', 'json', 'css', 'bash'].includes(rawLanguage) ? rawLanguage as CodeLanguage : 'text';
-        const editor = <Editable block={block} label={`${label}, блок ${index+1}`} placeholder={index===0?placeholder:'Введите / для выбора блока'} disabled={disabled} readOnly={readOnly}
+        const editor = <Editable block={block} label={`${label}, ${t('блок', 'block')} ${index+1}`} placeholder={index===0?(placeholder ?? t('Начните писать или введите /', 'Start writing or type /')):t('Введите / для выбора блока', 'Type / to choose a block')} disabled={disabled} readOnly={readOnly}
           slashListId={slash !== null && activeId === block.id ? `${uid}-slash` : undefined} activeOptionId={slash !== null && activeId === block.id && filtered.length ? `${uid}-slash-${Math.min(slashIndex, filtered.length - 1)}` : undefined}
           onInput={element => { const content = sourceBlock ? [{ text: readRuns(element).map(run => run.text).join('') }] : readRuns(element); replace(block.id, current => ({ ...current, content }), block.id); const text = content.map(run=>run.text).join(''); setActiveId(block.id); setSlash(!sourceBlock && text.startsWith('/') && text.length <= 65 ? text.slice(1) : null); setSlashIndex(0); }}
           onKeyDown={event=>keydown(event,block)} onPaste={paste} onFocus={element=>{slashAnchor.current=element;setActiveId(block.id)}}/>;
-        return <div className="cap-rich-editor-row" data-block-id={block.id} data-block-type={block.type} data-dragging={dragView?.id === block.id || undefined} data-menu-open={menuId === block.id || undefined} key={block.id}>
+        return <div className="cap-rich-editor-row" data-block-id={block.id} data-block-type={block.type} data-selected={selectedIds.includes(block.id) || undefined} data-dragging={dragView?.id === block.id || undefined} data-menu-open={menuId === block.id || undefined} key={block.id}>
           {dragView?.beforeId === block.id && <span className="cap-rich-editor-drop-marker" data-testid="block-drop-marker" aria-hidden="true"/>}
           {editable && <div className="cap-rich-editor-row-actions">
-            <IconButton className="cap-rich-editor-handle" label={`Действия с блоком ${index+1}`} icon={GripVertical} size="xs" variant="ghost" aria-describedby={`${uid}-handle-help`} aria-haspopup="menu" aria-expanded={menuId === block.id} aria-controls={menuId === block.id ? `${uid}-block-menu` : undefined}
+            <IconButton className="cap-rich-editor-handle" label={`${t('Действия с блоком', 'Block actions')} ${index+1}`} icon={GripVertical} size="xs" variant="ghost" aria-describedby={`${uid}-handle-help`} aria-haspopup="menu" aria-expanded={menuId === block.id} aria-controls={menuId === block.id ? `${uid}-block-menu` : undefined}
               onPointerDown={event => {
                 if (event.button !== 0 || event.isPrimary === false) return;
                 const selection = captureSelection(); savedSelection.current = selection;
@@ -529,7 +642,7 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
               onPointerMove={event => {
                 const current = drag.current; if (!current || current.pointerId !== event.pointerId) return;
                 current.x = event.clientX; current.y = event.clientY;
-                if (!current.started && Math.hypot(current.x - current.startX, current.y - current.startY) >= 6) { current.started = true; setMenuId(null); setSlash(null); setAnnouncement('Перемещение блока. Escape — отмена.'); }
+                if (!current.started && Math.hypot(current.x - current.startX, current.y - current.startY) >= 6) { current.started = true; setMenuId(null); setSlash(null); setAnnouncement(t('Перемещение блока. Escape — отмена.', 'Moving block. Escape cancels.')); }
                 updateDrag();
               }}
               onPointerUp={event => { if (drag.current?.pointerId === event.pointerId) finishDrag(); }}
@@ -546,7 +659,7 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
           </div>}
           <div className="cap-rich-editor-block">
             {custom ? custom({ block, disabled, readOnly, onDataChange: data => editable && replace(block.id, current => ({ ...current, data })) }) : sourceBlock ?
-              <CodeBlock label={block.type === 'markdown-source' ? 'Markdown · исходный блок' : undefined} language={codeLanguage} showLanguageSelector={block.type === 'code' && editable} onLanguageChange={language => replace(block.id, current => ({ ...current, data: { ...(current.data && typeof current.data === 'object' && !Array.isArray(current.data) ? current.data : {}), codeLanguage: language } }))} editor={editable ? editor : undefined} variant="surface">{codeText}</CodeBlock> : editor}
+              <CodeBlock label={block.type === 'markdown-source' ? t('Markdown · исходный блок', 'Markdown · source block') : undefined} language={codeLanguage} showLanguageSelector={block.type === 'code' && editable} onLanguageChange={language => replace(block.id, current => ({ ...current, data: { ...(current.data && typeof current.data === 'object' && !Array.isArray(current.data) ? current.data : {}), codeLanguage: language } }))} editor={editable ? editor : undefined} variant="surface">{codeText}</CodeBlock> : editor}
 
           </div>
           {dragView && dragView.beforeId === null && index === blocks.length - 1 && <span className="cap-rich-editor-drop-marker" data-position="end" data-testid="block-drop-marker" aria-hidden="true"/>}
@@ -558,14 +671,14 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
     {selectionToolbarOpen && selectionToolbar && <>
       <span ref={selectionAnchor} className="cap-rich-editor-selection-anchor" aria-hidden="true" style={{ left: selectionToolbar.left, top: selectionToolbar.top }}/>
       <OverlayPortal anchor={selectionAnchor} panel={selectionPanel}><div ref={selectionPanel} className="cap-rich-editor-selection-toolbar" data-state="open" style={selectionPosition} {...selectionScope}>
-        <FloatingActionBar label={`${label}: выделенный текст`} position="static" size={toolbarSize} rovingFocus={false}>
-          <IconButton label="Полужирный" icon={Bold} variant="ghost" size="sm" onMouseDown={preserveSelection} onClick={()=>format('bold')}/>
-          <IconButton label="Курсив" icon={Italic} variant="ghost" size="sm" onMouseDown={preserveSelection} onClick={()=>format('italic')}/>
-          <IconButton label="Зачёркнутый" icon={Strikethrough} variant="ghost" size="sm" onMouseDown={preserveSelection} onClick={()=>format('strike')}/>
-          <IconButton label="Строчный код" icon={Code2} variant="ghost" size="sm" onMouseDown={preserveSelection} onClick={()=>format('code')}/>
+        <FloatingActionBar label={`${label}: ${t('выделенный текст', 'selected text')}`} position="static" size={toolbarSize} rovingFocus={false}>
+          <IconButton label={t('Полужирный', 'Bold')} icon={Bold} variant="ghost" size="sm" onMouseDown={preserveSelection} onClick={()=>format('bold')}/>
+          <IconButton label={t('Курсив', 'Italic')} icon={Italic} variant="ghost" size="sm" onMouseDown={preserveSelection} onClick={()=>format('italic')}/>
+          <IconButton label={t('Зачёркнутый', 'Strikethrough')} icon={Strikethrough} variant="ghost" size="sm" onMouseDown={preserveSelection} onClick={()=>format('strike')}/>
+          <IconButton label={t('Строчный код', 'Inline code')} icon={Code2} variant="ghost" size="sm" onMouseDown={preserveSelection} onClick={()=>format('code')}/>
         </FloatingActionBar>
       </div></OverlayPortal>
     </>}
-    {editable && <div className="cap-rich-editor-footer"><Button variant="ghost" size="sm" leading={<Plus size={15}/>} onClick={()=>insert(blocks.at(-1)?.id ?? null)}>Добавить блок</Button><span className="cap-rich-editor-hint">/ — тип блока · ⌘/Ctrl+B/I — формат</span></div>}
+    {editable && <div className="cap-rich-editor-footer"><Button variant="ghost" size="sm" leading={<Plus size={15}/>} onClick={()=>insert(blocks.at(-1)?.id ?? null)}>{t('Добавить блок', 'Add block')}</Button><span className="cap-rich-editor-hint">{t('/ — тип блока · ⌘/Ctrl+B/I — формат', '/ — block type · ⌘/Ctrl+B/I — format')}</span></div>}
   </section>;
 }

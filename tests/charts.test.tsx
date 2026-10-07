@@ -1,4 +1,5 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { LocaleProvider } from '../src/components/locale';
+import { act, fireEvent, render as baseRender, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import axe from 'axe-core';
 import { ActivityHeatmap, AnimatedCounter, BarChart, BrushChart, DonutChart, Gauge, LineChart, Ridgeline, SlopeChart, Sparkline, Streamgraph, Treemap, WaffleChart } from '../src/components/charts';
@@ -132,7 +133,7 @@ describe('chart families',()=>{
   it('reports visible streamgraph layers as visible and preserves signed ridgeline distributions',()=>{
     render(<><Streamgraph label="Flow" series={[{name:'In',values:[2,-1]}]}/><Ridgeline label="Latency" series={[{name:'Signed',values:[-10,-2,0,2,8]}]}/></>);
     expect(screen.getByRole('button',{name:'In'})).toHaveAttribute('aria-pressed','true');
-    expect(screen.getByRole('button',{name:/Signed: нижний квартиль -2, медиана 0, верхний квартиль 2/})).toBeInTheDocument();
+    expect(screen.getByRole('button',{name:/Signed: lower quartile -2, median 0, upper quartile 2/})).toBeInTheDocument();
   });
 
   it('centers streamgraph baselines by mode and reports a focused time point',()=>{
@@ -167,14 +168,14 @@ describe('chart families',()=>{
 
   it('draws filled distribution ridges and reports quartiles',()=>{
     render(<Ridgeline label="Response distribution" series={[{name:'North',values:[1,2,3,4,10]},{name:'South',values:[2,3,4,5,6]}]}/>);
-    expect(screen.getByRole('button',{name:/North: нижний квартиль 2, медиана 3, верхний квартиль 4/})).toBeInTheDocument();
+    expect(screen.getByRole('button',{name:/North: lower quartile 2, median 3, upper quartile 4/})).toBeInTheDocument();
     expect(document.querySelectorAll('.cap-chart-ridge-area').length).toBe(2);
     expect(screen.getByText(/Q1 2 · Median 3 · Q3 4/)).toBeInTheDocument();
   });
 
   it('lifts the focused ridgeline and reports its stable active key',()=>{
     const active=vi.fn(),{container}=render(<Ridgeline label="Latency" series={[{id:'north-id',name:'North',values:[1,2,3,4,5]},{id:'south-id',name:'South',values:[2,3,4,5,6]}]} onActiveChange={active}/>);
-    const north=screen.getByRole('button',{name:/North: нижний квартиль/});
+    const north=screen.getByRole('button',{name:/North: lower quartile/});
     fireEvent.mouseEnter(north);
     expect(north).toHaveAttribute('data-active','true');
     expect(active).toHaveBeenCalledWith('north-id');
@@ -468,3 +469,5 @@ describe('chart families',()=>{
   });
 
 });
+
+const render = (ui: React.ReactNode, options?: import('@testing-library/react').RenderOptions) => baseRender(ui, { wrapper: ({ children }) => <LocaleProvider locale="en">{children}</LocaleProvider>, ...options });

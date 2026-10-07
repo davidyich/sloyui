@@ -1,4 +1,4 @@
-# Capacities UI · 0.5
+# Capacities UI · 0.6
 
 Лёгкий UI-kit для персональных проектов: React 19+, TypeScript и обычный CSS. Две темы, локальные акцентные моды, собственные всплывающие поверхности. Runtime-зависимостей кроме React/React DOM нет.
 
@@ -17,7 +17,7 @@ npm run dev
 npm run pack:kit
 ```
 
-В своём проекте установите локальный `artifacts/personal-capacities-ui-0.5.0.tgz` командой `npm install /absolute/path/to/personal-capacities-ui-0.5.0.tgz`. Поддерживаемый способ установки — готовый `.tgz`: локально собранный или скачанный из [GitHub Release v0.5.0](https://github.com/davidyich/capacities-style/releases/tag/v0.5.0). `git install` не является установочным контрактом: `dist` не хранится в Git, а `prepare` отсутствует. Публикация в npm registry не требуется.
+В своём проекте установите локальный `artifacts/personal-capacities-ui-0.6.0.tgz` командой `npm install /absolute/path/to/personal-capacities-ui-0.6.0.tgz`. Поддерживаемый способ установки — готовый `.tgz`: локально собранный или скачанный из [GitHub Release v0.6.0](https://github.com/davidyich/capacities-style/releases/tag/v0.6.0). `git install` не является установочным контрактом: `dist` не хранится в Git, а `prepare` отсутствует. Публикация в npm registry не требуется.
 
 ```tsx
 import { Button, Tag, FloatingField, ScrollArea } from '@personal/capacities-ui';
@@ -37,6 +37,18 @@ export function Project() {
 Задайте `data-theme="light"` или `data-theme="dark"` на `html`. По умолчанию — light. Переключение system theme и сохранение предпочтения принадлежат приложению. По умолчанию декоративные рамки выключены: `data-borders="off"`. Для альтернативного вида задайте `data-borders="on"` на `html` или локальном контейнере. Portal сохраняет ближайшие theme/accent/borders; всплывающая поверхность всегда получает собственный контекст `floating`.
 
 Стили ограничены классами `cap-`; `body` и раскладка приложения не сбрасываются. Для оболочки используйте `--cap-surface-canvas`, `--cap-content-primary`, `--cap-font-sans`.
+
+## Язык интерфейса
+
+`LocaleProvider locale="ru" | "en"` меняет встроенные подписи, календарь и форматирование чисел. По умолчанию — русский. Пользовательские строки и явно переданные locale/formatters сохраняются. Порталы наследуют язык. В каталоге RU/EN находится справа внизу бокового меню; выбор сохраняется локально.
+
+```tsx
+import { LocaleProvider, DatePicker } from '@personal/capacities-ui';
+
+<LocaleProvider locale="en">
+  <DatePicker label="Due date" />
+</LocaleProvider>
+```
 
 ## Цвета и контекст поверхности
 

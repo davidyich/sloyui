@@ -69,3 +69,9 @@ export type { StackDirection } from './components/stack-layout.js';
 
 export { ResizableCard } from './components/resizable-card.js';
 export type { ResizableCardProps, ResizableCardSize } from './components/resizable-card.js';
+export { LocaleProvider, useLocale, useTranslate } from './components/locale.js';
+export type { Locale } from './components/locale.js';
+
+export { ResizablePanelGroup, ResizablePanel, ResizableHandle } from './components/resizable-group.js';
+export type { ResizablePanelGroupProps, ResizablePanelProps, ResizableHandleProps } from './components/resizable-group.js';
+export type { ScrollFadeDirection, ScrollFadeSize } from './components/scroll-fade.js';

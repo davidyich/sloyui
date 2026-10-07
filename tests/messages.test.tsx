@@ -1,4 +1,5 @@
-import { fireEvent, render, screen, act } from '@testing-library/react';
+import { LocaleProvider } from '../src/components/locale';
+import { fireEvent, render as baseRender, screen, act } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { AnnouncementBar, CardStack, TextShimmer, ToastStack, clearAnnouncementDismissal } from '../src/components/messages';
 
@@ -114,3 +115,5 @@ describe('message components',()=>{
     const {rerender}=render(<TextShimmer active>Working</TextShimmer>);const status=screen.getByText('Working');expect(status).toHaveAttribute('aria-busy','true');expect(status).toHaveAttribute('data-active');rerender(<TextShimmer active={false}>Working</TextShimmer>);expect(status).not.toHaveAttribute('data-active');expect(status).toHaveAttribute('aria-busy','false');
   });
 });
+
+const render = (ui: React.ReactNode, options?: import('@testing-library/react').RenderOptions) => baseRender(ui, { wrapper: ({ children }) => <LocaleProvider locale="en">{children}</LocaleProvider>, ...options });

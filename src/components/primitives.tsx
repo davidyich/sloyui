@@ -1,3 +1,4 @@
+import { useTranslate } from './locale.js';
 import { forwardRef, type ButtonHTMLAttributes, type HTMLAttributes, type ReactNode, type ComponentType, type AnchorHTMLAttributes, type SVGProps } from 'react';
 export const cx = (...values: (string | false | null | undefined)[]) => values.filter(Boolean).join(' ');
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -14,7 +15,10 @@ export function Icon({ name, size = 16, ...props }: Omit<SVGProps<SVGSVGElement>
   const Glyph = typeof name === 'string' ? iconGlyphs[name] : name;
   return <Glyph size={size} strokeWidth={1.65} aria-hidden="true" focusable="false" {...props} />;
 }
-export function Spinner({ className, label = 'Загрузка', ...props }: HTMLAttributes<HTMLSpanElement> & { label?: string }) {
+export function Spinner({ className, label: suppliedLabel, ...props }: HTMLAttributes<HTMLSpanElement> & { label?: string }) {
+  const t = useTranslate();
+  const label = suppliedLabel === undefined ? (t("Загрузка", "Loading")) : suppliedLabel;
+
   return <span role="status" className={cx('cap-spinner', className)} {...props}><span className="cap-sr-only">{label}</span></span>;
 }
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -42,8 +46,10 @@ export interface TagProps extends Omit<HTMLAttributes<HTMLSpanElement>, 'color' 
   action?: { icon: IconSource; label: string; onClick: () => void }; disabled?: boolean;
 }
 export function Tag({ color, size = 'sm', variant = 'soft', shape = 'rounded', icon, count, counter, interactive, onRemove, action, onClick, disabled = false, className, children, ...props }: TagProps) {
+  const t = useTranslate();
+
   const isInteractive = interactive ?? !!(onClick || onRemove || action);
-  const endAction = action ?? (onRemove ? {icon: 'close' as const, label: `Удалить тег ${typeof children === 'string' ? children : ''}`, onClick: onRemove} : undefined);
+  const endAction = action ?? (onRemove ? {icon: 'close' as const, label: `${t("Удалить тег ", "Remove tag ")}${typeof children === 'string' ? children : ''}`, onClick: onRemove} : undefined);
   const content = <>{icon && <Icon name={icon} />}<span className="cap-tag-text">{children}</span>{count !== undefined && <Counter value={count} size={size} variant="translucent" {...counter} />}</>;
   return <span {...props} className={cx('cap-tag', className)} data-size={size} data-variant={variant} data-shape={shape} data-color={color} data-interactive={isInteractive || undefined} aria-disabled={disabled || undefined}>
     {isInteractive && onClick ? <button type="button" className="cap-tag-label" disabled={disabled} onClick={onClick}>{content}</button> : <span className="cap-tag-label">{content}</span>}

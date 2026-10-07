@@ -1,10 +1,10 @@
 {
   "package": "@personal/capacities-ui",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "framework": "React >=19",
   "module": "ESM",
-  "componentCount": 99,
-  "exportedComponentCount": 100,
+  "componentCount": 100,
+  "exportedComponentCount": 101,
   "compatibilityAliases": {
     "Badge": "Tag",
     "TypeLabel": "Tag with icon=page",
@@ -167,7 +167,8 @@
           "SidebarPanel",
           "TreeView",
           "NavigationMenu",
-          "FileTree"
+          "FileTree",
+          "ResizablePanelGroup"
         ]
       },
       {
@@ -184,7 +185,8 @@
           "KanbanColumn",
           "ContentLayout",
           "BottomSheet",
-          "ResizableCard"
+          "ResizableCard",
+          "ResizablePanelGroup"
         ]
       },
       {
@@ -516,7 +518,336 @@
       "reducedMotion": "Animations and transitions respect prefers-reduced-motion."
     }
   },
+  "utilities": {
+    "LocaleProvider": {
+      "purpose": "Inherited language for built-in interface text and default Intl formatting",
+      "source": "src/components/locale.tsx",
+      "values": [
+        "ru",
+        "en"
+      ],
+      "defaultContext": "ru",
+      "exports": [
+        "LocaleProvider",
+        "useLocale",
+        "useTranslate"
+      ],
+      "usage": "<LocaleProvider locale=\"en\"><App/></LocaleProvider>",
+      "behavior": "Nearest provider wins; without a provider the interface is Russian. useLocale returns ru/en; useTranslate returns t(ru,en). Explicit component locale and formatting callbacks override Intl formatting where supported. Consumer labels, content, filenames, data and custom presets remain unchanged. This utility has no canonical component page.",
+      "api": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": true,
+          "default": null,
+          "description": "Композиция, наследующая язык; пользовательские подписи и содержимое не переводятся."
+        },
+        {
+          "name": "locale",
+          "type": "Locale",
+          "required": true,
+          "default": null,
+          "description": "Язык встроенного интерфейса: ru или en. Обязателен у provider; без provider контекст ru."
+        }
+      ],
+      "hooks": [
+        {
+          "name": "useLocale",
+          "type": "() => Locale",
+          "source": "src/components/locale.tsx"
+        },
+        {
+          "name": "useTranslate",
+          "type": "() => (ru: string, en: string) => string",
+          "source": "src/components/locale.tsx"
+        }
+      ]
+    }
+  },
   "components": {
+    "ResizablePanelGroup": {
+      "id": "cp-101",
+      "status": "needs-review",
+      "primaryGroup": "layout",
+      "groups": [
+        "layout",
+        "navigation"
+      ],
+      "introduced": "0.6.0",
+      "purpose": "Composable horizontal, vertical and nested resizable panels",
+      "props": "orientation?:horizontal|vertical; layout?,defaultLayout?:number[]; onLayoutChange?,onLayoutCommit?: (layout:number[])=>void; disabled?:boolean; step?:number (1%, Shift x10); label?:string; children: ResizablePanel {defaultSize?,minSize?,maxSize?:number percentages; label?,surface?; div props} and ResizableHandle {withHandle?,disabled?:boolean; label?; div props}",
+      "example": "<ResizablePanelGroup defaultLayout={[35,65]}><ResizablePanel minSize={20}>Navigation</ResizablePanel><ResizableHandle withHandle/><ResizablePanel minSize={30}>Content</ResizablePanel></ResizablePanelGroup>",
+      "catalogueRoute": "#ResizablePanelGroup",
+      "catalogueGroup": "Контейнеры",
+      "behavior": "Compose direct Panel/Handle siblings; nest a group inside a pane for another axis. layout/defaultLayout and panel defaultSize/minSize/maxSize are numeric percentages of usable parent space after handle dimensions. Feasible bounds are respected; impossible sums relax only to fill 100%. Vertical groups need a bounded composition height. Pointer writes coalesce per frame and release commits the final value; Escape/cancel restores the initial layout. Arrows change step percent (default 1), Shift multiplies by 10; Home/End use the adjacent pair limits and horizontal keys respect RTL. Closed/removed handles cancel pending drag. Controlled layout requires onLayoutChange to enable resize. Disabled resize preserves pane interactions; zero-sized panes are inert. withHandle paints a neutral grip and focus remains visible with Borders Off. Compound parts have composition metadata, not additional canonical pages.",
+      "source": "src/components/resizable-group.tsx",
+      "api": [
+        {
+          "name": "children",
+          "type": "ReactNode",
+          "required": false,
+          "default": null,
+          "description": "Содержимое компонента."
+        },
+        {
+          "name": "orientation",
+          "type": "\"horizontal\" | \"vertical\"",
+          "required": false,
+          "default": "'horizontal'",
+          "description": "Направление композиции."
+        },
+        {
+          "name": "layout",
+          "type": "number[]",
+          "required": false,
+          "default": null,
+          "description": "Percentages in panel order, normalized to the available space after handle widths."
+        },
+        {
+          "name": "defaultLayout",
+          "type": "number[]",
+          "required": false,
+          "default": null,
+          "description": "Начальные проценты; без них используются defaultSize панелей."
+        },
+        {
+          "name": "onLayoutChange",
+          "type": "((layout: number[]) => void)",
+          "required": false,
+          "default": null,
+          "description": "Новые проценты при изменении размера; перетаскивание обновляет их раз за кадр."
+        },
+        {
+          "name": "onLayoutCommit",
+          "type": "((layout: number[]) => void)",
+          "required": false,
+          "default": null,
+          "description": "Итоговые проценты после завершённого изменения."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "default": "false",
+          "description": "Блокирует взаимодействие."
+        },
+        {
+          "name": "step",
+          "type": "number",
+          "required": false,
+          "default": "1",
+          "description": "Шаг стрелок в процентах, Shift увеличивает его в 10 раз."
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Видимая или доступная подпись."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Дополнительный класс корневого элемента."
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Идентификатор элемента."
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "default": null,
+          "description": "Настройка style; допустимые значения указаны в типе."
+        },
+        {
+          "name": "aria-label",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Настройка aria-label; допустимые значения указаны в типе."
+        },
+        {
+          "name": "…props",
+          "type": "Native element attributes",
+          "required": false,
+          "default": null,
+          "description": "Стандартные HTML/ARIA-атрибуты и обработчики базового элемента. Исключения заданы публичным TypeScript-типом."
+        }
+      ],
+      "usage": "Собирайте Panel → Handle → Panel. Размеры — числовые проценты доступного места после ручек; задайте label и minSize/maxSize панелей. Для второй оси вложите группу внутрь панели; vertical требует ограниченной высоты. Layout и сохранение принадлежат приложению.",
+      "agentNotes": "Compose direct Panel/Handle siblings; nest a group inside a pane for another axis. layout/defaultLayout and panel defaultSize/minSize/maxSize are numeric percentages of usable parent space after handle dimensions. Feasible bounds are respected; impossible sums relax only to fill 100%. Vertical groups need a bounded composition height. Pointer writes coalesce per frame and release commits the final value; Escape/cancel restores the initial layout. Arrows change step percent (default 1), Shift multiplies by 10; Home/End use the adjacent pair limits and horizontal keys respect RTL. Closed/removed handles cancel pending drag. Controlled layout requires onLayoutChange to enable resize. Disabled resize preserves pane interactions; zero-sized panes are inert. withHandle paints a neutral grip and focus remains visible with Borders Off. Compound parts have composition metadata, not additional canonical pages.",
+      "related": [
+        "ContentLayout",
+        "ResizableCard",
+        "ScrollArea",
+        "Card"
+      ],
+      "composition": [
+        {
+          "name": "ResizablePanel",
+          "purpose": "A percentage-sized pane; nest a group for a second axis",
+          "behavior": "defaultSize/minSize/maxSize are numeric percentages. label names the pane group; role can opt into a region landmark. surface inherits by default. A zero-sized pane is inert. HTML/ARIA attributes remain on the pane.",
+          "source": "src/components/resizable-group.tsx",
+          "api": [
+            {
+              "name": "children",
+              "type": "ReactNode",
+              "required": false,
+              "default": null,
+              "description": "Содержимое компонента."
+            },
+            {
+              "name": "defaultSize",
+              "type": "number",
+              "required": false,
+              "default": null,
+              "description": "Начальный процент; незаданные размеры делят остаток."
+            },
+            {
+              "name": "minSize",
+              "type": "number",
+              "required": false,
+              "default": null,
+              "description": "Минимальный процент, по умолчанию 0; невозможные суммарные ограничения адаптируются к 100%."
+            },
+            {
+              "name": "maxSize",
+              "type": "number",
+              "required": false,
+              "default": null,
+              "description": "Максимальный процент, по умолчанию 100."
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "required": false,
+              "default": null,
+              "description": "Видимая или доступная подпись."
+            },
+            {
+              "name": "surface",
+              "type": "\"inherit\" | \"base\" | \"canvas\" | \"raised\" | \"floating\"",
+              "required": false,
+              "default": "'inherit'",
+              "description": "Контекст поверхности, inherit по умолчанию. Структурную границу задаёт композиция."
+            },
+            {
+              "name": "className",
+              "type": "string",
+              "required": false,
+              "default": null,
+              "description": "Дополнительный класс корневого элемента."
+            },
+            {
+              "name": "id",
+              "type": "string",
+              "required": false,
+              "default": null,
+              "description": "Идентификатор элемента."
+            },
+            {
+              "name": "style",
+              "type": "CSSProperties",
+              "required": false,
+              "default": null,
+              "description": "Настройка style; допустимые значения указаны в типе."
+            },
+            {
+              "name": "aria-label",
+              "type": "string",
+              "required": false,
+              "default": null,
+              "description": "Настройка aria-label; допустимые значения указаны в типе."
+            },
+            {
+              "name": "…props",
+              "type": "Native element attributes",
+              "required": false,
+              "default": null,
+              "description": "Стандартные HTML/ARIA-атрибуты и обработчики базового элемента. Исключения заданы публичным TypeScript-типом."
+            }
+          ]
+        },
+        {
+          "name": "ResizableHandle",
+          "purpose": "Accessible separator between two adjacent panels",
+          "behavior": "withHandle shows the grip. disabled skips Tab without disabling pane content. Arrows/Shift/Home/End resize the adjacent pair; Escape cancels drag. label names the separator. HTML/ARIA and pointer/key handlers remain on the separator.",
+          "source": "src/components/resizable-group.tsx",
+          "api": [
+            {
+              "name": "children",
+              "type": "ReactNode",
+              "required": false,
+              "default": null,
+              "description": "Содержимое компонента."
+            },
+            {
+              "name": "withHandle",
+              "type": "boolean",
+              "required": false,
+              "default": "false",
+              "description": "Показывает нейтральный grip; клавиатурное изменение доступно и без него."
+            },
+            {
+              "name": "disabled",
+              "type": "boolean",
+              "required": false,
+              "default": "false",
+              "description": "Отключает разделитель и исключает его из Tab; содержимое панелей остаётся доступным."
+            },
+            {
+              "name": "label",
+              "type": "string",
+              "required": false,
+              "default": null,
+              "description": "Видимая или доступная подпись."
+            },
+            {
+              "name": "className",
+              "type": "string",
+              "required": false,
+              "default": null,
+              "description": "Дополнительный класс корневого элемента."
+            },
+            {
+              "name": "id",
+              "type": "string",
+              "required": false,
+              "default": null,
+              "description": "Идентификатор элемента."
+            },
+            {
+              "name": "style",
+              "type": "CSSProperties",
+              "required": false,
+              "default": null,
+              "description": "Настройка style; допустимые значения указаны в типе."
+            },
+            {
+              "name": "aria-label",
+              "type": "string",
+              "required": false,
+              "default": null,
+              "description": "Настройка aria-label; допустимые значения указаны в типе."
+            },
+            {
+              "name": "…props",
+              "type": "Native element attributes",
+              "required": false,
+              "default": null,
+              "description": "Стандартные HTML/ARIA-атрибуты и обработчики базового элемента. Исключения заданы публичным TypeScript-типом."
+            }
+          ]
+        }
+      ]
+    },
     "ResizableCard": {
       "id": "cp-100",
       "status": "needs-review",
@@ -628,7 +959,7 @@
           "name": "label",
           "type": "string",
           "required": false,
-          "default": "'Карточка'",
+          "default": null,
           "description": "Видимая или доступная подпись."
         },
         {
@@ -1061,7 +1392,7 @@
           "name": "label",
           "type": "string",
           "required": false,
-          "default": "'Загрузка'",
+          "default": null,
           "description": "Видимая или доступная подпись."
         },
         {
@@ -1479,7 +1810,7 @@
           "name": "label",
           "type": "string",
           "required": false,
-          "default": "'Контент'",
+          "default": null,
           "description": "Видимая или доступная подпись."
         },
         {
@@ -1556,10 +1887,10 @@
       "usage": "Изменяйте панели за разделитель или стрелками после Tab. В горизонтальной композиции регулируется ширина, в вертикальной — высота. На узком контейнере панели складываются.",
       "agentNotes": "Horizontal uses pane widths; vertical uses pane heights. Divider paint is always/hover/none while keyboard resize stays accessible. stretch=false stops the main content from filling available space. Each pane owns its declared surface; main content uses base.",
       "related": [
+        "ResizablePanelGroup",
         "ResizableCard",
         "ScrollArea",
-        "SidebarPanel",
-        "Card"
+        "SidebarPanel"
       ]
     },
     "IconPicker": {
@@ -1623,7 +1954,7 @@
           "name": "label",
           "type": "string",
           "required": false,
-          "default": "'Иконки'",
+          "default": null,
           "description": "Видимая или доступная подпись."
         },
         {
@@ -4271,7 +4602,7 @@
           "name": "label",
           "type": "string",
           "required": false,
-          "default": "'Хлебные крошки'",
+          "default": null,
           "description": "Видимая или доступная подпись."
         }
       ],
@@ -4618,7 +4949,7 @@
           "name": "scrollLabels",
           "type": "{ previous: string; next: string; }",
           "required": false,
-          "default": "{ previous: 'Прокрутить вкладки влево', next: 'Прокрутить вкладки вправо' }",
+          "default": null,
           "description": "Настройка scrollLabels; допустимые значения указаны в типе."
         }
       ],
@@ -5355,7 +5686,7 @@
           "name": "placeholder",
           "type": "string",
           "required": false,
-          "default": "'Найти команду или объект…'",
+          "default": null,
           "description": "Подсказка при пустом значении."
         }
       ],
@@ -5516,12 +5847,12 @@
         "layout"
       ],
       "primaryGroup": "layout",
-      "purpose": "Native scroll viewport with themed scrollbar and overflow shadows",
-      "props": "label: string; axis?: vertical|horizontal|both; scrollbar?: auto|hidden (default hidden for horizontal, auto otherwise); shadows?: boolean; floating?: ReactNode (outside viewport); viewportProps?, viewportClassName?, contentClassName?; onEdgesChange?: ({top,right,bottom,left}) => void; ref: scrolling div; root div props",
-      "example": "<ScrollArea label=\"Notes\" style={{height: 240}}>{notes}</ScrollArea>",
+      "purpose": "Native scroll viewport with optional scroll-aware edge fades",
+      "props": "label: string; axis?: vertical|horizontal|both; scrollbar?: auto|hidden (default hidden for horizontal, auto otherwise); fade?: boolean|none|vertical|horizontal|both|top|bottom|left|right|start|end; fadeSize?: number|string (pixels or CSS length/percentage); fadeReveal?: number (default 2 x space-12; 0 immediate); shadows?: boolean (compatibility, default true, explicit fade wins); floating?: ReactNode (outside viewport); viewportProps?, viewportClassName?, contentClassName?; onEdgesChange?: ({top,right,bottom,left}) => void; ref: scrolling div; root div props",
+      "example": "<ScrollArea label=\"Notes\" fade=\"vertical\" fadeSize={24} fadeReveal={96} style={{height:240}}>{notes}</ScrollArea>",
       "catalogueRoute": "#ScrollArea",
       "catalogueGroup": "Контейнеры",
-      "behavior": "Set a height or constrained parent for vertical overflow. Native wheel/touch/keyboard scrolling remains with scrollbar=auto or hidden. Horizontal defaults hidden; vertical/both auto. Edge masks reveal existing background, not a tinted overlay. Ref and viewportProps target the scrolling node.",
+      "behavior": "Bound the scrolling axis. Native wheel/touch/keyboard and viewport ref remain intact; horizontal scrollbar defaults hidden, vertical/both auto. Explicit fade wins legacy shadows; false/none disables it. Fades reveal smoothly over fadeReveal pixels, with token-derived default 2 x space-12 and zero for immediate reveal; default depth is min(12%, space-10), overridden by fadeSize. Physical or logical start/end edges follow RTL. No overflow produces zero fade. The mask stays on the inner viewport; outer boundary/focus and floating slot are never masked, and measured floating height reserves content clearance.",
       "source": "src/components/workbench.tsx",
       "api": [
         {
@@ -5557,7 +5888,28 @@
           "type": "boolean",
           "required": false,
           "default": "true",
-          "description": "Настройка shadows; допустимые значения указаны в типе."
+          "description": "Compatibility switch. Explicit fade takes precedence."
+        },
+        {
+          "name": "fade",
+          "type": "boolean | ScrollFadeDirection",
+          "required": false,
+          "default": null,
+          "description": "Ось или край маски; false/none отключает её. Явное значение имеет приоритет над shadows."
+        },
+        {
+          "name": "fadeSize",
+          "type": "ScrollFadeSize",
+          "required": false,
+          "default": null,
+          "description": "CSS length/percentage, or pixels. Default min(12%, space-10)."
+        },
+        {
+          "name": "fadeReveal",
+          "type": "number",
+          "required": false,
+          "default": null,
+          "description": "Scroll distance in pixels for a full fade; zero reveals immediately."
         },
         {
           "name": "viewportClassName",
@@ -5630,13 +5982,13 @@
           "description": "Стандартные HTML/ARIA-атрибуты и обработчики базового элемента. Исключения заданы публичным TypeScript-типом."
         }
       ],
-      "usage": "Задавайте контекст поверхности в композиции. Внутренний контент должен сжиматься по ширине; не скрывайте функциональные элементы через overflow.",
-      "agentNotes": "Set a height or constrained parent for vertical overflow. Native wheel/touch/keyboard scrolling remains with scrollbar=auto or hidden. Horizontal defaults hidden; vertical/both auto. Edge masks reveal existing background, not a tinted overlay. Ref and viewportProps target the scrolling node.",
+      "usage": "Ограничьте высоту или ширину. fade задаёт ось/край и имеет приоритет над shadows; fadeSize задаёт глубину, fadeReveal — расстояние плавного раскрытия. Floating actions передавайте через floating вне маски.",
+      "agentNotes": "Bound the scrolling axis. Native wheel/touch/keyboard and viewport ref remain intact; horizontal scrollbar defaults hidden, vertical/both auto. Explicit fade wins legacy shadows; false/none disables it. Fades reveal smoothly over fadeReveal pixels, with token-derived default 2 x space-12 and zero for immediate reveal; default depth is min(12%, space-10), overridden by fadeSize. Physical or logical start/end edges follow RTL. No overflow produces zero fade. The mask stays on the inner viewport; outer boundary/focus and floating slot are never masked, and measured floating height reserves content clearance.",
       "related": [
-        "BottomSheet",
-        "Card",
+        "ResizablePanelGroup",
+        "SidebarPanel",
         "ContentLayout",
-        "Drawer"
+        "FloatingActionBar"
       ]
     },
     "ButtonGroup": {
@@ -5788,7 +6140,7 @@
           "name": "menuLabel",
           "type": "string",
           "required": false,
-          "default": "`${label}: дополнительные действия`",
+          "default": null,
           "description": "Настройка menuLabel; допустимые значения указаны в типе."
         },
         {
@@ -6534,7 +6886,7 @@
           "name": "dismissLabel",
           "type": "string",
           "required": false,
-          "default": "'Закрыть уведомление'",
+          "default": null,
           "description": "Настройка dismissLabel; допустимые значения указаны в типе."
         },
         {
@@ -6824,7 +7176,7 @@
           "name": "locale",
           "type": "string",
           "required": false,
-          "default": "'ru-RU'",
+          "default": "providerLocale",
           "description": "Настройка locale; допустимые значения указаны в типе."
         },
         {
@@ -6894,7 +7246,7 @@
           "name": "label",
           "type": "string",
           "required": false,
-          "default": "'Календарь'",
+          "default": "t(\"Календарь\", \"Calendar\")",
           "description": "Видимая или доступная подпись."
         }
       ],
@@ -6997,7 +7349,7 @@
           "name": "locale",
           "type": "string",
           "required": false,
-          "default": "'ru-RU'",
+          "default": "providerLocale",
           "description": "Настройка locale; допустимые значения указаны в типе."
         },
         {
@@ -7067,7 +7419,7 @@
           "name": "label",
           "type": "string",
           "required": false,
-          "default": "props.mode === 'range' ? 'Выбрать период' : 'Выбрать дату'",
+          "default": "props.mode === 'range' ? t(\"Выбрать период\", \"Choose a range\") : t(\"Выбрать дату\", \"Choose a date\")",
           "description": "Видимая или доступная подпись."
         }
       ],
@@ -7202,7 +7554,7 @@
           "name": "placeholder",
           "type": "string",
           "required": false,
-          "default": "'Начните писать…'",
+          "default": null,
           "description": "Подсказка при пустом значении."
         },
         {
@@ -7584,7 +7936,7 @@
           "name": "typeLabel",
           "type": "string",
           "required": false,
-          "default": "'Задача'",
+          "default": null,
           "description": "Настройка typeLabel; допустимые значения указаны в типе."
         },
         {
@@ -7985,7 +8337,7 @@
       "example": "<DailyHeader date=\"2026-09-25\" tags={<Tag icon=\"check\" color=\"rose\">Tasks</Tag>} actions={<Button onClick={create}>New note</Button>} />",
       "catalogueRoute": "#DailyHeader",
       "catalogueGroup": "Контент и карточки",
-      "behavior": "Uses local YYYY-MM-DD dates and ISO week numbering; locale defaults to ru-RU.",
+      "behavior": "Uses local YYYY-MM-DD dates and ISO week numbering. Date formatting follows LocaleProvider when locale is omitted; an explicit Intl locale overrides formatting without changing built-in interface language.",
       "source": "src/components/content.tsx",
       "api": [
         {
@@ -8006,7 +8358,7 @@
           "name": "locale",
           "type": "string",
           "required": false,
-          "default": "'ru-RU'",
+          "default": null,
           "description": "Настройка locale; допустимые значения указаны в типе."
         },
         {
@@ -8074,7 +8426,7 @@
         }
       ],
       "usage": "Используйте слоты для содержимого и действий. Не вкладывайте кнопки в другие кнопки; выбор карточки включайте только когда он нужен.",
-      "agentNotes": "Uses local YYYY-MM-DD dates and ISO week numbering; locale defaults to ru-RU.",
+      "agentNotes": "Uses local YYYY-MM-DD dates and ISO week numbering. Date formatting follows LocaleProvider when locale is omitted; an explicit Intl locale overrides formatting without changing built-in interface language.",
       "related": [
         "Accordion",
         "Avatar",
@@ -8419,7 +8771,7 @@
           "name": "placeholder",
           "type": "string",
           "required": false,
-          "default": "'Выберите…'",
+          "default": null,
           "description": "Подсказка при пустом значении."
         },
         {
@@ -8461,7 +8813,7 @@
           "name": "emptyMessage",
           "type": "string",
           "required": false,
-          "default": "'Ничего не найдено'",
+          "default": null,
           "description": "Настройка emptyMessage; допустимые значения указаны в типе."
         },
         {
@@ -8574,7 +8926,7 @@
           "name": "placeholder",
           "type": "string",
           "required": false,
-          "default": "'Добавить…'",
+          "default": null,
           "description": "Подсказка при пустом значении."
         },
         {
@@ -8630,7 +8982,7 @@
           "name": "emptyMessage",
           "type": "string",
           "required": false,
-          "default": "'Ничего не найдено'",
+          "default": null,
           "description": "Настройка emptyMessage; допустимые значения указаны в типе."
         }
       ],
@@ -8715,7 +9067,7 @@
           "name": "placeholder",
           "type": "string",
           "required": false,
-          "default": "'Добавить тег…'",
+          "default": null,
           "description": "Подсказка при пустом значении."
         },
         {
@@ -9397,10 +9749,11 @@
         "record": "docs/revision-2026-10-07.md"
       },
       "purpose": "Controlled block editor with grip-only drag, insertion marker, block menu, marks and slash presets",
-      "props": "label: string; value: RichTextDocument {blocks:RichTextBlock[]}; onValueChange: (document:RichTextDocument)=>void; presets?:RichTextPreset[] {type,label,keywords?,icon?,create?,render?}; placeholder?,disabled?,readOnly?,toolbarSize?:xs|sm|md|lg|xl,className?; source bridge exports: markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit; RichTextBlock.markdown? preserves exact source",
+      "props": "label: string; value: RichTextDocument {blocks:RichTextBlock[]}; onValueChange: (document:RichTextDocument)=>void; presets?:RichTextPreset[] {type,label,keywords?,icon?,create?,render?}; placeholder?,disabled?,readOnly?,toolbarSize?:xs|sm|md|lg|xl,className?; source bridge exports: markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit; RichTextBlock.markdown? preserves exact source; showToolbar?:boolean(false)",
       "example": "<RichTextEditor label=\"Note\" value={document} onValueChange={setDocument} />",
       "catalogueRoute": "#RichTextEditor",
       "catalogueGroup": "Редактирование",
+      "behavior": "Controlled blocks with stable IDs and Markdown-source metadata. showToolbar defaults false; enable it explicitly for the top toolbar. Native mouse and Shift selection can span text blocks; copy/cut/type/paste/delete replace only the selected text range. Grip-only block reorder has keyboard/menu alternatives and cancellation. Selection and document edits remain available without the top toolbar. Code/source blocks retain their editable source; unsupported Markdown is never silently normalized.",
       "source": "src/components/rich-text-editor.tsx",
       "api": [
         {
@@ -9435,7 +9788,7 @@
           "name": "placeholder",
           "type": "string",
           "required": false,
-          "default": "'Начните писать или введите /'",
+          "default": null,
           "description": "Подсказка при пустом значении."
         },
         {
@@ -9453,6 +9806,13 @@
           "description": "Настройка readOnly; допустимые значения указаны в типе."
         },
         {
+          "name": "showToolbar",
+          "type": "boolean",
+          "required": false,
+          "default": "false",
+          "description": "Явно включает верхнюю панель форматирования; по умолчанию false. Редактирование и выделение остаются доступны без неё."
+        },
+        {
           "name": "toolbarSize",
           "type": "\"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\"",
           "required": false,
@@ -9467,8 +9827,8 @@
           "description": "Дополнительный класс корневого элемента."
         }
       ],
-      "usage": "Храните JSON-блоки и стабильные ID. Для Markdown используйте markdownToRichText/richTextToMarkdown, сохраняя metadata; неподдерживаемый синтаксис остаётся исходником.",
-      "agentNotes": "Use the exported RichTextEditor component. Controlled block editor with grip-only drag, insertion marker, block menu, marks and slash presets. Read its typed API and example; bind referenced data and callbacks in the consumer. Preserve accessible labels, keyboard behavior and reduced motion.",
+      "usage": "Храните JSON-блоки и стабильные ID. showToolbar=true явно включает верхнюю панель; по умолчанию она скрыта. Mouse/Shift selection может охватывать несколько блоков; copy/cut/replace сохраняют границы остальных блоков. Для Markdown сохраняйте metadata и используйте bridge; неподдерживаемый синтаксис остаётся исходником.",
+      "agentNotes": "Controlled blocks with stable IDs and Markdown-source metadata. showToolbar defaults false; enable it explicitly for the top toolbar. Native mouse and Shift selection can span text blocks; copy/cut/type/paste/delete replace only the selected text range. Grip-only block reorder has keyboard/menu alternatives and cancellation. Selection and document edits remain available without the top toolbar. Code/source blocks retain their editable source; unsupported Markdown is never silently normalized.",
       "related": [
         "CodeBlock",
         "CommentThread",
@@ -9603,7 +9963,7 @@
           "name": "emptyMessage",
           "type": "string",
           "required": false,
-          "default": "'Нет данных'",
+          "default": null,
           "description": "Настройка emptyMessage; допустимые значения указаны в типе."
         },
         {
@@ -9919,7 +10279,7 @@
           "name": "label",
           "type": "string",
           "required": false,
-          "default": "'Notifications'",
+          "default": null,
           "description": "Видимая или доступная подпись."
         },
         {
@@ -10059,7 +10419,7 @@
           "name": "label",
           "type": "string",
           "required": false,
-          "default": "'Announcement'",
+          "default": null,
           "description": "Видимая или доступная подпись."
         },
         {
@@ -10186,7 +10546,7 @@
           "name": "getLabel",
           "type": "((item: T, index: number) => string)",
           "required": false,
-          "default": "(_,i)=>`Card ${i+1}`",
+          "default": null,
           "description": "Настройка getLabel; допустимые значения указаны в типе."
         },
         {
@@ -10200,7 +10560,7 @@
           "name": "labels",
           "type": "{ left: string; right: string; }",
           "required": false,
-          "default": "{left:'Pass',right:'Keep'}",
+          "default": null,
           "description": "Настройка labels; допустимые значения указаны в типе."
         },
         {
@@ -10242,7 +10602,7 @@
           "name": "label",
           "type": "string",
           "required": false,
-          "default": "'Card review'",
+          "default": null,
           "description": "Видимая или доступная подпись."
         },
         {
@@ -10630,21 +10990,21 @@
           "name": "emptyLabel",
           "type": "string",
           "required": false,
-          "default": "'No data'",
+          "default": null,
           "description": "Настройка emptyLabel; допустимые значения указаны в типе."
         },
         {
           "name": "formatValue",
           "type": "((value: number) => string)",
           "required": false,
-          "default": "fmt",
+          "default": null,
           "description": "Настройка formatValue; допустимые значения указаны в типе."
         },
         {
           "name": "formatTick",
           "type": "((value: number) => string)",
           "required": false,
-          "default": "(value:number)=>new Intl.NumberFormat(undefined,{notation:'compact',maximumFractionDigits:1}).format(value)",
+          "default": null,
           "description": "Настройка formatTick; допустимые значения указаны в типе."
         },
         {
@@ -10717,14 +11077,14 @@
           "name": "averageLabel",
           "type": "string",
           "required": false,
-          "default": "'Average'",
+          "default": null,
           "description": "Настройка averageLabel; допустимые значения указаны в типе."
         },
         {
           "name": "formatValue",
           "type": "((value: number) => string)",
           "required": false,
-          "default": "fmt",
+          "default": null,
           "description": "Настройка formatValue; допустимые значения указаны в типе."
         },
         {
@@ -10804,7 +11164,7 @@
           "name": "totalLabel",
           "type": "string",
           "required": false,
-          "default": "'Total'",
+          "default": null,
           "description": "Настройка totalLabel; допустимые значения указаны в типе."
         },
         {
@@ -10874,7 +11234,7 @@
           "name": "emptyLabel",
           "type": "string",
           "required": false,
-          "default": "'No data'",
+          "default": null,
           "description": "Настройка emptyLabel; допустимые значения указаны в типе."
         },
         {
@@ -11278,14 +11638,14 @@
           "name": "beforeLabel",
           "type": "string",
           "required": false,
-          "default": "'Before'",
+          "default": null,
           "description": "Настройка beforeLabel; допустимые значения указаны в типе."
         },
         {
           "name": "afterLabel",
           "type": "string",
           "required": false,
-          "default": "'After'",
+          "default": null,
           "description": "Настройка afterLabel; допустимые значения указаны в типе."
         },
         {
@@ -11428,7 +11788,7 @@
           "name": "formatValue",
           "type": "((value: number, index: number) => string)",
           "required": false,
-          "default": "fmt",
+          "default": null,
           "description": "Настройка formatValue; допустимые значения указаны в типе."
         },
         {
@@ -11948,7 +12308,7 @@
           "name": "formatColor",
           "type": "((value: number) => string)",
           "required": false,
-          "default": "fmt",
+          "default": null,
           "description": "Настройка formatColor; допустимые значения указаны в типе."
         },
         {
@@ -11962,7 +12322,7 @@
           "name": "emptyLabel",
           "type": "string",
           "required": false,
-          "default": "'No positive values'",
+          "default": null,
           "description": "Настройка emptyLabel; допустимые значения указаны в типе."
         },
         {
@@ -12094,7 +12454,7 @@
           "name": "handleLabel",
           "type": "string",
           "required": false,
-          "default": "'Высота панели. Стрелки вверх и вниз изменяют высоту'",
+          "default": null,
           "description": "Настройка handleLabel; допустимые значения указаны в типе."
         },
         {
@@ -12260,7 +12620,7 @@
           "name": "emptyLabel",
           "type": "string",
           "required": false,
-          "default": "'Нет файлов'",
+          "default": null,
           "description": "Настройка emptyLabel; допустимые значения указаны в типе."
         },
         {
@@ -12379,7 +12739,7 @@
           "name": "emptyLabel",
           "type": "string",
           "required": false,
-          "default": "'Нет элементов для просмотра'",
+          "default": null,
           "description": "Настройка emptyLabel; допустимые значения указаны в типе."
         },
         {
@@ -12547,23 +12907,12 @@
     }
   },
   "recipes": [
-    "docs/catalogue-reference.md",
-    "docs/resizing.md",
-    "docs/overview.md",
+    "AGENTS.md",
+    "llms.txt",
+    "DESIGN.md",
     "docs/component-guidelines.md",
-    "docs/anti-patterns.md",
-    "docs/examples.md",
-    "docs/recipes.md",
     "docs/surface-context.md",
-    "docs/behavior.md",
-    "docs/content-guide.md",
-    "docs/component-registry.md",
-    "docs/selection-revision.md",
-    "docs/editor-revision.md",
-    "docs/navigation-motion-revision.md",
-    "docs/content-revision.md",
-    "docs/feedback-revision.md",
-    "docs/new-components-revision.md",
+    "docs/recipes.md",
     "examples/ProjectBoard.tsx",
     "examples/WorkspaceV2.tsx"
   ],

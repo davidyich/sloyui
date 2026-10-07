@@ -1,6 +1,6 @@
 {
   "package": "@personal/capacities-ui",
-  "componentCount": 99,
+  "componentCount": 100,
   "isolatedArchiveConsumer": true,
   "nodeNextTypes": true,
   "exampleTypecheck": [
@@ -40,7 +40,13 @@
     "StatusBar",
     "Toast",
     "AnnouncementBar",
-    "CardStack"
+    "CardStack",
+    "LocaleProvider",
+    "ResizablePanelGroup",
+    "ResizablePanel",
+    "ResizableHandle",
+    "ScrollArea",
+    "DailyHeader"
   ],
   "markdownBridgeExports": [
     "markdownToRichText",
@@ -52,6 +58,16 @@
   "verticalContentLayout": true,
   "sliderNumericCallbacks": true,
   "feedbackStyleApi": true,
+  "localeProviderEnglish": true,
+  "defaultLocaleRussian": true,
+  "explicitIntlOverride": true,
+  "localeHooks": [
+    "useLocale",
+    "useTranslate"
+  ],
+  "compoundResizablePanels": true,
+  "scrollFadeApi": true,
+  "richToolbarOptIn": true,
   "fontAssets": 9,
-  "buttonGzipBytes": 1674
+  "buttonGzipBytes": 1829
 }

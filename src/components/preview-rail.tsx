@@ -1,3 +1,4 @@
+import { useTranslate } from './locale.js';
 import { useEffect, useId, useLayoutEffect, useRef, useState, type ReactNode, type CSSProperties, type MouseEvent, type PointerEvent } from 'react';
 import { cx } from './primitives.js';
 import { EmptyState } from './layout.js';
@@ -19,7 +20,10 @@ export interface PreviewRailProps {
   className?: string;
 }
 /** Compact ticks form a local hover pyramid. A destination preview follows hover, focus or pinned touch. */
-export function PreviewRail({ items, label, value, defaultValue, onValueChange, onItemSelect, orientation = 'vertical', previewSide = 'after', showPreview = true, highlightActive = false, renderPreview, emptyLabel = 'Нет элементов для просмотра', className }: PreviewRailProps) {
+export function PreviewRail({ items, label, value, defaultValue, onValueChange, onItemSelect, orientation = 'vertical', previewSide = 'after', showPreview = true, highlightActive = false, renderPreview, emptyLabel: suppliedEmptyLabel, className }: PreviewRailProps) {
+  const t = useTranslate();
+  const emptyLabel = suppliedEmptyLabel === undefined ? (t("Нет элементов для просмотра", "No items to preview")) : suppliedEmptyLabel;
+
   const id = useId(), root = useRef<HTMLDivElement>(null), rail = useRef<HTMLElement>(null), preview = useRef<HTMLElement>(null), pointer = useRef<{ type: string; pinned: boolean } | null>(null);
   const [internal, setInternal] = useState(defaultValue), [hovered, setHovered] = useState<string | null>(null), [focused, setFocused] = useState<string | null>(null), [pinned, setPinned] = useState<string | null>(null), [position, setPosition] = useState<CSSProperties>({ opacity: 0 });
   const enabled = items.filter(item => !item.disabled), requested = value ?? internal;
@@ -104,7 +108,7 @@ export function PreviewRail({ items, label, value, defaultValue, onValueChange, 
           return item.href ? <a key={item.id} {...common} href={item.disabled ? undefined : item.href} aria-disabled={item.disabled || undefined} aria-current={selected?.id === item.id ? 'page' : undefined}>{tick}</a> : <button key={item.id} {...common} type="button" aria-pressed={selected?.id === item.id} disabled={item.disabled}>{tick}</button>;
         })}
       </nav>
-      {showPreview && displayed && <section id={`${id}-preview`} ref={preview} className="cap-preview-rail-preview" data-surface="floating" aria-label={`${label}: предпросмотр`} style={position}><div key={displayed.id} className="cap-preview-rail-card">{renderPreview ? renderPreview(displayed) : <><strong>{displayed.label}</strong>{displayed.description && <div className="cap-preview-rail-description">{displayed.description}</div>}{displayed.preview && <div className="cap-preview-rail-content">{displayed.preview}</div>}</>}</div></section>}
+      {showPreview && displayed && <section id={`${id}-preview`} ref={preview} className="cap-preview-rail-preview" data-surface="floating" aria-label={`${label}${t(": предпросмотр", ": preview")}`} style={position}><div key={displayed.id} className="cap-preview-rail-card">{renderPreview ? renderPreview(displayed) : <><strong>{displayed.label}</strong>{displayed.description && <div className="cap-preview-rail-description">{displayed.description}</div>}{displayed.preview && <div className="cap-preview-rail-content">{displayed.preview}</div>}</>}</div></section>}
       {!enabled.length && <EmptyState title={emptyLabel} icon={false}/>}
     </div>}
   </div>;

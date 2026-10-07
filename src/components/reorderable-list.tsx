@@ -1,3 +1,4 @@
+import { useTranslate } from './locale.js';
 import { useEffect, useLayoutEffect, useId, useRef, useState, type ReactNode, type PointerEvent as ReactPointerEvent } from 'react';
 import { cx, IconButton } from './primitives.js';
 
@@ -17,6 +18,8 @@ interface RowPosition { x: number; y: number }
 interface Drag { id: string; x: number; y: number; originX: number; originY: number; target: number; active: boolean }
 /** Controlled vertical reorder. Only the grip starts a drag; item content keeps its native interactions. */
 export function ReorderableList<T extends { id: string }>({ label, items, onOrderChange, getItemLabel, renderItem, handlePlacement = 'start', disabled = false, className }: ReorderableListProps<T>) {
+  const t = useTranslate();
+
   const root = useRef<HTMLOListElement>(null), rows = useRef(new Map<string, HTMLLIElement>()), handles = useRef(new Map<string, HTMLButtonElement>());
   const drag = useRef<Drag | null>(null), frame = useRef(0), suppressClick = useRef(false), restoreFrame = useRef(0);
   const [preview, setPreview] = useState<{id:string;target:number} | null>(null), [actions, setActions] = useState<string | null>(null), [announcement, setAnnouncement] = useState('');
@@ -66,7 +69,7 @@ export function ReorderableList<T extends { id: string }>({ label, items, onOrde
     const next = [...items], [item] = next.splice(from,1); next.splice(to,0,item);
     pendingPositions.current = measurePositions();
     onOrderChange(next);
-    setAnnouncement(`${getItemLabel(item)}. Позиция ${to + 1} из ${items.length}.`);
+    setAnnouncement(`${getItemLabel(item)}${t(". Позиция ", ". Position ")}${to + 1}${t(" из ", " of ")}${items.length}.`);
     restoreFrame.current = requestAnimationFrame(() => handles.current.get(id)?.focus({preventScroll:true}));
   };
   const updateTarget = () => {
@@ -100,19 +103,19 @@ export function ReorderableList<T extends { id: string }>({ label, items, onOrde
   };
   const pointerUp = () => { const state = drag.current; if (state?.active) { suppressClick.current = true; move(state.id,state.target); } stop(); };
   return <div className={cx('cap-reorderable',className)}>
-    <span id={instructions} className="cap-sr-only">Перетащите за ручку. Стрелки вверх и вниз меняют позицию. Нажмите на ручку для кнопок перемещения. Escape отменяет перетаскивание.</span>
+    <span id={instructions} className="cap-sr-only">{t("Перетащите за ручку. Стрелки вверх и вниз меняют позицию. Нажмите на ручку для кнопок перемещения. Escape отменяет перетаскивание.", "Drag the handle. Up and down arrow keys change position. Click the handle for move actions. Escape cancels dragging.")}</span>
     <ol ref={root} className="cap-reorderable-list" aria-label={label}>{items.map((item,index) => {
       const dragging = preview?.id === item.id, source = preview ? items.findIndex(entry => entry.id === preview.id) : -1;
       const handle = !disabled && <span className="cap-reorder-handle-wrap">
-        <button ref={element => { if (element) handles.current.set(item.id,element); else handles.current.delete(item.id); }} type="button" className="cap-reorder-handle" aria-label={`Переместить: ${getItemLabel(item)}`} aria-describedby={instructions} aria-expanded={actions === item.id} disabled={items.length < 2}
+        <button ref={element => { if (element) handles.current.set(item.id,element); else handles.current.delete(item.id); }} type="button" className="cap-reorder-handle" aria-label={`${t("Переместить: ", "Move: ")}${getItemLabel(item)}`} aria-describedby={instructions} aria-expanded={actions === item.id} disabled={items.length < 2}
           onPointerDown={event => pointerDown(event,item.id,index)} onPointerMove={pointerMove} onPointerUp={pointerUp} onPointerCancel={stop} onLostPointerCapture={stop}
           onClick={() => { if (suppressClick.current) { suppressClick.current = false; return; } setActions(actions === item.id ? null : item.id); }}
           onKeyDown={event => { if (event.key === 'Escape') { stop(); setActions(null); } else if (['ArrowUp','ArrowDown','Home','End'].includes(event.key)) { event.preventDefault(); move(item.id,event.key === 'Home' ? 0 : event.key === 'End' ? items.length-1 : index+(event.key === 'ArrowUp' ? -1 : 1)); } }}>
           <svg width="14" height="18" viewBox="0 0 14 18" fill="currentColor" aria-hidden="true">{[5,9,13].flatMap(y => [5,9].map(x => <circle key={`${x}-${y}`} cx={x} cy={y} r="1"/>))}</svg>
         </button>
-        {actions === item.id && <span className="cap-reorder-actions" role="group" aria-label={`Позиция: ${getItemLabel(item)}`} onKeyDown={event => { if (event.key === 'Escape') { setActions(null); handles.current.get(item.id)?.focus(); } }}>
-          <IconButton size="xs" variant="ghost" icon="chevron" className="cap-reorder-up" label="Переместить вверх" disabled={index === 0} onClick={() => move(item.id,index-1)}/>
-          <IconButton size="xs" variant="ghost" icon="down" label="Переместить вниз" disabled={index === items.length-1} onClick={() => move(item.id,index+1)}/>
+        {actions === item.id && <span className="cap-reorder-actions" role="group" aria-label={`${t("Позиция: ", "Position: ")}${getItemLabel(item)}`} onKeyDown={event => { if (event.key === 'Escape') { setActions(null); handles.current.get(item.id)?.focus(); } }}>
+          <IconButton size="xs" variant="ghost" icon="chevron" className="cap-reorder-up" label={t("Переместить вверх", "Move up")} disabled={index === 0} onClick={() => move(item.id,index-1)}/>
+          <IconButton size="xs" variant="ghost" icon="down" label={t("Переместить вниз", "Move down")} disabled={index === items.length-1} onClick={() => move(item.id,index+1)}/>
         </span>}
       </span>;
       return <li key={item.id} ref={element => { if (element) rows.current.set(item.id,element); else rows.current.delete(item.id); }} className="cap-reorderable-item" data-dragging={dragging || undefined} data-drop={preview?.target === index && source !== index ? (source < index ? 'after' : 'before') : undefined}>

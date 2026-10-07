@@ -3,12 +3,13 @@ import { afterEach, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import axe from 'axe-core';
+import { LocaleProvider } from '../src/components/locale';
 import { RichTextEditor, createRichTextBlock, richTextPlainText, type RichTextDocument, type RichTextPreset } from '../src/components/rich-text-editor';
 
 afterEach(() => { cleanup(); vi.restoreAllMocks(); });
 function Editor({ initial = { blocks: [createRichTextBlock()] }, presets, readOnly = false }: { initial?: RichTextDocument; presets?: RichTextPreset[]; readOnly?: boolean }) {
   const [value, setValue] = useState(initial);
-  return <><RichTextEditor label="Заметка" value={value} onValueChange={setValue} presets={presets} readOnly={readOnly}/><output data-testid="model">{JSON.stringify(value)}</output></>;
+  return <><RichTextEditor label="Заметка" showToolbar value={value} onValueChange={setValue} presets={presets} readOnly={readOnly}/><output data-testid="model">{JSON.stringify(value)}</output></>;
 }
 const model = () => JSON.parse(screen.getByTestId('model').textContent ?? '{}') as RichTextDocument;
 
@@ -203,9 +204,9 @@ it('opens the menu on a single grip click and provides type, block formatting, m
   const handle = screen.getByRole('button', { name: 'Действия с блоком 2' });
   await user.click(handle);
   expect(screen.getByRole('menu', { name: 'Действия с блоком' })).toBeInTheDocument();
-  await user.click(screen.getByRole('menuitemradio', { name: 'Заголовок 2' }));
+  await user.click(screen.getByRole('menuitem', { name: 'Иерархия' })); await user.click(screen.getByRole('menuitemradio', { name: 'Заголовок 2' }));
   expect(model().blocks[1]).toMatchObject({ id: 'b', type: 'heading2', content: [{ text: 'Beta' }] });
-  await user.click(handle); await user.click(screen.getByRole('menuitem', { name: 'Курсив' }));
+  await user.click(handle); await user.click(screen.getByRole('menuitem', { name: 'Формат' })); await user.click(screen.getByRole('menuitem', { name: 'Курсив' }));
   expect(model().blocks[1].content).toEqual([{ text: 'Beta', marks: ['italic'] }]);
   await user.click(handle); await user.click(screen.getByRole('menuitem', { name: 'Удалить блок' }));
   expect(model().blocks.map(block => block.id)).toEqual(['a', 'c']);
@@ -218,7 +219,7 @@ it('formats only a saved selection from the block menu and keeps it after reorde
   const selection = window.getSelection()!, range = document.createRange(); range.setStart(textbox.firstChild!, 1); range.setEnd(textbox.firstChild!, 3); selection.removeAllRanges(); selection.addRange(range);
   const handle = screen.getByRole('button', { name: 'Действия с блоком 2' });
   await user.click(handle); expect(screen.getByRole('group', { name: 'Формат выделения' })).toBeInTheDocument();
-  await user.click(screen.getByRole('menuitem', { name: 'Курсив' }));
+  await user.click(screen.getByRole('menuitem', { name: 'Формат' })); await user.click(screen.getByRole('menuitem', { name: 'Курсив' }));
   expect(model().blocks[1].content).toEqual([{ text: 'B' }, { text: 'et', marks: ['italic'] }, { text: 'a' }]);
   pointer(handle, 'pointerdown', 45); pointer(handle, 'pointermove', 0); pointer(handle, 'pointerup', 0);
   expect(model().blocks[0].id).toBe('b'); expect(selection.toString()).toBe('et');
@@ -232,7 +233,7 @@ it('supports keyboard grip moves, menu navigation, Escape focus restore and loca
   await user.keyboard('{Enter}');
   const menu = screen.getByRole('menu'); expect(menu).toHaveAttribute('data-theme', 'dark'); expect(menu).toHaveAttribute('data-accent', 'purple'); expect(menu).toHaveAttribute('data-surface', 'floating'); expect(menu).toHaveAttribute('data-radius', 'rounded');
   await user.keyboard('{End}'); expect(screen.getByRole('menuitem', { name: 'Удалить блок' })).toHaveFocus();
-  await user.keyboard('{Home}'); expect(screen.getByRole('menuitemradio', { name: 'Текст' })).toHaveFocus();
+  await user.keyboard('{Home}'); expect(screen.getByRole('menuitem', { name: 'Иерархия' })).toHaveFocus();
   await user.keyboard('{Escape}'); expect(screen.queryByRole('menu')).toBeNull(); expect(handle).toHaveFocus();
 });
 
@@ -241,7 +242,7 @@ it('keeps literal slash text when converting via menu, supports empty documents 
   const view = render(<Editor initial={{ blocks: [] }}/>);
   const textbox = screen.getByRole('textbox', { name: 'Заметка, блок 1' }); await user.click(textbox); await user.type(textbox, '/literal'); await user.keyboard('{Escape}');
   expect(richTextPlainText(model())).toBe('/literal');
-  await user.click(screen.getByRole('button', { name: 'Действия с блоком 1' })); await user.click(screen.getByRole('menuitemradio', { name: 'Заголовок 1' }));
+  await user.click(screen.getByRole('button', { name: 'Действия с блоком 1' })); await user.click(screen.getByRole('menuitem', { name: 'Иерархия' })); await user.click(screen.getByRole('menuitemradio', { name: 'Заголовок 1' }));
   expect(model().blocks[0].content).toEqual([{ text: '/literal' }]);
   view.rerender(<Editor readOnly/>); expect(screen.queryByRole('button', { name: /Действия с блоком/ })).toBeNull();
 });
@@ -260,7 +261,109 @@ it('does not reseed a custom block when its existing type is chosen', async () =
 it('can set the first block type before typing into an empty controlled document', async () => {
   const user = userEvent.setup(); render(<Editor initial={{ blocks: [] }}/>);
   await user.click(screen.getByRole('button', { name: 'Действия с блоком 1' }));
-  await user.click(screen.getByRole('menuitemradio', { name: 'Заголовок 2' }));
+  await user.click(screen.getByRole('menuitem', { name: 'Иерархия' })); await user.click(screen.getByRole('menuitemradio', { name: 'Заголовок 2' }));
   expect(model().blocks).toHaveLength(1); expect(model().blocks[0].type).toBe('heading2');
   expect(screen.getByRole('textbox', { name: 'Заметка, блок 1' })).toHaveFocus();
+});
+
+
+it('keeps the static toolbar opt-in and localizes built-in text without changing consumer labels', () => {
+  const value = { blocks: [createRichTextBlock()] };
+  const view = render(<LocaleProvider locale="en"><RichTextEditor label="Моя заметка" value={value} onValueChange={() => {}}/></LocaleProvider>);
+  expect(screen.queryByRole('button', { name: 'Undo' })).toBeNull();
+  expect(screen.getByRole('textbox', { name: 'Моя заметка, block 1' })).toHaveAttribute('data-placeholder', 'Start writing or type /');
+  expect(screen.getByRole('button', { name: 'Add block' })).toBeInTheDocument();
+  view.rerender(<LocaleProvider locale="en"><RichTextEditor showToolbar label="Моя заметка" value={value} onValueChange={() => {}}/></LocaleProvider>);
+  expect(screen.getByRole('button', { name: 'Undo' })).toBeInTheDocument();
+});
+
+it('selects multiple blocks across text boundaries, copies plain text and replaces selection on paste', () => {
+  render(<Editor initial={{ blocks: [createRichTextBlock('paragraph', [{ text: 'Alpha' }]), createRichTextBlock('paragraph', [{ text: 'Beta' }])] }}/>);
+  const [first, second] = screen.getAllByRole('textbox'); first.focus();
+  const range = document.createRange(); range.setStart(first.firstChild!, 2); range.setEnd(second.firstChild!, 2);
+  const selection = window.getSelection()!; selection.removeAllRanges(); selection.addRange(range);
+  fireEvent(document, new Event('selectionchange'));
+  expect(document.querySelectorAll('.cap-rich-editor-row[data-selected]')).toHaveLength(2);
+  const setData = vi.fn(); fireEvent.copy(first, { clipboardData: { setData } });
+  expect(setData).toHaveBeenCalledWith('text/plain', 'pha\nBe');
+  fireEvent.paste(first, { clipboardData: { getData: () => '!' } });
+  expect(richTextPlainText(model())).toBe('Al!ta'); expect(model().blocks).toHaveLength(1);
+});
+
+it('deletes a cross-block selection as one history action and restores it with undo', () => {
+  const initial = { blocks: [createRichTextBlock('paragraph', [{ text: 'Alpha' }]), createRichTextBlock('paragraph', [{ text: 'Beta' }])] };
+  render(<Editor initial={initial}/>);
+  const [first, second] = screen.getAllByRole('textbox'); first.focus();
+  const range = document.createRange(); range.setStart(first.firstChild!, 2); range.setEnd(second.firstChild!, 2);
+  const selection = window.getSelection()!; selection.removeAllRanges(); selection.addRange(range); fireEvent(document, new Event('selectionchange'));
+  fireEvent.keyDown(first, { key: 'Backspace' }); expect(richTextPlainText(model())).toBe('Alta');
+  fireEvent.keyDown(first, { key: 'z', ctrlKey: true }); expect(model()).toEqual(initial);
+});
+
+
+it('replaces a cross-block selection through native beforeinput typing', () => {
+  render(<Editor initial={{ blocks: [createRichTextBlock('paragraph', [{ text: 'Alpha' }]), createRichTextBlock('paragraph', [{ text: 'Beta' }])] }}/>);
+  const [first, second] = screen.getAllByRole('textbox'); first.focus();
+  const range = document.createRange(); range.setStart(first.firstChild!, 2); range.setEnd(second.firstChild!, 2);
+  const selection = window.getSelection()!; selection.removeAllRanges(); selection.addRange(range); fireEvent(document, new Event('selectionchange'));
+  fireEvent(first, new InputEvent('beforeinput', { bubbles: true, cancelable: true, inputType: 'insertText', data: '!' }));
+  expect(richTextPlainText(model())).toBe('Al!ta');
+});
+
+
+it('extends keyboard text selection across block boundaries and keeps native selection', () => {
+  render(<Editor initial={{ blocks: [createRichTextBlock('paragraph', [{ text: 'Alpha' }]), createRichTextBlock('paragraph', [{ text: 'Beta' }])] }}/>);
+  const [first] = screen.getAllByRole('textbox'); first.focus();
+  const range = document.createRange(); range.setStart(first.firstChild!, 2); range.collapse(true);
+  const selection = window.getSelection()!; selection.removeAllRanges(); selection.addRange(range);
+  fireEvent.keyDown(first, { key: 'ArrowDown', shiftKey: true });
+  expect(document.querySelectorAll('.cap-rich-editor-row[data-selected]')).toHaveLength(2);
+  expect(selection.toString()).toContain('pha');
+});
+
+
+it('extends a mouse drag across separate editable hosts using the pointer caret', async () => {
+  render(<Editor initial={{ blocks: [createRichTextBlock('paragraph', [{ text: 'Alpha' }]), createRichTextBlock('paragraph', [{ text: 'Beta' }])] }}/>);
+  const [first, second] = screen.getAllByRole('textbox');
+  const range = document.createRange(); range.setStart(first.firstChild!, 2); range.collapse(true);
+  Object.defineProperty(document, 'caretRangeFromPoint', { configurable: true, value: vi.fn(() => range) });
+  fireEvent(first, new MouseEvent('pointerdown', { bubbles: true, button: 0, clientX: 5, clientY: 5 }));
+  range.setStart(second.firstChild!, 2);
+  fireEvent(second, new MouseEvent('pointermove', { bubbles: true, button: 0, clientX: 5, clientY: 35 }));
+  expect(document.querySelectorAll('.cap-rich-editor-row[data-selected]')).toHaveLength(2);
+  expect(window.getSelection()?.toString()).toBe('phaBe');
+  fireEvent(second, new MouseEvent('pointerup', { bubbles: true, button: 0, clientX: 5, clientY: 35 }));
+  Reflect.deleteProperty(document, 'caretRangeFromPoint');
+});
+
+
+it('cuts all cross-host partial ranges even when browser selection text only includes the first host', () => {
+  const initial = { blocks: [createRichTextBlock('paragraph', [{ text: 'Alpha' }]), createRichTextBlock('paragraph', [{ text: 'Beta' }])] };
+  render(<Editor initial={initial}/>);
+  const [first, second] = screen.getAllByRole('textbox'); first.focus();
+  const range = document.createRange(); range.setStart(first.firstChild!, 2); range.setEnd(second.firstChild!, 2);
+  const selection = window.getSelection()!; selection.removeAllRanges(); selection.addRange(range);
+  fireEvent(document, new Event('selectionchange'));
+  vi.spyOn(selection, 'toString').mockReturnValue('pha');
+  const copy = vi.fn(), cut = vi.fn();
+  fireEvent.copy(first, { clipboardData: { setData: copy } });
+  fireEvent.cut(first, { clipboardData: { setData: cut } });
+  expect(copy).toHaveBeenCalledWith('text/plain', 'pha\nBe');
+  expect(cut).toHaveBeenCalledWith('text/plain', 'pha\nBe');
+  expect(richTextPlainText(model())).toBe('Alta');
+  fireEvent.keyDown(first, { key: 'z', ctrlKey: true }); expect(model()).toEqual(initial);
+});
+
+it('opens only submenus with ArrowRight and keeps root menu captions hidden', async () => {
+  const user = userEvent.setup(); render(<Editor initial={documentWithThreeBlocks()}/>);
+  await user.click(screen.getByRole('button', { name: 'Действия с блоком 2' }));
+  const menu = screen.getByRole('menu', { name: 'Действия с блоком' });
+  expect(menu.querySelector('.cap-rich-editor-menu-caption')).toBeNull();
+  expect(screen.getByRole('group', { name: 'Тип блока' })).toBeInTheDocument();
+  const remove = screen.getByRole('menuitem', { name: 'Удалить блок' }); remove.focus();
+  await user.keyboard('{ArrowRight}');
+  expect(model().blocks).toHaveLength(3); expect(remove).toHaveFocus(); expect(menu).toBeInTheDocument();
+  screen.getByRole('menuitem', { name: 'Иерархия' }).focus(); await user.keyboard('{ArrowRight}');
+  expect(screen.getByRole('menuitemradio', { name: 'Заголовок 1' })).toBeInTheDocument();
+  expect(menu.querySelector('.cap-rich-editor-menu-caption')).toHaveTextContent('Иерархия');
 });

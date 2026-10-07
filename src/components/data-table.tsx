@@ -1,3 +1,4 @@
+import { useTranslate, useLocale } from './locale.js';
 import { useLayoutEffect, useMemo, useRef, useState, type ReactNode, type KeyboardEvent } from 'react';
 import { ArrowDown, ArrowUp, ChevronDown, ChevronLeft, ChevronRight, Copy, Link2, Search } from 'lucide-react';
 import { Button, Icon, IconButton, Tag, type IconSource } from './primitives.js';
@@ -36,15 +37,19 @@ export interface DataTableProps<T> {
   /** Omit to inherit the composition's painted surface. */
   surface?: 'base' | 'canvas' | 'raised' | 'floating';
 }
-const collator = /* @__PURE__ */ new Intl.Collator('ru', { numeric: true, sensitivity: 'base' });
-function compareValues(a: string | number | Date | null | undefined, b: string | number | Date | null | undefined, direction: 'asc' | 'desc') {
+function compareValues(a: string | number | Date | null | undefined, b: string | number | Date | null | undefined, direction: 'asc' | 'desc', collator: Intl.Collator) {
   const emptyA = a === null || a === undefined || a === '', emptyB = b === null || b === undefined || b === '';
   if (emptyA || emptyB) return emptyA === emptyB ? 0 : emptyA ? 1 : -1;
   const left = a instanceof Date ? a.getTime() : a, right = b instanceof Date ? b.getTime() : b;
   const result = typeof left === 'number' && typeof right === 'number' ? left - right : collator.compare(String(left), String(right));
   return direction === 'asc' ? result : -result;
 }
-export function DataTable<T>({ label, rows, columns, rowId, sort: controlledSort, defaultSort = null, onSortChange, selectable = false, selectedIds, defaultSelectedIds = [], onSelectedIdsChange, page: controlledPage, defaultPage = 1, pageSize, onPageChange, emptyMessage = 'Нет данных', className, surface }: DataTableProps<T>) {
+export function DataTable<T>({ label, rows, columns, rowId, sort: controlledSort, defaultSort = null, onSortChange, selectable = false, selectedIds, defaultSelectedIds = [], onSelectedIdsChange, page: controlledPage, defaultPage = 1, pageSize, onPageChange, emptyMessage: suppliedEmptyMessage, className, surface }: DataTableProps<T>) {
+  const locale = useLocale();
+  const collator = useMemo(() => new Intl.Collator(locale, { numeric: true, sensitivity: 'base' }), [locale]);
+  const t = useTranslate();
+  const emptyMessage = suppliedEmptyMessage === undefined ? (t("Нет данных", "No data")) : suppliedEmptyMessage;
+
   const [internalSort, setInternalSort] = useState<DataTableSort | null>(defaultSort);
   const [internalSelected, setInternalSelected] = useState<string[]>([...defaultSelectedIds]);
   const [internalPage, setInternalPage] = useState(defaultPage);
@@ -55,8 +60,8 @@ export function DataTable<T>({ label, rows, columns, rowId, sort: controlledSort
   const sorted = useMemo(() => {
     const column = sort && columns.find(item => item.id === sort.id && item.sortable !== false);
     if (!column || !sort) return [...rows];
-    return rows.map((row, index) => ({ row, index })).sort((a, b) => compareValues(column.value(a.row), column.value(b.row), sort.direction) || a.index - b.index).map(entry => entry.row);
-  }, [rows, columns, sort]);
+    return rows.map((row, index) => ({ row, index })).sort((a, b) => compareValues(column.value(a.row), column.value(b.row), sort.direction, collator) || a.index - b.index).map(entry => entry.row);
+  }, [rows, columns, sort, collator]);
   const size = pageSize && pageSize > 0 ? Math.max(1, Math.floor(pageSize)) : 0;
   const pages = size ? Math.max(1, Math.ceil(sorted.length / size)) : 1;
   const page = Math.min(pages, Math.max(1, controlledPage ?? internalPage));
@@ -68,7 +73,7 @@ export function DataTable<T>({ label, rows, columns, rowId, sort: controlledSort
     const ordered = [...rows.map(rowId).filter(id => next.has(id)), ...[...next].filter(id => !rows.some(row => rowId(row) === id))];
     if (selectedIds === undefined) setInternalSelected(ordered);
     onSelectedIdsChange?.(ordered);
-    setAnnouncement(`${ordered.length} выбрано`);
+    setAnnouncement(`${ordered.length}${t(" выбрано", " selected")}`);
   };
   const toggleRow = (id: string, extend: boolean) => {
     const next = new Set(selection);
@@ -82,26 +87,26 @@ export function DataTable<T>({ label, rows, columns, rowId, sort: controlledSort
     const next: DataTableSort = { id: column.id, direction: sort?.id === column.id && sort.direction === 'asc' ? 'desc' : 'asc' };
     if (controlledSort === undefined) setInternalSort(next);
     onSortChange?.(next);
-    setAnnouncement(`${column.header}: ${next.direction === 'asc' ? 'по возрастанию' : 'по убыванию'}`);
+    setAnnouncement(`${column.header}: ${next.direction === 'asc' ? t("по возрастанию", "ascending") : t("по убыванию", "descending")}`);
   };
   const setPage = (next: number) => { const clamped = Math.min(pages, Math.max(1, next)); if (controlledPage === undefined) setInternalPage(clamped); onPageChange?.(clamped); };
   return <div className={`cap-data-table${className ? ` ${className}` : ''}`} data-surface={surface}>
-    <div className="cap-data-table-scroll" role="region" aria-label={label} tabIndex={0}>
+    <div className="cap-data-table-scroll cap-surface-boundary" role="region" aria-label={label} tabIndex={0}>
       <table><caption className="cap-sr-only">{label}</caption><thead><tr>
-        {selectable && <th className="cap-data-table-select" scope="col"><span className="cap-sr-only">Выбор строк</span><Checkbox label="Выбрать все строки на странице" aria-label="Выбрать все строки на странице" size="sm" checked={allVisible} indeterminate={selectedVisible > 0 && !allVisible} disabled={!visible.length} onChange={() => { const next = new Set(selection); visibleIds.forEach(id => allVisible ? next.delete(id) : next.add(id)); applySelection(next); }}/></th>}
+        {selectable && <th className="cap-data-table-select" scope="col"><span className="cap-sr-only">{t("Выбор строк", "Row selection")}</span><Checkbox label={t("Выбрать все строки на странице", "Select all rows on this page")} aria-label={t("Выбрать все строки на странице", "Select all rows on this page")} size="sm" checked={allVisible} indeterminate={selectedVisible > 0 && !allVisible} disabled={!visible.length} onChange={() => { const next = new Set(selection); visibleIds.forEach(id => allVisible ? next.delete(id) : next.add(id)); applySelection(next); }}/></th>}
         {columns.map(column => <th key={column.id} scope="col" style={{ width: column.width }} aria-sort={sort?.id === column.id ? sort.direction === 'asc' ? 'ascending' : 'descending' : 'none'} data-numeric={column.numeric || undefined}>
           {column.sortable === false ? column.header : <button type="button" className="cap-data-table-sort" onClick={() => setSort(column)}>{column.header}{sort?.id === column.id ? sort.direction === 'asc' ? <ArrowUp size={14}/> : <ArrowDown size={14}/> : <span className="cap-data-table-sort-hint" aria-hidden="true">↕</span>}</button>}
         </th>)}
       </tr></thead><tbody>
         {visible.map(row => { const id = rowId(row); return <tr key={id} data-selected={selection.has(id) || undefined}>
-          {selectable && <td className="cap-data-table-select"><Checkbox label={`Выбрать строку ${id}`} aria-label={`Выбрать строку ${id}`} size="sm" checked={selection.has(id)} onChange={event => toggleRow(id, (event.nativeEvent as MouseEvent).shiftKey === true)}/></td>}
+          {selectable && <td className="cap-data-table-select"><Checkbox label={`${t("Выбрать строку ", "Select row ")}${id}`} aria-label={`${t("Выбрать строку ", "Select row ")}${id}`} size="sm" checked={selection.has(id)} onChange={event => toggleRow(id, (event.nativeEvent as MouseEvent).shiftKey === true)}/></td>}
           {columns.map(column => <td key={column.id} data-numeric={column.numeric || undefined}>{column.cell ? column.cell(row) : String(column.value(row) ?? '')}</td>)}
         </tr>; })}
         {!visible.length && <tr><td colSpan={columns.length + Number(selectable)} className="cap-data-table-empty">{emptyMessage}</td></tr>}
       </tbody></table>
     </div>
-    <div className="cap-data-table-footer"><span>{rows.length ? `${size ? (page-1)*size+1 : 1}–${size ? Math.min(page*size,sorted.length) : sorted.length} из ${sorted.length}` : '0 строк'}{selectable && selection.size ? ` · ${selection.size} выбрано` : ''}</span>
-      {size > 0 && pages > 1 && <nav aria-label={`${label}: страницы`} className="cap-data-table-pagination"><IconButton label="Предыдущая страница" icon={ChevronLeft} size="sm" variant="ghost" disabled={page===1} onClick={()=>setPage(page-1)}/><span>Страница {page} из {pages}</span><IconButton label="Следующая страница" icon={ChevronRight} size="sm" variant="ghost" disabled={page===pages} onClick={()=>setPage(page+1)}/></nav>}
+    <div className="cap-data-table-footer"><span>{rows.length ? `${size ? (page-1)*size+1 : 1}–${size ? Math.min(page*size,sorted.length) : sorted.length}${t(" из ", " of ")}${sorted.length}` : t("0 строк", "0 rows")}{selectable && selection.size ? ` · ${selection.size}${t(" выбрано", " selected")}` : ''}</span>
+      {size > 0 && pages > 1 && <nav aria-label={`${label}${t(": страницы", ": pages")}`} className="cap-data-table-pagination"><IconButton label={t("Предыдущая страница", "Previous page")} icon={ChevronLeft} size="sm" variant="ghost" disabled={page===1} onClick={()=>setPage(page-1)}/><span>{t("Страница", "Page")} {page} {t("из", "of")} {pages}</span><IconButton label={t("Следующая страница", "Next page")} icon={ChevronRight} size="sm" variant="ghost" disabled={page===pages} onClick={()=>setPage(page+1)}/></nav>}
     </div>
     <span className="cap-sr-only" role="status">{announcement}</span>
   </div>;
@@ -120,22 +125,24 @@ export interface FilterToolbarProps {
   className?: string;
 }
 export function FilterToolbar({ label, fields, filters, onFiltersChange, query, onQueryChange, className }: FilterToolbarProps) {
+  const t = useTranslate();
+
   const [open, setOpen] = useState(false), [fieldId, setFieldId] = useState<string | null>(null), [optionQuery, setOptionQuery] = useState('');
   const field = fields.find(item => item.id === fieldId);
   const select = (value: string) => { if (!field) return; onFiltersChange([...filters.filter(item => item.fieldId !== field.id), { fieldId: field.id, value }]); setOpen(false); setFieldId(null); setOptionQuery(''); };
   return <div className={`cap-filter-toolbar${className ? ` ${className}` : ''}`} role="group" aria-label={label}>
-    {onQueryChange && <Input label="Поиск" size="sm" leading={<Search size={15}/>} value={query ?? ''} onChange={event=>onQueryChange(event.target.value)}/>}
-    <Popover label="Добавить фильтр" open={open} onOpenChange={next => { setOpen(next); if (!next) { setFieldId(null); setOptionQuery(''); } }} triggerContent="Фильтр" size="sm">
+    {onQueryChange && <Input label={t("Поиск", "Search")} size="sm" leading={<Search size={15}/>} value={query ?? ''} onChange={event=>onQueryChange(event.target.value)}/>}
+    <Popover label={t("Добавить фильтр", "Add filter")} open={open} onOpenChange={next => { setOpen(next); if (!next) { setFieldId(null); setOptionQuery(''); } }} triggerContent={t("Фильтр", "Filter")} size="sm">
       <div className="cap-filter-menu">
-        {field ? <><div className="cap-filter-menu-heading"><Button size="xs" variant="ghost" onClick={()=>{setFieldId(null);setOptionQuery('');}}>← Поля</Button><strong>{field.label}</strong></div>
-          {field.options.length > 8 && <Input label="Найти значение" size="sm" value={optionQuery} onChange={event=>setOptionQuery(event.target.value)}/>}
+        {field ? <><div className="cap-filter-menu-heading"><Button size="xs" variant="ghost" onClick={()=>{setFieldId(null);setOptionQuery('');}}>{t("← Поля", "← Fields")}</Button><strong>{field.label}</strong></div>
+          {field.options.length > 8 && <Input label={t("Найти значение", "Find a value")} size="sm" value={optionQuery} onChange={event=>setOptionQuery(event.target.value)}/>}
           <div className="cap-filter-options">{field.options.filter(option=>`${option.label} ${option.value}`.toLocaleLowerCase().includes(optionQuery.toLocaleLowerCase())).map(option=><button type="button" key={option.value} onClick={()=>select(option.value)} aria-pressed={filters.some(item=>item.fieldId===field.id&&item.value===option.value)}>{option.label}{option.count!==undefined&&<small>{option.count}</small>}</button>)}</div>
-          {!field.options.some(option=>`${option.label} ${option.value}`.toLocaleLowerCase().includes(optionQuery.toLocaleLowerCase()))&&<p className="cap-filter-empty">Ничего не найдено</p>}</>
-        : <div className="cap-filter-options">{fields.map(item=><button type="button" key={item.id} onClick={()=>setFieldId(item.id)}><span className="cap-filter-field-label">{item.icon&&<Icon name={item.icon} size={15}/>}{item.label}</span><ChevronRight size={14}/></button>)}{!fields.length&&<p className="cap-filter-empty">Нет доступных фильтров</p>}</div>}
+          {!field.options.some(option=>`${option.label} ${option.value}`.toLocaleLowerCase().includes(optionQuery.toLocaleLowerCase()))&&<p className="cap-filter-empty">{t("Ничего не найдено", "No results")}</p>}</>
+        : <div className="cap-filter-options">{fields.map(item=><button type="button" key={item.id} onClick={()=>setFieldId(item.id)}><span className="cap-filter-field-label">{item.icon&&<Icon name={item.icon} size={15}/>}{item.label}</span><ChevronRight size={14}/></button>)}{!fields.length&&<p className="cap-filter-empty">{t("Нет доступных фильтров", "No filters available")}</p>}</div>}
       </div>
     </Popover>
-    {filters.map(filter => { const selectedField=fields.find(item=>item.id===filter.fieldId), option=selectedField?.options.find(item=>item.value===filter.value), text=`${selectedField?.label ?? filter.fieldId}: ${option?.label ?? filter.value}`; return <Tag key={filter.fieldId} size="sm" action={{ icon: 'close', label: `Удалить фильтр ${text}`, onClick: ()=>onFiltersChange(filters.filter(item=>item.fieldId!==filter.fieldId)) }}>{text}</Tag>; })}
-    {filters.length>1&&<Button size="sm" variant="ghost" onClick={()=>onFiltersChange([])}>Сбросить</Button>}
+    {filters.map(filter => { const selectedField=fields.find(item=>item.id===filter.fieldId), option=selectedField?.options.find(item=>item.value===filter.value), text=`${selectedField?.label ?? filter.fieldId}: ${option?.label ?? filter.value}`; return <Tag key={filter.fieldId} size="sm" action={{ icon: 'close', label: `${t("Удалить фильтр ", "Remove filter ")}${text}`, onClick: ()=>onFiltersChange(filters.filter(item=>item.fieldId!==filter.fieldId)) }}>{text}</Tag>; })}
+    {filters.length>1&&<Button size="sm" variant="ghost" onClick={()=>onFiltersChange([])}>{t("Сбросить", "Reset")}</Button>}
   </div>;
 }
 
@@ -234,6 +241,8 @@ function initialJsonExpanded(data: unknown, rootName: string, depth: number): st
   return result;
 }
 export function JsonViewer({ label, data, rootName = 'root', expanded: controlledExpanded, defaultExpanded, defaultExpandDepth = 1, onExpandedChange, searchable = true, query: controlledQuery, defaultQuery = '', onQueryChange, pageSize = 50, maxHeight = 420, copyable = true, onCopy, onSelect, showPath = true, className }: JsonViewerProps) {
+  const t = useTranslate();
+
   const [internalExpanded, setInternalExpanded] = useState<string[]>(() => [...(defaultExpanded ?? initialJsonExpanded(data, rootName, Math.max(0, defaultExpandDepth)))]);
   const [internalQuery, setInternalQuery] = useState(defaultQuery);
   const [limits, setLimits] = useState<Record<string, number>>({});
@@ -283,8 +292,8 @@ export function JsonViewer({ label, data, rootName = 'root', expanded: controlle
   const showMore = (row: JsonRow) => { if (!row.more || !row.parent) return; setLimits(current=>({...current,[row.parent!]: (current[row.parent!]??size)+size})); };
   const copy = async (row: JsonRow, kind: 'path' | 'value') => {
     const text = kind === 'path' ? row.path : stringifyJsonViewerValue(row.value);
-    try { await navigator.clipboard.writeText(text); onCopy?.({ kind, path: row.path, text }); setStatus(`${kind === 'path' ? 'Путь' : 'Значение'} скопировано`); }
-    catch { setStatus('Не удалось скопировать'); }
+    try { await navigator.clipboard.writeText(text); onCopy?.({ kind, path: row.path, text }); setStatus(`${kind === 'path' ? t("Путь", "Path") : t("Значение", "Value")}${t(" скопировано", " copied")}`); }
+    catch { setStatus(t("Не удалось скопировать", "Could not copy")); }
   };
   const keydown = (event: KeyboardEvent<HTMLDivElement>) => {
     const target = (event.target as HTMLElement).closest<HTMLElement>('[role="treeitem"]');
@@ -303,18 +312,18 @@ export function JsonViewer({ label, data, rootName = 'root', expanded: controlle
     if (event.key === 'ArrowLeft') { event.preventDefault(); if (row.branch && expanded.has(row.path)) updateExpanded(row.path,false); else if(row.parent) focusRow(row.parent); return; }
     if ((event.key === 'Enter' || event.key === ' ') && row.branch) { event.preventDefault(); updateExpanded(row.path,!expanded.has(row.path)); }
   };
-  return <section className={`cap-json-viewer${className ? ` ${className}` : ''}`} aria-label={label}>
-    {searchable&&<Input label="Поиск в JSON" size="sm" leading={<Search size={15}/>} value={query} onChange={event=>{ const next=event.target.value; if(controlledQuery===undefined)setInternalQuery(next); onQueryChange?.(next); }} />}
+  return <section className={`cap-json-viewer cap-surface-boundary${className ? ` ${className}` : ''}`} aria-label={label}>
+    {searchable&&<Input label={t("Поиск в JSON", "Search JSON")} size="sm" leading={<Search size={15}/>} value={query} onChange={event=>{ const next=event.target.value; if(controlledQuery===undefined)setInternalQuery(next); onQueryChange?.(next); }} />}
     {rows.length ? <div ref={tree} className="cap-json-tree" role="tree" aria-label={label} style={{ maxHeight }} onKeyDown={keydown}>
-      {presentRows.map(({item:row,phase}) => row.more ? <div key={row.path} role="treeitem" tabIndex={phase!=='exit'&&row.path===current?0:-1} data-path={row.path} data-presence={phase} aria-hidden={phase==='exit'||undefined} inert={phase==='exit'||undefined} aria-level={row.depth+1} aria-selected={row.path===current} className="cap-json-row cap-json-more" style={{paddingInlineStart:8+row.depth*18}} onFocus={()=>{if(phase!=='exit')setSelected(row.path)}} onClick={()=>{if(phase!=='exit')showMore(row)}}>Показать ещё {Math.min(size,row.remaining??0)} из {row.remaining}</div>
+      {presentRows.map(({item:row,phase}) => row.more ? <div key={row.path} role="treeitem" tabIndex={phase!=='exit'&&row.path===current?0:-1} data-path={row.path} data-presence={phase} aria-hidden={phase==='exit'||undefined} inert={phase==='exit'||undefined} aria-level={row.depth+1} aria-selected={row.path===current} className="cap-json-row cap-json-more" style={{paddingInlineStart:8+row.depth*18}} onFocus={()=>{if(phase!=='exit')setSelected(row.path)}} onClick={()=>{if(phase!=='exit')showMore(row)}}>{t("Показать ещё", "Show more")} {Math.min(size,row.remaining??0)} {t("из", "of")} {row.remaining}</div>
       : <div key={row.path} role="treeitem" tabIndex={phase!=='exit'&&row.path===current?0:-1} data-path={row.path} data-presence={phase} aria-hidden={phase==='exit'||undefined} inert={phase==='exit'||undefined} aria-level={row.depth+1} aria-expanded={row.branch ? needle ? true : expanded.has(row.path) : undefined} className="cap-json-row" style={{paddingInlineStart:8+row.depth*18}} onFocus={()=>{if(phase!=='exit')setSelected(row.path)}} onClick={()=>{if(phase==='exit')return;setSelected(row.path);onSelect?.({path:row.path,value:row.value,type:row.type}); if(row.branch)updateExpanded(row.path,!expanded.has(row.path));}}>
         <span className="cap-json-disclosure" aria-hidden="true">{row.branch ? needle || expanded.has(row.path) ? <ChevronDown size={14}/> : <ChevronRight size={14}/> : null}</span>
         <span className="cap-json-key">{row.name}</span><span className="cap-json-colon">:</span>
-        <span className="cap-json-value" data-type={row.type}>{row.cycle ? '[Circular]' : row.branch ? row.type === 'array' ? `[${row.count} элементов]` : `{${row.count} ключей}` : jsonPrimitive(row.value,row.type)}</span>
-        {copyable&&<span className="cap-json-actions"><IconButton label={`Копировать значение ${row.path}`} icon={Copy} size="xs" variant="ghost" onClick={event=>{event.stopPropagation();void copy(row,'value');}}/><IconButton label={`Копировать путь ${row.path}`} icon={Link2} size="xs" variant="ghost" onClick={event=>{event.stopPropagation();void copy(row,'path');}}/></span>}
+        <span className="cap-json-value" data-type={row.type}>{row.cycle ? t("[Циклическая ссылка]", "[Circular]") : row.branch ? row.type === 'array' ? `[${row.count}${t(" элементов]", " items]")}` : `{${row.count}${t(" ключей}", " keys}")}` : jsonPrimitive(row.value,row.type)}</span>
+        {copyable&&<span className="cap-json-actions"><IconButton label={`${t("Копировать значение ", "Copy value ")}${row.path}`} icon={Copy} size="xs" variant="ghost" onClick={event=>{event.stopPropagation();void copy(row,'value');}}/><IconButton label={`${t("Копировать путь ", "Copy path ")}${row.path}`} icon={Link2} size="xs" variant="ghost" onClick={event=>{event.stopPropagation();void copy(row,'path');}}/></span>}
       </div>)}
-    </div> : <div className="cap-json-empty" role="status">Ничего не найдено</div>}
-    <div className="cap-json-footer"><span>{rows.filter(row=>!row.more).length} узлов показано</span>{showPath&&<span className="cap-json-path">{current}</span>}</div>
+    </div> : <div className="cap-json-empty" role="status">{t("Ничего не найдено", "No results")}</div>}
+    <div className="cap-json-footer"><span>{rows.filter(row=>!row.more).length} {t("узлов показано", "nodes shown")}</span>{showPath&&<span className="cap-json-path">{current}</span>}</div>
     <span role="status" className="cap-sr-only">{status}</span>
   </section>;
 }

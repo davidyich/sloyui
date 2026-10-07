@@ -1,3 +1,4 @@
+import { useTranslate } from './locale.js';
 import { FeedbackIcon, feedbackColor, type FeedbackStyleProps } from './feedback.js';
 import { MovingHighlight } from './moving-highlight.js';
 import {
@@ -7,13 +8,21 @@ import {
 import { Counter, Button, Icon, IconButton, cx, type ButtonProps, type Color, type IconName, type Size } from './primitives.js';
 import { Input, type InputProps } from './forms.js';
 import { Menu, type MenuItem } from './overlays.js';
+import { scrollFadeProgress, type ScrollFadeDirection, type ScrollFadeSize } from './scroll-fade.js';
+export type { ScrollFadeDirection, ScrollFadeSize } from './scroll-fade.js';
 
 export interface ScrollEdges { top: boolean; right: boolean; bottom: boolean; left: boolean }
 export interface ScrollAreaProps extends HTMLAttributes<HTMLDivElement> {
   label: string;
   axis?: 'vertical' | 'horizontal' | 'both';
   scrollbar?: 'auto' | 'hidden';
+  /** Compatibility switch. Explicit fade takes precedence. */
   shadows?: boolean;
+  fade?: boolean | ScrollFadeDirection;
+  /** CSS length/percentage, or pixels. Default min(12%, space-10). */
+  fadeSize?: ScrollFadeSize;
+  /** Scroll distance in pixels for a full fade; zero reveals immediately. */
+  fadeReveal?: number;
   viewportClassName?: string;
   contentClassName?: string;
   viewportProps?: HTMLAttributes<HTMLDivElement>;
@@ -23,7 +32,7 @@ export interface ScrollAreaProps extends HTMLAttributes<HTMLDivElement> {
 }
 /** The ref points to the native scrolling viewport, not its decorative wrapper. */
 export const ScrollArea = /* @__PURE__ */ forwardRef<HTMLDivElement, ScrollAreaProps>(function ScrollArea({
-  label, axis = 'vertical', scrollbar = axis === 'horizontal' ? 'hidden' : 'auto', shadows = true, viewportClassName, contentClassName, viewportProps,
+  label, axis = 'vertical', scrollbar = axis === 'horizontal' ? 'hidden' : 'auto', shadows = true, fade, fadeSize, fadeReveal, viewportClassName, contentClassName, viewportProps,
   onEdgesChange, floating, children, className, style, ...props
 }, ref) {
   const viewport = useRef<HTMLDivElement>(null), content = useRef<HTMLDivElement>(null), floatingLayer = useRef<HTMLDivElement>(null);
@@ -40,11 +49,13 @@ export const ScrollArea = /* @__PURE__ */ forwardRef<HTMLDivElement, ScrollAreaP
   const notify = useRef(onEdgesChange); notify.current = onEdgesChange;
   const [edges, setEdges] = useState<ScrollEdges>({ top: false, right: false, bottom: false, left: false });
   const previous = useRef<ScrollEdges | null>(null);
+  const fadeDirection: ScrollFadeDirection = fade === false ? 'none' : fade === true ? axis : fade ?? (shadows ? axis : 'none');
   const measure = useCallback(() => {
     const node = viewport.current; if (!node) return;
     const vertical = axis !== 'horizontal', horizontal = axis !== 'vertical';
-    const rtl = horizontal && getComputedStyle(node).direction === 'rtl';
-    const horizontalOffset = Math.abs(node.scrollLeft), horizontalRemaining = node.scrollWidth - node.clientWidth - horizontalOffset;
+    const computed = getComputedStyle(node), rtl = horizontal && computed.direction === 'rtl';
+    const horizontalRange = Math.max(0, node.scrollWidth - node.clientWidth);
+    const horizontalOffset = Math.max(0, Math.min(horizontalRange, rtl ? -node.scrollLeft : node.scrollLeft)), horizontalRemaining = horizontalRange - horizontalOffset;
     // A one-pixel tolerance avoids flicker from fractional scroll positions and zoom.
     const next = {
       top: vertical && node.scrollTop > 1,
@@ -52,10 +63,15 @@ export const ScrollArea = /* @__PURE__ */ forwardRef<HTMLDivElement, ScrollAreaP
       left: horizontal && (rtl ? horizontalRemaining : horizontalOffset) > 1,
       right: horizontal && (rtl ? horizontalOffset : horizontalRemaining) > 1,
     };
+    const tokenReveal = (parseFloat(computed.getPropertyValue('--cap-space-12')) || 48) * 2;
+    const cssReveal = parseFloat(computed.getPropertyValue('--cap-scroll-fade-reveal'));
+    const reveal = Number.isFinite(fadeReveal) ? Math.max(0, fadeReveal!) : Number.isFinite(cssReveal) ? Math.max(0, cssReveal) : tokenReveal;
+    const progress = scrollFadeProgress(node, axis, fadeDirection, reveal, rtl);
+    for (const edge of ['top','right','bottom','left'] as const) { const name = `--cap-scroll-fade-${edge}-progress`, value = String(progress[edge]); if (node.style.getPropertyValue(name) !== value) node.style.setProperty(name,value); }
     if (!previous.current || Object.keys(next).some(key => next[key as keyof ScrollEdges] !== previous.current?.[key as keyof ScrollEdges])) {
       previous.current = next; setEdges(next); notify.current?.(next);
     }
-  }, [axis]);
+  }, [axis, fadeDirection, fadeReveal]);
   useLayoutEffect(() => {
     measure();
     const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(measure);
@@ -64,11 +80,11 @@ export const ScrollArea = /* @__PURE__ */ forwardRef<HTMLDivElement, ScrollAreaP
     window.addEventListener('resize', measure);
     return () => { observer?.disconnect(); window.removeEventListener('resize', measure); };
   }, [measure]);
-  useLayoutEffect(measure, [children, measure]);
+  useLayoutEffect(measure, [children, measure, style, props.dir, viewportProps?.dir, viewportProps?.style]);
   const { onScroll, className: viewportExtraClass, ...restViewport } = viewportProps ?? {};
-  return <div className={cx('cap-scroll-area', className)} data-axis={axis} data-scrollbar={scrollbar} data-shadows={shadows || undefined}
+  return <div className={cx('cap-scroll-area', className)} data-axis={axis} data-scrollbar={scrollbar} data-shadows={fadeDirection !== 'none' || undefined} data-fade={fadeDirection}
     data-scroll-top={edges.top || undefined} data-scroll-right={edges.right || undefined}
-    data-scroll-bottom={edges.bottom || undefined} data-scroll-left={edges.left || undefined} data-floating={!!floating || undefined} style={{...style, '--cap-floating-height': `${floatingHeight}px`} as CSSProperties} {...props}>
+    data-scroll-bottom={edges.bottom || undefined} data-scroll-left={edges.left || undefined} data-floating={!!floating || undefined} style={{...style, ...(fadeSize !== undefined ? {'--cap-scroll-fade-size':typeof fadeSize === 'number' ? `${Number.isFinite(fadeSize)?Math.max(0,fadeSize):0}px` : fadeSize} : {}), '--cap-floating-height': `${floatingHeight}px`} as CSSProperties} {...props}>
     <div {...restViewport} ref={node => { viewport.current = node; if (typeof ref === 'function') ref(node); else if (ref) ref.current = node; }}
       className={cx('cap-scroll-viewport', viewportClassName, viewportExtraClass)} role={restViewport.role ?? 'region'}
       aria-label={restViewport['aria-label'] ?? label} tabIndex={restViewport.tabIndex ?? 0}
@@ -100,7 +116,10 @@ export interface SplitButtonProps extends Omit<ButtonProps, 'children' | 'traili
   layout?: 'joined' | 'separated';
   items: MenuItem[];
 }
-export function SplitButton({ label, menuLabel = `${label}: дополнительные действия`, items, className, size, layout = 'joined', variant = 'primary', disabled, loading, ...props }: SplitButtonProps) {
+export function SplitButton({ label, menuLabel: suppliedMenuLabel, items, className, size, layout = 'joined', variant = 'primary', disabled, loading, ...props }: SplitButtonProps) {
+  const t = useTranslate();
+  const menuLabel = suppliedMenuLabel === undefined ? (`${label}${t(": дополнительные действия", ": more actions")}`) : suppliedMenuLabel;
+
   return <div className={cx('cap-split-button', className)} data-layout={layout} data-variant={variant} data-size={size} role="group" aria-label={label}>
     <Button {...props} size={size} variant={variant} disabled={disabled} loading={loading}>{label}</Button>
     <Menu label={menuLabel} icon="down" items={items} variant={variant} size={size} disabled={disabled || loading} />
@@ -192,7 +211,10 @@ export interface AlertProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'
   dismissLabel?: string;
 }
 export function Alert({ title, tone = 'info', color, appearance = 'neutral', contrast = false, surface = 'inherit', icon, expandable = false, expanded, defaultExpanded = false, onExpandedChange,
-  onDismiss, dismissLabel = 'Закрыть уведомление', children, className, ...props }: AlertProps) {
+  onDismiss, dismissLabel: suppliedDismissLabel, children, className, ...props }: AlertProps) {
+  const t = useTranslate();
+  const dismissLabel = suppliedDismissLabel === undefined ? (t("Закрыть уведомление", "Dismiss notification")) : suppliedDismissLabel;
+
   const id = useId(), [internalExpanded, setInternalExpanded] = useState(defaultExpanded);
   const isExpanded = !expandable || (expanded ?? internalExpanded), hasBody = children !== undefined && children !== null;
   const toggleRef = useRef<HTMLButtonElement>(null), bodyRef = useRef<HTMLDivElement>(null);
@@ -223,10 +245,12 @@ export interface SidebarPanelProps extends HTMLAttributes<HTMLElement> {
   surface?: 'base' | 'canvas' | 'raised' | 'floating';
 }
 export function SidebarPanel({ label, header, footer, footerAlign = 'start', width, surface = 'canvas', className, children, style, ...props }: SidebarPanelProps) {
+  const t = useTranslate();
+
   const hoverRoot = useRef<HTMLDivElement>(null);
   return <aside aria-label={label} className={cx('cap-sidebar-panel', className)} data-surface={surface} style={{ ...style, ...(width !== undefined ? { width } : {}) }} {...props}>
     {header && <div className="cap-sidebar-panel-header">{header}</div>}
-    <ScrollArea label={`${label}: содержимое`} className="cap-sidebar-panel-scroll" contentClassName="cap-sidebar-panel-content"><div ref={hoverRoot} className="cap-sidebar-panel-items cap-shared-hover"><MovingHighlight root={hoverRoot} hover target=".cap-sidebar-item:not(:disabled),.cap-accordion[data-variant=navigation] > summary"/>{children}</div></ScrollArea>
+    <ScrollArea label={`${label}${t(": содержимое", ": content")}`} className="cap-sidebar-panel-scroll" contentClassName="cap-sidebar-panel-content"><div ref={hoverRoot} className="cap-sidebar-panel-items cap-shared-hover"><MovingHighlight root={hoverRoot} hover target=".cap-sidebar-item:not(:disabled),.cap-accordion[data-variant=navigation] > summary"/>{children}</div></ScrollArea>
     {footer && <div className="cap-sidebar-panel-footer" data-align={footerAlign}>{footer}</div>}
   </aside>;
 }

@@ -1017,6 +1017,16 @@
       ],
       "primaryGroup": "layout",
       "introduced": "2026-10-08"
+    },
+    "ResizablePanelGroup": {
+      "id": "cp-101",
+      "status": "needs-review",
+      "primaryGroup": "layout",
+      "groups": [
+        "layout",
+        "navigation"
+      ],
+      "introduced": "0.6.0"
     }
   }
 }

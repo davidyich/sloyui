@@ -58,3 +58,10 @@
 .cap-rich-editor-block .cap-code-editor [contenteditable]:focus-visible{outline:var(--cap-focus-width) solid var(--cap-ring-state-active);outline-offset:3px}
 .cap-rich-editor-block .cap-code code{padding:0;border-radius:0;background:transparent;font-size:inherit}
 .cap-rich-editor-block .cap-code>pre{margin:0;padding:16px;border:0;border-radius:0;background:transparent}
+
+.cap-rich-editor-row:is([data-block-type=code],[data-block-type=markdown-source]){margin-block:var(--cap-space-4,16px)}
+.cap-rich-editor-row[data-selected]>.cap-rich-editor-block{background:var(--cap-control-active);border-radius:var(--cap-radius-sm)}
+.cap-rich-editor-menu{min-width:min(240px,90vw)}
+.cap-rich-editor-menu .cap-rich-editor-option-icon{width:20px;height:20px;background:transparent;box-shadow:none}
+
+.cap-rich-editor-menu-group + .cap-rich-editor-menu-group{margin-block-start:var(--cap-space-1,4px);padding-block-start:var(--cap-space-1,4px);border-block-start:var(--cap-border-width) solid var(--cap-control-border)}

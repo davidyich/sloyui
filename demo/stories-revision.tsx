@@ -1,3 +1,4 @@
+import { useCatalogText, localizeCatalogueFixture } from './catalog-locale';
 import { useState } from 'react';
 import { Button, Tag } from '../src/components/primitives';
 import { BottomSheet } from '../src/components/bottom-sheet';
@@ -30,15 +31,21 @@ export const revisionRailItems: PreviewRailItem[] = [
   {id:'disabled',label:'Недоступный раздел',description:'Этот раздел отключён.',disabled:true},
 ];
 export function BottomSheetStory() {
+ const ct=useCatalogText();
+
   const [open,setOpen]=useState(false),[saved,setSaved]=useState(false),[snap,setSnap]=useState(0);
-  return <StorySection title="Панель с ручкой и уровнями высоты"><div style={{display:'grid',gap:12}}><Button onClick={()=>setOpen(true)}>Открыть нижнюю панель</Button>{saved&&<Tag interactive={false} color="green">Изменения сохранены</Tag>}</div><BottomSheet open={open} onOpenChange={setOpen} title="Быстрые действия" description="Потяните ручку, используйте стрелки или Escape." snapPoints={[.45,.8]} snap={snap} onSnapChange={setSnap} footer={<Button onClick={()=>{setSaved(true);setOpen(false);}}>Сохранить и закрыть</Button>}><div style={{display:'grid',gap:12}}><p>Содержимое прокручивается независимо от ручки. Текст можно выделять, а действия доступны с клавиатуры.</p><Button variant="ghost" onClick={()=>setSnap(snap===0?1:0)}>Изменить высоту</Button>{Array.from({length:5},(_,index)=><p key={index}>Заметка {index+1}: проверьте тексты, владельцев и сроки перед сохранением.</p>)}</div></BottomSheet></StorySection>;
+  return <StorySection title={ct("Панель с ручкой и уровнями высоты")}><div style={{display:'grid',gap:12}}><Button onClick={()=>setOpen(true)}>{ct("Открыть нижнюю панель")}</Button>{saved&&<Tag interactive={false} color="green">{ct("Изменения сохранены")}</Tag>}</div><BottomSheet open={open} onOpenChange={setOpen} title={ct("Быстрые действия")} description={ct("Потяните ручку, используйте стрелки или Escape.")} snapPoints={[.45,.8]} snap={snap} onSnapChange={setSnap} footer={<Button onClick={()=>{setSaved(true);setOpen(false);}}>{ct("Сохранить и закрыть")}</Button>}><div style={{display:'grid',gap:12}}><p>{ct("Содержимое прокручивается независимо от ручки. Текст можно выделять, а действия доступны с клавиатуры.")}</p><Button variant="ghost" onClick={()=>setSnap(snap===0?1:0)}>{ct("Изменить высоту")}</Button>{Array.from({length:5},(_,index)=><p key={index}>{ct("Заметка ")}{index+1}{ct(": проверьте тексты, владельцев и сроки перед сохранением.")}</p>)}</div></BottomSheet></StorySection>;
 }
 export function FileTreeStory() {
+ const ct=useCatalogText();
+
   const [selected,setSelected]=useState('button'),[notice,setNotice]=useState('');
-  const actions = (nodes: FileTreeNode[]): FileTreeNode[] => nodes.map(node=>({...node,children:node.children?actions(node.children):undefined,actions:node.type==='file'&&!node.disabled?[{id:'open',label:'Открыть файл',icon:'external',onSelect:file=>setNotice(`Открыт ${file.name}`)},{id:'copy',label:'Копировать имя',icon:'copy',onSelect:async file=>{try { if (!navigator.clipboard) { setNotice('Буфер обмена недоступен'); return; } await navigator.clipboard.writeText(file.name); setNotice(`Скопировано имя ${file.name}`); } catch { setNotice('Не удалось скопировать имя файла'); }}}]:undefined}));
-  return <StorySection title="Файлы, ветви и предпросмотр"><FileTree label="Пример файлов проекта" nodes={actions(revisionFiles)} selectedId={selected} onSelect={node=>setSelected(node.id)} defaultExpandedIds={['app','components']}/>{notice&&<p role="status">{notice}</p>}</StorySection>;
+  const actions = (nodes: FileTreeNode[]): FileTreeNode[] => nodes.map(node=>({...node,children:node.children?actions(node.children):undefined,actions:node.type==='file'&&!node.disabled?[{id:'open',label:ct('Открыть файл'),icon:'external',onSelect:file=>setNotice(`${ct("Открыт ")}${file.name}`)},{id:'copy',label:ct('Копировать имя'),icon:'copy',onSelect:async file=>{try { if (!navigator.clipboard) { setNotice(ct('Буфер обмена недоступен')); return; } await navigator.clipboard.writeText(file.name); setNotice(`${ct("Скопировано имя ")}${file.name}`); } catch { setNotice(ct('Не удалось скопировать имя файла')); }}}]:undefined}));
+  return <StorySection title={ct("Файлы, ветви и предпросмотр")}><FileTree label={ct("Пример файлов проекта")} nodes={actions(localizeCatalogueFixture(revisionFiles,ct))} selectedId={selected} onSelect={node=>setSelected(node.id)} defaultExpandedIds={['app','components']}/>{notice&&<p role="status">{notice}</p>}</StorySection>;
 }
 export function PreviewRailStory() {
+ const ct=useCatalogText();
+
   const [selected,setSelected]=useState('navigation');
-  return <StorySection title="Рейка предпросмотра"><p>Наведите на деление или перемещайтесь стрелками. На сенсорном экране первый тап показывает карточку, второй открывает раздел.</p><PreviewRail label="Разделы каталога" items={revisionRailItems} value={selected} onValueChange={setSelected}/><PreviewRail label="Горизонтальные разделы" items={revisionRailItems} orientation="horizontal" previewSide="before" defaultValue="fields"/></StorySection>;
+  return <StorySection title={ct("Рейка предпросмотра")}><p>{ct("Наведите на деление или перемещайтесь стрелками. На сенсорном экране первый тап показывает карточку, второй открывает раздел.")}</p><PreviewRail label={ct("Разделы каталога")} items={localizeCatalogueFixture(revisionRailItems,ct)} value={selected} onValueChange={setSelected}/><PreviewRail label={ct("Горизонтальные разделы")} items={localizeCatalogueFixture(revisionRailItems,ct)} orientation="horizontal" previewSide="before" defaultValue="fields"/></StorySection>;
 }

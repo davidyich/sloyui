@@ -18,7 +18,7 @@ export function addComponentReference(manifest) {
     };
     visit(source);
   }
-  for (const [name, record] of Object.entries(manifest.components)) {
+  function buildApi(name) {
     let symbol = exported.get(name);
     if (!symbol) throw new Error(`Missing exported API: ${name}`);
     if (symbol.flags & ts.SymbolFlags.Alias) symbol = checker.getAliasedSymbol(symbol);
@@ -42,22 +42,49 @@ export function addComponentReference(manifest) {
     if (name === 'IconButton') Object.assign(defaults, {variant:"'secondary'",size:"'md'"});
     const properties = props ? checker.getPropertiesOfType(props) : [];
     const usefulNative = new Set(['children','className','style','id','aria-label', ...(['Button','IconButton','TextAction','ObjectCard','CollectionRow','SidebarItem'].includes(name) ? ['disabled','onClick','type','href'] : []), ...(['Input','Textarea','Select','NumberField','Checkbox','Radio','Switch','Slider','FloatingField'].includes(name) ? ['value','defaultValue','onChange','name','disabled','readOnly','placeholder','required','type','checked','defaultChecked','rows','min','max','step'] : [])]);
-    record.api = properties.filter(prop => usefulNative.has(prop.name) || prop.declarations?.some(decl => !decl.getSourceFile().fileName.includes('node_modules'))).map(prop => {
+    const api = properties.filter(prop => usefulNative.has(prop.name) || prop.declarations?.some(decl => !decl.getSourceFile().fileName.includes('node_modules'))).map(prop => {
       const decl = prop.valueDeclaration ?? prop.declarations[0];
       const type = checker.typeToString(checker.getTypeOfSymbolAtLocation(prop, decl), decl, ts.TypeFormatFlags.NoTruncation | ts.TypeFormatFlags.UseAliasDefinedOutsideCurrentScope).replace(/ \| undefined\b/g, '');
       const deprecated = prop.getJsDocTags(checker).find(tag=>tag.name==='deprecated');
-      const description = (deprecated ? `Deprecated. ${ts.displayPartsToString(deprecated.text)}` : '') || (decl.getSourceFile().fileName.includes('node_modules') ? '' : ts.displayPartsToString(prop.getDocumentationComment(checker))) || describe(prop.name);
+      const description = (deprecated ? `Deprecated. ${ts.displayPartsToString(deprecated.text)}` : '') || (decl.getSourceFile().fileName.includes('node_modules') ? '' : ts.displayPartsToString(prop.getDocumentationComment(checker))) || apiDescriptions[name]?.[prop.name] || describe(prop.name);
       return {name:prop.name, type, required:!(prop.flags & ts.SymbolFlags.Optional), default:defaults[prop.name] ?? null, description};
     }).sort((a,b) => priority(a.name)-priority(b.name));
     const native = properties.some(prop => prop.declarations?.some(decl => decl.getSourceFile().fileName.includes('@types/react')));
-    if (native) record.api.push({name:'…props',type:'Native element attributes',required:false,default:null,description:'Стандартные HTML/ARIA-атрибуты и обработчики базового элемента. Исключения заданы публичным TypeScript-типом.'});
+    if (native) api.push({name:'…props',type:'Native element attributes',required:false,default:null,description:'Стандартные HTML/ARIA-атрибуты и обработчики базового элемента. Исключения заданы публичным TypeScript-типом.'});
+    return api;
+  }
+  for (const [name, record] of Object.entries(manifest.components)) {
+    record.api = buildApi(name);
     record.usage = guidance[name] ?? groupGuidance[record.primaryGroup] ?? 'Размещайте элемент в явном контексте поверхности. Содержимое и действия передавайте через публичные props.';
     record.agentNotes = record.behavior ?? `Use the exported ${name} component. ${record.purpose}. Read its typed API and example; bind referenced data and callbacks in the consumer. Preserve accessible labels, keyboard behavior and reduced motion.`;
     const preferred = related[name] ?? [];
     record.related = Object.keys(manifest.components).filter(other => other !== name && manifest.components[other].status !== 'archived').sort((a,b) => score(b)-score(a) || a.localeCompare(b)).slice(0,4);
     function score(other) { return (preferred.includes(other) ? 100-preferred.indexOf(other) : 0) + record.groups.filter(group => manifest.components[other].groups.includes(group)).length*3 + Number(manifest.components[other].primaryGroup === record.primaryGroup); }
   }
+  const group = manifest.components.ResizablePanelGroup;
+  if (group) group.composition = [
+    { name:'ResizablePanel', purpose:'A percentage-sized pane; nest a group for a second axis', behavior:'defaultSize/minSize/maxSize are numeric percentages. label names the pane group; role can opt into a region landmark. surface inherits by default. A zero-sized pane is inert. HTML/ARIA attributes remain on the pane.', source:'src/components/resizable-group.tsx', api:buildApi('ResizablePanel') },
+    { name:'ResizableHandle', purpose:'Accessible separator between two adjacent panels', behavior:'withHandle shows the grip. disabled skips Tab without disabling pane content. Arrows/Shift/Home/End resize the adjacent pair; Escape cancels drag. label names the separator. HTML/ARIA and pointer/key handlers remain on the separator.', source:'src/components/resizable-group.tsx', api:buildApi('ResizableHandle') },
+  ];
+  for (const [name, record] of Object.entries(manifest.utilities ?? {})) {
+    record.api = buildApi(name);
+    record.hooks = (record.exports ?? []).filter(hook => hook.startsWith('use')).map(hook => {
+      let symbol = exported.get(hook);
+      if (!symbol) throw new Error(`Missing utility export: ${hook}`);
+      if (symbol.flags & ts.SymbolFlags.Alias) symbol = checker.getAliasedSymbol(symbol);
+      const type = checker.getTypeOfSymbolAtLocation(symbol, symbol.valueDeclaration ?? symbol.declarations[0]);
+      return { name:hook, type:checker.typeToString(type, undefined, ts.TypeFormatFlags.NoTruncation), source:'src/components/locale.tsx' };
+    });
+  }
 }
+const apiDescriptions = {
+  ScrollArea: { fade:'Ось или край маски; false/none отключает её. Явное значение имеет приоритет над shadows.', fadeSize:'Глубина маски: число в px или CSS length; по умолчанию min(12%, space-10).', fadeReveal:'Расстояние прокрутки в px для плавного раскрытия маски, по умолчанию 2 × space-12; 0 включает её сразу.' },
+  ResizablePanelGroup: { layout:'Управляемые проценты в порядке панелей. Требуется onLayoutChange для изменения.', defaultLayout:'Начальные проценты; без них используются defaultSize панелей.', onLayoutChange:'Новые проценты при изменении размера; перетаскивание обновляет их раз за кадр.', onLayoutCommit:'Итоговые проценты после завершённого изменения.', step:'Шаг стрелок в процентах, Shift увеличивает его в 10 раз.' },
+  ResizablePanel: { defaultSize:'Начальный процент; незаданные размеры делят остаток.', minSize:'Минимальный процент, по умолчанию 0; невозможные суммарные ограничения адаптируются к 100%.', maxSize:'Максимальный процент, по умолчанию 100.', surface:'Контекст поверхности, inherit по умолчанию. Структурную границу задаёт композиция.' },
+  ResizableHandle: { withHandle:'Показывает нейтральный grip; клавиатурное изменение доступно и без него.', disabled:'Отключает разделитель и исключает его из Tab; содержимое панелей остаётся доступным.' },
+  LocaleProvider: { locale:'Язык встроенного интерфейса: ru или en. Обязателен у provider; без provider контекст ru.', children:'Композиция, наследующая язык; пользовательские подписи и содержимое не переводятся.' },
+  RichTextEditor: { showToolbar:'Явно включает верхнюю панель форматирования; по умолчанию false. Редактирование и выделение остаются доступны без неё.' },
+};
 const priority = name => ({size:0,variant:1,children:2,value:3,defaultValue:4,onValueChange:5}[name] ?? 10);
 const descriptions = {size:'Размер элемента по общей шкале.',variant:'Визуальный вариант компонента.',children:'Содержимое компонента.',label:'Видимая или доступная подпись.',title:'Заголовок.',description:'Дополнительное описание.',className:'Дополнительный класс корневого элемента.',value:'Текущее значение в управляемом режиме.',defaultValue:'Начальное значение в неуправляемом режиме.',onValueChange:'Вызывается при изменении значения.',open:'Открытое состояние в управляемом режиме.',defaultOpen:'Начальное открытое состояние.',onOpenChange:'Запрос на изменение открытого состояния.',disabled:'Блокирует взаимодействие.',color:'Локальный цвет или наследование акцента.',surface:'Поверхность и её контекст вторичных цветов.',icon:'Иконка из набора или импортированный Lucide-компонент.',items:'Элементы со стабильными уникальными идентификаторами.',options:'Варианты выбора.',loading:'Ожидание выполнения действия.',leading:'Слот перед основным содержимым.',trailing:'Слот после основного содержимого.',actions:'Дополнительные действия.',focusRing:'Толщина и отступ фокусной рамки в пикселях.',onClick:'Обработчик активации.',onRemove:'Обработчик удаления элемента.',onDismiss:'Обработчик закрытия.',shape:'Форма элемента.',count:'Количество или короткий счётчик.',error:'Сообщение об ошибке и состояние поля.',hint:'Подсказка к полю.',placeholder:'Подсказка при пустом значении.',labelPlacement:'Положение подписи снаружи или внутри поля.',orientation:'Направление композиции.',selected:'Состояние выбора.',expanded:'Состояние раскрытия.',onExpandedChange:'Запрос на раскрытие или сворачивание.',name:'Имя для формы или идентификатор иконки.',renderCard:'Функция отображения содержимого карточки.',tone:'Смысловой статус сообщения.',contrast:'Усиливает контраст выбранного стиля.',appearance:'Стиль заливки сообщения.',ref:'Ссылка на базовый DOM-элемент.',id:'Идентификатор элемента.'};
 function describe(name) { return descriptions[name] ?? (name.startsWith('on') ? `Обработчик события ${name.slice(2)}.` : name.startsWith('render') ? `Слот отображения ${name.slice(6)}.` : name.startsWith('show') ? `Управляет отображением ${name.slice(4)}.` : name.startsWith('default') ? `Начальное значение ${name.slice(7)}.` : `Настройка ${name}; допустимые значения указаны в типе.`); }
@@ -81,6 +108,8 @@ const guidance = {
  IconButton:'Задавайте короткий label, описывающий действие. Подбирайте размер как у соседних кнопок; Primary остаётся нейтральным при любом акценте.',
  Chip:'Используйте для нейтрального выбора и облака тегов. onRemove добавляет отдельное действие; акцентные объектные метки оформляйте через Tag.',
  Tag:'Используйте для типа объекта, статуса и акцентной метки. interactive=false отключает все действия; нейтральное облако выбранных значений собирайте через Chip.',
+ ScrollArea:'Ограничьте высоту или ширину. fade задаёт ось/край и имеет приоритет над shadows; fadeSize задаёт глубину, fadeReveal — расстояние плавного раскрытия. Floating actions передавайте через floating вне маски.',
+ ResizablePanelGroup:'Собирайте Panel → Handle → Panel. Размеры — числовые проценты доступного места после ручек; задайте label и minSize/maxSize панелей. Для второй оси вложите группу внутрь панели; vertical требует ограниченной высоты. Layout и сохранение принадлежат приложению.',
  ContentLayout:'Изменяйте панели за разделитель или стрелками после Tab. В горизонтальной композиции регулируется ширина, в вертикальной — высота. На узком контейнере панели складываются.',
  ResizableCard:'Потяните за нижний правый угол или сфокусируйте ручку и используйте стрелки. Ограничьте размеры под содержимое; карточка не должна выходить за ширину родителя.',
  CodeBlock:'Передавайте исходник строкой: копирование сохраняет его без изменений. Имя файла необязательно; номера строк удобны для длинных примеров. editor встраивает редактируемый блок.',
@@ -91,7 +120,7 @@ const guidance = {
  ToastStack:'Размещайте в ограниченной области с запасом под выбранное направление. Жизненным циклом и удалением уведомлений управляет приложение.',
  Calendar:'Храните локальные даты в формате YYYY-MM-DD. Выберите одиночный или диапазонный режим; сохраняйте доступ к переключению месяца с клавиатуры.',
  DatePicker:'Задавайте label и сохраняйте выбранную локальную дату. Используйте компонент вместо системного date input; календарь наследует тему и скругления.',
- RichTextEditor:'Храните JSON-блоки и стабильные ID. Для Markdown используйте markdownToRichText/richTextToMarkdown, сохраняя metadata; неподдерживаемый синтаксис остаётся исходником.',
+ RichTextEditor:'Храните JSON-блоки и стабильные ID. showToolbar=true явно включает верхнюю панель; по умолчанию она скрыта. Mouse/Shift selection может охватывать несколько блоков; copy/cut/replace сохраняют границы остальных блоков. Для Markdown сохраняйте metadata и используйте bridge; неподдерживаемый синтаксис остаётся исходником.',
  ReorderableList:'Храните порядок в приложении. Передавайте уникальные ID; ручка поддерживает перетаскивание, клавиатуру и альтернативные действия.',
  SidebarPanel:'Выберите surface под контекст навигации. Размещайте последовательные SidebarItem и Accordion; нижние действия передавайте отдельным footer.',
  SegmentedControl:'Используйте для короткого взаимоисключающего выбора. Передавайте value/onValueChange и общую доступную подпись; длинные наборы лучше оформить Tabs.',
@@ -101,4 +130,4 @@ const guidance = {
  TaskCard:'Завершение задачи, открытие заголовка и меню — отдельные действия. Массовый выбор опционален; completed хранится в приложении.',
  ColorPicker:'Используйте value/onValueChange для цвета. Последние цвета включайте только при необходимости; предустановленная палитра не является обязательной частью выбора.'
 };
-const related = {Button:['IconButton','ButtonGroup','SplitButton','FloatingActionBar'],IconButton:['Button','Tooltip','ButtonGroup'],Input:['Textarea','NumberField','Select','Field'],Chip:['MultiSelect','TagInput','Tag','Button'],CodeBlock:['RichTextEditor','MarkdownPreview','Accordion'],ContentLayout:['ResizableCard','SidebarPanel','ScrollArea','Card'],ResizableCard:['Card','ContentCard','ContentLayout','ScrollArea'],CardStack:['ContentCard','TaskCard','ToastStack'],SidebarPanel:['SidebarItem','TreeView','ContentLayout','FloatingActionBar']};
+const related = {Button:['IconButton','ButtonGroup','SplitButton','FloatingActionBar'],IconButton:['Button','Tooltip','ButtonGroup'],Input:['Textarea','NumberField','Select','Field'],Chip:['MultiSelect','TagInput','Tag','Button'],CodeBlock:['RichTextEditor','MarkdownPreview','Accordion'],ContentLayout:['ResizablePanelGroup','ResizableCard','SidebarPanel','ScrollArea'],ResizablePanelGroup:['ContentLayout','ResizableCard','ScrollArea','Card'],ScrollArea:['ResizablePanelGroup','SidebarPanel','FloatingActionBar','ContentLayout'],ResizableCard:['Card','ContentCard','ContentLayout','ScrollArea'],CardStack:['ContentCard','TaskCard','ToastStack'],SidebarPanel:['SidebarItem','TreeView','ContentLayout','FloatingActionBar']};
