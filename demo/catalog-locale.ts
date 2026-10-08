@@ -1485,9 +1485,9 @@ export const changelogTranslations: Record<string,{ru:string;en:string}> = {
     "ru": "Приглушены вторичные акценты в тёмной теме; сохранены насыщенные действия, светлая тема и контраст на разных поверхностях.",
     "en": "Softened dark secondary accents while keeping solid actions, light themes and surface-specific contrast intact."
   },
-  "Aligned segmented controls, made tabs follow global corners and removed moving hover from line tabs.": {
-    "ru": "Выровнены сегменты; табы следуют глобальным скруглениям, у линейного стиля убран перемещающийся hover.",
-    "en": "Aligned segmented controls, made tabs follow global corners and removed moving hover from line tabs."
+  "Aligned segmented controls with fractional borders, softened default corners and made rounded segments fully pill-shaped. Tabs now default to segments; line tabs keep local hover.": {
+    "ru": "Выровнены сегменты с дробными рамками, смягчены обычные углы; максимальное скругление даёт капсулу. Tabs по умолчанию используют сегменты, линейные табы — локальный hover.",
+    "en": "Aligned segmented controls with fractional borders, softened default corners and made rounded segments fully pill-shaped. Tabs now default to segments; line tabs keep local hover."
   },
   "Simplified preview labels and page headings; component IDs now sit in the upper-right corner.": {
     "ru": "Убраны лишние подписи в превью и над заголовками; ID компонентов перенесены в правый верхний угол.",

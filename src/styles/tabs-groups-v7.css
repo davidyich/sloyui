@@ -4,14 +4,14 @@
 .cap-tab-trailing { flex:none; display:flex; align-items:center; padding-inline:var(--cap-space-2); }
 .cap-tab-bar[data-variant='workspace'] { border-bottom:var(--cap-border-width) solid var(--cap-divider-panel); }
 .cap-tab-list[data-variant='workspace'] { position:relative; isolation:isolate; border:0; gap:var(--cap-space-2); padding:var(--cap-space-2) 0; }
-.cap-tab-list[data-variant='workspace'] > button { position:relative; min-height:var(--cap-number-control-size-md); border:0; border-radius:var(--cap-radius-base); padding:0 var(--cap-space-3); }
+.cap-tab-list[data-variant='workspace'] > button { position:relative; min-height:var(--cap-number-control-size-md); border:0; border-radius:var(--cap-radius-segmented); padding:0 var(--cap-space-3); }
 .cap-tab-list[data-variant='workspace'][data-size='xs'] > button { min-height:var(--cap-number-control-size-xs); }
 .cap-tab-list[data-variant='workspace'][data-size='sm'] > button { min-height:var(--cap-number-control-size-sm); }
 .cap-tab-list[data-variant='workspace'][data-size='xl'] > button { min-height:var(--cap-number-control-size-xl); }
 .cap-tab-list[data-variant='workspace'][data-size='lg'] > button { min-height:var(--cap-number-control-size-lg); }
 .cap-tab-list[data-variant='workspace'] > button[aria-selected='true'] { background:var(--cap-control-active); color:var(--cap-content-primary); }
 .cap-tab-list[data-variant='workspace'] > button[aria-selected='true']::after { content:''; position:absolute; inset-inline-start:50%; inset-block-end:calc(-1 * var(--cap-space-2)); transform:translateX(-50%); width:min(28px,45%); height:3px; border-radius:var(--cap-radius-full) var(--cap-radius-full) 0 0; background:currentColor; }
-.cap-tab-list[data-variant='workspace'] > .cap-moving-highlight { border-radius:var(--cap-radius-base); }
+.cap-tab-list[data-variant='workspace'] > .cap-moving-highlight { border-radius:var(--cap-radius-segmented); }
 .cap-kanban-column[data-variant='framed'] { padding:var(--cap-space-3); box-sizing:border-box; background:var(--cap-surface-current); border-radius:var(--cap-radius-xl); }
 .cap-kanban-column[data-variant='framed'] .cap-kanban-column-header { margin-bottom:var(--cap-space-3); }
 .cap-kanban-column[data-variant='framed'] .cap-kanban-column-title { background:transparent; color:var(--cap-content-primary); padding:0; }

@@ -252,6 +252,19 @@ describe('composite shared surfaces', () => {
     fireEvent.pointerOver(screen.getByText('Notes'));
     expect(layer).not.toHaveAttribute('data-accented');
   });
+  it('aligns selected segments with fractional borders despite rounded client offsets', async () => {
+    vi.spyOn(HTMLElement.prototype, 'clientLeft', 'get').mockReturnValue(1);
+    vi.spyOn(HTMLElement.prototype, 'clientTop', 'get').mockReturnValue(1);
+    vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(function(this: HTMLElement) {
+      if (this.classList.contains('cap-segment')) return rect(13.5, 13.5, 75, 21);
+      return rect(10, 10, 160, 28);
+    });
+    const {container}=render(<SegmentedControl style={{border:'0.5px solid'}} label="View" value="one" onValueChange={()=>{}} options={[{value:'one',label:'One'},{value:'two',label:'Two'}]}/>);
+    await act(async()=>{});
+    const layer=container.querySelector<HTMLElement>('.cap-moving-highlight')!;
+    expect(layer.style.transform).toBe('translate3d(3px,3px,0)');
+    expect(layer.style.height).toBe('21px');
+  });
   it('keeps the selected segment radius in CSS so global radius changes cannot leave a frozen inline corner', async () => {
     const {container}=render(<SegmentedControl label="View" value="one" onValueChange={()=>{}} options={[{value:'one',label:'One'},{value:'two',label:'Two'}]}/>);
     await act(async()=>{});
@@ -265,6 +278,13 @@ describe('composite shared surfaces', () => {
 });
 
 describe('overflow tabs', () => {
+  it('defaults to segment tabs with selected and hover surfaces', async () => {
+    const {container}=render(<Tabs label="Sections" value="one" onValueChange={()=>{}} items={[{value:'one',label:'One',content:'One panel'},{value:'two',label:'Two',content:'Two panel'}]}/>);
+    await act(async()=>{});
+    expect(screen.getByRole('tablist')).toHaveAttribute('data-variant','segment');
+    expect(container.querySelector('.cap-moving-highlight[data-kind="selection"]')).not.toBeNull();
+    expect(container.querySelector('.cap-moving-highlight[data-kind="hover"]')).not.toBeNull();
+  });
   it('uses immediate target hover for line tabs while retaining shared hover for framed tabs', async () => {
     const items = [{value:'one',label:'One',content:'One panel'},{value:'two',label:'Two',content:'Two panel'}];
     const {container,rerender} = render(<Tabs label="Sections" variant="line" value="one" onValueChange={()=>{}} items={items}/>);

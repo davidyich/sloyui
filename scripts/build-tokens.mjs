@@ -97,8 +97,8 @@ css+=':root, [data-theme="light"] { --cap-reaction-hover-opacity: calc(var(--cap
 css=':root, [data-shadow=\"soft\"] { --cap-shadow-blur-scale:1; }\n[data-shadow=\"compact\"] { --cap-shadow-blur-scale:.55; }\n:root, [data-borders="off"] { --cap-outline-opacity: 0%; }\n[data-borders="on"] { --cap-outline-opacity: 100%; }\n'+css;
 css+=':root, [data-borders="off"] { --cap-code-fill-opacity:100%; }\n[data-borders="on"] { --cap-code-fill-opacity:0%; }\n';
 // Radius is a separate inherited context, independent of color and surface.
-css+=':root { --cap-radius-scale:var(--cap-number-radius-scale-default); --cap-radius-inset:var(--cap-number-radius-inset-default); }\n';
-for(const mode of ['compact','default','rounded'])css+=`[data-radius="${mode}"] { --cap-radius-scale:var(--cap-number-radius-scale-${mode}); --cap-radius-inset:var(--cap-number-radius-inset-${mode}); }\n`;
+css+=':root { --cap-radius-scale:var(--cap-number-radius-scale-default); --cap-radius-inset:var(--cap-number-radius-inset-default); --cap-radius-segmented:var(--cap-radius-xl); }\n';
+for(const mode of ['compact','default','rounded'])css+=`[data-radius="${mode}"] { --cap-radius-scale:var(--cap-number-radius-scale-${mode}); --cap-radius-inset:var(--cap-number-radius-inset-${mode}); --cap-radius-segmented:var(${mode==='rounded'?'--cap-radius-full':'--cap-radius-xl'}); }\n`;
 css+=':root, [data-radius] {\n';
 for(const [name,value] of Object.entries(prim).filter(([name])=>name.startsWith('number/radius/')&&!name.endsWith('/full')))css+=`  ${cssName(name)}:calc(${value}px * var(--cap-radius-scale,1));\n`;
 for(const [old,name]of Object.entries(legacyNames))if(name.startsWith('number/radius/')&&cssName(name)!=='--cap-'+old)css+=`  --cap-${old}:var(${cssName(name)});\n`;

@@ -88,7 +88,7 @@ export function Accordion({ title, children, className, open, onToggle, variant 
 }
 export interface TabItem { value: string; label: string; icon?: IconSource; content: ReactNode; disabled?: boolean; count?: number; color?: Color | 'inherit' }
 export interface TabsProps { size?: Size; variant?: 'line' | 'pills' | 'segment' | 'outline' | 'accent' | 'workspace'; trailing?: ReactNode; items: TabItem[]; value: string; onValueChange: (v: string) => void; label: string; className?: string; scrollLabels?: { previous: string; next: string } }
-export function Tabs({ items, value, onValueChange, label, className, variant = 'line', size = 'md', trailing, scrollLabels: suppliedScrollLabels }: TabsProps) {
+export function Tabs({ items, value, onValueChange, label, className, variant = 'segment', size = 'md', trailing, scrollLabels: suppliedScrollLabels }: TabsProps) {
   const t = useTranslate();
   const scrollLabels = suppliedScrollLabels === undefined ? ({ previous: t("Прокрутить вкладки влево", "Scroll tabs left"), next: t("Прокрутить вкладки вправо", "Scroll tabs right") }) : suppliedScrollLabels;
 

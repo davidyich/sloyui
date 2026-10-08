@@ -13,6 +13,12 @@ const defaultTarget = 'button:not(:disabled),a[href],summary,label:has(input:not
 const controls = 'button,a,summary,label,input,[role="treeitem"],[role="option"],[role="menuitem"]';
 const translate = (box: Geometry) => `translate3d(${box.x}px,${box.y}px,0)`;
 const sameBox = (a: Geometry | null, b: Geometry) => a && a.x === b.x && a.y === b.y && a.width === b.width && a.height === b.height && a.radius === b.radius;
+// clientLeft/clientTop round fractional borders; layers start at the actual padding box.
+const borderOffset = (node: HTMLElement) => {
+  const style = getComputedStyle(node);
+  const left = Number.parseFloat(style.borderLeftWidth), top = Number.parseFloat(style.borderTopWidth);
+  return { left: Number.isFinite(left) ? left : node.clientLeft, top: Number.isFinite(top) ? top : node.clientTop };
+};
 
 /** One local layer; measure actual target changes, never every pointer frame. */
 export function MovingHighlight({ root, selected, hover = false, target: selector = defaultTarget, revision }: MovingHighlightProps) {
@@ -49,9 +55,9 @@ export function MovingHighlight({ root, selected, hover = false, target: selecto
     };
     const visualBox = (): Geometry | null => {
       if (!parent || !layer.current || !geometry) return null;
-      const container = parent.getBoundingClientRect(), bounds = layer.current.getBoundingClientRect();
-      return { ...geometry, x: bounds.left - container.left + parent.scrollLeft - parent.clientLeft,
-        y: bounds.top - container.top + parent.scrollTop - parent.clientTop, width: bounds.width, height: bounds.height };
+      const container = parent.getBoundingClientRect(), bounds = layer.current.getBoundingClientRect(), border = borderOffset(parent);
+      return { ...geometry, x: bounds.left - container.left + parent.scrollLeft - border.left,
+        y: bounds.top - container.top + parent.scrollTop - border.top, width: bounds.width, height: bounds.height };
     };
     const paint = (box: Geometry) => {
       const element = layer.current;
@@ -95,9 +101,9 @@ export function MovingHighlight({ root, selected, hover = false, target: selecto
       if (!node || !parent.contains(node) || node.closest('[inert],[aria-disabled="true"]')) { hide(); return; }
       // Batch reads before writes. The label's span is the painted segment surface.
       const painted = node.matches('label.cap-segment') ? node.querySelector<HTMLElement>('span') ?? node : node;
-      const container = parent.getBoundingClientRect(), bounds = node.getBoundingClientRect();
-      const to: Geometry = { x: bounds.left - container.left + parent.scrollLeft - parent.clientLeft,
-        y: bounds.top - container.top + parent.scrollTop - parent.clientTop, width: bounds.width, height: bounds.height,
+      const container = parent.getBoundingClientRect(), bounds = node.getBoundingClientRect(), border = borderOffset(parent);
+      const to: Geometry = { x: bounds.left - container.left + parent.scrollLeft - border.left,
+        y: bounds.top - container.top + parent.scrollTop - border.top, width: bounds.width, height: bounds.height,
         radius: node.matches('label.cap-segment') ? 'inherit' : getComputedStyle(painted).borderRadius };
       if (visible && sameBox(geometry, to)) { syncAccent(node); return; }
       const reduced = globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
