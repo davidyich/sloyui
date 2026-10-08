@@ -1,6 +1,6 @@
-/* Explicit contrast belongs to the selection control, independent of theme/accent. */
+/* Selection contrast chooses the solid/soft pair of the local accent. */
 :is(.cap-check-label,.cap-switch-label,.cap-slider-field,.cap-radio-group) { --cap-selection-normal:var(--cap-accent-normal); --cap-selection-hover:var(--cap-accent-hover); --cap-selection-pressed:var(--cap-accent-pressed); --cap-selection-text:var(--cap-accent-text); }
-:is(.cap-check-label,.cap-switch-label,.cap-slider-field,.cap-radio-group)[data-contrast=true] { --cap-selection-normal:var(--cap-action-normal); --cap-selection-hover:var(--cap-action-hover); --cap-selection-pressed:var(--cap-action-pressed); --cap-selection-text:var(--cap-action-text); }
+:is(.cap-check-label,.cap-switch-label,.cap-slider-field,.cap-radio-group)[data-contrast=true] { --cap-selection-normal:var(--cap-accent-solid-normal); --cap-selection-hover:var(--cap-accent-solid-hover); --cap-selection-pressed:var(--cap-accent-solid-pressed); --cap-selection-text:var(--cap-accent-solid-text); }
 /* Native input behavior, shared optical sizes, explicit visual states. */
 :where(.cap-check-label,.cap-checkbox,.cap-radio,.cap-slider-field,.cap-slider)[data-size='xs'] { --cap-choice-size:var(--cap-number-selection-size-xs); --cap-thumb-size:var(--cap-number-slider-thumb-xs); --cap-track-size:var(--cap-number-slider-track-xs); --cap-field-height:var(--cap-number-control-size-xs); }
 :where(.cap-check-label,.cap-checkbox,.cap-radio,.cap-slider-field,.cap-slider)[data-size='sm'] { --cap-choice-size:var(--cap-number-selection-size-sm); --cap-thumb-size:var(--cap-number-slider-thumb-sm); --cap-track-size:var(--cap-number-slider-track-sm); --cap-field-height:var(--cap-number-control-size-sm); }
@@ -47,6 +47,7 @@
 .cap-switch-label[data-size='xs'] { --cap-switch-height:16px; --cap-switch-width:28px; --cap-switch-inset:2px; }
 .cap-switch-label[data-size='sm'] { --cap-switch-height:20px; --cap-switch-width:34px; }
 .cap-switch-label[data-size='lg'] { --cap-switch-height:28px; --cap-switch-width:50px; --cap-switch-inset:4px; }
+.cap-switch-label[data-variant='neutral'][data-contrast=true] { --cap-switch-on:var(--cap-action-normal); --cap-switch-hover:var(--cap-action-hover); --cap-switch-pressed:var(--cap-action-pressed); --cap-switch-ink:var(--cap-action-text); }
 .cap-switch-label[data-variant='neutral'][data-contrast=false] { --cap-switch-on:var(--cap-control-normal); --cap-switch-hover:var(--cap-control-hover); --cap-switch-pressed:var(--cap-control-pressed); --cap-switch-ink:var(--cap-control-text); }
 .cap-switch-label .cap-switch { display:block; box-sizing:border-box; width:var(--cap-switch-width); height:var(--cap-switch-height); border:0; padding:var(--cap-switch-inset); background:var(--cap-control-pressed); }
 .cap-switch-label .cap-switch::before { width:calc(var(--cap-switch-height) - 2 * var(--cap-switch-inset)); height:calc(var(--cap-switch-height) - 2 * var(--cap-switch-inset)); background:var(--cap-control-text); box-shadow:none; }

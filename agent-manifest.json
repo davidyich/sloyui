@@ -72,6 +72,51 @@
         "id": "utilities",
         "label": "Основные элементы"
       }
+    ],
+    "navigationGroups": [
+      {
+        "id": "controls",
+        "label": "Управление",
+        "groups": [
+          "actions",
+          "fields",
+          "selection",
+          "utilities"
+        ]
+      },
+      {
+        "id": "navigation",
+        "label": "Навигация",
+        "groups": [
+          "navigation"
+        ]
+      },
+      {
+        "id": "content-data",
+        "label": "Контент и данные",
+        "groups": [
+          "content",
+          "editing",
+          "data",
+          "charts"
+        ]
+      },
+      {
+        "id": "layout-overlays",
+        "label": "Компоновка и окна",
+        "groups": [
+          "layout",
+          "overlays"
+        ]
+      },
+      {
+        "id": "feedback-motion",
+        "label": "Обратная связь и движение",
+        "groups": [
+          "feedback",
+          "motion"
+        ]
+      }
     ]
   },
   "catalogue": {
@@ -322,6 +367,150 @@
           "Separator",
           "IconPicker",
           "TextShimmer"
+        ]
+      }
+    ],
+    "navigationGroups": [
+      {
+        "id": "controls",
+        "label": "Управление",
+        "groups": [
+          "actions",
+          "fields",
+          "selection",
+          "utilities"
+        ],
+        "components": [
+          "Button",
+          "IconButton",
+          "Icon",
+          "TextAction",
+          "Kbd",
+          "Input",
+          "Textarea",
+          "Select",
+          "Field",
+          "Checkbox",
+          "Radio",
+          "Switch",
+          "Slider",
+          "SegmentedControl",
+          "Menu",
+          "CommandPalette",
+          "ButtonGroup",
+          "SplitButton",
+          "ActionBar",
+          "FloatingActionBar",
+          "Calendar",
+          "DatePicker",
+          "IconPicker",
+          "ComboBox",
+          "MultiSelect",
+          "TagInput",
+          "RadioGroup",
+          "ColorPicker",
+          "NumberField",
+          "FilterToolbar",
+          "ValueScrubber",
+          "Chip"
+        ]
+      },
+      {
+        "id": "navigation",
+        "label": "Навигация",
+        "groups": [
+          "navigation"
+        ],
+        "components": [
+          "SidebarItem",
+          "Breadcrumbs",
+          "Tabs",
+          "SidebarPanel",
+          "TreeView",
+          "NavigationMenu",
+          "FileTree"
+        ]
+      },
+      {
+        "id": "content-data",
+        "label": "Контент и данные",
+        "groups": [
+          "content",
+          "editing",
+          "data",
+          "charts"
+        ],
+        "components": [
+          "Counter",
+          "Tag",
+          "IconBox",
+          "Avatar",
+          "ObjectCard",
+          "CollectionRow",
+          "PropertyRow",
+          "EmptyState",
+          "Accordion",
+          "Table",
+          "MarkdownPreview",
+          "ContentCard",
+          "TaskCard",
+          "DailyHeader",
+          "CodeBlock",
+          "ReorderableList",
+          "RichTextEditor",
+          "DataTable",
+          "JsonViewer",
+          "CardStack",
+          "CommentThread",
+          "InlineComments",
+          "PreviewRail",
+          "MarkdownEditorV2",
+          "FileCard"
+        ]
+      },
+      {
+        "id": "layout-overlays",
+        "label": "Компоновка и окна",
+        "groups": [
+          "layout",
+          "overlays"
+        ],
+        "components": [
+          "Separator",
+          "Card",
+          "Dialog",
+          "Drawer",
+          "Popover",
+          "ScrollArea",
+          "KanbanBoard",
+          "KanbanColumn",
+          "ContentLayout",
+          "HoverPanel",
+          "BottomSheet",
+          "ResizableCard",
+          "ResizablePanelGroup"
+        ]
+      },
+      {
+        "id": "feedback-motion",
+        "label": "Обратная связь и движение",
+        "groups": [
+          "feedback",
+          "motion"
+        ],
+        "components": [
+          "Spinner",
+          "Skeleton",
+          "Progress",
+          "Callout",
+          "Tooltip",
+          "Toast",
+          "StatusBar",
+          "Alert",
+          "ToastStack",
+          "AnnouncementBar",
+          "TextShimmer",
+          "AnimatedCounter"
         ]
       }
     ]
@@ -3342,7 +3531,7 @@
       ],
       "primaryGroup": "fields",
       "purpose": "Boolean or mixed choice",
-      "props": "label: ReactNode; size?: Size; contrast?: boolean (default true: neutral Primary pair; false: soft accent pair); indeterminate?: boolean; native input props",
+      "props": "label: ReactNode; size?: Size; contrast?: boolean (default true: solid accent pair; false: soft accent pair); indeterminate?: boolean; native input props",
       "example": "<Checkbox label=\"Select all\" indeterminate />",
       "catalogueRoute": "#Checkbox",
       "catalogueGroup": "Поля",
@@ -3528,7 +3717,7 @@
       ],
       "primaryGroup": "fields",
       "purpose": "Exclusive choice",
-      "props": "label: ReactNode; size?: Size; contrast?: boolean (default true: neutral Primary pair; false: soft accent pair); native input props; shared name per group",
+      "props": "label: ReactNode; size?: Size; contrast?: boolean (default true: solid accent pair; false: soft accent pair); native input props; shared name per group",
       "example": "<Radio label=\"Private\" name=\"access\" value=\"private\" />",
       "catalogueRoute": "#Radio",
       "catalogueGroup": "Поля",
@@ -3707,7 +3896,7 @@
       ],
       "primaryGroup": "fields",
       "purpose": "Boolean setting",
-      "props": "label: ReactNode; size?: Size; color?: Color; variant?: accent|neutral; contrast?: boolean (default true: neutral Primary pair; false: soft accent pair); native checkbox props",
+      "props": "label: ReactNode; size?: Size; color?: Color; variant?: accent|neutral; contrast?: boolean (default true: solid accent pair; false: soft accent pair); native checkbox props",
       "example": "<Switch label=\"Compact view\" defaultChecked />",
       "catalogueRoute": "#Switch",
       "catalogueGroup": "Поля",
@@ -9359,7 +9548,7 @@
       ],
       "primaryGroup": "fields",
       "purpose": "Accessible single choice group with card variant",
-      "props": "options: readonly RadioGroupOption[] {value,label,description?,meta?,disabledReason?,icon?,disabled?}; label: string; value?, defaultValue?, onValueChange?, name?, variant?: plain|cards|surface|ghost, orientation?: horizontal|vertical, layout?: list|grid, contrast?: boolean (default true: neutral Primary; false: soft accent), disabled?, error?, size?, focusRing?",
+      "props": "options: readonly RadioGroupOption[] {value,label,description?,meta?,disabledReason?,icon?,disabled?}; label: string; value?, defaultValue?, onValueChange?, name?, variant?: plain|cards|surface|ghost, orientation?: horizontal|vertical, layout?: list|grid, contrast?: boolean (default true: solid accent; false: soft accent), disabled?, error?, size?, focusRing?",
       "example": "<RadioGroup label=\"View\" options={options} value={view} onValueChange={setView} variant=\"cards\" />",
       "catalogueRoute": "#RadioGroup",
       "catalogueGroup": "Поля",

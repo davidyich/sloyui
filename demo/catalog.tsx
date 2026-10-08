@@ -4,6 +4,7 @@ import {ResizablePanelGroupStory} from './ResizableExample';
 import { arcComponents } from './catalog-arc';
 import type { ComponentType } from 'react';
 import manifest from '../agent-manifest.json';
+import registry from '../source/component-registry.json';
 import * as Controls from './stories-controls';
 import * as Content from './stories-content';
 import * as Composition from './stories-composition';
@@ -94,6 +95,16 @@ export const componentCatalog = {
 export const catalogueComponentNames = (Object.keys(componentCatalog) as ComponentName[]).filter(name=>!('replacement' in manifest.components[name]));
 export const componentNames = catalogueComponentNames.filter(name=>manifest.components[name].status!=='archived');
 export const registryGroups = manifest.registry.groups;
+export const navigationGroups = registry.navigationGroups;
+/** Presentation assigns every page once; detailed memberships remain filter facets. */
+export function groupCatalogueComponents(names:readonly ComponentName[]) {
+  const uniqueNames=[...new Set(names)];
+  return navigationGroups.map(group=>({...group,components:uniqueNames.filter(name=>group.groups.includes(componentMetadata(name).primaryGroup))})).filter(group=>group.components.length>0);
+}
+/** Partial expansion collapses; a fully closed tree expands its visible groups. */
+export function toggleCatalogueGroups(groupIds:readonly string[],expandedIds:readonly string[]) {
+  return groupIds.some(id=>expandedIds.includes(id))?[]:[...groupIds];
+}
 export const componentStatuses = manifest.registry.statuses;
 export type ComponentStatus = keyof typeof componentStatuses;
 export type ComponentStatusFilter = ComponentStatus | 'all';
@@ -115,7 +126,7 @@ export const foundationPages = [
   {id:'agents',label:'Инструкции'},
 ] as const;
 export type FoundationRoute = typeof foundationPages[number]['id'];
-export const overviewPages = [{id:"overview",label:"Обзор компонентов"},{id:"changelog",label:"Changelog"}] as const;
+export const overviewPages = [{id:"overview",label:"Обзор компонентов"},{id:"installation",label:"Установка"},{id:"changelog",label:"Changelog"}] as const;
 export type OverviewRoute = typeof overviewPages[number]["id"];
 export type CatalogRoute = ComponentName | FoundationRoute | OverviewRoute;
 export function isComponentRoute(route: CatalogRoute): route is ComponentName { return Object.hasOwn(componentCatalog,route); }

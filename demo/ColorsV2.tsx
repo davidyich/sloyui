@@ -28,6 +28,7 @@ export default function ColorsV2({ theme, accent, copy }: { theme: 'light' | 'da
     <section className="v2-color-section cap-v2-palettes" data-wrap={effectiveWrap}>
       <div className="section-heading cap-v2-palettes-heading"><div><h2>{c("Полные палитры")}</h2><p className="muted">{c("Все оттенки рядом. Нажмите на образец, чтобы скопировать ссылку на токен.")}</p></div></div>
       <div className="cap-v2-palette-controls">
+        <Tag icon="tag" aria-label={`${c("Выбранный акцент")}: ${accent}`}>{accent}</Tag>
         <SegmentedControl label={c("Вид палитр")} value={paletteView} onValueChange={value => setPaletteView(value as PaletteView)} size="sm" options={[{ value: 'rows', label: c('Строки') }, { value: 'columns', label: c('Столбцы') }]}/>
         {paletteView === 'rows' && <Switch label={c("Переносить по ширине")} size="sm" variant="neutral" checked={wrapPalettes} onChange={event => setWrapPalettes(event.target.checked)}/>}
       </div>

@@ -67,7 +67,7 @@ describe('Primary selection contrast', () => {
     expect(container.querySelector('.cap-radio-group')).toHaveAttribute('data-contrast', 'false');
   });
 
-  it('maps Primary to neutral action roles and soft selection to local accent roles, including group radios', () => {
+  it('maps Primary to local solid accent roles and soft selection to local accent roles, including group radios', () => {
     const css = readFileSync('src/styles/forms-refined.css', 'utf8');
     const rules = [...css.matchAll(/([^{}]+)\{([^{}]*)\}/g)];
     const selection = rules.filter(([, , body]) => body.includes('--cap-selection-normal:'));
@@ -76,7 +76,13 @@ describe('Primary selection contrast', () => {
     expect(primary[1]).toContain('[data-contrast=true]');
     for (const state of ['normal', 'hover', 'pressed', 'text']) {
       expect(soft[2]).toContain(`--cap-selection-${state}:var(--cap-accent-${state})`);
-      expect(primary[2]).toContain(`--cap-selection-${state}:var(--cap-action-${state})`);
+      expect(primary[2]).toContain(`--cap-selection-${state}:var(--cap-accent-solid-${state})`);
+    }
+    const neutralPrimary = rules.find(([, selectors]) => selectors.includes(".cap-switch-label[data-variant='neutral'][data-contrast=true]"))!;
+    const neutralSoft = rules.find(([, selectors]) => selectors.includes(".cap-switch-label[data-variant='neutral'][data-contrast=false]"))!;
+    for (const state of ['normal', 'hover', 'pressed', 'text']) {
+      expect(neutralPrimary[2]).toContain(`var(--cap-action-${state})`);
+      expect(neutralSoft[2]).toContain(`var(--cap-control-${state})`);
     }
     const radioCss = readFileSync('src/styles/selection.css', 'utf8');
     for (const state of ['normal', 'hover', 'pressed', 'text']) expect(radioCss).toContain(`var(--cap-selection-${state})`);
@@ -84,13 +90,13 @@ describe('Primary selection contrast', () => {
   });
 
   it.each(Object.keys(graph.contexts))('%s keeps both choices visibly distinct and their paired marks readable for every accent', context => {
-    const primaryInk = color('Semantic/action/neutral/text', context);
     for (const hue of graph.modes) {
+      const primaryInk = color(`Semantic/action/${hue}/text`, context);
       const softInk = color(`Semantic/element/${hue}/text`, context);
       for (const state of ['normal', 'hover', 'pressed']) {
-        const primary = color(`Semantic/action/neutral/${state}`, context);
+        const primary = color(`Semantic/action/${hue}/${state}`, context);
         const soft = color(`Semantic/element/${hue}/${state}`, context);
-        expect(soft, `${hue}/${state} must differ from neutral Primary`).not.toEqual(primary);
+        expect(soft, `${hue}/${state} must differ from solid Primary`).not.toEqual(primary);
         expect(ratio(primary, primaryInk), `Primary/${state}`).toBeGreaterThanOrEqual(4.5);
         expect(ratio(soft, softInk), `${hue}/${state}`).toBeGreaterThanOrEqual(4.5);
       }

@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import { useLocale } from '../src';
 /** Curated catalogue UI/metadata translations. Never applied to consumer content or DOM. */
 export const catalogueDictionary: Record<string,string> = {
+  "Мягкая акцентная заливка": "Soft accent fill",
   "Храните items в состоянии. В onMove сначала удалите задачу из прежней позиции, затем вставьте в columnId на index. По умолчанию переносится корпус карточки; интерактивные элементы работают отдельно. Для ручки включите dragActivation=\"handle\". Сохраняйте меню и клавиатурные способы переноса.": "Keep items in state. In onMove, remove the task from its previous position, then insert it into columnId at index. Drag starts from the card body by default; interactive elements work independently. Choose dragActivation=\"handle\" for a grip. Preserve menu and keyboard alternatives.",
   "Наведение подсвечивает весь пункт; после ухода мыши фон сбрасывается, клавиатурный фокус отмечен рамкой заголовка. Только шеврон поворачивается при раскрытии.": "Hover highlights the whole item and clears when the pointer leaves. Keyboard focus uses the summary outline. Only the chevron rotates when expanded.",
   "Сохраните колонку и порядок. index — позиция в колонке назначения после удаления переносимой карточки.": "Persist both column and order. index is the insertion position in the destination column after removing the moving card.",
@@ -79,6 +80,8 @@ export const catalogueDictionary: Record<string,string> = {
   "Группа компонентов": "Component group",
   "Все группы": "All groups",
   "Сбросить фильтры": "Reset filters",
+  "Свернуть все": "Collapse all",
+  "Развернуть все": "Expand all",
   "компонентов": "components",
   "Сбросить": "Reset",
   "Каталог компонентов": "Component catalogue",
@@ -91,6 +94,8 @@ export const catalogueDictionary: Record<string,string> = {
   "Открыть каталог": "Open catalogue",
   "Поверхность": "Surface",
   "Акцент": "Accent",
+  "Выбранный акцент": "Selected accent",
+  "Установка": "Installation",
   "Светлая тема": "Light theme",
   "Тёмная тема": "Dark theme",
   "Выключить обводки": "Hide borders",
@@ -415,6 +420,10 @@ export const catalogueDictionary: Record<string,string> = {
   "Соединение": "Connection",
   "Навигация стрелками": "Arrow-key navigation",
   "Действия": "Actions",
+  "Управление": "Controls",
+  "Контент и данные": "Content and data",
+  "Компоновка и окна": "Layout and overlays",
+  "Обратная связь и движение": "Feedback and motion",
   "Положение": "Position",
   "Правое действие": "Trailing action",
   "Счётчик слева": "Leading counter",
@@ -1098,7 +1107,7 @@ export const catalogueDictionary: Record<string,string> = {
   "Кто видит проект": "Who can see the project",
   "По ссылке": "By link",
   "Публичный доступ": "Public access",
-  "Единый Primary": "Shared Primary",
+  "Акцентные контролы": "Accent controls",
   "Переключить": "Toggle",
   "Настройка": "Setting",
   "Vivid — явный выбор": "Vivid is an explicit choice",
@@ -1472,12 +1481,15 @@ export function localizeCatalogueFixture<T>(fixture:T,translate:(text:string)=>s
 
 /** Exact release-history translations; the repository Markdown remains unchanged. */
 export const changelogTranslations: Record<string,{ru:string;en:string}> = {
+"Added RU/EN Installation under Docs with release archive commands, styles, context setup and agent entry points.": {"ru": "Добавлена страница установки RU/EN в Docs: установка из архива, стили, настройка контекста и инструкции для агентов.", "en": "Added RU/EN Installation under Docs with release archive commands, styles, context setup and agent entry points."},
+"Connected foundation geometry, layer tags, instruction emphasis and text selection to the global accent; kept explicit palette comparisons and semantic status colors.": {"ru": "Образцы формы, теги слоёв, выделенные слова в инструкциях и выделение текста связаны с глобальным акцентом. Палитры сравнения и смысловые цвета статусов сохранены.", "en": "Connected foundation geometry, layer tags, instruction emphasis and text selection to the global accent; kept explicit palette comparisons and semantic status colors."},
 "Separated visible 1 px control dividers from quiet 0.5 px panel lines; both adapt to surfaces and remain independent of decorative border settings. CodeBlock and API tables keep single, consistent boundaries.": {"ru": "Самостоятельные разделители остаются заметными, а линии панелей и составных контролов стали мягче. Границы адаптируются к поверхности, сохраняются без декоративных рамок и не удваиваются.", "en": "Separated visible 1 px control dividers from quiet 0.5 px panel lines; both adapt to surfaces and remain independent of decorative border settings. CodeBlock and API tables keep single, consistent boundaries."},
 "Added controlled Kanban card-body drag between columns and ordered insertion, with keyboard/menu alternatives and optional handles.": {"ru": "В канбане добавлен перенос за корпус карточки между колонками и изменение порядка; доступны клавиатура, меню и необязательные ручки.", "en": "Added controlled Kanban card-body drag between columns and ordered insertion, with keyboard/menu alternatives and optional handles."},
 "Restored global radius and border inheritance for ToastStack previews and framed column actions; slider thumbs and RadioGroup highlights follow radius context.": {"ru": "ToastStack и действия колонок снова наследуют глобальные скругления и рамки; бегунок Slider и подложка RadioGroup следуют radius-контексту.", "en": "Restored global radius and border inheritance for ToastStack previews and framed column actions; slider thumbs and RadioGroup highlights follow radius context."},
-"Made Primary fill neutral and distinct from soft accent selection across Checkbox, Radio, Switch, RadioGroup and Slider.": {"ru": "Primary-заливка контролов выбора стала нейтральной и отличается от мягкой акцентной в Checkbox, Radio, Switch, RadioGroup и Slider.", "en": "Made Primary fill neutral and distinct from soft accent selection across Checkbox, Radio, Switch, RadioGroup and Slider."},
+"Made Primary fill a solid local accent distinct from soft accent selection across Checkbox, Radio, Switch, RadioGroup and Slider; neutral Switch remains available.": {"ru": "Primary-заливка контролов выбора использует контрастный локальный акцент и отличается от мягкой заливки; у Switch сохранён нейтральный вариант.", "en": "Made Primary fill a solid local accent distinct from soft accent selection across Checkbox, Radio, Switch, RadioGroup and Slider; neutral Switch remains available."},
 "Unified Ready, Review, Rework and Archive statuses; archived all 12 charts and hid them from default catalogue lists while preserving direct pages and exports.": {"ru": "Добавлены единые статусы Готов, Проверка, Доработка и Архив. Все 12 графиков архивированы и скрыты из общего списка; прямые страницы и экспорты сохранены.", "en": "Unified Ready, Review, Rework and Archive statuses; archived all 12 charts and hid them from default catalogue lists while preserving direct pages and exports."},
 "Fixed Accordion hover coverage and reset; only the chevron rotates while content icons remain stationary.": {"ru": "Исправлены область и сброс наведения Accordion; поворачивается только шеврон, иконка остаётся неподвижной.", "en": "Fixed Accordion hover coverage and reset; only the chevron rotates while content icons remain stationary."},
+"Consolidated navigation and overview into five sections while preserving detailed filter categories; added Collapse all / Expand all without resetting the current page or filters.": {"ru":"Навигация и обзор объединены в пять разделов с подробными категориями в фильтре. Добавлены «Свернуть все» и «Развернуть все» без сброса страницы и фильтров.","en":"Consolidated navigation and overview into five sections while preserving detailed filter categories; added Collapse all / Expand all without resetting the current page or filters."},
 "Restored symmetric popup divider insets and quiet single-line separators in Menu and editor block menus.": {"ru": "Восстановлены симметричные отступы и мягкие одиночные разделители в Menu и контекстных меню редактора.", "en": "Restored symmetric popup divider insets and quiet single-line separators in Menu and editor block menus."},
 "Archived FloatingField in favor of Input with labelPlacement=\"inside\"; existing imports keep working and old catalogue links resolve to Input.": {"ru": "FloatingField архивирован в пользу Input с labelPlacement=\"inside\". Совместимый экспорт сохранён, старые ссылки открывают Input.", "en": "Archived FloatingField in favor of Input with labelPlacement=\"inside\"; existing imports keep working and old catalogue links resolve to Input."},
 "Extended ToastStack with centered container/viewport placement, bounded scrolling, loading states and capsule shape; unread notices retain their lifetime.": {"ru": "ToastStack получил размещение по центру экрана или блока, ограниченную прокрутку, состояние загрузки и форму капсулы; непрочитанные уведомления сохраняют время показа.", "en": "Extended ToastStack with centered container/viewport placement, bounded scrolling, loading states and capsule shape; unread notices retain their lifetime."},

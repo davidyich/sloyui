@@ -2,6 +2,9 @@
 
 ## 0.8.0 · 2026-10-08
 
+- Added RU/EN Installation under Docs with release archive commands, styles, context setup and agent entry points.
+- Connected foundation geometry, layer tags, instruction emphasis and text selection to the global accent; kept explicit palette comparisons and semantic status colors.
+
 - Separated visible 1 px control dividers from quiet 0.5 px panel lines; both adapt to surfaces and remain independent of decorative border settings. CodeBlock and API tables keep single, consistent boundaries.
 - Extended ToastStack with centered container/viewport placement, bounded scrolling, loading states and capsule shape; unread notices retain their lifetime.
 - Added FileCard for images, PDF, presentations, documents, spreadsheets and other formats with separate open/download/remove actions; marked needs-review.
@@ -11,9 +14,11 @@
 
 - Added controlled Kanban card-body drag between columns and ordered insertion, with keyboard/menu alternatives and optional handles.
 - Restored global radius and border inheritance for ToastStack previews and framed column actions; slider thumbs and RadioGroup highlights follow radius context.
-- Made Primary fill neutral and distinct from soft accent selection across Checkbox, Radio, Switch, RadioGroup and Slider.
+- Made Primary fill a solid local accent distinct from soft accent selection across Checkbox, Radio, Switch, RadioGroup and Slider; neutral Switch remains available.
 - Unified Ready, Review, Rework and Archive statuses; archived all 12 charts and hid them from default catalogue lists while preserving direct pages and exports.
 - Fixed Accordion hover coverage and reset; only the chevron rotates while content icons remain stationary.
+
+- Consolidated navigation and overview into five sections while preserving detailed filter categories; added Collapse all / Expand all without resetting the current page or filters.
 
 ## 0.7.0 · 2026-10-08
 

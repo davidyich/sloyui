@@ -60,6 +60,51 @@
       "label": "Основные элементы"
     }
   ],
+  "navigationGroups": [
+    {
+      "id": "controls",
+      "label": "Управление",
+      "groups": [
+        "actions",
+        "fields",
+        "selection",
+        "utilities"
+      ]
+    },
+    {
+      "id": "navigation",
+      "label": "Навигация",
+      "groups": [
+        "navigation"
+      ]
+    },
+    {
+      "id": "content-data",
+      "label": "Контент и данные",
+      "groups": [
+        "content",
+        "editing",
+        "data",
+        "charts"
+      ]
+    },
+    {
+      "id": "layout-overlays",
+      "label": "Компоновка и окна",
+      "groups": [
+        "layout",
+        "overlays"
+      ]
+    },
+    {
+      "id": "feedback-motion",
+      "label": "Обратная связь и движение",
+      "groups": [
+        "feedback",
+        "motion"
+      ]
+    }
+  ],
   "components": {
     "Button": {
       "id": "cp-001",

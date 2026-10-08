@@ -67,23 +67,17 @@ CSS и Figma используют [единую модель](src/tokens/figma-m
 
 ## Компоненты
 
-98 активных страниц и один архивный совместимый экспорт. Постоянные ID, статусы и все членства в группах хранятся в [реестре](source/component-registry.json). Каталог фильтруется по статусу, группе и ID. Новые Chip, BottomSheet, FileTree и PreviewRail помечены «Требует проверки»; готовность остальных описана в [отчёте ревизии](docs/revision-2026-10-07.md).
+89 активных страниц, 12 архивных страниц графиков и два совместимых архивных компонента (FloatingField и MarkdownEditor). Постоянные ID, статусы и подробные категории хранятся в [реестре](source/component-registry.json). В навигации и обзоре пять крупных разделов; подробные категории остаются в фильтре. Архив скрыт до выбора соответствующего статуса. Кнопка «Свернуть все» сохраняет текущую страницу, запрос и фильтры.
 
-Ниже — основные семейства; полный индекс и точные API находятся в `agent-manifest.json`.
-
-
-| Группа | Состав |
+| Раздел | Основные семейства |
 | --- | --- |
-| Действия | Button, IconButton, ButtonGroup, SplitButton, ActionBar, FloatingActionBar, Menu, Tooltip, Popover |
-| Формы и выбор | Input, Textarea, Select, ComboBox, MultiSelect, TagInput, Chip, ColorPicker, NumberField, Slider, RadioGroup, DatePicker |
-| Панели | Dialog, Drawer, BottomSheet, CommandPalette, SidebarPanel, ContentLayout, ScrollArea |
-| Контент | Calendar, DailyHeader, RichTextEditor, MarkdownPreview, ContentCard, TaskCard, KanbanBoard, KanbanColumn |
-| Навигация | SidebarItem, NavigationMenu, TreeView, FileTree, PreviewRail, Breadcrumbs, Tabs, Accordion |
-| Объекты | Card, ObjectCard, CollectionRow, PropertyRow, Tag, Counter, IconBox, Avatar |
-| Файлы | FileCard, FileTree |
-| Обратная связь | StatusBar, Alert, Toast, ToastStack, AnnouncementBar, TextShimmer, Callout, EmptyState, Progress |
-| Данные | DataTable, JsonViewer, графики и таблицы данных |
-| Основа | Icon, Kbd, Separator, Table, CodeBlock |
+| Управление | Кнопки, поля, выбор, календарь, меню, иконки |
+| Навигация | SidebarItem, NavigationMenu, TreeView, FileTree, Breadcrumbs, Tabs, SidebarPanel |
+| Контент и данные | Карточки, файлы, редакторы, CodeBlock, DataTable, Accordion; архивные графики |
+| Компоновка и окна | Панели, resize, Kanban, ScrollArea, Dialog, Drawer, Popover |
+| Обратная связь и движение | Тосты, алерты, статусы, загрузка и анимация текста/чисел |
+
+Точные API, статусы и членства в группах находятся в `agent-manifest.json`. Новые компоненты остаются на проверке до явной приёмки.
 
 Button: `primary/secondary/outline/ghost/danger/accent`, размеры 22/28/32/36/44 px. `ActionBar`, `ButtonGroup` и `SplitButton` принимают общий `size`; вложенная группа может переопределить его. `Popover.size` задаёт размер кнопки, содержимое popup сохраняет свой размер. Основные touch-контролы увеличиваются до 44 px; исключения компактных размеров описаны в `docs/behavior.md`. Радиусы 4.8/8/12/16 px. Inter 13.5 px для компактного UI, 15 px для основного текста; Overpass Mono для кода. Шрифты self-hosted и подключаются отдельно.
 

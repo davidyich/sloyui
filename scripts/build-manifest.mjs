@@ -27,9 +27,9 @@ const rows = [
   ['Textarea','forms','Multi-line field','focusRing?: {width?: number, offset?: number}; size?: Size; variant?: surface|ghost; label?, hint?, error?; labelPlacement?: outside|inside; native textarea props; ref','<Textarea aria-label="Description" rows={4} />'],
   ['Select','forms','Custom single-select popup with native form backing','focusRing?: {width?: number, offset?: number}; value?, defaultValue?: string|number; onValueChange?: (value: string) => void; options?: {value,label,disabled?,group?}[] or option children; size?: Size; variant?: surface|ghost; label?, hint?, error?; labelPlacement?: outside|inside; placeholder?; popupClassName?: string; scrubbable?: boolean (default false); scrubOrientation?: horizontal|vertical; native single-select props; ref: HTMLSelectElement','<Select aria-label="Type" value={type} onValueChange={setType} options={types} scrubbable />'],
   ['Field','forms','Accessible field wiring','label: string; hint?, error?: string; required?: boolean; children: props => ReactNode','<Field label="Name">{p => <Input {...p} />}</Field>'],
-  ['Checkbox','forms','Boolean or mixed choice','label: ReactNode; size?: Size; contrast?: boolean (default true: neutral Primary pair; false: soft accent pair); indeterminate?: boolean; native input props','<Checkbox label="Select all" indeterminate />'],
-  ['Radio','forms','Exclusive choice','label: ReactNode; size?: Size; contrast?: boolean (default true: neutral Primary pair; false: soft accent pair); native input props; shared name per group','<Radio label="Private" name="access" value="private" />'],
-  ['Switch','forms','Boolean setting','label: ReactNode; size?: Size; color?: Color; variant?: accent|neutral; contrast?: boolean (default true: neutral Primary pair; false: soft accent pair); native checkbox props','<Switch label="Compact view" defaultChecked />'],
+  ['Checkbox','forms','Boolean or mixed choice','label: ReactNode; size?: Size; contrast?: boolean (default true: solid accent pair; false: soft accent pair); indeterminate?: boolean; native input props','<Checkbox label="Select all" indeterminate />'],
+  ['Radio','forms','Exclusive choice','label: ReactNode; size?: Size; contrast?: boolean (default true: solid accent pair; false: soft accent pair); native input props; shared name per group','<Radio label="Private" name="access" value="private" />'],
+  ['Switch','forms','Boolean setting','label: ReactNode; size?: Size; color?: Color; variant?: accent|neutral; contrast?: boolean (default true: solid accent pair; false: soft accent pair); native checkbox props','<Switch label="Compact view" defaultChecked />'],
   ['Slider','forms','Accessible numeric range with a custom track and native input','label: string; size?: Size; showValue?: boolean; contrast?: boolean; onValueChange?, onValueCommit?: (value:number)=>void; formatValue?: (value:number)=>string; focusRing?; native range props','<Slider label="Density" min={0} max={100} />'],
   ['SegmentedControl','forms','Exclusive view/filter choice','label: string; value: string; onValueChange: (value) => void; options: {value,label,disabled?,icon?}[]; size?: Size; variant?: surface|outline|accent|ghost; fullWidth?: boolean; div props','<SegmentedControl label="View" value={view} onValueChange={setView} variant="ghost" options={options} />'],
   ['Card','layout','Non-interactive container','variant?: default|subtle|elevated; div props','<Card variant="subtle">Content</Card>'],
@@ -139,6 +139,12 @@ const catalogueGroups = registry.groups.map(group => ({
   id: group.id, label: group.label, name: group.label,
   components: canonicalNames.filter(name => registry.components[name]?.groups.includes(group.id)),
 }));
+const navigationGroups = registry.navigationGroups.map(group => ({
+  ...group,
+  components: canonicalNames.filter(name => group.groups.includes(registry.components[name].primaryGroup)),
+}));
+const navigationFacets = registry.navigationGroups.flatMap(group => group.groups);
+if (new Set(navigationFacets).size !== registry.groups.length || navigationFacets.length !== registry.groups.length || registry.groups.some(group => !navigationFacets.includes(group.id))) throw new Error('Navigation groups must partition the detailed catalogue facets.');
 const catalogueNames = new Set(catalogueGroups.flatMap(group => group.components));
 if (catalogueNames.size !== canonicalNames.length || canonicalNames.some(name => !catalogueNames.has(name))) throw new Error('Catalogue groups must cover every canonical component through registry memberships.');
 for (const name of exports) {
@@ -150,8 +156,8 @@ if(new Set(Object.values(registry.components).map(record=>record.id)).size!==Obj
 const result = {
   package: pkg.name, version: pkg.version, framework: 'React >=19', module: 'ESM', componentCount: canonicalNames.length, exportedComponentCount: exports.length,
   compatibilityAliases: { Badge: 'Tag', TypeLabel: 'Tag with icon=page', FloatingField: 'Input with labelPlacement=inside (archived compatibility export)', MarkdownEditor: 'RichTextEditor (archived compatibility export)' },
-  registry: { source: 'source/component-registry.json', statuses: registry.statuses, groups: registry.groups },
-  catalogue: { devUrl: 'http://127.0.0.1:4317/', routePattern: '#ComponentName', caseSensitive: true, archivedRoutes: Object.fromEntries(exports.filter(name=>registry.components[name].status==='archived').map(name=>[`#${name}`,`#${registry.components[name].replacement ?? name}`])), overviewRoutes: ['#overview','#changelog'], foundationRoutes: ['#colors','#typography','#geometry','#layers','#behavior','#agents'], groups: catalogueGroups },
+  registry: { source: 'source/component-registry.json', statuses: registry.statuses, groups: registry.groups, navigationGroups: registry.navigationGroups },
+  catalogue: { devUrl: 'http://127.0.0.1:4317/', routePattern: '#ComponentName', caseSensitive: true, archivedRoutes: Object.fromEntries(exports.filter(name=>registry.components[name].status==='archived').map(name=>[`#${name}`,`#${registry.components[name].replacement ?? name}`])), overviewRoutes: ['#overview','#changelog'], foundationRoutes: ['#colors','#typography','#geometry','#layers','#behavior','#agents'], groups: catalogueGroups, navigationGroups },
   imports: { components: '@personal/capacities-ui', css: '@personal/capacities-ui/styles.css', fontsOptional: '@personal/capacities-ui/fonts.css', legacySourceTokensOptional: '@personal/capacities-ui/source-tokens.css' },
   theme: { target: 'html[data-theme]', values: ['light','dark'], default: 'light', localOverrides: 'data-theme on a subtree; custom portals copy the nearest theme/accent/borders and establish floating surface context', sourceNames: { light: 'Light Dimmed inspired', dark: 'Dark inspired' } },
   surface: { target: '[data-surface]', values: ['base','canvas','raised','floating'], default: 'base', inherited: true, automaticBackgroundSampling: false, customContainer: 'Set background:var(--cap-surface-current) to match the declared surface', ruleSource: 'source/surface-rules.json', export: 'tokens/surfaces.json', affects: ['neutral control fills and hover/active states','soft accent fills','secondary and muted text'] },

@@ -23,9 +23,9 @@ describe('Interaction contracts', () => {
   });
   it('shares the Primary default without losing checkbox, radio, or switch keyboard semantics', async () => {
     const user = userEvent.setup();
-    render(<><Checkbox label="Primary selection"/><Radio label="Private" name="access" defaultChecked/><Radio label="Team" name="access"/><Switch label="Sync"/><Switch label="Locked" disabled/><Checkbox label="Vivid selection" contrast={false}/><Radio label="Vivid radio" name="vivid" contrast={false}/><Switch label="Vivid switch" contrast={false}/></>);
+    render(<><Checkbox label="Primary selection"/><Radio label="Private" name="access" defaultChecked/><Radio label="Team" name="access"/><Switch label="Sync"/><Switch label="Locked" disabled/><Checkbox label="Soft selection" contrast={false}/><Radio label="Soft radio" name="soft" contrast={false}/><Switch label="Soft switch" contrast={false}/></>);
     for (const name of ['Primary selection','Private','Team','Sync']) expect(screen.getByLabelText(name).closest('label')).toHaveAttribute('data-contrast','true');
-    for (const name of ['Vivid selection','Vivid radio','Vivid switch']) expect(screen.getByLabelText(name).closest('label')).toHaveAttribute('data-contrast','false');
+    for (const name of ['Soft selection','Soft radio','Soft switch']) expect(screen.getByLabelText(name).closest('label')).toHaveAttribute('data-contrast','false');
     await user.tab(); await user.keyboard(' ');
     expect(screen.getByRole('checkbox',{name:'Primary selection'})).toBeChecked();
     await user.tab(); await user.keyboard('{ArrowRight}');
@@ -33,7 +33,7 @@ describe('Interaction contracts', () => {
     expect(screen.getByRole('radio',{name:'Private'})).not.toBeChecked();
     await user.tab(); await user.keyboard(' ');
     expect(screen.getByRole('switch',{name:'Sync'})).toBeChecked();
-    await user.tab(); expect(screen.getByRole('checkbox',{name:'Vivid selection'})).toHaveFocus();
+    await user.tab(); expect(screen.getByRole('checkbox',{name:'Soft selection'})).toHaveFocus();
     expect(screen.getByRole('switch',{name:'Locked'})).not.toBeChecked();
   });
   it('moves between enabled tabs with arrows, Home and End and reveals the right panel', async () => {
