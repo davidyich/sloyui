@@ -1,0 +1,26 @@
+{
+  "canvas": {
+    "palette": [
+      "gray/50",
+      "gray/975"
+    ]
+  },
+  "base": {
+    "palette": [
+      "gray/25",
+      "gray/950"
+    ]
+  },
+  "raised": {
+    "palette": [
+      "gray/0",
+      "gray/925"
+    ]
+  },
+  "floating": {
+    "palette": [
+      "gray/0",
+      "gray/900"
+    ]
+  }
+}

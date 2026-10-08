@@ -1,0 +1,1498 @@
+{
+  "surface/current": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.950}"
+  },
+  "disabled/background": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "disabled/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "surface/base": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.950}"
+  },
+  "surface/canvas": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.975}"
+  },
+  "surface/raised": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.925}"
+  },
+  "surface/floating": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/neutral/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.850}"
+  },
+  "element/neutral/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.775}"
+  },
+  "element/neutral/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.700}"
+  },
+  "element/neutral/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/neutral/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.100}"
+  },
+  "element/neutral/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/neutral/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.25}"
+  },
+  "action/neutral/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.75}"
+  },
+  "action/neutral/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.125}"
+  },
+  "action/neutral/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/neutral/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.25}"
+  },
+  "action-vivid/neutral/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.75}"
+  },
+  "action-vivid/neutral/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.125}"
+  },
+  "action-vivid/neutral/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/rose/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.rose.normal}"
+  },
+  "element/rose/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.rose.hover}"
+  },
+  "element/rose/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.rose.pressed}"
+  },
+  "element/rose/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/rose/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.rose.100}"
+  },
+  "element/rose/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/rose/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.rose.200}"
+  },
+  "action/rose/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.rose.150}"
+  },
+  "action/rose/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.rose.100}"
+  },
+  "action/rose/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/rose/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.rose.200}"
+  },
+  "action-vivid/rose/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.rose.150}"
+  },
+  "action-vivid/rose/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.rose.100}"
+  },
+  "action-vivid/rose/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/pink/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.pink.normal}"
+  },
+  "element/pink/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.pink.hover}"
+  },
+  "element/pink/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.pink.pressed}"
+  },
+  "element/pink/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/pink/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.pink.100}"
+  },
+  "element/pink/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/pink/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.pink.200}"
+  },
+  "action/pink/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.pink.150}"
+  },
+  "action/pink/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.pink.100}"
+  },
+  "action/pink/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/pink/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.pink.200}"
+  },
+  "action-vivid/pink/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.pink.150}"
+  },
+  "action-vivid/pink/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.pink.100}"
+  },
+  "action-vivid/pink/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/fuchsia/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.fuchsia.normal}"
+  },
+  "element/fuchsia/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.fuchsia.hover}"
+  },
+  "element/fuchsia/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.fuchsia.pressed}"
+  },
+  "element/fuchsia/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/fuchsia/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.fuchsia.100}"
+  },
+  "element/fuchsia/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/fuchsia/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.fuchsia.200}"
+  },
+  "action/fuchsia/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.fuchsia.150}"
+  },
+  "action/fuchsia/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.fuchsia.100}"
+  },
+  "action/fuchsia/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/fuchsia/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.fuchsia.200}"
+  },
+  "action-vivid/fuchsia/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.fuchsia.150}"
+  },
+  "action-vivid/fuchsia/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.fuchsia.100}"
+  },
+  "action-vivid/fuchsia/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/purple/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.purple.normal}"
+  },
+  "element/purple/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.purple.hover}"
+  },
+  "element/purple/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.purple.pressed}"
+  },
+  "element/purple/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/purple/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.purple.100}"
+  },
+  "element/purple/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/purple/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.purple.200}"
+  },
+  "action/purple/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.purple.150}"
+  },
+  "action/purple/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.purple.100}"
+  },
+  "action/purple/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/purple/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.purple.200}"
+  },
+  "action-vivid/purple/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.purple.150}"
+  },
+  "action-vivid/purple/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.purple.100}"
+  },
+  "action-vivid/purple/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/violet/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.violet.normal}"
+  },
+  "element/violet/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.violet.hover}"
+  },
+  "element/violet/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.violet.pressed}"
+  },
+  "element/violet/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/violet/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.violet.100}"
+  },
+  "element/violet/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/violet/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.violet.200}"
+  },
+  "action/violet/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.violet.150}"
+  },
+  "action/violet/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.violet.100}"
+  },
+  "action/violet/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/violet/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.violet.200}"
+  },
+  "action-vivid/violet/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.violet.150}"
+  },
+  "action-vivid/violet/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.violet.100}"
+  },
+  "action-vivid/violet/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/indigo/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.indigo.normal}"
+  },
+  "element/indigo/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.indigo.hover}"
+  },
+  "element/indigo/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.indigo.pressed}"
+  },
+  "element/indigo/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/indigo/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.indigo.100}"
+  },
+  "element/indigo/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/indigo/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.indigo.200}"
+  },
+  "action/indigo/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.indigo.150}"
+  },
+  "action/indigo/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.indigo.100}"
+  },
+  "action/indigo/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/indigo/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.indigo.200}"
+  },
+  "action-vivid/indigo/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.indigo.150}"
+  },
+  "action-vivid/indigo/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.indigo.100}"
+  },
+  "action-vivid/indigo/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/blue/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.blue.normal}"
+  },
+  "element/blue/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.blue.hover}"
+  },
+  "element/blue/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.blue.pressed}"
+  },
+  "element/blue/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/blue/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.blue.100}"
+  },
+  "element/blue/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/blue/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.blue.200}"
+  },
+  "action/blue/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.blue.150}"
+  },
+  "action/blue/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.blue.100}"
+  },
+  "action/blue/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/blue/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.blue.200}"
+  },
+  "action-vivid/blue/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.blue.150}"
+  },
+  "action-vivid/blue/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.blue.100}"
+  },
+  "action-vivid/blue/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/sky/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.sky.normal}"
+  },
+  "element/sky/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.sky.hover}"
+  },
+  "element/sky/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.sky.pressed}"
+  },
+  "element/sky/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/sky/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.sky.100}"
+  },
+  "element/sky/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/sky/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.sky.200}"
+  },
+  "action/sky/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.sky.150}"
+  },
+  "action/sky/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.sky.100}"
+  },
+  "action/sky/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/sky/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.sky.200}"
+  },
+  "action-vivid/sky/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.sky.150}"
+  },
+  "action-vivid/sky/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.sky.100}"
+  },
+  "action-vivid/sky/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/cyan/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.cyan.normal}"
+  },
+  "element/cyan/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.cyan.hover}"
+  },
+  "element/cyan/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.cyan.pressed}"
+  },
+  "element/cyan/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/cyan/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.cyan.100}"
+  },
+  "element/cyan/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/cyan/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.cyan.200}"
+  },
+  "action/cyan/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.cyan.150}"
+  },
+  "action/cyan/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.cyan.100}"
+  },
+  "action/cyan/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/cyan/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.cyan.200}"
+  },
+  "action-vivid/cyan/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.cyan.150}"
+  },
+  "action-vivid/cyan/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.cyan.100}"
+  },
+  "action-vivid/cyan/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/teal/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.teal.normal}"
+  },
+  "element/teal/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.teal.hover}"
+  },
+  "element/teal/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.teal.pressed}"
+  },
+  "element/teal/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/teal/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.teal.100}"
+  },
+  "element/teal/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/teal/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.teal.200}"
+  },
+  "action/teal/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.teal.150}"
+  },
+  "action/teal/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.teal.100}"
+  },
+  "action/teal/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/teal/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.teal.200}"
+  },
+  "action-vivid/teal/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.teal.150}"
+  },
+  "action-vivid/teal/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.teal.100}"
+  },
+  "action-vivid/teal/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/emerald/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.emerald.normal}"
+  },
+  "element/emerald/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.emerald.hover}"
+  },
+  "element/emerald/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.emerald.pressed}"
+  },
+  "element/emerald/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/emerald/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.emerald.100}"
+  },
+  "element/emerald/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/emerald/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.emerald.200}"
+  },
+  "action/emerald/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.emerald.150}"
+  },
+  "action/emerald/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.emerald.100}"
+  },
+  "action/emerald/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/emerald/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.emerald.200}"
+  },
+  "action-vivid/emerald/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.emerald.150}"
+  },
+  "action-vivid/emerald/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.emerald.100}"
+  },
+  "action-vivid/emerald/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/green/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.green.normal}"
+  },
+  "element/green/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.green.hover}"
+  },
+  "element/green/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.green.pressed}"
+  },
+  "element/green/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/green/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.green.100}"
+  },
+  "element/green/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/green/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.green.200}"
+  },
+  "action/green/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.green.150}"
+  },
+  "action/green/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.green.100}"
+  },
+  "action/green/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/green/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.green.200}"
+  },
+  "action-vivid/green/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.green.150}"
+  },
+  "action-vivid/green/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.green.100}"
+  },
+  "action-vivid/green/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/lime/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.lime.normal}"
+  },
+  "element/lime/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.lime.hover}"
+  },
+  "element/lime/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.lime.pressed}"
+  },
+  "element/lime/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/lime/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.lime.100}"
+  },
+  "element/lime/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/lime/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.lime.200}"
+  },
+  "action/lime/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.lime.150}"
+  },
+  "action/lime/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.lime.100}"
+  },
+  "action/lime/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/lime/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.lime.200}"
+  },
+  "action-vivid/lime/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.lime.150}"
+  },
+  "action-vivid/lime/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.lime.100}"
+  },
+  "action-vivid/lime/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/yellow/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.yellow.normal}"
+  },
+  "element/yellow/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.yellow.hover}"
+  },
+  "element/yellow/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.yellow.pressed}"
+  },
+  "element/yellow/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/yellow/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.yellow.100}"
+  },
+  "element/yellow/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/yellow/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.yellow.200}"
+  },
+  "action/yellow/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.yellow.150}"
+  },
+  "action/yellow/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.yellow.100}"
+  },
+  "action/yellow/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/yellow/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.yellow.200}"
+  },
+  "action-vivid/yellow/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.yellow.150}"
+  },
+  "action-vivid/yellow/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.yellow.100}"
+  },
+  "action-vivid/yellow/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/amber/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.amber.normal}"
+  },
+  "element/amber/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.amber.hover}"
+  },
+  "element/amber/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.amber.pressed}"
+  },
+  "element/amber/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/amber/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.amber.100}"
+  },
+  "element/amber/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/amber/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.amber.200}"
+  },
+  "action/amber/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.amber.150}"
+  },
+  "action/amber/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.amber.100}"
+  },
+  "action/amber/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/amber/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.amber.200}"
+  },
+  "action-vivid/amber/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.amber.150}"
+  },
+  "action-vivid/amber/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.amber.100}"
+  },
+  "action-vivid/amber/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/orange/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.orange.normal}"
+  },
+  "element/orange/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.orange.hover}"
+  },
+  "element/orange/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.orange.pressed}"
+  },
+  "element/orange/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/orange/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.orange.100}"
+  },
+  "element/orange/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/orange/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.orange.200}"
+  },
+  "action/orange/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.orange.150}"
+  },
+  "action/orange/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.orange.100}"
+  },
+  "action/orange/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/orange/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.orange.200}"
+  },
+  "action-vivid/orange/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.orange.150}"
+  },
+  "action-vivid/orange/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.orange.100}"
+  },
+  "action-vivid/orange/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "element/red/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.red.normal}"
+  },
+  "element/red/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.red.hover}"
+  },
+  "element/red/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.red.pressed}"
+  },
+  "element/red/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "element/red/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.red.100}"
+  },
+  "element/red/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "action/red/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.red.200}"
+  },
+  "action/red/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.red.150}"
+  },
+  "action/red/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.red.100}"
+  },
+  "action/red/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "action-vivid/red/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.red.200}"
+  },
+  "action-vivid/red/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.red.150}"
+  },
+  "action-vivid/red/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.red.100}"
+  },
+  "action-vivid/red/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.1000}"
+  },
+  "control/normal": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.850}"
+  },
+  "control/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.775}"
+  },
+  "control/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.700}"
+  },
+  "control/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "control/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.100}"
+  },
+  "control/disabled-text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.350}"
+  },
+  "content/primary": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.25}"
+  },
+  "content/secondary": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.100}"
+  },
+  "content/muted": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.150}"
+  },
+  "content/caption": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.450}"
+  },
+  "border/subtle": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "border/default": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.875}"
+  },
+  "border/strong": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.775}"
+  },
+  "divider/subtle": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.800}"
+  },
+  "divider/default": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.750}"
+  },
+  "divider/strong": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.650}"
+  },
+  "divider/panel": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.875}"
+  },
+  "divider/control": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.650}"
+  },
+  "border/emphasis": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.575}"
+  },
+  "focus/ring": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.575}"
+  },
+  "border/panel": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "border/overlay": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.875}"
+  },
+  "group/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.25}"
+  },
+  "group/background": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "group/hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.850}"
+  },
+  "group/selected": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.850}"
+  },
+  "group/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.800}"
+  },
+  "group/prefix": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "border/control": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.800}"
+  },
+  "border/control-hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.700}"
+  },
+  "border/control-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.600}"
+  },
+  "element/neutral/border": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.775}"
+  },
+  "element/neutral/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.700}"
+  },
+  "element/neutral/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.600}"
+  },
+  "element/rose/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.rose.border}"
+  },
+  "element/rose/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.rose.border-hover}"
+  },
+  "element/rose/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.rose.border-pressed}"
+  },
+  "element/pink/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.pink.border}"
+  },
+  "element/pink/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.pink.border-hover}"
+  },
+  "element/pink/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.pink.border-pressed}"
+  },
+  "element/fuchsia/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.fuchsia.border}"
+  },
+  "element/fuchsia/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.fuchsia.border-hover}"
+  },
+  "element/fuchsia/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.fuchsia.border-pressed}"
+  },
+  "element/purple/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.purple.border}"
+  },
+  "element/purple/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.purple.border-hover}"
+  },
+  "element/purple/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.purple.border-pressed}"
+  },
+  "element/violet/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.violet.border}"
+  },
+  "element/violet/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.violet.border-hover}"
+  },
+  "element/violet/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.violet.border-pressed}"
+  },
+  "element/indigo/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.indigo.border}"
+  },
+  "element/indigo/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.indigo.border-hover}"
+  },
+  "element/indigo/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.indigo.border-pressed}"
+  },
+  "element/blue/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.blue.border}"
+  },
+  "element/blue/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.blue.border-hover}"
+  },
+  "element/blue/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.blue.border-pressed}"
+  },
+  "element/sky/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.sky.border}"
+  },
+  "element/sky/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.sky.border-hover}"
+  },
+  "element/sky/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.sky.border-pressed}"
+  },
+  "element/cyan/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.cyan.border}"
+  },
+  "element/cyan/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.cyan.border-hover}"
+  },
+  "element/cyan/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.cyan.border-pressed}"
+  },
+  "element/teal/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.teal.border}"
+  },
+  "element/teal/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.teal.border-hover}"
+  },
+  "element/teal/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.teal.border-pressed}"
+  },
+  "element/emerald/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.emerald.border}"
+  },
+  "element/emerald/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.emerald.border-hover}"
+  },
+  "element/emerald/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.emerald.border-pressed}"
+  },
+  "element/green/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.green.border}"
+  },
+  "element/green/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.green.border-hover}"
+  },
+  "element/green/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.green.border-pressed}"
+  },
+  "element/lime/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.lime.border}"
+  },
+  "element/lime/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.lime.border-hover}"
+  },
+  "element/lime/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.lime.border-pressed}"
+  },
+  "element/yellow/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.yellow.border}"
+  },
+  "element/yellow/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.yellow.border-hover}"
+  },
+  "element/yellow/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.yellow.border-pressed}"
+  },
+  "element/amber/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.amber.border}"
+  },
+  "element/amber/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.amber.border-hover}"
+  },
+  "element/amber/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.amber.border-pressed}"
+  },
+  "element/orange/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.orange.border}"
+  },
+  "element/orange/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.orange.border-hover}"
+  },
+  "element/orange/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.orange.border-pressed}"
+  },
+  "element/red/border": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.red.border}"
+  },
+  "element/red/border-hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.red.border-hover}"
+  },
+  "element/red/border-pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.red.border-pressed}"
+  },
+  "feedback/danger/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.red.normal}"
+  },
+  "feedback/danger/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.red.hover}"
+  },
+  "feedback/danger/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.red.pressed}"
+  },
+  "feedback/danger/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "feedback/danger/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.red.100}"
+  },
+  "feedback/success/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.green.normal}"
+  },
+  "feedback/success/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.green.hover}"
+  },
+  "feedback/success/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.green.pressed}"
+  },
+  "feedback/success/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "feedback/success/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.green.100}"
+  },
+  "feedback/warning/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.amber.normal}"
+  },
+  "feedback/warning/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.amber.hover}"
+  },
+  "feedback/warning/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.amber.pressed}"
+  },
+  "feedback/warning/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "feedback/warning/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.amber.100}"
+  },
+  "feedback/info/normal": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.blue.normal}"
+  },
+  "feedback/info/hover": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.blue.hover}"
+  },
+  "feedback/info/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.derived.secondary.dark.base.blue.pressed}"
+  },
+  "feedback/info/disabled": {
+    "$type": "color",
+    "$value": "{Primitives.palette.gray.900}"
+  },
+  "feedback/info/text": {
+    "$type": "color",
+    "$value": "{Primitives.palette.blue.100}"
+  },
+  "reaction/normal": {
+    "$type": "color",
+    "$value": "{Primitives.alpha.white.00}"
+  },
+  "reaction/normal-opacity": {
+    "$type": "number",
+    "$value": "{Primitives.number.opacity.00}"
+  },
+  "reaction/hover": {
+    "$type": "color",
+    "$value": "{Primitives.alpha.white.06}"
+  },
+  "reaction/hover-opacity": {
+    "$type": "number",
+    "$value": "{Primitives.number.opacity.06}"
+  },
+  "reaction/pressed": {
+    "$type": "color",
+    "$value": "{Primitives.alpha.white.10}"
+  },
+  "reaction/pressed-opacity": {
+    "$type": "number",
+    "$value": "{Primitives.number.opacity.10}"
+  },
+  "reaction/base": {
+    "$type": "color",
+    "$value": "{Primitives.palette.white}"
+  },
+  "shadow/contact": {
+    "$type": "color",
+    "$value": "{Primitives.effect.shadow.contact.Dark}"
+  },
+  "shadow/ambient": {
+    "$type": "color",
+    "$value": "{Primitives.effect.shadow.ambient.Dark}"
+  },
+  "overlay/dim": {
+    "$type": "color",
+    "$value": "{Primitives.effect.overlay.Dark}"
+  }
+}

@@ -1,0 +1,1097 @@
+{
+  "schemaVersion": 1,
+  "statuses": {
+    "ready": "Готов",
+    "needs-review": "Проверка",
+    "not-ready": "Доработка",
+    "archived": "Архив"
+  },
+  "groups": [
+    {
+      "id": "actions",
+      "label": "Действия"
+    },
+    {
+      "id": "fields",
+      "label": "Поля"
+    },
+    {
+      "id": "selection",
+      "label": "Выбор"
+    },
+    {
+      "id": "navigation",
+      "label": "Навигация"
+    },
+    {
+      "id": "layout",
+      "label": "Контейнеры"
+    },
+    {
+      "id": "content",
+      "label": "Контент и карточки"
+    },
+    {
+      "id": "editing",
+      "label": "Редактирование"
+    },
+    {
+      "id": "data",
+      "label": "Данные"
+    },
+    {
+      "id": "feedback",
+      "label": "Обратная связь"
+    },
+    {
+      "id": "overlays",
+      "label": "Окна и панели"
+    },
+    {
+      "id": "motion",
+      "label": "Движение"
+    },
+    {
+      "id": "charts",
+      "label": "Графики"
+    },
+    {
+      "id": "utilities",
+      "label": "Основные элементы"
+    }
+  ],
+  "navigationGroups": [
+    {
+      "id": "controls",
+      "label": "Управление",
+      "groups": [
+        "actions",
+        "fields",
+        "selection",
+        "utilities"
+      ]
+    },
+    {
+      "id": "navigation",
+      "label": "Навигация",
+      "groups": [
+        "navigation"
+      ]
+    },
+    {
+      "id": "content-data",
+      "label": "Контент и данные",
+      "groups": [
+        "content",
+        "editing",
+        "data",
+        "charts"
+      ]
+    },
+    {
+      "id": "layout-overlays",
+      "label": "Компоновка и окна",
+      "groups": [
+        "layout",
+        "overlays"
+      ]
+    },
+    {
+      "id": "feedback-motion",
+      "label": "Обратная связь и движение",
+      "groups": [
+        "feedback",
+        "motion"
+      ]
+    }
+  ],
+  "components": {
+    "Button": {
+      "id": "cp-001",
+      "status": "needs-review",
+      "groups": [
+        "actions"
+      ],
+      "primaryGroup": "actions"
+    },
+    "IconButton": {
+      "id": "cp-002",
+      "status": "needs-review",
+      "groups": [
+        "actions"
+      ],
+      "primaryGroup": "actions"
+    },
+    "Icon": {
+      "id": "cp-003",
+      "status": "needs-review",
+      "groups": [
+        "utilities"
+      ],
+      "primaryGroup": "utilities"
+    },
+    "Spinner": {
+      "id": "cp-004",
+      "status": "needs-review",
+      "groups": [
+        "feedback"
+      ],
+      "primaryGroup": "feedback"
+    },
+    "Tag": {
+      "id": "cp-005",
+      "status": "needs-review",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content"
+    },
+    "Counter": {
+      "id": "cp-006",
+      "status": "needs-review",
+      "groups": [
+        "content",
+        "utilities"
+      ],
+      "primaryGroup": "content"
+    },
+    "TextAction": {
+      "id": "cp-007",
+      "status": "needs-review",
+      "groups": [
+        "actions"
+      ],
+      "primaryGroup": "actions"
+    },
+    "ContentLayout": {
+      "id": "cp-008",
+      "status": "ready",
+      "groups": [
+        "layout"
+      ],
+      "primaryGroup": "layout",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "IconPicker": {
+      "id": "cp-009",
+      "status": "needs-review",
+      "groups": [
+        "selection",
+        "utilities"
+      ],
+      "primaryGroup": "selection"
+    },
+    "IconBox": {
+      "id": "cp-010",
+      "status": "needs-review",
+      "groups": [
+        "content",
+        "utilities"
+      ],
+      "primaryGroup": "content"
+    },
+    "Avatar": {
+      "id": "cp-011",
+      "status": "needs-review",
+      "groups": [
+        "content",
+        "utilities"
+      ],
+      "primaryGroup": "content"
+    },
+    "Kbd": {
+      "id": "cp-012",
+      "status": "needs-review",
+      "groups": [
+        "utilities"
+      ],
+      "primaryGroup": "utilities"
+    },
+    "Separator": {
+      "id": "cp-013",
+      "status": "needs-review",
+      "groups": [
+        "layout",
+        "utilities"
+      ],
+      "primaryGroup": "layout"
+    },
+    "Skeleton": {
+      "id": "cp-014",
+      "status": "needs-review",
+      "groups": [
+        "feedback"
+      ],
+      "primaryGroup": "feedback"
+    },
+    "Progress": {
+      "id": "cp-015",
+      "status": "needs-review",
+      "groups": [
+        "feedback"
+      ],
+      "primaryGroup": "feedback"
+    },
+    "Input": {
+      "id": "cp-016",
+      "status": "needs-review",
+      "groups": [
+        "fields"
+      ],
+      "primaryGroup": "fields"
+    },
+    "Textarea": {
+      "id": "cp-017",
+      "status": "ready",
+      "groups": [
+        "fields"
+      ],
+      "primaryGroup": "fields",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "Select": {
+      "id": "cp-018",
+      "status": "needs-review",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields"
+    },
+    "Field": {
+      "id": "cp-019",
+      "status": "needs-review",
+      "groups": [
+        "fields"
+      ],
+      "primaryGroup": "fields"
+    },
+    "Checkbox": {
+      "id": "cp-020",
+      "status": "needs-review",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields"
+    },
+    "Radio": {
+      "id": "cp-021",
+      "status": "needs-review",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields"
+    },
+    "Switch": {
+      "id": "cp-022",
+      "status": "needs-review",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields"
+    },
+    "Slider": {
+      "id": "cp-023",
+      "status": "ready",
+      "groups": [
+        "fields"
+      ],
+      "primaryGroup": "fields",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "SegmentedControl": {
+      "id": "cp-024",
+      "status": "needs-review",
+      "groups": [
+        "selection"
+      ],
+      "primaryGroup": "selection"
+    },
+    "Card": {
+      "id": "cp-025",
+      "status": "needs-review",
+      "groups": [
+        "layout"
+      ],
+      "primaryGroup": "layout"
+    },
+    "ObjectCard": {
+      "id": "cp-026",
+      "status": "needs-review",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content"
+    },
+    "CollectionRow": {
+      "id": "cp-027",
+      "status": "needs-review",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content"
+    },
+    "SidebarItem": {
+      "id": "cp-028",
+      "status": "ready",
+      "groups": [
+        "navigation"
+      ],
+      "primaryGroup": "navigation",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "PropertyRow": {
+      "id": "cp-029",
+      "status": "needs-review",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content"
+    },
+    "Breadcrumbs": {
+      "id": "cp-030",
+      "status": "needs-review",
+      "groups": [
+        "navigation"
+      ],
+      "primaryGroup": "navigation"
+    },
+    "Callout": {
+      "id": "cp-031",
+      "status": "needs-review",
+      "groups": [
+        "feedback"
+      ],
+      "primaryGroup": "feedback"
+    },
+    "EmptyState": {
+      "id": "cp-032",
+      "status": "needs-review",
+      "groups": [
+        "content",
+        "feedback"
+      ],
+      "primaryGroup": "content"
+    },
+    "Accordion": {
+      "id": "cp-033",
+      "status": "ready",
+      "groups": [
+        "content",
+        "motion"
+      ],
+      "primaryGroup": "content",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "Tabs": {
+      "id": "cp-034",
+      "status": "ready",
+      "groups": [
+        "navigation",
+        "motion"
+      ],
+      "primaryGroup": "navigation",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "Table": {
+      "id": "cp-035",
+      "status": "needs-review",
+      "groups": [
+        "data"
+      ],
+      "primaryGroup": "data"
+    },
+    "CodeBlock": {
+      "id": "cp-036",
+      "status": "ready",
+      "groups": [
+        "editing"
+      ],
+      "primaryGroup": "editing",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "Dialog": {
+      "id": "cp-037",
+      "status": "needs-review",
+      "groups": [
+        "overlays"
+      ],
+      "primaryGroup": "overlays"
+    },
+    "Drawer": {
+      "id": "cp-038",
+      "status": "needs-review",
+      "groups": [
+        "layout",
+        "overlays"
+      ],
+      "primaryGroup": "layout"
+    },
+    "Tooltip": {
+      "id": "cp-039",
+      "status": "ready",
+      "groups": [
+        "feedback",
+        "overlays"
+      ],
+      "primaryGroup": "feedback",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "Menu": {
+      "id": "cp-040",
+      "status": "needs-review",
+      "groups": [
+        "actions",
+        "overlays"
+      ],
+      "primaryGroup": "actions"
+    },
+    "Popover": {
+      "id": "cp-041",
+      "status": "needs-review",
+      "groups": [
+        "overlays"
+      ],
+      "primaryGroup": "overlays"
+    },
+    "CommandPalette": {
+      "id": "cp-042",
+      "status": "needs-review",
+      "groups": [
+        "actions",
+        "navigation",
+        "overlays"
+      ],
+      "primaryGroup": "actions"
+    },
+    "Toast": {
+      "id": "cp-043",
+      "status": "ready",
+      "groups": [
+        "feedback"
+      ],
+      "primaryGroup": "feedback",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "ScrollArea": {
+      "id": "cp-044",
+      "status": "needs-review",
+      "groups": [
+        "layout"
+      ],
+      "primaryGroup": "layout"
+    },
+    "ButtonGroup": {
+      "id": "cp-045",
+      "status": "needs-review",
+      "groups": [
+        "actions"
+      ],
+      "primaryGroup": "actions"
+    },
+    "SplitButton": {
+      "id": "cp-046",
+      "status": "needs-review",
+      "groups": [
+        "actions"
+      ],
+      "primaryGroup": "actions"
+    },
+    "ActionBar": {
+      "id": "cp-047",
+      "status": "needs-review",
+      "groups": [
+        "actions"
+      ],
+      "primaryGroup": "actions"
+    },
+    "FloatingActionBar": {
+      "id": "cp-048",
+      "status": "ready",
+      "groups": [
+        "actions"
+      ],
+      "primaryGroup": "actions",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "FloatingField": {
+      "id": "cp-049",
+      "status": "archived",
+      "groups": [
+        "fields"
+      ],
+      "primaryGroup": "fields",
+      "replacement": "Input"
+    },
+    "StatusBar": {
+      "id": "cp-050",
+      "status": "ready",
+      "groups": [
+        "feedback"
+      ],
+      "primaryGroup": "feedback",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "Alert": {
+      "id": "cp-051",
+      "status": "ready",
+      "groups": [
+        "feedback"
+      ],
+      "primaryGroup": "feedback",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "SidebarPanel": {
+      "id": "cp-052",
+      "status": "ready",
+      "groups": [
+        "navigation",
+        "layout"
+      ],
+      "primaryGroup": "navigation",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "Calendar": {
+      "id": "cp-053",
+      "status": "ready",
+      "groups": [
+        "selection"
+      ],
+      "primaryGroup": "selection",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "DatePicker": {
+      "id": "cp-054",
+      "status": "needs-review",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields"
+    },
+    "MarkdownPreview": {
+      "id": "cp-055",
+      "status": "needs-review",
+      "groups": [
+        "editing"
+      ],
+      "primaryGroup": "editing"
+    },
+    "MarkdownEditor": {
+      "id": "cp-056",
+      "status": "archived",
+      "groups": [
+        "editing"
+      ],
+      "primaryGroup": "editing",
+      "replacement": "RichTextEditor"
+    },
+    "ReorderableList": {
+      "id": "cp-057",
+      "status": "ready",
+      "groups": [
+        "editing",
+        "motion"
+      ],
+      "primaryGroup": "editing",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "ContentCard": {
+      "id": "cp-058",
+      "status": "ready",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "TaskCard": {
+      "id": "cp-059",
+      "status": "ready",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "KanbanColumn": {
+      "id": "cp-060",
+      "status": "ready",
+      "groups": [
+        "layout"
+      ],
+      "primaryGroup": "layout",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "KanbanBoard": {
+      "id": "cp-061",
+      "status": "needs-review",
+      "groups": [
+        "layout"
+      ],
+      "primaryGroup": "layout"
+    },
+    "DailyHeader": {
+      "id": "cp-062",
+      "status": "needs-review",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content"
+    },
+    "TreeView": {
+      "id": "cp-063",
+      "status": "ready",
+      "groups": [
+        "navigation"
+      ],
+      "primaryGroup": "navigation",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "NavigationMenu": {
+      "id": "cp-064",
+      "status": "ready",
+      "groups": [
+        "navigation"
+      ],
+      "primaryGroup": "navigation",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "HoverPanel": {
+      "id": "cp-065",
+      "status": "needs-review",
+      "groups": [
+        "overlays"
+      ],
+      "primaryGroup": "overlays"
+    },
+    "ComboBox": {
+      "id": "cp-066",
+      "status": "needs-review",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields"
+    },
+    "MultiSelect": {
+      "id": "cp-067",
+      "status": "ready",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "TagInput": {
+      "id": "cp-068",
+      "status": "ready",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "RadioGroup": {
+      "id": "cp-069",
+      "status": "needs-review",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields"
+    },
+    "ColorPicker": {
+      "id": "cp-070",
+      "status": "ready",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "NumberField": {
+      "id": "cp-071",
+      "status": "needs-review",
+      "groups": [
+        "fields"
+      ],
+      "primaryGroup": "fields"
+    },
+    "ValueScrubber": {
+      "id": "cp-072",
+      "status": "needs-review",
+      "groups": [
+        "fields"
+      ],
+      "primaryGroup": "fields"
+    },
+    "RichTextEditor": {
+      "id": "cp-073",
+      "status": "ready",
+      "groups": [
+        "editing"
+      ],
+      "primaryGroup": "editing",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "DataTable": {
+      "id": "cp-074",
+      "status": "ready",
+      "groups": [
+        "data"
+      ],
+      "primaryGroup": "data",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "FilterToolbar": {
+      "id": "cp-075",
+      "status": "needs-review",
+      "groups": [
+        "selection",
+        "data"
+      ],
+      "primaryGroup": "selection"
+    },
+    "JsonViewer": {
+      "id": "cp-076",
+      "status": "needs-review",
+      "groups": [
+        "data"
+      ],
+      "primaryGroup": "data"
+    },
+    "ToastStack": {
+      "id": "cp-077",
+      "status": "ready",
+      "groups": [
+        "feedback",
+        "motion"
+      ],
+      "primaryGroup": "feedback",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "AnnouncementBar": {
+      "id": "cp-078",
+      "status": "ready",
+      "groups": [
+        "feedback"
+      ],
+      "primaryGroup": "feedback",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "CardStack": {
+      "id": "cp-079",
+      "status": "ready",
+      "groups": [
+        "content",
+        "motion"
+      ],
+      "primaryGroup": "content",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "TextShimmer": {
+      "id": "cp-080",
+      "status": "ready",
+      "groups": [
+        "motion",
+        "utilities"
+      ],
+      "primaryGroup": "motion",
+      "review": {
+        "date": "2026-10-07",
+        "record": "docs/revision-2026-10-07.md"
+      }
+    },
+    "CommentThread": {
+      "id": "cp-081",
+      "status": "needs-review",
+      "groups": [
+        "editing"
+      ],
+      "primaryGroup": "editing"
+    },
+    "InlineComments": {
+      "id": "cp-082",
+      "status": "needs-review",
+      "groups": [
+        "editing"
+      ],
+      "primaryGroup": "editing"
+    },
+    "LineChart": {
+      "id": "cp-083",
+      "status": "archived",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "BarChart": {
+      "id": "cp-084",
+      "status": "archived",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "DonutChart": {
+      "id": "cp-085",
+      "status": "archived",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "Streamgraph": {
+      "id": "cp-086",
+      "status": "archived",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "BrushChart": {
+      "id": "cp-087",
+      "status": "archived",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "WaffleChart": {
+      "id": "cp-088",
+      "status": "archived",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "SlopeChart": {
+      "id": "cp-089",
+      "status": "archived",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "Sparkline": {
+      "id": "cp-090",
+      "status": "archived",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "Gauge": {
+      "id": "cp-091",
+      "status": "archived",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "ActivityHeatmap": {
+      "id": "cp-092",
+      "status": "archived",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "AnimatedCounter": {
+      "id": "cp-093",
+      "status": "needs-review",
+      "groups": [
+        "motion",
+        "charts"
+      ],
+      "primaryGroup": "motion"
+    },
+    "Ridgeline": {
+      "id": "cp-094",
+      "status": "archived",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "Treemap": {
+      "id": "cp-095",
+      "status": "archived",
+      "groups": [
+        "charts"
+      ],
+      "primaryGroup": "charts"
+    },
+    "Chip": {
+      "id": "cp-096",
+      "status": "needs-review",
+      "groups": [
+        "selection",
+        "content"
+      ],
+      "primaryGroup": "selection",
+      "introduced": "2026-10-07"
+    },
+    "BottomSheet": {
+      "id": "cp-097",
+      "status": "needs-review",
+      "groups": [
+        "layout",
+        "overlays"
+      ],
+      "primaryGroup": "layout",
+      "introduced": "2026-10-07"
+    },
+    "FileTree": {
+      "id": "cp-098",
+      "status": "needs-review",
+      "groups": [
+        "navigation"
+      ],
+      "primaryGroup": "navigation",
+      "introduced": "2026-10-07"
+    },
+    "PreviewRail": {
+      "id": "cp-099",
+      "status": "needs-review",
+      "groups": [
+        "content",
+        "overlays",
+        "motion"
+      ],
+      "primaryGroup": "content",
+      "introduced": "2026-10-07"
+    },
+    "ResizableCard": {
+      "id": "cp-100",
+      "status": "needs-review",
+      "groups": [
+        "layout",
+        "content"
+      ],
+      "primaryGroup": "layout",
+      "introduced": "2026-10-08"
+    },
+    "ResizablePanelGroup": {
+      "id": "cp-101",
+      "status": "needs-review",
+      "primaryGroup": "layout",
+      "groups": [
+        "layout",
+        "navigation"
+      ],
+      "introduced": "0.6.0"
+    },
+    "MarkdownEditorV2": {
+      "id": "cp-102",
+      "status": "needs-review",
+      "groups": [
+        "content"
+      ],
+      "primaryGroup": "content",
+      "introduced": "0.7.0"
+    },
+    "FileCard": {
+      "id": "cp-103",
+      "status": "needs-review",
+      "groups": [
+        "content",
+        "data"
+      ],
+      "primaryGroup": "content",
+      "introduced": "0.8.0"
+    }
+  }
+}

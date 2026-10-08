@@ -1,0 +1,49 @@
+.cap-code{--cap-code-background:var(--cap-control-bg);--cap-code-foreground:var(--cap-content-primary);--cap-code-ink:var(--cap-content-primary);--cap-code-border:var(--cap-control-border);--cap-code-boundary:var(--cap-divider-panel);position:relative;min-width:0;margin:0;overflow:hidden;border:var(--cap-border-width) solid var(--cap-code-border);border-radius:var(--cap-radius-xl);background:color-mix(in srgb,var(--cap-code-background) var(--cap-code-fill-opacity),transparent);color:var(--cap-code-foreground)}
+.cap-code[data-color]:not([data-color=neutral]):not([data-color=gray]){--cap-code-background:var(--cap-accent-normal);--cap-code-foreground:var(--cap-accent-text);--cap-code-ink:var(--cap-accent-text);--cap-code-border:var(--cap-accent-outline)}
+.cap-code>figcaption{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:calc(44px + var(--cap-radius-inset,0px));padding:6px calc(8px + var(--cap-radius-inset,0px));border:0;border-bottom:var(--cap-border-width) solid var(--cap-code-boundary);background:color-mix(in srgb,var(--cap-code-background) 40%,var(--cap-surface-current));color:var(--cap-code-foreground);font-size:var(--cap-font-size-xs)}
+.cap-code-heading{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
+.cap-code-label{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cap-code-actions{display:inline-flex;align-items:center;gap:4px;flex:none}
+.cap-code figcaption :is(.cap-button[data-variant=ghost],.cap-select-trigger){--cap-state-hover:var(--cap-reaction-hover);--cap-state-pressed:var(--cap-reaction-pressed);--cap-state-text:var(--cap-code-foreground);border-radius:min(var(--cap-radius-base),max(2px,calc(var(--cap-radius-xl) - 6px)));color:var(--cap-code-foreground);background:transparent;border-color:transparent}
+.cap-code figcaption :is(.cap-button[data-variant=ghost],.cap-select-trigger):not(:disabled):is(:hover,:focus-visible,[data-state=hover]){background:var(--cap-reaction-hover);color:var(--cap-code-foreground);border-color:transparent}
+.cap-code figcaption :is(.cap-button[data-variant=ghost],.cap-select-trigger):not(:disabled):is(:active,[aria-expanded=true],[data-state=pressed]){background:var(--cap-reaction-pressed);color:var(--cap-code-foreground);border-color:transparent}
+.cap-code .cap-code-language-select{width:max-content;min-width:0;max-width:100%;justify-content:flex-start;gap:5px;padding-inline:6px}
+.cap-code-language-select>svg{color:inherit}
+.cap-code-heading>.cap-select-root{flex:none}
+.cap-code .cap-code-copy>svg{width:14px;height:14px}
+.cap-code-language-popup{border-color:var(--cap-accent-outline)}
+.cap-code-language-popup .cap-select-option:not([aria-disabled=true]):is(:hover,[data-active=true]){background:var(--cap-accent-normal);color:var(--cap-accent-text)}
+.cap-code pre{max-width:100%;margin:0;padding:16px;overflow:auto;border:0;border-radius:0;background:transparent;color:var(--cap-code-foreground);font-family:var(--cap-font-code);font-size:var(--cap-font-size-sm);line-height:1.75;tab-size:2}
+.cap-code pre:focus-visible{outline:var(--cap-focus-width) solid var(--cap-ring-state-active);outline-offset:-3px}
+.cap-code code,.cap-code code span{font-family:var(--cap-font-code)}
+.cap-code[data-wrap] pre{white-space:pre-wrap;overflow-wrap:anywhere}
+.cap-code code::selection,.cap-code code span::selection{background:var(--cap-accent-solid-normal);color:var(--cap-accent-solid-text)}
+.cap-code[data-variant=surface],.cap-code[data-variant=filled-outline]{--cap-code-fill-opacity:100%}
+.cap-code[data-variant=outline]{background:color-mix(in srgb,var(--cap-code-background) var(--cap-code-fill-opacity),transparent)}
+.cap-code[data-variant=filled-outline]{border-color:var(--cap-border-default)}
+.cap-code[data-variant=filled-outline][data-color]:not([data-color=neutral]):not([data-color=gray]){border-color:var(--cap-accent-border)}
+.cap-code[data-variant=outline]{--cap-code-fill-opacity:0%;--cap-code-border:var(--cap-border-strong)}
+.cap-code[data-variant=outline][data-color]:not([data-color=neutral]):not([data-color=gray]){--cap-code-border:var(--cap-accent-border)}
+.cap-code-comment{color:var(--cap-content-muted);font-style:italic}
+.cap-code-keyword,.cap-code-tag,.cap-code-command{color:var(--cap-feedback-info-text);font-weight:600}
+.cap-code-string{color:var(--cap-feedback-success-text)}
+.cap-code-number,.cap-code-boolean{color:var(--cap-feedback-warning-text);font-variant-numeric:tabular-nums}
+.cap-code-property,.cap-code-variable,.cap-code-selector{color:var(--cap-accent-text);font-weight:500}
+.cap-code-punctuation,.cap-code-operator{color:var(--cap-content-muted)}
+.cap-code[data-color]:not([data-color=neutral]):not([data-color=gray]) :is(.cap-code-comment,.cap-code-keyword,.cap-code-tag,.cap-code-command,.cap-code-string,.cap-code-number,.cap-code-boolean,.cap-code-property,.cap-code-variable,.cap-code-selector,.cap-code-punctuation,.cap-code-operator),.cap-code[data-color=inherit] :is(.cap-code-comment,.cap-code-keyword,.cap-code-tag,.cap-code-command,.cap-code-string,.cap-code-number,.cap-code-boolean,.cap-code-property,.cap-code-variable,.cap-code-selector,.cap-code-punctuation,.cap-code-operator){color:var(--cap-code-ink)}
+.cap-markdown .cap-code code{display:block;padding:0;border-radius:0;background:transparent;font-size:inherit}
+.cap-code pre.cap-code-numbered{display:grid;grid-template-columns:max-content minmax(max-content,1fr);column-gap:16px;align-items:start}
+.cap-code[data-wrap] pre.cap-code-numbered{grid-template-columns:max-content minmax(0,1fr)}
+.cap-code-gutter{display:block;align-self:start;color:var(--cap-content-caption);font-variant-numeric:tabular-nums;text-align:right;user-select:none;pointer-events:none}
+.cap-code-line-number,.cap-code-source-line{display:block;min-height:1.75em}
+.cap-code-numbered>code{display:block;min-width:0}
+@media(max-width:540px){.cap-code>figcaption{gap:4px}.cap-code-heading{gap:6px}}
+@media(forced-colors:active){.cap-code{border:1px solid CanvasText}.cap-code>figcaption{border-color:CanvasText}.cap-code pre:focus-visible{outline-color:Highlight}.cap-code code span{color:CanvasText}}
+@media(prefers-reduced-motion:reduce){.cap-code *{transition:none!important}}
+
+/* The outer surface owns the only outline; Markdown prose must not frame its pre again. */
+.cap-markdown .cap-code>pre{margin:0;padding:16px;border:0;border-radius:0;background:transparent}
+.cap-code-editor{min-width:0;padding:16px;color:var(--cap-code-foreground)}
+.cap-code-editor [contenteditable]{min-height:1.75em;white-space:pre;overflow:auto;font-family:var(--cap-font-code);font-size:var(--cap-font-size-sm);line-height:1.75;tab-size:2}
+.cap-code[data-wrap] .cap-code-editor [contenteditable]{white-space:pre-wrap;overflow-wrap:anywhere}
+.cap-code-editor [contenteditable]:focus-visible{outline:var(--cap-focus-width) solid var(--cap-ring-state-active);outline-offset:3px}

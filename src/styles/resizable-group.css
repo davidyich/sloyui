@@ -1,0 +1,16 @@
+.cap-resizable-group { display:flex; width:100%; height:100%; min-width:0; min-height:0; max-width:100%; }
+.cap-resizable-group[data-orientation=vertical] { flex-direction:column; }
+.cap-resizable-panel { flex:var(--cap-resizable-panel-size,1) 1 0px; min-width:0; min-height:0; overflow:auto; background:var(--cap-surface-current); color:var(--cap-content-primary); }
+.cap-resizable-handle { position:relative; flex:0 0 var(--cap-space-3); min-width:0; min-height:0; touch-action:none; cursor:col-resize; outline-offset:-2px; }
+.cap-resizable-handle::before { content:''; position:absolute; inset-block:0; inset-inline-start:calc(50% - .5px); width:1px; background:var(--cap-control-border); }
+.cap-resizable-handle:not([aria-disabled=true]):is(:hover,:focus-visible,[data-resizing])::before { background:var(--cap-content-muted); }
+.cap-resizable-handle:focus-visible { outline:var(--cap-focus-width) solid var(--cap-focus-ring); border-radius:var(--cap-number-radius-sm); }
+.cap-resizable-handle[aria-disabled=true] { cursor:default; }
+.cap-resizable-handle-grip { position:absolute; display:grid; place-items:center; left:50%; top:50%; transform:translate(-50%,-50%); width:var(--cap-space-4); height:var(--cap-space-6); border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-number-radius-sm); background:var(--cap-control-bg); color:var(--cap-content-muted); pointer-events:none; }
+.cap-resizable-handle:not([aria-disabled=true]):is(:hover,:focus-visible,[data-resizing]) > .cap-resizable-handle-grip { background:var(--cap-control-hover); color:var(--cap-content-primary); }
+.cap-resizable-group[data-resizing] { user-select:none; cursor:col-resize; }
+.cap-resizable-group[data-orientation=vertical] > .cap-resizable-handle,.cap-resizable-group[data-orientation=vertical][data-resizing] { cursor:row-resize; }
+.cap-resizable-group[data-orientation=vertical] > .cap-resizable-handle::before { inset-inline:0; inset-block-start:calc(50% - .5px); inset-block-end:auto; width:auto; height:1px; }
+.cap-resizable-group[data-orientation=vertical] > .cap-resizable-handle > .cap-resizable-handle-grip { width:var(--cap-space-6); height:var(--cap-space-4); }
+.cap-resizable-group[data-orientation=vertical] > .cap-resizable-handle > .cap-resizable-handle-grip > svg { transform:rotate(90deg); }
+@media (forced-colors:active) { .cap-resizable-handle::before { background:CanvasText; } .cap-resizable-handle-grip { background:ButtonFace; color:ButtonText; } }

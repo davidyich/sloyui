@@ -1,0 +1,32 @@
+.cap-markdown-v2 { border: 0; background: transparent; padding: 0; }
+.cap-markdown-v2 .cap-rich-editor-document { padding: 0; }
+.cap-markdown-v2 .cap-rich-editor-row { padding-block: 4px; }
+.cap-markdown-v2 [data-block-type="callout"] > .cap-rich-editor-block { background: var(--cap-accent-normal); border-radius: var(--cap-radius-md); padding: 12px; }
+.cap-markdown-v2-toggle > summary { cursor: pointer; color: var(--cap-content-muted); font-size: var(--cap-font-size-sm); margin-block-end: 4px; }
+.cap-markdown-v2-overlay { background: transparent; box-shadow: none; padding: 0; }
+.cap-markdown-v2-context { position: relative; }
+.cap-markdown-v2-toolbar { display: flex; align-items: center; gap: 2px; width: max-content; max-width: calc(100vw - 24px); flex-wrap: wrap; padding: 4px; border: 1px solid var(--cap-panel-border); border-radius: var(--cap-radius-md); background: var(--cap-surface-floating); color: var(--cap-content-primary); box-shadow: var(--cap-shadow-floating); }
+.cap-markdown-v2-type { max-width: 140px; white-space: nowrap; }
+.cap-markdown-v2-separator { width: 1px; align-self: stretch; background: var(--cap-divider-default); margin: 4px 3px; }
+.cap-markdown-v2-swatch { width: 20px; height: 20px; padding: 0; border: 1px solid var(--cap-content-muted); border-radius: 50%; background: var(--cap-accent-swatch); color: var(--cap-content-primary); display: grid; place-items: center; cursor: pointer; margin: 3px; }
+.cap-markdown-v2-swatch[data-highlight] { background: var(--cap-accent-normal); }
+.cap-markdown-v2-swatch:focus-visible, .cap-markdown-v2-grid button:focus-visible { outline: 2px solid var(--cap-focus-ring); outline-offset: 2px; }
+.cap-markdown-v2-menu { position: absolute; z-index: 2; top: calc(100% + 6px); left: 0; padding: 6px; border-radius: var(--cap-radius-md); border: 1px solid var(--cap-panel-border); background: var(--cap-surface-floating); color: var(--cap-content-primary); box-shadow: var(--cap-shadow-floating); max-height: min(420px, 50vh); overflow: auto; width: 220px; max-width: calc(100vw - 24px); }
+.cap-markdown-v2-menu[role="menu"] { display: flex; flex-direction: column; align-items: stretch; }
+.cap-markdown-v2-menu[role="menu"] > button { justify-content: flex-start; }
+.cap-markdown-v2-table-picker { width: 182px; display: grid; gap: 8px; }
+.cap-markdown-v2-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 3px; }
+.cap-markdown-v2-grid button { width: 18px; height: 18px; padding: 0; background: var(--cap-control-bg); border: 1px solid var(--cap-content-muted); border-radius: 2px; cursor: pointer; }
+.cap-markdown-v2-grid button[data-active] { background: var(--cap-accent-normal); border-color: var(--cap-accent-text); }
+.cap-markdown-v2-link { display: grid; gap: 8px; width: 280px; }
+.cap-markdown-v2 [data-cap-color] { color: var(--cap-accent-text); }
+.cap-markdown-v2 [data-cap-highlight] { background: var(--cap-accent-normal); border-radius: 2px; }
+.cap-markdown-v2 a { color: var(--cap-accent-text); text-decoration: underline; }
+.cap-markdown-v2-rule { border: 0; border-top: 1px solid var(--cap-content-muted); margin-block: 12px; }
+.cap-markdown-v2-table-scroll { overflow-x: auto; max-width: 100%; }
+.cap-markdown-v2-table { width: 100%; border-collapse: collapse; }
+.cap-markdown-v2-table :is(td,th) { min-width: 140px; padding: 4px; border: 1px solid var(--cap-border-strong); }
+
+.cap-markdown-v2-menu [role='menuitemradio'] > svg:last-child:not(:first-child) { margin-inline-start:auto; }
+
+.cap-markdown-v2-context .cap-shared-hover:has(> .cap-moving-highlight[data-visible]) .cap-button[data-shared-hover-target]:hover { background:transparent; }

@@ -1,0 +1,15 @@
+body { margin:0; padding:24px; background:var(--cap-surface-base); color:var(--cap-content-primary); font-family:var(--cap-font-family); }
+.hover-fixture { max-width:960px; margin:auto; }
+.hover-fixture h1 { font-size:24px; font-weight:500; }
+.hover-fixture-frame { display:grid; grid-template-columns:300px minmax(0,1fr); gap:24px; padding:16px; margin-block:20px; background:var(--cap-surface-raised); border-radius:var(--cap-radius-lg); }
+.hover-fixture-sidebar { min-width:0; padding:8px; background:var(--cap-surface-current); border-radius:var(--cap-radius-base); }
+.hover-fixture-scroll { max-height:300px; overflow:auto; scrollbar-width:thin; }
+.hover-fixture-tools { display:grid; gap:24px; align-content:start; min-width:0; }
+.hover-fixture-outer { display:grid; gap:16px; }
+.hover-fixture-direct { display:flex; gap:8px; }
+.hover-fixture pre { max-height:50vh; overflow:auto; white-space:pre-wrap; font:12px/1.5 monospace; padding:16px; background:var(--cap-surface-raised); border-radius:var(--cap-radius-base); }
+.hover-fixture h2 { font-size:18px; font-weight:500; margin-block:24px 12px; }
+.hover-fixture-expanded { display:grid; grid-template-columns:minmax(0,1fr) minmax(220px,1fr); gap:24px; }
+#composite-tools .cap-selection-field { width:100px; }
+@media(max-width:700px) { body { padding:12px; } .hover-fixture-frame { grid-template-columns:minmax(0,1fr); } }
+@media(max-width:700px) { .hover-fixture-expanded { grid-template-columns:minmax(0,1fr); } }

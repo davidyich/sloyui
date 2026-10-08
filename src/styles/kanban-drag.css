@@ -1,0 +1,17 @@
+.cap-kanban-task[data-drag-activation="card"] { cursor:grab; touch-action:none; user-select:none; }
+.cap-kanban-task[data-drag-activation="card"]:active { cursor:grabbing; }
+.cap-kanban-task[data-drag-activation="card"] :is(button,a,input,select,textarea,label,[contenteditable="true"]) { touch-action:auto; user-select:auto; }
+.cap-kanban-task:focus-visible { outline:var(--cap-focus-width) solid var(--cap-accent-solid); outline-offset:3px; border-radius:var(--cap-radius-lg); }
+.cap-kanban-task { position:relative; min-width:0; }
+.cap-kanban-task[data-dragging] { opacity:.4; }
+.cap-kanban-board > .cap-kanban-column > .cap-kanban-column-body { position:relative; min-height:100px; }
+.cap-kanban-drag-handle { display:inline-flex; align-items:center; justify-content:center; flex:none; width:24px; height:28px; padding:0; border:0; border-radius:var(--cap-radius-base); background:transparent; color:var(--cap-content-muted); cursor:grab; touch-action:none; user-select:none; }
+.cap-kanban-drag-handle:hover { background:var(--cap-control-hover); color:var(--cap-content-primary); }
+.cap-kanban-drag-handle:active { cursor:grabbing; background:var(--cap-control-active); }
+.cap-kanban-drag-handle:focus-visible { outline:var(--cap-focus-width) solid var(--cap-accent-solid); outline-offset:1px; }
+.cap-kanban-custom-handle { position:absolute; inset-block-start:8px; inset-inline-end:8px; z-index:1; }
+.cap-kanban-custom-handle + * { padding-inline-end:36px; }
+.cap-kanban-drop-placeholder { position:absolute; inset-inline:0; z-index:2; height:3px; border-radius:var(--cap-radius-base); background:var(--cap-accent-solid); pointer-events:none; }
+.cap-kanban-drop-placeholder > span { position:absolute; inset-inline-end:8px; bottom:4px; padding:2px 6px; border-radius:var(--cap-radius-base); background:var(--cap-surface-floating); color:var(--cap-content-primary); box-shadow:var(--cap-shadow-md); font-size:var(--cap-font-size-xs); }
+.cap-kanban-drag-preview { position:fixed; z-index:1000; box-sizing:border-box; padding:12px; border-radius:var(--cap-radius-lg); background:var(--cap-surface-current); color:var(--cap-content-primary); box-shadow:var(--cap-shadow-md); pointer-events:none; font-size:var(--cap-font-size-sm); font-weight:500; }
+.cap-kanban-board[data-dragging] { scroll-snap-type:none; }

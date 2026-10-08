@@ -1,0 +1,10 @@
+{
+  "name": "Sloy UI",
+  "slug": "sloyui",
+  "domain": "sloyui.com",
+  "url": "https://sloyui.com",
+  "repository": "https://github.com/davidyich/sloyui",
+  "packageName": "sloyui",
+  "description": "Лёгкая библиотека React-компонентов: темы, токены и доступные интерфейсы.",
+  "logoPath": "M20 5H9a5 5 0 0 0 0 10h6a2 2 0 0 1 0 4H4v4h11a6 6 0 0 0 0-12H9a1 1 0 0 1 0-2h11V5Z"
+}

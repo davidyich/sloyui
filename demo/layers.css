@@ -1,0 +1,7 @@
+.layer-grid[data-shadow] {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr));
+}
+
+.layer-grid[data-shadow] .layer-pair {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+}

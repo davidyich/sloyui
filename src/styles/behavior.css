@@ -1,0 +1,23 @@
+/* Global interaction contract, scoped to kit surfaces. */
+:where([class^='cap-'], [class*=' cap-']) { -webkit-tap-highlight-color: transparent; }
+:where(button, a, input, textarea, select, [tabindex])[class^='cap-']:focus-visible { outline: var(--cap-focus-width) solid var(--cap-focus-ring); outline-offset: var(--cap-focus-offset); }
+:where(.cap-button, .cap-input, .cap-sidebar-item, .cap-collection-row, .cap-object-card, .cap-tab-list button, .cap-menu-item) { transition: background-color var(--cap-duration-fast) var(--cap-ease-standard), border-color var(--cap-duration-fast) var(--cap-ease-standard), color var(--cap-duration-fast) var(--cap-ease-standard), opacity var(--cap-duration-fast) var(--cap-ease-standard); }
+.cap-button[data-variant='accent'] { color: var(--cap-accent-on-solid); background: var(--cap-accent-solid); border-color: transparent; }
+.cap-button[data-variant='accent']:hover { background: var(--cap-accent-solid-hover); }
+.cap-button:disabled { cursor: not-allowed; }
+.cap-badge[data-variant='solid'] { color: var(--cap-accent-on-solid); background: var(--cap-accent-solid); }
+.cap-tab-list { overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: none; flex-wrap: nowrap; }
+.cap-tab-list > button { flex-shrink: 0; }
+.cap-tab-list[data-variant='pills'] { border: 0; gap: .25rem; padding: .25rem; }
+.cap-tab-list[data-variant='pills'] > button { border: 0; border-radius: var(--cap-radius-xl); padding: .625rem .875rem; }
+.cap-tab-list[data-variant='pills'] > button[aria-selected='true'] { background: var(--cap-control-active); color: var(--cap-content-primary); box-shadow: none; }
+@media (pointer: coarse) {
+  :where(.cap-button, .cap-input, .cap-menu-item, .cap-sidebar-item, .cap-tab-list > button, .cap-segment) { min-height: var(--cap-touch-target); }
+  .cap-icon-button { min-width: var(--cap-touch-target); }
+  :where(.cap-check-label, .cap-switch-label) { min-height: var(--cap-touch-target); }
+}
+@media (prefers-reduced-motion: reduce) {
+  :where([class^='cap-'], [class*=' cap-']), :where([class^='cap-'], [class*=' cap-'])::before, :where([class^='cap-'], [class*=' cap-'])::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
+.cap-tab-list::-webkit-scrollbar { display: none; }

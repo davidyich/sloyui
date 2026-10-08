@@ -1,0 +1,12 @@
+body { margin:0; padding:24px; background:var(--cap-surface-base); color:var(--cap-content-primary); font-family:var(--cap-font-family-sans),sans-serif; }
+.scroll-resize-audit { display:grid; gap:24px; width:100%; max-width:1000px; margin:auto; min-width:0; }
+.scroll-resize-audit h1,.scroll-resize-audit h2,.scroll-resize-audit h3,.scroll-resize-audit p { margin:0; }
+.scroll-resize-audit h1 { font-size:22px; font-weight:600; }.scroll-resize-audit h2 { font-size:17px; font-weight:500; }
+.scroll-resize-section { display:grid; gap:12px; min-width:0; }.scroll-resize-controls { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+.scroll-resize-controls .cap-select { width:180px; }
+.scroll-resize-frame { border:var(--cap-border-width) solid var(--cap-panel-border); border-radius:var(--cap-radius-xl); background:var(--cap-surface-current); min-width:0; }
+.scroll-resize-fade-list { display:grid; gap:12px; padding:16px; }.scroll-resize-fade-list > div { padding:12px; border-radius:var(--cap-radius-base); background:var(--cap-control-bg); }
+.scroll-resize-inline { display:flex; gap:12px; padding:16px; }.scroll-resize-inline > div { flex:0 0 180px; padding:16px; border-radius:var(--cap-radius-base); background:var(--cap-control-bg); }
+.scroll-resize-panel-copy { padding:20px; display:grid; align-content:start; gap:12px; min-width:0; overflow-wrap:anywhere; }
+.scroll-resize-audit pre { white-space:pre-wrap; overflow-wrap:anywhere; }
+@media(max-width:600px) { body { padding:12px; }.scroll-resize-panel-copy { padding:12px; } }

@@ -1,0 +1,14 @@
+.cap-value-scrubber { display:grid; min-width:0; gap:var(--cap-space-2); color:var(--cap-content-primary); font-size:var(--cap-font-size-sm); }
+.cap-value-scrubber-label { color:var(--cap-content-secondary); font-weight:500; }
+.cap-value-scrubber-control { display:flex; min-height:var(--cap-number-control-size-md); min-width:56px; align-items:center; justify-content:center; border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-radius-base); padding:4px calc(10px + var(--cap-radius-inset)); background:var(--cap-control-bg); color:var(--cap-content-primary); font-variant-numeric:tabular-nums; user-select:none; cursor:default; transition:background-color 140ms cubic-bezier(.2,.7,.2,1),border-color 140ms cubic-bezier(.2,.7,.2,1),box-shadow 140ms cubic-bezier(.2,.7,.2,1); }
+.cap-value-scrubber-control[data-scrub-alt=true]:not([aria-disabled=true]) { cursor:ew-resize; }
+.cap-value-scrubber[data-orientation=vertical] .cap-value-scrubber-control[data-scrub-alt=true]:not([aria-disabled=true]) { cursor:ns-resize; }
+.cap-value-scrubber-control:hover:not([aria-disabled=true]),.cap-value-scrubber-control:focus-visible { background:var(--cap-control-hover); }
+.cap-value-scrubber-control:focus-visible { outline:2px solid var(--cap-focus-ring); outline-offset:2px; }
+.cap-value-scrubber-control[aria-disabled=true] { background:var(--cap-disabled-background); color:var(--cap-disabled-text); cursor:not-allowed; }
+.cap-value-scrubber-control[aria-disabled=true]:focus-visible { outline:none; }
+.cap-number-field input[data-scrubbable=true][data-scrub-alt=true]:not(:disabled):not([readonly]) { cursor:ew-resize; }
+.cap-number-field input[data-scrubbable=true][data-scrub-alt=true][data-scrub-orientation=vertical]:not(:disabled):not([readonly]) { cursor:ns-resize; }
+.cap-select-trigger[data-scrubbable=true][data-scrub-alt=true]:not(:disabled) { cursor:ew-resize; }
+.cap-select-trigger[data-scrubbable=true][data-scrub-alt=true][data-scrub-orientation=vertical]:not(:disabled) { cursor:ns-resize; }
+@media (prefers-reduced-motion:reduce) { .cap-value-scrubber-control { transition:none; } }

@@ -1,0 +1,78 @@
+/* State colors all resolve through the local appearance, surface and accent. */
+.cap-button { --cap-state-normal: var(--cap-control-normal); --cap-state-hover: var(--cap-control-hover); --cap-state-pressed: var(--cap-control-pressed); --cap-state-text: var(--cap-control-text); background: var(--cap-state-normal); color: var(--cap-state-text); }
+.cap-button[data-variant='primary'] { --cap-state-normal: var(--cap-action-normal); --cap-state-hover: var(--cap-action-hover); --cap-state-pressed: var(--cap-action-pressed); --cap-state-text: var(--cap-action-text); border-color: var(--cap-state-normal); }
+.cap-button[data-variant='accent'] { --cap-state-normal: var(--cap-accent-solid-normal); --cap-state-hover: var(--cap-accent-solid-hover); --cap-state-pressed: var(--cap-accent-solid-pressed); --cap-state-text: var(--cap-accent-solid-text); border-color: var(--cap-state-normal); }
+.cap-button[data-variant='accent-secondary'] { --cap-state-normal: var(--cap-accent-normal); --cap-state-hover: var(--cap-accent-hover); --cap-state-pressed: var(--cap-accent-pressed); --cap-state-text: var(--cap-accent-text); border-color: var(--cap-accent-outline); }
+.cap-button:is([data-variant='primary'],[data-variant='accent']):not(:disabled):is(:hover,[data-state='hover']) { border-color: var(--cap-state-hover); }
+.cap-button:is([data-variant='primary'],[data-variant='accent']):not(:disabled):is(:active,[data-state='pressed'],[aria-pressed='true']) { border-color: var(--cap-state-pressed); }
+.cap-button[data-variant='danger'] { --cap-state-normal: var(--cap-feedback-danger-normal); --cap-state-hover: var(--cap-feedback-danger-hover); --cap-state-pressed: var(--cap-feedback-danger-pressed); --cap-state-text: var(--cap-feedback-danger-text); }
+.cap-button:is([data-variant='ghost'],[data-variant='outline']) { --cap-state-normal: transparent; }
+.cap-button[data-variant] { background: var(--cap-state-normal); color: var(--cap-state-text); }
+.cap-button[data-variant]:not(:disabled):is(:hover,[data-state='hover']) { background: var(--cap-state-hover); color: var(--cap-state-text); }
+.cap-button[data-variant]:not(:disabled):is(:active,[data-state='pressed'],[aria-pressed='true']) { background: var(--cap-state-pressed); color: var(--cap-state-text); }
+.cap-tag-label { display: inline-flex; align-items: center; padding: 0; border: 0; font: inherit; color: inherit; background: transparent; cursor: pointer; }
+.cap-tag[data-interactive] { cursor: pointer; }
+:is(.cap-icon-box)[role='button']:not([aria-disabled='true']):hover { background: var(--cap-accent-hover); }
+:is(.cap-icon-box)[role='button']:not([aria-disabled='true']):active { background: var(--cap-accent-pressed); }
+:is(.cap-input,.cap-floating-input,.cap-sidebar-item,.cap-collection-row,.cap-object-card,.cap-menu-item,.cap-select-option,.cap-command-item,.cap-tab-list button,.cap-calendar-day,.cap-calendar-select-trigger,.cap-alert-toggle,.cap-content-card-open):not(:disabled):not([aria-disabled='true']):is(:hover,[data-state='hover']) { background: var(--cap-control-hover); }
+:is(.cap-input,.cap-floating-input,.cap-sidebar-item,.cap-collection-row,.cap-object-card,.cap-menu-item,.cap-select-option,.cap-command-item,.cap-tab-list button,.cap-calendar-day,.cap-calendar-select-trigger,.cap-alert-toggle,.cap-content-card-open):not(:disabled):not([aria-disabled='true']):is(:active,[data-state='pressed']) { background: var(--cap-control-pressed); }
+.cap-menu-item[data-danger]:not(:disabled):hover { background: var(--cap-feedback-danger-hover); }
+.cap-menu-item[data-danger]:not(:disabled):active { background: var(--cap-feedback-danger-pressed); }
+.cap-segment:has(input:not(:disabled)):active > span { background: var(--cap-control-pressed); }
+.cap-calendar-day[data-selected] { background: var(--cap-action-normal); color: var(--cap-action-text); }
+.cap-calendar-day[data-selected]:not(:disabled):hover { background: var(--cap-action-hover); }
+.cap-calendar-day[data-selected]:not(:disabled):active { background: var(--cap-action-pressed); }
+.cap-switch:not(:disabled):hover { background: var(--cap-control-hover); }
+.cap-switch:not(:disabled):active { background: var(--cap-control-pressed); }
+.cap-switch:checked:not(:disabled):hover { background: var(--cap-action-hover); }
+.cap-switch:checked:not(:disabled):active { background: var(--cap-action-pressed); }
+:is(.cap-checkbox,.cap-radio,.cap-slider):not(:disabled):hover { accent-color: var(--cap-action-hover); }
+:is(.cap-checkbox,.cap-radio,.cap-slider):not(:disabled):active { accent-color: var(--cap-action-pressed); }
+/* Disabled is an explicit opaque pair, independent of variant and pointer state. */
+.cap-button[data-variant]:disabled,
+:is(.cap-input,.cap-floating-input,.cap-sidebar-item,.cap-collection-row,.cap-object-card,.cap-menu-item,.cap-select-option,.cap-command-item,.cap-tab-list button,.cap-calendar-day,.cap-calendar-select-trigger,.cap-switch):is(:disabled,[aria-disabled='true']),
+:is(.cap-tag,.cap-icon-box)[aria-disabled='true'],
+.cap-segment:has(input:disabled) > span,
+.cap-markdown-editor[data-disabled='true'] { background: var(--cap-disabled-background); color: var(--cap-disabled-text); border-color: var(--cap-control-border); opacity: 1; cursor: not-allowed; }
+:is(.cap-object-card,.cap-collection-row):disabled :where(*) { color: inherit; }
+:is(.cap-check-label,.cap-switch-label):has(:disabled), .cap-floating-field:has(:disabled), .cap-floating-field:has(:disabled) label { color: var(--cap-disabled-text); }
+:is(.cap-checkbox,.cap-radio,.cap-slider):disabled { accent-color: var(--cap-disabled-text); cursor: not-allowed; }
+.cap-switch:disabled::before { background: var(--cap-disabled-text); }
+:is(.cap-input,.cap-floating-input):disabled::placeholder { color: var(--cap-disabled-text); }
+.cap-tag :disabled { color: inherit; opacity: 1; background: transparent; cursor: not-allowed; }
+
+.cap-markdown-editor[data-disabled] :is(textarea,.cap-markdown-status,.cap-markdown-preview) { color: var(--cap-disabled-text); }
+.cap-task-checkbox:not(:disabled):hover { background: var(--cap-control-hover); }
+.cap-task-checkbox:not(:disabled):active { background: var(--cap-control-pressed); }
+.cap-task-checkbox:checked:not(:disabled):hover { background: var(--cap-accent-solid-hover); }
+.cap-task-checkbox:checked:not(:disabled):active { background: var(--cap-accent-solid-pressed); }
+.cap-task-checkbox:disabled { background: var(--cap-disabled-background); border-color: var(--cap-disabled-text); cursor: not-allowed; }
+/* The off thumb must remain visible on the soft track in both appearances. */
+.cap-switch::before { background: var(--cap-control-text); box-shadow: none; }
+.cap-switch:checked::before { background: var(--cap-action-text); }
+.cap-switch:disabled::before { background:var(--cap-disabled-text); }
+
+/* Boundary strength follows each element's current fill, independently of its text. */
+.cap-button[data-variant='secondary'], .cap-input, .cap-floating-input { border-color: var(--cap-control-border); }
+:is(.cap-button[data-variant='secondary'], .cap-input, .cap-floating-input):not(:disabled):hover { border-color: var(--cap-control-border-hover); }
+:is(.cap-button[data-variant='secondary'], .cap-input, .cap-floating-input):not(:disabled):active { border-color: var(--cap-control-border-pressed); }
+.cap-button[data-variant='outline'], .cap-button[data-variant='outline']:disabled, .cap-button-group[data-attached] .cap-button[data-variant='outline'] { border-color: var(--cap-border-strong); }
+.cap-tag, .cap-icon-box { border-color: var(--cap-accent-outline); }
+:is(.cap-input,.cap-floating-input):focus { border-color: var(--cap-focus-ring); }
+:is(.cap-input,.cap-floating-input)[aria-invalid='true'], .cap-floating-field[data-invalid] .cap-floating-input { border-color: var(--cap-status-danger-text); }
+.cap-button-group[data-attached] .cap-button:is([data-variant='secondary'],[data-variant='ghost']) { --cap-state-normal: transparent; border-color: transparent; }
+.cap-button-group[data-attached] .cap-button[aria-pressed='true'] { background: var(--cap-control-pressed); }
+.cap-button-group[data-attached] .cap-button[aria-pressed='true']:hover { background: var(--cap-control-pressed); }
+.cap-button-group[data-attached] .cap-button:disabled { background: var(--cap-disabled-background); }
+:is(.cap-tag,.cap-icon-box)[aria-disabled='true'] { border-color: var(--cap-panel-border); }
+@media (pointer: coarse) {
+ .cap-button-group { height: auto; min-height: var(--cap-touch-target); }
+ .cap-button-group[data-attached] :is(.cap-button,.cap-input)[data-size] { min-height: var(--cap-touch-target); }
+}
+
+/* A translucent neutral reaction preserves the hue of its containing surface. */
+:is(.cap-alert,.cap-callout,.cap-tag,.cap-icon-box,[data-reaction='tint']) :is(.cap-alert-toggle,.cap-button[data-variant='ghost'],.cap-content-card-open) { color:inherit; }
+:is(.cap-alert,.cap-callout,.cap-tag,.cap-icon-box,[data-reaction='tint']) :is(.cap-alert-toggle,.cap-button[data-variant='ghost'],.cap-content-card-open):not(:disabled):not([aria-disabled='true']):is(:hover,[data-state='hover']) { background:var(--cap-reaction-hover); color:inherit; }
+:is(.cap-alert,.cap-callout,.cap-tag,.cap-icon-box,[data-reaction='tint']) :is(.cap-alert-toggle,.cap-button[data-variant='ghost'],.cap-content-card-open):not(:disabled):not([aria-disabled='true']):is(:active,[data-state='pressed']) { background:var(--cap-reaction-pressed); color:inherit; }
+.cap-button-group[data-attached] .cap-button:is([data-variant='ghost'],[data-variant='secondary']) { --cap-state-hover:var(--cap-reaction-hover); --cap-state-pressed:var(--cap-reaction-pressed); }
+.cap-button-group[data-attached] .cap-button[aria-pressed='true'], .cap-button-group[data-attached] .cap-button[aria-pressed='true']:hover { background:var(--cap-reaction-pressed); }

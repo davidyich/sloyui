@@ -1,0 +1,11 @@
+import { readFile, writeFile } from 'node:fs/promises';
+const brand = JSON.parse(await readFile('src/brand.json', 'utf8'));
+const pluginManifest = JSON.parse(await readFile('figma/importer/manifest.json', 'utf8'));
+pluginManifest.name = `${brand.name} — Variables`;
+await writeFile('figma/importer/manifest.json', JSON.stringify(pluginManifest, null, 2) + '\n');
+const importerUi = await readFile('figma/importer/ui.html', 'utf8');
+await writeFile('figma/importer/ui.html', importerUi.replace(/<h2>.*?<\/h2>/, `<h2>${brand.name} · Full palettes</h2>`));
+const graph = JSON.parse(await readFile('src/tokens/figma-modes.json', 'utf8'));
+const implementation = await readFile('figma/importer-core.js', 'utf8');
+await writeFile('figma/importer/code.js', `${implementation}\nconst graph = ${JSON.stringify({...graph,brand})};\nfigma.showUI(__html__, { width: 440, height: 550, themeColors: true });\nfigma.ui.onmessage = async message => {\n if(message.type !== 'import') return;\n try { const result = await importSloyVariables(figma, graph, message.modes); figma.ui.postMessage({type:'success',result}); }\n catch (error) { figma.ui.postMessage({type:'error',message:String(error.message || error)}); }\n};\n`);
+console.log('Figma importer generated from the same runtime token graph.');

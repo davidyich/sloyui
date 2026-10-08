@@ -1,0 +1,11 @@
+body { margin:0; color:var(--cap-content-primary); background:var(--cap-surface-base); font-family:var(--cap-font-sans); }
+.overlay-audit { display:grid; gap:20px; max-width:1000px; margin:auto; padding:24px; }
+.overlay-audit h1 { margin:0; font-size:24px; font-weight:500; }
+.overlay-audit-controls { display:flex; flex-wrap:wrap; align-items:end; gap:12px; padding:16px; background:var(--cap-surface-current); border-radius:var(--cap-radius-xl); }
+.overlay-audit-controls > .cap-labeled-field { width:160px; }
+.overlay-audit-scope { display:grid; align-content:start; gap:20px; min-height:320px; padding:32px; background:var(--cap-surface-current); border-radius:var(--cap-radius-xl); }
+.overlay-audit-anchor { width:100%; max-width:420px; min-height:180px; }
+.overlay-audit-inline { min-height:180px; padding:24px; background:var(--cap-surface-current); }
+.overlay-audit-status { overflow-wrap:anywhere; }
+#overlay-context-result { margin:0; max-height:500px; overflow:auto; white-space:pre-wrap; padding:16px; background:var(--cap-surface-current); color:var(--cap-content-primary); font-size:12px; border-radius:var(--cap-radius-xl); }
+@media(max-width:600px) { .overlay-audit { padding:12px; } .overlay-audit-scope { padding:20px; } }

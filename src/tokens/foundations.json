@@ -1,0 +1,546 @@
+{
+  "font/size/xs": {
+    "$type": "FLOAT",
+    "$value": 12
+  },
+  "font/size/sm": {
+    "$type": "FLOAT",
+    "$value": 13
+  },
+  "font/size/base": {
+    "$type": "FLOAT",
+    "$value": 14
+  },
+  "font/size/lg": {
+    "$type": "FLOAT",
+    "$value": 16
+  },
+  "font/size/xl": {
+    "$type": "FLOAT",
+    "$value": 18
+  },
+  "font/size/2xl": {
+    "$type": "FLOAT",
+    "$value": 22
+  },
+  "font/size/3xl": {
+    "$type": "FLOAT",
+    "$value": 28
+  },
+  "font/size/4xl": {
+    "$type": "FLOAT",
+    "$value": 36
+  },
+  "font/line-height/xs": {
+    "$type": "FLOAT",
+    "$value": 16
+  },
+  "font/line-height/sm": {
+    "$type": "FLOAT",
+    "$value": 18
+  },
+  "font/line-height/base": {
+    "$type": "FLOAT",
+    "$value": 20
+  },
+  "font/line-height/lg": {
+    "$type": "FLOAT",
+    "$value": 24
+  },
+  "font/line-height/xl": {
+    "$type": "FLOAT",
+    "$value": 26
+  },
+  "font/line-height/2xl": {
+    "$type": "FLOAT",
+    "$value": 30
+  },
+  "font/line-height/3xl": {
+    "$type": "FLOAT",
+    "$value": 36
+  },
+  "font/line-height/4xl": {
+    "$type": "FLOAT",
+    "$value": 44
+  },
+  "font/prose-line-height/xs": {
+    "$type": "FLOAT",
+    "$value": 20
+  },
+  "font/prose-line-height/sm": {
+    "$type": "FLOAT",
+    "$value": 23
+  },
+  "font/prose-line-height/base": {
+    "$type": "FLOAT",
+    "$value": 24
+  },
+  "font/prose-line-height/lg": {
+    "$type": "FLOAT",
+    "$value": 28
+  },
+  "font/prose-line-height/xl": {
+    "$type": "FLOAT",
+    "$value": 32
+  },
+  "font/prose-line-height/2xl": {
+    "$type": "FLOAT",
+    "$value": 34
+  },
+  "font/prose-line-height/3xl": {
+    "$type": "FLOAT",
+    "$value": 40
+  },
+  "font/prose-line-height/4xl": {
+    "$type": "FLOAT",
+    "$value": 48
+  },
+  "font/weight/normal": {
+    "$type": "FLOAT",
+    "$value": 400
+  },
+  "font/weight/medium": {
+    "$type": "FLOAT",
+    "$value": 500
+  },
+  "font/weight/semibold": {
+    "$type": "FLOAT",
+    "$value": 600
+  },
+  "font/weight/bold": {
+    "$type": "FLOAT",
+    "$value": 700
+  },
+  "number/radius/none": {
+    "$type": "FLOAT",
+    "$value": 0
+  },
+  "number/radius/xs": {
+    "$type": "FLOAT",
+    "$value": 2
+  },
+  "number/radius/sm": {
+    "$type": "FLOAT",
+    "$value": 4
+  },
+  "number/radius/md": {
+    "$type": "FLOAT",
+    "$value": 6
+  },
+  "number/radius/lg": {
+    "$type": "FLOAT",
+    "$value": 8
+  },
+  "number/radius/xl": {
+    "$type": "FLOAT",
+    "$value": 12
+  },
+  "number/radius/2xl": {
+    "$type": "FLOAT",
+    "$value": 16
+  },
+  "number/radius/3xl": {
+    "$type": "FLOAT",
+    "$value": 24
+  },
+  "number/control-size/xs": {
+    "$type": "FLOAT",
+    "$value": 22
+  },
+  "number/control-size/sm": {
+    "$type": "FLOAT",
+    "$value": 28
+  },
+  "number/control-size/md": {
+    "$type": "FLOAT",
+    "$value": 32
+  },
+  "number/control-size/lg": {
+    "$type": "FLOAT",
+    "$value": 36
+  },
+  "number/control-size/xl": {
+    "$type": "FLOAT",
+    "$value": 44
+  },
+  "number/spacing/0": {
+    "$type": "FLOAT",
+    "$value": 0
+  },
+  "number/spacing/1": {
+    "$type": "FLOAT",
+    "$value": 4
+  },
+  "number/spacing/2": {
+    "$type": "FLOAT",
+    "$value": 8
+  },
+  "number/spacing/3": {
+    "$type": "FLOAT",
+    "$value": 12
+  },
+  "number/spacing/4": {
+    "$type": "FLOAT",
+    "$value": 16
+  },
+  "number/spacing/5": {
+    "$type": "FLOAT",
+    "$value": 20
+  },
+  "number/spacing/6": {
+    "$type": "FLOAT",
+    "$value": 24
+  },
+  "number/spacing/8": {
+    "$type": "FLOAT",
+    "$value": 32
+  },
+  "number/spacing/10": {
+    "$type": "FLOAT",
+    "$value": 40
+  },
+  "number/spacing/12": {
+    "$type": "FLOAT",
+    "$value": 48
+  },
+  "number/spacing/16": {
+    "$type": "FLOAT",
+    "$value": 64
+  },
+  "number/inline-counter-size/xs": {
+    "$type": "FLOAT",
+    "$value": 14
+  },
+  "number/inline-counter-size/sm": {
+    "$type": "FLOAT",
+    "$value": 16
+  },
+  "number/inline-counter-size/md": {
+    "$type": "FLOAT",
+    "$value": 18
+  },
+  "number/inline-counter-size/lg": {
+    "$type": "FLOAT",
+    "$value": 20
+  },
+  "number/inline-counter-size/xl": {
+    "$type": "FLOAT",
+    "$value": 24
+  },
+  "font/size/micro": {
+    "$type": "FLOAT",
+    "$value": 9
+  },
+  "font/size/tiny": {
+    "$type": "FLOAT",
+    "$value": 10
+  },
+  "number/border/width": {
+    "$type": "FLOAT",
+    "$value": 0.5
+  },
+  "number/divider/width": {
+    "$type": "FLOAT",
+    "$value": 1
+  },
+  "number/border/none": {
+    "$type": "FLOAT",
+    "$value": 0
+  },
+  "number/spacing/half": {
+    "$type": "FLOAT",
+    "$value": 2
+  },
+  "number/radius-scale/compact": {
+    "$type": "FLOAT",
+    "$value": 0.6
+  },
+  "number/radius-scale/default": {
+    "$type": "FLOAT",
+    "$value": 1
+  },
+  "number/radius-scale/rounded": {
+    "$type": "FLOAT",
+    "$value": 1.75
+  },
+  "number/radius-inset/compact": {
+    "$type": "FLOAT",
+    "$value": 0
+  },
+  "number/radius-inset/default": {
+    "$type": "FLOAT",
+    "$value": 0
+  },
+  "number/radius-inset/rounded": {
+    "$type": "FLOAT",
+    "$value": 6
+  },
+  "number/radius/compact": {
+    "$type": "FLOAT",
+    "$value": 4.8
+  },
+  "number/radius/full": {
+    "$type": "FLOAT",
+    "$value": 9999
+  },
+  "number/selection-size/xs": {
+    "$type": "FLOAT",
+    "$value": 14
+  },
+  "number/slider-thumb/xs": {
+    "$type": "FLOAT",
+    "$value": 14
+  },
+  "number/slider-track/xs": {
+    "$type": "FLOAT",
+    "$value": 3
+  },
+  "number/selection-size/sm": {
+    "$type": "FLOAT",
+    "$value": 16
+  },
+  "number/slider-thumb/sm": {
+    "$type": "FLOAT",
+    "$value": 16
+  },
+  "number/slider-track/sm": {
+    "$type": "FLOAT",
+    "$value": 4
+  },
+  "number/selection-size/md": {
+    "$type": "FLOAT",
+    "$value": 18
+  },
+  "number/slider-thumb/md": {
+    "$type": "FLOAT",
+    "$value": 18
+  },
+  "number/slider-track/md": {
+    "$type": "FLOAT",
+    "$value": 5
+  },
+  "number/selection-size/lg": {
+    "$type": "FLOAT",
+    "$value": 22
+  },
+  "number/slider-thumb/lg": {
+    "$type": "FLOAT",
+    "$value": 22
+  },
+  "number/slider-track/lg": {
+    "$type": "FLOAT",
+    "$value": 6
+  },
+  "number/selection-size/xl": {
+    "$type": "FLOAT",
+    "$value": 24
+  },
+  "number/slider-thumb/xl": {
+    "$type": "FLOAT",
+    "$value": 24
+  },
+  "number/slider-track/xl": {
+    "$type": "FLOAT",
+    "$value": 8
+  },
+  "number/duration/fast": {
+    "$type": "FLOAT",
+    "$value": 120
+  },
+  "number/duration/normal": {
+    "$type": "FLOAT",
+    "$value": 180
+  },
+  "number/duration/slow": {
+    "$type": "FLOAT",
+    "$value": 260
+  },
+  "number/focus/width": {
+    "$type": "FLOAT",
+    "$value": 2
+  },
+  "number/focus/offset": {
+    "$type": "FLOAT",
+    "$value": 3
+  },
+  "number/overlay/gutter": {
+    "$type": "FLOAT",
+    "$value": 12
+  },
+  "number/overlay/gap": {
+    "$type": "FLOAT",
+    "$value": 12
+  },
+  "number/overlay/padding": {
+    "$type": "FLOAT",
+    "$value": 8
+  },
+  "number/touch/target": {
+    "$type": "FLOAT",
+    "$value": 44
+  },
+  "font/family/sans": {
+    "$type": "STRING",
+    "$value": "Inter"
+  },
+  "font/family/serif": {
+    "$type": "STRING",
+    "$value": "Georgia"
+  },
+  "font/family/mono": {
+    "$type": "STRING",
+    "$value": "Courier New"
+  },
+  "font/family/code": {
+    "$type": "STRING",
+    "$value": "Overpass Mono"
+  },
+  "number/elevation/floating/contact/x": {
+    "$type": "FLOAT",
+    "$value": 0
+  },
+  "number/elevation/floating/contact/y": {
+    "$type": "FLOAT",
+    "$value": 3
+  },
+  "number/elevation/floating/contact/blur": {
+    "$type": "FLOAT",
+    "$value": 14
+  },
+  "number/elevation/floating/contact/spread": {
+    "$type": "FLOAT",
+    "$value": -2
+  },
+  "number/elevation/floating/ambient/x": {
+    "$type": "FLOAT",
+    "$value": 0
+  },
+  "number/elevation/floating/ambient/y": {
+    "$type": "FLOAT",
+    "$value": 12
+  },
+  "number/elevation/floating/ambient/blur": {
+    "$type": "FLOAT",
+    "$value": 40
+  },
+  "number/elevation/floating/ambient/spread": {
+    "$type": "FLOAT",
+    "$value": -8
+  },
+  "number/elevation/popover/contact/x": {
+    "$type": "FLOAT",
+    "$value": 0
+  },
+  "number/elevation/popover/contact/y": {
+    "$type": "FLOAT",
+    "$value": 4
+  },
+  "number/elevation/popover/contact/blur": {
+    "$type": "FLOAT",
+    "$value": 18
+  },
+  "number/elevation/popover/contact/spread": {
+    "$type": "FLOAT",
+    "$value": -3
+  },
+  "number/elevation/popover/ambient/x": {
+    "$type": "FLOAT",
+    "$value": 0
+  },
+  "number/elevation/popover/ambient/y": {
+    "$type": "FLOAT",
+    "$value": 16
+  },
+  "number/elevation/popover/ambient/blur": {
+    "$type": "FLOAT",
+    "$value": 56
+  },
+  "number/elevation/popover/ambient/spread": {
+    "$type": "FLOAT",
+    "$value": -10
+  },
+  "number/elevation/modal/contact/x": {
+    "$type": "FLOAT",
+    "$value": 0
+  },
+  "number/elevation/modal/contact/y": {
+    "$type": "FLOAT",
+    "$value": 6
+  },
+  "number/elevation/modal/contact/blur": {
+    "$type": "FLOAT",
+    "$value": 24
+  },
+  "number/elevation/modal/contact/spread": {
+    "$type": "FLOAT",
+    "$value": -4
+  },
+  "number/elevation/modal/ambient/x": {
+    "$type": "FLOAT",
+    "$value": 0
+  },
+  "number/elevation/modal/ambient/y": {
+    "$type": "FLOAT",
+    "$value": 24
+  },
+  "number/elevation/modal/ambient/blur": {
+    "$type": "FLOAT",
+    "$value": 80
+  },
+  "number/elevation/modal/ambient/spread": {
+    "$type": "FLOAT",
+    "$value": -12
+  },
+  "number/opacity/00": {
+    "$type": "FLOAT",
+    "$value": 0
+  },
+  "number/opacity/02": {
+    "$type": "FLOAT",
+    "$value": 2
+  },
+  "number/opacity/04": {
+    "$type": "FLOAT",
+    "$value": 4
+  },
+  "number/opacity/06": {
+    "$type": "FLOAT",
+    "$value": 6
+  },
+  "number/opacity/08": {
+    "$type": "FLOAT",
+    "$value": 8
+  },
+  "number/opacity/10": {
+    "$type": "FLOAT",
+    "$value": 10
+  },
+  "number/opacity/12": {
+    "$type": "FLOAT",
+    "$value": 12
+  },
+  "number/opacity/16": {
+    "$type": "FLOAT",
+    "$value": 16
+  },
+  "number/opacity/24": {
+    "$type": "FLOAT",
+    "$value": 24
+  },
+  "number/opacity/32": {
+    "$type": "FLOAT",
+    "$value": 32
+  },
+  "number/opacity/48": {
+    "$type": "FLOAT",
+    "$value": 48
+  },
+  "number/opacity/64": {
+    "$type": "FLOAT",
+    "$value": 64
+  },
+  "number/opacity/100": {
+    "$type": "FLOAT",
+    "$value": 100
+  }
+}

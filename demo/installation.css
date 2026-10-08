@@ -1,0 +1,18 @@
+.cap-installation { display: grid; gap: 36px; max-width: 880px; min-width: 0; }
+.cap-installation > section, .cap-installation-agents { display: grid; gap: 14px; min-width: 0; }
+.cap-installation h2, .cap-installation p { margin: 0; }
+.cap-installation h2 { font-size: 20px; font-weight: 600; }
+.cap-installation p { line-height: 1.65; }
+.cap-installation-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.cap-installation-note { color: var(--cap-content-muted); font-size: 13px; }
+.cap-installation a { color: var(--cap-accent-text); text-decoration: underline; text-underline-offset: 3px; width: fit-content; }
+.cap-installation-axes { display: grid; margin: 0; gap: 14px; }
+.cap-installation-axes > div { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; }
+.cap-installation-axes dt, .cap-installation-axes dd { margin: 0; min-width: 0; }
+.cap-installation-axes dd > code { color: var(--cap-content-muted); font-size: 12px; }
+.cap-installation-axes dd p { font-size: 13px; margin-top: 4px; }
+.cap-installation code { overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .cap-installation { gap: 28px; }
+  .cap-installation-axes > div { grid-template-columns: 1fr; gap: 4px; }
+}

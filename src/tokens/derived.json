@@ -1,0 +1,3674 @@
+{
+  "derived/secondary/dark/base/rose/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.253339317,
+      0.159401674,
+      0.1757226002
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/rose/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3295399012,
+      0.2138798222,
+      0.233884941
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/rose/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4006720246,
+      0.268329998,
+      0.290950924
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/pink/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.245979027,
+      0.1600641021,
+      0.1999653201
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/pink/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3204522246,
+      0.2146881702,
+      0.2637205431
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/pink/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3902085174,
+      0.2692271817,
+      0.325051438
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/fuchsia/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2277474291,
+      0.1643591176,
+      0.2285647514
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/fuchsia/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2979716205,
+      0.2199484029,
+      0.298948449
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/fuchsia/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3643509036,
+      0.2751810865,
+      0.3653776119
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/purple/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2051043149,
+      0.1705115708,
+      0.2470543225
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/purple/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2700555662,
+      0.2274995448,
+      0.3217735054
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/purple/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3322746242,
+      0.2837726735,
+      0.3915672128
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/violet/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1791944295,
+      0.1775832256,
+      0.256900686
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/violet/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2381053894,
+      0.2361974542,
+      0.3339935193
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/violet/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2956322533,
+      0.2937043246,
+      0.4056615255
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/indigo/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1537596224,
+      0.1842787926,
+      0.258415038
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/indigo/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2067352849,
+      0.2444507076,
+      0.3359566037
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/indigo/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2597760984,
+      0.3031543852,
+      0.4080207548
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/blue/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1296632459,
+      0.1903493147,
+      0.2533895971
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/blue/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1770184836,
+      0.2519496133,
+      0.3298404071
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/blue/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2259925249,
+      0.3117604184,
+      0.4011044504
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/sky/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.104675388,
+      0.1965519421,
+      0.2401434653
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/sky/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1462161293,
+      0.2596291033,
+      0.313546519
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/sky/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1912791131,
+      0.3205926007,
+      0.3824772021
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/cyan/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0891534615,
+      0.201143372,
+      0.2204429802
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/cyan/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1270718368,
+      0.2653260172,
+      0.289205684
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/cyan/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.169923502,
+      0.3271557129,
+      0.3545253618
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/teal/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0918303269,
+      0.2039166706,
+      0.1898750522
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/teal/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1302562771,
+      0.2687718562,
+      0.2513441636
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/teal/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1733744255,
+      0.3311236274,
+      0.3109505154
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/emerald/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1130059616,
+      0.2032634471,
+      0.1608912503
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/emerald/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1562899949,
+      0.2679580552,
+      0.2154320672
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/emerald/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2024512224,
+      0.3301696792,
+      0.2696503735
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/green/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1372760469,
+      0.2005357177,
+      0.1382297541
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/green/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1862569225,
+      0.264566796,
+      0.1874024722
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/green/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2363745866,
+      0.3262435694,
+      0.2375411826
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/lime/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1663227773,
+      0.1953789612,
+      0.1170006434
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/lime/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2221798885,
+      0.2581673202,
+      0.1612464075
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/lime/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2773949146,
+      0.3188617607,
+      0.2077952674
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2006231779,
+      0.1864979977,
+      0.1015087066
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2645923883,
+      0.2471790809,
+      0.1423294256
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.326067857,
+      0.306245066,
+      0.1865715514
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/amber/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2236765348,
+      0.1784073987,
+      0.1016402508
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/amber/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.293057421,
+      0.2372030898,
+      0.1426397415
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/amber/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.358787176,
+      0.2948458825,
+      0.1870915822
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/orange/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2443990383,
+      0.1688261062,
+      0.1177354196
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/orange/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3185936743,
+      0.2254283569,
+      0.162529615
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/orange/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3881341806,
+      0.2814485712,
+      0.2096867179
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/red/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2545711088,
+      0.1615513673,
+      0.1487389691
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/red/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3310872877,
+      0.2165128098,
+      0.2006857083
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/red/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4024711964,
+      0.2713293789,
+      0.2530756077
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/rose/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3195680949,
+      0.2065375045,
+      0.2261100863
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/rose/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.408781224,
+      0.2747839538,
+      0.2976485301
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/rose/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4940656124,
+      0.3460998634,
+      0.3708029014
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/pink/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3106925734,
+      0.2073296556,
+      0.2552704654
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/pink/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3981774255,
+      0.2756882384,
+      0.3321697244
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/pink/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4822240371,
+      0.3470409686,
+      0.4088352479
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/fuchsia/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2887333905,
+      0.2124760554,
+      0.2896954172
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/fuchsia/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3719760515,
+      0.2817074499,
+      0.3730021591
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/fuchsia/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4529993399,
+      0.3535632675,
+      0.4539418279
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/purple/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2614625731,
+      0.219860009,
+      0.3119934165
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/purple/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3394786904,
+      0.2903997573,
+      0.3995281504
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/purple/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4168347272,
+      0.3630706659,
+      0.4833410258
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/violet/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2302470502,
+      0.2283620149,
+      0.3239228094
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/violet/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3023670153,
+      0.3004526873,
+      0.4138122046
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/violet/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3757162936,
+      0.374131088,
+      0.4992780935
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/indigo/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1995911038,
+      0.236426675,
+      0.3258282602
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/indigo/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2660715387,
+      0.3100215413,
+      0.4162144848
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/indigo/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3357991553,
+      0.3847029859,
+      0.502094726
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/blue/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1705390927,
+      0.2437520273,
+      0.3198416728
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/blue/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2319031179,
+      0.3187381827,
+      0.4092214954
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/blue/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2986360169,
+      0.3943635407,
+      0.4944910458
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/sky/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1404051657,
+      0.2512515551,
+      0.3039162411
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/sky/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1968411435,
+      0.327686092,
+      0.3903632259
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/sky/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2611347929,
+      0.4043066604,
+      0.4736897436
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/cyan/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1216621271,
+      0.2568135297,
+      0.2801401816
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/cyan/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1753049402,
+      0.3343363821,
+      0.3620496886
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/cyan/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2385385788,
+      0.4117091767,
+      0.4422785355
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/teal/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1247935547,
+      0.2601775612,
+      0.2431688689
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/teal/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1787744924,
+      0.3383564394,
+      0.3179000522
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/teal/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2420765335,
+      0.4161730976,
+      0.3931755109
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/emerald/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1502839135,
+      0.2593842402,
+      0.2081000334
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/emerald/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2081059485,
+      0.3373872942,
+      0.2760608945
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/emerald/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2729830997,
+      0.415057381,
+      0.3467350822
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/green/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1795875873,
+      0.2560749047,
+      0.180717803
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/green/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2423912879,
+      0.3334062453,
+      0.2435505181
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/green/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3099238856,
+      0.4105870596,
+      0.310892348
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/lime/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2146892658,
+      0.2498276643,
+      0.1551459202
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/lime/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2839030317,
+      0.325924955,
+      0.2134626013
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/lime/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3553800583,
+      0.4022394296,
+      0.27810519
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/yellow/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2561175065,
+      0.2390952288,
+      0.1366225016
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/yellow/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3331987587,
+      0.3131460635,
+      0.19203254
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/yellow/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4099438678,
+      0.3880850218,
+      0.2552167359
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/amber/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2839212476,
+      0.2293459551,
+      0.1369063233
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/amber/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3663474892,
+      0.3016075895,
+      0.1925782842
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/amber/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4468157074,
+      0.3753984488,
+      0.2560422268
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/orange/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3088677606,
+      0.2178328388,
+      0.1563503778
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/orange/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3960813772,
+      0.288053879,
+      0.215427378
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/orange/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4799390582,
+      0.3605876671,
+      0.2808579039
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/red/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3210766721,
+      0.2091123082,
+      0.193657226
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/red/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4106060677,
+      0.277819364,
+      0.2593166838
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/base/red/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4961167072,
+      0.3494350315,
+      0.3287239501
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/rose/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2254763839,
+      0.1403543052,
+      0.1551236613
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/rose/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3053607314,
+      0.1961916825,
+      0.2151213991
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/rose/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3780463312,
+      0.2505987505,
+      0.2724795346
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/pink/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2188043213,
+      0.140951373,
+      0.1770892935
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/pink/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2967950187,
+      0.1969592113,
+      0.2432891307
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/pink/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3679929323,
+      0.2514728237,
+      0.3053329212
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/fuchsia/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2022675767,
+      0.1448419587,
+      0.2030013605
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/fuchsia/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2755975078,
+      0.2019367319,
+      0.2765352121
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/fuchsia/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3431409658,
+      0.2572292663,
+      0.3441625189
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/purple/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.181735304,
+      0.1504177681,
+      0.2197412807
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/purple/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2492702822,
+      0.2090739538,
+      0.2980604653
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/purple/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3122995249,
+      0.2655199068,
+      0.3693605748
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/violet/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1582618093,
+      0.1568253724,
+      0.2286388105
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/violet/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2191316811,
+      0.2172877233,
+      0.3095649148
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/violet/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2770403485,
+      0.2750915291,
+      0.3828984931
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/indigo/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1352527342,
+      0.1628889589,
+      0.2299856933
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/indigo/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1895270417,
+      0.2250754445,
+      0.3113875842
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/indigo/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.24249058,
+      0.2841903769,
+      0.3851350433
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/blue/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1135006202,
+      0.1683826506,
+      0.2254136631
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/blue/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1614602698,
+      0.2321462895,
+      0.3055926907
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/blue/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2098680565,
+      0.2924702867,
+      0.3784488191
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/sky/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0910175991,
+      0.1739911927,
+      0.2134065461
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/sky/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1323281692,
+      0.239382199,
+      0.2902086176
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/sky/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1762333218,
+      0.3009619445,
+      0.3605052991
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/cyan/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.077118159,
+      0.1781390242,
+      0.19557577
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/cyan/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1141954924,
+      0.2447466315,
+      0.2672602453
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/cyan/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1554580691,
+      0.3072687892,
+      0.3336188001
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/teal/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0795517434,
+      0.1806413608,
+      0.1679352349
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/teal/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1172444456,
+      0.2479907338,
+      0.2315921733
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/teal/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1588447442,
+      0.3110829192,
+      0.2917339418
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/emerald/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0985718234,
+      0.1800489675,
+      0.141741606
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/emerald/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1419115092,
+      0.2472268896,
+      0.197759219
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/emerald/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1871118214,
+      0.3101722936,
+      0.2520223965
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/green/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1204235838,
+      0.1775836204,
+      0.1212669914
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/green/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1702260068,
+      0.2440369556,
+      0.1713291727
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/green/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2199273869,
+      0.3064063215,
+      0.2211040653
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/lime/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1466366842,
+      0.1729232669,
+      0.1020873397
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/lime/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2041150768,
+      0.2380122697,
+      0.1466221998
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/lime/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2594766606,
+      0.2993162044,
+      0.1923868416
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1776565506,
+      0.1648939635,
+      0.0880746153
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2440990675,
+      0.2276551145,
+      0.1286885963
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3063098107,
+      0.2871783979,
+      0.1718005263
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/amber/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1985400113,
+      0.1575745685,
+      0.0881559546
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/amber/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2709351996,
+      0.2182396642,
+      0.1289361647
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/amber/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3377683975,
+      0.2761934965,
+      0.1722504569
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/orange/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.217338041,
+      0.1488998089,
+      0.1026556587
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/orange/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2950197014,
+      0.2071129681,
+      0.1477178272
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/orange/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3659823766,
+      0.2632643362,
+      0.1940772664
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/red/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2265828307,
+      0.1423063713,
+      0.1306874886
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/red/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3068126532,
+      0.1986808663,
+      0.183768087
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/red/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3797704471,
+      0.2534911989,
+      0.235963452
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/rose/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2950592536,
+      0.1887726493,
+      0.2072170666
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/rose/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3862658777,
+      0.2569939653,
+      0.2791538043
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/rose/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4722122818,
+      0.3271959346,
+      0.3515573252
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/pink/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2867235606,
+      0.1895212054,
+      0.2346431096
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/pink/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3760603754,
+      0.2578769944,
+      0.3124725468
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/pink/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4606437725,
+      0.3281341724,
+      0.3888570402
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/fuchsia/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2660917319,
+      0.1943714518,
+      0.2670094561
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/fuchsia/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3508353103,
+      0.2637077415,
+      0.3518598988
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/fuchsia/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.432083904,
+      0.3345605038,
+      0.4330610608
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/purple/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2404660362,
+      0.2013236442,
+      0.2879587978
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/purple/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3195352595,
+      0.2721110588,
+      0.3774270304
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/purple/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3967179542,
+      0.3439033002,
+      0.4618462524
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/violet/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2111298995,
+      0.209321875,
+      0.2991473712
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/violet/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2837612548,
+      0.2818171043,
+      0.3911715844
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/violet/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3564550251,
+      0.3547544492,
+      0.4774231661
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/indigo/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1823117647,
+      0.2169028896,
+      0.3009095787
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/indigo/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2487233782,
+      0.2910468531,
+      0.3934531148
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/indigo/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3172837493,
+      0.3651144438,
+      0.4801413811
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/blue/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1549867467,
+      0.2237840184,
+      0.295258748
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/blue/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2156643594,
+      0.2994481695,
+      0.3866805929
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/blue/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2806991616,
+      0.3745734313,
+      0.4726588823
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/sky/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.126616835,
+      0.2308236272,
+      0.2802789604
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/sky/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1816197354,
+      0.3080664827,
+      0.3684821237
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/sky/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2436088132,
+      0.3843024217,
+      0.4522664775
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/cyan/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1089548776,
+      0.2360410532,
+      0.2579471843
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/cyan/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1606205351,
+      0.3144686024,
+      0.3411992109
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/cyan/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2211424047,
+      0.3915425852,
+      0.4215189473
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/teal/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1119388876,
+      0.2391957905,
+      0.2232489797
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/teal/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1640326775,
+      0.3183399871,
+      0.2986860004
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/teal/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2246836554,
+      0.3959120261,
+      0.3734833876
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/emerald/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1359732653,
+      0.2384535272,
+      0.1903367219
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/emerald/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1926108756,
+      0.3174134728,
+      0.2583831909
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/emerald/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2553746158,
+      0.3948312302,
+      0.3280251565
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/green/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.163538674,
+      0.2353520739,
+      0.1646184476
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/green/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2258454434,
+      0.3135881855,
+      0.2270202535
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/green/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2918382854,
+      0.3904697089,
+      0.2928744095
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/lime/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1965180622,
+      0.2294927884,
+      0.1405620502
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/lime/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2659459184,
+      0.3063897449,
+      0.1979167741
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/lime/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3365052733,
+      0.3823106871,
+      0.2606179084
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/yellow/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2354248929,
+      0.2194154776,
+      0.1230772089
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/yellow/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3134645231,
+      0.2940735591,
+      0.1770884236
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/yellow/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3899548428,
+      0.3684480318,
+      0.2379788879
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/amber/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2615412631,
+      0.2102498235,
+      0.1232996502
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/amber/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3453915736,
+      0.2829338534,
+      0.1775635151
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/amber/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4260193596,
+      0.3559979494,
+      0.2387321539
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/orange/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2849851715,
+      0.1994131473,
+      0.1415813801
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/orange/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3740261102,
+      0.269829278,
+      0.1996795586
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/orange/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4584000161,
+      0.3414391914,
+      0.263168602
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/red/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2964691278,
+      0.1911977958,
+      0.176686952
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/red/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3880178318,
+      0.2599263357,
+      0.2421295923
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/canvas/red/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4742135251,
+      0.3304687217,
+      0.3102466998
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/rose/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2795834995,
+      0.177753714,
+      0.1954395133
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/rose/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3530670821,
+      0.2314767241,
+      0.2524397144
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/rose/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4230179962,
+      0.286245175,
+      0.3095093891
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/pink/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2716015913,
+      0.1784720331,
+      0.221717678
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/pink/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.343496869,
+      0.2323196817,
+      0.2837956577
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/pink/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4121767898,
+      0.2871604126,
+      0.3447344863
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/fuchsia/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2518400813,
+      0.1831236395,
+      0.2527241544
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/fuchsia/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3198308974,
+      0.2378327166,
+      0.3208351147
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/fuchsia/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3853940446,
+      0.2932871611,
+      0.3864159754
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/purple/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2272948217,
+      0.1897884358,
+      0.2727844151
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/purple/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2904504862,
+      0.2457581422,
+      0.3448517221
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/purple/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.352185945,
+      0.302146939,
+      0.4135074514
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/violet/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1991972945,
+      0.1974528157,
+      0.2834866169
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/violet/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2568390294,
+      0.2548966251,
+      0.3577313907
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/violet/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3142853389,
+      0.3124025863,
+      0.4281117819
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/indigo/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1715978537,
+      0.2047142443,
+      0.2851573902
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/indigo/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2238642612,
+      0.2635752588,
+      0.3598286798
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/indigo/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2772565944,
+      0.3221706596,
+      0.4305883417
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/blue/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1454292556,
+      0.211302435,
+      0.2797308117
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/blue/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1926688588,
+      0.2714664138,
+      0.3534232522
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/blue/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2424532845,
+      0.3310731974,
+      0.423468266
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/sky/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1182596529,
+      0.2180392604,
+      0.2653764225
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/sky/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1604050402,
+      0.2795532897,
+      0.3362989731
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/sky/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2068281492,
+      0.3402159194,
+      0.4042228894
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/cyan/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1013485789,
+      0.2230300815,
+      0.2439961258
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/cyan/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1404032764,
+      0.2855559405,
+      0.3106805109
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/cyan/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1850093604,
+      0.3470130731,
+      0.3753009731
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/teal/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1042268777,
+      0.2260468954,
+      0.2107929759
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/teal/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1436971352,
+      0.2891867297,
+      0.2708021122
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/teal/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1885062066,
+      0.3511207359,
+      0.3301832107
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/emerald/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1272553332,
+      0.2253373633,
+      0.1793014052
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/emerald/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1708991217,
+      0.2883253512,
+      0.2329827245
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/emerald/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2182398197,
+      0.3501253696,
+      0.2874379303
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/green/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1536463455,
+      0.2223717302,
+      0.1546851176
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/green/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2023270739,
+      0.2847472489,
+      0.203496745
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/green/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2531153697,
+      0.3460511484,
+      0.2542569559
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/lime/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1852124748,
+      0.2167670685,
+      0.1316421405
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/lime/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2400870123,
+      0.2780021402,
+      0.1760392675
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/lime/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2954429187,
+      0.3384019338,
+      0.2236033717
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.222455282,
+      0.2071219946,
+      0.114864205
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2847217826,
+      0.2664361671,
+      0.1562614311
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3457836294,
+      0.3253507609,
+      0.201839365
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/amber/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.247462581,
+      0.1983434918,
+      0.1150508346
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/amber/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3146863359,
+      0.2559509103,
+      0.1566374011
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/amber/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3796564858,
+      0.3135798245,
+      0.2024308637
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/orange/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2699203083,
+      0.1879576377,
+      0.1325512092
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/orange/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3415620488,
+      0.2435912655,
+      0.1775153581
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/orange/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4100441277,
+      0.2997664364,
+      0.2256981642
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/red/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2809287359,
+      0.1800796468,
+      0.1661859053
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/red/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3547027646,
+      0.2342405475,
+      0.2175652224
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/red/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4248862758,
+      0.2893408221,
+      0.2704162785
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/rose/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3433449373,
+      0.2241577346,
+      0.2447357038
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/rose/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4310441691,
+      0.2927814723,
+      0.3162549974
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/rose/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5158522046,
+      0.3654123286,
+      0.3903637584
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/pink/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3339709919,
+      0.2249870088,
+      0.2754760027
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/pink/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4200742522,
+      0.293702034,
+      0.3518570406
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/pink/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5037717325,
+      0.3663518458,
+      0.4290030603
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/fuchsia/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3107870551,
+      0.2303982982,
+      0.3117812459
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/fuchsia/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3929765316,
+      0.2998853565,
+      0.3939943583
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/fuchsia/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.473967287,
+      0.3729462342,
+      0.4748664959
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/purple/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2820016852,
+      0.2381725459,
+      0.3353144843
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/purple/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3593841964,
+      0.3088341989,
+      0.421390204
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/purple/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.437112738,
+      0.382585499,
+      0.5047867649
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/violet/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2490642166,
+      0.2471327155,
+      0.3479260887
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/violet/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3210589618,
+      0.319198283,
+      0.4361676896
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/violet/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3952693241,
+      0.3938185839,
+      0.5210351593
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/indigo/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2167386352,
+      0.255638962,
+      0.349968244
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/indigo/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2836386209,
+      0.3290733082,
+      0.4386853422
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/indigo/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3547424964,
+      0.4045683231,
+      0.5239433575
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/blue/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1861387197,
+      0.2633710153,
+      0.3436794777
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/blue/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2485005896,
+      0.3380758821,
+      0.4314979229
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/blue/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3171378146,
+      0.4143998422,
+      0.5162443793
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/sky/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1544589823,
+      0.271292535,
+      0.3268915982
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/sky/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2125854328,
+      0.3473236207,
+      0.4120449117
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/sky/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2793742502,
+      0.4245258892,
+      0.4951011594
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/cyan/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1347963442,
+      0.2771710412,
+      0.3017915639
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/cyan/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1906264756,
+      0.3542000052,
+      0.3827953352
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/cyan/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2567415248,
+      0.4320674815,
+      0.4631253949
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/teal/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1380476259,
+      0.2807268045,
+      0.2627320985
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/teal/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1941357474,
+      0.35835479,
+      0.3371554055
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/teal/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2602632111,
+      0.4366112238,
+      0.4131096071
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/emerald/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1647862609,
+      0.2798849548,
+      0.2256865693
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/emerald/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.224071039,
+      0.3573449144,
+      0.2939224275
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/emerald/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2912599972,
+      0.4354628958,
+      0.3658370891
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/green/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1956283461,
+      0.276382938,
+      0.1967901091
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/green/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2592537102,
+      0.3532200666,
+      0.260382739
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/green/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3285342719,
+      0.4308967872,
+      0.3294236453
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/lime/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2326466261,
+      0.2697782987,
+      0.1698571474
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/lime/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3020143527,
+      0.3454800668,
+      0.2294300385
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/lime/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.374616326,
+      0.4223863256,
+      0.2962228789
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/yellow/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2763804358,
+      0.2584465851,
+      0.1504234398
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/yellow/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3529163539,
+      0.3322825656,
+      0.2074937044
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/yellow/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4301156053,
+      0.4079862226,
+      0.2731713238
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/amber/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3057358869,
+      0.2481673325,
+      0.1507717693
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/amber/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3871802906,
+      0.3203874956,
+      0.208111286
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/amber/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4676820293,
+      0.3951062071,
+      0.2740680094
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/orange/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3320671168,
+      0.2360438037,
+      0.1712523844
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/orange/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4179218083,
+      0.3064362195,
+      0.23159871
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/orange/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5014509821,
+      0.3800949995,
+      0.2991739296
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/red/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3449447026,
+      0.2268686066,
+      0.2105386473
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/red/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4329359923,
+      0.2959093507,
+      0.2767557516
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/raised/red/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5179468581,
+      0.3687990758,
+      0.3476593877
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/rose/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3046552113,
+      0.1956813848,
+      0.2145783742
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/rose/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3760983159,
+      0.2490906998,
+      0.2709036652
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/rose/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4451544582,
+      0.3044068509,
+      0.3282199985
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/pink/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2961051094,
+      0.1964476441,
+      0.2426958914
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/pink/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3660814755,
+      0.2499625569,
+      0.3036447427
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/pink/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4339675309,
+      0.3053352852,
+      0.3644490555
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/fuchsia/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2749459855,
+      0.2014165763,
+      0.2758823839
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/fuchsia/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3413192033,
+      0.2557009647,
+      0.3423398427
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/fuchsia/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4063391569,
+      0.3116108737,
+      0.4073467252
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/purple/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2486663462,
+      0.2085412887,
+      0.2973686081
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/purple/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3105880916,
+      0.2639643492,
+      0.367448974
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/purple/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3721010136,
+      0.3207067466,
+      0.4352517182
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/violet/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.218582131,
+      0.2167404702,
+      0.3088516294
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/violet/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2754529513,
+      0.2735035161,
+      0.3809371822
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/violet/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3330655233,
+      0.3312509951,
+      0.4503202557
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/indigo/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1890307148,
+      0.2245141911,
+      0.310670169
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/indigo/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.241021087,
+      0.2825707966,
+      0.3831630072
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/indigo/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2949957703,
+      0.3413044254,
+      0.4529086664
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/blue/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1610140168,
+      0.2315721804,
+      0.3048850074
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/blue/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2085044426,
+      0.290821452,
+      0.3764976835
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/blue/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2593104995,
+      0.3504743032,
+      0.4456105148
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/sky/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1319331642,
+      0.2387947823,
+      0.2895283107
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/sky/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1749698548,
+      0.2992826093,
+      0.3586156648
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/sky/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2229335986,
+      0.3598980033,
+      0.4258114825
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/cyan/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1138319745,
+      0.2441492466,
+      0.2666217314
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/cyan/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1542498851,
+      0.3055665173,
+      0.3318246556
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/cyan/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2007612076,
+      0.3669072547,
+      0.3960134374
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/teal/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1168766182,
+      0.2473872923,
+      0.2310194236
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/teal/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1576301622,
+      0.3093668507,
+      0.2900910752
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/teal/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2042873088,
+      0.3711408012,
+      0.3494981159
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/emerald/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1415013035,
+      0.2466249205,
+      0.1972488743
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/emerald/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1858206556,
+      0.3084600145,
+      0.2505219779
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/emerald/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2345338169,
+      0.3701059298,
+      0.3054494181
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/green/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1697653446,
+      0.243440996,
+      0.1708670092
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/green/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.218534169,
+      0.3047082862,
+      0.2197109883
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/green/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2702112766,
+      0.3658955276,
+      0.2713137552
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/lime/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2035929204,
+      0.2374275312,
+      0.1462039697
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/lime/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2579500419,
+      0.2976442269,
+      0.1910873812
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/lime/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.313685444,
+      0.3580029412,
+      0.2398703313
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.243503933,
+      0.2270893369,
+      0.1283005385
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3046179371,
+      0.285549419,
+      0.1705601754
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3655241681,
+      0.3445610865,
+      0.2176589569
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/amber/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2702912517,
+      0.2176907891,
+      0.1285463542
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/amber/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3359637856,
+      0.2746019139,
+      0.1710041986
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/amber/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4004447011,
+      0.3324601676,
+      0.2183227778
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/orange/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2943322935,
+      0.2065836945,
+      0.1472943002
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/orange/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3640766278,
+      0.2617152082,
+      0.1927607801
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/orange/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4317818481,
+      0.3182816469,
+      0.2421695972
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/red/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3061042789,
+      0.1981662349,
+      0.1832807525
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/red/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3778157407,
+      0.2519735098,
+      0.2345103691
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/red/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4470859664,
+      0.3075883001,
+      0.2880479589
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/rose/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3665663325,
+      0.2417529473,
+      0.263224846
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/rose/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4531192309,
+      0.3110462437,
+      0.3350349519
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/rose/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5375987625,
+      0.3851760219,
+      0.4102815331
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/pink/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3567311503,
+      0.2426134464,
+      0.2954053683
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/pink/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4418151686,
+      0.3119782854,
+      0.3715974278
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/pink/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5253151083,
+      0.3861095848,
+      0.4493980269
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/fuchsia/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3324146676,
+      0.2482612804,
+      0.3334297656
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/fuchsia/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4139006105,
+      0.3183018543,
+      0.4149006849
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/fuchsia/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4950198551,
+      0.3927518415,
+      0.4958675204
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/purple/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.302232322,
+      0.2563882833,
+      0.3580958588
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/purple/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3793150923,
+      0.327475253,
+      0.4430781246
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/purple/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4575888541,
+      0.4024894372,
+      0.5262124687
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/violet/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2677151132,
+      0.2657653838,
+      0.3713368201
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/violet/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3398995963,
+      0.3381151851,
+      0.4583032303
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/violet/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4151560614,
+      0.4138574657,
+      0.5427212796
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/indigo/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2338722939,
+      0.2746752365,
+      0.3735098238
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/indigo/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3014856829,
+      0.3482637859,
+      0.4609306904
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/indigo/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3741597252,
+      0.4247498264,
+      0.5457135077
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/blue/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2018870334,
+      0.2827801264,
+      0.3669492201
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/blue/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.265515012,
+      0.3575231686,
+      0.4535744107
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/blue/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3362524882,
+      0.4347205868,
+      0.5379456356
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/sky/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1688590243,
+      0.2910894094,
+      0.3493740164
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/sky/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2289046009,
+      0.3670411991,
+      0.4335909877
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/sky/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.298373884,
+      0.4449971491,
+      0.5165296487
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/cyan/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1484218201,
+      0.2972591454,
+      0.3230586338
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/cyan/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2066300739,
+      0.3741217411,
+      0.4034992455
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/cyan/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2757947331,
+      0.4526536023,
+      0.4840922383
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/teal/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1517687596,
+      0.3009907332,
+      0.2820781033
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/teal/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2101629261,
+      0.3783973929,
+      0.3565143934
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/teal/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2792879462,
+      0.457261953,
+      0.4333247588
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/emerald/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1795687351,
+      0.3001025672,
+      0.2432186383
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/emerald/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2405609212,
+      0.3773487176,
+      0.3120292869
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/emerald/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3102530347,
+      0.4560835478,
+      0.3853760792
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/green/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2117677932,
+      0.2964215428,
+      0.212943628
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/green/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2764921033,
+      0.3730920251,
+      0.2775771239
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/green/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3477170603,
+      0.4514353407,
+      0.3485168558
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/lime/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2505158079,
+      0.2894870823,
+      0.1847894596
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/lime/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3203416308,
+      0.365117367,
+      0.2458767345
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/lime/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3942580568,
+      0.442788969,
+      0.3150213342
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/yellow/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2963598321,
+      0.2776066081,
+      0.1645611168
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/yellow/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.372680269,
+      0.3515450128,
+      0.2235258454
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/yellow/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4505075263,
+      0.428190898,
+      0.2918924233
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/amber/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3271447214,
+      0.2668459505,
+      0.1649765614
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/amber/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.407953559,
+      0.3393350048,
+      0.2242159265
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/amber/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4886510255,
+      0.4151617073,
+      0.2928585984
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/orange/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3547547197,
+      0.2541717982,
+      0.1863802747
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/orange/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4396116062,
+      0.3250368883,
+      0.2482499712
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/orange/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5229642364,
+      0.4000027993,
+      0.3181652005
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/red/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3682505092,
+      0.2445876294,
+      0.2274452437
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/red/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.455072153,
+      0.3142561565,
+      0.2945067802
+    ],
+    "alpha": 1
+  },
+  "derived/secondary/dark/floating/red/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5397304009,
+      0.3886032177,
+      0.3670986168
+    ],
+    "alpha": 1
+  }
+}

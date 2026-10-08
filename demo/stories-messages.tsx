@@ -1,0 +1,17 @@
+import { ToastStackExample } from './ToastStackExample';
+import { useCatalogText, localizeCatalogueFixture } from './catalog-locale';
+import { useState } from 'react';
+import { Button, Select } from '../src';
+import { AnnouncementBar, CardStack, TextShimmer, ToastStack, type ToastStackItem } from '../src/components/messages';
+import { Sample, StorySection } from './stories-controls';
+
+export function ToastStackStory(){ return <StorySection><ToastStackExample/></StorySection> }
+export function AnnouncementBarStory(){
+ const ct=useCatalogText();
+const [index,setIndex]=useState(0),[open,setOpen]=useState(true),[details,setDetails]=useState(false);return <StorySection><div className="catalog-stack"><AnnouncementBar label={ct("Объявления рабочего пространства")} open={open} onOpenChange={setOpen} index={index} onIndexChange={setIndex} autoPlay={false} controls messages={[{id:'release',message:'A new workspace update is ready.',action:{label:'See what changed',onClick:()=>setDetails(true)}},{id:'offer',message:'Your early access ends in:',countdown:{to:Date.now()+86400000,label:'Early access time left'}}]}/>{details&&<p role="status">The update adds faster search and saved filters.</p>}<Button size="sm" variant="ghost" onClick={()=>setOpen(true)}>Show announcement</Button></div></StorySection>}
+export function CardStackStory(){
+ const ct=useCatalogText();
+const [direction,setDirection]=useState<'up'|'down'|'left'|'right'>('down');const cards=[{id:'plan',title:ct('Недельный план'),body:ct('Спокойный ритм задач на неделю.')},{id:'archive',title:ct('Визуальный архив'),body:ct('Место для референсов и заметок.')},{id:'metrics',title:ct('Панель прогресса'),body:ct('Ключевые результаты в одном месте.')}];const [decisions,setDecisions]=useState<string[]>([]);return <StorySection title={ct("Разбор карточек")}><div className="catalog-stack"><p className="catalog-muted">{ct("Потяните карточку влево или вправо, используйте стрелки и отменяйте последнее решение.")}</p><Select label={ct("Направление раскрытия карточек")} value={direction} onValueChange={value=>setDirection(value as typeof direction)} options={['up','down','left','right'].map(value=>({value,label:value}))}/><CardStack review expandDirection={direction} items={cards} getKey={card=>card.id} getLabel={card=>card.title} labels={{left:ct('Пропустить'),right:ct('Оставить')}} onDecide={(card,side)=>setDecisions(current=>[...current,`${card.title}: ${side==='right'?ct('оставить'):ct('пропустить')}`])} onUndo={()=>setDecisions(current=>current.slice(0,-1))} onReset={()=>setDecisions([])} renderEmpty={reset=><div className="catalog-stack"><p>{ct("Все идеи просмотрены.")}</p><Button size="sm" onClick={reset}>{ct("Начать заново")}</Button></div>} renderCard={card=><article className="catalog-card" style={{padding:20}}><h3>{card.title}</h3><p>{card.body}</p></article>}/><span className="catalog-muted" role="status">{decisions.length?decisions.at(-1):ct('Решений пока нет')}</span></div></StorySection>}
+export function TextShimmerStory(){
+ const ct=useCatalogText();
+const [active,setActive]=useState(true);return <StorySection><Sample label="Background work"><div className="catalog-stack"><TextShimmer as="p" active={active}>Gathering related notes…</TextShimmer><Button size="sm" variant="ghost" onClick={()=>setActive(v=>!v)}>{active?'Finish':'Resume'} work</Button></div></Sample></StorySection>}

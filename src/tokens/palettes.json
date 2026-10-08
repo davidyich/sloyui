@@ -1,0 +1,3755 @@
+{
+  "palette/rose/50": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      0.9183039788,
+      0.9295966651
+    ],
+    "alpha": 1
+  },
+  "palette/rose/75": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      0.8767604818,
+      0.8944010779
+    ],
+    "alpha": 1
+  },
+  "palette/rose/100": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      0.8346245882,
+      0.8591972531
+    ],
+    "alpha": 1
+  },
+  "palette/rose/150": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      0.7480384313,
+      0.7887229955
+    ],
+    "alpha": 1
+  },
+  "palette/rose/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9946308753,
+      0.6603753368,
+      0.7193924648
+    ],
+    "alpha": 1
+  },
+  "palette/rose/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9668842561,
+      0.583093066,
+      0.6557332364
+    ],
+    "alpha": 1
+  },
+  "palette/rose/300": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9319214477,
+      0.508652918,
+      0.5944766393
+    ],
+    "alpha": 1
+  },
+  "palette/rose/350": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8903001091,
+      0.4373542704,
+      0.535691176
+    ],
+    "alpha": 1
+  },
+  "palette/rose/400": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8425329919,
+      0.369547158,
+      0.4794374536
+    ],
+    "alpha": 1
+  },
+  "palette/rose/450": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7891327952,
+      0.3056291118,
+      0.4257604985
+    ],
+    "alpha": 1
+  },
+  "palette/rose/500": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7306352707,
+      0.2460578806,
+      0.3746862795
+    ],
+    "alpha": 1
+  },
+  "palette/rose/550": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6676119313,
+      0.1913859345,
+      0.3262206924
+    ],
+    "alpha": 1
+  },
+  "palette/rose/600": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6006772736,
+      0.1423326098,
+      0.2803503504
+    ],
+    "alpha": 1
+  },
+  "palette/rose/650": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5304928605,
+      0.0999177069,
+      0.2370450105
+    ],
+    "alpha": 1
+  },
+  "palette/rose/700": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4577694073,
+      0.0656381871,
+      0.1962617912
+    ],
+    "alpha": 1
+  },
+  "palette/rose/750": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3832671123,
+      0.0413499174,
+      0.1579516879
+    ],
+    "alpha": 1
+  },
+  "palette/rose/800": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3077927127,
+      0.0287395049,
+      0.1220695193
+    ],
+    "alpha": 1
+  },
+  "palette/rose/850": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2321854132,
+      0.0241870216,
+      0.0885899925
+    ],
+    "alpha": 1
+  },
+  "palette/rose/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1572533931,
+      0.0217202252,
+      0.0575378197
+    ],
+    "alpha": 1
+  },
+  "palette/rose/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1202184376,
+      0.0201445797,
+      0.0429599478
+    ],
+    "alpha": 1
+  },
+  "palette/rose/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0834102855,
+      0.0180632639,
+      0.0298242385
+    ],
+    "alpha": 1
+  },
+  "palette/rose/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/pink/50": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      0.9151069823,
+      0.9511191488
+    ],
+    "alpha": 1
+  },
+  "palette/pink/75": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      0.8717970831,
+      0.927117939
+    ],
+    "alpha": 1
+  },
+  "palette/pink/100": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      0.8277521739,
+      0.9034218273
+    ],
+    "alpha": 1
+  },
+  "palette/pink/150": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9919966289,
+      0.7416157837,
+      0.8554104146
+    ],
+    "alpha": 1
+  },
+  "palette/pink/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9681146266,
+      0.6624755913,
+      0.8053242212
+    ],
+    "alpha": 1
+  },
+  "palette/pink/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9373501955,
+      0.5861096937,
+      0.7547491526
+    ],
+    "alpha": 1
+  },
+  "palette/pink/300": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9002856765,
+      0.5127400912,
+      0.7037234087
+    ],
+    "alpha": 1
+  },
+  "palette/pink/350": {
+    "colorSpace": "srgb",
+    "components": [
+      0.857395489,
+      0.4426597256,
+      0.6522858288
+    ],
+    "alpha": 1
+  },
+  "palette/pink/400": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8091262993,
+      0.3762091321,
+      0.6004890423
+    ],
+    "alpha": 1
+  },
+  "palette/pink/450": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7559331955,
+      0.3137724207,
+      0.5484057056
+    ],
+    "alpha": 1
+  },
+  "palette/pink/500": {
+    "colorSpace": "srgb",
+    "components": [
+      0.698297639,
+      0.2557866782,
+      0.4961318175
+    ],
+    "alpha": 1
+  },
+  "palette/pink/550": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6367368857,
+      0.2027661359,
+      0.4437887108
+    ],
+    "alpha": 1
+  },
+  "palette/pink/600": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5718090603,
+      0.1553451208,
+      0.3915245248
+    ],
+    "alpha": 1
+  },
+  "palette/pink/650": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5041158774,
+      0.1143364261,
+      0.3395157017
+    ],
+    "alpha": 1
+  },
+  "palette/pink/700": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4343039819,
+      0.0807536018,
+      0.2879690051
+    ],
+    "alpha": 1
+  },
+  "palette/pink/750": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3630651076,
+      0.0555879047,
+      0.2371246502
+    ],
+    "alpha": 1
+  },
+  "palette/pink/800": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2911337031,
+      0.0389517351,
+      0.1872613299
+    ],
+    "alpha": 1
+  },
+  "palette/pink/850": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2192750489,
+      0.0297311054,
+      0.1387040308
+    ],
+    "alpha": 1
+  },
+  "palette/pink/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1482298182,
+      0.0240752577,
+      0.0918340646
+    ],
+    "alpha": 1
+  },
+  "palette/pink/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1131785311,
+      0.0214493539,
+      0.0691667529
+    ],
+    "alpha": 1
+  },
+  "palette/pink/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0783935874,
+      0.0186506606,
+      0.0470831483
+    ],
+    "alpha": 1
+  },
+  "palette/pink/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/50": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9900527838,
+      0.9134503658,
+      0.9896197756
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/75": {
+    "colorSpace": "srgb",
+    "components": [
+      0.979546105,
+      0.8727396531,
+      0.979341559
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/100": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9673324055,
+      0.8327860602,
+      0.9675492238
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/150": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9387858034,
+      0.754793503,
+      0.9402931215
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9054834282,
+      0.6792329493,
+      0.9087057492
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8678702633,
+      0.6062060275,
+      0.8730506562
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/300": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8262233415,
+      0.5359384719,
+      0.8334399287
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/350": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7807801023,
+      0.4687199276,
+      0.7899605743
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/400": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7317863368,
+      0.4048819885,
+      0.7427244144
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/450": {
+    "colorSpace": "srgb",
+    "components": [
+      0.679516684,
+      0.3447899981,
+      0.6918914327
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/500": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6242839118,
+      0.2888412189,
+      0.6376817913
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/550": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5664431104,
+      0.237465725,
+      0.5803822261
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/600": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5063934653,
+      0.1911250986,
+      0.5203493238
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/650": {
+    "colorSpace": "srgb",
+    "components": [
+      0.444578929,
+      0.1502971948,
+      0.4580109674
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/700": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3814885033,
+      0.1154197315,
+      0.3938667527
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/750": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3176564324,
+      0.0867442676,
+      0.3284879568
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/800": {
+    "colorSpace": "srgb",
+    "components": [
+      0.253661761,
+      0.0640619241,
+      0.2625172291
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/850": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1901234063,
+      0.0463871298,
+      0.1966661817
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1276703384,
+      0.0322839306,
+      0.1316976509
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0970156932,
+      0.0265732049,
+      0.0997734734
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0667511509,
+      0.0214589802,
+      0.0682932994
+    ],
+    "alpha": 1
+  },
+  "palette/fuchsia/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/purple/50": {
+    "colorSpace": "srgb",
+    "components": [
+      0.957197583,
+      0.9256076325,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/purple/75": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9361860518,
+      0.8881480854,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/purple/100": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9154406591,
+      0.8504550177,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/purple/150": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8740789425,
+      0.7749204677,
+      0.9976759165
+    ],
+    "alpha": 1
+  },
+  "palette/purple/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8286645926,
+      0.7041473289,
+      0.9784378472
+    ],
+    "alpha": 1
+  },
+  "palette/purple/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7821317537,
+      0.6352155139,
+      0.9527539681
+    ],
+    "alpha": 1
+  },
+  "palette/purple/300": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7344650098,
+      0.5683573915,
+      0.9208066387
+    ],
+    "alpha": 1
+  },
+  "palette/purple/350": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6856452292,
+      0.5038635901,
+      0.8827188257
+    ],
+    "alpha": 1
+  },
+  "palette/purple/400": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6356725072,
+      0.4420654936,
+      0.8386339481
+    ],
+    "alpha": 1
+  },
+  "palette/purple/450": {
+    "colorSpace": "srgb",
+    "components": [
+      0.584578511,
+      0.3833250227,
+      0.7887550608
+    ],
+    "alpha": 1
+  },
+  "palette/purple/500": {
+    "colorSpace": "srgb",
+    "components": [
+      0.53243413,
+      0.3280260044,
+      0.7333663899
+    ],
+    "alpha": 1
+  },
+  "palette/purple/550": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4793546503,
+      0.2765637565,
+      0.6728457487
+    ],
+    "alpha": 1
+  },
+  "palette/purple/600": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4255034812,
+      0.2293289416,
+      0.6076714945
+    ],
+    "alpha": 1
+  },
+  "palette/purple/650": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3710950617,
+      0.1866793002,
+      0.5384258402
+    ],
+    "alpha": 1
+  },
+  "palette/purple/700": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3163975244,
+      0.1488890815,
+      0.465795609
+    ],
+    "alpha": 1
+  },
+  "palette/purple/750": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2617358531,
+      0.1160636584,
+      0.3905711459
+    ],
+    "alpha": 1
+  },
+  "palette/purple/800": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2074966345,
+      0.0880144931,
+      0.3136434618
+    ],
+    "alpha": 1
+  },
+  "palette/purple/850": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1541360138,
+      0.0641198986,
+      0.2359967327
+    ],
+    "alpha": 1
+  },
+  "palette/purple/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1021919537,
+      0.043242765,
+      0.1586767568
+    ],
+    "alpha": 1
+  },
+  "palette/purple/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0769436682,
+      0.033691133,
+      0.120447265
+    ],
+    "alpha": 1
+  },
+  "palette/purple/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0522853698,
+      0.0255190592,
+      0.0825897201
+    ],
+    "alpha": 1
+  },
+  "palette/purple/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/violet/50": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9336323924,
+      0.9350097505,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/violet/75": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9008627991,
+      0.9024212958,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/violet/100": {
+    "colorSpace": "srgb",
+    "components": [
+      0.868399966,
+      0.8697349144,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/violet/150": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8045061097,
+      0.8039320006,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/violet/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7422149557,
+      0.7372604346,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/violet/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6818997723,
+      0.6693103851,
+      0.9996174102
+    ],
+    "alpha": 1
+  },
+  "palette/violet/300": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6254944389,
+      0.6060522082,
+      0.9722813851
+    ],
+    "alpha": 1
+  },
+  "palette/violet/350": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5711281437,
+      0.5442546697,
+      0.9374911122
+    ],
+    "alpha": 1
+  },
+  "palette/violet/400": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5186556549,
+      0.4842623678,
+      0.8953949065
+    ],
+    "alpha": 1
+  },
+  "palette/violet/450": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4679115109,
+      0.4264495883,
+      0.8462074188
+    ],
+    "alpha": 1
+  },
+  "palette/violet/500": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4187219901,
+      0.3712081442,
+      0.7902379661
+    ],
+    "alpha": 1
+  },
+  "palette/violet/550": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3709203285,
+      0.3189319002,
+      0.7279073386
+    ],
+    "alpha": 1
+  },
+  "palette/violet/600": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3243633823,
+      0.2699961427,
+      0.6597574839
+    ],
+    "alpha": 1
+  },
+  "palette/violet/650": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2789484259,
+      0.224729289,
+      0.5864562571
+    ],
+    "alpha": 1
+  },
+  "palette/violet/700": {
+    "colorSpace": "srgb",
+    "components": [
+      0.234629494,
+      0.1833737433,
+      0.5087985436
+    ],
+    "alpha": 1
+  },
+  "palette/violet/750": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1914339244,
+      0.1460328626,
+      0.4277046304
+    ],
+    "alpha": 1
+  },
+  "palette/violet/800": {
+    "colorSpace": "srgb",
+    "components": [
+      0.149482235,
+      0.112603517,
+      0.3442159717
+    ],
+    "alpha": 1
+  },
+  "palette/violet/850": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1090204259,
+      0.082699617,
+      0.2594851903
+    ],
+    "alpha": 1
+  },
+  "palette/violet/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0.070492118,
+      0.0555763032,
+      0.1747384239
+    ],
+    "alpha": 1
+  },
+  "palette/violet/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0.05219061,
+      0.0427065895,
+      0.1327210549
+    ],
+    "alpha": 1
+  },
+  "palette/violet/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0348958365,
+      0.030660657,
+      0.0910425808
+    ],
+    "alpha": 1
+  },
+  "palette/violet/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/50": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9162697143,
+      0.9416729393,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/75": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8745071271,
+      0.9124441508,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/100": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8328198434,
+      0.8831400004,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/150": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7496994914,
+      0.8241880032,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6669831034,
+      0.7645332125,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5847864365,
+      0.703789475,
+      0.9999999999
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/300": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5091901153,
+      0.6428880128,
+      0.9873967717
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/350": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4445439955,
+      0.5837168103,
+      0.9536723818
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/400": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3847982413,
+      0.5254832381,
+      0.9122551789
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/450": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3299972715,
+      0.4685644404,
+      0.8633558128
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/500": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2801068351,
+      0.4133497007,
+      0.8072850586
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/550": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2350070759,
+      0.3602243352,
+      0.7444719419
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/600": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1944938592,
+      0.3095502477,
+      0.6754742201
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/650": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1582898821,
+      0.2616428814,
+      0.6009835176
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/700": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1260671793,
+      0.216744254,
+      0.5218264973
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/750": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0974817881,
+      0.174991788,
+      0.4389630052
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/800": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0722200053,
+      0.1363824495,
+      0.3534813981
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/850": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0500548274,
+      0.1007296442,
+      0.266587926
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0314194329,
+      0.0675995774,
+      0.1795679839
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0245481893,
+      0.0517455276,
+      0.1363917211
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0192051982,
+      0.036222783,
+      0.0935478646
+    ],
+    "alpha": 1
+  },
+  "palette/indigo/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/blue/50": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8994523449,
+      0.947920246,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/blue/75": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8486765332,
+      0.921774312,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/blue/100": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7974719057,
+      0.8955242477,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/blue/150": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6933584209,
+      0.8425926047,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/blue/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5858689275,
+      0.7888473476,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/blue/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4725123479,
+      0.7339299947,
+      0.9999999999
+    ],
+    "alpha": 1
+  },
+  "palette/blue/300": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3804079621,
+      0.6775757711,
+      0.9730073877
+    ],
+    "alpha": 1
+  },
+  "palette/blue/350": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2907260095,
+      0.6210078475,
+      0.9384942651
+    ],
+    "alpha": 1
+  },
+  "palette/blue/400": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2008595102,
+      0.5645705882,
+      0.8966471771
+    ],
+    "alpha": 1
+  },
+  "palette/blue/450": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1012194687,
+      0.5086253275,
+      0.8476647171
+    ],
+    "alpha": 1
+  },
+  "palette/blue/500": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.4543410428,
+      0.7827708597
+    ],
+    "alpha": 1
+  },
+  "palette/blue/550": {
+    "colorSpace": "srgb",
+    "components": [
+      2e-10,
+      0.4027934071,
+      0.6979846291
+    ],
+    "alpha": 1
+  },
+  "palette/blue/600": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.3523827175,
+      0.6150684625
+    ],
+    "alpha": 1
+  },
+  "palette/blue/650": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.303191629,
+      0.5341583119
+    ],
+    "alpha": 1
+  },
+  "palette/blue/700": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.2553183564,
+      0.4554157221
+    ],
+    "alpha": 1
+  },
+  "palette/blue/750": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.2088818453,
+      0.3790363368
+    ],
+    "alpha": 1
+  },
+  "palette/blue/800": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.1640296204,
+      0.3052628061
+    ],
+    "alpha": 1
+  },
+  "palette/blue/850": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.1209503516,
+      0.2344054571
+    ],
+    "alpha": 1
+  },
+  "palette/blue/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.0798954535,
+      0.1668778196
+    ],
+    "alpha": 1
+  },
+  "palette/blue/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0009762185,
+      0.0603543126,
+      0.1330487185
+    ],
+    "alpha": 1
+  },
+  "palette/blue/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0064122828,
+      0.0419518497,
+      0.0912162161
+    ],
+    "alpha": 1
+  },
+  "palette/blue/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/sky/50": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8739071266,
+      0.9570337233,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/sky/75": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8087879546,
+      0.9352725697,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/sky/100": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7417598509,
+      0.9132869293,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/sky/150": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6033128791,
+      0.8679383019,
+      0.9973362409
+    ],
+    "alpha": 1
+  },
+  "palette/sky/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4771205993,
+      0.8183393102,
+      0.978452385
+    ],
+    "alpha": 1
+  },
+  "palette/sky/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.344559882,
+      0.7670959411,
+      0.9532188071
+    ],
+    "alpha": 1
+  },
+  "palette/sky/300": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1845124227,
+      0.7145069323,
+      0.9217658155
+    ],
+    "alpha": 1
+  },
+  "palette/sky/350": {
+    "colorSpace": "srgb",
+    "components": [
+      8e-10,
+      0.6587120821,
+      0.8680758514
+    ],
+    "alpha": 1
+  },
+  "palette/sky/400": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.6005937458,
+      0.7929088001
+    ],
+    "alpha": 1
+  },
+  "palette/sky/450": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.5434888194,
+      0.7190524371
+    ],
+    "alpha": 1
+  },
+  "palette/sky/500": {
+    "colorSpace": "srgb",
+    "components": [
+      4e-10,
+      0.4874543501,
+      0.6465805444
+    ],
+    "alpha": 1
+  },
+  "palette/sky/550": {
+    "colorSpace": "srgb",
+    "components": [
+      5e-10,
+      0.4325554967,
+      0.5755773946
+    ],
+    "alpha": 1
+  },
+  "palette/sky/600": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.3788675046,
+      0.5061403062
+    ],
+    "alpha": 1
+  },
+  "palette/sky/650": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.3264784025,
+      0.4383831303
+    ],
+    "alpha": 1
+  },
+  "palette/sky/700": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.2754927901,
+      0.3724411507
+    ],
+    "alpha": 1
+  },
+  "palette/sky/750": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.2260373461,
+      0.3084782064
+    ],
+    "alpha": 1
+  },
+  "palette/sky/800": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.1782691858,
+      0.246697502
+    ],
+    "alpha": 1
+  },
+  "palette/sky/850": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.1323892454,
+      0.1873589169
+    ],
+    "alpha": 1
+  },
+  "palette/sky/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.088665284,
+      0.1308087563
+    ],
+    "alpha": 1
+  },
+  "palette/sky/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.0677236741,
+      0.1037240328
+    ],
+    "alpha": 1
+  },
+  "palette/sky/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.0474754507,
+      0.0775360973
+    ],
+    "alpha": 1
+  },
+  "palette/sky/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/50": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8464836449,
+      0.9677924328,
+      0.9901788755
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/75": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7761319402,
+      0.9485439086,
+      0.9802439027
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/100": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7065253001,
+      0.9283210313,
+      0.9688319356
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/150": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5665218294,
+      0.8855572527,
+      0.9424194631
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4191253756,
+      0.8401966521,
+      0.911739669
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.242779973,
+      0.7925994411,
+      0.8770016607
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/300": {
+    "colorSpace": "srgb",
+    "components": [
+      1.1e-9,
+      0.7391590028,
+      0.8284828724
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/350": {
+    "colorSpace": "srgb",
+    "components": [
+      7e-10,
+      0.6784442409,
+      0.7609391537
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/400": {
+    "colorSpace": "srgb",
+    "components": [
+      9e-10,
+      0.6187190939,
+      0.694496358
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/450": {
+    "colorSpace": "srgb",
+    "components": [
+      7e-10,
+      0.5600353746,
+      0.6292121256
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/500": {
+    "colorSpace": "srgb",
+    "components": [
+      5e-10,
+      0.5024517078,
+      0.5651516752
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/550": {
+    "colorSpace": "srgb",
+    "components": [
+      3e-10,
+      0.4460350534,
+      0.5023894983
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/600": {
+    "colorSpace": "srgb",
+    "components": [
+      4e-10,
+      0.3908627373,
+      0.4410116179
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/650": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.3370252219,
+      0.3811186713
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/700": {
+    "colorSpace": "srgb",
+    "components": [
+      2e-10,
+      0.2846299987,
+      0.3228302402
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/750": {
+    "colorSpace": "srgb",
+    "components": [
+      2e-10,
+      0.2338072489,
+      0.2662911482
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/800": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.1847184316,
+      0.2116810145
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/850": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.1375700381,
+      0.1592295557
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.0926372304,
+      0.1092428833
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.0711166432,
+      0.0853017453
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.0503086126,
+      0.0621533096
+    ],
+    "alpha": 1
+  },
+  "palette/cyan/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/teal/50": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8497499402,
+      0.9721149327,
+      0.9525524656
+    ],
+    "alpha": 1
+  },
+  "palette/teal/75": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7807655137,
+      0.9546576614,
+      0.9278930784
+    ],
+    "alpha": 1
+  },
+  "palette/teal/100": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7124915148,
+      0.9361280566,
+      0.9030419923
+    ],
+    "alpha": 1
+  },
+  "palette/teal/150": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5752490916,
+      0.896509172,
+      0.8529564925
+    ],
+    "alpha": 1
+  },
+  "palette/teal/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4313934942,
+      0.8539837812,
+      0.802477448
+    ],
+    "alpha": 1
+  },
+  "palette/teal/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2630145079,
+      0.8088892632,
+      0.75165454
+    ],
+    "alpha": 1
+  },
+  "palette/teal/300": {
+    "colorSpace": "srgb",
+    "components": [
+      6e-10,
+      0.7580664809,
+      0.698883542
+    ],
+    "alpha": 1
+  },
+  "palette/teal/350": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.6959062111,
+      0.6412479053
+    ],
+    "alpha": 1
+  },
+  "palette/teal/400": {
+    "colorSpace": "srgb",
+    "components": [
+      7e-10,
+      0.6347591173,
+      0.5845516956
+    ],
+    "alpha": 1
+  },
+  "palette/teal/450": {
+    "colorSpace": "srgb",
+    "components": [
+      4e-10,
+      0.5746782457,
+      0.5288440981
+    ],
+    "alpha": 1
+  },
+  "palette/teal/500": {
+    "colorSpace": "srgb",
+    "components": [
+      5e-10,
+      0.5157236167,
+      0.4741807641
+    ],
+    "alpha": 1
+  },
+  "palette/teal/550": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.4579637846,
+      0.4206252582
+    ],
+    "alpha": 1
+  },
+  "palette/teal/600": {
+    "colorSpace": "srgb",
+    "components": [
+      2e-10,
+      0.4014779163,
+      0.3682509844
+    ],
+    "alpha": 1
+  },
+  "palette/teal/650": {
+    "colorSpace": "srgb",
+    "components": [
+      2e-10,
+      0.3463586277,
+      0.3171438173
+    ],
+    "alpha": 1
+  },
+  "palette/teal/700": {
+    "colorSpace": "srgb",
+    "components": [
+      2e-10,
+      0.2927159698,
+      0.2674057972
+    ],
+    "alpha": 1
+  },
+  "palette/teal/750": {
+    "colorSpace": "srgb",
+    "components": [
+      2e-10,
+      0.240683223,
+      0.2191605031
+    ],
+    "alpha": 1
+  },
+  "palette/teal/800": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.1904256904,
+      0.1725612058
+    ],
+    "alpha": 1
+  },
+  "palette/teal/850": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.1421547796,
+      0.1278039245
+    ],
+    "alpha": 1
+  },
+  "palette/teal/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.0961522038,
+      0.0851498665
+    ],
+    "alpha": 1
+  },
+  "palette/teal/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.0741192505,
+      0.0647206873
+    ],
+    "alpha": 1
+  },
+  "palette/teal/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.0528158187,
+      0.0449679278
+    ],
+    "alpha": 1
+  },
+  "palette/teal/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/50": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8677122721,
+      0.9709759178,
+      0.9168660031
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/75": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8071586838,
+      0.9531455367,
+      0.8779148378
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/100": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7477089717,
+      0.9343144434,
+      0.8398356553
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/150": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6305783815,
+      0.8942653231,
+      0.7659519342
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5139276508,
+      0.8514970995,
+      0.6949561821
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3945864953,
+      0.8063091022,
+      0.6268786576
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/300": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2643547018,
+      0.7589092321,
+      0.5618320866
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/350": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0715502177,
+      0.7094898803,
+      0.499951221
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/400": {
+    "colorSpace": "srgb",
+    "components": [
+      6e-10,
+      0.6489934061,
+      0.4526743324
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/450": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.587672669,
+      0.4084537986
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/500": {
+    "colorSpace": "srgb",
+    "components": [
+      5e-10,
+      0.5275014164,
+      0.3650621983
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/550": {
+    "colorSpace": "srgb",
+    "components": [
+      4e-10,
+      0.4685496174,
+      0.3225499887
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/600": {
+    "colorSpace": "srgb",
+    "components": [
+      2e-10,
+      0.4108980723,
+      0.2809754378
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/650": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.3546413086,
+      0.2404067127
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/700": {
+    "colorSpace": "srgb",
+    "components": [
+      2e-10,
+      0.2998916481,
+      0.2009248126
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/750": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.2467851219,
+      0.1626278343
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/800": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.1954904443,
+      0.1256374435
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/850": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.1462233856,
+      0.0901092398
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.0992714726,
+      0.0562505688
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.0767838339,
+      0.0400281592
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.0550407715,
+      0.0259672041
+    ],
+    "alpha": 1
+  },
+  "palette/emerald/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/green/50": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8905575736,
+      0.9666452625,
+      0.8896819751
+    ],
+    "alpha": 1
+  },
+  "palette/green/75": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8403515876,
+      0.9471421694,
+      0.8395832669
+    ],
+    "alpha": 1
+  },
+  "palette/green/100": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7913726226,
+      0.9267957905,
+      0.7910039491
+    ],
+    "alpha": 1
+  },
+  "palette/green/150": {
+    "colorSpace": "srgb",
+    "components": [
+      0.696327348,
+      0.8841061587,
+      0.6976252378
+    ],
+    "alpha": 1
+  },
+  "palette/green/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6047143654,
+      0.8391618577,
+      0.6088713682
+    ],
+    "alpha": 1
+  },
+  "palette/green/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5163669248,
+      0.7922340727,
+      0.5246628284
+    ],
+    "alpha": 1
+  },
+  "palette/green/300": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4312190824,
+      0.7435175856,
+      0.4450838366
+    ],
+    "alpha": 1
+  },
+  "palette/green/350": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3491180269,
+      0.6931952463,
+      0.3702574442
+    ],
+    "alpha": 1
+  },
+  "palette/green/400": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2696049989,
+      0.6414599631,
+      0.3002938347
+    ],
+    "alpha": 1
+  },
+  "palette/green/450": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1913833167,
+      0.588522331,
+      0.2352607872
+    ],
+    "alpha": 1
+  },
+  "palette/green/500": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1101469583,
+      0.5346126953,
+      0.1751552405
+    ],
+    "alpha": 1
+  },
+  "palette/green/550": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0049369857,
+      0.4799810888,
+      0.1198513652
+    ],
+    "alpha": 1
+  },
+  "palette/green/600": {
+    "colorSpace": "srgb",
+    "components": [
+      2e-10,
+      0.421267042,
+      0.0991840992
+    ],
+    "alpha": 1
+  },
+  "palette/green/650": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.3637582347,
+      0.080566511
+    ],
+    "alpha": 1
+  },
+  "palette/green/700": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.3077900727,
+      0.062447683
+    ],
+    "alpha": 1
+  },
+  "palette/green/750": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.2535016142,
+      0.044872633
+    ],
+    "alpha": 1
+  },
+  "palette/green/800": {
+    "colorSpace": "srgb",
+    "components": [
+      1e-10,
+      0.2010653286,
+      0.0288371423
+    ],
+    "alpha": 1
+  },
+  "palette/green/850": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0.1507017883,
+      0.0170483249
+    ],
+    "alpha": 1
+  },
+  "palette/green/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0010923095,
+      0.102434572,
+      0.0098404906
+    ],
+    "alpha": 1
+  },
+  "palette/green/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0067220919,
+      0.0776157181,
+      0.0113789154
+    ],
+    "alpha": 1
+  },
+  "palette/green/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0102737805,
+      0.0532723408,
+      0.0121833256
+    ],
+    "alpha": 1
+  },
+  "palette/green/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/lime/50": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9209963544,
+      0.9587552604,
+      0.8652299102
+    ],
+    "alpha": 1
+  },
+  "palette/lime/75": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8838607085,
+      0.9361287618,
+      0.8048800641
+    ],
+    "alpha": 1
+  },
+  "palette/lime/100": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8475584698,
+      0.9129116799,
+      0.7464573537
+    ],
+    "alpha": 1
+  },
+  "palette/lime/150": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7771472503,
+      0.865112657,
+      0.6340553571
+    ],
+    "alpha": 1
+  },
+  "palette/lime/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7095040709,
+      0.8158329598,
+      0.5264938682
+    ],
+    "alpha": 1
+  },
+  "palette/lime/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6446055053,
+      0.7653277741,
+      0.4227328775
+    ],
+    "alpha": 1
+  },
+  "palette/lime/300": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5824869901,
+      0.7138003177,
+      0.3211077744
+    ],
+    "alpha": 1
+  },
+  "palette/lime/350": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5231925252,
+      0.6614453417,
+      0.217443316
+    ],
+    "alpha": 1
+  },
+  "palette/lime/400": {
+    "colorSpace": "srgb",
+    "components": [
+      0.466755634,
+      0.6084622764,
+      0.0936684485
+    ],
+    "alpha": 1
+  },
+  "palette/lime/450": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4177056942,
+      0.5526498887,
+      2e-10
+    ],
+    "alpha": 1
+  },
+  "palette/lime/500": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3734478705,
+      0.4957576997,
+      3e-10
+    ],
+    "alpha": 1
+  },
+  "palette/lime/550": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3300869926,
+      0.4400185095,
+      3e-10
+    ],
+    "alpha": 1
+  },
+  "palette/lime/600": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2876824919,
+      0.3855087152,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "palette/lime/650": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2463038962,
+      0.332317693,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/lime/700": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2060338217,
+      0.2805516437,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/lime/750": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1669723234,
+      0.2303391852,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "palette/lime/800": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1292434961,
+      0.1818398376,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "palette/lime/850": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0930060453,
+      0.1352576128,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/lime/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0584714561,
+      0.0908643687,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/lime/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0419310999,
+      0.0696022056,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/lime/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0.028227512,
+      0.0483636344,
+      0.0027432396
+    ],
+    "alpha": 1
+  },
+  "palette/lime/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/50": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9604727584,
+      0.9457682792,
+      0.847790429
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/75": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9391797537,
+      0.917917904,
+      0.7800134792
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/100": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9175441392,
+      0.8898504729,
+      0.7143390862
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/150": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8734873692,
+      0.833279334,
+      0.5873368063
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8284637115,
+      0.7763756783,
+      0.4638452938
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7824252811,
+      0.7193982312,
+      0.3399888249
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/300": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7352823399,
+      0.6625986808,
+      0.2045656532
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/350": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6853255004,
+      0.6064664858,
+      4e-10
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/400": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6250400051,
+      0.5526025642,
+      4e-10
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/450": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5658057084,
+      0.4996778681,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/500": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5076817848,
+      0.4477452689,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/550": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4507358228,
+      0.3968651556,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/600": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3950458736,
+      0.3471072654,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/650": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3407032483,
+      0.2985531829,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/700": {
+    "colorSpace": "srgb",
+    "components": [
+      0.287816447,
+      0.251299851,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/750": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2365168723,
+      0.2054646753,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/800": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1869674979,
+      0.1611932696,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/850": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1393767527,
+      0.1186718611,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0940223802,
+      0.0781486084,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0722998842,
+      0.0587399793,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0512966303,
+      0.0399675687,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/yellow/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/amber/50": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9886002494,
+      0.9344301897,
+      0.8466317441
+    ],
+    "alpha": 1
+  },
+  "palette/amber/75": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9779097103,
+      0.9019764027,
+      0.7784208217
+    ],
+    "alpha": 1
+  },
+  "palette/amber/100": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9657251886,
+      0.8696038729,
+      0.7123620316
+    ],
+    "alpha": 1
+  },
+  "palette/amber/150": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9377167673,
+      0.8051443332,
+      0.5847122517
+    ],
+    "alpha": 1
+  },
+  "palette/amber/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9053994486,
+      0.7412282701,
+      0.4606981332
+    ],
+    "alpha": 1
+  },
+  "palette/amber/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8690320382,
+      0.6781139326,
+      0.336355838
+    ],
+    "alpha": 1
+  },
+  "palette/amber/300": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8287369302,
+      0.6161018734,
+      0.2000562473
+    ],
+    "alpha": 1
+  },
+  "palette/amber/350": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7808606396,
+      0.5570794027,
+      3e-10
+    ],
+    "alpha": 1
+  },
+  "palette/amber/400": {
+    "colorSpace": "srgb",
+    "components": [
+      0.712795616,
+      0.5072371239,
+      4e-10
+    ],
+    "alpha": 1
+  },
+  "palette/amber/450": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6459174426,
+      0.4582639453,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "palette/amber/500": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5802929303,
+      0.4102087907,
+      5e-10
+    ],
+    "alpha": 1
+  },
+  "palette/amber/550": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5159983893,
+      0.3631275401,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "palette/amber/600": {
+    "colorSpace": "srgb",
+    "components": [
+      0.453121943,
+      0.317084724,
+      2e-10
+    ],
+    "alpha": 1
+  },
+  "palette/amber/650": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3917666858,
+      0.2721558358,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/amber/700": {
+    "colorSpace": "srgb",
+    "components": [
+      0.332055119,
+      0.2284305802,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/amber/750": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2741356021,
+      0.1860175969,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/amber/800": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2181921397,
+      0.145051628,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/amber/850": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1644600574,
+      0.1057049961,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/amber/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0.11325294,
+      0.0682073316,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/amber/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0887272694,
+      0.0502478093,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/amber/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0650136553,
+      0.0331762686,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/amber/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/orange/50": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      0.9255479266,
+      0.8777736276
+    ],
+    "alpha": 1
+  },
+  "palette/orange/75": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      0.8876870882,
+      0.8150652695
+    ],
+    "alpha": 1
+  },
+  "palette/orange/100": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      0.8492830301,
+      0.7509931931
+    ],
+    "alpha": 1
+  },
+  "palette/orange/150": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9941877667,
+      0.7726256087,
+      0.6252438504
+    ],
+    "alpha": 1
+  },
+  "palette/orange/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9717839679,
+      0.700414605,
+      0.5159281581
+    ],
+    "alpha": 1
+  },
+  "palette/orange/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9425714822,
+      0.6298460144,
+      0.4107627408
+    ],
+    "alpha": 1
+  },
+  "palette/orange/300": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9070128233,
+      0.5612352221,
+      0.3078691121
+    ],
+    "alpha": 1
+  },
+  "palette/orange/350": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8654833921,
+      0.4949592184,
+      0.2023440867
+    ],
+    "alpha": 1
+  },
+  "palette/orange/400": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8183502257,
+      0.4314379617,
+      0.0694544992
+    ],
+    "alpha": 1
+  },
+  "palette/orange/450": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7495201974,
+      0.3838069355,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "palette/orange/500": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6741957121,
+      0.342722937,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "palette/orange/550": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6003977814,
+      0.3024715625,
+      2e-10
+    ],
+    "alpha": 1
+  },
+  "palette/orange/600": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5282275544,
+      0.2631079812,
+      2e-10
+    ],
+    "alpha": 1
+  },
+  "palette/orange/650": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4578033636,
+      0.2246967351,
+      2e-10
+    ],
+    "alpha": 1
+  },
+  "palette/orange/700": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3892658176,
+      0.1873145157,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "palette/orange/750": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3227852047,
+      0.1510542028,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/orange/800": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2585727274,
+      0.1160309922,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "palette/orange/850": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1968984946,
+      0.0823922082,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/orange/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1381224425,
+      0.0503341699,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/orange/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1099716274,
+      0.0351080337,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/orange/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0797165861,
+      0.0243725862,
+      0.0022088676
+    ],
+    "alpha": 1
+  },
+  "palette/orange/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/red/50": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      0.9212316611,
+      0.9091923213
+    ],
+    "alpha": 1
+  },
+  "palette/red/75": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      0.881233469,
+      0.8632538371
+    ],
+    "alpha": 1
+  },
+  "palette/red/100": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      0.8407092298,
+      0.8168897138
+    ],
+    "alpha": 1
+  },
+  "palette/red/150": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      0.7576009858,
+      0.7226131199
+    ],
+    "alpha": 1
+  },
+  "palette/red/200": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      0.6705890277,
+      0.625645868
+    ],
+    "alpha": 1
+  },
+  "palette/red/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9749188711,
+      0.593691035,
+      0.5444921374
+    ],
+    "alpha": 1
+  },
+  "palette/red/300": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9408657591,
+      0.5201687433,
+      0.4693091259
+    ],
+    "alpha": 1
+  },
+  "palette/red/350": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8999297449,
+      0.4495059403,
+      0.3991561094
+    ],
+    "alpha": 1
+  },
+  "palette/red/400": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8526142485,
+      0.3820928025,
+      0.3342090521
+    ],
+    "alpha": 1
+  },
+  "palette/red/450": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7994261002,
+      0.318372654,
+      0.2746416096
+    ],
+    "alpha": 1
+  },
+  "palette/red/500": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7408997059,
+      0.2588532709,
+      0.2206308841
+    ],
+    "alpha": 1
+  },
+  "palette/red/550": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6776103561,
+      0.2041364484,
+      0.1723764538
+    ],
+    "alpha": 1
+  },
+  "palette/red/600": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6101817178,
+      0.1549755078,
+      0.1301319332
+    ],
+    "alpha": 1
+  },
+  "palette/red/650": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5392899338,
+      0.1123677842,
+      0.0942417021
+    ],
+    "alpha": 1
+  },
+  "palette/red/700": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4656655275,
+      0.077635896,
+      0.0651436645
+    ],
+    "alpha": 1
+  },
+  "palette/red/750": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3900934008,
+      0.0522145567,
+      0.0432152332
+    ],
+    "alpha": 1
+  },
+  "palette/red/800": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3134094514,
+      0.0365398627,
+      0.0291581305
+    ],
+    "alpha": 1
+  },
+  "palette/red/850": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2364859892,
+      0.0289913874,
+      0.0219391582
+    ],
+    "alpha": 1
+  },
+  "palette/red/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1601675838,
+      0.0244309743,
+      0.0178425098
+    ],
+    "alpha": 1
+  },
+  "palette/red/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1224250009,
+      0.0220471271,
+      0.0162395103
+    ],
+    "alpha": 1
+  },
+  "palette/red/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0849054592,
+      0.0192744781,
+      0.0147423043
+    ],
+    "alpha": 1
+  },
+  "palette/red/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0.01292,
+      0.01292,
+      0.01292
+    ],
+    "alpha": 1
+  },
+  "palette/gray/0": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      1,
+      1
+    ],
+    "alpha": 1
+  },
+  "palette/gray/25": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9653810442,
+      0.9653810442,
+      0.9653810442
+    ],
+    "alpha": 1
+  },
+  "palette/gray/50": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9317619717,
+      0.9317619717,
+      0.9317619717
+    ],
+    "alpha": 1
+  },
+  "palette/gray/75": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8991073255,
+      0.8991073255,
+      0.8991073255
+    ],
+    "alpha": 1
+  },
+  "palette/gray/100": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8673824811,
+      0.8673824811,
+      0.8673824811
+    ],
+    "alpha": 1
+  },
+  "palette/gray/125": {
+    "colorSpace": "srgb",
+    "components": [
+      0.836553596,
+      0.836553596,
+      0.836553596
+    ],
+    "alpha": 1
+  },
+  "palette/gray/150": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8065875574,
+      0.8065875574,
+      0.8065875574
+    ],
+    "alpha": 1
+  },
+  "palette/gray/175": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7774519281,
+      0.7774519281,
+      0.7774519281
+    ],
+    "alpha": 1
+  },
+  "palette/gray/200": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7491148896,
+      0.7491148896,
+      0.7491148896
+    ],
+    "alpha": 1
+  },
+  "palette/gray/225": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7215451819,
+      0.7215451819,
+      0.7215451819
+    ],
+    "alpha": 1
+  },
+  "palette/gray/250": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6947120397,
+      0.6947120397,
+      0.6947120397
+    ],
+    "alpha": 1
+  },
+  "palette/gray/275": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6685851228,
+      0.6685851228,
+      0.6685851228
+    ],
+    "alpha": 1
+  },
+  "palette/gray/300": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6431344413,
+      0.6431344413,
+      0.6431344413
+    ],
+    "alpha": 1
+  },
+  "palette/gray/325": {
+    "colorSpace": "srgb",
+    "components": [
+      0.618330272,
+      0.618330272,
+      0.618330272
+    ],
+    "alpha": 1
+  },
+  "palette/gray/350": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5941430661,
+      0.5941430661,
+      0.5941430661
+    ],
+    "alpha": 1
+  },
+  "palette/gray/375": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5705433443,
+      0.5705433443,
+      0.5705433443
+    ],
+    "alpha": 1
+  },
+  "palette/gray/400": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5475015781,
+      0.5475015781,
+      0.5475015781
+    ],
+    "alpha": 1
+  },
+  "palette/gray/425": {
+    "colorSpace": "srgb",
+    "components": [
+      0.524988051,
+      0.524988051,
+      0.524988051
+    ],
+    "alpha": 1
+  },
+  "palette/gray/450": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5029726976,
+      0.5029726976,
+      0.5029726976
+    ],
+    "alpha": 1
+  },
+  "palette/gray/475": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4814249122,
+      0.4814249122,
+      0.4814249122
+    ],
+    "alpha": 1
+  },
+  "palette/gray/500": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4603133193,
+      0.4603133193,
+      0.4603133193
+    ],
+    "alpha": 1
+  },
+  "palette/gray/525": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4396054941,
+      0.4396054941,
+      0.4396054941
+    ],
+    "alpha": 1
+  },
+  "palette/gray/550": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4192676192,
+      0.4192676192,
+      0.4192676192
+    ],
+    "alpha": 1
+  },
+  "palette/gray/575": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3992640547,
+      0.3992640547,
+      0.3992640547
+    ],
+    "alpha": 1
+  },
+  "palette/gray/600": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3795567932,
+      0.3795567932,
+      0.3795567932
+    ],
+    "alpha": 1
+  },
+  "palette/gray/625": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3601047577,
+      0.3601047577,
+      0.3601047577
+    ],
+    "alpha": 1
+  },
+  "palette/gray/650": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3408628816,
+      0.3408628816,
+      0.3408628816
+    ],
+    "alpha": 1
+  },
+  "palette/gray/675": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3217808795,
+      0.3217808795,
+      0.3217808795
+    ],
+    "alpha": 1
+  },
+  "palette/gray/700": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3028015713,
+      0.3028015713,
+      0.3028015713
+    ],
+    "alpha": 1
+  },
+  "palette/gray/725": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2838585422,
+      0.2838585422,
+      0.2838585422
+    ],
+    "alpha": 1
+  },
+  "palette/gray/750": {
+    "colorSpace": "srgb",
+    "components": [
+      0.264872785,
+      0.264872785,
+      0.264872785
+    ],
+    "alpha": 1
+  },
+  "palette/gray/775": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2457477303,
+      0.2457477303,
+      0.2457477303
+    ],
+    "alpha": 1
+  },
+  "palette/gray/800": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2263616092,
+      0.2263616092,
+      0.2263616092
+    ],
+    "alpha": 1
+  },
+  "palette/gray/825": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2065551762,
+      0.2065551762,
+      0.2065551762
+    ],
+    "alpha": 1
+  },
+  "palette/gray/850": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1861108446,
+      0.1861108446,
+      0.1861108446
+    ],
+    "alpha": 1
+  },
+  "palette/gray/875": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1647146074,
+      0.1647146074,
+      0.1647146074
+    ],
+    "alpha": 1
+  },
+  "palette/gray/900": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1418796635,
+      0.1418796635,
+      0.1418796635
+    ],
+    "alpha": 1
+  },
+  "palette/gray/925": {
+    "colorSpace": "srgb",
+    "components": [
+      0.1167714979,
+      0.1167714979,
+      0.1167714979
+    ],
+    "alpha": 1
+  },
+  "palette/gray/950": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0877167424,
+      0.0877167424,
+      0.0877167424
+    ],
+    "alpha": 1
+  },
+  "palette/gray/975": {
+    "colorSpace": "srgb",
+    "components": [
+      0.0502030166,
+      0.0502030166,
+      0.0502030166
+    ],
+    "alpha": 1
+  },
+  "palette/gray/1000": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/black": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0,
+      0
+    ],
+    "alpha": 1
+  },
+  "palette/white": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      1,
+      1
+    ],
+    "alpha": 1
+  }
+}
