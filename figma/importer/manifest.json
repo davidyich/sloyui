@@ -1,10 +1,16 @@
 {
-  "name": "Capacities UI V2 — Variables",
+  "name": "Sloy UI — Variables",
   "id": "capacities-ui-v2-variables-local",
   "api": "1.0.0",
   "main": "code.js",
   "ui": "ui.html",
-  "editorType": ["figma"],
+  "editorType": [
+    "figma"
+  ],
   "documentAccess": "dynamic-page",
-  "networkAccess": { "allowedDomains": ["none"] }
+  "networkAccess": {
+    "allowedDomains": [
+      "none"
+    ]
+  }
 }

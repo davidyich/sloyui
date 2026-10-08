@@ -1,6 +1,6 @@
 import { separateFigmaContexts } from './figma-context-graph.mjs';
 import { writeFile, mkdir } from 'node:fs/promises';
-import { readJSON, source, palette, hues, surfaces, themes, states, scales, surfaceRules, buildColorModel, hex } from './color-model.mjs';
+import { readJSON, foundation, palette, hues, surfaces, themes, states, scales, surfaceRules, buildColorModel, hex } from './color-model.mjs';
 const {version}=readJSON('package.json');
 const {contexts,audit}=buildColorModel();
 const cssName=name=>'--cap-'+name.replaceAll('/','-');
@@ -8,15 +8,10 @@ const alias=name=>({alias:name});
 const prim={...palette},metadata={},legacyNames={},alphaPrimitives={};
 const primitive=(name,value,type,scopes,unit)=>{prim[name]=value;metadata['Primitives/'+name]={type,scopes,unit,css:cssName(name)};};
 for(const name of Object.keys(palette))metadata['Primitives/'+name]={type:'COLOR',scopes:[],css:cssName(name)};
-const base=readJSON('source/token-rules.json').find(r=>r.selector===':root, :host'&&r.context===' theme').variables;
-const raw=readJSON('source/dark-css.json').declared;
-const px=value=>parseFloat(value)*(value.endsWith('rem')?16:1);
-for(const [key,value]of Object.entries(base)){
- const m=/^--(font-size|line-height|font-weight|radius)-(.+)$/.exec(key);if(!m)continue;
- const [,group,slug]=m;if(value.startsWith('var('))continue;let name=group==='radius'?'number/radius/'+slug:group.replace('font-size','font/size').replace('line-height','font/line-height').replace('font-weight','font/weight')+'/'+slug;
- if(slug==='sm-plus')name=name.replace('/sm-plus','/sm');
- const n=group==='line-height'&&!/[a-z]/i.test(value)?Number((parseFloat(value)*px(base['--font-size-'+slug])).toFixed(3)):px(value);
- primitive(name,n,'FLOAT',group==='font-size'?['FONT_SIZE']:group==='line-height'?['LINE_HEIGHT']:group==='font-weight'?['FONT_WEIGHT']:['CORNER_RADIUS'],group==='font-weight'?'number':'px');legacyNames[key.slice(2)]=name;
+const base=Object.fromEntries(Object.entries(foundation.scalars).flatMap(([group,values])=>Object.entries(values).map(([slug,value])=>[`--${group}-${slug}`,String(value)+(group==='font-weight'?'':'px')])));
+for(const [group,values] of Object.entries(foundation.scalars))for(const [slug,n] of Object.entries(values)){
+ const name=group==='radius'?'number/radius/'+slug:group.replace('font-size','font/size').replace('line-height','font/line-height').replace('font-weight','font/weight')+'/'+slug;
+ primitive(name,n,'FLOAT',group==='font-size'?['FONT_SIZE']:group==='line-height'?['LINE_HEIGHT']:group==='font-weight'?['FONT_WEIGHT']:['CORNER_RADIUS'],group==='font-weight'?'number':'px');legacyNames[group+'-'+slug]=name;
 }
 for(const [size,n]of Object.entries({xs:22,sm:28,md:32,lg:36,xl:44})) {primitive('number/control-size/'+size,n,'FLOAT',['WIDTH_HEIGHT'],'px');legacyNames['el-h-'+(size==='md'?'base':size)]='number/control-size/'+size;legacyNames['el-w-'+(size==='md'?'base':size)]='number/control-size/'+size;}
 for(const n of [0,1,2,3,4,5,6,8,10,12,16]){primitive('number/spacing/'+n,n*4,'FLOAT',['GAP'],'px');legacyNames['space-'+n]='number/spacing/'+n;}
@@ -43,8 +38,6 @@ const semantic={};
 for(const [mode,ctx]of Object.entries(contexts)){
  semantic[mode]=Object.fromEntries(Object.entries(ctx.values).map(([name,p])=>[name,alias('Primitives/'+p)]));
  const neutral=ctx.theme==='Light'?'black':'white';for(const [state,step]of Object.entries({normal:'00',hover:ctx.theme==='Light'?'04':'06',pressed:ctx.theme==='Light'?'08':'10'})){semantic[mode]['reaction/'+state]=alias('Primitives/alpha/'+neutral+'/'+step);semantic[mode]['reaction/'+state+'-opacity']=alias('Primitives/number/opacity/'+step);metadata['Semantic/reaction/'+state+'-opacity']={type:'FLOAT',scopes:['OPACITY'],unit:'number',css:cssName('reaction/'+state+'-opacity')};}semantic[mode]['reaction/base']=alias('Primitives/palette/'+neutral);
- const original=source[ctx.theme.toLowerCase()];
- for(const [name,t]of Object.entries(original).filter(([n])=>!n.startsWith('palette/'))){let target;if(typeof t.$value==='string'){const ref=t.$value.slice(1,-1).replaceAll('.','/');target=ref.startsWith('palette/')?'Primitives/'+ref:'Semantic/source/'+ref;}else{const pn='source-literals/'+name+'/'+ctx.theme;primitive(pn,t.$value,'COLOR',[]);target='Primitives/'+pn;}semantic[mode]['source/'+name]=alias(target);metadata['Semantic/source/'+name]={type:'COLOR',scopes:[],css:cssName('source/'+name)};}
  for(const [layer,alpha]of Object.entries({contact:ctx.theme==='Light'?.06:.10,ambient:ctx.theme==='Light'?.10:.14})){const name='effect/shadow/'+layer+'/'+ctx.theme;primitive(name,{colorSpace:'srgb',components:[0,0,0],alpha},'COLOR',['EFFECT_COLOR']);semantic[mode]['shadow/'+layer]=alias('Primitives/'+name);}
  const dim='effect/overlay/'+ctx.theme;primitive(dim,{colorSpace:'srgb',components:[0,0,0],alpha:ctx.theme==='Light'?.32:.58},'COLOR',[]);semantic[mode]['overlay/dim']=alias('Primitives/'+dim);
 }
@@ -52,7 +45,7 @@ for(const name of Object.keys(Object.values(semantic)[0]))if(!metadata['Semantic
 for(const name of Object.keys(Object.values(semantic)[0]).filter(name=>name.startsWith('action-vivid/')))metadata['Semantic/'+name].css='--cap-accent-vivid-'+name.split('/').at(-1);
 const borders={Off:{'border/width':alias('Primitives/number/border/none')},On:{'border/width':alias('Primitives/number/border/width')}};
 metadata['Borders/border/width']={type:'FLOAT',scopes:['STROKE_FLOAT'],unit:'px',css:'--cap-decoration-width'};
-const graph={version,modes:hues,states,contexts:Object.fromEntries(Object.entries(contexts).map(([k,v])=>[k,{theme:v.theme,surface:v.surface}])),collections:[{name:'Primitives',modes:{Value:prim}},...separateFigmaContexts(semantic,metadata),{name:'Borders',modes:borders}],metadata,legacyNames,note:'Full original palettes and derived alpha neutrals. Theme Light/Dark, Semantic Base/Canvas/Raised/Floating and Borders Off/On inherit independently. Semantic aliases Theme aliases Primitives; shared roles are deduplicated across surfaces.'};
+const graph={version,modes:hues,states,contexts:Object.fromEntries(Object.entries(contexts).map(([k,v])=>[k,{theme:v.theme,surface:v.surface}])),collections:[{name:'Primitives',modes:{Value:prim}},...separateFigmaContexts(semantic,metadata),{name:'Borders',modes:borders}],metadata,legacyNames,note:'Independent Sloy UI analytic OKLCH palettes and derived alpha neutrals. Theme Light/Dark, Semantic Base/Canvas/Raised/Floating and Borders Off/On inherit independently. Semantic aliases Theme aliases Primitives; shared roles are deduplicated across surfaces.'};
 const json=async(path,v)=>writeFile(path,JSON.stringify(v,null,2)+'\n');
 await mkdir('src/tokens',{recursive:true});
 await json('src/tokens/figma-modes.json',graph);
@@ -66,10 +59,10 @@ await json('src/tokens/element-states.json',audit);
 const colorCSS=c=>{const rgb=c.components.map(x=>+(x*255).toFixed(8)).join(' ');return c.alpha===1?`rgb(${rgb})`:`rgb(${rgb} / ${c.alpha})`;};
 const resolve=(path,mode,seen=[])=>{if(seen.includes(path))throw Error('Alias cycle '+path);const c=path.startsWith('Primitives/')?prim:semantic[mode],key=path.slice(path.indexOf('/')+1),v=c[key];if(v===undefined)throw Error('Missing '+path);return v.alias?resolve(v.alias,mode,[...seen,path]):v;};
 const sourceRef=(path,mode)=>{const key=path.slice(path.indexOf('/')+1);return path.startsWith('Primitives/')?`var(${cssName(key)})`:sourceRef(semantic[mode][key].alias,mode);};
-let css='/* Generated from full Capacities palettes. No shortened kit color scale. */\n:root { color-scheme: light; }\n[data-theme="light"] { color-scheme: light; }\n[data-theme="dark"] { color-scheme: dark; }\n:root {\n';
+let css='/* Generated from the independently authored Sloy UI foundation. See source/foundation.json. */\n:root { color-scheme: light; }\n[data-theme="light"] { color-scheme: light; }\n[data-theme="dark"] { color-scheme: dark; }\n:root {\n';
 for(const [n,v]of Object.entries(prim)){const m=metadata['Primitives/'+n];css+=`  ${cssName(n)}: ${m.type==='COLOR'?(alphaPrimitives[n]?`color-mix(in srgb, var(--cap-palette-${alphaPrimitives[n].neutral}) calc(var(--cap-number-opacity-${alphaPrimitives[n].step}) * 1%), transparent)`:colorCSS(v)):m.type==='STRING'?JSON.stringify(v):v+(m.unit==='number'?'':m.unit||'')};\n`;}
 for(const [old,name]of Object.entries(legacyNames))if(!old.startsWith('el-')&&cssName(name)!=='--cap-'+old)css+=`  --cap-${old}: var(${cssName(name)});\n`;
-for(const [name,value]of Object.entries(base).filter(([n])=>/^--shadow/.test(n)))css+=`  --cap-${name.slice(2)}: ${value};\n`;
+for(const [name,value]of Object.entries(foundation.shadows))css+=`  --cap-shadow-${name}: ${value};\n`;
 css+='  --cap-ease-standard: cubic-bezier(.2,0,0,1);\n  --cap-ease-out: cubic-bezier(.16,1,.3,1);\n}\n';
 // Each context axis is inherited separately. The 0/100% color-mix operations
 // below route one exact palette alias; they never blend intermediate shades.
@@ -112,7 +105,7 @@ css+='}\n';
 await writeFile('src/styles/tokens.css',css);
 await json('src/tokens/catalog.json',runtimeNames.filter(n=>!n.startsWith('element/')&&!n.startsWith('action/')&&!n.startsWith('action-vivid/')).map(name=>({name:cssName(name),original:name,group:name.split('/')[0],light:hex(resolve('Semantic/'+name,'Light · Base')),dark:hex(resolve('Semantic/'+name,'Dark · Base')),runtime:true})));
 const minContrast=Math.min(...audit.map(r=>r.contrast));
-await json('docs/token-validation.json',{version,sourceColorTokens:783,paletteColors:Object.keys(palette).length,accentSteps:22,graySteps:41,accentModes:18,contexts:Object.keys(contexts).length,states,figmaCollections:graph.collections.length,figmaVariables:graph.collections.reduce((n,c)=>n+Object.keys(Object.values(c.modes)[0]).length,0),secondaryCombinations:audit.length,minTextContrast:minContrast,minReactionContrast:Math.min(...audit.map(r=>r.reactionContrast)),crossCollectionAliases:true});
+await json('docs/token-validation.json',{version,foundationSource:foundation.authoring.name,paletteColors:Object.keys(palette).length,accentSteps:22,graySteps:41,accentModes:18,contexts:Object.keys(contexts).length,states,figmaCollections:graph.collections.length,figmaVariables:graph.collections.reduce((n,c)=>n+Object.keys(Object.values(c.modes)[0]).length,0),secondaryCombinations:audit.length,minTextContrast:minContrast,minReactionContrast:Math.min(...audit.map(r=>r.reactionContrast)),crossCollectionAliases:true});
 await mkdir('artifacts/figma-library',{recursive:true});
 await json('artifacts/figma-library/token-migration-graph.json',graph);
 console.log(`Full palette model: ${Object.keys(palette).length} colors, ${audit.length} secondary pairs, min text contrast ${minContrast.toFixed(3)}:1, independent Theme, Semantic surface and Borders modes.`);

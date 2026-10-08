@@ -4,8 +4,8 @@ import {
   RadioGroup, RichTextEditor, Select, TagInput, ToastStack, TreeView,
   ValueScrubber, type DataTableColumn, type RichTextDocument,
   type RichTextJson, type ToastStackItem, type TreeNode,
-} from '@personal/capacities-ui';
-import '@personal/capacities-ui/styles.css';
+} from 'sloyui';
+import 'sloyui/styles.css';
 
 type Task = { id: string; title: string; status: string; estimate: number };
 const tasks: Task[] = [

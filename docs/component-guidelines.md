@@ -1,6 +1,6 @@
 # Component composition
 
-Read the selected `agent-manifest.json` record for exact props, defaults, keyboard behavior and related components. Reuse an exported component and typed variant; application layout, data, persistence and network operations belong to the consumer. Read `surface-context.md` for paint and context, `recipes.md` for compositions. Historical implementation notes in `docs/reference/` are optional audit evidence, not additional required instructions.
+Read the selected `agent-manifest.json` record for exact props, defaults, keyboard behavior and related components. Reuse an exported component and typed variant; application layout, data, persistence and network operations belong to the consumer. Read `surface-context.md` for paint and context, `recipes.md` for compositions.
 
 ## Choose by intent
 

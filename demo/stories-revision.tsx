@@ -16,7 +16,7 @@ export const revisionFiles: FileTreeNode[] = [
     { id:'styles',name:'styles.css',type:'file',description:'Семантические поверхности и состояния.',preview:<CodeBlock language="css" children={'.surface {\n  background: var(--cap-surface-current);\n  color: var(--cap-content-primary);\n}'}/> },
   ]},
   { id:'assets',name:'assets',type:'folder',children:[] },
-  { id:'package',name:'package.json',type:'file',description:'Состав пакета и команды проверки.',preview:<CodeBlock language="json" children={'{\n  "name": "@personal/capacities-ui",\n  "version": "0.4.0"\n}'}/> },
+  { id:'package',name:'package.json',type:'file',description:'Состав пакета и команды проверки.',preview:<CodeBlock language="json" children={'{\n  "name": "sloyui",\n  "version": "0.4.0"\n}'}/> },
   { id:'archive',name:'archive.zip',type:'file',disabled:true,description:'Архив недоступен в этом примере.' },
 ];
 export const revisionRailItems: PreviewRailItem[] = [

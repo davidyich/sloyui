@@ -1,8 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import graph from '../src/tokens/figma-modes.json';
-import originalLight from '../source/colors-light.json';
-import originalDark from '../source/colors-dark.json';
+import foundation from '../source/foundation.json';
 import audit from '../src/tokens/element-states.json';
 type RGB = { colorSpace: string; components: number[]; alpha: number };
 type Value = RGB | { alias: string } | string | number;
@@ -10,13 +9,23 @@ const collections = graph.collections as unknown as { name: string; modes: Recor
 function resolve(path: string, mode: string, seen: string[] = []): Value {
  if(seen.includes(path))throw Error('Cycle '+path);const [c,...parts]=path.split('/');const col=collections.find(x=>x.name===c)!;const [theme='Light',surface='Base']=mode.includes(' · ')?mode.split(' · '):['Light','Base'];const selected=c==='Primitives'?'Value':c==='Theme'?(mode==='Dark'?'Dark':theme):c==='Semantic'?(mode in col.modes?mode:surface):mode;const v=col.modes[selected][parts.join('/')];if(v===undefined||v===null)throw Error('Missing '+path);return typeof v==='object'&&'alias'in v?resolve(v.alias,mode,[...seen,path]):v;
 }
-function flatten(node: any,path='',out: Record<string,any>={}): Record<string,any>{for(const [key,v]of Object.entries(node) as [string,any][]){const name=path?path+'/'+key:key;if(v.$type)out[name]=v.$value;else flatten(v,name,out);}return out;}
 function Y(c:RGB){return c.components.reduce((y,x,i)=>y+(x<=.04045?x/12.92:((x+.055)/1.055)**2.4)*[.2126,.7152,.0722][i],0);}
 function ratio(a:RGB,b:RGB){return (Math.max(Y(a),Y(b))+.05)/(Math.min(Y(a),Y(b))+.05);}
 describe('Canonical full palette graph',()=>{
- it('preserves every original color and original semantic alias in both themes',()=>{for(const [theme,source]of [['Light',originalLight],['Dark',originalDark]] as const){const flat=flatten(source);function original(n:string):Value{const v=flat[n];return typeof v==='string'?original(v.slice(1,-1).replaceAll('.','/')):v;}
- for(const name of Object.keys(flat))expect(resolve((name.startsWith('palette/')?'Primitives/':'Semantic/source/')+name,theme+' · Base')).toEqual(original(name));}
+ it('publishes the independent authored palette with stable public geometry',()=>{expect(foundation.authoring.method).toContain('without captured palette samples');
  const prim=collections[0].modes.Value;expect(Object.keys(prim).filter(n=>n.startsWith('palette/'))).toHaveLength(417);expect(Object.keys(prim).filter(n=>n.startsWith('palette/gray/'))).toHaveLength(41);for(const h of graph.modes.filter(x=>x!=='neutral'))expect(Object.keys(prim).filter(n=>n.startsWith('palette/'+h+'/'))).toHaveLength(22);
+ });
+ it('keeps authored primitives inside sRGB and removes captured app aliases',()=>{
+  const prim=collections[0].modes.Value;
+  for(const [name,value] of Object.entries(prim).filter(([name])=>name.startsWith('palette/'))){
+   const color=value as RGB;expect(color.colorSpace,name).toBe('srgb');expect(color.alpha,name).toBe(1);
+   for(const channel of color.components)expect(channel,name).toBeGreaterThanOrEqual(0);
+   for(const channel of color.components)expect(channel,name).toBeLessThanOrEqual(1);
+  }
+  for(const collection of collections)for(const values of Object.values(collection.modes))expect(Object.keys(values).some(name=>name.startsWith('source/')||name.startsWith('source-literals/'))).toBe(false);
+  const gray=foundation.palette.neutralSteps.map(step=>resolve(`Primitives/palette/gray/${step}`,'Light · Base') as RGB);
+  for(let i=1;i<gray.length;i++)expect(Y(gray[i])).toBeLessThan(Y(gray[i-1]));
+  for(const path of ['scripts/color-model.mjs','scripts/build-tokens.mjs'])expect(readFileSync(path,'utf8')).not.toMatch(/colors-light|colors-dark|token-rules|dark-css/);
  });
  it('resolves all aliases and uses independent theme, surface and border modes with grouped numeric/font primitives',()=>{expect(collections.map(c=>Object.keys(c.modes).length)).toEqual([1,2,4,2]);for(const c of collections)for(const [mode,vs]of Object.entries(c.modes))for(const n of Object.keys(vs)){expect(n).not.toMatch(/^(kit|el-h|el-w)\//);const v=resolve(c.name+'/'+n,mode);expect(v).not.toBeNull();if(typeof v==='number')expect(Number.isFinite(v)).toBe(true);if(c.name==='Primitives'&&typeof v!=='object')expect(n).toMatch(/^(number|font)\//);}
  });
@@ -97,14 +106,6 @@ it('chooses the strongest actual grayscale ink and preserves it across action st
   expect(chosenNormal,`${mode} ${family}/${hue} chooses max contrast for normal`).toBeGreaterThanOrEqual(Math.max(blackNormal,whiteNormal));
   for(const [index,fill] of fills.entries())expect(ratio(fill,ink),`${mode} ${family}/${hue}/${['normal','hover','pressed'][index]}`).toBeGreaterThanOrEqual(4.5);
  }
-});
-
-it('keeps red and rose vivid text white while allowing brighter yellow to use the dark ink',()=>{
- const mode='Light · Base';
- for(const hue of ['red','rose'])expect(resolve(`Semantic/action-vivid/${hue}/text`,mode)).toEqual(resolve('Primitives/palette/gray/0',mode));
- expect(resolve('Semantic/action-vivid/yellow/text',mode)).toEqual(resolve('Primitives/palette/gray/1000',mode));
- const expected:Record<string,string[]>={red:['palette/red/550','palette/red/600','palette/red/650'],rose:['palette/rose/600','palette/rose/650','palette/rose/700'],violet:['palette/violet/550','palette/violet/600','palette/violet/650'],yellow:['palette/yellow/500','palette/yellow/550','palette/yellow/600']};
- for(const [hue,shades] of Object.entries(expected))for(const [index,state] of ['normal','hover','pressed'].entries())expect(resolve(`Semantic/action-vivid/${hue}/${state}`,mode)).toEqual(resolve(`Primitives/${shades[index]}`,mode));
 });
 
 it('keeps neutral ButtonGroup surfaces soft, distinct, and readable in every context',()=>{

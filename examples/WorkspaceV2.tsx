@@ -3,8 +3,8 @@ import {
   ActionBar, Button, Calendar, DailyHeader, Dialog, FloatingField, Icon,
   KanbanBoard, RichTextEditor, markdownToRichText, richTextToMarkdown, ScrollArea, SplitButton, StatusBar, Tag,
   type KanbanTask,
-} from '@personal/capacities-ui';
-import '@personal/capacities-ui/styles.css';
+} from 'sloyui';
+import 'sloyui/styles.css';
 
 const columns = [
   { id: 'inbox', title: 'Входящие' },

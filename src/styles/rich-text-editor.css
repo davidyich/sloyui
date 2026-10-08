@@ -16,9 +16,9 @@
 .cap-rich-editor-drop-marker[data-position=end]{top:auto;bottom:-2px}
 .cap-rich-editor-document[data-dragging]{user-select:none}
 .cap-rich-editor-block{min-width:0;position:relative}
-.cap-rich-editor-block [contenteditable]{min-height:1.5em;outline:0;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:2px;border-radius:var(--cap-radius-sm,6px);line-height:1.55}
+.cap-rich-editor-block [contenteditable]{min-height:1.5em;outline:0;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:2px;border-radius:var(--cap-radius-sm,6px);line-height:1.75}
 .cap-rich-editor-block [contenteditable]:focus-visible{outline:0;caret-color:var(--cap-content-primary)}
-.cap-rich-editor-block p{margin:0;line-height:1.55}
+.cap-rich-editor-block p{margin:0;line-height:1.75}
 .cap-rich-editor-block [contenteditable]:empty:before{content:attr(data-placeholder);color:var(--cap-content-muted);pointer-events:none}
 .cap-rich-editor-block :is(h1,[contenteditable][data-block-type=heading1]){margin:0;font-size:1.875rem;font-weight:600;line-height:1.25}
 .cap-rich-editor-block :is(h2,[contenteditable][data-block-type=heading2]){margin:0;font-size:1.5rem;font-weight:600;line-height:1.3}

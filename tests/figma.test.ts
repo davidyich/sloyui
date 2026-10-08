@@ -2,7 +2,7 @@ import importerSource from '../figma/importer-core.js?raw';
 import { describe, it, expect } from 'vitest';
 import graph from '../src/tokens/figma-modes.json';
 const expectedCount=graph.collections.reduce((n,c)=>n+Object.keys(Object.values(c.modes)[0]).length,0);
-const importVariables = new Function(importerSource + '\nreturn importCapacitiesVariables;')();
+const importVariables = new Function(importerSource + '\nreturn importSloyVariables;')();
 function mock(maxModes = 100) {
   let serial = 0;
   const collections: any[] = [], variables: any[] = [];

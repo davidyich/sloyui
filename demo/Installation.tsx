@@ -1,12 +1,13 @@
 import * as UI from '../src';
 import './installation.css';
 
-const release = 'https://github.com/davidyich/sloyui/releases/tag/v0.8.0';
-const install = 'npm install react@^19 react-dom@^19\nnpm install https://github.com/davidyich/sloyui/releases/download/v0.8.0/personal-capacities-ui-0.8.0.tgz';
+import { version } from '../package.json';
+const release = `${UI.SLOY_UI.repository}/releases/tag/v${version}`;
+const install = `npm install react@^19 react-dom@^19\nnpm install ${UI.SLOY_UI.repository}/releases/download/v${version}/${UI.SLOY_UI.slug}-${version}.tgz`;
 const entry = `import { createRoot } from 'react-dom/client';
-import { Button, Card, LocaleProvider, Tag } from '@personal/capacities-ui';
-import '@personal/capacities-ui/styles.css';
-import '@personal/capacities-ui/fonts.css'; // optional
+import { Button, Card, LocaleProvider, Tag } from '${UI.SLOY_UI.packageName}';
+import '${UI.SLOY_UI.packageName}/styles.css';
+import '${UI.SLOY_UI.packageName}/fonts.css'; // optional
 import './app.css';
 
 // Set appearance at the application root.
@@ -58,16 +59,16 @@ export default function Installation() {
       <div className="eyebrow">{t('ДОКУМЕНТАЦИЯ', 'DOCS')}</div>
       <h1>{t('Установка', 'Installation')}</h1>
       <p>{t('Подключите пакет, добавьте стили и соберите первый экран.', 'Install the package, add styles and build your first screen.')}</p>
-      <div className="cap-installation-meta"><UI.Tag>v0.8.0</UI.Tag><UI.Tag>React 19+</UI.Tag><UI.Tag>TypeScript</UI.Tag></div>
+      <div className="cap-installation-meta"><UI.Tag>v{version}</UI.Tag><UI.Tag>React 19+</UI.Tag><UI.Tag>TypeScript</UI.Tag></div>
     </header>
     <section aria-labelledby="installation-package">
       <h2 id="installation-package">{t('1. Установите пакет', '1. Install the package')}</h2>
       <p>{t('В существующем React-проекте выполните команды ниже. Готовый архив содержит собранный код, стили и типы.', 'Run these commands in your React project. The release archive includes compiled code, styles and types.')}</p>
       <UI.CodeBlock filename="Terminal" language="bash" showLanguageSelector={false} showActionsMenu={false} wrap>{install}</UI.CodeBlock>
-      <p className="cap-installation-note">{t('Пакет @personal/capacities-ui распространяется через GitHub Release и пока не опубликован в npm. React и React DOM — peer-зависимости; дополнительных runtime-зависимостей нет.', 'The @personal/capacities-ui package is distributed through GitHub Releases and is not published on npm yet. React and React DOM are peers; there are no other runtime dependencies.')}</p>
-      <a href={release} target="_blank" rel="noreferrer">{t('Открыть релиз v0.8.0', 'Open release v0.8.0')} ↗</a>
+      <p className="cap-installation-note">{t('Пакет sloyui распространяется через GitHub Release и пока не опубликован в npm. React и React DOM — peer-зависимости; дополнительных runtime-зависимостей нет.', 'The sloyui package is distributed through GitHub Releases and is not published on npm yet. React and React DOM are peers; there are no other runtime dependencies.')}</p>
+      <a href={release} target="_blank" rel="noreferrer">{t('Открыть релиз', 'Open release')} v{version} ↗</a>
       <p>{t('Если архив уже скачан, установите его из файла:', 'If you have downloaded the archive, install the local file:')}</p>
-      <UI.CodeBlock language="bash" showLanguageSelector={false} showActionsMenu={false} wrap>{'npm install ./personal-capacities-ui-0.8.0.tgz'}</UI.CodeBlock>
+      <UI.CodeBlock language="bash" showLanguageSelector={false} showActionsMenu={false} wrap>{`npm install ./${UI.SLOY_UI.slug}-${version}.tgz`}</UI.CodeBlock>
     </section>
     <section aria-labelledby="installation-start">
       <h2 id="installation-start">{t('2. Добавьте стили и компоненты', '2. Add styles and components')}</h2>
@@ -86,7 +87,7 @@ export default function Installation() {
     <UI.Card className="cap-installation-agents">
       <h2>{t('Подключите агента', 'Connect your agent')}</h2>
       <p>{t('Дайте агенту карту инструкций из установленного пакета. Затем пусть он читает только нужные записи manifest и подходящий рецепт.', 'Give your agent the instruction map from the installed package. It should then read only the relevant manifest records and composition recipe.')}</p>
-      <UI.CodeBlock filename={t('Пути в проекте', 'Project paths')} language="text" showLanguageSelector={false} showActionsMenu={false} wrap>{'node_modules/@personal/capacities-ui/llms.txt\nnode_modules/@personal/capacities-ui/AGENTS.md\nnode_modules/@personal/capacities-ui/agent-manifest.json\nnode_modules/@personal/capacities-ui/docs/recipes.md'}</UI.CodeBlock>
+      <UI.CodeBlock filename={t('Пути в проекте', 'Project paths')} language="text" showLanguageSelector={false} showActionsMenu={false} wrap>{'node_modules/sloyui/llms.txt\nnode_modules/sloyui/AGENTS.md\nnode_modules/sloyui/agent-manifest.json\nnode_modules/sloyui/docs/recipes.md'}</UI.CodeBlock>
       <a href="#agents">{t('Открыть инструкции', 'Open instructions')}</a>
     </UI.Card>
   </div>;

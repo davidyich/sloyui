@@ -5,11 +5,11 @@ import { execFileSync } from 'node:child_process';
 import { build } from 'esbuild';
 import { gzipSync } from 'node:zlib';
 const version = JSON.parse(await readFile('package.json', 'utf8')).version;
-const root = process.cwd(), tarball = resolve(process.argv[2] ?? `artifacts/personal-capacities-ui-${version}.tgz`);
+const root = process.cwd(), tarball = resolve(process.argv[2] ?? `artifacts/sloyui-${version}.tgz`);
 await access(tarball);
-const temp = await mkdtemp(join(tmpdir(), 'capacities-consumer-'));
+const temp = await mkdtemp(join(tmpdir(), 'sloyui-consumer-'));
 try {
-  const target = join(temp, 'node_modules/@personal/capacities-ui');
+  const target = join(temp, 'node_modules/sloyui');
   await mkdir(target, { recursive: true });
   execFileSync('tar', ['-xzf', tarball, '--strip-components=1', '-C', target]);
   for (const name of ['react', 'react-dom', '@types']) await symlink(join(root, 'node_modules', name), join(temp, 'node_modules', name));
@@ -17,6 +17,14 @@ try {
   const examples = ['ProjectBoard', 'WorkspaceV2', 'IntegratedWorkspace', 'CalendarSchedule'];
   for (const example of examples) await copyFile(join(target, `examples/${example}.tsx`), join(temp, `${example}.tsx`));
   const packedPackage = JSON.parse(await readFile(join(target, 'package.json'), 'utf8'));
+  if (packedPackage.name !== 'sloyui' || packedPackage.version !== version || packedPackage.license !== 'MIT') throw new Error('Public package identity or license is inconsistent');
+  if (Object.keys(packedPackage.dependencies ?? {}).length) throw new Error('The package must not add runtime dependencies');
+  const entries = execFileSync('tar', ['-tzf', tarball], {encoding:'utf8'}).trim().split('\n');
+  const forbidden = /(?:^|\/)(?:versions|artifacts|node_modules|instructions)\/|source-tokens\.css|(?:colors-(?:light|dark)|(?:light|dark)-css|loaded-stylesheets|token-rules)\.json|(?:^|\/)\.env(?:\.|$)/;
+  if (entries.some(path => forbidden.test(path))) throw new Error('Package contains private, captured or historical material');
+  for (const path of ['LICENSE', 'THIRD_PARTY_NOTICES.md', 'docs/third-party.md', 'licenses/lucide-ISC-MIT.txt', 'licenses/inter-OFL-1.1.txt', 'licenses/overpass-mono-OFL-1.1.txt', 'licenses/arc-library-MIT.txt', 'licenses/react-MIT.txt', 'licenses/react-dom-MIT.txt']) {
+    if ((await readFile(join(target,path),'utf8')).length < 200) throw new Error('Missing or incomplete notice: '+path);
+  }
   for (const entry of ['types', 'import']) {
     const path = packedPackage.exports?.['.']?.[entry];
     if (typeof path !== 'string' || !path.startsWith('./dist/') || !resolve(target, path).startsWith(resolve(target, 'dist') + sep)) throw new Error('Archive ' + entry + ' export must resolve inside dist');
@@ -33,9 +41,9 @@ import {
   type FeedbackStyleProps, type FileTreeNode, type PreviewRailItem, type Size,
   type SliderProps, type ToastStackItem, type Locale, type ScrollAreaProps, type ScrollFadeDirection, type ScrollFadeSize,
   type ResizablePanelGroupProps, type ResizablePanelProps, type ResizableHandleProps, type RichTextEditorProps,
-} from '@personal/capacities-ui';
+} from 'sloyui';
 import { IntegratedWorkspace } from './IntegratedWorkspace.js';
-import '@personal/capacities-ui/styles.css';
+import 'sloyui/styles.css';
 
 const color: Color = 'teal'; const size: Size = 'xl';
 const feedback = { tone: 'success', color, appearance: 'soft', contrast: true, surface: 'raised' } satisfies FeedbackStyleProps;
@@ -113,9 +121,9 @@ import {
   LineChart, MultiSelect, NavigationMenu, NumberField, PreviewRail, RadioGroup,
   MarkdownEditorV2, Tabs, RichTextEditor, Slider, StatusBar, TagInput, Toast, ToastStack, TreeView, ValueScrubber,
   markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit,
-} from '@personal/capacities-ui';
-const packageEntry = fileURLToPath(import.meta.resolve('@personal/capacities-ui'));
-const archiveDist = resolve(fileURLToPath(new URL('./node_modules/@personal/capacities-ui/dist/', import.meta.url))) + sep;
+} from 'sloyui';
+const packageEntry = fileURLToPath(import.meta.resolve('sloyui'));
+const archiveDist = resolve(fileURLToPath(new URL('./node_modules/sloyui/dist/', import.meta.url))) + sep;
 if (!packageEntry.startsWith(archiveDist)) throw Error('SSR did not resolve the extracted archive dist: ' + packageEntry);
 const node = React.createElement, noop = () => {}, rows = [{id:'a',name:'Task',value:2}];
 const columns = [{id:'name',header:'Name',value:row=>row.name},{id:'value',header:'Value',value:row=>row.value}];
@@ -205,7 +213,7 @@ console.log('Archive dist SSR, localization, compound resize, optional toolbar a
   if (manifest.components.FloatingField.status !== 'archived' || manifest.components.FloatingField.replacement !== 'Input') throw new Error('FloatingField archive metadata missing');
   const archivedCharts = Object.entries(manifest.components).filter(([,record]) => record.primaryGroup === 'charts');
   if (archivedCharts.length !== 12 || archivedCharts.some(([name,record]) => record.status !== 'archived' || record.catalogueRoute !== '#' + name)) throw new Error('Chart archive metadata missing');
-  const packed = await build({ stdin: { contents: "export { Button } from '@personal/capacities-ui';", resolveDir: temp }, bundle: true, write: false, minify: true, format: 'esm', external: ['react','react-dom','react/jsx-runtime'] });
+  const packed = await build({ stdin: { contents: "export { Button } from 'sloyui';", resolveDir: temp }, bundle: true, write: false, minify: true, format: 'esm', external: ['react','react-dom','react/jsx-runtime'] });
   const report = { package: manifest.package, componentCount: manifest.componentCount, isolatedArchiveConsumer: true, nodeNextTypes: true, exampleTypecheck: examples, serverRenderImport: true, serverRenderedExports, markdownBridgeExports, closedBottomSheet: true, packageEntryInsideArchiveDist: true, verticalContentLayout: true, sliderNumericCallbacks: true, feedbackStyleApi: true, localeProviderEnglish: true, defaultLocaleRussian: true, explicitIntlOverride: true, localeHooks: ['useLocale','useTranslate'], compoundResizablePanels: true, scrollFadeApi: true, richToolbarOptIn: true, markdownEditorV2ControlledSource: true, markdownExtensionsTableColorRoundtrip: true, workspaceTabsIconTrailing: true, framedButtonGroup: true, fileCardIndependentActions: true, floatingFieldCompatibility: true, toastStackPlacement: true, framedKanbanFooter: true, kanbanOrderedMoveApi: true, archivedChartPages: archivedCharts.length, dataTablePinnedColumnsRowsSummary: true, dataTableStickyOptOut: true, fontAssets: fontPaths.length, buttonGzipBytes: gzipSync(packed.outputFiles[0].contents).length };
   await writeFile(join(root, 'docs/package-validation.json'), JSON.stringify(report, null, 2) + '\n');
   console.log(report);

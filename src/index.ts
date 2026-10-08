@@ -1,3 +1,4 @@
+export { SLOY_UI } from './brand.js';
 export { Button, IconButton, Icon, iconNames, Spinner, Counter, TextAction, Badge, Tag, TypeLabel, IconBox, Avatar, Kbd, Separator, Skeleton, Progress, colors } from './components/primitives.js';
 export type { ButtonProps, CounterProps, CounterVariant, TagProps, TextActionProps, Color, Size, IconName, IconSource, IconGlyph } from './components/primitives.js';
 export { Input, Textarea, Select, Field, Checkbox, Radio, Switch, Slider, SegmentedControl } from './components/forms.js';

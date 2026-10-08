@@ -1,42 +1,42 @@
 {
   "base": {
     "palette": [
-      "gray/50",
-      "gray/900"
+      "gray/25",
+      "gray/950"
     ],
     "background": [
-      "#FBFAF9",
-      "#1A1A1D"
+      "#F6F6F6",
+      "#161616"
     ]
   },
   "canvas": {
     "palette": [
-      "gray/125",
-      "gray/950"
+      "gray/50",
+      "gray/975"
     ],
     "background": [
-      "#F1F0EF",
-      "#111114"
+      "#EEEEEE",
+      "#0D0D0D"
     ]
   },
   "raised": {
     "palette": [
       "gray/0",
-      "gray/850"
+      "gray/925"
     ],
     "background": [
       "#FFFFFF",
-      "#232326"
+      "#1E1E1E"
     ]
   },
   "floating": {
     "palette": [
       "gray/0",
-      "gray/800"
+      "gray/900"
     ],
     "background": [
       "#FFFFFF",
-      "#2D2D31"
+      "#242424"
     ]
   }
 }

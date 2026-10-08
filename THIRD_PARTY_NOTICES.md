@@ -1,38 +1,21 @@
 # Third-party notices
 
-Capacities is the visual reference and belongs to its respective owners. This is an independent reconstruction for personal projects, not an official Capacities package. The MIT license applies to the original implementation in this repository; it does not grant rights to Capacities trademarks or service software.
+Sloy UI is an independent React UI library. [MIT](LICENSE) applies to its original implementation. Third-party code and fonts retain the licenses below; this repository does not grant trademark rights.
 
-Inter and Overpass Mono font files are distributed under the SIL Open Font License. Original license texts accompany the fonts in `dist/fonts/inter-LICENSE.txt` and `dist/fonts/overpass-mono-LICENSE.txt` (source copies in `src/styles/fonts/`). The variable builds are supplied by Fontsource packages pinned in `package-lock.json`.
+| Material | Authors / rights holders | Use | Full license |
+| --- | --- | --- | --- |
+| Lucide and Feather-derived icons | Lucide Icons and Contributors; Cole Bemis | Bundled library icons and catalogue gallery | [ISC and MIT](licenses/lucide-ISC-MIT.txt), also `dist/lucide-LICENSE.txt` |
+| Inter variable fonts | The Inter Project Authors | Optional bundled WOFF2 files via Fontsource | [OFL 1.1](licenses/inter-OFL-1.1.txt), also `dist/fonts/inter-LICENSE.txt` |
+| Overpass Mono variable fonts | The Overpass Project Authors | Optional bundled WOFF2 files via Fontsource | [OFL 1.1](licenses/overpass-mono-OFL-1.1.txt), also `dist/fonts/overpass-mono-LICENSE.txt` |
+| Arc Library | Elia Kuratli | Adapted component and interaction references | [MIT](licenses/arc-library-MIT.txt); mapping in [source inventory](docs/third-party.md#arc-adaptations) |
+| React / React DOM | Meta Platforms, Inc. and affiliates | Library peer dependencies; compiled catalogue runtime | [React MIT](licenses/react-MIT.txt), [React DOM MIT](licenses/react-dom-MIT.txt) |
 
-React and React DOM are peer dependencies under their own licenses. Selected icons from lucide-react 1.52.0 are bundled in the UI-kit under the ISC license; the full catalogue is a separate demo chunk. The complete Lucide license is included in `dist/lucide-LICENSE.txt`. Other development dependencies are not bundled in the UI-kit runtime.
+Keep full notices with redistributions. Font software remains under OFL 1.1; Sloy UI's MIT license does not replace it. Installed versions and development dependencies are recorded in `package-lock.json`.
 
-## Arc Library
+## Reference credits
 
-Interaction and component references adapted from [Arc Library](https://github.com/kuratlielia/arc-library). Local React/CSS implementations use this kit's tokens and overlay contracts.
+Capacities by Capacities Labs was the original visual reference. Sloy UI is not affiliated with or endorsed by Capacities Labs. This acknowledgement grants no permission to redistribute its software, captured stylesheets, token datasets or branding. The public palette is independently authored for Sloy UI; original captures and palette exports are excluded. See the [provenance review](docs/third-party.md), including historical artifact scope.
 
-MIT License
+[beUI](https://beui.dev/) informed CodeBlock composition, BottomSheet, FileTree, PreviewRail, selection and navigation. Existing implementation records describe local React/CSS implementations without importing beUI source, Shiki or Motion. This credits a design/composition reference and does not assert a license to beUI assets or source.
 
-Copyright (c) 2026 Elia Kuratli
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-
-## CodeBlock composition reference (2026-10-07)
-
-[beUI Code Block](https://beui.dev/components/agents/code-block) was inspected as a user-requested visual/composition reference (language/file information, trailing copy action, separated source viewport). No source code, assets, Shiki or Motion dependencies were copied. The implementation extends this kit's existing Select, IconButton, Menu and safe syntax tokenizer; no additional third-party licence is introduced.
+[shadcn/ui Resizable](https://ui.shadcn.com/docs/components/resizable), [shadcn.io Scroll Fade](https://www.shadcn.io/components/visual-effects/scroll-fade) and [Kobra Toast](https://kobra.systems/components/toast) are interaction/API references. Their registry components and resizing/animation dependencies are not installed. shadcn/ui's MIT license must not be assumed to cover unrelated registries, shadcn.io or Kobra. Future source imports require verified licenses and notices.

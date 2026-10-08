@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Calendar, Card, DatePicker, type CalendarEvent, type CalendarRange, useTranslate } from '@personal/capacities-ui';
+import { Calendar, Card, DatePicker, type CalendarEvent, type CalendarRange, useTranslate } from 'sloyui';
 
 export const scheduleEvents: CalendarEvent[] = [
   { id:'review', date:'2026-10-07', title:'Обсудить дизайн', time:'10:00–11:00', color:'blue', description:'Проверить прототип календаря и договориться о следующем шаге.' },

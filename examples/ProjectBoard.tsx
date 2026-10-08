@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Button, Dialog, EmptyState, Field, Input, ObjectCard, CollectionRow, SegmentedControl, Tag } from '@personal/capacities-ui';
-import '@personal/capacities-ui/styles.css';
+import { Button, Dialog, EmptyState, Field, Input, ObjectCard, CollectionRow, SegmentedControl, Tag } from 'sloyui';
+import 'sloyui/styles.css';
 
 /** Consumer owns storage/networking. This example is intentionally local state only. */
 export function ProjectBoard() {
