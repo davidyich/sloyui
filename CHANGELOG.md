@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.9.0 · 2026-10-08
+
+- Renamed the library and package to Sloy UI / sloyui, with shared SLOY_UI metadata, an original vector logo and the sloyui.com identity.
+- Replaced the captured color foundation with 417 independently authored OKLCH palette colors; preserved semantic APIs, context axes and contrast checks.
+- Prepared a public installable package with explicit exports, MIT licensing, complete third-party notices and concise consumer documentation. Removed captures, frozen archives and obsolete audit reports from the current tree.
+- Excluded private local instruction drafts from static catalogue builds; preserved the local editor and revision checks.
+- Increased paragraph and list line spacing, including Changelog and rich text instructions.
+
 ## 0.8.0 · 2026-10-08
 
 - Added RU/EN Installation under Docs with release archive commands, styles, context setup and agent entry points.

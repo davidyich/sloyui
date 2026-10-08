@@ -1,4 +1,4 @@
-# Capacities UI — project and consumer instructions
+# Sloy UI — project and consumer instructions
 
 Пишите пользователю по-русски. Код и идентификаторы — на английском.
 
@@ -8,16 +8,16 @@
 2. Read only the relevant records in `agent-manifest.json`.
 3. Use `docs/recipes.md` or `examples/ProjectBoard.tsx` for composition.
 4. Open `src/components/<group>.tsx` only when changing behavior.
-5. Do not load `source/loaded-stylesheets.json` or entire token catalogs into agent context unless auditing provenance.
+5. Read `src/brand.json` for identity and `source/foundation.json` only when changing foundation generation.
 
 ## Design contract
 
 - Reuse exported components and their typed variants before creating a new component.
-- Import `styles.css` once; it includes runtime tokens. Fonts and full source tokens are opt-in.
+- Import `styles.css` once; it includes runtime tokens. Fonts are opt-in.
 - Use `--cap-*` semantic roles. Do not scatter literal brand colors into consumer pages.
 - Put `data-theme="light"` or `"dark"` on `html`; custom portals also preserve the nearest local theme/accent/borders and establish a floating surface.
-- Light/Dark surfaces and runtime colors alias the full original palette. source/colors-light.json and source/colors-dark.json preserve all 783 original color tokens.
-- Canonical graph: Primitives (palette, alpha, number, font), Theme (Light/Dark), Semantic (Base/Canvas/Raised/Floating), Borders (Off/On). All mode axes inherit independently. CSS and Figma share palette aliases and derived alpha reactions. Never restore shortened kit color scales. Confirm Figma writes before reporting them.
+- Light/Dark surfaces and runtime colors alias independently authored Sloy palettes from `source/foundation.json`. Captured third-party styles and original-app token catalogs must not be reintroduced.
+- Canonical graph: Primitives (palette, alpha, number, font), Theme (Light/Dark), Semantic (Base/Canvas/Raised/Floating), Borders (Off/On). All mode axes inherit independently. CSS and Figma share palette aliases and derived alpha reactions. Preserve the 417-color, 22-step hue and 41-step neutral structure. Confirm Figma writes before reporting them.
 - Runtime context: data-theme selects appearance, data-accent selects local color, data-surface describes base/canvas/raised/floating, data-borders selects off/on. Decorative borders default off; on restores decorative outlines. Keep focus/error indicators visible.
 - Read `docs/surface-context.md` for the exact context contract. data-surface is inherited, never inferred from DOM background. Paint custom wrappers with --cap-surface-current or the matching surface role. Built-in panels declare their own surface.
 - Use --cap-control-bg/hover/active for neutral controls, --cap-panel-border and --cap-control-border for toggleable boundaries. The generator owns per-hue Figma element/action pairs; consumers use shared CSS accent roles.
@@ -47,7 +47,7 @@
 - Select is custom visually; its hidden native select preserves form submission.
 - ActionBar/ButtonGroup/SplitButton accept size; a nested group can override it. Popover.size affects only its trigger.
 - ScrollArea has scrollbar=auto|hidden; horizontal defaults hidden, vertical/both auto. Its ref targets the scrolling viewport; edge fades reveal the existing background.
-- Read docs/component-guidelines.md for behavior, content and composition; llms.txt maps the six canonical instruction files. Historical revision detail in docs/reference is audit-only.
+- Read docs/component-guidelines.md for behavior, content and composition; llms.txt maps the six canonical instruction files.
 - RichTextEditor is canonical. For Markdown strings use the exported bridge helpers and retain block.markdown metadata; unsupported syntax stays editable source. MarkdownEditor is an archived compatibility export, with its route redirected to RichTextEditor. See docs/component-guidelines.md.
 - Tooltip takes one focusable React element forwarding `aria-describedby`.
 - Tabs require unique item values, a valid active value and an accessible group label.
@@ -67,11 +67,11 @@
 
 `npm run dev` starts the catalogue at `http://127.0.0.1:4317`. Each canonical component has a grouped navigation entry and canonical case-sensitive `#ComponentName` page; keep manifest, exports and catalogue coverage aligned.
 `npm run check` validates types, interactions, tokens, package and demo build.
-Generated `src/styles/tokens.css`, `source-tokens.css`, and `src/tokens/*` are built by `scripts/build-tokens.mjs` from source files, including the explicit runtime contexts in `source/surface-rules.json`. Change the generator/source, then regenerate; do not hand-edit outputs.
+Generated `src/styles/tokens.css` and `src/tokens/*` are built by `scripts/build-tokens.mjs` from source files, including the explicit runtime contexts in `source/surface-rules.json`. Change the generator/source, then regenerate; do not hand-edit outputs.
 Keep runtime dependencies empty. React/React DOM are peer dependencies. Lucide icons are bundled from the development dependency; the complete visual gallery is lazy-loaded only by the catalogue. Avoid adding a CSS framework, router or animation runtime for small additions.
 Before delivery run `git diff --check`, and verify changed interactions in the browser. `docs/verification.md` records the checked scope, not hypothetical guarantees.
 
-Frozen rollback snapshots live in `versions/v0.2.0` and `versions/v0.1.0`; do not overwrite their archives during a build.
+Local audit/rollback files belong in ignored `artifacts/`. Never include raw captures, local drafts, credentials or obsolete package archives in Git or package distributions.
 
 Global user rules still apply. This file governs only this UI-kit and its intentional use.
 
@@ -82,3 +82,5 @@ Global user rules still apply. This file governs only this UI-kit and its intent
 
 - Radius context is independent: `data-radius="compact|default|rounded"` changes primitives on a page or local frame; portals preserve the nearest value. Explicit pill/circle geometry stays circular.
 - Visible fields and pickers use kit components: `DatePicker` for dates, `NumberField` for numbers, `ColorPicker` for colors and `Select`/`ComboBox` for choices. Keep native form semantics or hidden backing inputs, but do not use browser-picker input types (`date`, `time`, `month`, `week`, `color`) in finished UI or catalogue controls.
+
+- `src/brand.json` is the identity source; import exported `SLOY_UI` for names, links and the logo. Keep `cap-*` CSS and `cp-*` component IDs as stable compatibility identifiers. Preserve upstream names only in attribution.

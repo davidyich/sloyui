@@ -1,22 +1,9 @@
-# Figma: основы и secondary-теги
+# Sloy UI variables for Figma
 
-Источник — `src/tokens/figma-modes.json`; генерация: `npm run tokens`.
+The optional development importer uses the same independently authored graph as the runtime: `src/tokens/figma-modes.json`. Run `npm run tokens`, then import `figma/importer/manifest.json` through Figma's development plugins.
 
-| Коллекция | Количество | Режимы |
-| --- | ---: | --- |
-| Primitives | 597 | Value |
-| Theme | 1349 | Light / Dark |
-| Semantic | 731 | Base / Canvas / Raised / Floating |
-| Borders | 1 | Off / On |
+It creates Sloy UI collections for Primitives, Theme, Semantic surfaces and Borders. Theme and surface modes inherit independently. The maximum number of modes in one collection is four. On error the importer rolls back only collections created during that run; duplicate Sloy collections are rejected.
 
-Три переключателя наследуются независимо. Semantic → Theme → Primitives; общие для поверхностей пары переиспользуются. Все 417 исходных цветов сохранены. Управляющие aliases не означают новые цвета. Есть number/opacity, alpha-нейтрали, number/border/width = 0.5, общие размеры контролов и font-группы.
+Importing into an existing prototype library requires an explicit migration plan for variable IDs; the tool does not silently rename old collections. Generation and mock tests do not imply that a live Figma file has been updated.
 
-В [Rebuildy](https://www.figma.com/design/HZ78ZQGF0MIjRviGpTwPis/Rebuildy?node-id=13-218) оставлены основы/стили, один Tag: 18 цветов × 4 размера × 4 состояния (288 вариантов) и пустые композиции поверхностей. 576 экземпляров показывают обе темы и четыре поверхности. Другие страницы компонентов удалены по текущему запросу; веб-кит сохраняет 61 основной компонент. Исходные пользовательские страницы сохранены.
-
-[Примеры Tag с иконкой, счётчиком и действием](https://www.figma.com/design/HZ78ZQGF0MIjRviGpTwPis/Rebuildy?node-id=84-2162): 48 экземпляров, четыре размера, шесть сочетаний темы и поверхности. Label и Count — текстовые свойства; иконка, счётчик и действие включаются независимо.
-
-Для нового файла подключите development plugin `figma/importer/manifest.json`. Он создаёт четыре коллекции; максимальное число режимов в одной — четыре. Ошибка откатывает только созданные этим запуском коллекции. Повторный импорт отклоняется; для существующего графа нужна миграция с сохранением IDs.
-
-Figma не связывает альфа-канал COLOR со значением FLOAT. Для реакций применяйте отдельный слой: цвет `reaction/base`, opacity `reaction/hover-opacity` или `reaction/pressed-opacity`. CSS вычисляет alpha из числовых примитивов.
-
-Проверенный объём: `docs/verification.md`. Публикация командной библиотеки не выполнялась.
+For hover layers, use reaction/base plus reaction/hover-opacity or reaction/pressed-opacity. Figma COLOR alpha cannot alias a FLOAT variable; CSS computes that alpha from the same numeric primitives.

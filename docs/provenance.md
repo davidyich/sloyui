@@ -1,33 +1,9 @@
-# Источники и границы V3
+# Sloy UI provenance
 
-## Что изменено в V3
+The current color foundation is independently authored in `source/foundation.json`. Its analytic OKLCH scales use gamut mapping to generate 17 hue families with 22 steps, a 41-step neutral scale and black/white. `source/surface-rules.json` maps surfaces to these palettes. `scripts/color-model.mjs` derives accessible semantic pairs; CSS and Figma exports share this source.
 
-Версия 0.3.0 учитывает четыре дополнительных скриншота пользователя: единая высота действий, предсказуемые hover-состояния, ровные уведомления, прозрачное затухание прокрутки и спокойная строка статуса. Введены глобальный режим обводок и контекстные заливки; это самостоятельные правила набора. Все 59 компонентов получают отдельные страницы в каталоге. V2 сохранена целиком в `versions/v0.2.0/`.
+The `cap-*` CSS namespace and component APIs remain for compatibility. They do not imply affiliation with Capacities. Original captured stylesheets, palette exports and frozen pre-Sloy archives are not inputs or deliverables of version 0.9. Historical Git/release artifacts require separate cleanup and are not certified by the current-tree audit.
 
-## Что изменено в V2
+Original Sloy code and its vector logo are MIT licensed. Fonts, icons and adapted Arc material retain their own notices; see [third-party inventory](third-party.md) and [full notices](../THIRD_PARTY_NOTICES.md). Simple catalogue SVG fixtures are local examples. No external photographs are bundled.
 
-Версия 0.2.0 развивает визуальный язык Capacities по семи скриншотам пользователя: составные панели, календарь и день, task cards/канбан, floating bar с shortcut tooltip, контекстное меню и раскрываемые status alerts. Для аккуратных inset-панелей также изучен локальный `space-ui-kit` (Popover и общие части overlay). Код написан независимо, runtime-зависимости этого кита не добавлялись.
-
-Нейтральная палитра сознательно заменена на **12 чистых grayscale-ступеней**. 17 цветных шкал берут из исходной палитры ступени 50/100/150/200/300/400/500/600/700/800/900/950; в V2 они называются 1…12. Accent содержит эти шкалы как 18 модов (включая neutral). 24 Appearance-роли связывают шкалы с Light/Dark. Это новое соглашение набора, не исходная архитектура Variables Capacities.
-
-Общие старые CSS-роли сохранены как aliases для миграции. Полный исходный CSS экспорт вынесен в `source-tokens.css`; его не следует подключать поверх V2: он предназначен для исторического аудита и может переопределить общие имена. Версия V1 с 783 токенами сохранена целиком в `versions/v0.1.0/`.
-
-## Историческая база V1
-
-Основной источник — авторизованный `app.capacities.io` в Chrome пользователя. Изучены оболочка, списки, Appearance, Editor и command palette. Сохранялись стили и обезличенные измерения, без содержания заметок, storage, cookies и credentials.
-
-Dark измерена 3 октября 2026 UTC: `source/dark-css.json`, 794 корневых объявления. Они совпали с сохранённым снимком v1.70.2 от 7 сентября. Текущий номер релиза из имени CSS asset не выводился.
-
-Light Dimmed получена из исторического снимка 7 сентября: `source/light-css.json`. Живой полный светлый снимок повторно не собирался. Загруженные CSS-правила и размеры находятся в `source/token-rules.json`, `source/loaded-stylesheets.json`, `source/settings-measurements.json`, `source/form-measurements.json`. В V2 эта база служит источником акцентных шкал и геометрии.
-
-## Шрифты, размеры и самостоятельная реализация
-
-Сохранены исходные rem-размеры контролов (22/28/32/36 px при корне 16 px), базовые радиусы .3/.5 rem, расширенная шкала типографики и теней. Исходная пользовательская настройка корня была 15.5 px; каталог нормализован к 16 px. Spacing строится от .25 rem. Touch targets 44 px и viewport gutter 12 px — правила этого набора.
-
-Основной шрифт Inter; код — Overpass Mono. Поставляются variable-файлы Fontsource с OFL. Источник загружал Inter 3.19, файлы не идентичны. SVG-иконки и React-компоненты созданы для набора; JS Capacities не переносился.
-
-## Покрытие и пределы
-
-59 компонентов с рабочими контролами, локальным состоянием примеров, доступной клавиатурой и адаптивом. Markdown — документированный безопасный поднабор; Kanban — управляемые карточки с меню перемещения; календарь — локальные даты, выбор дня и события. Движок документа Capacities, drag-and-drop, синхронизация, граф, backend, интеграции, файловое хранилище и аудиозапись не воспроизводятся.
-
-Figma модель и development importer подготовлены и проверены на mock API. Запись в конкретный Figma-файл пока не выполнена. Попиксельное совпадение всех экранов и скрытых состояний продукта не заявляется.
+The Figma importer is generated and tested with a mock API. A passing export test does not demonstrate a live Figma write. The configured `sloyui.com` identity does not demonstrate domain deployment. Technical verification is recorded in [verification.md](verification.md).

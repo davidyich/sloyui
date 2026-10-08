@@ -9,7 +9,7 @@ export function ComponentReference({name,surface}:{name:ComponentName;surface:'b
  const composition='composition' in record?record.composition:[];
  const [copyStatus,setCopyStatus]=useState('');
  useEffect(()=>{if(!copyStatus)return;const timer=setTimeout(()=>setCopyStatus(''),2400);return()=>clearTimeout(timer);},[copyStatus]);
- const code=`import { ${[name,...composition.map(part=>part.name)].join(', ')} } from '@personal/capacities-ui';\nimport '@personal/capacities-ui/styles.css';\n\n${record.example}`;
+ const code=`import { ${[name,...composition.map(part=>part.name)].join(', ')} } from '${UI.SLOY_UI.packageName}';\nimport '${UI.SLOY_UI.packageName}/styles.css';\n\n${record.example}`;
  const copy=async()=>{try{await navigator.clipboard.writeText(JSON.stringify({name,...record},null,2));setCopyStatus(c('Скопировано'));}catch{setCopyStatus(c('Не удалось скопировать'));}};
  return <>
   <section className="catalog-reference-section" aria-labelledby={`${name}-usage`}><h2 id={`${name}-usage`}>{c("Использование")}</h2><p>{c(record.usage)}</p><UI.CodeBlock label={`${name}.tsx`} defaultLanguage="tsx" showLanguageSelector={false} variant="surface" lineNumbers>{code}</UI.CodeBlock></section>

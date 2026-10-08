@@ -1,108 +1,105 @@
-# Capacities UI · 0.6
+# Sloy UI
 
-Лёгкий UI-kit для персональных проектов: React 19+, TypeScript и обычный CSS. Две темы, локальные акцентные моды, собственные всплывающие поверхности. Runtime-зависимостей кроме React/React DOM нет.
+A lightweight React component library for tools, content workspaces and dashboards. Independent design tokens, light and dark themes, local accents, optional borders and shared corner geometry. React 19 and React DOM are the only runtime peers.
 
-## Каталог
+[Repository](https://github.com/davidyich/sloyui) · [Releases](https://github.com/davidyich/sloyui/releases) · [Changelog](CHANGELOG.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
+
+Project domain: **sloyui.com**. Website deployment is separate from installing the library.
+
+## Install
+
+Use a built release archive. The package name is `sloyui`; it is not yet published to the npm registry.
 
 ```sh
+npm install react@^19 react-dom@^19
+npm install https://github.com/davidyich/sloyui/releases/download/v0.9.0/sloyui-0.9.0.tgz
+```
+
+You can also download the archive and its `SHA256SUMS.txt` from the release and install the local file:
+
+```sh
+npm install ./sloyui-0.9.0.tgz
+```
+
+Import the stylesheet once. Fonts are optional, self-hosted Inter and Overpass Mono.
+
+```tsx
+import { Button, Card, Input, LocaleProvider, Tag, SLOY_UI } from 'sloyui';
+import 'sloyui/styles.css';
+import 'sloyui/fonts.css'; // optional
+
+export function App() {
+  return (
+    <LocaleProvider locale="en">
+      <main data-accent="teal" data-surface="canvas"
+        style={{ padding: 24, background: 'var(--cap-surface-current)',
+          color: 'var(--cap-content-primary)', fontFamily: 'var(--cap-font-sans)' }}>
+        <Card>
+          <Tag>In progress</Tag>
+          <h1>{SLOY_UI.name}</h1>
+          <Input label="Project name" />
+          <Button variant="accent" onClick={() => console.log('Save project')}>Save</Button>
+        </Card>
+      </main>
+    </LocaleProvider>
+  );
+}
+```
+
+Set `data-theme="light"` or `"dark"` on `html`. Layout, application data and persistence remain yours; the kit does not reset `body` styles.
+
+## Context and customization
+
+| Attribute | Values | Purpose |
+| --- | --- | --- |
+| `data-theme` | `light`, `dark` | Appearance; set on `html` or override locally |
+| `data-accent` | `neutral` and 17 hue families | Local accent inherited by colored controls |
+| `data-surface` | `canvas`, `base`, `raised`, `floating` | Actual surface context; paint custom wrappers with `--cap-surface-current` |
+| `data-borders` | `off`, `on` | Decorative outlines; focus and structural separators remain visible |
+| `data-radius` | `compact`, `default`, `rounded` | Shared corner geometry |
+| `data-shadow` | `soft`, `compact` | Floating shadow profile |
+
+Contexts inherit independently. Cards establish raised surfaces; portals preserve local context and establish floating surfaces. Primary buttons stay neutral; accent buttons and selection controls use the local accent. Semantic status colors keep their meaning.
+
+The color system contains **417 independently generated colors**: 17 hue ramps with 22 steps, a 41-step neutral ramp, black and white. The source is [foundation.json](source/foundation.json); semantic mappings live in [surface-rules.json](source/surface-rules.json). See the [surface contract](docs/surface-context.md).
+
+`SLOY_UI` exposes the shared name, slug, domain, URL, repository, package name and logo path. Its source is [src/brand.json](src/brand.json). Existing `cap-*` CSS names and `cp-*` component IDs are stable compatibility identifiers.
+
+## Components and documentation
+
+The catalogue has 89 active component pages across Controls, Navigation, Content and data, Layout and overlays, and Feedback and motion. Twelve chart pages are archived and available through the Archive filter. `FloatingField` and `MarkdownEditor` remain compatibility exports; use `Input` and `RichTextEditor` for new work.
+
+Each component page includes a live playground, usage, typed API reference, usage guidance and related components. New components carry a Review status. Use [agent-manifest.json](agent-manifest.json) for exact exports, properties, status and stable IDs.
+
+Built-in component labels support Russian and English through `LocaleProvider`; supplied strings remain under consumer control. Modern browsers need `color-mix()`, `light-dark()`, OKLCH and `inert` support.
+
+For AI-assisted work, start with [llms.txt](llms.txt), then read only the needed component records and [composition recipes](docs/recipes.md). Executable examples live in [examples/](examples/).
+
+## Develop and verify
+
+```sh
+git clone https://github.com/davidyich/sloyui.git
+cd sloyui
 npm ci
 npm run dev
 ```
 
-Открыть [обзор компонентов](http://127.0.0.1:4317/#overview) или [changelog](http://127.0.0.1:4317/#changelog). У каждого компонента отдельная страница с адресом `#ComponentName`: например, [Button](http://127.0.0.1:4317/#Button), [ScrollArea](http://127.0.0.1:4317/#ScrollArea) и [Popover](http://127.0.0.1:4317/#Popover). Боковая навигация группирует кнопки, поля, контент, навигацию, состояния и окна. Цвета, типографика, геометрия и правила поведения вынесены в отдельные страницы. `Cmd/Ctrl+K` открывает поиск. Данные примеров хранятся в памяти страницы. Каждая страница содержит API Reference из TypeScript, пример кода, инструкции для человека и агента и связанные компоненты.
-
-## Подключение
+The local catalogue runs at `http://127.0.0.1:4317`; Installation is under Docs. Its instruction editor writes actual project files with revision checks. Static builds expose read-only core instructions; local custom drafts are excluded.
 
 ```sh
-npm run pack:kit
+npm run check          # tokens, manifest, types, tests, library and catalogue
+npm run pack:kit       # artifacts/sloyui-0.9.0.tgz
+npm run verify:package # isolated consumer: types, SSR, exports, fonts and package contents
 ```
 
-В своём проекте установите локальный `artifacts/personal-capacities-ui-0.8.0.tgz` командой `npm install /absolute/path/to/personal-capacities-ui-0.8.0.tgz`. Поддерживаемый способ установки — готовый `.tgz`: локально собранный или скачанный из [GitHub Release v0.8.0](https://github.com/davidyich/capacities-style/releases/tag/v0.8.0). `git install` не является установочным контрактом: `dist` не хранится в Git, а `prepare` отсутствует. Публикация в npm registry не требуется.
+Use Node.js 22 or newer and npm. Do not install directly from a Git URL: generated `dist` is not committed. The published archive includes runtime files, types, licenses, focused agent documentation and examples; development fixtures, raw captures, private drafts and old archives are excluded.
 
-```tsx
-import { Button, Tag, Input, ScrollArea } from '@personal/capacities-ui';
-import '@personal/capacities-ui/styles.css';
-import '@personal/capacities-ui/fonts.css'; // optional local Inter + Overpass Mono
+## Contribute and license
 
-export function Project() {
-  return <section data-accent="teal">
-    <Tag>В работе</Tag>
-    <Input label="Название проекта" labelPlacement="inside" />
-    <Button variant="accent">Сохранить</Button>
-    <ScrollArea label="Заметки" style={{ height: 240 }}>…</ScrollArea>
-  </section>;
-}
-```
+Issues and pull requests are welcome. Only the repository owner can update `main`; changes require a pull request and passing CI. See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
 
-Задайте `data-theme="light"` или `data-theme="dark"` на `html`. По умолчанию — light. Переключение system theme и сохранение предпочтения принадлежат приложению. По умолчанию декоративные рамки выключены: `data-borders="off"`. Для альтернативного вида задайте `data-borders="on"` на `html` или локальном контейнере. Portal сохраняет ближайшие theme/accent/borders; всплывающая поверхность всегда получает собственный контекст `floating`.
+Original Sloy UI code is [MIT licensed](LICENSE). Included icons, fonts and adapted code retain their upstream notices in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and [licenses/](licenses/). Credits distinguish source adaptations from visual references. No affiliation or trademark rights are implied.
 
-Стили ограничены классами `cap-`; `body` и раскладка приложения не сбрасываются. Для оболочки используйте `--cap-surface-canvas`, `--cap-content-primary`, `--cap-font-sans`.
+## Migrating from the private prototype
 
-## Язык интерфейса
-
-`LocaleProvider locale="ru" | "en"` меняет встроенные подписи, календарь и форматирование чисел. По умолчанию — русский. Пользовательские строки и явно переданные locale/formatters сохраняются. Порталы наследуют язык. В каталоге RU/EN находится справа внизу бокового меню; выбор сохраняется локально.
-
-```tsx
-import { LocaleProvider, DatePicker } from '@personal/capacities-ui';
-
-<LocaleProvider locale="en">
-  <DatePicker label="Due date" />
-</LocaleProvider>
-```
-
-## Цвета и контекст поверхности
-
-| Коллекция | Переменные | Режимы |
-| --- | ---: | --- |
-| Primitives | 417 цветов, alpha, числа, шрифты и исходные literal-значения | Value |
-| Theme | 1349: пары тем, общие и зависящие от поверхности | Light / Dark |
-| Semantic | 731: рабочие роли и 366 исходных ролей в source | Base / Canvas / Raised / Floating |
-| Borders | 1: ширина через числовой primitive | Off / On |
-
-Все 417 цветов полной палитры сохранены. Каждый из 17 акцентов содержит 22 ступени, gray — 41, отдельно black и white. Рабочие пары используют реальные шаги растяжек. Генератор подбирает близкую относительную яркость заливок, различимые normal/hover/pressed и читаемый текст. Disabled использует непрозрачную нейтральную пару и блокирует действия. Для Tag это относится и к выбору, и к удалению.
-
-`data-theme` задаёт тему, `data-accent` — локальный цвет, `data-surface` — canvas/base/raised/floating. Произвольному контейнеру также задайте `background: var(--cap-surface-current)`. Цветовые компоненты без `color` наследуют акцент. `gray` совместим с `neutral`. `data-borders="on"` возвращает декоративные обводки без изменения заливок и геометрии.
-
-CSS и Figma используют [единую модель](src/tokens/figma-modes.json). Дубликаты el-h/el-w заменены `number/control-size`; шрифты разделены на family/size/line-height/weight. [Контекст и состояния](docs/surface-context.md), [импорт Figma](figma/README.md). Экспорт модели не означает автоматического обновления документа Figma.
-
-## Компоненты
-
-89 активных страниц, 12 архивных страниц графиков и два совместимых архивных компонента (FloatingField и MarkdownEditor). Постоянные ID, статусы и подробные категории хранятся в [реестре](source/component-registry.json). В навигации и обзоре пять крупных разделов; подробные категории остаются в фильтре. Архив скрыт до выбора соответствующего статуса. Кнопка «Свернуть все» сохраняет текущую страницу, запрос и фильтры.
-
-| Раздел | Основные семейства |
-| --- | --- |
-| Управление | Кнопки, поля, выбор, календарь, меню, иконки |
-| Навигация | SidebarItem, NavigationMenu, TreeView, FileTree, Breadcrumbs, Tabs, SidebarPanel |
-| Контент и данные | Карточки, файлы, редакторы, CodeBlock, DataTable, Accordion; архивные графики |
-| Компоновка и окна | Панели, resize, Kanban, ScrollArea, Dialog, Drawer, Popover |
-| Обратная связь и движение | Тосты, алерты, статусы, загрузка и анимация текста/чисел |
-
-Точные API, статусы и членства в группах находятся в `agent-manifest.json`. Новые компоненты остаются на проверке до явной приёмки.
-
-Button: `primary/secondary/outline/ghost/danger/accent`, размеры 22/28/32/36/44 px. `ActionBar`, `ButtonGroup` и `SplitButton` принимают общий `size`; вложенная группа может переопределить его. `Popover.size` задаёт размер кнопки, содержимое popup сохраняет свой размер. Основные touch-контролы увеличиваются до 44 px; исключения компактных размеров описаны в `docs/behavior.md`. Радиусы 4.8/8/12/16 px. Inter 13.5 px для компактного UI, 15 px для основного текста; Overpass Mono для кода. Шрифты self-hosted и подключаются отдельно.
-
-Диалоги, меню, Select и Popover имеют собственное оформление, отступ 12 px от viewport, клавиатуру, Escape и возврат фокуса. У Select нативный скрытый элемент сохраняет контракт HTML-формы; видимый список полностью custom. ScrollArea сохраняет браузерную прокрутку. `scrollbar="auto"` показывает тонкую полосу по правилам браузера; `hidden` скрывает её, сохраняя wheel/touch/keyboard. По умолчанию горизонтальная полоса скрыта, вертикальная и режим `both` используют auto. Краевые маски открывают фон контейнера только там, где остаётся скрытый контент; цветной подложки у них нет.
-
-## Для агентов
-
-Читайте [llms.txt](llms.txt), затем нужные записи [agent-manifest.json](agent-manifest.json). Примеры: [ProjectBoard](examples/ProjectBoard.tsx), [WorkspaceV2](examples/WorkspaceV2.tsx). [Content guide](docs/content-guide.md) описывает календарь, редактор и карточки. [Behavior](docs/behavior.md) закрепляет motion, состояния и адаптив. Размеры сборки измерены в [bundle-size.json](docs/bundle-size.json).
-
-RichTextEditor редактирует блоки и код; Markdown-мост сохраняет исходник нетронутых блоков. MarkdownEditor архивирован и оставлен только как совместимый экспорт. См. docs/editor-revision.md. Канбан использует доступное меню перемещения; drag-and-drop не реализован. Persistence, backend, загрузка вложений и полнофункциональный редактор Capacities остаются задачей приложения.
-
-## Проверка и откат
-
-```sh
-npm run check
-npm run pack:kit
-npm run verify:package
-```
-
-`check` генерирует токены и manifest, проверяет типы, поведение, модель токенов, сборку библиотеки и каталога. Тот же путь используется в GitHub Actions. `verify:package` отдельно устанавливает архив в изолированный consumer, проверяет типы обоих примеров, SSR-импорт, шрифты и tree shaking. [Фактическая проверка](docs/verification.md).
-
-**V0.2 сохранена** в [versions/v0.2.0](versions/v0.2.0/README.md): полный workspace и npm-пакет с `SHA256SUMS`. Восстановление выполняется в отдельную папку. **V1 сохранена без изменений** в [versions/v0.1.0](versions/v0.1.0/README.md): весь workspace и исходный npm-пакет, контрольные суммы и безопасная инструкция восстановления. Архивы не перезаписываются сборкой.
-
-Современные браузеры с OKLCH, `color-mix()`, `light-dark()` и `inert`. Проверенные сценарии и версии перечислены в [verification](docs/verification.md). [Происхождение значений](docs/provenance.md), [лицензии](THIRD_PARTY_NOTICES.md).
-
-## Инструкции в каталоге
-
-Раздел `#agents` показывает реальные Markdown/TXT-файлы. Редактирование и сохранение доступны в `npm run dev`; статическая сборка содержит снимок документов только для чтения. Редактор проверяет версию файла и сохраняет черновик при конфликте. Карта правил: `docs/overview.md`.
+Version 0.9 changes imports from `@personal/capacities-ui` to `sloyui`, introduces the Sloy brand and replaces the captured color foundation with independently authored palettes. Runtime semantic role names remain stable; colors can differ. The historical `source-tokens.css` export and original-app token graph are removed. Do not import internal `dist/*` paths.

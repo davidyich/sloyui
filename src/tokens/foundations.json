@@ -1,11 +1,67 @@
 {
-  "font/weight/extralight": {
+  "font/size/xs": {
     "$type": "FLOAT",
-    "$value": 200
+    "$value": 12
   },
-  "font/weight/light": {
+  "font/size/sm": {
     "$type": "FLOAT",
-    "$value": 300
+    "$value": 13
+  },
+  "font/size/base": {
+    "$type": "FLOAT",
+    "$value": 14
+  },
+  "font/size/lg": {
+    "$type": "FLOAT",
+    "$value": 16
+  },
+  "font/size/xl": {
+    "$type": "FLOAT",
+    "$value": 18
+  },
+  "font/size/2xl": {
+    "$type": "FLOAT",
+    "$value": 22
+  },
+  "font/size/3xl": {
+    "$type": "FLOAT",
+    "$value": 28
+  },
+  "font/size/4xl": {
+    "$type": "FLOAT",
+    "$value": 36
+  },
+  "font/line-height/xs": {
+    "$type": "FLOAT",
+    "$value": 16
+  },
+  "font/line-height/sm": {
+    "$type": "FLOAT",
+    "$value": 18
+  },
+  "font/line-height/base": {
+    "$type": "FLOAT",
+    "$value": 20
+  },
+  "font/line-height/lg": {
+    "$type": "FLOAT",
+    "$value": 24
+  },
+  "font/line-height/xl": {
+    "$type": "FLOAT",
+    "$value": 26
+  },
+  "font/line-height/2xl": {
+    "$type": "FLOAT",
+    "$value": 30
+  },
+  "font/line-height/3xl": {
+    "$type": "FLOAT",
+    "$value": 36
+  },
+  "font/line-height/4xl": {
+    "$type": "FLOAT",
+    "$value": 44
   },
   "font/weight/normal": {
     "$type": "FLOAT",
@@ -22,6 +78,10 @@
   "font/weight/bold": {
     "$type": "FLOAT",
     "$value": 700
+  },
+  "number/radius/none": {
+    "$type": "FLOAT",
+    "$value": 0
   },
   "number/radius/xs": {
     "$type": "FLOAT",
@@ -50,158 +110,6 @@
   "number/radius/3xl": {
     "$type": "FLOAT",
     "$value": 24
-  },
-  "font/size/xxs": {
-    "$type": "FLOAT",
-    "$value": 11
-  },
-  "font/line-height/xxs": {
-    "$type": "FLOAT",
-    "$value": 14
-  },
-  "font/size/xs": {
-    "$type": "FLOAT",
-    "$value": 12
-  },
-  "font/line-height/xs": {
-    "$type": "FLOAT",
-    "$value": 16
-  },
-  "font/size/sm": {
-    "$type": "FLOAT",
-    "$value": 13.5
-  },
-  "font/line-height/sm": {
-    "$type": "FLOAT",
-    "$value": 19.2
-  },
-  "font/size/base": {
-    "$type": "FLOAT",
-    "$value": 15
-  },
-  "font/line-height/base": {
-    "$type": "FLOAT",
-    "$value": 21.2
-  },
-  "font/size/md": {
-    "$type": "FLOAT",
-    "$value": 16
-  },
-  "font/line-height/md": {
-    "$type": "FLOAT",
-    "$value": 24
-  },
-  "font/size/lg": {
-    "$type": "FLOAT",
-    "$value": 18
-  },
-  "font/line-height/lg": {
-    "$type": "FLOAT",
-    "$value": 26
-  },
-  "font/size/xl": {
-    "$type": "FLOAT",
-    "$value": 20
-  },
-  "font/line-height/xl": {
-    "$type": "FLOAT",
-    "$value": 28
-  },
-  "font/size/2xl": {
-    "$type": "FLOAT",
-    "$value": 24
-  },
-  "font/line-height/2xl": {
-    "$type": "FLOAT",
-    "$value": 32
-  },
-  "font/size/3xl": {
-    "$type": "FLOAT",
-    "$value": 30
-  },
-  "font/line-height/3xl": {
-    "$type": "FLOAT",
-    "$value": 36
-  },
-  "font/size/4xl": {
-    "$type": "FLOAT",
-    "$value": 36
-  },
-  "font/line-height/4xl": {
-    "$type": "FLOAT",
-    "$value": 40
-  },
-  "font/size/5xl": {
-    "$type": "FLOAT",
-    "$value": 48
-  },
-  "font/line-height/5xl": {
-    "$type": "FLOAT",
-    "$value": 48
-  },
-  "font/size/6xl": {
-    "$type": "FLOAT",
-    "$value": 60
-  },
-  "font/line-height/6xl": {
-    "$type": "FLOAT",
-    "$value": 60
-  },
-  "font/size/7xl": {
-    "$type": "FLOAT",
-    "$value": 72
-  },
-  "font/line-height/7xl": {
-    "$type": "FLOAT",
-    "$value": 72
-  },
-  "font/size/8xl": {
-    "$type": "FLOAT",
-    "$value": 96
-  },
-  "font/line-height/8xl": {
-    "$type": "FLOAT",
-    "$value": 96
-  },
-  "font/size/9xl": {
-    "$type": "FLOAT",
-    "$value": 128
-  },
-  "font/line-height/9xl": {
-    "$type": "FLOAT",
-    "$value": 128
-  },
-  "font/size/05xl": {
-    "$type": "FLOAT",
-    "$value": 19
-  },
-  "font/line-height/05xl": {
-    "$type": "FLOAT",
-    "$value": 28
-  },
-  "font/size/15xl": {
-    "$type": "FLOAT",
-    "$value": 21.84
-  },
-  "font/line-height/15xl": {
-    "$type": "FLOAT",
-    "$value": 30.4
-  },
-  "font/size/25xl": {
-    "$type": "FLOAT",
-    "$value": 26.4
-  },
-  "font/line-height/25xl": {
-    "$type": "FLOAT",
-    "$value": 32
-  },
-  "font/size/35xl": {
-    "$type": "FLOAT",
-    "$value": 32
-  },
-  "font/line-height/35xl": {
-    "$type": "FLOAT",
-    "$value": 35.2
   },
   "number/control-size/xs": {
     "$type": "FLOAT",

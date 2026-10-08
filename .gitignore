@@ -4,3 +4,15 @@ site/
 artifacts/
 .DS_Store
 *.log
+
+# Local audits and private instruction drafts do not belong in public distributions.
+versions/
+docs/*validation*.json
+docs/bundle-size.json
+docs/action-contrast.json
+docs/full-palette-validation.json
+docs/instructions/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo

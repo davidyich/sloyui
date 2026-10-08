@@ -1,13 +1,13 @@
 # Композиции для проектов
 
-Примеры рассчитаны на React 19 и подключённый `@personal/capacities-ui/styles.css`. При обычной работе достаточно этой страницы и записей нужных компонентов в `agent-manifest.json`.
+Примеры рассчитаны на React 19 и подключённый `sloyui/styles.css`. При обычной работе достаточно этой страницы и записей нужных компонентов в `agent-manifest.json`.
 
 ## Тема без мерцания
 
 Задайте `data-theme` на сервере или в исходном HTML до первого рендера. При переключении обновляйте `document.documentElement.dataset.theme`. Сохранение предпочтения и обработка system mode принадлежат приложению. Для root без атрибутов библиотека выбирает Light, поверхность base и borders off. `data-borders="on"` включает декоративные границы; фокус и ошибки сохраняют собственные контуры в обоих режимах.
 
 ```tsx
-import { IconButton } from '@personal/capacities-ui';
+import { IconButton } from 'sloyui';
 import { useState } from 'react';
 
 export function ThemeToggle() {
@@ -29,7 +29,7 @@ export function ThemeToggle() {
 Без provider встроенный интерфейс русский. LocaleProvider требует locale="ru" или "en"; ближайший provider задаёт язык подписи действий и стандартного Intl-форматирования. Пользовательские подписи и данные не переводятся. Явный locale у Calendar/DatePicker/DailyHeader или поддерживаемый format callback меняет формат данных, сохраняя язык интерфейса.
 
 ```tsx
-import { DailyHeader, LocaleProvider, useLocale, useTranslate } from '@personal/capacities-ui';
+import { DailyHeader, LocaleProvider, useLocale, useTranslate } from 'sloyui';
 
 function LocalizedWorkspace() {
   const locale = useLocale();
@@ -52,7 +52,7 @@ useTranslate возвращает t(ru, en) для собственных стр
 Контекст описывает фактический фон контейнера. На собственном `section` задайте заливку через `--cap-surface-current`; встроенная Card создаёт собственный raised-контекст. Переключатель рамок меняет декоративные границы без изменения размеров. Popup сохраняет тему, акцент и режим рамок, а его поверхность остаётся floating.
 
 ```tsx
-import { Button, Card, Popover, Switch, Tag } from '@personal/capacities-ui';
+import { Button, Card, Popover, Switch, Tag } from 'sloyui';
 import { useState } from 'react';
 
 export function ContextExample() {
@@ -82,7 +82,7 @@ export function ContextExample() {
 `ActionBar.size`, `ButtonGroup.size` и `SplitButton.size` используют одну шкалу. Внутренние отступы группы уже включены в её внешнюю высоту. Вложенная группа может переопределить размер. Поля и сложные Select/Popover сохраняют обычную навигацию, если поставить `rovingFocus={false}`.
 
 ```tsx
-import { ActionBar, ButtonGroup, IconButton, Popover, Switch } from '@personal/capacities-ui';
+import { ActionBar, ButtonGroup, IconButton, Popover, Switch } from 'sloyui';
 import { useState } from 'react';
 
 export function CollectionActions() {
@@ -106,7 +106,7 @@ export function CollectionActions() {
 ## Прокрутка без цветной подложки
 
 ```tsx
-import { Button, Card, ScrollArea } from '@personal/capacities-ui';
+import { Button, Card, ScrollArea } from 'sloyui';
 
 export function Notes({ notes }: { notes: string[] }) {
   return <Card>
@@ -126,7 +126,7 @@ export function Notes({ notes }: { notes: string[] }) {
 Размеры ResizablePanelGroup — числовые проценты доступного места после ручек. Содержимое не должно задавать минимальную ширину всей композиции. Для вертикальной группы ограничьте высоту родителя; локальную прокрутку задавайте через ScrollArea. Группа состоит из прямых Panel/Handle children, другую группу вкладывайте внутрь Panel.
 
 ```tsx
-import { ResizableHandle, ResizablePanel, ResizablePanelGroup, ScrollArea } from '@personal/capacities-ui';
+import { ResizableHandle, ResizablePanel, ResizablePanelGroup, ScrollArea } from 'sloyui';
 import { useState } from 'react';
 
 export function SplitWorkspace() {
@@ -155,7 +155,7 @@ Panel defaultSize/minSize/maxSize задаёт начальный размер �
 ## Форма с валидацией
 
 ```tsx
-import { Button, Field, Input } from '@personal/capacities-ui';
+import { Button, Field, Input } from 'sloyui';
 import { useState } from 'react';
 
 export function ProjectForm({ save }: { save: (title: string) => Promise<void> }) {
@@ -187,7 +187,7 @@ export function ProjectForm({ save }: { save: (title: string) => Promise<void> }
 ## Кнопка с контекстными действиями
 
 ```tsx
-import { Menu } from '@personal/capacities-ui';
+import { Menu } from 'sloyui';
 
 export function ObjectActions({ open, archive }: { open: () => void; archive: () => void }) {
   return <Menu label="Действия с объектом" items={[

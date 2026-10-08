@@ -78,7 +78,7 @@ export function documentStore(root:string) {
 }
 export function documentsPlugin():Plugin {
  let root:string;
- return {name:'capacities-documents',configResolved(config){root=config.root;},
+ return {name:'sloy-documents',configResolved(config){root=config.root;},
   configureServer(server){
    const store=documentStore(root);
    server.middlewares.use('/__docs',async(req,res)=>{
@@ -96,6 +96,6 @@ export function documentsPlugin():Plugin {
     }catch(error){send(error instanceof DocumentError?error.status:(error as NodeJS.ErrnoException).code==='ENOENT'?404:500,{error:error instanceof DocumentError?error.message:'Could not read or save the file.'});}
    });
   },
-  async generateBundle(){const store=documentStore(root);const files=await Promise.all((await store.list()).map(async item=>({...item,...await store.read(item.path)})));this.emitFile({type:'asset',fileName:'documents.json',source:JSON.stringify({files,writable:false})});},
+  async generateBundle(){const store=documentStore(root);const files=await Promise.all(documentFiles.map(async item=>({...item,...await store.read(item.path)})));this.emitFile({type:'asset',fileName:'documents.json',source:JSON.stringify({files,writable:false})});},
  };
 }

@@ -1,4 +1,4 @@
-# Capacities UI
+# Sloy UI
 React 19 + TypeScript + scoped CSS; React peers only, no runtime dependencies.
 
 Read narrowly:
@@ -10,13 +10,13 @@ Read narrowly:
 - DESIGN.md — typography and visual language.
 - docs/instructions/*.md — optional project-specific instructions created in the local editor.
 
-These six core files form the canonical instructions; avoid loading all at once. docs/reference/ retains historical implementation detail for targeted audit, not normal onboarding. source/loaded-stylesheets.json, source token catalogs, source-tokens.css and versions/ are provenance/rollback evidence; do not load them for routine UI work.
+These six core files form the canonical instructions; avoid loading all at once. Identity: src/brand.json, exported as SLOY_UI. Independent palette generation: source/foundation.json and source/surface-rules.json. Licensing: THIRD_PARTY_NOTICES.md and licenses/. Local captures, audit logs and private drafts do not belong in public distributions.
 
-Import { Button, Tag, Dialog, ScrollArea } from '@personal/capacities-ui';
-Import '@personal/capacities-ui/styles.css' once. Fonts are opt-in via fonts.css.
+Import { Button, Tag, Dialog, ScrollArea } from 'sloyui';
+Import 'sloyui/styles.css' once. Fonts are opt-in via fonts.css.
 Set data-theme on html; theme/accent/surface/borders/radius/shadow inherit independently. Paint custom surfaces using --cap-surface-current. Portals preserve nearest context and establish floating.
 
 npm run dev — local catalogue at http://127.0.0.1:4317. #ComponentName routes are case-sensitive. #agents edits real core/custom files with revision checks; production build is read-only.
 npm run check — tokens, manifest, types, tests, package and demo build.
 npm run pack:kit and npm run verify:package — package validation.
-docs/verification.md records actual checks; CHANGELOG.md records release changes. Generated exports do not prove a live Figma update or deployment. Frozen versions/v0.2.0 and versions/v0.1.0 are never overwritten.
+docs/verification.md records actual checks; CHANGELOG.md records release changes. Generated exports do not prove a live Figma update or deployment.

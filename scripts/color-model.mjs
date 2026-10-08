@@ -1,8 +1,30 @@
 import { readFileSync } from 'node:fs';
 export const readJSON = path => JSON.parse(readFileSync(new URL('../'+path, import.meta.url), 'utf8'));
 export const flatten = (node, path='', out={}) => { for(const [key,value] of Object.entries(node)) { const name=path?path+'/'+key:key;if(value.$type)out[name]=value;else flatten(value,name,out); } return out; };
-export const source = Object.fromEntries(['light','dark'].map(t=>[t,flatten(readJSON('source/colors-'+t+'.json'))]));
-export const palette = Object.fromEntries(Object.entries(source.light).filter(([n])=>n.startsWith('palette/')).map(([n,t])=>[n,t.$value]));
+// This authored model deliberately reads no captured app colors or CSS.
+export const foundation = readJSON('source/foundation.json');
+const srgbEncode = x => x <= .0031308 ? 12.92*x : 1.055*x**(1/2.4)-.055;
+export function oklchToSRGB(L,C,h) {
+ const a=C*Math.cos(h*Math.PI/180), b=C*Math.sin(h*Math.PI/180);
+ const l=(L+.3963377774*a+.2158037573*b)**3;
+ const m=(L-.1055613458*a-.0638541728*b)**3;
+ const s=(L-.0894841775*a-1.2914855480*b)**3;
+ return [4.0767416621*l-3.3077115913*m+.2309699292*s,-1.2684380046*l+2.6097574011*m-.3413193965*s,-.0041960863*l-.7034186147*m+1.7076147010*s];
+}
+export function gamutColor(L,C,h) {
+ const inGamut = rgb => rgb.every(x=>x>=0&&x<=1);
+ let rgb=oklchToSRGB(L,C,h);
+ if(!inGamut(rgb)){let low=0,high=C;for(let i=0;i<32;i++){const mid=(low+high)/2;if(inGamut(oklchToSRGB(L,mid,h)))low=mid;else high=mid;}rgb=oklchToSRGB(L,low,h);}
+ return {colorSpace:'srgb',components:rgb.map(x=>Number(srgbEncode(Math.max(0,Math.min(1,x))).toFixed(10))),alpha:1};
+}
+export const palette={};
+for(const [hue,angle] of Object.entries(foundation.palette.hues))for(const step of foundation.palette.steps){
+ const t=step/1000,L=1-(1-foundation.palette.lightnessFloor)*t;
+ const C=foundation.palette.chromaPeak*Math.sin(Math.PI*t)**foundation.palette.chromaExponent;
+ palette[`palette/${hue}/${step}`]=gamutColor(L,C,angle);
+}
+for(const step of foundation.palette.neutralSteps){const Y=Math.max(0,1.05*Math.exp(-Math.log(foundation.palette.neutralContrastSpan)*step/1000)-.05);palette[`palette/gray/${step}`]=gamutColor(Math.cbrt(Y),0,0);}
+palette['palette/black']=gamutColor(0,0,0);palette['palette/white']=gamutColor(1,0,0);
 export const hues = ['neutral','rose','pink','fuchsia','purple','violet','indigo','blue','sky','cyan','teal','emerald','green','lime','yellow','amber','orange','red'];
 export const surfaceRules = readJSON('source/surface-rules.json');
 export const themes=['Light','Dark'], surfaces=['base','canvas','raised','floating'], states=['normal','hover','pressed','disabled'];
@@ -46,7 +68,7 @@ export function buildColorModel(){
   const values={'surface/current':surfaceName,'disabled/background':disabledBg.name,'disabled/text':disabledText.name};
   for(const s of surfaces)values['surface/'+s]='palette/'+surfaceRules[s].palette[ti];
   const element={};
-  for(const hue of hues){const ramp=triple(scales[hue],targets,ti?1:-1,surfaceY);const ink=choose(scales[hue].filter(p=>ramp.every(bg=>contrast(p.Y,bg.Y)>=4.5&&contrast(p.Y,reactionY(bg.color,theme,ti?.10:.08))>=4.5)&&(ti?p.Y>ramp[2].Y:p.Y<ramp[2].Y)),ti?.72:.063);if(!ink)throw Error('Unreadable '+hue);element[hue]={};for(const [i,state]of states.entries()){const bg=i===3?disabledBg:ramp[i],fg=i===3?disabledText:ink;element[hue][state]={background:bg.name,text:fg.name};values[`element/${hue}/${state}`]=bg.name;audit.push({theme,surface,hue,state,background:bg.name,text:fg.name,contrast:contrast(bg.Y,fg.Y),reactionContrast:contrast(fg.Y,reactionY(bg.color,theme,i===3?0:ti?.10:.08)),backgroundY:bg.Y,surfaceContrast:contrast(bg.Y,surfaceY)});}values[`element/${hue}/text`]=ink.name;values[`element/${hue}/disabled-text`]=disabledText.name;
+  for(const hue of hues){const ramp=triple(scales[hue],targets,ti?1:-1,surfaceY);const ink=choose(scales[hue].filter(p=>ramp.every(bg=>contrast(p.Y,bg.Y)>=4.5&&contrast(p.Y,reactionY(bg.color,theme,ti?.10:.08))>=4.5)&&(ti?p.Y>ramp[2].Y:p.Y<ramp[2].Y)),ti?.72:.063);if(!ink)throw Error('Unreadable '+hue+' '+theme+' '+surface+' '+JSON.stringify(ramp.map(x=>[x.name,x.Y])));element[hue]={};for(const [i,state]of states.entries()){const bg=i===3?disabledBg:ramp[i],fg=i===3?disabledText:ink;element[hue][state]={background:bg.name,text:fg.name};values[`element/${hue}/${state}`]=bg.name;audit.push({theme,surface,hue,state,background:bg.name,text:fg.name,contrast:contrast(bg.Y,fg.Y),reactionContrast:contrast(fg.Y,reactionY(bg.color,theme,i===3?0:ti?.10:.08)),backgroundY:bg.Y,surfaceContrast:contrast(bg.Y,surfaceY)});}values[`element/${hue}/text`]=ink.name;values[`element/${hue}/disabled-text`]=disabledText.name;
    const solid=triple(scales[hue],hue==='neutral'?(ti?[.94,.80,.66]:[.009,.025,.045]):ti?[.55,.65,.75]:[.1,.075,.05],hue==='neutral'?(ti?-1:1):(ti?1:-1));const solidInk=chooseActionInk(solid[0].Y);for(let i=0;i<3;i++){if(contrast(solid[i].Y,luminance(palette[solidInk]))<4.5)throw Error('Solid contrast '+hue);values[`action/${hue}/${states[i]}`]=solid[i].name;}values[`action/${hue}/text`]=solidInk;
    const vividResult=ti||hue==='neutral'?{ramp:solid,ink:solidInk}:vividRamp(hue,solid),vivid=vividResult.ramp,vividInk=vividResult.ink;
    for(let i=0;i<3;i++)values[`action-vivid/${hue}/${states[i]}`]=vivid[i].name;

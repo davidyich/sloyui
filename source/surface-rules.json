@@ -1,6 +1,26 @@
 {
-  "canvas": { "palette": ["gray/125", "gray/950"] },
-  "base": { "palette": ["gray/50", "gray/900"] },
-  "raised": { "palette": ["gray/0", "gray/850"] },
-  "floating": { "palette": ["gray/0", "gray/800"] }
+  "canvas": {
+    "palette": [
+      "gray/50",
+      "gray/975"
+    ]
+  },
+  "base": {
+    "palette": [
+      "gray/25",
+      "gray/950"
+    ]
+  },
+  "raised": {
+    "palette": [
+      "gray/0",
+      "gray/925"
+    ]
+  },
+  "floating": {
+    "palette": [
+      "gray/0",
+      "gray/900"
+    ]
+  }
 }
