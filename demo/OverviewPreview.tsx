@@ -14,7 +14,7 @@ export function OverviewPreview({name}:{name:ComponentName}) {
  const note=t('Следующий шаг','Next step');
  const compact:Partial<Record<ComponentName,()=>ReactNode>>={
   FileCard:()=> <UI.FileCard name="brand-guidelines.pdf" sizeLabel="248 KB"/>,
-  ToastStack:()=> <UI.ToastStack shape="pill" position="inline" expandDirection="down" label={t('Уведомления','Notifications')} items={[{id:'one',title:t('Сборка готова','Build ready'),duration:Infinity},{id:'two',title:t('Изменения сохранены','Changes saved'),duration:Infinity},{id:'three',title:t('Публикуем проект…','Deploying to production…'),description:t('Собираем страницы проекта.','Building project pages.'),loading:true}]} onDismiss={noop}/>,
+  ToastStack:()=> <UI.ToastStack position="inline" expandDirection="down" label={t('Уведомления','Notifications')} items={[{id:'one',title:t('Сборка готова','Build ready'),duration:Infinity},{id:'two',title:t('Изменения сохранены','Changes saved'),duration:Infinity},{id:'three',title:t('Публикуем проект…','Deploying to production…'),description:t('Собираем страницы проекта.','Building project pages.'),loading:true}]} onDismiss={noop}/>,
   ResizablePanelGroup:()=> <ResizableExample nested={false}/>,
   Button:()=> <UI.Button variant="primary" leading={<UI.Icon name="plus"/>}>{t('Создать','Create')}</UI.Button>,
   FloatingActionBar:()=> <UI.FloatingActionBar size="sm" position="static" label={t('Действия','Actions')} leading={<UI.Counter value={2}/>} trailing={<UI.Button variant="primary">{t('Готово','Done')}</UI.Button>}><UI.IconButton icon="list" label={t('Список','List')} variant="ghost"/><UI.IconButton icon="sliders" label={t('Параметры','Settings')} variant="ghost"/></UI.FloatingActionBar>,

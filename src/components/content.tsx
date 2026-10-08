@@ -1,4 +1,5 @@
 import { useTranslate, useLocale } from './locale.js';
+import { useKanbanDrag } from './kanban-drag.js';
 import { ButtonGroup } from './workbench.js';
 import { CodeBlock, type CodeBlockProps } from './code-block.js';
 import { Fragment, useEffect, useId, useLayoutEffect, useRef, useState, type HTMLAttributes, type KeyboardEvent, type ReactNode } from 'react';
@@ -371,19 +372,53 @@ export function KanbanColumn({ title, count, action, footer, icon, variant = 'de
   const id = useId();
   return <section role="group" className={cx('cap-kanban-column', className)} data-variant={variant} data-surface={variant === 'framed' ? 'canvas' : undefined} aria-labelledby={id} {...props}><header className="cap-kanban-column-header"><h3 id={id} className="cap-kanban-column-title" data-accent={color === 'inherit' ? undefined : color}><span>{icon && <Icon name={icon}/>}<span>{title}</span></span>{count !== undefined && <Counter value={count} size="xs" variant={variant === 'framed' ? 'plain' : 'translucent'}/>}</h3>{action && <div className="cap-kanban-column-actions">{action}</div>}</header><div className="cap-kanban-column-body">{count === 0 ? emptyState ?? <EmptyState title={t("Здесь пока пусто", "Nothing here yet")} description={t("Переместите сюда карточку", "Move a card here")} /> : children}</div>{footer && <footer className="cap-kanban-column-footer">{footer}</footer>}</section>;
 }
-export interface KanbanLane { id: string; title: string; emptyMessage?: string; color?: Color | 'inherit' }
-export interface KanbanTask { id: string; columnId: string; title: string; description?: string; completed?: boolean; color?: Color; metadata?: ReactNode; footer?: ReactNode }
-export interface KanbanBoardProps {
-  label: string; columns: KanbanLane[]; items: KanbanTask[]; onMove?: (id: string, columnId: string) => void; onCompletedChange?: (id: string, completed: boolean) => void;
-  onOpen?: (id: string) => void; onAdd?: (columnId: string) => void; renderCard?: (item: KanbanTask) => ReactNode; className?: string;
+export interface KanbanLane {
+  id: string; title: string; emptyMessage?: string; color?: Color | 'inherit';
+  icon?: IconSource; variant?: KanbanColumnProps['variant']; action?: ReactNode; footer?: ReactNode;
 }
-export function KanbanBoard({ label, columns, items, onMove, onCompletedChange, onOpen, onAdd, renderCard, className }: KanbanBoardProps) {
+export interface KanbanTask { id: string; columnId: string; title: string; description?: string; completed?: boolean; color?: Color; metadata?: ReactNode; footer?: ReactNode }
+export interface KanbanCardContext { index: number; handle: ReactNode; dragging: boolean; menuItems: MenuItem[] }
+export interface KanbanBoardProps {
+  label: string; columns: KanbanLane[]; items: KanbanTask[];
+  /** Zero-based insertion index in the target column after removing the moving task. */
+  onMove?: (id: string, columnId: string, index: number) => void;
+  onCompletedChange?: (id: string, completed: boolean) => void;
+  onOpen?: (id: string) => void; onAdd?: (columnId: string) => void;
+  renderCard?: (item: KanbanTask, context: KanbanCardContext) => ReactNode;
+  /** Custom cards use an external handle by default; custom places context.handle in a card slot. */
+  handlePlacement?: 'start' | 'custom';
+  /** Card body drag is default; interactive descendants never start a drag. */
+  dragActivation?: 'card' | 'handle'; disabled?: boolean; className?: string;
+}
+export function KanbanBoard({ label, columns, items, onMove, onCompletedChange, onOpen, onAdd, renderCard, handlePlacement = 'start', dragActivation = 'card', disabled = false, className }: KanbanBoardProps) {
   const t = useTranslate();
-
-  return <div className={cx('cap-kanban-board', className)} role="region" aria-label={label} tabIndex={0}>{columns.map(column => {
-    const columnItems = items.filter(item => item.columnId === column.id);
-    return <KanbanColumn key={column.id} title={column.title} color={column.color} count={columnItems.length} action={onAdd && <IconButton label={`${t("Добавить в ", "Add to ")}${column.title}`} icon="plus" size="sm" variant="ghost" onClick={() => onAdd(column.id)} />} emptyState={<EmptyState title={column.emptyMessage ?? t("Пока нет задач", "No tasks yet")} description={onMove ? t("В меню карточки выберите эту колонку", "Choose this column in the card menu") : undefined} />}>{columnItems.map(item => <Fragment key={item.id}>{renderCard ? renderCard(item) : <TaskCard title={item.title} description={item.description} completed={item.completed} color={item.color} metadata={item.metadata} footer={item.footer} onOpen={onOpen ? () => onOpen(item.id) : undefined} onCompletedChange={onCompletedChange ? completed => onCompletedChange(item.id, completed) : undefined} menuItems={onMove ? columns.filter(target => target.id !== column.id).map(target => ({ id: target.id, label: `${t("В ", "To ")}${target.title}`, icon: 'arrow', onSelect: () => onMove(item.id, target.id) })) : undefined} />}</Fragment>)}</KanbanColumn>;
-  })}</div>;
+  const { root, preview, announcement, instructions, handle, cardProps, move } = useKanbanDrag(columns, items, disabled ? undefined : onMove, dragActivation);
+  const moving = items.find(item => item.id === preview?.id);
+  return <div className={cx('cap-kanban-board', className)} ref={root} role="region" aria-label={label} tabIndex={0} data-dragging={!!preview || undefined}>
+    <span id={instructions} className="cap-sr-only">{t('Перетащите карточку. В фокусе карточки или ручки стрелки вверх и вниз меняют порядок, влево и вправо — колонку. Home и End переносят в начало и конец. Escape отменяет перетаскивание.', 'Drag a card. With the card or handle focused, up and down arrows change order; left and right arrows change columns. Home and End move to the start and end. Escape cancels dragging.')}</span>
+    {columns.map(column => {
+      const columnItems = items.filter(item => item.columnId === column.id), target = preview?.target?.columnId === column.id ? preview.target : null;
+      const placeholder = target && <div className="cap-kanban-drop-placeholder" style={{top: target.top}} aria-hidden="true"><span>{t('Отпустите здесь', 'Drop here')}</span></div>;
+      const empty = <EmptyState title={column.emptyMessage ?? t('Пока нет задач', 'No tasks yet')} description={onMove && !disabled ? t('Перетащите сюда карточку или выберите колонку в меню', 'Drag a card here or choose this column in its menu') : undefined} />;
+      return <KanbanColumn key={column.id} data-kanban-column={column.id} data-drop-target={!!target || undefined} title={column.title} color={column.color} icon={column.icon} variant={column.variant} footer={column.footer} count={columnItems.length}
+        action={column.action ?? (onAdd && <IconButton label={`${t('Добавить в ', 'Add to ')}${column.title}`} icon="plus" size="sm" variant="ghost" onClick={() => onAdd(column.id)} />)} emptyState={<>{empty}{placeholder}</>}>
+        {columnItems.map((item, index) => {
+          const dragging = preview?.id === item.id, grip = handle(item);
+          const menuItems: MenuItem[] = onMove && !disabled ? [
+            {id:'move-up',label:t('Переместить вверх','Move up'),icon:'chevron',disabled:index===0,onSelect:()=>move(item.id,column.id,index-1)},
+            {id:'move-down',label:t('Переместить вниз','Move down'),icon:'down',disabled:index===columnItems.length-1,onSelect:()=>move(item.id,column.id,index+1)},
+            ...columns.filter(target => target.id !== column.id).map(target => ({id:`column:${target.id}`,label:`${t('В ','To ')}${target.title}`,icon:'arrow' as const,onSelect:()=>move(item.id,target.id,items.filter(task=>task.columnId===target.id).length)})),
+          ] : [];
+          return <div key={item.id} className="cap-kanban-task" data-kanban-task={item.id} data-dragging={dragging || undefined} data-drag-activation={onMove && !disabled ? dragActivation : undefined} {...cardProps(item)}>
+            {renderCard ? <>{handlePlacement === 'start' && grip && <div className="cap-kanban-custom-handle">{grip}</div>}{renderCard(item,{index,handle:grip,dragging,menuItems})}</> : <TaskCard title={item.title} dragHandle={grip} description={item.description} completed={item.completed} color={item.color} metadata={item.metadata} footer={item.footer}
+              onOpen={onOpen ? () => onOpen(item.id) : undefined} onCompletedChange={onCompletedChange ? completed => onCompletedChange(item.id,completed) : undefined} menuItems={menuItems} />}
+          </div>;
+        })}{placeholder}
+      </KanbanColumn>;
+    })}
+    {preview && moving && <div className="cap-kanban-drag-preview cap-surface-boundary" data-surface="floating" aria-hidden="true" style={{left:preview.x+12,top:preview.y+12,width:Math.min(preview.width,280)}}>{moving.title}</div>}
+    <span className="cap-sr-only" role="status" aria-live="polite" aria-atomic="true">{announcement}</span>
+  </div>;
 }
 export interface DailyHeaderProps extends HTMLAttributes<HTMLElement> { date: string; locale?: string; showWeek?: boolean; tags?: ReactNode; actions?: ReactNode; headingLevel?: 1 | 2 | 3 }
 export function DailyHeader({ date, locale: suppliedLocale, showWeek = true, tags, actions, headingLevel = 2, className, children, ...props }: DailyHeaderProps) {

@@ -92,7 +92,7 @@ describe('Content blocks', () => {
     render(<KanbanBoard label="Board" columns={[{ id: 'todo', title: 'Todo' }, { id: 'done', title: 'Done' }]} items={[{ id: 'task', title: 'Write docs', columnId: 'todo' }]} onMove={move} />);
     await userEvent.click(screen.getByRole('button', { name: 'Действия: Write docs' }));
     await userEvent.keyboard('{Enter}');
-    expect(move).toHaveBeenCalledWith('task', 'done');
+    expect(move).toHaveBeenCalledWith('task', 'done', 0);
     expect(screen.getByRole('region', { name: 'Board' })).toHaveAttribute('tabindex', '0');
   });
   it('keeps calendar, rendered Markdown, and independent card actions semantically accessible', async () => {

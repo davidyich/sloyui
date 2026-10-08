@@ -1,7 +1,7 @@
 import { describe,expect,it } from 'vitest';
 import registry from '../source/component-registry.json';
 import manifest from '../agent-manifest.json';
-import { componentNames,resolveRoute } from '../demo/catalog';
+import { componentNames,filterComponents,resolveRoute } from '../demo/catalog';
 import { documentFiles } from '../demo/document-files';
 import { existsSync } from 'node:fs';
 
@@ -24,6 +24,32 @@ describe('Persistent component registry',()=>{
    expect(registry.components.MarkdownEditor.status).toBe('archived');
    expect(manifest.components.MarkdownEditor.catalogueRoute).toBe('#RichTextEditor');
    expect(manifest.catalogue.archivedRoutes['#MarkdownEditor']).toBe('#RichTextEditor');
+ });
+ it('archives FloatingField while preserving its Input route and permanent ID',()=>{
+   expect(componentNames).not.toContain('FloatingField');
+   for(const hash of ['#FloatingField','#floatingfield','#floating-field'])expect(resolveRoute(hash)).toBe('Input');
+   expect(registry.components.FloatingField).toMatchObject({id:'cp-049',status:'archived',replacement:'Input'});
+   expect(manifest.components.FloatingField.catalogueRoute).toBe('#Input');
+   expect(manifest.catalogue.archivedRoutes['#FloatingField']).toBe('#Input');
+ });
+ it('archives chart pages while preserving their routes, IDs and animation utility',()=>{
+   const charts=Object.entries(registry.components).filter(([,record])=>record.primaryGroup==='charts');
+   expect(charts).toHaveLength(12);
+   for(const [name,record] of charts){
+     expect(record.status,name).toBe('archived');
+     expect(componentNames,name).not.toContain(name);
+     expect(resolveRoute(`#${name}`),name).toBe(name);
+     expect(resolveRoute(`#${name.toLowerCase()}`),name).toBe(name);
+     expect(manifest.components[name as keyof typeof manifest.components].catalogueRoute,name).toBe(`#${name}`);
+     expect(filterComponents({status:'archived'}),name).toContain(name);
+     expect(filterComponents({query:name}),name).not.toContain(name);
+   }
+   expect(registry.components.AnimatedCounter.status).toBe('needs-review');
+   expect(componentNames).toContain('AnimatedCounter');
+   expect(filterComponents({status:'archived',group:'charts',query:'cp-083'})).toEqual(['LineChart']);
+   expect(filterComponents({status:'archived'})).not.toContain('MarkdownEditor');
+   expect(filterComponents({group:'charts'})).toEqual(['AnimatedCounter']);
+   expect(filterComponents()).toEqual(componentNames);
  });
  it('publishes registry groups with all memberships and canonical counts',()=>{
    expect(manifest.componentCount).toBe(componentNames.length);

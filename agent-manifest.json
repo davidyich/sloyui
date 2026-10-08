@@ -3,20 +3,21 @@
   "version": "0.8.0",
   "framework": "React >=19",
   "module": "ESM",
-  "componentCount": 102,
+  "componentCount": 89,
   "exportedComponentCount": 103,
   "compatibilityAliases": {
     "Badge": "Tag",
     "TypeLabel": "Tag with icon=page",
+    "FloatingField": "Input with labelPlacement=inside (archived compatibility export)",
     "MarkdownEditor": "RichTextEditor (archived compatibility export)"
   },
   "registry": {
     "source": "source/component-registry.json",
     "statuses": {
       "ready": "Готов",
-      "not-ready": "В доработке",
-      "needs-review": "Требует проверки",
-      "archived": "В архиве"
+      "needs-review": "Проверка",
+      "not-ready": "Доработка",
+      "archived": "Архив"
     },
     "groups": [
       {
@@ -78,7 +79,20 @@
     "routePattern": "#ComponentName",
     "caseSensitive": true,
     "archivedRoutes": {
-      "#MarkdownEditor": "#RichTextEditor"
+      "#FloatingField": "#Input",
+      "#MarkdownEditor": "#RichTextEditor",
+      "#LineChart": "#LineChart",
+      "#BarChart": "#BarChart",
+      "#DonutChart": "#DonutChart",
+      "#Streamgraph": "#Streamgraph",
+      "#BrushChart": "#BrushChart",
+      "#WaffleChart": "#WaffleChart",
+      "#SlopeChart": "#SlopeChart",
+      "#Sparkline": "#Sparkline",
+      "#Gauge": "#Gauge",
+      "#ActivityHeatmap": "#ActivityHeatmap",
+      "#Ridgeline": "#Ridgeline",
+      "#Treemap": "#Treemap"
     },
     "overviewRoutes": [
       "#overview",
@@ -122,7 +136,6 @@
           "Radio",
           "Switch",
           "Slider",
-          "FloatingField",
           "DatePicker",
           "ComboBox",
           "MultiSelect",
@@ -293,19 +306,7 @@
         "label": "Графики",
         "name": "Графики",
         "components": [
-          "LineChart",
-          "BarChart",
-          "DonutChart",
-          "Streamgraph",
-          "BrushChart",
-          "WaffleChart",
-          "SlopeChart",
-          "Sparkline",
-          "Gauge",
-          "ActivityHeatmap",
-          "AnimatedCounter",
-          "Ridgeline",
-          "Treemap"
+          "AnimatedCounter"
         ]
       },
       {
@@ -3341,7 +3342,7 @@
       ],
       "primaryGroup": "fields",
       "purpose": "Boolean or mixed choice",
-      "props": "label: ReactNode; size?: Size; contrast?: boolean (default true: solid Primary pair; false: vivid); indeterminate?: boolean; native input props",
+      "props": "label: ReactNode; size?: Size; contrast?: boolean (default true: neutral Primary pair; false: soft accent pair); indeterminate?: boolean; native input props",
       "example": "<Checkbox label=\"Select all\" indeterminate />",
       "catalogueRoute": "#Checkbox",
       "catalogueGroup": "Поля",
@@ -3527,7 +3528,7 @@
       ],
       "primaryGroup": "fields",
       "purpose": "Exclusive choice",
-      "props": "label: ReactNode; size?: Size; contrast?: boolean (default true: solid Primary pair; false: vivid); native input props; shared name per group",
+      "props": "label: ReactNode; size?: Size; contrast?: boolean (default true: neutral Primary pair; false: soft accent pair); native input props; shared name per group",
       "example": "<Radio label=\"Private\" name=\"access\" value=\"private\" />",
       "catalogueRoute": "#Radio",
       "catalogueGroup": "Поля",
@@ -3706,7 +3707,7 @@
       ],
       "primaryGroup": "fields",
       "purpose": "Boolean setting",
-      "props": "label: ReactNode; size?: Size; color?: Color; variant?: accent|neutral; contrast?: boolean (default true: solid Primary pair; false: vivid); native checkbox props",
+      "props": "label: ReactNode; size?: Size; color?: Color; variant?: accent|neutral; contrast?: boolean (default true: neutral Primary pair; false: soft accent pair); native checkbox props",
       "example": "<Switch label=\"Compact view\" defaultChecked />",
       "catalogueRoute": "#Switch",
       "catalogueGroup": "Поля",
@@ -6624,17 +6625,18 @@
     },
     "FloatingField": {
       "id": "cp-049",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "fields"
       ],
       "primaryGroup": "fields",
+      "replacement": "Input",
       "purpose": "Input with persistent inside label and linked validation",
       "props": "focusRing?: {width?: number, offset?: number}; label: string; hint?: ReactNode; error?: string; leading?, trailing?: ReactNode; inputClassName?; size?: Size; variant?: surface|ghost; native input props except numeric size; ref: input",
       "example": "<FloatingField label=\"Name\" value={name} onChange={e => setName(e.target.value)} error={error} />",
-      "catalogueRoute": "#FloatingField",
+      "catalogueRoute": "#Input",
       "catalogueGroup": "Поля",
-      "behavior": "Compatibility wrapper over Input labelPlacement=inside. Input, Select and Textarea share label, hint, error and outside/inside placement; do not duplicate a Field label.",
+      "behavior": "Archived compatibility wrapper; old catalogue route resolves to Input with labelPlacement=inside. Input, Select and Textarea share label, hint, error and outside/inside placement; do not duplicate a Field label.",
       "source": "src/components/workbench.tsx",
       "api": [
         {
@@ -6842,7 +6844,7 @@
         }
       ],
       "usage": "Используйте одну подпись, hint для пояснения и error для ошибки. Храните введённое значение в форме; размер задавайте до настройки внешнего вида.",
-      "agentNotes": "Compatibility wrapper over Input labelPlacement=inside. Input, Select and Textarea share label, hint, error and outside/inside placement; do not duplicate a Field label.",
+      "agentNotes": "Archived compatibility wrapper; old catalogue route resolves to Input with labelPlacement=inside. Input, Select and Textarea share label, hint, error and outside/inside placement; do not duplicate a Field label.",
       "related": [
         "Checkbox",
         "ColorPicker",
@@ -8442,12 +8444,12 @@
         "layout"
       ],
       "primaryGroup": "layout",
-      "purpose": "Controlled task lanes with menu-based movement",
-      "props": "label: string; columns: KanbanLane[] {id,title,emptyMessage?,color?:Color|inherit}; items: KanbanTask[] {id,columnId,title,description?,completed?,color?,metadata?,footer?}; onMove?: (id:string,columnId:string)=>void; onCompletedChange?: (id:string,completed:boolean)=>void; onOpen?: (id:string)=>void; onAdd?: (columnId:string)=>void; renderCard?: (item:KanbanTask)=>ReactNode; className?",
+      "purpose": "Controlled task lanes with card-body drag, ordered moves and keyboard alternatives",
+      "props": "label: string; columns: KanbanLane[] {id,title,emptyMessage?,color?:Color|inherit,icon?,variant?,action?,footer?}; items: KanbanTask[] {id,columnId,title,description?,completed?,color?,metadata?,footer?}; onMove?: (id:string,columnId:string,index:number)=>void; onCompletedChange?: (id:string,completed:boolean)=>void; onOpen?: (id:string)=>void; onAdd?: (columnId:string)=>void; renderCard?: (item:KanbanTask,context:KanbanCardContext)=>ReactNode; dragActivation?: card|handle (default card); handlePlacement?: start|custom; disabled?: boolean; className?",
       "example": "<KanbanBoard label=\"Tasks\" columns={columns} items={tasks} onMove={moveTask} onCompletedChange={completeTask} />",
       "catalogueRoute": "#KanbanBoard",
       "catalogueGroup": "Контейнеры",
-      "behavior": "Consumer owns columns/items/moves. Default cards expose target-column actions in a keyboard-accessible menu; no drag-and-drop runtime.",
+      "behavior": "Consumer persists both destination column and order through onMove(id,columnId,index), with the zero-based destination index calculated after removing the source. Card-body pointer drag is default; interactive descendants are excluded. dragActivation=handle opts into a grip. Escape/pointercancel cancel without mutation. Focused cards/grips support arrows/Home/End; menus provide equivalent moves. Custom cards receive handle/menuItems/index/dragging.",
       "source": "src/components/content.tsx",
       "api": [
         {
@@ -8473,10 +8475,10 @@
         },
         {
           "name": "onMove",
-          "type": "((id: string, columnId: string) => void)",
+          "type": "((id: string, columnId: string, index: number) => void)",
           "required": false,
           "default": null,
-          "description": "Обработчик события Move."
+          "description": "Zero-based insertion index in the target column after removing the moving task."
         },
         {
           "name": "onCompletedChange",
@@ -8501,10 +8503,31 @@
         },
         {
           "name": "renderCard",
-          "type": "((item: KanbanTask) => ReactNode)",
+          "type": "((item: KanbanTask, context: KanbanCardContext) => ReactNode)",
           "required": false,
           "default": null,
-          "description": "Функция отображения содержимого карточки."
+          "description": "Карточка и context с index, dragging, handle и menuItems. Передайте меню в свой слот действий."
+        },
+        {
+          "name": "handlePlacement",
+          "type": "\"start\" | \"custom\"",
+          "required": false,
+          "default": "'start'",
+          "description": "Custom cards use an external handle by default; custom places context.handle in a card slot."
+        },
+        {
+          "name": "dragActivation",
+          "type": "\"card\" | \"handle\"",
+          "required": false,
+          "default": "'card'",
+          "description": "Card body drag is default; interactive descendants never start a drag."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "default": "false",
+          "description": "Блокирует взаимодействие."
         },
         {
           "name": "className",
@@ -8514,8 +8537,8 @@
           "description": "Дополнительный класс корневого элемента."
         }
       ],
-      "usage": "Задавайте контекст поверхности в композиции. Внутренний контент должен сжиматься по ширине; не скрывайте функциональные элементы через overflow.",
-      "agentNotes": "Consumer owns columns/items/moves. Default cards expose target-column actions in a keyboard-accessible menu; no drag-and-drop runtime.",
+      "usage": "Храните items в состоянии. В onMove сначала удалите задачу из прежней позиции, затем вставьте в columnId на index. По умолчанию переносится корпус карточки; интерактивные элементы работают отдельно. Для ручки включите dragActivation=\"handle\". Сохраняйте меню и клавиатурные способы переноса.",
+      "agentNotes": "Consumer persists both destination column and order through onMove(id,columnId,index), with the zero-based destination index calculated after removing the source. Card-body pointer drag is default; interactive descendants are excluded. dragActivation=handle opts into a grip. Escape/pointercancel cancel without mutation. Focused cards/grips support arrows/Home/End; menus provide equivalent moves. Custom cards receive handle/menuItems/index/dragging.",
       "related": [
         "BottomSheet",
         "Card",
@@ -9336,7 +9359,7 @@
       ],
       "primaryGroup": "fields",
       "purpose": "Accessible single choice group with card variant",
-      "props": "options: readonly RadioGroupOption[] {value,label,description?,meta?,disabledReason?,icon?,disabled?}; label: string; value?, defaultValue?, onValueChange?, name?, variant?: plain|cards|surface|ghost, orientation?: horizontal|vertical, layout?: list|grid, disabled?, error?, size?, focusRing?",
+      "props": "options: readonly RadioGroupOption[] {value,label,description?,meta?,disabledReason?,icon?,disabled?}; label: string; value?, defaultValue?, onValueChange?, name?, variant?: plain|cards|surface|ghost, orientation?: horizontal|vertical, layout?: list|grid, contrast?: boolean (default true: neutral Primary; false: soft accent), disabled?, error?, size?, focusRing?",
       "example": "<RadioGroup label=\"View\" options={options} value={view} onValueChange={setView} variant=\"cards\" />",
       "catalogueRoute": "#RadioGroup",
       "catalogueGroup": "Поля",
@@ -9397,6 +9420,13 @@
           "required": false,
           "default": null,
           "description": "Имя для формы или идентификатор иконки."
+        },
+        {
+          "name": "contrast",
+          "type": "boolean",
+          "required": false,
+          "default": "true",
+          "description": "Усиливает контраст выбранного стиля."
         },
         {
           "name": "disabled",
@@ -11165,7 +11195,7 @@
     },
     "LineChart": {
       "id": "cp-083",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -11300,15 +11330,15 @@
       "usage": "Давайте графику содержательную подпись, единицы и реальные данные. Проверяйте пустую выборку и узкий контейнер.",
       "agentNotes": "Use the exported LineChart component. Interactive multi-series line chart. Read its typed API and example; bind referenced data and callbacks in the consumer. Preserve accessible labels, keyboard behavior and reduced motion.",
       "related": [
-        "ActivityHeatmap",
-        "BarChart",
-        "BrushChart",
-        "DonutChart"
+        "AnimatedCounter",
+        "Accordion",
+        "ActionBar",
+        "Alert"
       ]
     },
     "BarChart": {
       "id": "cp-084",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -11394,15 +11424,15 @@
       "usage": "Давайте графику содержательную подпись, единицы и реальные данные. Проверяйте пустую выборку и узкий контейнер.",
       "agentNotes": "Use the exported BarChart component. Interactive categorical bars including negative values. Read its typed API and example; bind referenced data and callbacks in the consumer. Preserve accessible labels, keyboard behavior and reduced motion.",
       "related": [
-        "ActivityHeatmap",
-        "BrushChart",
-        "DonutChart",
-        "Gauge"
+        "AnimatedCounter",
+        "Accordion",
+        "ActionBar",
+        "Alert"
       ]
     },
     "DonutChart": {
       "id": "cp-085",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -11530,15 +11560,15 @@
       "usage": "Давайте графику содержательную подпись, единицы и реальные данные. Проверяйте пустую выборку и узкий контейнер.",
       "agentNotes": "Use the exported DonutChart component. Part-to-whole ring with keyboard selectable segments. Read its typed API and example; bind referenced data and callbacks in the consumer. Preserve accessible labels, keyboard behavior and reduced motion.",
       "related": [
-        "ActivityHeatmap",
-        "BarChart",
-        "BrushChart",
-        "Gauge"
+        "AnimatedCounter",
+        "Accordion",
+        "ActionBar",
+        "Alert"
       ]
     },
     "Streamgraph": {
       "id": "cp-086",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -11652,15 +11682,15 @@
       "usage": "Давайте графику содержательную подпись, единицы и реальные данные. Проверяйте пустую выборку и узкий контейнер.",
       "agentNotes": "Use the exported Streamgraph component. Stacked flow bands with crosshair, isolation and layer visibility. Read its typed API and example; bind referenced data and callbacks in the consumer. Preserve accessible labels, keyboard behavior and reduced motion.",
       "related": [
-        "ActivityHeatmap",
-        "BarChart",
-        "BrushChart",
-        "DonutChart"
+        "AnimatedCounter",
+        "Accordion",
+        "ActionBar",
+        "Alert"
       ]
     },
     "BrushChart": {
       "id": "cp-087",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -11753,15 +11783,15 @@
       "usage": "Давайте графику содержательную подпись, единицы и реальные данные. Проверяйте пустую выборку и узкий контейнер.",
       "agentNotes": "Use the exported BrushChart component. Line chart with adjustable range brush. Read its typed API and example; bind referenced data and callbacks in the consumer. Preserve accessible labels, keyboard behavior and reduced motion.",
       "related": [
-        "ActivityHeatmap",
-        "BarChart",
-        "DonutChart",
-        "Gauge"
+        "AnimatedCounter",
+        "Accordion",
+        "ActionBar",
+        "Alert"
       ]
     },
     "WaffleChart": {
       "id": "cp-088",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -11868,15 +11898,15 @@
       "usage": "Давайте графику содержательную подпись, единицы и реальные данные. Проверяйте пустую выборку и узкий контейнер.",
       "agentNotes": "Use the exported WaffleChart component. Part-to-whole grid with selectable groups. Read its typed API and example; bind referenced data and callbacks in the consumer. Preserve accessible labels, keyboard behavior and reduced motion.",
       "related": [
-        "ActivityHeatmap",
-        "BarChart",
-        "BrushChart",
-        "DonutChart"
+        "AnimatedCounter",
+        "Accordion",
+        "ActionBar",
+        "Alert"
       ]
     },
     "SlopeChart": {
       "id": "cp-089",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -11962,15 +11992,15 @@
       "usage": "Давайте графику содержательную подпись, единицы и реальные данные. Проверяйте пустую выборку и узкий контейнер.",
       "agentNotes": "Use the exported SlopeChart component. Before and after comparison. Read its typed API and example; bind referenced data and callbacks in the consumer. Preserve accessible labels, keyboard behavior and reduced motion.",
       "related": [
-        "ActivityHeatmap",
-        "BarChart",
-        "BrushChart",
-        "DonutChart"
+        "AnimatedCounter",
+        "Accordion",
+        "ActionBar",
+        "Alert"
       ]
     },
     "Sparkline": {
       "id": "cp-090",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -12063,15 +12093,15 @@
       "usage": "Давайте графику содержательную подпись, единицы и реальные данные. Проверяйте пустую выборку и узкий контейнер.",
       "agentNotes": "Use the exported Sparkline component. Compact trend line for inline metrics. Read its typed API and example; bind referenced data and callbacks in the consumer. Preserve accessible labels, keyboard behavior and reduced motion.",
       "related": [
-        "ActivityHeatmap",
-        "BarChart",
-        "BrushChart",
-        "DonutChart"
+        "AnimatedCounter",
+        "Accordion",
+        "ActionBar",
+        "Alert"
       ]
     },
     "Gauge": {
       "id": "cp-091",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -12171,15 +12201,15 @@
       "usage": "Давайте графику содержательную подпись, единицы и реальные данные. Проверяйте пустую выборку и узкий контейнер.",
       "agentNotes": "Use the exported Gauge component. Circular progress metric. Read its typed API and example; bind referenced data and callbacks in the consumer. Preserve accessible labels, keyboard behavior and reduced motion.",
       "related": [
-        "ActivityHeatmap",
-        "BarChart",
-        "BrushChart",
-        "DonutChart"
+        "AnimatedCounter",
+        "Accordion",
+        "ActionBar",
+        "Alert"
       ]
     },
     "ActivityHeatmap": {
       "id": "cp-092",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -12286,10 +12316,10 @@
       "usage": "Давайте графику содержательную подпись, единицы и реальные данные. Проверяйте пустую выборку и узкий контейнер.",
       "agentNotes": "Use the exported ActivityHeatmap component. Calendar heatmap of daily activity. Read its typed API and example; bind referenced data and callbacks in the consumer. Preserve accessible labels, keyboard behavior and reduced motion.",
       "related": [
-        "BarChart",
-        "BrushChart",
-        "DonutChart",
-        "Gauge"
+        "AnimatedCounter",
+        "Accordion",
+        "ActionBar",
+        "Alert"
       ]
     },
     "AnimatedCounter": {
@@ -12383,13 +12413,13 @@
       "related": [
         "TextShimmer",
         "Accordion",
-        "ActivityHeatmap",
-        "BarChart"
+        "CardStack",
+        "PreviewRail"
       ]
     },
     "Ridgeline": {
       "id": "cp-094",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -12503,15 +12533,15 @@
       "usage": "Давайте графику содержательную подпись, единицы и реальные данные. Проверяйте пустую выборку и узкий контейнер.",
       "agentNotes": "Use the exported Ridgeline component. Overlaid distributions across named series. Read its typed API and example; bind referenced data and callbacks in the consumer. Preserve accessible labels, keyboard behavior and reduced motion.",
       "related": [
-        "ActivityHeatmap",
-        "BarChart",
-        "BrushChart",
-        "DonutChart"
+        "AnimatedCounter",
+        "Accordion",
+        "ActionBar",
+        "Alert"
       ]
     },
     "Treemap": {
       "id": "cp-095",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -12618,10 +12648,10 @@
       "usage": "Давайте графику содержательную подпись, единицы и реальные данные. Проверяйте пустую выборку и узкий контейнер.",
       "agentNotes": "Use the exported Treemap component. Hierarchical area comparison. Read its typed API and example; bind referenced data and callbacks in the consumer. Preserve accessible labels, keyboard behavior and reduced motion.",
       "related": [
-        "ActivityHeatmap",
-        "BarChart",
-        "BrushChart",
-        "DonutChart"
+        "AnimatedCounter",
+        "Accordion",
+        "ActionBar",
+        "Alert"
       ]
     },
     "MarkdownEditorV2": {

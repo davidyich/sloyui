@@ -26,7 +26,7 @@ export function ToastStackExample() {
       {scope === 'viewport' && <Button size="sm" variant="ghost" onClick={() => setItems([])}>{t('Скрыть все', 'Dismiss all')}</Button>}
     </div>
     <div data-surface="canvas" className="cap-surface-boundary" style={{ position: 'relative', minHeight: 380, background: 'var(--cap-surface-current)', borderRadius: 'var(--cap-radius-xl)' }}>
-      <ToastStack label={t('Обновления проекта', 'Project updates')} shape="pill" items={shown} onDismiss={id => setItems(current => current.filter(item => item.id !== id))} position={position} scope={scope}/>
+      <ToastStack label={t('Обновления проекта', 'Project updates')} items={shown} onDismiss={id => setItems(current => current.filter(item => item.id !== id))} position={position} scope={scope}/>
     </div>
   </div>;
 }

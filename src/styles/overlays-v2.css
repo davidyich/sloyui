@@ -28,7 +28,7 @@
 .cap-menu-v2 .cap-menu-item[data-danger] > svg { color: inherit; }
 .cap-menu-v2 .cap-menu-item[data-danger]:is(:hover, :focus) { background: var(--cap-status-danger-bg); }
 .cap-menu-v2 .cap-menu-item:disabled { cursor: not-allowed; }
-.cap-menu-v2 .cap-separator { margin: 5px 6px; background:var(--cap-divider-default); }
+.cap-menu-separator { width:auto; height:var(--cap-border-width); margin:5px calc(8px + var(--cap-radius-inset,0px)); border:0; background:var(--cap-divider-panel); }
 .cap-menu-v2 .cap-kbd { flex-shrink: 0; }
 .cap-popover-v2 { width: min(22rem, calc(100vw - var(--cap-overlay-gutter, 12px) * 2)); padding: 12px; outline: none; }
 .cap-popover-v2:focus-visible { outline: var(--cap-focus-width) solid var(--cap-ring-state-active); outline-offset: 2px; }

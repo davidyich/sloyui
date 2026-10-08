@@ -25,10 +25,10 @@ try {
   await writeFile(join(temp, 'consumer.tsx'), String.raw`
 import {
   Alert, AnnouncementBar, BottomSheet, Button, ButtonGroup, CardStack, Chip, ColorPicker,
-  ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, Dialog, Field, FileCard, FileTree, Input, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
+  ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, Dialog, Field, FileCard, FloatingField, FileTree, Input, KanbanBoard, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
   Popover, PreviewRail, MarkdownEditorV2, Tabs, RichTextEditor, Slider, StatusBar, Toast, ToastStack,
   markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit,
-  type MarkdownEditorV2Props, type TabsProps, type ButtonGroupProps, type KanbanColumnProps, type DataTableProps, type DataTableColumn,
+  type MarkdownEditorV2Props, type TabsProps, type ButtonGroupProps, type KanbanBoardProps, type KanbanColumnProps, type DataTableProps, type DataTableColumn,
   type BottomSheetProps, type ChipProps, type Color, type ContentLayoutProps,
   type FeedbackStyleProps, type FileTreeNode, type PreviewRailItem, type Size,
   type SliderProps, type ToastStackItem, type Locale, type ScrollAreaProps, type ScrollFadeDirection, type ScrollFadeSize,
@@ -60,6 +60,7 @@ const editor = { label: 'Markdown note', value: document, onValueChange: (next: 
 const markdownV2 = { label: 'Context note', value: markdown, onValueChange: (source: string) => { void source; }, toolbarSize: 'xs' } satisfies MarkdownEditorV2Props;
 const workspaceTabs = { label: 'Workspace tabs', variant: 'workspace', value: 'note', onValueChange: (value: string) => { void value; }, items: [{ value: 'note', label: 'Note', icon: 'page', content: <p>Note body</p> }], trailing: <Button>Add tab</Button> } satisfies TabsProps;
 const framedGroup = { label: 'Actions', appearance: 'framed', size: 'sm' } satisfies ButtonGroupProps;
+const dragBoard = { label: 'Archive board', columns: [{ id: 'todo', title: 'Todo' }], items: [{ id: 'task', columnId: 'todo', title: 'Task' }], dragActivation: 'card', onMove: (id: string, columnId: string, index: number) => { void id; void columnId; void index; }, renderCard: (item, context) => <ContentCard title={item.title} actions={<span>{context.menuItems.length}</span>}/> } satisfies KanbanBoardProps;
 const framedColumn = { title: 'Active', variant: 'framed', icon: 'folder', footer: <Button>Add task</Button> } satisfies KanbanColumnProps;
 const pinnedColumns = [{ id: 'title', header: 'Title', value: (row: typeof rows[number]) => row.title, width: 180, pin: 'left', footer: (all: readonly typeof rows[number][]) => all.length }, { id: 'id', header: 'ID', value: (row: typeof rows[number]) => row.id, pin: 'right', footer: 'Archive total' }] satisfies DataTableColumn<typeof rows[number]>[];
 const pinnedTable = { label: 'Pinned rows', rows, columns: pinnedColumns, rowId: (row: typeof rows[number]) => row.id, maxHeight: 240, minWidth: 720, stickyHeader: true, pinnedRows: { top: ['task'], bottom: [] }, selectable: true, pinSelection: false } satisfies DataTableProps<typeof rows[number]>;
@@ -67,7 +68,7 @@ function LocaleProbe() { const current: Locale = useLocale(), t = useTranslate()
 
 export const demo = <Dialog size="xl" open={false} onOpenChange={() => {}} title="Test"><Field label="Title">{props => <Input {...props} size={size}/>}</Field><Button variant="outline" size={size}>{color}</Button></Dialog>;
 export const components = <>
-  <MarkdownEditorV2 {...markdownV2}/><Tabs {...workspaceTabs}/><ButtonGroup {...framedGroup}><Button>Save</Button></ButtonGroup><KanbanColumn {...framedColumn}>Task</KanbanColumn><DataTable {...pinnedTable}/>
+  <MarkdownEditorV2 {...markdownV2}/><Tabs {...workspaceTabs}/><ButtonGroup {...framedGroup}><Button>Save</Button></ButtonGroup><KanbanBoard {...dragBoard}/><KanbanColumn {...framedColumn}>Task</KanbanColumn><DataTable {...pinnedTable}/>
   <Chip {...chip}>Archive chip</Chip><BottomSheet {...sheet}>Closed sheet body</BottomSheet>
   <FileTree label="Files" nodes={files} selectedId="app" expandedIds={['src']} onSelect={file => { const id: string = file.id; void id; }} onExpandedChange={ids => { const values: string[] = ids; void values; }}/>
   <PreviewRail label="Sections" items={rail} orientation="horizontal" previewSide="before" highlightActive onValueChange={id => { const value: string = id; void value; }}/>
@@ -79,6 +80,7 @@ export const components = <>
   <DataTable surface="base" label="Rows" rows={rows} rowId={row => row.id} columns={[{id:'title',header:'Title',value:row => row.title}]}/>
   <Alert {...feedback} title="Saved" expandable expanded onExpandedChange={expanded => { void expanded; }}>Alert detail</Alert>
   <StatusBar {...feedback} variant="surface" busy={false}>Ready</StatusBar><Toast {...feedback} title="Saved" onDismiss={() => {}}/>
+  <FloatingField label="Legacy field"/>
   <FileCard name="report.pdf" sizeLabel="248 KB" onOpen={() => {}} onRemove={() => {}}/>
   <ToastStack scope="container" shape="pill" items={notifications} position="inline" expandDirection="left" expanded onExpandedChange={expanded => { void expanded; }} onDismiss={id => { void id; }}/>
   <AnnouncementBar surface="canvas" messages={[{id:'news',message:'News',action:{label:'Read',href:'#news'}}]} id="archive-news" autoPlay={false} controls onAction={message => { void message.id; }}/>
@@ -98,7 +100,7 @@ void preserved;
 `);
   await writeFile(join(temp, 'tsconfig.json'), JSON.stringify({ compilerOptions: { target: 'ES2022', module: 'NodeNext', moduleResolution: 'NodeNext', jsx: 'react-jsx', strict: true, noEmit: true, skipLibCheck: false, lib: ['ES2022', 'DOM', 'DOM.Iterable'] }, include: ['*.tsx'] }));
   execFileSync(join(root, 'node_modules/.bin/tsc'), ['-p', join(temp, 'tsconfig.json')], { stdio: 'pipe' });
-  const serverRenderedExports = ['Button', 'ComboBox', 'MultiSelect', 'TagInput', 'RadioGroup', 'ColorPicker', 'NumberField', 'ValueScrubber', 'NavigationMenu', 'HoverPanel', 'TreeView', 'LineChart', 'BarChart', 'RichTextEditor', 'DataTable', 'ToastStack', 'Chip', 'BottomSheet', 'FileTree', 'PreviewRail', 'ContentLayout', 'ResizableCard', 'ContentCard', 'KanbanColumn', 'Slider', 'Alert', 'StatusBar', 'Toast', 'AnnouncementBar', 'CardStack', 'LocaleProvider', 'ResizablePanelGroup', 'ResizablePanel', 'ResizableHandle', 'ScrollArea', 'DailyHeader', 'MarkdownEditorV2', 'Tabs', 'ButtonGroup', 'FileCard'];
+  const serverRenderedExports = ['Button', 'ComboBox', 'MultiSelect', 'TagInput', 'RadioGroup', 'ColorPicker', 'NumberField', 'ValueScrubber', 'NavigationMenu', 'HoverPanel', 'TreeView', 'LineChart', 'BarChart', 'RichTextEditor', 'DataTable', 'ToastStack', 'Chip', 'BottomSheet', 'FileTree', 'PreviewRail', 'ContentLayout', 'ResizableCard', 'ContentCard', 'KanbanColumn', 'Slider', 'Alert', 'StatusBar', 'Toast', 'AnnouncementBar', 'CardStack', 'LocaleProvider', 'ResizablePanelGroup', 'ResizablePanel', 'ResizableHandle', 'ScrollArea', 'DailyHeader', 'MarkdownEditorV2', 'Tabs', 'ButtonGroup', 'FileCard', 'FloatingField'];
   const markdownBridgeExports = ['markdownToRichText', 'richTextToMarkdown', 'preserveMarkdownSourceEdit'];
   await writeFile(join(temp, 'render.mjs'), String.raw`
 import React from 'react';
@@ -107,7 +109,7 @@ import { fileURLToPath } from 'node:url';
 import { resolve, sep } from 'node:path';
 import {
   Alert, AnnouncementBar, BarChart, BottomSheet, Button, ButtonGroup, CardStack, Chip, ColorPicker,
-  ComboBox, ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, DailyHeader, FileCard, FileTree, HoverPanel, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
+  ComboBox, ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, DailyHeader, FileCard, FloatingField, FileTree, HoverPanel, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
   LineChart, MultiSelect, NavigationMenu, NumberField, PreviewRail, RadioGroup,
   MarkdownEditorV2, Tabs, RichTextEditor, Slider, StatusBar, TagInput, Toast, ToastStack, TreeView, ValueScrubber,
   markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit,
@@ -163,12 +165,13 @@ const html = renderToString(node(React.Fragment,null,
   node(Slider,{label:'Density',defaultValue:0.5,min:0,max:1,step:0.1,formatValue:value=>value*100+'%',onValueChange:noop,onValueCommit:noop}),
   node(Alert,{...feedback,title:'Saved',expandable:true,expanded:true,onExpandedChange:noop},'Alert detail'),
   node(StatusBar,{...feedback,variant:'surface'},'Ready'),node(Toast,{...feedback,title:'Saved',onDismiss:noop}),
+  node(FloatingField,{label:'Legacy field'}),
   node(FileCard,{name:'report.pdf',sizeLabel:'248 KB',onOpen:noop,onDownload:noop,onRemove:noop}),
   node(ToastStack,{scope:'container',shape:'pill',items:[{id:'saved',title:'Saved',duration:Infinity,...feedback}],position:'inline',expandDirection:'left',expanded:true,onExpandedChange:noop,onDismiss:noop}),
   node(AnnouncementBar,{surface:'canvas',id:'archive-news',autoPlay:false,controls:true,messages:[{id:'news',message:'News'}]}),
   node(CardStack,{items:rows,getKey:row=>row.id,renderCard:row=>node(ContentCard,{title:row.name}),expandDirection:'right',expanded:true,review:true,onDecide:noop,onReset:noop}),
 ));
-for (const token of ['cap-button','cap-selection-field','cap-value-scrubber','cap-navigation-menu','cap-tree','cap-chart','cap-rich-editor','cap-data-table','cap-toast-stack','cap-chip','cap-file-tree','cap-preview-rail','cap-content-layout','cap-content-card','cap-kanban-column','cap-slider','cap-alert','cap-status-bar','cap-toast','cap-announcement-bar','cap-card-stack']) {
+for (const token of ['cap-button','cap-selection-field','cap-value-scrubber','cap-navigation-menu','cap-tree','cap-chart','cap-rich-editor','cap-data-table','cap-toast-stack','cap-chip','cap-file-card','cap-floating-field','cap-file-tree','cap-preview-rail','cap-content-layout','cap-content-card','cap-kanban-column','cap-slider','cap-alert','cap-status-bar','cap-toast','cap-announcement-bar','cap-card-stack']) {
   if (!html.includes(token)) throw Error('SSR smoke missing '+token);
 }
 for (const marker of ['data-orientation="vertical"','aria-label="Высота: Before"','aria-valuetext="50%"','Archive file preview','data-feedback-appearance="soft"']) {
@@ -199,8 +202,11 @@ console.log('Archive dist SSR, localization, compound resize, optional toolbar a
   const fontPaths = [...fontCss.matchAll(/url\(([^)]+)\)/g)].map(m => m[1]);
   for (const path of fontPaths) await access(join(target, 'dist', path));
   const manifest = JSON.parse(await readFile(join(target, 'agent-manifest.json'), 'utf8'));
+  if (manifest.components.FloatingField.status !== 'archived' || manifest.components.FloatingField.replacement !== 'Input') throw new Error('FloatingField archive metadata missing');
+  const archivedCharts = Object.entries(manifest.components).filter(([,record]) => record.primaryGroup === 'charts');
+  if (archivedCharts.length !== 12 || archivedCharts.some(([name,record]) => record.status !== 'archived' || record.catalogueRoute !== '#' + name)) throw new Error('Chart archive metadata missing');
   const packed = await build({ stdin: { contents: "export { Button } from '@personal/capacities-ui';", resolveDir: temp }, bundle: true, write: false, minify: true, format: 'esm', external: ['react','react-dom','react/jsx-runtime'] });
-  const report = { package: manifest.package, componentCount: manifest.componentCount, isolatedArchiveConsumer: true, nodeNextTypes: true, exampleTypecheck: examples, serverRenderImport: true, serverRenderedExports, markdownBridgeExports, closedBottomSheet: true, packageEntryInsideArchiveDist: true, verticalContentLayout: true, sliderNumericCallbacks: true, feedbackStyleApi: true, localeProviderEnglish: true, defaultLocaleRussian: true, explicitIntlOverride: true, localeHooks: ['useLocale','useTranslate'], compoundResizablePanels: true, scrollFadeApi: true, richToolbarOptIn: true, markdownEditorV2ControlledSource: true, markdownExtensionsTableColorRoundtrip: true, workspaceTabsIconTrailing: true, framedButtonGroup: true, fileCardIndependentActions: true, toastStackPlacement: true, framedKanbanFooter: true, dataTablePinnedColumnsRowsSummary: true, dataTableStickyOptOut: true, fontAssets: fontPaths.length, buttonGzipBytes: gzipSync(packed.outputFiles[0].contents).length };
+  const report = { package: manifest.package, componentCount: manifest.componentCount, isolatedArchiveConsumer: true, nodeNextTypes: true, exampleTypecheck: examples, serverRenderImport: true, serverRenderedExports, markdownBridgeExports, closedBottomSheet: true, packageEntryInsideArchiveDist: true, verticalContentLayout: true, sliderNumericCallbacks: true, feedbackStyleApi: true, localeProviderEnglish: true, defaultLocaleRussian: true, explicitIntlOverride: true, localeHooks: ['useLocale','useTranslate'], compoundResizablePanels: true, scrollFadeApi: true, richToolbarOptIn: true, markdownEditorV2ControlledSource: true, markdownExtensionsTableColorRoundtrip: true, workspaceTabsIconTrailing: true, framedButtonGroup: true, fileCardIndependentActions: true, floatingFieldCompatibility: true, toastStackPlacement: true, framedKanbanFooter: true, kanbanOrderedMoveApi: true, archivedChartPages: archivedCharts.length, dataTablePinnedColumnsRowsSummary: true, dataTableStickyOptOut: true, fontAssets: fontPaths.length, buttonGzipBytes: gzipSync(packed.outputFiles[0].contents).length };
   await writeFile(join(root, 'docs/package-validation.json'), JSON.stringify(report, null, 2) + '\n');
   console.log(report);
 } catch (error) {

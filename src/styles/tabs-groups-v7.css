@@ -20,6 +20,7 @@
 .cap-kanban-column[data-variant='framed'] .cap-kanban-column-title > .cap-counter { background:transparent; color:var(--cap-content-muted); padding:0; }
 .cap-kanban-column[data-variant='framed'] .cap-content-card { border:var(--cap-border-width) solid var(--cap-border-subtle); }
 .cap-kanban-column-footer { margin-top:var(--cap-space-3); color:var(--cap-content-muted); }
-.cap-button-group[data-appearance='framed'] { border:var(--cap-border-width) solid var(--cap-border-strong); }
+.cap-button-group[data-appearance='framed'] { border:0; outline:var(--cap-border-width) solid var(--cap-panel-border); outline-offset:calc(-1 * var(--cap-border-width)); background:var(--cap-group-background); }
+.cap-button-group[data-appearance='framed'][data-attached] > .cap-button-group-items { outline:0; background:transparent; }
 @media (pointer:coarse) { .cap-tab-list[data-variant='workspace'] > button { min-height:var(--cap-touch-target); } }
 @media (forced-colors:active) { .cap-tab-list[data-variant='workspace'] > button[aria-selected='true']::after { background:Highlight; } }

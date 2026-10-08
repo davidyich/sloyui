@@ -6,6 +6,14 @@
 - Extended ToastStack with centered container/viewport placement, bounded scrolling, loading states and capsule shape; unread notices retain their lifetime.
 - Added FileCard for images, PDF, presentations, documents, spreadsheets and other formats with separate open/download/remove actions; marked needs-review.
 - Changed the compact language switch labels to RU and EN.
+- Restored symmetric popup divider insets and quiet single-line separators in Menu and editor block menus.
+- Archived FloatingField in favor of Input with labelPlacement="inside"; existing imports keep working and old catalogue links resolve to Input.
+
+- Added controlled Kanban card-body drag between columns and ordered insertion, with keyboard/menu alternatives and optional handles.
+- Restored global radius and border inheritance for ToastStack previews and framed column actions; slider thumbs and RadioGroup highlights follow radius context.
+- Made Primary fill neutral and distinct from soft accent selection across Checkbox, Radio, Switch, RadioGroup and Slider.
+- Unified Ready, Review, Rework and Archive statuses; archived all 12 charts and hid them from default catalogue lists while preserving direct pages and exports.
+- Fixed Accordion hover coverage and reset; only the chevron rotates while content icons remain stationary.
 
 ## 0.7.0 · 2026-10-08
 

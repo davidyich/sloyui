@@ -20,14 +20,14 @@ npm run pack:kit
 В своём проекте установите локальный `artifacts/personal-capacities-ui-0.8.0.tgz` командой `npm install /absolute/path/to/personal-capacities-ui-0.8.0.tgz`. Поддерживаемый способ установки — готовый `.tgz`: локально собранный или скачанный из [GitHub Release v0.8.0](https://github.com/davidyich/capacities-style/releases/tag/v0.8.0). `git install` не является установочным контрактом: `dist` не хранится в Git, а `prepare` отсутствует. Публикация в npm registry не требуется.
 
 ```tsx
-import { Button, Tag, FloatingField, ScrollArea } from '@personal/capacities-ui';
+import { Button, Tag, Input, ScrollArea } from '@personal/capacities-ui';
 import '@personal/capacities-ui/styles.css';
 import '@personal/capacities-ui/fonts.css'; // optional local Inter + Overpass Mono
 
 export function Project() {
   return <section data-accent="teal">
     <Tag>В работе</Tag>
-    <FloatingField label="Название проекта" />
+    <Input label="Название проекта" labelPlacement="inside" />
     <Button variant="accent">Сохранить</Button>
     <ScrollArea label="Заметки" style={{ height: 240 }}>…</ScrollArea>
   </section>;

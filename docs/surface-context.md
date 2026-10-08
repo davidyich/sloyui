@@ -31,7 +31,7 @@ Floating — отдельный контекст для Menu, Select popup, Tool
 | Нейтральный контрол | `--cap-control-normal/hover/pressed/text` |
 | Цветной вторичный элемент | `--cap-accent-normal/hover/pressed/text` |
 | Залитое цветное действие | `--cap-accent-solid-normal/hover/pressed/text` |
-| Яркий акцент выбора (contrast=false) | `--cap-accent-vivid-normal/hover/pressed/text` |
+| Яркий акцент | `--cap-accent-vivid-normal/hover/pressed/text` |
 | Нейтральное основное действие | `--cap-action-normal/hover/pressed/text` |
 | Недоступное состояние | `--cap-disabled-background/text` |
 | Основной и вспомогательный текст | `--cap-content-primary/secondary/muted` |
@@ -54,16 +54,18 @@ Figma: Primitives / Value содержит palette, number, font. Две пре�
 
 Тени: `data-shadow="soft" | "compact"` наследуется и переносится в портал. Soft — широкий мягкий blur по умолчанию; compact использует те же цвета и 55% blur. У CodeBlock auto при Borders On заливка прозрачна, поэтому он сохраняет контекст окружающей поверхности.
 
-`Button` и `IconButton` с `variant="primary"` всегда используют нейтральные `--cap-action-normal/hover/pressed/text`, независимо от `data-accent`; `secondary` использует нейтральную control-пару. `accent` выбирает `--cap-accent-solid-normal/hover/pressed/text`, `accent-secondary` — мягкую `--cap-accent-normal/hover/pressed/text`. Включённые Checkbox, Radio и Switch используют локальную solid accent-пару; `Switch variant="neutral"` выбирает нейтральные action-роли. `contrast={false}` явно выбирает vivid; Slider сохраняет vivid по умолчанию. Знак, текст и бегунок используют парную text-роль без условий по теме. Выключенный Switch использует `--cap-control-text` на нейтральном треке; disabled всегда использует `--cap-disabled-background/text`.
+`Button` и `IconButton` с `variant="primary"` всегда используют нейтральные `--cap-action-normal/hover/pressed/text`, независимо от `data-accent`; `secondary` использует нейтральную control-пару. `accent` выбирает `--cap-accent-solid-normal/hover/pressed/text`, `accent-secondary` — мягкую `--cap-accent-normal/hover/pressed/text`. Checkbox, Radio, RadioGroup и Switch при `contrast={true}` используют нейтральные action-роли. `contrast={false}` выбирает мягкую локальную accent-пару; Slider использует её по умолчанию. `Switch variant="neutral"` в мягком режиме выбирает control-роли. Знак, текст и бегунок используют парную text-роль без условий по теме. Выключенный Switch использует `--cap-control-text` на нейтральном треке; disabled всегда использует `--cap-disabled-background/text`.
 
 ## Контекст каталога
 
 Островки preview, примеры и блок «Использование в коде» следуют выбранной поверхности. Заголовок каталога и панель параметров остаются на своей постоянной поверхности, независимо от переключателя образца.
 
-У обеих Primary-пар (solid и vivid) text определяется фактическим контрастом normal-заливки к `gray/0` и `gray/1000`, а не темой или флагом contrast. Hover и pressed сохраняют этот цвет текста и контраст не ниже 4.5:1. Vivid выбирает исходные оттенки по каждой палитре, сохраняя более яркую заливку относительно solid.
+У цветных action-пар (solid и vivid) text определяется фактическим контрастом normal-заливки к `gray/0` и `gray/1000`, а не темой или флагом contrast. Hover и pressed сохраняют этот цвет текста и контраст не ниже 4.5:1. Vivid выбирает исходные оттенки по каждой палитре, сохраняя более яркую заливку относительно solid.
 
 `data-color="inherit"` не останавливает поиск локального акцента для портала: overlay использует ближайший конкретный data-accent/data-color у предка. Tooltip inverse меняет пару text/surface, сохраняя сами оси контекста.
 
 Самостоятельные структурные разделители используют `--cap-divider-subtle/default/strong` и `--cap-number-divider-width` (1 px). Они наследуют `data-surface`, остаются видимыми при Borders Off и имеют минимальный контраст к поверхности 1.5/1.8/2.4:1. `--cap-divider-control` предназначен для нейтральной заливки контрола. Внутренние швы составных контролов тише: joined SplitButton использует 0.5 px и 22% парного text на solid-заливке (muted на остальных); FloatingActionBar использует 0.5 px `--cap-divider-panel`. На стыке рисуется только одна линия.
 
 Длинные внутренние линии таблиц, панелей и заголовка CodeBlock используют более тихую `--cap-divider-panel` и `--cap-border-width` (0.5 px). Роль наследует поверхность независимо от Borders и имеет минимальный контраст 1.15:1 в Light, 1.25:1 в Dark. Header CodeBlock рисует ровно одну такую линию; декоративные внешние рамки сохраняют прежние роли и толщину 0.5 px.
+
+Разделители внутри меню используют ту же тихую роль и 0.5 px. Боковые отступы симметричны и следуют внутреннему отступу строки с учётом Radius. Не сочетайте width:100% с горизонтальными margin: такая линия выходит за край. Общий Separator не используется как внутренний шов меню.

@@ -181,8 +181,9 @@ export function FloatingActionBar({ position = 'sticky', size = 'md', leading, t
   </ActionBar>;
 }
 
-/** Compatibility wrapper; all fields share labelPlacement="inside". */
+/** @deprecated Use InputProps with labelPlacement="inside" for new fields. */
 export interface FloatingFieldProps extends Omit<InputProps, 'labelPlacement'> { label: string; inputClassName?: string }
+/** @deprecated Use Input with labelPlacement="inside"; retained for compatibility. */
 export const FloatingField = /* @__PURE__ */ forwardRef<HTMLInputElement, FloatingFieldProps>(function FloatingField({ className, inputClassName, ...props }, ref) {
   return <div className={cx('cap-floating-field',className)}><Input {...props} ref={ref} labelPlacement="inside" className={inputClassName}/></div>;
 });

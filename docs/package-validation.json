@@ -1,6 +1,6 @@
 {
   "package": "@personal/capacities-ui",
-  "componentCount": 102,
+  "componentCount": 89,
   "isolatedArchiveConsumer": true,
   "nodeNextTypes": true,
   "exampleTypecheck": [
@@ -50,7 +50,8 @@
     "MarkdownEditorV2",
     "Tabs",
     "ButtonGroup",
-    "FileCard"
+    "FileCard",
+    "FloatingField"
   ],
   "markdownBridgeExports": [
     "markdownToRichText",
@@ -77,10 +78,13 @@
   "workspaceTabsIconTrailing": true,
   "framedButtonGroup": true,
   "fileCardIndependentActions": true,
+  "floatingFieldCompatibility": true,
   "toastStackPlacement": true,
   "framedKanbanFooter": true,
+  "kanbanOrderedMoveApi": true,
+  "archivedChartPages": 12,
   "dataTablePinnedColumnsRowsSummary": true,
   "dataTableStickyOptOut": true,
   "fontAssets": 9,
-  "buttonGzipBytes": 1894
+  "buttonGzipBytes": 1908
 }

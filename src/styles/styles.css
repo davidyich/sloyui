@@ -12,6 +12,7 @@
 @import './content-layout.css';
 @import './resizable-card.css';
 @import './reorderable.css';
+@import './kanban-drag.css';
 
 @import './selection.css';
 @import './rich-text-editor.css';

@@ -34,7 +34,7 @@
 
 ## Interaction contract
 
-- Input, Select and Textarea share `label`, `labelPlacement="outside" | "inside"`, `hint`, `error` and `size`. FloatingField delegates to Input. Use one label source; do not repeat it with Field.
+- Input, Select and Textarea share `label`, `labelPlacement="outside" | "inside"`, `hint`, `error` and `size`. FloatingField is an archived compatibility wrapper; use Input with labelPlacement="inside". Its catalogue route redirects to Input. Use one label source; do not repeat it with Field.
 - ContentCard uses stable block IDs, `blocks`, `blockOrder` and `hiddenBlocks`; extend slots rather than fork the component. Mixed card orientations must not stretch to the tallest neighbor.
 - ReorderableList is controlled. Stable unique IDs, grip-only pointer drag, keyboard and click alternatives are required; the consumer persists order. Put its handle inside a card through `dragHandle` when needed.
 - EmptyState icons are optional, decorative, neutral and quieter than the text; do not inherit the accent. Use `icon={false}` to omit one.

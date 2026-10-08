@@ -13,7 +13,7 @@ import * as Feedback from './stories-feedback';
 import * as Overlays from './stories-overlays';
 import type { StoryProps } from './stories-controls';
 
-export type ComponentName = keyof typeof manifest.components;
+export type ComponentName = Exclude<keyof typeof manifest.components, 'FloatingField'>;
 export const componentGroups = ['Кнопки и действия','Поля и выбор','Объекты и контент','Навигация','Состояния','Окна и меню','Данные и графики'] as const;
 export type ComponentGroup = typeof componentGroups[number];
 interface CatalogRecord { group: ComponentGroup; description: string; render: ComponentType<StoryProps> }
@@ -37,7 +37,6 @@ export const componentCatalog = {
   FloatingActionBar: entry('Кнопки и действия','Плавающие действия с небольшим отступом от края контейнера.',Controls.FloatingActionBarStory),
   Kbd: entry('Кнопки и действия','Обозначение клавиши или сочетания клавиш.',Controls.KbdStory),
   Input: entry('Поля и выбор','Однострочное поле с вариантами размера и стандартным поведением ввода.',Controls.InputStory),
-  FloatingField: entry('Поля и выбор','Текстовое поле с подписью внутри и местом для подсказки.',Controls.FloatingFieldStory),
   Textarea: entry('Поля и выбор','Многострочное поле с изменяемой высотой.',Controls.TextareaStory),
   Select: entry('Поля и выбор','Выбор одного значения в аккуратном меню с группами и поиском с клавиатуры.',Controls.SelectStory),
   Field: entry('Поля и выбор','Связывает подпись, поле, подсказку и ошибку.',Controls.FieldStory),
@@ -92,11 +91,21 @@ export const componentCatalog = {
   Popover: entry('Окна и меню','Небольшая панель рядом с действием, которое её открыло.',Overlays.PopoverStory),
   CommandPalette: entry('Окна и меню','Поиск по командам с выбором результата с клавиатуры.',Overlays.CommandPaletteStory),
 } satisfies Record<ComponentName,CatalogRecord>;
-export const componentNames = (Object.keys(componentCatalog) as ComponentName[]).filter(name=>manifest.components[name].status!=='archived');
+export const catalogueComponentNames = (Object.keys(componentCatalog) as ComponentName[]).filter(name=>!('replacement' in manifest.components[name]));
+export const componentNames = catalogueComponentNames.filter(name=>manifest.components[name].status!=='archived');
 export const registryGroups = manifest.registry.groups;
-export const componentStatuses: Record<string,string> = manifest.registry.statuses;
+export const componentStatuses = manifest.registry.statuses;
 export type ComponentStatus = keyof typeof componentStatuses;
-export function componentMetadata(name: ComponentName) { return manifest.components[name]; }
+export type ComponentStatusFilter = ComponentStatus | 'all';
+export function componentMetadata(name: ComponentName) { const record=manifest.components[name]; return {...record,status:record.status as ComponentStatus}; }
+/** Archives are discoverable only through their explicit status filter. */
+export function filterComponents({status='all',group='all',query=''}:{status?:ComponentStatusFilter;group?:string;query?:string}={}) {
+  const term=query.trim().toLocaleLowerCase();
+  return catalogueComponentNames.filter(name=>{
+    const record=componentMetadata(name);
+    return (status==='all'?record.status!=='archived':record.status===status)&&(group==='all'||(record.groups as string[]).includes(group))&&`${name} ${record.id} ${componentCatalog[name].description} ${record.groups.join(' ')}`.toLocaleLowerCase().includes(term);
+  });
+}
 export const foundationPages = [
   {id:'colors',label:'Цвета и темы'},
   {id:'typography',label:'Типографика'},
@@ -114,10 +123,11 @@ const aliases: Record<string,CatalogRoute> = {Badge:'Tag',TypeLabel:'Tag',badge:
 export function resolveRoute(hash: string): CatalogRoute {
   let value=hash.replace(/^#/,''); try { value=decodeURIComponent(value); } catch { return 'Button'; }
   if(value.toLowerCase().replaceAll('-','')==='markdowneditor') return 'RichTextEditor';
+  if(value.toLowerCase().replaceAll('-','')==='floatingfield') return 'Input';
   if (Object.hasOwn(componentCatalog,value)) return value as ComponentName;
   if (overviewPages.some(page=>page.id===value)) return value as OverviewRoute;
   if (foundationPages.some(page=>page.id===value)) return value as FoundationRoute;
   if (Object.hasOwn(aliases,value)) return aliases[value];
-  return componentNames.find(name=>name.toLowerCase()===value.toLowerCase()||name.replace(/([a-z0-9])([A-Z])/g,'$1-$2').toLowerCase()===value.toLowerCase())??'Button';
+  return catalogueComponentNames.find(name=>name.toLowerCase()===value.toLowerCase()||name.replace(/([a-z0-9])([A-Z])/g,'$1-$2').toLowerCase()===value.toLowerCase())??'Button';
 }
 export function componentReference(name: ComponentName) { return manifest.components[name]; }

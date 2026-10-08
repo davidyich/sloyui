@@ -14,8 +14,8 @@
 .cap-tag[data-interactive] { cursor: pointer; }
 :is(.cap-icon-box)[role='button']:not([aria-disabled='true']):hover { background: var(--cap-accent-hover); }
 :is(.cap-icon-box)[role='button']:not([aria-disabled='true']):active { background: var(--cap-accent-pressed); }
-:is(.cap-input,.cap-floating-input,.cap-sidebar-item,.cap-collection-row,.cap-object-card,.cap-menu-item,.cap-select-option,.cap-command-item,.cap-tab-list button,.cap-accordion summary,.cap-calendar-day,.cap-calendar-select-trigger,.cap-alert-toggle,.cap-content-card-open):not(:disabled):not([aria-disabled='true']):is(:hover,[data-state='hover']) { background: var(--cap-control-hover); }
-:is(.cap-input,.cap-floating-input,.cap-sidebar-item,.cap-collection-row,.cap-object-card,.cap-menu-item,.cap-select-option,.cap-command-item,.cap-tab-list button,.cap-accordion summary,.cap-calendar-day,.cap-calendar-select-trigger,.cap-alert-toggle,.cap-content-card-open):not(:disabled):not([aria-disabled='true']):is(:active,[data-state='pressed']) { background: var(--cap-control-pressed); }
+:is(.cap-input,.cap-floating-input,.cap-sidebar-item,.cap-collection-row,.cap-object-card,.cap-menu-item,.cap-select-option,.cap-command-item,.cap-tab-list button,.cap-calendar-day,.cap-calendar-select-trigger,.cap-alert-toggle,.cap-content-card-open):not(:disabled):not([aria-disabled='true']):is(:hover,[data-state='hover']) { background: var(--cap-control-hover); }
+:is(.cap-input,.cap-floating-input,.cap-sidebar-item,.cap-collection-row,.cap-object-card,.cap-menu-item,.cap-select-option,.cap-command-item,.cap-tab-list button,.cap-calendar-day,.cap-calendar-select-trigger,.cap-alert-toggle,.cap-content-card-open):not(:disabled):not([aria-disabled='true']):is(:active,[data-state='pressed']) { background: var(--cap-control-pressed); }
 .cap-menu-item[data-danger]:not(:disabled):hover { background: var(--cap-feedback-danger-hover); }
 .cap-menu-item[data-danger]:not(:disabled):active { background: var(--cap-feedback-danger-pressed); }
 .cap-segment:has(input:not(:disabled)):active > span { background: var(--cap-control-pressed); }

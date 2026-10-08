@@ -334,5 +334,12 @@ h1, h2, h3, p { overflow-wrap: anywhere; }
 .catalog-filter-fields { display:grid; gap:14px; min-width:230px; padding:4px; }
 .catalog-filter-summary { display:flex; justify-content:space-between; align-items:center; gap:8px; padding:0 16px 8px; font-size:var(--cap-font-size-xs); color:var(--cap-content-muted); }
 .catalog-component-id { color:var(--cap-content-muted); font-size:var(--cap-font-size-xs); font-variant-numeric:tabular-nums; }
-.catalog-review-dot[data-status='ready'] { background:var(--cap-status-success-text); opacity:.7; }
-.catalog-review-dot[data-status='not-ready'] { background:var(--cap-content-primary); }
+.catalog-review-dot { background:var(--cap-accent-swatch); }
+.catalog-review-dot[data-status='ready'] { background:var(--cap-content-caption); }
+.catalog-review-dot[data-status='archived'] { background:var(--cap-content-muted); }
+.catalog-status-tag[data-status='ready'] { background:var(--cap-control-bg); color:var(--cap-content-muted); }
+.catalog-status-tag[data-status='archived'] { color:var(--cap-content-secondary); }
+
+.catalog-overview-filters { flex-wrap:wrap; }
+.catalog-overview-filters > :first-child { flex-basis:240px; }
+@media(max-width:720px) { .catalog-overview-filters > :first-child { flex-basis:auto; } }

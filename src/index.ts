@@ -10,7 +10,7 @@ export type { DialogProps, DrawerProps, TooltipProps, PopoverProps, MenuProps, M
 export { ScrollArea, ButtonGroup, SplitButton, ActionBar, FloatingActionBar, FloatingField, StatusBar, Alert, SidebarPanel } from './components/workbench.js';
 export type { ScrollAreaProps, ScrollEdges, ButtonGroupProps, SplitButtonProps, ActionBarProps, FloatingActionBarProps, FloatingFieldProps, FeedbackTone, StatusBarProps, AlertProps, SidebarPanelProps } from './components/workbench.js';
 export { Calendar, DatePicker, MarkdownPreview, MarkdownEditor, ContentCard, TaskCard, KanbanBoard, KanbanColumn, DailyHeader } from './components/content.js';
-export type { CalendarProps, CalendarRangeProps, CalendarSelectionProps, CalendarBaseProps, CalendarRange, CalendarDateHighlight, CalendarEvent, MarkdownPreviewProps, MarkdownEditorProps, ContentCardProps, ContentCardBlock, TaskCardProps, KanbanBoardProps, KanbanColumnProps, KanbanLane, KanbanTask, DailyHeaderProps } from './components/content.js';
+export type { CalendarProps, CalendarRangeProps, CalendarSelectionProps, CalendarBaseProps, CalendarRange, CalendarDateHighlight, CalendarEvent, MarkdownPreviewProps, MarkdownEditorProps, ContentCardProps, ContentCardBlock, TaskCardProps, KanbanBoardProps, KanbanCardContext, KanbanColumnProps, KanbanLane, KanbanTask, DailyHeaderProps } from './components/content.js';
 
 export { CodeBlock } from './components/code-block.js';
 export type { CodeBlockProps, CodeLanguage } from './components/code-block.js';

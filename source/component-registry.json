@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "statuses": {
     "ready": "Готов",
-    "not-ready": "В доработке",
-    "needs-review": "Требует проверки",
-    "archived": "В архиве"
+    "needs-review": "Проверка",
+    "not-ready": "Доработка",
+    "archived": "Архив"
   },
   "groups": [
     {
@@ -504,11 +504,12 @@
     },
     "FloatingField": {
       "id": "cp-049",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "fields"
       ],
-      "primaryGroup": "fields"
+      "primaryGroup": "fields",
+      "replacement": "Input"
     },
     "StatusBar": {
       "id": "cp-050",
@@ -865,7 +866,7 @@
     },
     "LineChart": {
       "id": "cp-083",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -873,7 +874,7 @@
     },
     "BarChart": {
       "id": "cp-084",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -881,7 +882,7 @@
     },
     "DonutChart": {
       "id": "cp-085",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -889,7 +890,7 @@
     },
     "Streamgraph": {
       "id": "cp-086",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -897,7 +898,7 @@
     },
     "BrushChart": {
       "id": "cp-087",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -905,7 +906,7 @@
     },
     "WaffleChart": {
       "id": "cp-088",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -913,7 +914,7 @@
     },
     "SlopeChart": {
       "id": "cp-089",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -921,7 +922,7 @@
     },
     "Sparkline": {
       "id": "cp-090",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -929,7 +930,7 @@
     },
     "Gauge": {
       "id": "cp-091",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -937,7 +938,7 @@
     },
     "ActivityHeatmap": {
       "id": "cp-092",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -954,7 +955,7 @@
     },
     "Ridgeline": {
       "id": "cp-094",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],
@@ -962,7 +963,7 @@
     },
     "Treemap": {
       "id": "cp-095",
-      "status": "needs-review",
+      "status": "archived",
       "groups": [
         "charts"
       ],

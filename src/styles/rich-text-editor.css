@@ -64,4 +64,5 @@
 .cap-rich-editor-menu{min-width:min(240px,90vw)}
 .cap-rich-editor-menu .cap-rich-editor-option-icon{width:20px;height:20px;background:transparent;box-shadow:none}
 
-.cap-rich-editor-menu-group + .cap-rich-editor-menu-group{margin-block-start:var(--cap-space-1,4px);padding-block-start:var(--cap-space-1,4px);border-block-start:var(--cap-number-divider-width) solid var(--cap-divider-default)}
+.cap-rich-editor-menu-group + .cap-rich-editor-menu-group{position:relative;margin-block-start:var(--cap-space-1,4px);padding-block-start:var(--cap-space-1,4px)}
+.cap-rich-editor-menu-group + .cap-rich-editor-menu-group::before{content:"";position:absolute;inset-block-start:0;inset-inline:calc(8px + var(--cap-radius-inset,0px));height:var(--cap-border-width);background:var(--cap-divider-panel);pointer-events:none}
