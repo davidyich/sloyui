@@ -3,7 +3,7 @@
 ## 0.10.0 · 2026-10-08
 
 - Softened dark secondary accents while keeping solid actions, light themes and surface-specific contrast intact.
-- Aligned segmented controls, made tabs follow global corners and removed moving hover from line tabs.
+- Aligned segmented controls with fractional borders, softened default corners and made rounded segments fully pill-shaped. Tabs now default to segments; line tabs keep local hover.
 - Simplified preview labels and page headings; component IDs now sit in the upper-right corner.
 - Added semantic token previews, wrapping in both palette layouts and a horizontal four-surface comparison.
 - Separated interface and prose typography; instruction selection uses soft accents and file selection stays neutral.

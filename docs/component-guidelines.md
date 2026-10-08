@@ -75,4 +75,4 @@ Catalogue uses five navigation/overview sections from registry.navigationGroups;
 
 - Interface text uses `--cap-line-height-*`. Long prose uses `--cap-prose-line-height-*`, a measure of at most 70ch and paragraph spacing; headings and code keep their own rhythm.
 - Catalogue previews start without optional visible labels or hints; keep an accessible name and expose label/hint controls. Component IDs sit quietly at the top-right of the page heading.
-- Tabs, SegmentedControl and OverflowTabs inherit `data-radius`; inner selected/hover surfaces subtract the shared inset. Line tabs use immediate local hover, without a moving highlight.
+- Tabs default to `variant="segment"`. Tabs, SegmentedControl and overflow controls inherit `--cap-radius-segmented`: compact/default use the scaled XL radius, rounded uses a full capsule; inner selected/hover surfaces subtract the shared inset. Local radius contexts reset the inherited shape. Line tabs use immediate local hover, without a moving highlight.

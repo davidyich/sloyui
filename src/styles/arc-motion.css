@@ -11,7 +11,7 @@
 .cap-button-group[data-attached] :is(.cap-button[data-variant='ghost'],.cap-button[data-variant='secondary'],.cap-select-trigger):not(:disabled):is([aria-pressed='true']) { background:var(--cap-group-selected); }
 .cap-button-group[data-attached] :is(.cap-button[data-variant='ghost'],.cap-button[data-variant='secondary'],.cap-select-trigger):not(:disabled):is(:active,[aria-expanded='true'],[data-state='pressed']) { background:var(--cap-group-pressed); }
 /* Outer and painted inner corners share one radius context; both segments have equal tracks. */
-.cap-segmented { --cap-segment-height:var(--cap-number-control-size-md); --cap-segment-inset:3px; --cap-segment-radius:max(0px,calc(var(--cap-radius-base) - var(--cap-segment-inset))); position:relative; isolation:isolate; display:inline-grid; grid-auto-flow:column; grid-auto-columns:1fr; min-height:var(--cap-segment-height); max-width:100%; width:max-content; padding:var(--cap-segment-inset); gap:var(--cap-segment-inset); border-radius:var(--cap-radius-base); box-shadow:none; }
+.cap-segmented { --cap-segment-height:var(--cap-number-control-size-md); --cap-segment-inset:3px; --cap-segment-radius:max(0px,calc(var(--cap-radius-segmented) - var(--cap-segment-inset))); position:relative; isolation:isolate; display:inline-grid; grid-auto-flow:column; grid-auto-columns:1fr; min-height:var(--cap-segment-height); max-width:100%; width:max-content; padding:var(--cap-segment-inset); gap:var(--cap-segment-inset); border-radius:var(--cap-radius-segmented); box-shadow:none; }
 .cap-segmented[data-size='xs'] { --cap-segment-height:var(--cap-number-control-size-xs); }
 .cap-segmented[data-size='sm'] { --cap-segment-height:var(--cap-number-control-size-sm); }
 .cap-segmented[data-size='lg'] { --cap-segment-height:var(--cap-number-control-size-lg); }
@@ -24,8 +24,8 @@
 .cap-segmented[data-variant='outline'] { background:transparent; border-color:var(--cap-control-border); }
 .cap-segmented[data-variant='accent'] > .cap-moving-highlight { background:var(--cap-accent-normal); }
 .cap-segmented[data-variant='accent'] .cap-segment input:checked + span { color:var(--cap-accent-text); }
-.cap-tab-list:is([data-variant='segment'],[data-variant='outline'],[data-variant='accent']) { position:relative; isolation:isolate; gap:4px; padding:4px; border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-radius-base); background:var(--cap-control-bg); }
-.cap-tab-list:is([data-variant='segment'],[data-variant='outline'],[data-variant='accent']) button { position:relative; z-index:1; min-height:var(--cap-number-control-size-md); padding:0 calc(12px + var(--cap-radius-inset)); border:0; border-radius:max(0px,calc(var(--cap-radius-base) - 4px)); background:transparent; }
+.cap-tab-list:is([data-variant='segment'],[data-variant='outline'],[data-variant='accent']) { position:relative; isolation:isolate; gap:4px; padding:4px; border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-radius-segmented); background:var(--cap-control-bg); }
+.cap-tab-list:is([data-variant='segment'],[data-variant='outline'],[data-variant='accent']) button { position:relative; z-index:1; min-height:var(--cap-number-control-size-md); padding:0 calc(12px + var(--cap-radius-inset)); border:0; border-radius:max(0px,calc(var(--cap-radius-segmented) - 4px)); background:transparent; }
 .cap-tab-list[data-size='xs'] button { min-height:var(--cap-number-control-size-xs); }
 .cap-tab-list[data-size='sm'] button { min-height:var(--cap-number-control-size-sm); }
 .cap-tab-list[data-size='lg'] button { min-height:var(--cap-number-control-size-lg); }

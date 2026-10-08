@@ -2519,10 +2519,10 @@
 [data-theme="dark"] { --cap-reaction-hover-opacity: calc(var(--cap-number-opacity-06) / 100); --cap-reaction-pressed-opacity: calc(var(--cap-number-opacity-10) / 100); }
 :root, [data-borders="off"] { --cap-code-fill-opacity:100%; }
 [data-borders="on"] { --cap-code-fill-opacity:0%; }
-:root { --cap-radius-scale:var(--cap-number-radius-scale-default); --cap-radius-inset:var(--cap-number-radius-inset-default); }
-[data-radius="compact"] { --cap-radius-scale:var(--cap-number-radius-scale-compact); --cap-radius-inset:var(--cap-number-radius-inset-compact); }
-[data-radius="default"] { --cap-radius-scale:var(--cap-number-radius-scale-default); --cap-radius-inset:var(--cap-number-radius-inset-default); }
-[data-radius="rounded"] { --cap-radius-scale:var(--cap-number-radius-scale-rounded); --cap-radius-inset:var(--cap-number-radius-inset-rounded); }
+:root { --cap-radius-scale:var(--cap-number-radius-scale-default); --cap-radius-inset:var(--cap-number-radius-inset-default); --cap-radius-segmented:var(--cap-radius-xl); }
+[data-radius="compact"] { --cap-radius-scale:var(--cap-number-radius-scale-compact); --cap-radius-inset:var(--cap-number-radius-inset-compact); --cap-radius-segmented:var(--cap-radius-xl); }
+[data-radius="default"] { --cap-radius-scale:var(--cap-number-radius-scale-default); --cap-radius-inset:var(--cap-number-radius-inset-default); --cap-radius-segmented:var(--cap-radius-xl); }
+[data-radius="rounded"] { --cap-radius-scale:var(--cap-number-radius-scale-rounded); --cap-radius-inset:var(--cap-number-radius-inset-rounded); --cap-radius-segmented:var(--cap-radius-full); }
 :root, [data-radius] {
   --cap-number-radius-none:calc(0px * var(--cap-radius-scale,1));
   --cap-number-radius-xs:calc(2px * var(--cap-radius-scale,1));

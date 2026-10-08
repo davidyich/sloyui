@@ -5280,7 +5280,7 @@
           "name": "variant",
           "type": "\"outline\" | \"accent\" | \"line\" | \"pills\" | \"segment\" | \"workspace\"",
           "required": false,
-          "default": "'line'",
+          "default": "'segment'",
           "description": "Визуальный вариант компонента."
         },
         {
