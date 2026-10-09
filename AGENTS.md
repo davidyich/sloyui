@@ -47,7 +47,7 @@
 - Select is custom visually; its hidden native select preserves form submission.
 - ActionBar/ButtonGroup/SplitButton accept size; a nested group can override it. Popover.size affects only its trigger.
 - ScrollArea has scrollbar=auto|hidden; horizontal defaults hidden, vertical/both auto. Its ref targets the scrolling viewport; edge fades reveal the existing background.
-- Read docs/component-guidelines.md for behavior, content and composition; llms.txt maps the six canonical instruction files.
+- Read docs/component-guidelines.md for behavior, content and composition; llms.txt maps the seven canonical instruction files.
 - RichTextEditor is canonical. For Markdown strings use the exported bridge helpers and retain block.markdown metadata; unsupported syntax stays editable source. MarkdownEditor is an archived compatibility export, with its route redirected to RichTextEditor. See docs/component-guidelines.md.
 - Tooltip takes one focusable React element forwarding `aria-describedby`.
 - Tabs require unique item values, a valid active value and an accessible group label.
@@ -64,6 +64,8 @@
 - Figma scope is foundations/styles, universal secondary tags and empty surface compositions. Other components remain in the web kit until explicitly requested for Figma.
 
 ## Development commands
+
+For implementation tasks in `davidyich/sloyui`, follow `docs/github-tasks.md`: use GitHub Issues for requirements and the installed `orca-cli` skill for verified workspace links/status. Keep Issues open until delivery or PR merge; do not start other agents or merge without user authorization.
 
 `npm run dev` starts the catalogue at `http://127.0.0.1:4317`. Each canonical component has a grouped navigation entry and canonical case-sensitive `#ComponentName` page; keep manifest, exports and catalogue coverage aligned.
 `npm run check` validates types, interactions, tokens, package and demo build.

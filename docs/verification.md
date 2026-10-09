@@ -2,6 +2,12 @@
 
 Checked 2026-10-08. This record describes the checked scope; it does not certify every component or downstream application.
 
+## GitHub task workflow — checked 2026-10-09
+
+- `npm run check` passed: types, all 670 tests in 57 files, token/manifest generation and both builds. Issue form YAML and required schema fields were validated; `git diff --check` passed.
+- The local `#agents` catalogue lists `github-tasks.md`; selecting it in Orca's browser loads the real document and its GitHub/Orca instructions. The registered set now contains seven files; private custom drafts remain excluded from the static catalogue.
+- GitHub Issue #3 was created and the current SSH workspace's `linkedIssue: 3` was confirmed. Template availability on GitHub requires the configuration PR to merge into `main`; this check does not claim automatic GitHub/Orca status synchronization.
+
 ## Automated checks
 
 - `npm run check`: token and manifest generation, TypeScript, 670 tests in 57 files, library and static catalogue builds passed.

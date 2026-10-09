@@ -1,0 +1,31 @@
+name: Задача
+description: Изменение компонента, каталога, документации или инфраструктуры
+title: "[Task] "
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Результат
+      description: Что должно измениться и зачем? Укажите компонент или страницу.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Критерии готовности
+      description: Проверяемые условия завершения задачи, по одному на строку.
+      placeholder: "- [ ] ..."
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Контекст и ограничения
+      description: Ссылки, зависимости от других Issues, границы изменения.
+  - type: textarea
+    id: verification
+    attributes:
+      label: Проверка
+      description: Как проверить результат; для интерфейса укажите сценарии и состояния.
+    validations:
+      required: true

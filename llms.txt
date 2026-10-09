@@ -9,8 +9,9 @@ Read narrowly:
 - docs/recipes.md — working compositions; examples/ProjectBoard.tsx and examples/WorkspaceV2.tsx are executable examples.
 - DESIGN.md — typography and visual language.
 - docs/instructions/*.md — optional project-specific instructions created in the local editor.
+- docs/github-tasks.md — GitHub Issues task workflow and verified Orca workspace links for davidyich/sloyui.
 
-These six core files form the canonical instructions; avoid loading all at once. Identity: src/brand.json, exported as SLOY_UI. Independent palette generation: source/foundation.json and source/surface-rules.json. Licensing: THIRD_PARTY_NOTICES.md and licenses/. Local audit logs and private drafts do not belong in public distributions.
+These seven core files form the canonical instructions; avoid loading all at once. Identity: src/brand.json, exported as SLOY_UI. Independent palette generation: source/foundation.json and source/surface-rules.json. Licensing: THIRD_PARTY_NOTICES.md and licenses/. Local audit logs and private drafts do not belong in public distributions.
 
 Import { Button, Tag, Dialog, ScrollArea } from 'sloyui';
 Import 'sloyui/styles.css' once. Fonts are opt-in via fonts.css.

@@ -63,7 +63,7 @@ describe('Persistent component registry',()=>{
    expect(manifest.catalogue.groups.filter(group=>group.components.includes('MultiSelect')).map(group=>group.id)).toEqual(registry.components.MultiSelect.groups);
  });
  it('keeps a minimal canonical editable instruction set',()=>{
-   expect(documentFiles).toHaveLength(6);
+   expect(documentFiles).toHaveLength(7);
    expect(new Set(documentFiles.map(file=>file.path)).size).toBe(documentFiles.length);
    for(const file of documentFiles){expect(existsSync(file.path),file.path).toBe(true);expect(file.protected).toBe(true);}
    expect(documentFiles.map(file=>file.path)).toContain('docs/component-guidelines.md');

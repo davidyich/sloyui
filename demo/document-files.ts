@@ -7,4 +7,5 @@ export const documentFiles: DocumentFile[] = [
  {path:'docs/component-guidelines.md',label:'component-guidelines.md',protected:true},
  {path:'docs/surface-context.md',label:'surface-context.md',protected:true},
  {path:'docs/recipes.md',label:'recipes.md',protected:true},
+ {path:'docs/github-tasks.md',label:'github-tasks.md',protected:true},
 ];
