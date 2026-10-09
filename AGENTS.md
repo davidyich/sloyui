@@ -65,6 +65,8 @@
 
 ## Development commands
 
+For implementation tasks in `davidyich/sloyui`, follow `docs/github-tasks.md`: use GitHub Issues for requirements and the installed `orca-cli` skill for verified workspace links/status. Keep Issues open until delivery or PR merge; do not start other agents or merge without user authorization.
+
 `npm run dev` starts the catalogue at `http://127.0.0.1:4317`. Each canonical component has a grouped navigation entry and canonical case-sensitive `#ComponentName` page; keep manifest, exports and catalogue coverage aligned.
 `npm run check` validates types, interactions, tokens, package and demo build.
 Generated `src/styles/tokens.css` and `src/tokens/*` are built by `scripts/build-tokens.mjs` from source files, including the explicit runtime contexts in `source/surface-rules.json`. Change the generator/source, then regenerate; do not hand-edit outputs.

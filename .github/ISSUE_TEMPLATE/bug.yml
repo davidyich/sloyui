@@ -1,0 +1,35 @@
+name: Ошибка
+description: Воспроизводимая проблема в Sloy UI
+title: "[Bug] "
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Шаги воспроизведения
+      description: Компонент, маршрут каталога, минимальный пример и последовательность действий.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Фактическое поведение
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Ожидаемое поведение
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Окружение
+      description: Версия или commit, браузер, размер окна, тема и локальные контексты.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Материалы
+      description: Скриншоты, логи или ссылки без секретов.
