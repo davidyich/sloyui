@@ -1,13 +1,13 @@
-## Задача и результат
+## Task and outcome
 
 Closes #<issue-number>
 
-<!-- Опишите конкретное изменение поведения и выполненные критерии готовности. -->
+<!-- Describe the concrete behavior change and completed acceptance criteria in English. -->
 
-## Проверка
+## Verification
 
-<!-- Реально выполненные команды и браузерные сценарии, их результаты. -->
+<!-- List commands and browser scenarios actually checked, with their results. -->
 
-## Ограничения
+## Limitations
 
-<!-- Незавершённые пункты, риски или последующие Issues, если есть. -->
+<!-- Include unfinished items, risks or follow-up Issues, if any. -->

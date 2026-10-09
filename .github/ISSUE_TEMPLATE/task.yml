@@ -1,31 +1,31 @@
-name: Задача
-description: Изменение компонента, каталога, документации или инфраструктуры
+name: Task
+description: Change a component, catalogue, documentation or infrastructure
 title: "[Task] "
 body:
   - type: textarea
     id: outcome
     attributes:
-      label: Результат
-      description: Что должно измениться и зачем? Укажите компонент или страницу.
+      label: Outcome
+      description: What should change and why? Identify the component or page. Write the task in English.
     validations:
       required: true
   - type: textarea
     id: acceptance
     attributes:
-      label: Критерии готовности
-      description: Проверяемые условия завершения задачи, по одному на строку.
+      label: Acceptance criteria
+      description: Testable completion criteria, one per line.
       placeholder: "- [ ] ..."
     validations:
       required: true
   - type: textarea
     id: scope
     attributes:
-      label: Контекст и ограничения
-      description: Ссылки, зависимости от других Issues, границы изменения.
+      label: Context and scope
+      description: References, dependencies on other Issues and scope boundaries.
   - type: textarea
     id: verification
     attributes:
-      label: Проверка
-      description: Как проверить результат; для интерфейса укажите сценарии и состояния.
+      label: Verification
+      description: How to verify the outcome; include UI scenarios and states where relevant.
     validations:
       required: true

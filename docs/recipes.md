@@ -1,10 +1,10 @@
-# Композиции для проектов
+# Project composition recipes
 
-Примеры рассчитаны на React 19 и подключённый `sloyui/styles.css`. При обычной работе достаточно этой страницы и записей нужных компонентов в `agent-manifest.json`.
+These examples target React 19 with `sloyui/styles.css` imported. For routine work, this page and the relevant component records in `agent-manifest.json` are sufficient.
 
-## Тема без мерцания
+## Theme without flicker
 
-Задайте `data-theme` на сервере или в исходном HTML до первого рендера. При переключении обновляйте `document.documentElement.dataset.theme`. Сохранение предпочтения и обработка system mode принадлежат приложению. Для root без атрибутов библиотека выбирает Light, поверхность base и borders off. `data-borders="on"` включает декоративные границы; фокус и ошибки сохраняют собственные контуры в обоих режимах.
+Set `data-theme` on the server or in the initial HTML before the first render. On toggle, update `document.documentElement.dataset.theme`. The application owns preference persistence and system mode. Without root attributes, the library selects Light, base surface and borders off. `data-borders="on"` enables decorative boundaries; focus and errors retain their own outlines in both modes.
 
 ```tsx
 import { IconButton } from 'sloyui';
@@ -24,9 +24,9 @@ export function ThemeToggle() {
 }
 ```
 
-## Язык встроенного интерфейса
+## Built-in interface language
 
-Без provider встроенный интерфейс русский. LocaleProvider требует locale="ru" или "en"; ближайший provider задаёт язык подписи действий и стандартного Intl-форматирования. Пользовательские подписи и данные не переводятся. Явный locale у Calendar/DatePicker/DailyHeader или поддерживаемый format callback меняет формат данных, сохраняя язык интерфейса.
+Without a provider, the built-in interface is Russian. LocaleProvider requires locale="ru" or "en"; the nearest provider controls action labels and default Intl formatting. Custom labels and data are not translated. An explicit locale on Calendar/DatePicker/DailyHeader or a supported format callback changes data formatting while preserving interface language.
 
 ```tsx
 import { DailyHeader, LocaleProvider, useLocale, useTranslate } from 'sloyui';
@@ -45,11 +45,11 @@ export function EnglishWorkspace() {
 }
 ```
 
-useTranslate возвращает t(ru, en) для собственных строк приложения. LocaleProvider/useLocale/useTranslate — утилиты; отдельные страницы компонентов им не нужны.
+useTranslate returns t(ru, en) for application strings. LocaleProvider/useLocale/useTranslate are utilities and do not need separate component catalogue pages.
 
-## Поверхность и локальные рамки
+## Surface and local borders
 
-Контекст описывает фактический фон контейнера. На собственном `section` задайте заливку через `--cap-surface-current`; встроенная Card создаёт собственный raised-контекст. Переключатель рамок меняет декоративные границы без изменения размеров. Popup сохраняет тему, акцент и режим рамок, а его поверхность остаётся floating.
+Context describes the actual container background. Paint custom `section` elements with `--cap-surface-current`; built-in Card establishes its own raised context. The border toggle changes decorative outlines without changing dimensions. Popups preserve theme, accent and border mode while keeping a floating surface.
 
 ```tsx
 import { Button, Card, Popover, Switch, Tag } from 'sloyui';
@@ -75,11 +75,11 @@ export function ContextExample() {
 }
 ```
 
-Контекст наследуется. Не меняйте фон самостоятельного слота на canvas, оставляя ему raised-контекст. Точное соответствие ролей и поверхностей: [surface-context.md](surface-context.md).
+Context is inherited. Do not paint a standalone slot as canvas while leaving its context raised. For exact role/surface mappings, see [surface-context.md](surface-context.md).
 
-## Единая высота составных действий
+## Shared height for composite actions
 
-`ActionBar.size`, `ButtonGroup.size` и `SplitButton.size` используют одну шкалу. Внутренние отступы группы уже включены в её внешнюю высоту. Вложенная группа может переопределить размер. Поля и сложные Select/Popover сохраняют обычную навигацию, если поставить `rovingFocus={false}`.
+`ActionBar.size`, `ButtonGroup.size` and `SplitButton.size` use one scale. Group padding is included in its outer height. Nested groups can override size. Fields and complex Select/Popover controls retain normal navigation with `rovingFocus={false}`.
 
 ```tsx
 import { ActionBar, ButtonGroup, IconButton, Popover, Switch } from 'sloyui';
@@ -101,9 +101,9 @@ export function CollectionActions() {
 }
 ```
 
-Геометрия popup не уменьшается вместе с кнопкой панели. `Popover.size` задаёт отдельный размер триггера вне ActionBar. Примеры в каталоге: `#ActionBar`, `#ButtonGroup`, `#SplitButton` и `#Popover`.
+Popup geometry does not shrink with the toolbar button. `Popover.size` sets the standalone trigger size outside ActionBar. Catalogue examples: `#ActionBar`, `#ButtonGroup`, `#SplitButton` and `#Popover`.
 
-## Прокрутка без цветной подложки
+## Scrolling without an extra background fill
 
 ```tsx
 import { Button, Card, ScrollArea } from 'sloyui';
@@ -119,11 +119,11 @@ export function Notes({ notes }: { notes: string[] }) {
 }
 ```
 
-`scrollbar="hidden"` скрывает полосу, сохраняя wheel/touch/keyboard. Горизонтальный режим по умолчанию hidden, vertical/both — auto. Краевые маски открывают реальный фон по сторонам overflow; без overflow содержимое не затемняется. `fade={false}`/`"none"` отключает маски, явный fade имеет приоритет над совместимым shadows. fade принимает ось, физический край или start/end с учётом RTL. fadeSize — число px или CSS length, по умолчанию min(12%, space-10); fadeReveal — расстояние плавного раскрытия, по умолчанию 2 × space-12, 0 — сразу. floating находится вне маски и сохраняет тень; встроенный запас места учитывает его высоту. `ref` указывает на внутренний viewport — вызывайте `scrollTo` и измеряйте прокрутку именно у него. Пример: `#ScrollArea`.
+`scrollbar="hidden"` hides the bar while preserving wheel/touch/keyboard scrolling. Horizontal defaults to hidden; vertical/both defaults to auto. Edge masks reveal the actual background beside overflow; without overflow, content is not dimmed. `fade={false}`/`"none"` disables masks; explicit fade takes precedence over compatibility shadows. fade accepts an axis, physical edge or start/end with RTL awareness. fadeSize is a px number or CSS length, defaulting to min(12%, space-10); fadeReveal is the gradual reveal distance, defaulting to 2 × space-12, with 0 meaning immediate. floating sits outside the mask and preserves its shadow; built-in clearance accounts for its height. `ref` targets the inner viewport: call `scrollTo` and measure scrolling there. Example: `#ScrollArea`.
 
-## Вложенные изменяемые панели
+## Nested resizable panels
 
-Размеры ResizablePanelGroup — числовые проценты доступного места после ручек. Содержимое не должно задавать минимальную ширину всей композиции. Для вертикальной группы ограничьте высоту родителя; локальную прокрутку задавайте через ScrollArea. Группа состоит из прямых Panel/Handle children, другую группу вкладывайте внутрь Panel.
+ResizablePanelGroup sizes are numeric percentages of the space remaining after handles. Content must not impose a minimum width on the entire composition. Constrain the parent height for vertical groups; use ScrollArea for local scrolling. Groups contain direct Panel/Handle children; nest another group inside a Panel.
 
 ```tsx
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup, ScrollArea } from 'sloyui';
@@ -150,9 +150,9 @@ export function SplitWorkspace() {
 }
 ```
 
-Panel defaultSize/minSize/maxSize задаёт начальный размер и границы в процентах; незаданные начальные размеры делят остаток. Управляемому layout нужен onLayoutChange; onLayoutCommit подходит для сохранения завершённого изменения. Стрелки меняют step (по умолчанию 1%), Shift — ×10, Home/End — границы пары, Escape отменяет drag. withHandle показывает grip; скрытый grip сохраняет доступный separator. surface по умолчанию inherit, собственную структурную границу добавляйте через cap-surface-boundary только для намеренно совпадающих вложенных поверхностей. Для боковых панелей в px с адаптивным складыванием используйте ContentLayout, для одной карточки — ResizableCard.
+Panel defaultSize/minSize/maxSize set initial sizes and limits in percentages; unspecified initial sizes share the remainder. Controlled layout requires onLayoutChange; onLayoutCommit can persist completed changes. Arrow keys change step (default 1%), Shift multiplies it by 10, Home/End reach pair limits, and Escape cancels drag. withHandle displays the grip; a hidden grip retains an accessible separator. surface defaults to inherit; add cap-surface-boundary only for intentionally matching nested surfaces. Use ContentLayout for pixel-based side panels with responsive collapse, or ResizableCard for a single card.
 
-## Форма с валидацией
+## Form validation
 
 ```tsx
 import { Button, Field, Input } from 'sloyui';
@@ -178,13 +178,13 @@ export function ProjectForm({ save }: { save: (title: string) => Promise<void> }
 }
 ```
 
-`Field` передаёт `id`, `required`, `aria-invalid` и `aria-describedby`. Не теряйте эти props при оборачивании поля. Кнопка по умолчанию имеет `type="button"`; submit указывайте явно.
+`Field` forwards `id`, `required`, `aria-invalid` and `aria-describedby`. Preserve these props when wrapping a field. Buttons default to `type="button"`; set submit explicitly.
 
-## Коллекция с фильтром и созданием
+## Collection with filtering and creation
 
-Полная компилируемая композиция — `examples/ProjectBoard.tsx`: поиск, карточки, списки, empty state, диалог и создание объекта. Состояние остаётся в React и легко заменяется собственным API.
+The complete compilable composition is `examples/ProjectBoard.tsx`: search, cards, lists, empty state, dialog and object creation. State remains in React and can be replaced with an application API.
 
-## Кнопка с контекстными действиями
+## Button with contextual actions
 
 ```tsx
 import { Menu } from 'sloyui';
@@ -197,30 +197,30 @@ export function ObjectActions({ open, archive }: { open: () => void; archive: ()
 }
 ```
 
-Menu поддерживает стрелки, Home/End, выбор Enter/Space, поиск по первой букве и Escape. `shortcut` — отображение клавиши, а не регистрация глобального сочетания.
+Menu supports arrow keys, Home/End, Enter/Space selection, first-letter search and Escape. `shortcut` displays a key; it does not register a global shortcut.
 
-## Глобальный поиск
+## Global search
 
-Передавайте `CommandPalette` массив команд `{ id, label, description?, icon?, shortcut?, onSelect }`. Приложение само регистрирует `Cmd/Ctrl+K` и управляет `open`. Поиск локальный, без обращения к сети. Для большого серверного поиска используйте собственный слой данных и отдельный компонент.
+Pass `CommandPalette` commands shaped as `{ id, label, description?, icon?, shortcut?, onSelect }`. The application registers `Cmd/Ctrl+K` and controls `open`. Search is local and does not access the network. For large server searches, use an application data layer and a separate component.
 
-## Подключение без React
+## Use without React
 
-`tokens.css` не зависит от фреймворка. Классы визуальных примитивов в `styles.css` тоже обычный CSS:
+`tokens.css` is framework-independent. Visual primitive classes in `styles.css` are also plain CSS:
 
 ```html
 <button class="cap-button" data-size="md" data-variant="primary" type="button">Создать</button>
 <span class="cap-tag" data-color="purple"><span class="cap-tag-label">Исследование</span></span>
 ```
 
-Сложные контролы требуют соответствующего поведения, ARIA и фокуса; один класс не превращает div в доступный диалог или меню.
+Complex controls require appropriate behavior, ARIA and focus management; a class alone does not turn a div into an accessible dialog or menu.
 
-## Контент и каталог
+## Content and catalogue
 
-Для локального цвета оберните группу в `<section data-accent="purple">`. `Tag` и `IconBox` без color наследуют локальный акцент. `Badge` и `TypeLabel` сохранены только как совместимые обёртки Tag. Акцентное действие: `<Button variant="accent">`. Свет/темнота задаются независимо через data-theme.
+Wrap a group in `<section data-accent="purple">` for local color. `Tag` and `IconBox` without color inherit the local accent. `Badge` and `TypeLabel` remain compatibility wrappers around Tag. Accent action: `<Button variant="accent">`. Appearance is independently selected through data-theme.
 
-У каждого канонического компонента своя страница `#ComponentName`; переходите сразу к нужному примеру по маршруту из agent-manifest. Полная композиция: `examples/WorkspaceV2.tsx`. API контентных блоков: `docs/content-guide.md`. Контракт motion, состояний и адаптива: `docs/behavior.md`.
+Each canonical component has its own `#ComponentName` page; use the route from agent-manifest to open the relevant example directly. Full composition: `examples/WorkspaceV2.tsx`. Content block API: `docs/content-guide.md`. Motion, state and responsive contracts: `docs/behavior.md`.
 
-## Настраиваемая карточка и перестановка
+## Configurable card and reordering
 
 ```tsx
 const [items, setItems] = useState(projects); // unique stable id per item
@@ -235,4 +235,4 @@ const [items, setItems] = useState(projects); // unique stable id per item
 />
 ```
 
-Для единой подписи семейства: `<Input label="Название" labelPlacement="inside" />`, `<Select label="Тип" labelPlacement="inside" options={types} />`, `<Textarea label="Описание" labelPlacement="inside" />`. Переключение на `outside` меняет только размещение подписи, не значение и не связь с полем.
+For shared field-family labels: `<Input label="Название" labelPlacement="inside" />`, `<Select label="Тип" labelPlacement="inside" options={types} />`, `<Textarea label="Описание" labelPlacement="inside" />`. Switching to `outside` changes label placement only, not the value or field association.

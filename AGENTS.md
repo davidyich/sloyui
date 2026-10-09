@@ -1,6 +1,6 @@
 # Sloy UI — project and consumer instructions
 
-Пишите пользователю по-русски. Код и идентификаторы — на английском.
+Speak Russian with the user. Write code, identifiers and all repository agent instructions in English, regardless of the source request's language. Preserve language-sensitive UI copy and localization examples.
 
 ## Read narrowly
 

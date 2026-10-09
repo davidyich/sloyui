@@ -4,6 +4,8 @@ Checked 2026-10-08. This record describes the checked scope; it does not certify
 
 ## GitHub task workflow — checked 2026-10-09
 
+- Repository language follow-up: all canonical instruction prose and task/PR templates were checked for English. Recipe code blocks are byte-for-byte unchanged, preserving Russian UI copy and bilingual examples. The 21 document/registry tests and static catalogue build passed; `git diff --check` passed.
+
 - `npm run check` passed: types, all 670 tests in 57 files, token/manifest generation and both builds. Issue form YAML and required schema fields were validated; `git diff --check` passed.
 - The local `#agents` catalogue lists `github-tasks.md`; selecting it in Orca's browser loads the real document and its GitHub/Orca instructions. The registered set now contains seven files; private custom drafts remain excluded from the static catalogue.
 - GitHub Issue #3 was created and the current SSH workspace's `linkedIssue: 3` was confirmed. Template availability on GitHub requires the configuration PR to merge into `main`; this check does not claim automatic GitHub/Orca status synchronization.
