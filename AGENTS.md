@@ -65,7 +65,7 @@
 
 ## Development commands
 
-For implementation tasks in `davidyich/sloyui`, follow `docs/github-tasks.md`: use GitHub Issues for requirements and the installed `orca-cli` skill for verified workspace links/status. Keep Issues open until delivery or PR merge; do not start other agents or merge without user authorization.
+For implementation tasks in `davidyich/sloyui`, follow `docs/github-tasks.md`: by default, decompose large multi-component or multi-area requests into self-contained English GitHub Issues before implementation, with dependencies and handoff context. This task publication is pre-authorized; keep user conversation in Russian. Use the installed `orca-cli` skill for verified workspace links/status. Keep Issues open until delivery or PR merge; do not start other agents or merge without user authorization.
 
 `npm run dev` starts the catalogue at `http://127.0.0.1:4317`. Each canonical component has a grouped navigation entry and canonical case-sensitive `#ComponentName` page; keep manifest, exports and catalogue coverage aligned.
 `npm run check` validates types, interactions, tokens, package and demo build.
