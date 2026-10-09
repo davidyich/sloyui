@@ -7,7 +7,7 @@ import { documentsPlugin, documentStore, readDocumentBody } from '../scripts/doc
 const roots:string[]=[];
 async function setup(){const root=await realpath(await mkdtemp(join(tmpdir(),'cap-docs-test-')));roots.push(root);await mkdir(join(root,'docs'));await writeFile(join(root,'docs/component-guidelines.md'),'# Original\n');return {root,store:documentStore(root)};}
 afterEach(async()=>{await Promise.all(roots.splice(0).map(root=>rm(root,{recursive:true,force:true})));});
-it('publishes only the six canonical instructions as read-only while private instructions remain editable locally', async () => {
+it('publishes only registered instructions as read-only while private instructions remain editable locally', async () => {
  const { root, store } = await setup();
  for (const file of documentFiles) await writeFile(join(root, file.path), `# Public ${file.path}\n`);
  const privatePath = 'docs/instructions/private-release-draft.md';
@@ -28,7 +28,6 @@ it('publishes only the six canonical instructions as read-only while private ins
  if (asset.source === undefined) throw new Error('Expected documents.json source.');
  const source = typeof asset.source === 'string' ? asset.source : Buffer.from(asset.source).toString('utf8');
  const published = JSON.parse(source);
- expect(documentFiles).toHaveLength(6);
  expect(published.writable).toBe(false);
  expect(published.files.map((file: { path: string }) => file.path)).toEqual(documentFiles.map(file => file.path));
  for (const file of documentFiles) expect(published.files.find((item: { path: string }) => item.path === file.path)).toMatchObject({ ...file, content: `# Public ${file.path}\n`, revision: expect.any(String) });

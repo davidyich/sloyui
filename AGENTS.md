@@ -47,7 +47,7 @@
 - Select is custom visually; its hidden native select preserves form submission.
 - ActionBar/ButtonGroup/SplitButton accept size; a nested group can override it. Popover.size affects only its trigger.
 - ScrollArea has scrollbar=auto|hidden; horizontal defaults hidden, vertical/both auto. Its ref targets the scrolling viewport; edge fades reveal the existing background.
-- Read docs/component-guidelines.md for behavior, content and composition; llms.txt maps the six canonical instruction files.
+- Read docs/component-guidelines.md for behavior, content and composition; llms.txt maps the seven canonical instruction files.
 - RichTextEditor is canonical. For Markdown strings use the exported bridge helpers and retain block.markdown metadata; unsupported syntax stays editable source. MarkdownEditor is an archived compatibility export, with its route redirected to RichTextEditor. See docs/component-guidelines.md.
 - Tooltip takes one focusable React element forwarding `aria-describedby`.
 - Tabs require unique item values, a valid active value and an accessible group label.
