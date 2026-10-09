@@ -1,35 +1,35 @@
-name: Ошибка
-description: Воспроизводимая проблема в Sloy UI
+name: Bug
+description: A reproducible problem in Sloy UI
 title: "[Bug] "
 body:
   - type: textarea
     id: reproduction
     attributes:
-      label: Шаги воспроизведения
-      description: Компонент, маршрут каталога, минимальный пример и последовательность действий.
+      label: Reproduction steps
+      description: Component, catalogue route, minimal example and actions. Write the report in English.
     validations:
       required: true
   - type: textarea
     id: actual
     attributes:
-      label: Фактическое поведение
+      label: Actual behavior
     validations:
       required: true
   - type: textarea
     id: expected
     attributes:
-      label: Ожидаемое поведение
+      label: Expected behavior
     validations:
       required: true
   - type: textarea
     id: environment
     attributes:
-      label: Окружение
-      description: Версия или commit, браузер, размер окна, тема и локальные контексты.
+      label: Environment
+      description: Version or commit, browser, viewport size, theme and local contexts.
     validations:
       required: true
   - type: textarea
     id: evidence
     attributes:
-      label: Материалы
-      description: Скриншоты, логи или ссылки без секретов.
+      label: Evidence
+      description: Screenshots, logs or links without secrets.
