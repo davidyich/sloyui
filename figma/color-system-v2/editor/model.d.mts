@@ -18,6 +18,7 @@ export function updateSeed(accent:Accent,hex:string):Accent;
 export function createNeutralSystem():NeutralSystem;
 export function resetAccentRecommendations(accent:Accent):Accent;
 export function validateProject(input:unknown):Project;
+/** Auto with zero tint jointly selects one exact black/white ink for Normal/Active before adapting either fill. */
 export function primaryPair(accent:Accent,theme:string,rules?:Rules,palette?:PaletteScale[]):Context['primary'];
 export function generateAll(accent:Accent,source:unknown,resolved:unknown,custom?:{Light:string;Dark:string},rules?:Rules,neutralSystem?:NeutralSystem):Context[];
 export function generateContext(accent:Accent,theme:string,scheme:string,surface:string,source:unknown,resolved:unknown,custom?:{Light:string;Dark:string},rules?:Rules,palette?:PaletteScale[],surfacePurpose?:string,neutralSystem?:NeutralSystem):Context;

@@ -8886,22 +8886,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Workspace": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Content": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Overlay": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Invert": {
               "alias": "Palette/blue/14"
             },
             "Glass": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             }
           },
           "scopes": [],
@@ -8925,7 +8925,7 @@
               "alias": "Palette/blue/14"
             },
             "Invert": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Glass": {
               "alias": "Palette/blue/14"
@@ -9336,22 +9336,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Workspace": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Content": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Overlay": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Invert": {
               "alias": "Palette/blue/12"
             },
             "Glass": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             }
           },
           "scopes": [],
@@ -9375,7 +9375,7 @@
               "alias": "Palette/blue/12"
             },
             "Invert": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Glass": {
               "alias": "Palette/blue/12"
@@ -9786,22 +9786,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Workspace": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Content": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Overlay": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Invert": {
               "alias": "Palette/blue/12"
             },
             "Glass": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             }
           },
           "scopes": [],
@@ -9825,7 +9825,7 @@
               "alias": "Palette/blue/12"
             },
             "Invert": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Glass": {
               "alias": "Palette/blue/12"
@@ -10112,60 +10112,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-blue-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности."
-        },
-        {
-          "name": "content/on-primary/blue-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-blue-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности."
-        },
-        {
-          "name": "content/on-primary/blue-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-blue-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности."
         },
         {
@@ -10463,22 +10409,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Workspace": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Content": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Overlay": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Invert": {
               "alias": "Palette/blue/14"
             },
             "Glass": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             }
           },
           "scopes": [],
@@ -10503,7 +10449,7 @@
               "alias": "Palette/blue/14"
             },
             "Invert": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Glass": {
               "alias": "Palette/blue/14"
@@ -10923,22 +10869,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Workspace": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Content": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Overlay": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Invert": {
               "alias": "Palette/blue/12"
             },
             "Glass": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             }
           },
           "scopes": [],
@@ -10963,7 +10909,7 @@
               "alias": "Palette/blue/12"
             },
             "Invert": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Glass": {
               "alias": "Palette/blue/12"
@@ -11383,22 +11329,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Workspace": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Content": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Overlay": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Invert": {
               "alias": "Palette/blue/12"
             },
             "Glass": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             }
           },
           "scopes": [],
@@ -11423,7 +11369,7 @@
               "alias": "Palette/blue/12"
             },
             "Invert": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Glass": {
               "alias": "Palette/blue/12"
@@ -11717,62 +11663,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-cyan-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/cyan-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-cyan-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/cyan-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-cyan-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности.",
           "hiddenFromPublishing": true
         },
@@ -12071,22 +11961,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Workspace": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Content": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Overlay": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Invert": {
               "alias": "Palette/blue/14"
             },
             "Glass": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             }
           },
           "scopes": [],
@@ -12111,7 +12001,7 @@
               "alias": "Palette/blue/14"
             },
             "Invert": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Glass": {
               "alias": "Palette/blue/14"
@@ -12531,22 +12421,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Workspace": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Content": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Overlay": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Invert": {
               "alias": "Palette/blue/12"
             },
             "Glass": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             }
           },
           "scopes": [],
@@ -12571,7 +12461,7 @@
               "alias": "Palette/blue/12"
             },
             "Invert": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Glass": {
               "alias": "Palette/blue/12"
@@ -12991,22 +12881,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Workspace": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Content": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Overlay": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Invert": {
               "alias": "Palette/blue/12"
             },
             "Glass": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             }
           },
           "scopes": [],
@@ -13031,7 +12921,7 @@
               "alias": "Palette/blue/12"
             },
             "Invert": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Glass": {
               "alias": "Palette/blue/12"
@@ -13325,62 +13215,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-sky-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/sky-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-sky-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/sky-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-sky-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности.",
           "hiddenFromPublishing": true
         },
@@ -13679,22 +13513,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Workspace": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Content": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Overlay": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Invert": {
               "alias": "Palette/blue/14"
             },
             "Glass": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             }
           },
           "scopes": [],
@@ -13719,7 +13553,7 @@
               "alias": "Palette/blue/14"
             },
             "Invert": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Glass": {
               "alias": "Palette/blue/14"
@@ -14139,22 +13973,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Workspace": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Content": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Overlay": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Invert": {
               "alias": "Palette/blue/12"
             },
             "Glass": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             }
           },
           "scopes": [],
@@ -14179,7 +14013,7 @@
               "alias": "Palette/blue/12"
             },
             "Invert": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Glass": {
               "alias": "Palette/blue/12"
@@ -14599,22 +14433,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Workspace": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Content": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Overlay": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Invert": {
               "alias": "Palette/blue/12"
             },
             "Glass": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             }
           },
           "scopes": [],
@@ -14639,7 +14473,7 @@
               "alias": "Palette/blue/12"
             },
             "Invert": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Glass": {
               "alias": "Palette/blue/12"
@@ -14933,62 +14767,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-indigo-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/indigo-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-indigo-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/indigo-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-indigo-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности.",
           "hiddenFromPublishing": true
         },
@@ -15287,22 +15065,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Workspace": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Content": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Overlay": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Invert": {
               "alias": "Palette/blue/14"
             },
             "Glass": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             }
           },
           "scopes": [],
@@ -15327,7 +15105,7 @@
               "alias": "Palette/blue/14"
             },
             "Invert": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Glass": {
               "alias": "Palette/blue/14"
@@ -15747,22 +15525,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Workspace": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Content": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Overlay": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Invert": {
               "alias": "Palette/blue/12"
             },
             "Glass": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             }
           },
           "scopes": [],
@@ -15787,7 +15565,7 @@
               "alias": "Palette/blue/12"
             },
             "Invert": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Glass": {
               "alias": "Palette/blue/12"
@@ -16207,22 +15985,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Workspace": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Content": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Overlay": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Invert": {
               "alias": "Palette/blue/12"
             },
             "Glass": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             }
           },
           "scopes": [],
@@ -16247,7 +16025,7 @@
               "alias": "Palette/blue/12"
             },
             "Invert": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Glass": {
               "alias": "Palette/blue/12"
@@ -16541,62 +16319,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-sapphire-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/sapphire-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-sapphire-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/sapphire-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-sapphire-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности.",
           "hiddenFromPublishing": true
         },
@@ -16895,22 +16617,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Workspace": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Content": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Overlay": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Invert": {
               "alias": "Palette/blue/14"
             },
             "Glass": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             }
           },
           "scopes": [],
@@ -16935,7 +16657,7 @@
               "alias": "Palette/blue/14"
             },
             "Invert": {
-              "alias": "Palette/blue/23"
+              "alias": "Palette/blue/20"
             },
             "Glass": {
               "alias": "Palette/blue/14"
@@ -17355,22 +17077,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Workspace": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Content": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Overlay": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Invert": {
               "alias": "Palette/blue/12"
             },
             "Glass": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             }
           },
           "scopes": [],
@@ -17395,7 +17117,7 @@
               "alias": "Palette/blue/12"
             },
             "Invert": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Glass": {
               "alias": "Palette/blue/12"
@@ -17815,22 +17537,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Workspace": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Content": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Overlay": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Invert": {
               "alias": "Palette/blue/12"
             },
             "Glass": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             }
           },
           "scopes": [],
@@ -17855,7 +17577,7 @@
               "alias": "Palette/blue/12"
             },
             "Invert": {
-              "alias": "Palette/blue/25"
+              "alias": "Palette/blue/22"
             },
             "Glass": {
               "alias": "Palette/blue/12"
@@ -18153,62 +17875,6 @@
           "hiddenFromPublishing": true
         },
         {
-          "name": "content/on-primary/turquoise-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-turquoise-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/turquoise-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-turquoise-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
           "name": "surface/secondary/green-normal-light",
           "type": "COLOR",
           "values": {
@@ -18498,22 +18164,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Workspace": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Content": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Overlay": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Invert": {
               "alias": "Palette/green/14"
             },
             "Glass": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             }
           },
           "scopes": [],
@@ -18537,7 +18203,7 @@
               "alias": "Palette/green/14"
             },
             "Invert": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Glass": {
               "alias": "Palette/green/14"
@@ -18948,22 +18614,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Workspace": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Content": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Overlay": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Invert": {
               "alias": "Palette/green/12"
             },
             "Glass": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             }
           },
           "scopes": [],
@@ -18987,7 +18653,7 @@
               "alias": "Palette/green/12"
             },
             "Invert": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Glass": {
               "alias": "Palette/green/12"
@@ -19398,22 +19064,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Workspace": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Content": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Overlay": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Invert": {
               "alias": "Palette/green/12"
             },
             "Glass": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             }
           },
           "scopes": [],
@@ -19437,7 +19103,7 @@
               "alias": "Palette/green/12"
             },
             "Invert": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Glass": {
               "alias": "Palette/green/12"
@@ -19724,60 +19390,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-green-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности."
-        },
-        {
-          "name": "content/on-primary/green-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-green-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности."
-        },
-        {
-          "name": "content/on-primary/green-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-green-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности."
         },
         {
@@ -20075,22 +19687,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Workspace": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Content": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Overlay": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Invert": {
               "alias": "Palette/green/14"
             },
             "Glass": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             }
           },
           "scopes": [],
@@ -20115,7 +19727,7 @@
               "alias": "Palette/green/14"
             },
             "Invert": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Glass": {
               "alias": "Palette/green/14"
@@ -20535,22 +20147,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Workspace": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Content": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Overlay": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Invert": {
               "alias": "Palette/green/12"
             },
             "Glass": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             }
           },
           "scopes": [],
@@ -20575,7 +20187,7 @@
               "alias": "Palette/green/12"
             },
             "Invert": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Glass": {
               "alias": "Palette/green/12"
@@ -20995,22 +20607,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Workspace": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Content": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Overlay": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Invert": {
               "alias": "Palette/green/12"
             },
             "Glass": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             }
           },
           "scopes": [],
@@ -21035,7 +20647,7 @@
               "alias": "Palette/green/12"
             },
             "Invert": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Glass": {
               "alias": "Palette/green/12"
@@ -21329,62 +20941,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-emerald-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/emerald-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-emerald-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/emerald-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-emerald-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности.",
           "hiddenFromPublishing": true
         },
@@ -21683,22 +21239,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Workspace": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Content": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Overlay": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Invert": {
               "alias": "Palette/green/14"
             },
             "Glass": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             }
           },
           "scopes": [],
@@ -21723,7 +21279,7 @@
               "alias": "Palette/green/14"
             },
             "Invert": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Glass": {
               "alias": "Palette/green/14"
@@ -22143,22 +21699,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Workspace": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Content": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Overlay": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Invert": {
               "alias": "Palette/green/12"
             },
             "Glass": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             }
           },
           "scopes": [],
@@ -22183,7 +21739,7 @@
               "alias": "Palette/green/12"
             },
             "Invert": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Glass": {
               "alias": "Palette/green/12"
@@ -22603,22 +22159,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Workspace": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Content": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Overlay": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Invert": {
               "alias": "Palette/green/12"
             },
             "Glass": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             }
           },
           "scopes": [],
@@ -22643,7 +22199,7 @@
               "alias": "Palette/green/12"
             },
             "Invert": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Glass": {
               "alias": "Palette/green/12"
@@ -22937,62 +22493,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-shamrock-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/shamrock-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-shamrock-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/shamrock-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-shamrock-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности.",
           "hiddenFromPublishing": true
         },
@@ -23291,22 +22791,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Workspace": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Content": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Overlay": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Invert": {
               "alias": "Palette/green/14"
             },
             "Glass": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             }
           },
           "scopes": [],
@@ -23331,7 +22831,7 @@
               "alias": "Palette/green/14"
             },
             "Invert": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Glass": {
               "alias": "Palette/green/14"
@@ -23751,22 +23251,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Workspace": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Content": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Overlay": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Invert": {
               "alias": "Palette/green/12"
             },
             "Glass": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             }
           },
           "scopes": [],
@@ -23791,7 +23291,7 @@
               "alias": "Palette/green/12"
             },
             "Invert": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Glass": {
               "alias": "Palette/green/12"
@@ -24211,22 +23711,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Workspace": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Content": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Overlay": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Invert": {
               "alias": "Palette/green/12"
             },
             "Glass": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             }
           },
           "scopes": [],
@@ -24251,7 +23751,7 @@
               "alias": "Palette/green/12"
             },
             "Invert": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Glass": {
               "alias": "Palette/green/12"
@@ -24545,62 +24045,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-teal-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/teal-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-teal-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/teal-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-teal-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности.",
           "hiddenFromPublishing": true
         },
@@ -24899,22 +24343,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Workspace": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Content": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Overlay": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Invert": {
               "alias": "Palette/green/14"
             },
             "Glass": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             }
           },
           "scopes": [],
@@ -24939,7 +24383,7 @@
               "alias": "Palette/green/14"
             },
             "Invert": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Glass": {
               "alias": "Palette/green/14"
@@ -25359,22 +24803,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Workspace": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Content": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Overlay": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Invert": {
               "alias": "Palette/green/12"
             },
             "Glass": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             }
           },
           "scopes": [],
@@ -25399,7 +24843,7 @@
               "alias": "Palette/green/12"
             },
             "Invert": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Glass": {
               "alias": "Palette/green/12"
@@ -25819,22 +25263,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Workspace": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Content": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Overlay": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Invert": {
               "alias": "Palette/green/12"
             },
             "Glass": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             }
           },
           "scopes": [],
@@ -25859,7 +25303,7 @@
               "alias": "Palette/green/12"
             },
             "Invert": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Glass": {
               "alias": "Palette/green/12"
@@ -26153,62 +25597,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-mint-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/mint-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-mint-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/mint-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-mint-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности.",
           "hiddenFromPublishing": true
         },
@@ -26507,22 +25895,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Workspace": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Content": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Overlay": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Invert": {
               "alias": "Palette/green/14"
             },
             "Glass": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             }
           },
           "scopes": [],
@@ -26547,7 +25935,7 @@
               "alias": "Palette/green/14"
             },
             "Invert": {
-              "alias": "Palette/green/24"
+              "alias": "Palette/green/21"
             },
             "Glass": {
               "alias": "Palette/green/14"
@@ -26967,22 +26355,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Workspace": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Content": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Overlay": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Invert": {
               "alias": "Palette/green/12"
             },
             "Glass": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             }
           },
           "scopes": [],
@@ -27007,7 +26395,7 @@
               "alias": "Palette/green/12"
             },
             "Invert": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Glass": {
               "alias": "Palette/green/12"
@@ -27427,22 +26815,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Workspace": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Content": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Overlay": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Invert": {
               "alias": "Palette/green/12"
             },
             "Glass": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             }
           },
           "scopes": [],
@@ -27467,7 +26855,7 @@
               "alias": "Palette/green/12"
             },
             "Invert": {
-              "alias": "Palette/green/26"
+              "alias": "Palette/green/23"
             },
             "Glass": {
               "alias": "Palette/green/12"
@@ -27761,62 +27149,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-lime-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/lime-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-lime-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/lime-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-lime-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности.",
           "hiddenFromPublishing": true
         },
@@ -28167,22 +27499,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Workspace": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Content": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Overlay": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Invert": {
               "alias": "Palette/orange/14"
             },
             "Glass": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             }
           },
           "scopes": [],
@@ -28206,7 +27538,7 @@
               "alias": "Palette/orange/14"
             },
             "Invert": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Glass": {
               "alias": "Palette/orange/14"
@@ -28617,22 +27949,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Workspace": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Content": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Overlay": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Invert": {
               "alias": "Palette/orange/12"
             },
             "Glass": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             }
           },
           "scopes": [],
@@ -28656,7 +27988,7 @@
               "alias": "Palette/orange/12"
             },
             "Invert": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Glass": {
               "alias": "Palette/orange/12"
@@ -29067,22 +28399,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Workspace": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Content": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Overlay": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Invert": {
               "alias": "Palette/orange/12"
             },
             "Glass": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             }
           },
           "scopes": [],
@@ -29106,7 +28438,7 @@
               "alias": "Palette/orange/12"
             },
             "Invert": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Glass": {
               "alias": "Palette/orange/12"
@@ -29393,60 +28725,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-orange-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности."
-        },
-        {
-          "name": "content/on-primary/orange-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-orange-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности."
-        },
-        {
-          "name": "content/on-primary/orange-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-orange-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности."
         },
         {
@@ -29802,22 +29080,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Workspace": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Content": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Overlay": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Invert": {
               "alias": "Palette/orange/14"
             },
             "Glass": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             }
           },
           "scopes": [],
@@ -29842,7 +29120,7 @@
               "alias": "Palette/orange/14"
             },
             "Invert": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Glass": {
               "alias": "Palette/orange/14"
@@ -30262,22 +29540,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Workspace": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Content": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Overlay": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Invert": {
               "alias": "Palette/orange/12"
             },
             "Glass": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             }
           },
           "scopes": [],
@@ -30302,7 +29580,7 @@
               "alias": "Palette/orange/12"
             },
             "Invert": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Glass": {
               "alias": "Palette/orange/12"
@@ -30722,22 +30000,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Workspace": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Content": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Overlay": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Invert": {
               "alias": "Palette/orange/12"
             },
             "Glass": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             }
           },
           "scopes": [],
@@ -30762,7 +30040,7 @@
               "alias": "Palette/orange/12"
             },
             "Invert": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Glass": {
               "alias": "Palette/orange/12"
@@ -31056,62 +30334,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-amber-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/amber-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-amber-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/amber-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-amber-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности.",
           "hiddenFromPublishing": true
         },
@@ -31468,22 +30690,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Workspace": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Content": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Overlay": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Invert": {
               "alias": "Palette/orange/14"
             },
             "Glass": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             }
           },
           "scopes": [],
@@ -31508,7 +30730,7 @@
               "alias": "Palette/orange/14"
             },
             "Invert": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Glass": {
               "alias": "Palette/orange/14"
@@ -31928,22 +31150,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Workspace": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Content": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Overlay": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Invert": {
               "alias": "Palette/orange/12"
             },
             "Glass": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             }
           },
           "scopes": [],
@@ -31968,7 +31190,7 @@
               "alias": "Palette/orange/12"
             },
             "Invert": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Glass": {
               "alias": "Palette/orange/12"
@@ -32388,22 +31610,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Workspace": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Content": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Overlay": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Invert": {
               "alias": "Palette/orange/12"
             },
             "Glass": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             }
           },
           "scopes": [],
@@ -32428,7 +31650,7 @@
               "alias": "Palette/orange/12"
             },
             "Invert": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Glass": {
               "alias": "Palette/orange/12"
@@ -32722,62 +31944,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-yellow-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/yellow-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-yellow-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/yellow-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-yellow-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности.",
           "hiddenFromPublishing": true
         },
@@ -33134,22 +32300,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Workspace": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Content": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Overlay": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Invert": {
               "alias": "Palette/orange/14"
             },
             "Glass": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             }
           },
           "scopes": [],
@@ -33174,7 +32340,7 @@
               "alias": "Palette/orange/14"
             },
             "Invert": {
-              "alias": "Palette/orange/22"
+              "alias": "Palette/orange/17"
             },
             "Glass": {
               "alias": "Palette/orange/14"
@@ -33594,22 +32760,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Workspace": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Content": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Overlay": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Invert": {
               "alias": "Palette/orange/12"
             },
             "Glass": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             }
           },
           "scopes": [],
@@ -33634,7 +32800,7 @@
               "alias": "Palette/orange/12"
             },
             "Invert": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Glass": {
               "alias": "Palette/orange/12"
@@ -34054,22 +33220,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Workspace": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Content": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Overlay": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Invert": {
               "alias": "Palette/orange/12"
             },
             "Glass": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             }
           },
           "scopes": [],
@@ -34094,7 +33260,7 @@
               "alias": "Palette/orange/12"
             },
             "Invert": {
-              "alias": "Palette/orange/24"
+              "alias": "Palette/orange/19"
             },
             "Glass": {
               "alias": "Palette/orange/12"
@@ -34388,62 +33554,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-vermilion-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/vermilion-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-vermilion-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/vermilion-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-vermilion-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности.",
           "hiddenFromPublishing": true
         },
@@ -34794,22 +33904,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             },
             "Workspace": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             },
             "Content": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             },
             "Overlay": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             },
             "Invert": {
               "alias": "Palette/red/14"
             },
             "Glass": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             }
           },
           "scopes": [],
@@ -34833,7 +33943,7 @@
               "alias": "Palette/red/14"
             },
             "Invert": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             },
             "Glass": {
               "alias": "Palette/red/14"
@@ -35244,22 +34354,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Workspace": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Content": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Overlay": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Invert": {
               "alias": "Palette/red/12"
             },
             "Glass": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             }
           },
           "scopes": [],
@@ -35283,7 +34393,7 @@
               "alias": "Palette/red/12"
             },
             "Invert": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Glass": {
               "alias": "Palette/red/12"
@@ -35694,22 +34804,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Workspace": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Content": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Overlay": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Invert": {
               "alias": "Palette/red/12"
             },
             "Glass": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             }
           },
           "scopes": [],
@@ -35733,7 +34843,7 @@
               "alias": "Palette/red/12"
             },
             "Invert": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Glass": {
               "alias": "Palette/red/12"
@@ -36020,60 +35130,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-red-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности."
-        },
-        {
-          "name": "content/on-primary/red-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-red-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности."
-        },
-        {
-          "name": "content/on-primary/red-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-red-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности."
         },
         {
@@ -36429,22 +35485,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             },
             "Workspace": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             },
             "Content": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             },
             "Overlay": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             },
             "Invert": {
               "alias": "Palette/red/14"
             },
             "Glass": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             }
           },
           "scopes": [],
@@ -36469,7 +35525,7 @@
               "alias": "Palette/red/14"
             },
             "Invert": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             },
             "Glass": {
               "alias": "Palette/red/14"
@@ -36889,22 +35945,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Workspace": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Content": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Overlay": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Invert": {
               "alias": "Palette/red/12"
             },
             "Glass": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             }
           },
           "scopes": [],
@@ -36929,7 +35985,7 @@
               "alias": "Palette/red/12"
             },
             "Invert": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Glass": {
               "alias": "Palette/red/12"
@@ -37349,22 +36405,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Workspace": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Content": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Overlay": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Invert": {
               "alias": "Palette/red/12"
             },
             "Glass": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             }
           },
           "scopes": [],
@@ -37389,7 +36445,7 @@
               "alias": "Palette/red/12"
             },
             "Invert": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Glass": {
               "alias": "Palette/red/12"
@@ -37683,62 +36739,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-rose-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/rose-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-rose-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/rose-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-rose-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности.",
           "hiddenFromPublishing": true
         },
@@ -38095,22 +37095,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             },
             "Workspace": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             },
             "Content": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             },
             "Overlay": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             },
             "Invert": {
               "alias": "Palette/red/14"
             },
             "Glass": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             }
           },
           "scopes": [],
@@ -38135,7 +37135,7 @@
               "alias": "Palette/red/14"
             },
             "Invert": {
-              "alias": "Palette/red/22"
+              "alias": "Palette/red/19"
             },
             "Glass": {
               "alias": "Palette/red/14"
@@ -38555,22 +37555,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Workspace": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Content": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Overlay": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Invert": {
               "alias": "Palette/red/12"
             },
             "Glass": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             }
           },
           "scopes": [],
@@ -38595,7 +37595,7 @@
               "alias": "Palette/red/12"
             },
             "Invert": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Glass": {
               "alias": "Palette/red/12"
@@ -39015,22 +38015,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Workspace": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Content": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Overlay": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Invert": {
               "alias": "Palette/red/12"
             },
             "Glass": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             }
           },
           "scopes": [],
@@ -39055,7 +38055,7 @@
               "alias": "Palette/red/12"
             },
             "Invert": {
-              "alias": "Palette/red/24"
+              "alias": "Palette/red/21"
             },
             "Glass": {
               "alias": "Palette/red/12"
@@ -39349,62 +38349,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-cherry-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/cherry-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-cherry-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/cherry-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-cherry-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности.",
           "hiddenFromPublishing": true
         },
@@ -39755,22 +38699,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/pink/22"
+              "alias": "Palette/pink/19"
             },
             "Workspace": {
-              "alias": "Palette/pink/22"
+              "alias": "Palette/pink/19"
             },
             "Content": {
-              "alias": "Palette/pink/22"
+              "alias": "Palette/pink/19"
             },
             "Overlay": {
-              "alias": "Palette/pink/22"
+              "alias": "Palette/pink/19"
             },
             "Invert": {
               "alias": "Palette/pink/14"
             },
             "Glass": {
-              "alias": "Palette/pink/22"
+              "alias": "Palette/pink/19"
             }
           },
           "scopes": [],
@@ -39794,7 +38738,7 @@
               "alias": "Palette/pink/14"
             },
             "Invert": {
-              "alias": "Palette/pink/22"
+              "alias": "Palette/pink/19"
             },
             "Glass": {
               "alias": "Palette/pink/14"
@@ -40205,22 +39149,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Workspace": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Content": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Overlay": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Invert": {
               "alias": "Palette/pink/12"
             },
             "Glass": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             }
           },
           "scopes": [],
@@ -40244,7 +39188,7 @@
               "alias": "Palette/pink/12"
             },
             "Invert": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Glass": {
               "alias": "Palette/pink/12"
@@ -40655,22 +39599,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Workspace": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Content": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Overlay": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Invert": {
               "alias": "Palette/pink/12"
             },
             "Glass": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             }
           },
           "scopes": [],
@@ -40694,7 +39638,7 @@
               "alias": "Palette/pink/12"
             },
             "Invert": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Glass": {
               "alias": "Palette/pink/12"
@@ -40981,60 +39925,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-pink-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности."
-        },
-        {
-          "name": "content/on-primary/pink-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-pink-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности."
-        },
-        {
-          "name": "content/on-primary/pink-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-pink-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности."
         },
         {
@@ -41390,22 +40280,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/pink/22"
+              "alias": "Palette/pink/19"
             },
             "Workspace": {
-              "alias": "Palette/pink/22"
+              "alias": "Palette/pink/19"
             },
             "Content": {
-              "alias": "Palette/pink/22"
+              "alias": "Palette/pink/19"
             },
             "Overlay": {
-              "alias": "Palette/pink/22"
+              "alias": "Palette/pink/19"
             },
             "Invert": {
               "alias": "Palette/pink/14"
             },
             "Glass": {
-              "alias": "Palette/pink/22"
+              "alias": "Palette/pink/19"
             }
           },
           "scopes": [],
@@ -41430,7 +40320,7 @@
               "alias": "Palette/pink/14"
             },
             "Invert": {
-              "alias": "Palette/pink/22"
+              "alias": "Palette/pink/19"
             },
             "Glass": {
               "alias": "Palette/pink/14"
@@ -41850,22 +40740,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Workspace": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Content": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Overlay": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Invert": {
               "alias": "Palette/pink/12"
             },
             "Glass": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             }
           },
           "scopes": [],
@@ -41890,7 +40780,7 @@
               "alias": "Palette/pink/12"
             },
             "Invert": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Glass": {
               "alias": "Palette/pink/12"
@@ -42310,22 +41200,22 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Workspace": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Content": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Overlay": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Invert": {
               "alias": "Palette/pink/12"
             },
             "Glass": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             }
           },
           "scopes": [],
@@ -42350,7 +41240,7 @@
               "alias": "Palette/pink/12"
             },
             "Invert": {
-              "alias": "Palette/pink/24"
+              "alias": "Palette/pink/21"
             },
             "Glass": {
               "alias": "Palette/pink/12"
@@ -42644,62 +41534,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-secondary-fuchsia-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/fuchsia-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-fuchsia-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/fuchsia-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-fuchsia-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности.",
           "hiddenFromPublishing": true
         },
@@ -51765,10 +50599,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/blue-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/blue-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [
@@ -52007,10 +50841,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/cyan-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/cyan-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [],
@@ -52247,10 +51081,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/sky-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/sky-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [],
@@ -52487,10 +51321,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/indigo-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/indigo-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [],
@@ -52727,10 +51561,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/sapphire-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/sapphire-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [],
@@ -52967,10 +51801,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/turquoise-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/turquoise-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [],
@@ -53237,10 +52071,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/green-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/green-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [
@@ -53484,10 +52318,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/emerald-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/emerald-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [],
@@ -53729,10 +52563,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/shamrock-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/shamrock-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [],
@@ -53974,10 +52808,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/teal-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/teal-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [],
@@ -54219,10 +53053,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/mint-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/mint-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [],
@@ -54464,10 +53298,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/lime-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/lime-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [],
@@ -54729,10 +53563,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/orange-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/orange-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [
@@ -54971,10 +53805,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/amber-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/amber-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [],
@@ -55211,10 +54045,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/yellow-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/yellow-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [],
@@ -55451,10 +54285,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/vermilion-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/vermilion-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [],
@@ -55716,10 +54550,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/red-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/red-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [
@@ -55958,10 +54792,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/rose-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/rose-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [],
@@ -56198,10 +55032,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/cherry-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/cherry-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [],
@@ -56463,10 +55297,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/pink-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/pink-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [
@@ -56705,10 +55539,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "Surface/content/on-primary/fuchsia-light"
+              "alias": "Palette/black"
             },
             "Dark": {
-              "alias": "Surface/content/on-primary/fuchsia-dark"
+              "alias": "Palette/black"
             }
           },
           "scopes": [],

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.18.2 · 2026-10-23
+
+- Automatic Primary text chooses exact black or white per hue from both actual Normal/Active fills, preserving the requested lightness whenever possible.
+- Orange no longer darkens to brown to accommodate a predetermined white foreground. Explicit foreground overrides and soft fill recipes remain unchanged.
+- Native Surface exposes existing per-hue Primary content pairs; guides and sample bindings follow the matching hue while controls inherit Accent.
+
 ## 0.18.1 · 2026-10-23
 
 - Secondary uses quieter composited tint targets, with upper prominence bounds in addition to minimum visibility checks.

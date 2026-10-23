@@ -551,72 +551,72 @@
   "derived/v4/light/base/action/blue/normal": {
     "colorSpace": "srgb",
     "components": [
-      1e-10,
-      0.4382018359,
-      0.8419993445
+      3e-10,
+      0.5198551828,
+      0.9905044662
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action/blue/hover": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.3838601889,
-      0.7431667405
+      1e-10,
+      0.4654294464,
+      0.8915189265
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action/blue/pressed": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.3838601889,
-      0.7431667405
+      1e-10,
+      0.4654294464,
+      0.8915189265
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action/blue/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/blue/normal": {
     "colorSpace": "srgb",
     "components": [
-      1e-10,
-      0.4382018359,
-      0.8419993445
+      3e-10,
+      0.5198551828,
+      0.9905044662
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/blue/hover": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.3838601889,
-      0.7431667405
+      1e-10,
+      0.4654294464,
+      0.8915189265
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/blue/pressed": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.3838601889,
-      0.7431667405
+      1e-10,
+      0.4654294464,
+      0.8915189265
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/blue/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -704,72 +704,72 @@
   "derived/v4/light/base/action/green/normal": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.5008011309,
-      0.294486605
+      3e-10,
+      0.5981901807,
+      0.3557246386
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action/green/hover": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4361589659,
-      0.2538397449
+      5e-10,
+      0.5332417992,
+      0.3148852303
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action/green/pressed": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4361589659,
-      0.2538397449
+      5e-10,
+      0.5332417992,
+      0.3148852303
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action/green/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/green/normal": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.5008011309,
-      0.294486605
+      3e-10,
+      0.5981901807,
+      0.3557246386
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/green/hover": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4361589659,
-      0.2538397449
+      5e-10,
+      0.5332417992,
+      0.3148852303
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/green/pressed": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4361589659,
-      0.2538397449
+      5e-10,
+      0.5332417992,
+      0.3148852303
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/green/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -857,72 +857,72 @@
   "derived/v4/light/base/action/orange/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.734089978,
-      0.3497340499,
-      2e-10
+      0.9388163869,
+      0.4558117611,
+      0.0082833655
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action/orange/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.6515662608,
-      0.3074066104,
-      1e-10
+      0.8577632456,
+      0.4131676048,
+      5e-10
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action/orange/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.6515662608,
-      0.3074066104,
-      1e-10
+      0.8577632456,
+      0.4131676048,
+      5e-10
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action/orange/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/orange/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.734089978,
-      0.3497340499,
-      2e-10
+      0.9388163869,
+      0.4558117611,
+      0.0082833655
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/orange/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.6515662608,
-      0.3074066104,
-      1e-10
+      0.8577632456,
+      0.4131676048,
+      5e-10
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/orange/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.6515662608,
-      0.3074066104,
-      1e-10
+      0.8577632456,
+      0.4131676048,
+      5e-10
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/orange/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -1010,72 +1010,72 @@
   "derived/v4/light/base/action/red/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8875528899,
-      6e-10,
-      0.1337178693
+      0.9766299504,
+      0.2362831009,
+      0.2462664741
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action/red/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.924821199,
+      0.0893841701,
+      0.1633423521
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action/red/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.924821199,
+      0.0893841701,
+      0.1633423521
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action/red/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/red/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8875528899,
-      6e-10,
-      0.1337178693
+      0.9766299504,
+      0.2362831009,
+      0.2462664741
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/red/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.924821199,
+      0.0893841701,
+      0.1633423521
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/red/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.924821199,
+      0.0893841701,
+      0.1633423521
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/red/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -1163,72 +1163,72 @@
   "derived/v4/light/base/action/pink/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8145028544,
-      5e-10,
-      0.6302341506
+      0.9289893978,
+      0.149671416,
+      0.7261560286
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action/pink/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7235694884,
-      3e-10,
-      0.5585717662
+      0.8599926413,
+      7e-10,
+      0.6660835504
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action/pink/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7235694884,
-      3e-10,
-      0.5585717662
+      0.8599926413,
+      7e-10,
+      0.6660835504
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action/pink/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/pink/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8145028544,
-      5e-10,
-      0.6302341506
+      0.9289893978,
+      0.149671416,
+      0.7261560286
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/pink/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7235694884,
-      3e-10,
-      0.5585717662
+      0.8599926413,
+      7e-10,
+      0.6660835504
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/pink/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7235694884,
-      3e-10,
-      0.5585717662
+      0.8599926413,
+      7e-10,
+      0.6660835504
     ],
     "alpha": 1
   },
   "derived/v4/light/base/action-vivid/pink/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -3683,72 +3683,72 @@
   "derived/v4/light/canvas/action/blue/normal": {
     "colorSpace": "srgb",
     "components": [
-      1e-10,
-      0.4382018359,
-      0.8419993445
+      3e-10,
+      0.5198551828,
+      0.9905044662
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action/blue/hover": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.3838601889,
-      0.7431667405
+      1e-10,
+      0.4654294464,
+      0.8915189265
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action/blue/pressed": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.3838601889,
-      0.7431667405
+      1e-10,
+      0.4654294464,
+      0.8915189265
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action/blue/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/blue/normal": {
     "colorSpace": "srgb",
     "components": [
-      1e-10,
-      0.4382018359,
-      0.8419993445
+      3e-10,
+      0.5198551828,
+      0.9905044662
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/blue/hover": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.3838601889,
-      0.7431667405
+      1e-10,
+      0.4654294464,
+      0.8915189265
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/blue/pressed": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.3838601889,
-      0.7431667405
+      1e-10,
+      0.4654294464,
+      0.8915189265
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/blue/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -3836,72 +3836,72 @@
   "derived/v4/light/canvas/action/green/normal": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.5008011309,
-      0.294486605
+      3e-10,
+      0.5981901807,
+      0.3557246386
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action/green/hover": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4361589659,
-      0.2538397449
+      5e-10,
+      0.5332417992,
+      0.3148852303
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action/green/pressed": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4361589659,
-      0.2538397449
+      5e-10,
+      0.5332417992,
+      0.3148852303
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action/green/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/green/normal": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.5008011309,
-      0.294486605
+      3e-10,
+      0.5981901807,
+      0.3557246386
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/green/hover": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4361589659,
-      0.2538397449
+      5e-10,
+      0.5332417992,
+      0.3148852303
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/green/pressed": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4361589659,
-      0.2538397449
+      5e-10,
+      0.5332417992,
+      0.3148852303
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/green/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -3989,72 +3989,72 @@
   "derived/v4/light/canvas/action/orange/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.734089978,
-      0.3497340499,
-      2e-10
+      0.9388163869,
+      0.4558117611,
+      0.0082833655
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action/orange/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.6515662608,
-      0.3074066104,
-      1e-10
+      0.8577632456,
+      0.4131676048,
+      5e-10
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action/orange/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.6515662608,
-      0.3074066104,
-      1e-10
+      0.8577632456,
+      0.4131676048,
+      5e-10
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action/orange/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/orange/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.734089978,
-      0.3497340499,
-      2e-10
+      0.9388163869,
+      0.4558117611,
+      0.0082833655
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/orange/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.6515662608,
-      0.3074066104,
-      1e-10
+      0.8577632456,
+      0.4131676048,
+      5e-10
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/orange/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.6515662608,
-      0.3074066104,
-      1e-10
+      0.8577632456,
+      0.4131676048,
+      5e-10
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/orange/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -4142,72 +4142,72 @@
   "derived/v4/light/canvas/action/red/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8875528899,
-      6e-10,
-      0.1337178693
+      0.9766299504,
+      0.2362831009,
+      0.2462664741
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action/red/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.924821199,
+      0.0893841701,
+      0.1633423521
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action/red/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.924821199,
+      0.0893841701,
+      0.1633423521
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action/red/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/red/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8875528899,
-      6e-10,
-      0.1337178693
+      0.9766299504,
+      0.2362831009,
+      0.2462664741
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/red/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.924821199,
+      0.0893841701,
+      0.1633423521
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/red/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.924821199,
+      0.0893841701,
+      0.1633423521
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/red/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -4295,72 +4295,72 @@
   "derived/v4/light/canvas/action/pink/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8145028544,
-      5e-10,
-      0.6302341506
+      0.9289893978,
+      0.149671416,
+      0.7261560286
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action/pink/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7235694884,
-      3e-10,
-      0.5585717662
+      0.8599926413,
+      7e-10,
+      0.6660835504
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action/pink/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7235694884,
-      3e-10,
-      0.5585717662
+      0.8599926413,
+      7e-10,
+      0.6660835504
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action/pink/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/pink/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8145028544,
-      5e-10,
-      0.6302341506
+      0.9289893978,
+      0.149671416,
+      0.7261560286
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/pink/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7235694884,
-      3e-10,
-      0.5585717662
+      0.8599926413,
+      7e-10,
+      0.6660835504
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/pink/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7235694884,
-      3e-10,
-      0.5585717662
+      0.8599926413,
+      7e-10,
+      0.6660835504
     ],
     "alpha": 1
   },
   "derived/v4/light/canvas/action-vivid/pink/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -6815,72 +6815,72 @@
   "derived/v4/light/raised/action/blue/normal": {
     "colorSpace": "srgb",
     "components": [
-      1e-10,
-      0.4382018359,
-      0.8419993445
+      3e-10,
+      0.5198551828,
+      0.9905044662
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action/blue/hover": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.3838601889,
-      0.7431667405
+      1e-10,
+      0.4654294464,
+      0.8915189265
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action/blue/pressed": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.3838601889,
-      0.7431667405
+      1e-10,
+      0.4654294464,
+      0.8915189265
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action/blue/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/blue/normal": {
     "colorSpace": "srgb",
     "components": [
-      1e-10,
-      0.4382018359,
-      0.8419993445
+      3e-10,
+      0.5198551828,
+      0.9905044662
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/blue/hover": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.3838601889,
-      0.7431667405
+      1e-10,
+      0.4654294464,
+      0.8915189265
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/blue/pressed": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.3838601889,
-      0.7431667405
+      1e-10,
+      0.4654294464,
+      0.8915189265
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/blue/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -6968,72 +6968,72 @@
   "derived/v4/light/raised/action/green/normal": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.5008011309,
-      0.294486605
+      3e-10,
+      0.5981901807,
+      0.3557246386
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action/green/hover": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4361589659,
-      0.2538397449
+      5e-10,
+      0.5332417992,
+      0.3148852303
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action/green/pressed": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4361589659,
-      0.2538397449
+      5e-10,
+      0.5332417992,
+      0.3148852303
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action/green/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/green/normal": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.5008011309,
-      0.294486605
+      3e-10,
+      0.5981901807,
+      0.3557246386
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/green/hover": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4361589659,
-      0.2538397449
+      5e-10,
+      0.5332417992,
+      0.3148852303
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/green/pressed": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4361589659,
-      0.2538397449
+      5e-10,
+      0.5332417992,
+      0.3148852303
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/green/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -7121,72 +7121,72 @@
   "derived/v4/light/raised/action/orange/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.734089978,
-      0.3497340499,
-      2e-10
+      0.9388163869,
+      0.4558117611,
+      0.0082833655
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action/orange/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.6515662608,
-      0.3074066104,
-      1e-10
+      0.8577632456,
+      0.4131676048,
+      5e-10
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action/orange/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.6515662608,
-      0.3074066104,
-      1e-10
+      0.8577632456,
+      0.4131676048,
+      5e-10
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action/orange/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/orange/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.734089978,
-      0.3497340499,
-      2e-10
+      0.9388163869,
+      0.4558117611,
+      0.0082833655
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/orange/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.6515662608,
-      0.3074066104,
-      1e-10
+      0.8577632456,
+      0.4131676048,
+      5e-10
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/orange/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.6515662608,
-      0.3074066104,
-      1e-10
+      0.8577632456,
+      0.4131676048,
+      5e-10
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/orange/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -7274,72 +7274,72 @@
   "derived/v4/light/raised/action/red/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8875528899,
-      6e-10,
-      0.1337178693
+      0.9766299504,
+      0.2362831009,
+      0.2462664741
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action/red/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.924821199,
+      0.0893841701,
+      0.1633423521
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action/red/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.924821199,
+      0.0893841701,
+      0.1633423521
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action/red/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/red/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8875528899,
-      6e-10,
-      0.1337178693
+      0.9766299504,
+      0.2362831009,
+      0.2462664741
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/red/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.924821199,
+      0.0893841701,
+      0.1633423521
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/red/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.924821199,
+      0.0893841701,
+      0.1633423521
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/red/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -7427,72 +7427,72 @@
   "derived/v4/light/raised/action/pink/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8145028544,
-      5e-10,
-      0.6302341506
+      0.9289893978,
+      0.149671416,
+      0.7261560286
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action/pink/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7235694884,
-      3e-10,
-      0.5585717662
+      0.8599926413,
+      7e-10,
+      0.6660835504
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action/pink/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7235694884,
-      3e-10,
-      0.5585717662
+      0.8599926413,
+      7e-10,
+      0.6660835504
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action/pink/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/pink/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8145028544,
-      5e-10,
-      0.6302341506
+      0.9289893978,
+      0.149671416,
+      0.7261560286
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/pink/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7235694884,
-      3e-10,
-      0.5585717662
+      0.8599926413,
+      7e-10,
+      0.6660835504
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/pink/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7235694884,
-      3e-10,
-      0.5585717662
+      0.8599926413,
+      7e-10,
+      0.6660835504
     ],
     "alpha": 1
   },
   "derived/v4/light/raised/action-vivid/pink/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -9947,72 +9947,72 @@
   "derived/v4/light/floating/action/blue/normal": {
     "colorSpace": "srgb",
     "components": [
-      1e-10,
-      0.4382018359,
-      0.8419993445
+      3e-10,
+      0.5198551828,
+      0.9905044662
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action/blue/hover": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.3838601889,
-      0.7431667405
+      1e-10,
+      0.4654294464,
+      0.8915189265
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action/blue/pressed": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.3838601889,
-      0.7431667405
+      1e-10,
+      0.4654294464,
+      0.8915189265
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action/blue/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/blue/normal": {
     "colorSpace": "srgb",
     "components": [
-      1e-10,
-      0.4382018359,
-      0.8419993445
+      3e-10,
+      0.5198551828,
+      0.9905044662
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/blue/hover": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.3838601889,
-      0.7431667405
+      1e-10,
+      0.4654294464,
+      0.8915189265
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/blue/pressed": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.3838601889,
-      0.7431667405
+      1e-10,
+      0.4654294464,
+      0.8915189265
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/blue/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -10100,72 +10100,72 @@
   "derived/v4/light/floating/action/green/normal": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.5008011309,
-      0.294486605
+      3e-10,
+      0.5981901807,
+      0.3557246386
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action/green/hover": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4361589659,
-      0.2538397449
+      5e-10,
+      0.5332417992,
+      0.3148852303
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action/green/pressed": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4361589659,
-      0.2538397449
+      5e-10,
+      0.5332417992,
+      0.3148852303
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action/green/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/green/normal": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.5008011309,
-      0.294486605
+      3e-10,
+      0.5981901807,
+      0.3557246386
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/green/hover": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4361589659,
-      0.2538397449
+      5e-10,
+      0.5332417992,
+      0.3148852303
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/green/pressed": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4361589659,
-      0.2538397449
+      5e-10,
+      0.5332417992,
+      0.3148852303
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/green/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -10253,72 +10253,72 @@
   "derived/v4/light/floating/action/orange/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.734089978,
-      0.3497340499,
-      2e-10
+      0.9388163869,
+      0.4558117611,
+      0.0082833655
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action/orange/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.6515662608,
-      0.3074066104,
-      1e-10
+      0.8577632456,
+      0.4131676048,
+      5e-10
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action/orange/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.6515662608,
-      0.3074066104,
-      1e-10
+      0.8577632456,
+      0.4131676048,
+      5e-10
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action/orange/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/orange/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.734089978,
-      0.3497340499,
-      2e-10
+      0.9388163869,
+      0.4558117611,
+      0.0082833655
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/orange/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.6515662608,
-      0.3074066104,
-      1e-10
+      0.8577632456,
+      0.4131676048,
+      5e-10
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/orange/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.6515662608,
-      0.3074066104,
-      1e-10
+      0.8577632456,
+      0.4131676048,
+      5e-10
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/orange/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -10406,72 +10406,72 @@
   "derived/v4/light/floating/action/red/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8875528899,
-      6e-10,
-      0.1337178693
+      0.9766299504,
+      0.2362831009,
+      0.2462664741
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action/red/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.924821199,
+      0.0893841701,
+      0.1633423521
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action/red/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.924821199,
+      0.0893841701,
+      0.1633423521
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action/red/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/red/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8875528899,
-      6e-10,
-      0.1337178693
+      0.9766299504,
+      0.2362831009,
+      0.2462664741
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/red/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.924821199,
+      0.0893841701,
+      0.1633423521
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/red/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.924821199,
+      0.0893841701,
+      0.1633423521
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/red/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
@@ -10559,72 +10559,72 @@
   "derived/v4/light/floating/action/pink/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8145028544,
-      5e-10,
-      0.6302341506
+      0.9289893978,
+      0.149671416,
+      0.7261560286
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action/pink/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7235694884,
-      3e-10,
-      0.5585717662
+      0.8599926413,
+      7e-10,
+      0.6660835504
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action/pink/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7235694884,
-      3e-10,
-      0.5585717662
+      0.8599926413,
+      7e-10,
+      0.6660835504
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action/pink/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/pink/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8145028544,
-      5e-10,
-      0.6302341506
+      0.9289893978,
+      0.149671416,
+      0.7261560286
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/pink/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7235694884,
-      3e-10,
-      0.5585717662
+      0.8599926413,
+      7e-10,
+      0.6660835504
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/pink/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7235694884,
-      3e-10,
-      0.5585717662
+      0.8599926413,
+      7e-10,
+      0.6660835504
     ],
     "alpha": 1
   },
   "derived/v4/light/floating/action-vivid/pink/text": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      1,
-      1
+      0,
+      0,
+      0
     ],
     "alpha": 1
   },

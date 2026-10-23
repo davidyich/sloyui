@@ -52,7 +52,7 @@
   "bridge": {
     "source": "figma/token-system-v4/graph.json",
     "sourceHash": "211e379e90b4651ab21f28abbaac839611809a3ebecde142abb1ff078d17ffe3",
-    "graphSha256": "31f4660cefdc94021537e7280e1fcd4f9d392ab9429911c8b32b23559aed0b47",
+    "graphSha256": "fd11189df7f385817e10a0a0685fdd5ee8dc3c41ef1acafa6d74eb7a35a0fbda",
     "palette": "One shared opaque ramp per hue; semantic colors select a step and an Opacity alias.",
     "legacyLogicalKeys": "Preserved outside Palette; Figma names group by role with context in the leaf."
   },
@@ -130,20 +130,36 @@
           "css": "--sloy-v2-palette-blue-17"
         },
         {
-          "name": "blue/23",
-          "figmaName": "blue/23",
+          "name": "blue/20",
+          "figmaName": "blue/20",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 1e-10,
-              "g": 0.4382018359,
-              "b": 0.8419993445,
+              "r": 3e-10,
+              "g": 0.5198551828,
+              "b": 0.9905044662,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-blue-23"
+          "css": "--sloy-v2-palette-blue-20"
+        },
+        {
+          "name": "blue/22",
+          "figmaName": "blue/22",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1e-10,
+              "g": 0.4654294464,
+              "b": 0.8915189265,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
+          "css": "--sloy-v2-palette-blue-22"
         },
         {
           "name": "blue/25",
@@ -242,20 +258,36 @@
           "css": "--sloy-v2-palette-green-17"
         },
         {
-          "name": "green/24",
-          "figmaName": "green/24",
+          "name": "green/21",
+          "figmaName": "green/21",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 2e-10,
-              "g": 0.5008011309,
-              "b": 0.294486605,
+              "r": 3e-10,
+              "g": 0.5981901807,
+              "b": 0.3557246386,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-green-24"
+          "css": "--sloy-v2-palette-green-21"
+        },
+        {
+          "name": "green/23",
+          "figmaName": "green/23",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 5e-10,
+              "g": 0.5332417992,
+              "b": 0.3148852303,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
+          "css": "--sloy-v2-palette-green-23"
         },
         {
           "name": "green/25",
@@ -272,22 +304,6 @@
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
           "css": "--sloy-v2-palette-green-25"
-        },
-        {
-          "name": "green/26",
-          "figmaName": "green/26",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 3e-10,
-              "g": 0.4361589659,
-              "b": 0.2538397449,
-              "a": 1
-            }
-          },
-          "scopes": [],
-          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-green-26"
         },
         {
           "name": "green/31",
@@ -370,36 +386,20 @@
           "css": "--sloy-v2-palette-orange-17"
         },
         {
-          "name": "orange/22",
-          "figmaName": "orange/22",
+          "name": "orange/19",
+          "figmaName": "orange/19",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.734089978,
-              "g": 0.3497340499,
-              "b": 2e-10,
+              "r": 0.8577632456,
+              "g": 0.4131676048,
+              "b": 5e-10,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-orange-22"
-        },
-        {
-          "name": "orange/24",
-          "figmaName": "orange/24",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.6515662608,
-              "g": 0.3074066104,
-              "b": 1e-10,
-              "a": 1
-            }
-          },
-          "scopes": [],
-          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-orange-24"
+          "css": "--sloy-v2-palette-orange-19"
         },
         {
           "name": "orange/25",
@@ -498,36 +498,36 @@
           "css": "--sloy-v2-palette-red-17"
         },
         {
-          "name": "red/22",
-          "figmaName": "red/22",
+          "name": "red/19",
+          "figmaName": "red/19",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.8875528899,
-              "g": 6e-10,
-              "b": 0.1337178693,
+              "r": 0.9766299504,
+              "g": 0.2362831009,
+              "b": 0.2462664741,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-red-22"
+          "css": "--sloy-v2-palette-red-19"
         },
         {
-          "name": "red/24",
-          "figmaName": "red/24",
+          "name": "red/21",
+          "figmaName": "red/21",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.7889798876,
-              "g": 4e-10,
-              "b": 0.1139815901,
+              "r": 0.924821199,
+              "g": 0.0893841701,
+              "b": 0.1633423521,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-red-24"
+          "css": "--sloy-v2-palette-red-21"
         },
         {
           "name": "red/25",
@@ -626,36 +626,36 @@
           "css": "--sloy-v2-palette-pink-17"
         },
         {
-          "name": "pink/22",
-          "figmaName": "pink/22",
+          "name": "pink/19",
+          "figmaName": "pink/19",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.8145028544,
-              "g": 5e-10,
-              "b": 0.6302341506,
+              "r": 0.9289893978,
+              "g": 0.149671416,
+              "b": 0.7261560286,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-pink-22"
+          "css": "--sloy-v2-palette-pink-19"
         },
         {
-          "name": "pink/24",
-          "figmaName": "pink/24",
+          "name": "pink/21",
+          "figmaName": "pink/21",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.7235694884,
-              "g": 3e-10,
-              "b": 0.5585717662,
+              "r": 0.8599926413,
+              "g": 7e-10,
+              "b": 0.6660835504,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-pink-24"
+          "css": "--sloy-v2-palette-pink-21"
         },
         {
           "name": "pink/25",
@@ -3107,7 +3107,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/blue/23"
+              "alias": "palette/blue/20"
             },
             "Dark": {
               "alias": "palette/blue/14"
@@ -3126,7 +3126,7 @@
               "alias": "palette/blue/14"
             },
             "Dark": {
-              "alias": "palette/blue/23"
+              "alias": "palette/blue/20"
             }
           },
           "scopes": [],
@@ -3139,7 +3139,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/blue/25"
+              "alias": "palette/blue/22"
             },
             "Dark": {
               "alias": "palette/blue/12"
@@ -3158,7 +3158,7 @@
               "alias": "palette/blue/12"
             },
             "Dark": {
-              "alias": "palette/blue/25"
+              "alias": "palette/blue/22"
             }
           },
           "scopes": [],
@@ -3171,7 +3171,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/green/24"
+              "alias": "palette/green/21"
             },
             "Dark": {
               "alias": "palette/green/14"
@@ -3190,7 +3190,7 @@
               "alias": "palette/green/14"
             },
             "Dark": {
-              "alias": "palette/green/24"
+              "alias": "palette/green/21"
             }
           },
           "scopes": [],
@@ -3203,7 +3203,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/green/26"
+              "alias": "palette/green/23"
             },
             "Dark": {
               "alias": "palette/green/12"
@@ -3222,7 +3222,7 @@
               "alias": "palette/green/12"
             },
             "Dark": {
-              "alias": "palette/green/26"
+              "alias": "palette/green/23"
             }
           },
           "scopes": [],
@@ -3235,7 +3235,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/red/22"
+              "alias": "palette/red/19"
             },
             "Dark": {
               "alias": "palette/red/14"
@@ -3254,7 +3254,7 @@
               "alias": "palette/red/14"
             },
             "Dark": {
-              "alias": "palette/red/22"
+              "alias": "palette/red/19"
             }
           },
           "scopes": [],
@@ -3267,7 +3267,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/red/24"
+              "alias": "palette/red/21"
             },
             "Dark": {
               "alias": "palette/red/12"
@@ -3286,7 +3286,7 @@
               "alias": "palette/red/12"
             },
             "Dark": {
-              "alias": "palette/red/24"
+              "alias": "palette/red/21"
             }
           },
           "scopes": [],
@@ -3299,7 +3299,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/orange/22"
+              "alias": "palette/orange/17"
             },
             "Dark": {
               "alias": "palette/orange/14"
@@ -3318,7 +3318,7 @@
               "alias": "palette/orange/14"
             },
             "Dark": {
-              "alias": "palette/orange/22"
+              "alias": "palette/orange/17"
             }
           },
           "scopes": [],
@@ -3331,7 +3331,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/orange/24"
+              "alias": "palette/orange/19"
             },
             "Dark": {
               "alias": "palette/orange/12"
@@ -3350,7 +3350,7 @@
               "alias": "palette/orange/12"
             },
             "Dark": {
-              "alias": "palette/orange/24"
+              "alias": "palette/orange/19"
             }
           },
           "scopes": [],
@@ -3427,7 +3427,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/pink/22"
+              "alias": "palette/pink/19"
             },
             "Dark": {
               "alias": "palette/pink/14"
@@ -3446,7 +3446,7 @@
               "alias": "palette/pink/14"
             },
             "Dark": {
-              "alias": "palette/pink/22"
+              "alias": "palette/pink/19"
             }
           },
           "scopes": [],
@@ -3459,7 +3459,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/pink/24"
+              "alias": "palette/pink/21"
             },
             "Dark": {
               "alias": "palette/pink/12"
@@ -3478,7 +3478,7 @@
               "alias": "palette/pink/12"
             },
             "Dark": {
-              "alias": "palette/pink/24"
+              "alias": "palette/pink/21"
             }
           },
           "scopes": [],
@@ -5453,9 +5453,9 @@
           "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
         },
         {
-          "name": "standard/shell/content/accent/blue/on-primary",
-          "figmaName": "content/on-primary/blue-standard-shell",
-          "css": "--sloy-v2-theme-standard-shell-content-accent-blue-on-primary",
+          "name": "standard/shell/content/accent/purple/on-primary",
+          "figmaName": "content/on-primary/purple-standard-shell",
+          "css": "--sloy-v2-theme-standard-shell-content-accent-purple-on-primary",
           "type": "COLOR",
           "values": {
             "Light": {
@@ -8908,25 +8908,27 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Workspace": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Content": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Overlay": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Invert": {
-              "alias": "theme/standard/shell/content/on-invert"
+              "alias": "palette/gray/1000"
             }
           },
-          "scopes": [],
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
           "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
-          "css": "--sloy-v2-surface-content-accent-blue-on-primary",
-          "pickerAlias": "content/on-primary"
+          "css": "--sloy-v2-surface-content-accent-blue-on-primary"
         },
         {
           "name": "content/accent/green/on-primary",
@@ -8934,25 +8936,27 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Workspace": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Content": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Overlay": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Invert": {
-              "alias": "theme/standard/shell/content/on-invert"
+              "alias": "palette/gray/1000"
             }
           },
-          "scopes": [],
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
           "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
-          "css": "--sloy-v2-surface-content-accent-green-on-primary",
-          "pickerAlias": "content/on-primary"
+          "css": "--sloy-v2-surface-content-accent-green-on-primary"
         },
         {
           "name": "content/accent/orange/on-primary",
@@ -8960,25 +8964,27 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Workspace": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Content": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Overlay": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Invert": {
-              "alias": "theme/standard/shell/content/on-invert"
+              "alias": "palette/gray/1000"
             }
           },
-          "scopes": [],
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
           "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
-          "css": "--sloy-v2-surface-content-accent-orange-on-primary",
-          "pickerAlias": "content/on-primary"
+          "css": "--sloy-v2-surface-content-accent-orange-on-primary"
         },
         {
           "name": "content/accent/red/on-primary",
@@ -8986,25 +8992,27 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Workspace": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Content": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Overlay": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Invert": {
-              "alias": "theme/standard/shell/content/on-invert"
+              "alias": "palette/gray/1000"
             }
           },
-          "scopes": [],
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
           "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
-          "css": "--sloy-v2-surface-content-accent-red-on-primary",
-          "pickerAlias": "content/on-primary"
+          "css": "--sloy-v2-surface-content-accent-red-on-primary"
         },
         {
           "name": "content/accent/pink/on-primary",
@@ -9012,25 +9020,27 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Workspace": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Content": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Overlay": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "palette/gray/1000"
             },
             "Invert": {
-              "alias": "theme/standard/shell/content/on-invert"
+              "alias": "palette/gray/1000"
             }
           },
-          "scopes": [],
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
           "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
-          "css": "--sloy-v2-surface-content-accent-pink-on-primary",
-          "pickerAlias": "content/on-primary"
+          "css": "--sloy-v2-surface-content-accent-pink-on-primary"
         },
         {
           "name": "content/accent/purple/on-primary",
@@ -9038,25 +9048,27 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "theme/standard/shell/content/accent/purple/on-primary"
             },
             "Workspace": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "theme/standard/shell/content/accent/purple/on-primary"
             },
             "Content": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "theme/standard/shell/content/accent/purple/on-primary"
             },
             "Overlay": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "theme/standard/shell/content/accent/purple/on-primary"
             },
             "Invert": {
               "alias": "theme/standard/shell/content/on-invert"
             }
           },
-          "scopes": [],
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
           "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
-          "css": "--sloy-v2-surface-content-accent-purple-on-primary",
-          "pickerAlias": "content/on-primary"
+          "css": "--sloy-v2-surface-content-accent-purple-on-primary"
         },
         {
           "name": "content/on-primary",
@@ -9064,16 +9076,16 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "theme/standard/shell/content/accent/purple/on-primary"
             },
             "Workspace": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "theme/standard/shell/content/accent/purple/on-primary"
             },
             "Content": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "theme/standard/shell/content/accent/purple/on-primary"
             },
             "Overlay": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "theme/standard/shell/content/accent/purple/on-primary"
             },
             "Invert": {
               "alias": "theme/standard/shell/content/on-invert"
@@ -9122,16 +9134,16 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "theme/standard/shell/content/accent/purple/on-primary"
             },
             "Workspace": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "theme/standard/shell/content/accent/purple/on-primary"
             },
             "Content": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "theme/standard/shell/content/accent/purple/on-primary"
             },
             "Overlay": {
-              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+              "alias": "theme/standard/shell/content/accent/purple/on-primary"
             },
             "Invert": {
               "alias": "theme/standard/shell/content/on-invert"

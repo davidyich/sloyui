@@ -1,7 +1,7 @@
 {
   "$extensions": {
     "com.sloyui.export": {
-      "version": "0.18.1",
+      "version": "0.18.2",
       "collection": "Sloy UI · SurfaceScheme",
       "mode": "Dimmed"
     }

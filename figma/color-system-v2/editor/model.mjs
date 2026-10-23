@@ -85,15 +85,33 @@ const renderedContrast=(paint,bg)=>contrast(composite(paint,bg),bg);
 const nearest=(steps,l)=>steps.reduce((best,s)=>Math.abs(s.l-l)<Math.abs(best.l-l)?s:best);
 export function primaryPair(accent,theme,rules=defaultRules,palette=generatePalette(accent,rules,theme)){
  const target=theme==='Dark'?accent.lightnessDark:accent.lightnessLight,sign=theme==='Dark'?1:-1;
- const steps=palette[0].steps,foregroundRequest=foregroundTarget(accent,theme),foregroundStep=[...neutralSteps,...steps].reduce((best,s)=>colorDifference(s.value,foregroundRequest)<colorDifference(best.value,foregroundRequest)?s:best),fg=foregroundStep.value,requested=nearest(steps,target);
+ const steps=palette[0].steps,requested=nearest(steps,target),minimum=rules.minimumContrast+.1;
  const pair=normal=>{const directional=steps.filter(s=>sign*(s.l-normal.l)>1e-6);return [normal,directional.length?nearest(directional,normal.l+sign*accent.stateDelta):normal];};
- const score=values=>Math.min(...values.map(s=>renderedContrast(fg,s.value)));
- let values=pair(requested);
- if(rules.adaptPrimary&&score(values)<rules.minimumContrast+.1){
-  const passing=steps.map(pair).filter(p=>p[0]!==p[1]&&score(p)>=rules.minimumContrast+.1).sort((a,b)=>Math.abs(a[0].l-target)-Math.abs(b[0].l-target));
-  if(passing.length)values=passing[0];
+ const score=(values,ink)=>Math.min(...values.map(s=>renderedContrast(ink,s.value)));
+ let values=pair(requested),foregroundRequest,foregroundStep;
+ if((accent.foregroundMode??'auto')==='auto'&&(accent.foregroundTint??0)===0){
+  // One exact endpoint must read on both states. Preserve the requested pair
+  // before considering any fill adaptation; OKLCH lightness is not contrast.
+  const candidates=neutralSteps.map(ink=>({ink,values,contrast:score(values,ink.value)})).sort((a,b)=>b.contrast-a.contrast);
+  let choice=candidates[0];
+  if(rules.adaptPrimary&&choice.contrast<minimum){
+   const passing=steps.flatMap(normal=>{const values=pair(normal);return values[0]===values[1]?[]:neutralSteps.map(ink=>({ink,values,contrast:score(values,ink.value)}));})
+    .filter(candidate=>candidate.contrast>=minimum)
+    .sort((a,b)=>Math.abs(a.values[0].l-target)-Math.abs(b.values[0].l-target)||b.contrast-a.contrast);
+   if(passing.length)choice=passing[0];
+  }
+  values=choice.values;foregroundStep=choice.ink;foregroundRequest=choice.ink.value;
+ }else{
+  // Explicit modes and tinted auto retain their authored foreground policy.
+  foregroundRequest=foregroundTarget(accent,theme);
+  foregroundStep=[...neutralSteps,...steps].reduce((best,s)=>colorDifference(s.value,foregroundRequest)<colorDifference(best.value,foregroundRequest)?s:best);
+  if(rules.adaptPrimary&&score(values,foregroundStep.value)<minimum){
+   const passing=steps.map(pair).filter(p=>p[0]!==p[1]&&score(p,foregroundStep.value)>=minimum).sort((a,b)=>Math.abs(a[0].l-target)-Math.abs(b[0].l-target));
+   if(passing.length)values=passing[0];
+  }
  }
- return {normal:values[0].value,active:values[1].value,normalStep:values[0].name,activeStep:values[1].name,foreground:fg,foregroundStep:foregroundStep.name,foregroundRequest,requestedLightness:target,effectiveLightness:values[0].l,adjusted:values[0]!==requested,minimumContrast:score(values),targetContrast:rules.minimumContrast,foregroundMode:accent.foregroundMode??'auto',polarity:luminance(fg)>.5?'light':'dark'};
+ const fg=foregroundStep.value;
+ return {normal:values[0].value,active:values[1].value,normalStep:values[0].name,activeStep:values[1].name,foreground:fg,foregroundStep:foregroundStep.name,foregroundRequest,requestedLightness:target,effectiveLightness:values[0].l,adjusted:values[0]!==requested,minimumContrast:score(values,fg),targetContrast:rules.minimumContrast,foregroundMode:accent.foregroundMode??'auto',polarity:luminance(fg)>.5?'light':'dark'};
 }
 function selectInk(steps,backgrounds,target,minimumContrast,maximumChroma=Infinity){
  const score=s=>Math.min(...backgrounds.map(bg=>renderedContrast(s.value,bg)));

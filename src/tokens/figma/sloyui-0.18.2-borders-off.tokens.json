@@ -1,15 +1,15 @@
 {
   "$extensions": {
     "com.sloyui.export": {
-      "version": "0.18.1",
+      "version": "0.18.2",
       "collection": "Sloy UI · Borders",
-      "mode": "On"
+      "mode": "Off"
     }
   },
   "border": {
     "width": {
       "$type": "number",
-      "$value": 0.5,
+      "$value": 0,
       "$extensions": {
         "com.sloyui.variable": {
           "scopes": [],
@@ -20,7 +20,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Semantic",
-          "targetVariableName": "border/width"
+          "targetVariableName": "border/none"
         }
       },
       "$description": "Независимая декоративная граница; не влияет на focus или структурные разделители."
