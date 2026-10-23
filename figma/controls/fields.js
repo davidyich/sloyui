@@ -7,8 +7,7 @@ for(const kind of FIELD_KINDS)for(const placement of ['Outside','Inside']){
  const ink=state==='Disabled'?'content/disabled':'content/primary';const s=stateName(state);
  const label=await textNode(kind==='Select'?'Category':kind==='Textarea'?'Description':'Name',placement==='Inside'?'Caption':'Label',state==='Disabled'?'content/disabled':'content/secondary');label.name='Label';
  const control=frame('Control',kind==='Textarea'?'VERTICAL':'HORIZONTAL');control.resize(280,32);c.appendChild(control);control.layoutSizingHorizontal='FILL';control.layoutSizingVertical='FIXED';control.counterAxisAlignItems=kind==='Textarea'?'MIN':'CENTER';control.primaryAxisAlignItems='MIN';geometry(control,size);fill(control,state==='Disabled'?'surface/disabled':'surface/secondary/neutral-'+s);border(control,'border/neutral-'+s);
- if(state==='Focus'){border(control,'content','Accent',true);control.strokeWeight=1;control.strokeAlign='OUTSIDE';}
- if(state==='Error'){border(control,'content/red','Theme',true);}
+ if(state==='Error'){border(control,'content/red');}
  let valueParent=control;
  if(placement==='Outside'){c.insertChild(0,label);}else{const stack=frame('Label and value');control.appendChild(stack);stack.layoutSizingHorizontal='FILL';stack.itemSpacing=2;stack.appendChild(label);valueParent=stack;control.setBoundVariable('height',null);control.resize(280,{sm:44,md:52,lg:56,xl:64}[size]);}
  label.componentPropertyReferences={characters:key.label,visible:key.showLabel};

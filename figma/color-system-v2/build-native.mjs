@@ -25,7 +25,7 @@ export function buildNativeGraph() {
   const graph = clone(bridge);
   graph.name = 'Sloy UI V2 · Native'; graph.version = '1.0.0';
   graph.accents = selectedAccents;
-  graph.axes = { theme: ['Light', 'Dark'], scheme: ['Standard', 'Dimmed'], surface: surfaces, accent: ['Neutral', 'Blue', 'Green', 'Orange', 'Red', 'Pink', 'Purple'], density: ['Default', 'Compact'], radius: ['Default', 'None', 'Compact', 'Rounded'], borders: ['Off', 'On'] };
+  graph.axes = { theme: ['Light', 'Dark'], scheme: ['Standard', 'Dimmed'], surface: surfaces, accent: ['Neutral', 'Blue', 'Green', 'Orange', 'Red', 'Pink', 'Purple'], density: ['Default', 'Compact'], radius: ['Default', 'None', 'Compact', 'Rounded'], borders: ['On', 'Off'] };
   const cols = new Map(graph.collections.map(c => [c.key, c]));
   const surface = cols.get('surface'), theme = cols.get('theme'), scheme = cols.get('scheme'), palette = cols.get('palette');
   surface.modes = surfaces;
@@ -82,6 +82,16 @@ export function buildNativeGraph() {
   for (const [sourceKey, key] of Object.entries(geometryKeys)) {
     const original = canonicalGraph.collections.find(c => c.key === sourceKey);
     const owner = { key, name: `V2 · ${sourceKey}`, modes: clone(original.modes), hidden: key === 'primitives', variables: original.variables.filter(v => sourceKey !== 'Primitives' || !v.name.startsWith('opacity/')).map(v => ({ ...clone(v), values: Object.fromEntries(Object.entries(v.values).map(([mode, value]) => [mode, renameGeometry(value)])) })) };
+    if (key === 'borders') {
+      owner.modes = graph.axes.borders;
+      // Figma's variable-bound opacity uses percent (100), unlike node.opacity (1).
+      // Keep a single native toggle; the runtime width role remains unchanged.
+      owner.variables = [{ name: 'border/opacity', figmaName: 'border/opacity', type: 'FLOAT',
+        values: { On: ref('primitives/number/100'), Off: ref('primitives/number/0') },
+        scopes: ['OPACITY'], css: '--sloy-borders-border-opacity', unit: 'number',
+        description: 'Empty 0.5 px border overlay only: On 100%, Off 0%. Content opacity stays at 100%.' }];
+    }
+    if (key === 'primitives') owner.variables.push({name: 'number/100', figmaName: 'number/100', type: 'FLOAT', values: {Value: 100}, scopes: [], css: '--sloy-primitives-number-100', unit: 'number', description: 'Whole-percent native border visibility switch.'});
     if (key === 'primitives') for (const v of owner.variables) if (v.type === 'FLOAT') assert(Number.isInteger(v.values.Value), 'Whole-pixel native primitive: ' + v.name);
     graph.collections.push(owner);
   }

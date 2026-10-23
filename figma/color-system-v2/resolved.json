@@ -80,9 +80,9 @@
     },
     "surface/accent/blue/secondary/active": {
       "r": 2e-10,
-      "g": 0.3298650131,
-      "b": 0.6449642729,
-      "a": 0.32
+      "g": 0.3838601889,
+      "b": 0.7431667405,
+      "a": 0.35
     },
     "surface/accent/blue/tertiary/active": {
       "r": 2e-10,
@@ -121,10 +121,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/normal": {
-      "r": 0,
-      "g": 0.4684285202,
-      "b": 0.2741307741,
-      "a": 0.29
+      "r": 5e-10,
+      "g": 0.5332417992,
+      "b": 0.3148852303,
+      "a": 0.32
     },
     "surface/accent/green/tertiary/normal": {
       "r": 1e-10,
@@ -140,9 +140,9 @@
     },
     "surface/accent/green/secondary/active": {
       "r": 2e-10,
-      "g": 0.3720744805,
-      "b": 0.2135435527,
-      "a": 0.32
+      "g": 0.5008011309,
+      "b": 0.294486605,
+      "a": 0.38
     },
     "surface/accent/green/tertiary/active": {
       "r": 2e-10,
@@ -181,10 +181,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/normal": {
-      "r": 0.6515662608,
-      "g": 0.3074066104,
-      "b": 1e-10,
-      "a": 0.29
+      "r": 0.8166118327,
+      "g": 0.3920605341,
+      "b": 6e-10,
+      "a": 0.35
     },
     "surface/accent/orange/tertiary/normal": {
       "r": 0.775372804,
@@ -199,10 +199,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/active": {
-      "r": 0.5285433157,
-      "g": 0.244306614,
-      "b": 2e-10,
-      "a": 0.32
+      "r": 0.692806698,
+      "g": 0.3285593428,
+      "b": 1e-10,
+      "a": 0.38
     },
     "surface/accent/orange/tertiary/active": {
       "r": 0.5285433157,
@@ -241,10 +241,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/normal": {
-      "r": 0.6420313322,
-      "g": 2e-10,
-      "b": 0.0845595613,
-      "a": 0.21
+      "r": 0.8875528899,
+      "g": 6e-10,
+      "b": 0.1337178693,
+      "a": 0.23
     },
     "surface/accent/red/tertiary/normal": {
       "r": 0.8382408014,
@@ -259,10 +259,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/active": {
-      "r": 0.5935094255,
-      "g": 3e-10,
-      "b": 0.0748445088,
-      "a": 0.26
+      "r": 0.6908212405,
+      "g": 0,
+      "b": 0.094328273,
+      "a": 0.27
     },
     "surface/accent/red/tertiary/active": {
       "r": 0.5935094255,
@@ -301,10 +301,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/normal": {
-      "r": 0.5432484406,
-      "g": 3e-10,
-      "b": 0.4164651136,
-      "a": 0.21
+      "r": 0.6330183642,
+      "g": 0,
+      "b": 0.4872106172,
+      "a": 0.22
     },
     "surface/accent/pink/tertiary/normal": {
       "r": 0.6782217452,
@@ -319,10 +319,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/active": {
-      "r": 0.4110163946,
-      "g": 1e-10,
-      "b": 0.3122562393,
-      "a": 0.25
+      "r": 0.5880097869,
+      "g": 3e-10,
+      "b": 0.4517404471,
+      "a": 0.27
     },
     "surface/accent/pink/tertiary/active": {
       "r": 0.2832539104,
@@ -361,10 +361,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/normal": {
-      "r": 0.3246109719,
-      "g": 0,
-      "b": 0.5068983127,
-      "a": 0.2
+      "r": 0.4323254987,
+      "g": 3e-10,
+      "b": 0.6663368311,
+      "a": 0.21
     },
     "surface/accent/purple/tertiary/normal": {
       "r": 0.2547206904,
@@ -379,10 +379,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/active": {
-      "r": 0.2205372925,
-      "g": 0,
-      "b": 0.3528489592,
-      "a": 0.24
+      "r": 0.3961097263,
+      "g": 1e-10,
+      "b": 0.612730421,
+      "a": 0.26
     },
     "surface/accent/purple/tertiary/active": {
       "r": 0.2205372925,
@@ -567,10 +567,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/normal": {
-      "r": 3e-10,
-      "g": 0.3568043023,
-      "b": 0.6939594773,
-      "a": 0.26
+      "r": 1e-10,
+      "g": 0.4382018359,
+      "b": 0.8419993445,
+      "a": 0.29
     },
     "surface/accent/blue/tertiary/normal": {
       "r": 3e-10,
@@ -585,10 +585,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/active": {
-      "r": 1e-10,
-      "g": 0.3030737006,
-      "b": 0.5962381977,
-      "a": 0.3
+      "r": 3e-10,
+      "g": 0.4110024815,
+      "b": 0.7925311526,
+      "a": 0.35
     },
     "surface/accent/blue/tertiary/active": {
       "r": 1e-10,
@@ -627,10 +627,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/normal": {
-      "r": 0,
-      "g": 0.4684285202,
-      "b": 0.2741307741,
-      "a": 0.28
+      "r": 3e-10,
+      "g": 0.5981901807,
+      "b": 0.3557246386,
+      "a": 0.34
     },
     "surface/accent/green/tertiary/normal": {
       "r": 5e-10,
@@ -646,9 +646,9 @@
     },
     "surface/accent/green/secondary/active": {
       "r": 2e-10,
-      "g": 0.3720744805,
-      "b": 0.2135435527,
-      "a": 0.31
+      "g": 0.5008011309,
+      "b": 0.294486605,
+      "a": 0.37
     },
     "surface/accent/green/tertiary/active": {
       "r": 2e-10,
@@ -687,10 +687,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/normal": {
-      "r": 0.6515662608,
-      "g": 0.3074066104,
-      "b": 1e-10,
-      "a": 0.28
+      "r": 0.775372804,
+      "g": 0.370908524,
+      "b": 2e-10,
+      "a": 0.32
     },
     "surface/accent/orange/tertiary/normal": {
       "r": 0.734089978,
@@ -705,10 +705,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/active": {
-      "r": 0.6104123421,
-      "g": 0.2862982544,
-      "b": 2e-10,
-      "a": 0.34
+      "r": 0.692806698,
+      "g": 0.3285593428,
+      "b": 1e-10,
+      "a": 0.37
     },
     "surface/accent/orange/tertiary/active": {
       "r": 0.4879215631,
@@ -747,10 +747,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/normal": {
-      "r": 0.6908212405,
-      "g": 0,
-      "b": 0.094328273,
-      "a": 0.21
+      "r": 0.9517987416,
+      "g": 0.1733095308,
+      "b": 0.2053264314,
+      "a": 0.28
     },
     "surface/accent/red/tertiary/normal": {
       "r": 0.8875528899,
@@ -765,10 +765,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/active": {
-      "r": 0.4975120705,
+      "r": 0.7398223188,
       "g": 1e-10,
-      "b": 0.0556239255,
-      "a": 0.25
+      "b": 0.1041392653,
+      "a": 0.27
     },
     "surface/accent/red/tertiary/active": {
       "r": 0.6420313322,
@@ -807,10 +807,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/normal": {
-      "r": 0.4546911033,
-      "g": 2e-10,
-      "b": 0.3466752199,
-      "a": 0.2
+      "r": 0.6782217452,
+      "g": 3e-10,
+      "b": 0.5228343075,
+      "a": 0.22
     },
     "surface/accent/pink/tertiary/normal": {
       "r": 0.7235694884,
@@ -825,10 +825,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/active": {
-      "r": 0.4110163946,
-      "g": 1e-10,
-      "b": 0.3122562393,
-      "a": 0.25
+      "r": 0.5432484406,
+      "g": 3e-10,
+      "b": 0.4164651136,
+      "a": 0.26
     },
     "surface/accent/pink/tertiary/active": {
       "r": 0.3252179869,
@@ -867,10 +867,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/normal": {
-      "r": 0.3601878288,
+      "r": 0.4687875168,
       "g": 1e-10,
-      "b": 0.5595590032,
-      "a": 0.2
+      "b": 0.7203077328,
+      "a": 0.21
     },
     "surface/accent/purple/tertiary/normal": {
       "r": 0.2894348069,
@@ -885,10 +885,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/active": {
-      "r": 0.2547206904,
+      "r": 0.3601878288,
       "g": 1e-10,
-      "b": 0.4034470584,
-      "a": 0.24
+      "b": 0.5595590032,
+      "a": 0.25
     },
     "surface/accent/purple/tertiary/active": {
       "r": 0.2547206904,
@@ -1073,10 +1073,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/normal": {
-      "r": 2e-10,
-      "g": 0.3838601889,
-      "b": 0.7431667405,
-      "a": 0.26
+      "r": 0.4166053382,
+      "g": 0.6769125792,
+      "b": 1,
+      "a": 0.5
     },
     "surface/accent/blue/tertiary/normal": {
       "r": 1e-10,
@@ -1091,10 +1091,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/active": {
-      "r": 2e-10,
-      "g": 0.2239279564,
-      "b": 0.4522937199,
-      "a": 0.27
+      "r": 3e-10,
+      "g": 0.4110024815,
+      "b": 0.7925311526,
+      "a": 0.34
     },
     "surface/accent/blue/tertiary/active": {
       "r": 0,
@@ -1133,10 +1133,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/normal": {
-      "r": 0,
-      "g": 0.4684285202,
-      "b": 0.2741307741,
-      "a": 0.27
+      "r": 1e-10,
+      "g": 0.5657161685,
+      "b": 0.3353050467,
+      "a": 0.31
     },
     "surface/accent/green/tertiary/normal": {
       "r": 1e-10,
@@ -1151,10 +1151,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/active": {
-      "r": 3e-10,
-      "g": 0.4361589659,
-      "b": 0.2538397449,
-      "a": 0.33
+      "r": 2e-10,
+      "g": 0.5008011309,
+      "b": 0.294486605,
+      "a": 0.36
     },
     "surface/accent/green/tertiary/active": {
       "r": 0,
@@ -1172,7 +1172,7 @@
       "r": 0,
       "g": 0.0465453301,
       "b": 0.0154122898,
-      "a": 0.65
+      "a": 0.66
     },
     "content/accent/green/on-primary": {
       "r": 1,
@@ -1193,10 +1193,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/normal": {
-      "r": 0.775372804,
-      "g": 0.370908524,
-      "b": 2e-10,
-      "a": 0.31
+      "r": 0.8577632456,
+      "g": 0.4131676048,
+      "b": 5e-10,
+      "a": 0.34
     },
     "surface/accent/orange/tertiary/normal": {
       "r": 0.775372804,
@@ -1211,10 +1211,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/active": {
-      "r": 0.6104123421,
-      "g": 0.2862982544,
+      "r": 0.775372804,
+      "g": 0.370908524,
       "b": 2e-10,
-      "a": 0.33
+      "a": 0.39
     },
     "surface/accent/orange/tertiary/active": {
       "r": 0.6515662608,
@@ -1253,10 +1253,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/normal": {
-      "r": 0.6908212405,
-      "g": 0,
-      "b": 0.094328273,
-      "a": 0.21
+      "r": 0.9999999999,
+      "g": 0.5873578209,
+      "b": 0.5523053479,
+      "a": 0.55
     },
     "surface/accent/red/tertiary/normal": {
       "r": 1,
@@ -1271,10 +1271,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/active": {
-      "r": 0.5453152106,
-      "g": 3e-10,
-      "b": 0.0651950667,
-      "a": 0.25
+      "r": 0.7889798876,
+      "g": 4e-10,
+      "b": 0.1139815901,
+      "a": 0.27
     },
     "surface/accent/red/tertiary/active": {
       "r": 0.4033573389,
@@ -1313,10 +1313,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/normal": {
-      "r": 0.4987893891,
-      "g": 2e-10,
-      "b": 0.3814280114,
-      "a": 0.2
+      "r": 0.7235694884,
+      "g": 3e-10,
+      "b": 0.5585717662,
+      "a": 0.22
     },
     "surface/accent/pink/tertiary/normal": {
       "r": 0.7690125671,
@@ -1331,10 +1331,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/active": {
-      "r": 0.4546911033,
-      "g": 2e-10,
-      "b": 0.3466752199,
-      "a": 0.25
+      "r": 0.5432484406,
+      "g": 3e-10,
+      "b": 0.4164651136,
+      "a": 0.26
     },
     "surface/accent/pink/tertiary/active": {
       "r": 0.3678335818,
@@ -1373,10 +1373,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/normal": {
-      "r": 0.3961097263,
-      "g": 1e-10,
-      "b": 0.612730421,
-      "a": 0.2
+      "r": 0.5054509259,
+      "g": 4e-10,
+      "b": 0.7745767324,
+      "a": 0.21
     },
     "surface/accent/purple/tertiary/normal": {
       "r": 0.3246109719,
@@ -1391,10 +1391,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/active": {
-      "r": 0.2894348069,
+      "r": 0.3961097263,
       "g": 1e-10,
-      "b": 0.4548307246,
-      "a": 0.24
+      "b": 0.612730421,
+      "a": 0.25
     },
     "surface/accent/purple/tertiary/active": {
       "r": 0.2894348069,
@@ -1412,7 +1412,7 @@
       "r": 0.0608711909,
       "g": 0,
       "b": 0.1165119727,
-      "a": 0.64
+      "a": 0.65
     },
     "content/accent/purple/on-primary": {
       "r": 1,
@@ -1579,10 +1579,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/normal": {
-      "r": 2e-10,
-      "g": 0.3838601889,
-      "b": 0.7431667405,
-      "a": 0.26
+      "r": 0.4166053382,
+      "g": 0.6769125792,
+      "b": 1,
+      "a": 0.5
     },
     "surface/accent/blue/tertiary/normal": {
       "r": 1e-10,
@@ -1597,10 +1597,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/active": {
-      "r": 2e-10,
-      "g": 0.2239279564,
-      "b": 0.4522937199,
-      "a": 0.27
+      "r": 3e-10,
+      "g": 0.4110024815,
+      "b": 0.7925311526,
+      "a": 0.34
     },
     "surface/accent/blue/tertiary/active": {
       "r": 0,
@@ -1639,10 +1639,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/normal": {
-      "r": 0,
-      "g": 0.4684285202,
-      "b": 0.2741307741,
-      "a": 0.27
+      "r": 1e-10,
+      "g": 0.5657161685,
+      "b": 0.3353050467,
+      "a": 0.31
     },
     "surface/accent/green/tertiary/normal": {
       "r": 1e-10,
@@ -1657,10 +1657,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/active": {
-      "r": 3e-10,
-      "g": 0.4361589659,
-      "b": 0.2538397449,
-      "a": 0.33
+      "r": 2e-10,
+      "g": 0.5008011309,
+      "b": 0.294486605,
+      "a": 0.36
     },
     "surface/accent/green/tertiary/active": {
       "r": 0,
@@ -1678,7 +1678,7 @@
       "r": 0,
       "g": 0.0465453301,
       "b": 0.0154122898,
-      "a": 0.65
+      "a": 0.66
     },
     "content/accent/green/on-primary": {
       "r": 1,
@@ -1699,10 +1699,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/normal": {
-      "r": 0.775372804,
-      "g": 0.370908524,
-      "b": 2e-10,
-      "a": 0.31
+      "r": 0.8577632456,
+      "g": 0.4131676048,
+      "b": 5e-10,
+      "a": 0.34
     },
     "surface/accent/orange/tertiary/normal": {
       "r": 0.775372804,
@@ -1717,10 +1717,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/active": {
-      "r": 0.6104123421,
-      "g": 0.2862982544,
+      "r": 0.775372804,
+      "g": 0.370908524,
       "b": 2e-10,
-      "a": 0.33
+      "a": 0.39
     },
     "surface/accent/orange/tertiary/active": {
       "r": 0.6515662608,
@@ -1759,10 +1759,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/normal": {
-      "r": 0.6908212405,
-      "g": 0,
-      "b": 0.094328273,
-      "a": 0.21
+      "r": 0.9999999999,
+      "g": 0.5873578209,
+      "b": 0.5523053479,
+      "a": 0.55
     },
     "surface/accent/red/tertiary/normal": {
       "r": 1,
@@ -1777,10 +1777,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/active": {
-      "r": 0.5453152106,
-      "g": 3e-10,
-      "b": 0.0651950667,
-      "a": 0.25
+      "r": 0.7889798876,
+      "g": 4e-10,
+      "b": 0.1139815901,
+      "a": 0.27
     },
     "surface/accent/red/tertiary/active": {
       "r": 0.4033573389,
@@ -1819,10 +1819,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/normal": {
-      "r": 0.4987893891,
-      "g": 2e-10,
-      "b": 0.3814280114,
-      "a": 0.2
+      "r": 0.7235694884,
+      "g": 3e-10,
+      "b": 0.5585717662,
+      "a": 0.22
     },
     "surface/accent/pink/tertiary/normal": {
       "r": 0.7690125671,
@@ -1837,10 +1837,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/active": {
-      "r": 0.4546911033,
-      "g": 2e-10,
-      "b": 0.3466752199,
-      "a": 0.25
+      "r": 0.5432484406,
+      "g": 3e-10,
+      "b": 0.4164651136,
+      "a": 0.26
     },
     "surface/accent/pink/tertiary/active": {
       "r": 0.3678335818,
@@ -1879,10 +1879,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/normal": {
-      "r": 0.3961097263,
-      "g": 1e-10,
-      "b": 0.612730421,
-      "a": 0.2
+      "r": 0.5054509259,
+      "g": 4e-10,
+      "b": 0.7745767324,
+      "a": 0.21
     },
     "surface/accent/purple/tertiary/normal": {
       "r": 0.3246109719,
@@ -1897,10 +1897,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/active": {
-      "r": 0.2894348069,
+      "r": 0.3961097263,
       "g": 1e-10,
-      "b": 0.4548307246,
-      "a": 0.24
+      "b": 0.612730421,
+      "a": 0.25
     },
     "surface/accent/purple/tertiary/active": {
       "r": 0.2894348069,
@@ -1918,7 +1918,7 @@
       "r": 0.0608711909,
       "g": 0,
       "b": 0.1165119727,
-      "a": 0.64
+      "a": 0.65
     },
     "content/accent/purple/on-primary": {
       "r": 1,
@@ -2085,10 +2085,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/normal": {
-      "r": 3e-10,
-      "g": 0.3568043023,
-      "b": 0.6939594773,
-      "a": 0.26
+      "r": 1e-10,
+      "g": 0.4382018359,
+      "b": 0.8419993445,
+      "a": 0.3
     },
     "surface/accent/blue/tertiary/normal": {
       "r": 3e-10,
@@ -2103,10 +2103,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/active": {
-      "r": 1e-10,
-      "g": 0.3030737006,
-      "b": 0.5962381977,
-      "a": 0.3
+      "r": 2e-10,
+      "g": 0.3838601889,
+      "b": 0.7431667405,
+      "a": 0.34
     },
     "surface/accent/blue/tertiary/active": {
       "r": 2e-10,
@@ -2124,7 +2124,7 @@
       "r": 0,
       "g": 0.0155314663,
       "b": 0.0615017309,
-      "a": 0.72
+      "a": 0.71
     },
     "content/accent/blue/on-primary": {
       "r": 1,
@@ -2145,10 +2145,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/normal": {
-      "r": 0,
-      "g": 0.4684285202,
-      "b": 0.2741307741,
-      "a": 0.28
+      "r": 1e-10,
+      "g": 0.5657161685,
+      "b": 0.3353050467,
+      "a": 0.33
     },
     "surface/accent/green/tertiary/normal": {
       "r": 5e-10,
@@ -2163,10 +2163,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/active": {
-      "r": 1e-10,
-      "g": 0.4040284773,
-      "b": 0.2336361599,
-      "a": 0.33
+      "r": 2e-10,
+      "g": 0.5008011309,
+      "b": 0.294486605,
+      "a": 0.38
     },
     "surface/accent/green/tertiary/active": {
       "r": 2e-10,
@@ -2176,15 +2176,15 @@
     },
     "content/accent/green/primary": {
       "r": 1e-10,
-      "g": 0.1864709396,
-      "b": 0.0968364289,
+      "g": 0.2164280359,
+      "b": 0.1156733893,
       "a": 1
     },
     "content/accent/green/secondary": {
       "r": 0,
       "g": 0.0237075858,
       "b": 0.0077859927,
-      "a": 0.72
+      "a": 0.71
     },
     "content/accent/green/on-primary": {
       "r": 1,
@@ -2205,10 +2205,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/normal": {
-      "r": 0.6104123421,
-      "g": 0.2862982544,
+      "r": 0.775372804,
+      "g": 0.370908524,
       "b": 2e-10,
-      "a": 0.28
+      "a": 0.33
     },
     "surface/accent/orange/tertiary/normal": {
       "r": 0.734089978,
@@ -2223,10 +2223,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/active": {
-      "r": 0.5285433157,
-      "g": 0.244306614,
-      "b": 2e-10,
-      "a": 0.32
+      "r": 0.692806698,
+      "g": 0.3285593428,
+      "b": 1e-10,
+      "a": 0.38
     },
     "surface/accent/orange/tertiary/active": {
       "r": 0.5285433157,
@@ -2265,10 +2265,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/normal": {
-      "r": 0.6420313322,
-      "g": 2e-10,
-      "b": 0.0845595613,
-      "a": 0.21
+      "r": 0.8875528899,
+      "g": 6e-10,
+      "b": 0.1337178693,
+      "a": 0.23
     },
     "surface/accent/red/tertiary/normal": {
       "r": 0.7889798876,
@@ -2283,10 +2283,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/active": {
-      "r": 0.5453152106,
-      "g": 3e-10,
-      "b": 0.0651950667,
-      "a": 0.25
+      "r": 0.7398223188,
+      "g": 1e-10,
+      "b": 0.1041392653,
+      "a": 0.27
     },
     "surface/accent/red/tertiary/active": {
       "r": 0.4975120705,
@@ -2304,7 +2304,7 @@
       "r": 0.0610135737,
       "g": 0,
       "b": 0.0013611164,
-      "a": 0.71
+      "a": 0.72
     },
     "content/accent/red/on-primary": {
       "r": 1,
@@ -2325,10 +2325,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/normal": {
-      "r": 0.4987893891,
-      "g": 2e-10,
-      "b": 0.3814280114,
-      "a": 0.21
+      "r": 0.6782217452,
+      "g": 3e-10,
+      "b": 0.5228343075,
+      "a": 0.22
     },
     "surface/accent/pink/tertiary/normal": {
       "r": 0.5880097869,
@@ -2343,10 +2343,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/active": {
-      "r": 0.4110163946,
-      "g": 1e-10,
-      "b": 0.3122562393,
-      "a": 0.25
+      "r": 0.5432484406,
+      "g": 3e-10,
+      "b": 0.4164651136,
+      "a": 0.27
     },
     "surface/accent/pink/tertiary/active": {
       "r": 0.3678335818,
@@ -2385,10 +2385,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/normal": {
-      "r": 0.3246109719,
-      "g": 0,
-      "b": 0.5068983127,
-      "a": 0.2
+      "r": 0.4687875168,
+      "g": 1e-10,
+      "b": 0.7203077328,
+      "a": 0.21
     },
     "surface/accent/purple/tertiary/normal": {
       "r": 0.4323254987,
@@ -2403,10 +2403,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/active": {
-      "r": 0.2547206904,
+      "r": 0.3961097263,
       "g": 1e-10,
-      "b": 0.4034470584,
-      "a": 0.24
+      "b": 0.612730421,
+      "a": 0.25
     },
     "surface/accent/purple/tertiary/active": {
       "r": 0.2547206904,
@@ -2421,10 +2421,10 @@
       "a": 1
     },
     "content/accent/purple/secondary": {
-      "r": 0.0325420244,
+      "r": 0.0608711909,
       "g": 0,
-      "b": 0.0740418617,
-      "a": 0.71
+      "b": 0.1165119727,
+      "a": 0.73
     },
     "content/accent/purple/on-primary": {
       "r": 1,
@@ -3097,10 +3097,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/normal": {
-      "r": 3e-10,
-      "g": 0.3568043023,
-      "b": 0.6939594773,
-      "a": 0.26
+      "r": 1e-10,
+      "g": 0.4382018359,
+      "b": 0.8419993445,
+      "a": 0.29
     },
     "surface/accent/blue/tertiary/normal": {
       "r": 3e-10,
@@ -3115,10 +3115,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/active": {
-      "r": 1e-10,
-      "g": 0.3030737006,
-      "b": 0.5962381977,
-      "a": 0.3
+      "r": 3e-10,
+      "g": 0.4110024815,
+      "b": 0.7925311526,
+      "a": 0.35
     },
     "surface/accent/blue/tertiary/active": {
       "r": 1e-10,
@@ -3157,10 +3157,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/normal": {
-      "r": 0,
-      "g": 0.4684285202,
-      "b": 0.2741307741,
-      "a": 0.28
+      "r": 3e-10,
+      "g": 0.5981901807,
+      "b": 0.3557246386,
+      "a": 0.34
     },
     "surface/accent/green/tertiary/normal": {
       "r": 5e-10,
@@ -3176,9 +3176,9 @@
     },
     "surface/accent/green/secondary/active": {
       "r": 2e-10,
-      "g": 0.3720744805,
-      "b": 0.2135435527,
-      "a": 0.31
+      "g": 0.5008011309,
+      "b": 0.294486605,
+      "a": 0.37
     },
     "surface/accent/green/tertiary/active": {
       "r": 2e-10,
@@ -3217,10 +3217,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/normal": {
-      "r": 0.6515662608,
-      "g": 0.3074066104,
-      "b": 1e-10,
-      "a": 0.28
+      "r": 0.775372804,
+      "g": 0.370908524,
+      "b": 2e-10,
+      "a": 0.32
     },
     "surface/accent/orange/tertiary/normal": {
       "r": 0.734089978,
@@ -3235,10 +3235,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/active": {
-      "r": 0.6104123421,
-      "g": 0.2862982544,
-      "b": 2e-10,
-      "a": 0.34
+      "r": 0.692806698,
+      "g": 0.3285593428,
+      "b": 1e-10,
+      "a": 0.37
     },
     "surface/accent/orange/tertiary/active": {
       "r": 0.4879215631,
@@ -3277,10 +3277,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/normal": {
-      "r": 0.6908212405,
-      "g": 0,
-      "b": 0.094328273,
-      "a": 0.21
+      "r": 0.9517987416,
+      "g": 0.1733095308,
+      "b": 0.2053264314,
+      "a": 0.28
     },
     "surface/accent/red/tertiary/normal": {
       "r": 0.8875528899,
@@ -3295,10 +3295,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/active": {
-      "r": 0.4975120705,
+      "r": 0.7398223188,
       "g": 1e-10,
-      "b": 0.0556239255,
-      "a": 0.25
+      "b": 0.1041392653,
+      "a": 0.27
     },
     "surface/accent/red/tertiary/active": {
       "r": 0.6420313322,
@@ -3337,10 +3337,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/normal": {
-      "r": 0.4546911033,
-      "g": 2e-10,
-      "b": 0.3466752199,
-      "a": 0.2
+      "r": 0.6782217452,
+      "g": 3e-10,
+      "b": 0.5228343075,
+      "a": 0.22
     },
     "surface/accent/pink/tertiary/normal": {
       "r": 0.7235694884,
@@ -3355,10 +3355,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/active": {
-      "r": 0.4110163946,
-      "g": 1e-10,
-      "b": 0.3122562393,
-      "a": 0.25
+      "r": 0.5432484406,
+      "g": 3e-10,
+      "b": 0.4164651136,
+      "a": 0.26
     },
     "surface/accent/pink/tertiary/active": {
       "r": 0.3252179869,
@@ -3397,10 +3397,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/normal": {
-      "r": 0.3601878288,
+      "r": 0.4687875168,
       "g": 1e-10,
-      "b": 0.5595590032,
-      "a": 0.2
+      "b": 0.7203077328,
+      "a": 0.21
     },
     "surface/accent/purple/tertiary/normal": {
       "r": 0.2894348069,
@@ -3415,10 +3415,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/active": {
-      "r": 0.2547206904,
+      "r": 0.3601878288,
       "g": 1e-10,
-      "b": 0.4034470584,
-      "a": 0.24
+      "b": 0.5595590032,
+      "a": 0.25
     },
     "surface/accent/purple/tertiary/active": {
       "r": 0.2547206904,
@@ -3603,10 +3603,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/normal": {
-      "r": 2e-10,
-      "g": 0.3838601889,
-      "b": 0.7431667405,
-      "a": 0.26
+      "r": 0.4166053382,
+      "g": 0.6769125792,
+      "b": 1,
+      "a": 0.5
     },
     "surface/accent/blue/tertiary/normal": {
       "r": 1e-10,
@@ -3621,10 +3621,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/active": {
-      "r": 2e-10,
-      "g": 0.2239279564,
-      "b": 0.4522937199,
-      "a": 0.27
+      "r": 3e-10,
+      "g": 0.4110024815,
+      "b": 0.7925311526,
+      "a": 0.34
     },
     "surface/accent/blue/tertiary/active": {
       "r": 0,
@@ -3663,10 +3663,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/normal": {
-      "r": 0,
-      "g": 0.4684285202,
-      "b": 0.2741307741,
-      "a": 0.27
+      "r": 1e-10,
+      "g": 0.5657161685,
+      "b": 0.3353050467,
+      "a": 0.31
     },
     "surface/accent/green/tertiary/normal": {
       "r": 1e-10,
@@ -3681,10 +3681,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/active": {
-      "r": 3e-10,
-      "g": 0.4361589659,
-      "b": 0.2538397449,
-      "a": 0.33
+      "r": 2e-10,
+      "g": 0.5008011309,
+      "b": 0.294486605,
+      "a": 0.36
     },
     "surface/accent/green/tertiary/active": {
       "r": 0,
@@ -3723,10 +3723,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/normal": {
-      "r": 0.775372804,
-      "g": 0.370908524,
-      "b": 2e-10,
-      "a": 0.31
+      "r": 0.8577632456,
+      "g": 0.4131676048,
+      "b": 5e-10,
+      "a": 0.34
     },
     "surface/accent/orange/tertiary/normal": {
       "r": 0.775372804,
@@ -3741,10 +3741,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/active": {
-      "r": 0.6104123421,
-      "g": 0.2862982544,
+      "r": 0.775372804,
+      "g": 0.370908524,
       "b": 2e-10,
-      "a": 0.33
+      "a": 0.39
     },
     "surface/accent/orange/tertiary/active": {
       "r": 0.6515662608,
@@ -3783,10 +3783,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/normal": {
-      "r": 0.6908212405,
-      "g": 0,
-      "b": 0.094328273,
-      "a": 0.21
+      "r": 0.9999999999,
+      "g": 0.5873578209,
+      "b": 0.5523053479,
+      "a": 0.55
     },
     "surface/accent/red/tertiary/normal": {
       "r": 1,
@@ -3801,10 +3801,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/active": {
-      "r": 0.5453152106,
-      "g": 3e-10,
-      "b": 0.0651950667,
-      "a": 0.25
+      "r": 0.7889798876,
+      "g": 4e-10,
+      "b": 0.1139815901,
+      "a": 0.27
     },
     "surface/accent/red/tertiary/active": {
       "r": 0.4033573389,
@@ -3843,10 +3843,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/normal": {
-      "r": 0.4987893891,
-      "g": 2e-10,
-      "b": 0.3814280114,
-      "a": 0.2
+      "r": 0.7235694884,
+      "g": 3e-10,
+      "b": 0.5585717662,
+      "a": 0.22
     },
     "surface/accent/pink/tertiary/normal": {
       "r": 0.7690125671,
@@ -3861,10 +3861,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/active": {
-      "r": 0.4546911033,
-      "g": 2e-10,
-      "b": 0.3466752199,
-      "a": 0.25
+      "r": 0.5432484406,
+      "g": 3e-10,
+      "b": 0.4164651136,
+      "a": 0.26
     },
     "surface/accent/pink/tertiary/active": {
       "r": 0.3678335818,
@@ -3903,10 +3903,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/normal": {
-      "r": 0.3961097263,
-      "g": 1e-10,
-      "b": 0.612730421,
-      "a": 0.2
+      "r": 0.5054509259,
+      "g": 4e-10,
+      "b": 0.7745767324,
+      "a": 0.21
     },
     "surface/accent/purple/tertiary/normal": {
       "r": 0.3246109719,
@@ -3921,10 +3921,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/active": {
-      "r": 0.2894348069,
+      "r": 0.3961097263,
       "g": 1e-10,
-      "b": 0.4548307246,
-      "a": 0.24
+      "b": 0.612730421,
+      "a": 0.25
     },
     "surface/accent/purple/tertiary/active": {
       "r": 0.2894348069,
@@ -4109,10 +4109,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/normal": {
-      "r": 2e-10,
-      "g": 0.3838601889,
-      "b": 0.7431667405,
-      "a": 0.26
+      "r": 0.4166053382,
+      "g": 0.6769125792,
+      "b": 1,
+      "a": 0.5
     },
     "surface/accent/blue/tertiary/normal": {
       "r": 1e-10,
@@ -4127,10 +4127,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/active": {
-      "r": 2e-10,
-      "g": 0.2239279564,
-      "b": 0.4522937199,
-      "a": 0.27
+      "r": 3e-10,
+      "g": 0.4110024815,
+      "b": 0.7925311526,
+      "a": 0.34
     },
     "surface/accent/blue/tertiary/active": {
       "r": 0,
@@ -4169,10 +4169,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/normal": {
-      "r": 0,
-      "g": 0.4684285202,
-      "b": 0.2741307741,
-      "a": 0.27
+      "r": 1e-10,
+      "g": 0.5657161685,
+      "b": 0.3353050467,
+      "a": 0.31
     },
     "surface/accent/green/tertiary/normal": {
       "r": 1e-10,
@@ -4187,10 +4187,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/active": {
-      "r": 3e-10,
-      "g": 0.4361589659,
-      "b": 0.2538397449,
-      "a": 0.33
+      "r": 2e-10,
+      "g": 0.5008011309,
+      "b": 0.294486605,
+      "a": 0.36
     },
     "surface/accent/green/tertiary/active": {
       "r": 0,
@@ -4208,7 +4208,7 @@
       "r": 0,
       "g": 0.0465453301,
       "b": 0.0154122898,
-      "a": 0.65
+      "a": 0.66
     },
     "content/accent/green/on-primary": {
       "r": 1,
@@ -4229,10 +4229,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/normal": {
-      "r": 0.775372804,
-      "g": 0.370908524,
-      "b": 2e-10,
-      "a": 0.31
+      "r": 0.8577632456,
+      "g": 0.4131676048,
+      "b": 5e-10,
+      "a": 0.34
     },
     "surface/accent/orange/tertiary/normal": {
       "r": 0.775372804,
@@ -4247,10 +4247,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/active": {
-      "r": 0.6104123421,
-      "g": 0.2862982544,
+      "r": 0.775372804,
+      "g": 0.370908524,
       "b": 2e-10,
-      "a": 0.33
+      "a": 0.39
     },
     "surface/accent/orange/tertiary/active": {
       "r": 0.6515662608,
@@ -4289,10 +4289,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/normal": {
-      "r": 0.6908212405,
-      "g": 0,
-      "b": 0.094328273,
-      "a": 0.21
+      "r": 0.9999999999,
+      "g": 0.5873578209,
+      "b": 0.5523053479,
+      "a": 0.55
     },
     "surface/accent/red/tertiary/normal": {
       "r": 1,
@@ -4307,10 +4307,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/active": {
-      "r": 0.5453152106,
-      "g": 3e-10,
-      "b": 0.0651950667,
-      "a": 0.25
+      "r": 0.7889798876,
+      "g": 4e-10,
+      "b": 0.1139815901,
+      "a": 0.27
     },
     "surface/accent/red/tertiary/active": {
       "r": 0.4033573389,
@@ -4349,10 +4349,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/normal": {
-      "r": 0.4987893891,
-      "g": 2e-10,
-      "b": 0.3814280114,
-      "a": 0.2
+      "r": 0.7235694884,
+      "g": 3e-10,
+      "b": 0.5585717662,
+      "a": 0.22
     },
     "surface/accent/pink/tertiary/normal": {
       "r": 0.7690125671,
@@ -4367,10 +4367,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/active": {
-      "r": 0.4546911033,
-      "g": 2e-10,
-      "b": 0.3466752199,
-      "a": 0.25
+      "r": 0.5432484406,
+      "g": 3e-10,
+      "b": 0.4164651136,
+      "a": 0.26
     },
     "surface/accent/pink/tertiary/active": {
       "r": 0.3678335818,
@@ -4409,10 +4409,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/normal": {
-      "r": 0.3961097263,
-      "g": 1e-10,
-      "b": 0.612730421,
-      "a": 0.2
+      "r": 0.5054509259,
+      "g": 4e-10,
+      "b": 0.7745767324,
+      "a": 0.21
     },
     "surface/accent/purple/tertiary/normal": {
       "r": 0.3246109719,
@@ -4427,10 +4427,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/active": {
-      "r": 0.2894348069,
+      "r": 0.3961097263,
       "g": 1e-10,
-      "b": 0.4548307246,
-      "a": 0.24
+      "b": 0.612730421,
+      "a": 0.25
     },
     "surface/accent/purple/tertiary/active": {
       "r": 0.2894348069,
@@ -4448,7 +4448,7 @@
       "r": 0.0608711909,
       "g": 0,
       "b": 0.1165119727,
-      "a": 0.64
+      "a": 0.65
     },
     "content/accent/purple/on-primary": {
       "r": 1,
@@ -4615,10 +4615,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/normal": {
-      "r": 2e-10,
-      "g": 0.3838601889,
-      "b": 0.7431667405,
-      "a": 0.26
+      "r": 0.4166053382,
+      "g": 0.6769125792,
+      "b": 1,
+      "a": 0.5
     },
     "surface/accent/blue/tertiary/normal": {
       "r": 1e-10,
@@ -4633,10 +4633,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/active": {
-      "r": 2e-10,
-      "g": 0.2239279564,
-      "b": 0.4522937199,
-      "a": 0.27
+      "r": 3e-10,
+      "g": 0.4110024815,
+      "b": 0.7925311526,
+      "a": 0.34
     },
     "surface/accent/blue/tertiary/active": {
       "r": 0,
@@ -4675,10 +4675,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/normal": {
-      "r": 0,
-      "g": 0.4684285202,
-      "b": 0.2741307741,
-      "a": 0.27
+      "r": 1e-10,
+      "g": 0.5657161685,
+      "b": 0.3353050467,
+      "a": 0.31
     },
     "surface/accent/green/tertiary/normal": {
       "r": 1e-10,
@@ -4693,10 +4693,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/active": {
-      "r": 3e-10,
-      "g": 0.4361589659,
-      "b": 0.2538397449,
-      "a": 0.33
+      "r": 2e-10,
+      "g": 0.5008011309,
+      "b": 0.294486605,
+      "a": 0.36
     },
     "surface/accent/green/tertiary/active": {
       "r": 0,
@@ -4714,7 +4714,7 @@
       "r": 0,
       "g": 0.0465453301,
       "b": 0.0154122898,
-      "a": 0.65
+      "a": 0.66
     },
     "content/accent/green/on-primary": {
       "r": 1,
@@ -4735,10 +4735,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/normal": {
-      "r": 0.775372804,
-      "g": 0.370908524,
-      "b": 2e-10,
-      "a": 0.31
+      "r": 0.8577632456,
+      "g": 0.4131676048,
+      "b": 5e-10,
+      "a": 0.34
     },
     "surface/accent/orange/tertiary/normal": {
       "r": 0.775372804,
@@ -4753,10 +4753,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/active": {
-      "r": 0.6104123421,
-      "g": 0.2862982544,
+      "r": 0.775372804,
+      "g": 0.370908524,
       "b": 2e-10,
-      "a": 0.33
+      "a": 0.39
     },
     "surface/accent/orange/tertiary/active": {
       "r": 0.6515662608,
@@ -4795,10 +4795,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/normal": {
-      "r": 0.6908212405,
-      "g": 0,
-      "b": 0.094328273,
-      "a": 0.21
+      "r": 0.9999999999,
+      "g": 0.5873578209,
+      "b": 0.5523053479,
+      "a": 0.55
     },
     "surface/accent/red/tertiary/normal": {
       "r": 1,
@@ -4813,10 +4813,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/active": {
-      "r": 0.5453152106,
-      "g": 3e-10,
-      "b": 0.0651950667,
-      "a": 0.25
+      "r": 0.7889798876,
+      "g": 4e-10,
+      "b": 0.1139815901,
+      "a": 0.27
     },
     "surface/accent/red/tertiary/active": {
       "r": 0.4033573389,
@@ -4855,10 +4855,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/normal": {
-      "r": 0.4987893891,
-      "g": 2e-10,
-      "b": 0.3814280114,
-      "a": 0.2
+      "r": 0.7235694884,
+      "g": 3e-10,
+      "b": 0.5585717662,
+      "a": 0.22
     },
     "surface/accent/pink/tertiary/normal": {
       "r": 0.7690125671,
@@ -4873,10 +4873,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/active": {
-      "r": 0.4546911033,
-      "g": 2e-10,
-      "b": 0.3466752199,
-      "a": 0.25
+      "r": 0.5432484406,
+      "g": 3e-10,
+      "b": 0.4164651136,
+      "a": 0.26
     },
     "surface/accent/pink/tertiary/active": {
       "r": 0.3678335818,
@@ -4915,10 +4915,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/normal": {
-      "r": 0.3961097263,
-      "g": 1e-10,
-      "b": 0.612730421,
-      "a": 0.2
+      "r": 0.5054509259,
+      "g": 4e-10,
+      "b": 0.7745767324,
+      "a": 0.21
     },
     "surface/accent/purple/tertiary/normal": {
       "r": 0.3246109719,
@@ -4933,10 +4933,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/active": {
-      "r": 0.2894348069,
+      "r": 0.3961097263,
       "g": 1e-10,
-      "b": 0.4548307246,
-      "a": 0.24
+      "b": 0.612730421,
+      "a": 0.25
     },
     "surface/accent/purple/tertiary/active": {
       "r": 0.2894348069,
@@ -4954,7 +4954,7 @@
       "r": 0.0608711909,
       "g": 0,
       "b": 0.1165119727,
-      "a": 0.64
+      "a": 0.65
     },
     "content/accent/purple/on-primary": {
       "r": 1,
@@ -5121,10 +5121,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/normal": {
-      "r": 3e-10,
-      "g": 0.3568043023,
-      "b": 0.6939594773,
-      "a": 0.26
+      "r": 1e-10,
+      "g": 0.4382018359,
+      "b": 0.8419993445,
+      "a": 0.3
     },
     "surface/accent/blue/tertiary/normal": {
       "r": 3e-10,
@@ -5139,10 +5139,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/active": {
-      "r": 1e-10,
-      "g": 0.3030737006,
-      "b": 0.5962381977,
-      "a": 0.3
+      "r": 2e-10,
+      "g": 0.3838601889,
+      "b": 0.7431667405,
+      "a": 0.34
     },
     "surface/accent/blue/tertiary/active": {
       "r": 2e-10,
@@ -5160,7 +5160,7 @@
       "r": 0,
       "g": 0.0155314663,
       "b": 0.0615017309,
-      "a": 0.72
+      "a": 0.71
     },
     "content/accent/blue/on-primary": {
       "r": 1,
@@ -5181,10 +5181,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/normal": {
-      "r": 0,
-      "g": 0.4684285202,
-      "b": 0.2741307741,
-      "a": 0.28
+      "r": 1e-10,
+      "g": 0.5657161685,
+      "b": 0.3353050467,
+      "a": 0.33
     },
     "surface/accent/green/tertiary/normal": {
       "r": 5e-10,
@@ -5199,10 +5199,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/active": {
-      "r": 1e-10,
-      "g": 0.4040284773,
-      "b": 0.2336361599,
-      "a": 0.33
+      "r": 2e-10,
+      "g": 0.5008011309,
+      "b": 0.294486605,
+      "a": 0.38
     },
     "surface/accent/green/tertiary/active": {
       "r": 2e-10,
@@ -5212,15 +5212,15 @@
     },
     "content/accent/green/primary": {
       "r": 1e-10,
-      "g": 0.1864709396,
-      "b": 0.0968364289,
+      "g": 0.2164280359,
+      "b": 0.1156733893,
       "a": 1
     },
     "content/accent/green/secondary": {
       "r": 0,
       "g": 0.0237075858,
       "b": 0.0077859927,
-      "a": 0.72
+      "a": 0.71
     },
     "content/accent/green/on-primary": {
       "r": 1,
@@ -5241,10 +5241,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/normal": {
-      "r": 0.6104123421,
-      "g": 0.2862982544,
+      "r": 0.775372804,
+      "g": 0.370908524,
       "b": 2e-10,
-      "a": 0.28
+      "a": 0.33
     },
     "surface/accent/orange/tertiary/normal": {
       "r": 0.734089978,
@@ -5259,10 +5259,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/active": {
-      "r": 0.5285433157,
-      "g": 0.244306614,
-      "b": 2e-10,
-      "a": 0.32
+      "r": 0.692806698,
+      "g": 0.3285593428,
+      "b": 1e-10,
+      "a": 0.38
     },
     "surface/accent/orange/tertiary/active": {
       "r": 0.5285433157,
@@ -5301,10 +5301,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/normal": {
-      "r": 0.6420313322,
-      "g": 2e-10,
-      "b": 0.0845595613,
-      "a": 0.21
+      "r": 0.8875528899,
+      "g": 6e-10,
+      "b": 0.1337178693,
+      "a": 0.23
     },
     "surface/accent/red/tertiary/normal": {
       "r": 0.7889798876,
@@ -5319,10 +5319,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/active": {
-      "r": 0.5453152106,
-      "g": 3e-10,
-      "b": 0.0651950667,
-      "a": 0.25
+      "r": 0.7398223188,
+      "g": 1e-10,
+      "b": 0.1041392653,
+      "a": 0.27
     },
     "surface/accent/red/tertiary/active": {
       "r": 0.4975120705,
@@ -5340,7 +5340,7 @@
       "r": 0.0610135737,
       "g": 0,
       "b": 0.0013611164,
-      "a": 0.71
+      "a": 0.72
     },
     "content/accent/red/on-primary": {
       "r": 1,
@@ -5361,10 +5361,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/normal": {
-      "r": 0.4987893891,
-      "g": 2e-10,
-      "b": 0.3814280114,
-      "a": 0.21
+      "r": 0.6782217452,
+      "g": 3e-10,
+      "b": 0.5228343075,
+      "a": 0.22
     },
     "surface/accent/pink/tertiary/normal": {
       "r": 0.5880097869,
@@ -5379,10 +5379,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/active": {
-      "r": 0.4110163946,
-      "g": 1e-10,
-      "b": 0.3122562393,
-      "a": 0.25
+      "r": 0.5432484406,
+      "g": 3e-10,
+      "b": 0.4164651136,
+      "a": 0.27
     },
     "surface/accent/pink/tertiary/active": {
       "r": 0.3678335818,
@@ -5421,10 +5421,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/normal": {
-      "r": 0.3246109719,
-      "g": 0,
-      "b": 0.5068983127,
-      "a": 0.2
+      "r": 0.4687875168,
+      "g": 1e-10,
+      "b": 0.7203077328,
+      "a": 0.21
     },
     "surface/accent/purple/tertiary/normal": {
       "r": 0.4323254987,
@@ -5439,10 +5439,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/active": {
-      "r": 0.2547206904,
+      "r": 0.3961097263,
       "g": 1e-10,
-      "b": 0.4034470584,
-      "a": 0.24
+      "b": 0.612730421,
+      "a": 0.25
     },
     "surface/accent/purple/tertiary/active": {
       "r": 0.2547206904,
@@ -5457,10 +5457,10 @@
       "a": 1
     },
     "content/accent/purple/secondary": {
-      "r": 0.0325420244,
+      "r": 0.0608711909,
       "g": 0,
-      "b": 0.0740418617,
-      "a": 0.71
+      "b": 0.1165119727,
+      "a": 0.73
     },
     "content/accent/purple/on-primary": {
       "r": 1,
@@ -7687,10 +7687,10 @@
       "a": 1
     },
     "content/accent/blue/secondary": {
-      "r": 0.9787851811,
-      "g": 0.9880473367,
+      "r": 1,
+      "g": 1,
       "b": 1,
-      "a": 1
+      "a": 0.98
     },
     "content/accent/blue/on-primary": {
       "r": 0,
@@ -7747,10 +7747,10 @@
       "a": 1
     },
     "content/accent/green/secondary": {
-      "r": 0.9656051975,
-      "g": 0.9965554818,
-      "b": 0.9754741763,
-      "a": 1
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.98
     },
     "content/accent/green/on-primary": {
       "r": 0,
@@ -7808,9 +7808,9 @@
     },
     "content/accent/orange/secondary": {
       "r": 1,
-      "g": 0.9834247999,
-      "b": 0.9742449957,
-      "a": 1
+      "g": 1,
+      "b": 1,
+      "a": 0.97
     },
     "content/accent/orange/on-primary": {
       "r": 0,
@@ -7868,9 +7868,9 @@
     },
     "content/accent/red/secondary": {
       "r": 1,
-      "g": 0.9825395737,
-      "b": 0.9804641259,
-      "a": 0.99
+      "g": 1,
+      "b": 1,
+      "a": 0.97
     },
     "content/accent/red/on-primary": {
       "r": 0,
@@ -7928,9 +7928,9 @@
     },
     "content/accent/pink/secondary": {
       "r": 1,
-      "g": 0.9809128644,
-      "b": 0.9917372231,
-      "a": 1
+      "g": 1,
+      "b": 1,
+      "a": 0.98
     },
     "content/accent/pink/on-primary": {
       "r": 0,
@@ -7987,10 +7987,10 @@
       "a": 1
     },
     "content/accent/purple/secondary": {
-      "r": 0.9908420781,
-      "g": 0.9833438662,
+      "r": 1,
+      "g": 1,
       "b": 1,
-      "a": 1
+      "a": 0.98
     },
     "content/accent/purple/on-primary": {
       "r": 0,
@@ -8187,16 +8187,16 @@
       "a": 0.13
     },
     "content/accent/blue/primary": {
-      "r": 0.9573162936,
-      "g": 0.9759629121,
+      "r": 1,
+      "g": 1,
       "b": 1,
       "a": 1
     },
     "content/accent/blue/secondary": {
-      "r": 0.9787851811,
-      "g": 0.9880473367,
+      "r": 1,
+      "g": 1,
       "b": 1,
-      "a": 0.98
+      "a": 0.95
     },
     "content/accent/blue/on-primary": {
       "r": 0,
@@ -8247,9 +8247,9 @@
       "a": 0.12
     },
     "content/accent/green/primary": {
-      "r": 0.9656051975,
-      "g": 0.9965554818,
-      "b": 0.9754741763,
+      "r": 1,
+      "g": 1,
+      "b": 1,
       "a": 1
     },
     "content/accent/green/secondary": {
@@ -8314,9 +8314,9 @@
     },
     "content/accent/orange/secondary": {
       "r": 1,
-      "g": 0.9834247999,
-      "b": 0.9742449957,
-      "a": 0.98
+      "g": 1,
+      "b": 1,
+      "a": 0.96
     },
     "content/accent/orange/on-primary": {
       "r": 0,
@@ -8368,15 +8368,15 @@
     },
     "content/accent/red/primary": {
       "r": 1,
-      "g": 0.9648307207,
-      "b": 0.9606709334,
+      "g": 1,
+      "b": 1,
       "a": 1
     },
     "content/accent/red/secondary": {
       "r": 1,
-      "g": 0.9825395737,
-      "b": 0.9804641259,
-      "a": 0.97
+      "g": 1,
+      "b": 1,
+      "a": 0.94
     },
     "content/accent/red/on-primary": {
       "r": 0,
@@ -8434,9 +8434,9 @@
     },
     "content/accent/pink/secondary": {
       "r": 1,
-      "g": 0.9809128644,
-      "b": 0.9917372231,
-      "a": 0.99
+      "g": 1,
+      "b": 1,
+      "a": 0.96
     },
     "content/accent/pink/on-primary": {
       "r": 0,
@@ -8487,16 +8487,16 @@
       "a": 0.13
     },
     "content/accent/purple/primary": {
-      "r": 0.9816365094,
-      "g": 0.9664842803,
+      "r": 1,
+      "g": 1,
       "b": 1,
       "a": 1
     },
     "content/accent/purple/secondary": {
-      "r": 0.9908420781,
-      "g": 0.9833438662,
+      "r": 1,
+      "g": 1,
       "b": 1,
-      "a": 0.98
+      "a": 0.95
     },
     "content/accent/purple/on-primary": {
       "r": 0,
@@ -8663,10 +8663,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/normal": {
-      "r": 2e-10,
-      "g": 0.3838601889,
-      "b": 0.7431667405,
-      "a": 0.26
+      "r": 0.4166053382,
+      "g": 0.6769125792,
+      "b": 1,
+      "a": 0.5
     },
     "surface/accent/blue/tertiary/normal": {
       "r": 1e-10,
@@ -8681,10 +8681,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/active": {
-      "r": 2e-10,
-      "g": 0.2239279564,
-      "b": 0.4522937199,
-      "a": 0.27
+      "r": 3e-10,
+      "g": 0.4110024815,
+      "b": 0.7925311526,
+      "a": 0.34
     },
     "surface/accent/blue/tertiary/active": {
       "r": 0,
@@ -8723,10 +8723,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/normal": {
-      "r": 0,
-      "g": 0.4684285202,
-      "b": 0.2741307741,
-      "a": 0.27
+      "r": 1e-10,
+      "g": 0.5657161685,
+      "b": 0.3353050467,
+      "a": 0.31
     },
     "surface/accent/green/tertiary/normal": {
       "r": 1e-10,
@@ -8741,10 +8741,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/active": {
-      "r": 3e-10,
-      "g": 0.4361589659,
-      "b": 0.2538397449,
-      "a": 0.33
+      "r": 2e-10,
+      "g": 0.5008011309,
+      "b": 0.294486605,
+      "a": 0.36
     },
     "surface/accent/green/tertiary/active": {
       "r": 0,
@@ -8762,7 +8762,7 @@
       "r": 0,
       "g": 0.0465453301,
       "b": 0.0154122898,
-      "a": 0.65
+      "a": 0.66
     },
     "content/accent/green/on-primary": {
       "r": 1,
@@ -8783,10 +8783,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/normal": {
-      "r": 0.775372804,
-      "g": 0.370908524,
-      "b": 2e-10,
-      "a": 0.31
+      "r": 0.8577632456,
+      "g": 0.4131676048,
+      "b": 5e-10,
+      "a": 0.34
     },
     "surface/accent/orange/tertiary/normal": {
       "r": 0.775372804,
@@ -8801,10 +8801,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/active": {
-      "r": 0.6104123421,
-      "g": 0.2862982544,
+      "r": 0.775372804,
+      "g": 0.370908524,
       "b": 2e-10,
-      "a": 0.33
+      "a": 0.39
     },
     "surface/accent/orange/tertiary/active": {
       "r": 0.6515662608,
@@ -8843,10 +8843,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/normal": {
-      "r": 0.6908212405,
-      "g": 0,
-      "b": 0.094328273,
-      "a": 0.21
+      "r": 0.9999999999,
+      "g": 0.5873578209,
+      "b": 0.5523053479,
+      "a": 0.55
     },
     "surface/accent/red/tertiary/normal": {
       "r": 1,
@@ -8861,10 +8861,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/active": {
-      "r": 0.5453152106,
-      "g": 3e-10,
-      "b": 0.0651950667,
-      "a": 0.25
+      "r": 0.7889798876,
+      "g": 4e-10,
+      "b": 0.1139815901,
+      "a": 0.27
     },
     "surface/accent/red/tertiary/active": {
       "r": 0.4033573389,
@@ -8903,10 +8903,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/normal": {
-      "r": 0.4987893891,
-      "g": 2e-10,
-      "b": 0.3814280114,
-      "a": 0.2
+      "r": 0.7235694884,
+      "g": 3e-10,
+      "b": 0.5585717662,
+      "a": 0.22
     },
     "surface/accent/pink/tertiary/normal": {
       "r": 0.7690125671,
@@ -8921,10 +8921,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/active": {
-      "r": 0.4546911033,
-      "g": 2e-10,
-      "b": 0.3466752199,
-      "a": 0.25
+      "r": 0.5432484406,
+      "g": 3e-10,
+      "b": 0.4164651136,
+      "a": 0.26
     },
     "surface/accent/pink/tertiary/active": {
       "r": 0.3678335818,
@@ -8963,10 +8963,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/normal": {
-      "r": 0.3961097263,
-      "g": 1e-10,
-      "b": 0.612730421,
-      "a": 0.2
+      "r": 0.5054509259,
+      "g": 4e-10,
+      "b": 0.7745767324,
+      "a": 0.21
     },
     "surface/accent/purple/tertiary/normal": {
       "r": 0.3246109719,
@@ -8981,10 +8981,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/active": {
-      "r": 0.2894348069,
+      "r": 0.3961097263,
       "g": 1e-10,
-      "b": 0.4548307246,
-      "a": 0.24
+      "b": 0.612730421,
+      "a": 0.25
     },
     "surface/accent/purple/tertiary/active": {
       "r": 0.2894348069,
@@ -9002,7 +9002,7 @@
       "r": 0.0608711909,
       "g": 0,
       "b": 0.1165119727,
-      "a": 0.64
+      "a": 0.65
     },
     "content/accent/purple/on-primary": {
       "r": 1,
@@ -10717,16 +10717,16 @@
       "a": 0.13
     },
     "content/accent/blue/primary": {
-      "r": 0.9287202459,
-      "g": 0.9598838154,
+      "r": 0.8965741297,
+      "g": 0.9418308681,
       "b": 1,
       "a": 1
     },
     "content/accent/blue/secondary": {
-      "r": 0.9787851811,
-      "g": 0.9880473367,
+      "r": 1,
+      "g": 1,
       "b": 1,
-      "a": 0.9
+      "a": 0.88
     },
     "content/accent/blue/on-primary": {
       "r": 0,
@@ -10838,15 +10838,15 @@
     },
     "content/accent/orange/primary": {
       "r": 1,
-      "g": 0.9441454727,
-      "b": 0.9130027785,
+      "g": 0.9187856761,
+      "b": 0.8733011478,
       "a": 1
     },
     "content/accent/orange/secondary": {
       "r": 1,
-      "g": 0.9834247999,
-      "b": 0.9742449957,
-      "a": 0.9
+      "g": 1,
+      "b": 1,
+      "a": 0.88
     },
     "content/accent/orange/on-primary": {
       "r": 0,
@@ -10898,15 +10898,15 @@
     },
     "content/accent/red/primary": {
       "r": 1,
-      "g": 0.9411755054,
-      "b": 0.9342692022,
+      "g": 0.9144813461,
+      "b": 0.9045367441,
       "a": 1
     },
     "content/accent/red/secondary": {
       "r": 1,
-      "g": 0.9825395737,
-      "b": 0.9804641259,
-      "a": 0.9
+      "g": 1,
+      "b": 1,
+      "a": 0.87
     },
     "content/accent/red/on-primary": {
       "r": 0,
@@ -11223,16 +11223,16 @@
       "a": 0.13
     },
     "content/accent/blue/primary": {
-      "r": 0.9573162936,
-      "g": 0.9759629121,
+      "r": 1,
+      "g": 1,
       "b": 1,
       "a": 1
     },
     "content/accent/blue/secondary": {
-      "r": 0.9787851811,
-      "g": 0.9880473367,
+      "r": 1,
+      "g": 1,
       "b": 1,
-      "a": 0.98
+      "a": 0.95
     },
     "content/accent/blue/on-primary": {
       "r": 0,
@@ -11283,9 +11283,9 @@
       "a": 0.12
     },
     "content/accent/green/primary": {
-      "r": 0.9656051975,
-      "g": 0.9965554818,
-      "b": 0.9754741763,
+      "r": 1,
+      "g": 1,
+      "b": 1,
       "a": 1
     },
     "content/accent/green/secondary": {
@@ -11350,9 +11350,9 @@
     },
     "content/accent/orange/secondary": {
       "r": 1,
-      "g": 0.9834247999,
-      "b": 0.9742449957,
-      "a": 0.98
+      "g": 1,
+      "b": 1,
+      "a": 0.96
     },
     "content/accent/orange/on-primary": {
       "r": 0,
@@ -11404,15 +11404,15 @@
     },
     "content/accent/red/primary": {
       "r": 1,
-      "g": 0.9648307207,
-      "b": 0.9606709334,
+      "g": 1,
+      "b": 1,
       "a": 1
     },
     "content/accent/red/secondary": {
       "r": 1,
-      "g": 0.9825395737,
-      "b": 0.9804641259,
-      "a": 0.97
+      "g": 1,
+      "b": 1,
+      "a": 0.94
     },
     "content/accent/red/on-primary": {
       "r": 0,
@@ -11470,9 +11470,9 @@
     },
     "content/accent/pink/secondary": {
       "r": 1,
-      "g": 0.9809128644,
-      "b": 0.9917372231,
-      "a": 0.99
+      "g": 1,
+      "b": 1,
+      "a": 0.96
     },
     "content/accent/pink/on-primary": {
       "r": 0,
@@ -11523,16 +11523,16 @@
       "a": 0.13
     },
     "content/accent/purple/primary": {
-      "r": 0.9816365094,
-      "g": 0.9664842803,
+      "r": 1,
+      "g": 1,
       "b": 1,
       "a": 1
     },
     "content/accent/purple/secondary": {
-      "r": 0.9908420781,
-      "g": 0.9833438662,
+      "r": 1,
+      "g": 1,
       "b": 1,
-      "a": 0.98
+      "a": 0.95
     },
     "content/accent/purple/on-primary": {
       "r": 0,
@@ -11699,10 +11699,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/normal": {
-      "r": 2e-10,
-      "g": 0.3838601889,
-      "b": 0.7431667405,
-      "a": 0.26
+      "r": 0.4166053382,
+      "g": 0.6769125792,
+      "b": 1,
+      "a": 0.5
     },
     "surface/accent/blue/tertiary/normal": {
       "r": 1e-10,
@@ -11717,10 +11717,10 @@
       "a": 1
     },
     "surface/accent/blue/secondary/active": {
-      "r": 2e-10,
-      "g": 0.2239279564,
-      "b": 0.4522937199,
-      "a": 0.27
+      "r": 3e-10,
+      "g": 0.4110024815,
+      "b": 0.7925311526,
+      "a": 0.34
     },
     "surface/accent/blue/tertiary/active": {
       "r": 0,
@@ -11759,10 +11759,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/normal": {
-      "r": 0,
-      "g": 0.4684285202,
-      "b": 0.2741307741,
-      "a": 0.27
+      "r": 1e-10,
+      "g": 0.5657161685,
+      "b": 0.3353050467,
+      "a": 0.31
     },
     "surface/accent/green/tertiary/normal": {
       "r": 1e-10,
@@ -11777,10 +11777,10 @@
       "a": 1
     },
     "surface/accent/green/secondary/active": {
-      "r": 3e-10,
-      "g": 0.4361589659,
-      "b": 0.2538397449,
-      "a": 0.33
+      "r": 2e-10,
+      "g": 0.5008011309,
+      "b": 0.294486605,
+      "a": 0.36
     },
     "surface/accent/green/tertiary/active": {
       "r": 0,
@@ -11798,7 +11798,7 @@
       "r": 0,
       "g": 0.0465453301,
       "b": 0.0154122898,
-      "a": 0.65
+      "a": 0.66
     },
     "content/accent/green/on-primary": {
       "r": 1,
@@ -11819,10 +11819,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/normal": {
-      "r": 0.775372804,
-      "g": 0.370908524,
-      "b": 2e-10,
-      "a": 0.31
+      "r": 0.8577632456,
+      "g": 0.4131676048,
+      "b": 5e-10,
+      "a": 0.34
     },
     "surface/accent/orange/tertiary/normal": {
       "r": 0.775372804,
@@ -11837,10 +11837,10 @@
       "a": 1
     },
     "surface/accent/orange/secondary/active": {
-      "r": 0.6104123421,
-      "g": 0.2862982544,
+      "r": 0.775372804,
+      "g": 0.370908524,
       "b": 2e-10,
-      "a": 0.33
+      "a": 0.39
     },
     "surface/accent/orange/tertiary/active": {
       "r": 0.6515662608,
@@ -11879,10 +11879,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/normal": {
-      "r": 0.6908212405,
-      "g": 0,
-      "b": 0.094328273,
-      "a": 0.21
+      "r": 0.9999999999,
+      "g": 0.5873578209,
+      "b": 0.5523053479,
+      "a": 0.55
     },
     "surface/accent/red/tertiary/normal": {
       "r": 1,
@@ -11897,10 +11897,10 @@
       "a": 1
     },
     "surface/accent/red/secondary/active": {
-      "r": 0.5453152106,
-      "g": 3e-10,
-      "b": 0.0651950667,
-      "a": 0.25
+      "r": 0.7889798876,
+      "g": 4e-10,
+      "b": 0.1139815901,
+      "a": 0.27
     },
     "surface/accent/red/tertiary/active": {
       "r": 0.4033573389,
@@ -11939,10 +11939,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/normal": {
-      "r": 0.4987893891,
-      "g": 2e-10,
-      "b": 0.3814280114,
-      "a": 0.2
+      "r": 0.7235694884,
+      "g": 3e-10,
+      "b": 0.5585717662,
+      "a": 0.22
     },
     "surface/accent/pink/tertiary/normal": {
       "r": 0.7690125671,
@@ -11957,10 +11957,10 @@
       "a": 1
     },
     "surface/accent/pink/secondary/active": {
-      "r": 0.4546911033,
-      "g": 2e-10,
-      "b": 0.3466752199,
-      "a": 0.25
+      "r": 0.5432484406,
+      "g": 3e-10,
+      "b": 0.4164651136,
+      "a": 0.26
     },
     "surface/accent/pink/tertiary/active": {
       "r": 0.3678335818,
@@ -11999,10 +11999,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/normal": {
-      "r": 0.3961097263,
-      "g": 1e-10,
-      "b": 0.612730421,
-      "a": 0.2
+      "r": 0.5054509259,
+      "g": 4e-10,
+      "b": 0.7745767324,
+      "a": 0.21
     },
     "surface/accent/purple/tertiary/normal": {
       "r": 0.3246109719,
@@ -12017,10 +12017,10 @@
       "a": 1
     },
     "surface/accent/purple/secondary/active": {
-      "r": 0.2894348069,
+      "r": 0.3961097263,
       "g": 1e-10,
-      "b": 0.4548307246,
-      "a": 0.24
+      "b": 0.612730421,
+      "a": 0.25
     },
     "surface/accent/purple/tertiary/active": {
       "r": 0.2894348069,
@@ -12038,7 +12038,7 @@
       "r": 0.0608711909,
       "g": 0,
       "b": 0.1165119727,
-      "a": 0.64
+      "a": 0.65
     },
     "content/accent/purple/on-primary": {
       "r": 1,

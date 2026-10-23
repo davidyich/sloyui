@@ -9,8 +9,10 @@ const guideFonts = await figma.listAvailableFontsAsync();
 const guideInter = guideFonts.filter(f => f.fontName.family === 'Inter').map(f => f.fontName);
 const guideRegular = guideInter.find(f => f.style === 'Regular');
 const guideMedium = guideInter.find(f => f.style === 'Medium') || guideRegular;
+const guideTextStyles = await figma.getLocalTextStylesAsync();
 if (!guideRegular) throw Error('Inter Regular is required');
 await Promise.all([guideRegular, guideMedium].map(font => figma.loadFontAsync(font)));
+await Promise.all(guideTextStyles.filter(s => s.name.startsWith('Sloy UI / Base /')).map(s => figma.loadFontAsync(s.fontName)));
 function gv(group, name) {
   const col = guideCollectionMap.get('V2 · ' + group);
   const variable = col && guideVariableMap.get(col.id + '|' + name);
@@ -45,11 +47,27 @@ function gspace(node, size = 'md', gap = 'stack-md') {
   gbind(node, 'itemSpacing', 'adaptive/gap/' + gap);
 }
 function gradius(node, role = 'md') { gbind(node, 'cornerRadius', 'radius/' + role, 'Radius'); }
-function gstroke(node, name = 'border/default') { node.strokes = [gp(name)]; node.strokeWeight = 1; node.strokeAlign = 'INSIDE'; }
+function gstroke(node, name = 'border/default', group = 'Surface') {
+  // Only this empty overlay uses layer opacity. Fills and content stay at 1.
+  let layer = node.children.find(child => child.name === '.Border' && child.type === 'RECTANGLE');
+  if (!layer) { layer = figma.createRectangle(); node.appendChild(layer); layer.name = '.Border'; }
+  node.strokes = []; layer.fills = []; layer.layoutPositioning = 'ABSOLUTE';
+  layer.x = 0; layer.y = 0; layer.resize(Math.max(1, node.width), Math.max(1, node.height));
+  layer.constraints = {horizontal: 'STRETCH', vertical: 'STRETCH'};
+  layer.strokes = [gp(name, group)]; layer.strokeWeight = 0.5; layer.strokeAlign = 'INSIDE';
+  for (const field of ['topLeftRadius', 'topRightRadius', 'bottomRightRadius', 'bottomLeftRadius']) {
+    layer[field] = node[field]; const alias = node.boundVariables?.[field] || node.boundVariables?.cornerRadius;
+    layer.setBoundVariable(field, alias ? guideVariables.find(v => v.id === alias.id) : null);
+  }
+  gbind(layer, 'opacity', 'border/opacity', 'Borders'); layer.visible = true;
+  return layer;
+}
 async function gtext(parent, value, width, kind = 'body', role = 'content/primary/neutral') {
   const node = figma.createText(); node.fontName = kind === 'label' || kind === 'title' ? guideMedium : guideRegular;
   node.characters = value; node.name = value.slice(0, 96);
   const typography = kind === 'title' ? 'title' : kind === 'label' ? 'label' : kind === 'caption' ? 'caption' : 'body';
+  const sharedStyle = guideTextStyles.find(s => s.name === 'Sloy UI / Base / ' + typography[0].toUpperCase() + typography.slice(1));
+  if (sharedStyle) await node.setTextStyleIdAsync(sharedStyle.id);
   gbind(node, 'fontSize', 'font/size/' + typography, 'Primitives');
   gbind(node, 'lineHeight', 'font/line-height/' + typography, 'Primitives');
   parent.appendChild(node); node.textAutoResize = 'HEIGHT'; node.resize(width, node.height);
@@ -80,7 +98,7 @@ async function ginit(pageName, rootName) {
   root.x = page.children.filter(n => n.id !== root.id).reduce((x, n) => Math.max(x, n.x + n.width + 100), 80); root.y = 80;
   root.paddingTop = root.paddingRight = root.paddingBottom = root.paddingLeft = 48; root.itemSpacing = 40;
   gmode(root, 'Theme', 'Light'); gmode(root, 'Scheme', 'Standard'); gmode(root, 'Surface', 'Content');
-  gmode(root, 'Accent', 'Neutral'); gmode(root, 'Density', 'Default'); gmode(root, 'Radius', 'Default'); gmode(root, 'Borders', 'Off');
+  gmode(root, 'Accent', 'Neutral'); gmode(root, 'Density', 'Default'); gmode(root, 'Radius', 'Default'); gmode(root, 'Borders', 'On');
   gfill(root, 'surface/bg'); guideCreatedRoots.push(root);
   return {page, root};
 }

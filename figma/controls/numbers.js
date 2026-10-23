@@ -5,8 +5,7 @@ for(const kind of NUMBER_KINDS){
  for(const c of variants){const {State:state}=c.variantProperties;const size=c.variantProperties.Size||'md';c.primaryAxisSizingMode='AUTO';c.counterAxisSizingMode='FIXED';c.counterAxisAlignItems='MIN';gap(c,'stack-sm');c.clipsContent=false;
  const label=await textNode(kind==='NumberField'?'Width':'Rotation','Label','content/secondary');label.name='Label';c.appendChild(label);label.componentPropertyReferences={characters:keys.label,visible:keys.showLabel};
  const control=frame('Control','HORIZONTAL');c.appendChild(control);control.resize(160,32);control.layoutSizingHorizontal='FILL';control.layoutSizingVertical='FIXED';control.counterAxisAlignItems='CENTER';control.primaryAxisAlignItems='CENTER';geometry(control,size,true);fill(control,state==='Disabled'?'surface/disabled':'surface/secondary/neutral-'+stateName(state));border(control,'border/neutral-'+stateName(state));
- if(state==='Focus'){border(control,'content','Accent',true);control.strokeAlign='OUTSIDE';}
- if(state==='Error')border(control,'content/red','Theme',true);
+ if(state==='Error')border(control,'content/red');
  const ink=state==='Disabled'?'content/disabled':'content/primary';
  if(kind==='NumberField'){const minus=icon('Minus');control.appendChild(minus);minus.name='Decrease';recolorIcon(minus,ink);bind(control,'paddingLeft','adaptive/padding/sm');bind(control,'paddingRight','adaptive/padding/sm');}
  const display=frame('Value and unit','HORIZONTAL');control.appendChild(display);display.layoutSizingHorizontal='FILL';display.primaryAxisAlignItems='CENTER';display.counterAxisAlignItems='CENTER';display.itemSpacing=2;

@@ -57,7 +57,7 @@
 | Нейтральная граница | `border/subtle`, `border/default`, `border/strong` |
 | Граница нейтрального контрола | `border/neutral-normal`, `border/neutral-hover`, `border/neutral-pressed` |
 | Акцентная граница | `border/blue` и аналогичные пути пяти других акцентов |
-| Кольцо фокуса | `border/focus` |
+| Focus в native Figma | Смена semantic fill / цвета ручки без отдельного контура |
 | Противоположный нейтральный текст | `content/inverted/neutral` |
 | Фиксированные полюса | `stable/black`, `stable/white` |
 
@@ -77,7 +77,7 @@ Primary непрозрачен. Secondary/Tertiary уже содержат ра�
 | Основная нейтральная кнопка | `surface/primary/neutral-normal` | `content/on-primary` | Состояние — `surface/primary/neutral-active` |
 | Мягкое синее действие или Tag | `surface/secondary/blue-normal` | `content/primary/blue` | При необходимости `border/blue`; статичный Tag остаётся Normal |
 | Карточка | `surface/block` | `content/primary/neutral`, подпись `content/muted/neutral` | Surface наследуется; структурная граница `border/subtle` |
-| Input / Select | `surface/tertiary/neutral-normal` | Значение `content/primary/neutral`, placeholder `content/muted/neutral` | Нейтральная граница; отдельный `border/focus` для фокуса |
+| Input / Select | `surface/tertiary/neutral-normal` | Значение `content/primary/neutral`, placeholder `content/muted/neutral` | Нейтральная граница 0.5 px; Focus меняет заливку без отдельного контура |
 | Выбранная строка | `surface/secondary/blue-active` | `content/primary/blue` | Добавьте маркер выбора, а не только цвет |
 | Нейтральный Alert | `surface/tertiary/neutral-normal` | Нейтральный текст | Только статусный индикатор получает blue / green / orange / red |
 | Мягкая ошибка | `surface/secondary/red-normal` | `content/primary/red` | Текст объясняет причину; цвет не заменяет сообщение |
@@ -103,11 +103,11 @@ IconButton использует ту же схему. Outside/Inside у поле
 
 ## Alpha и числовые примитивы
 
-Opacity компонента и его родителя оставляйте **100%**. Рассчитанная alpha находится в RGBA краски; дополнительное снижение opacity ослабляет также текст, иконки и focus. Проверяйте результат после смешивания с фактическим фоном, включая block и усиленные состояния.
+Opacity компонента и его родителя оставляйте **100%**. Единственное исключение — пустой слой `.Border`: integer Borders 0/100% включает только его границу 0.5 px, не текст или заливку контрола. Рассчитанная alpha находится в RGBA краски; дополнительное снижение opacity ослабляет также текст, иконки и focus. Проверяйте результат после смешивания с фактическим фоном, включая block и усиленные состояния.
 
 Runtime хранит одну непрозрачную растяжку на hue и точные промежуточные вычисления. Native Palette содержит только используемые RGBA-цвета с alpha в целых процентах. Native FLOAT-примитивы — целые числа; дробные opacity/ratio/intermediate FLOAT и отдельная Opacity-коллекция в native не экспортируются. Не добавляйте промежуточные RGB или числовые примитивы вручную.
 
-Focus — отдельное заметное кольцо, выбор — дополнительно маркер или подпись. Disabled использует собственную нейтральную пару и отключённое действие. Active не заменяет ни focus, ни disabled.
+Focus в Figma меняет semantic fill или цвет ручки, без чёрного контура. Выбор обозначается дополнительно маркером или подписью. Disabled использует собственную нейтральную пару и отключённое действие. Active не заменяет ни focus, ни disabled.
 
 ## Точный пользовательский фон
 
@@ -134,3 +134,7 @@ node figma/color-system-v2/export-custom.mjs --light '#F1EEF8' --dark '#221D2C' 
 - Пользовательский RGB имеет отдельный согласованный project export; его режим и парные роли выбраны явно.
 
 Внутренние Palette/Theme/Scheme остаются видимы в менеджере переменных как источники и маршруты, но не служат конкурирующими picker для обычного дизайна. Density, Radius и Borders отвечают за геометрию независимо от цвета. Подробный контракт и границы совместимости — в [surface-context.md](../../docs/surface-context.md).
+
+### Обводки
+
+На внешнем фрейме выберите `V2 · Borders → On / Off`; по умолчанию включено On. У вложенных компонентов оставьте Auto. Режим управляет границами контролов, карточек, навигационных элементов и всплывающих панелей. Толщина — 0.5 px. Текст, иконки и заливки не меняют общую opacity; Focus не добавляет внешний контур. [Примеры On/Off в Figma](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=200-7).

@@ -8,6 +8,7 @@ async function cset(name, axes, width, build) {
   guideCreatedRoots.push(set);
   for (const variant of variants) { variant.primaryAxisSizingMode = 'AUTO'; variant.counterAxisSizingMode = 'FIXED'; variant.clipsContent = false; variant.opacity = 1; }
   await build(set, variants);
+  for (const variant of variants) if (!variant.children.some(n => n.name === ".Border")) gstroke(variant, "border/subtle");
   let y = 32; let maxWidth = 0;
   for (const variant of variants) { variant.x = 32; variant.y = y; y += variant.height + 24; maxWidth = Math.max(maxWidth, variant.width); }
   set.resizeWithoutConstraints(maxWidth + 64, y + 8); set.fills = []; set.clipsContent = false;

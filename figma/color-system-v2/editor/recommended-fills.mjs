@@ -87,7 +87,7 @@ export function solveRecommendedFills(accent,steps,{base,extremes=[],dark=false,
  const textLimitY=dark?(inkY+.05)/(minimumContrast+.1)-.05:(inkY+.05)*(minimumContrast+.1)-.05;
  const pools={};
  for(const role of roles){
-  const family=role.split('/')[0],requiredContrast=fillVisibilityPolicy[family+'Contrast'],requiredDelta=fillVisibilityPolicy[family+'Delta'],chromaGoal=(family==='secondary'?.04:.018)*chromaScale,chromaLimit=(family==='secondary'?.08:.05)*chromaScale;
+  const family=role.split('/')[0],requiredContrast=fillVisibilityPolicy[family+'Contrast'],requiredDelta=fillVisibilityPolicy[family+'Delta'],chromaGoal=(family==='secondary'?(dark?.04:.06):.018)*chromaScale,chromaLimit=(family==='secondary'?.08:.05)*chromaScale;
   const candidates=steps.flatMap(step=>fitStep(step,backings,reference[role],clamp(maxAlpha??(backings.length>1?.96:1),0,1)));
   for(const c of candidates){
    const paints=backings.map(bg=>composite(c.paint,bg)),lch=toOklch(paints[0]),hueError=angularDifference(lch.h,accent.hue),inverted=lch.c>.005&&hueError>90;

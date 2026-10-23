@@ -34,7 +34,7 @@
   "bridge": {
     "source": "figma/token-system-v4/graph.json",
     "sourceHash": "4deafa9836166d4e3425409c49c70a29be70129e3ea9e5ac04a226474b2b2b7c",
-    "graphSha256": "90eb3023f93314263ab20b816a6fff1be45349dd22d3592f8ade746e1383897c",
+    "graphSha256": "08c361d0c6b35526fba3c41041cf75ae7262fae561847becf0f67e052aa10691",
     "palette": "One shared opaque ramp per hue; semantic colors select a step and an Opacity alias.",
     "legacyLogicalKeys": "Preserved outside Palette; Figma names group by role with context in the leaf."
   },
@@ -5115,15 +5115,26 @@
           "css": "--sloy-v2-primitives-opacity-58"
         },
         {
-          "name": "opacity/26",
-          "figmaName": "opacity/26",
+          "name": "opacity/29",
+          "figmaName": "opacity/29",
           "type": "FLOAT",
           "values": {
-            "Value": 26
+            "Value": 29
           },
           "scopes": [],
           "description": "Color opacity in percent, 0–100.",
-          "css": "--sloy-v2-primitives-opacity-26"
+          "css": "--sloy-v2-primitives-opacity-29"
+        },
+        {
+          "name": "opacity/50",
+          "figmaName": "opacity/50",
+          "type": "FLOAT",
+          "values": {
+            "Value": 50
+          },
+          "scopes": [],
+          "description": "Color opacity in percent, 0–100.",
+          "css": "--sloy-v2-primitives-opacity-50"
         },
         {
           "name": "opacity/25",
@@ -5181,15 +5192,26 @@
           "css": "--sloy-v2-primitives-opacity-9"
         },
         {
-          "name": "opacity/27",
-          "figmaName": "opacity/27",
+          "name": "opacity/35",
+          "figmaName": "opacity/35",
           "type": "FLOAT",
           "values": {
-            "Value": 27
+            "Value": 35
           },
           "scopes": [],
           "description": "Color opacity in percent, 0–100.",
-          "css": "--sloy-v2-primitives-opacity-27"
+          "css": "--sloy-v2-primitives-opacity-35"
+        },
+        {
+          "name": "opacity/34",
+          "figmaName": "opacity/34",
+          "type": "FLOAT",
+          "values": {
+            "Value": 34
+          },
+          "scopes": [],
+          "description": "Color opacity in percent, 0–100.",
+          "css": "--sloy-v2-primitives-opacity-34"
         },
         {
           "name": "opacity/28",
@@ -5201,6 +5223,28 @@
           "scopes": [],
           "description": "Color opacity in percent, 0–100.",
           "css": "--sloy-v2-primitives-opacity-28"
+        },
+        {
+          "name": "opacity/27",
+          "figmaName": "opacity/27",
+          "type": "FLOAT",
+          "values": {
+            "Value": 27
+          },
+          "scopes": [],
+          "description": "Color opacity in percent, 0–100.",
+          "css": "--sloy-v2-primitives-opacity-27"
+        },
+        {
+          "name": "opacity/26",
+          "figmaName": "opacity/26",
+          "type": "FLOAT",
+          "values": {
+            "Value": 26
+          },
+          "scopes": [],
+          "description": "Color opacity in percent, 0–100.",
+          "css": "--sloy-v2-primitives-opacity-26"
         },
         {
           "name": "opacity/13",
@@ -5247,6 +5291,17 @@
           "css": "--sloy-v2-primitives-opacity-65"
         },
         {
+          "name": "opacity/71",
+          "figmaName": "opacity/71",
+          "type": "FLOAT",
+          "values": {
+            "Value": 71
+          },
+          "scopes": [],
+          "description": "Color opacity in percent, 0–100.",
+          "css": "--sloy-v2-primitives-opacity-71"
+        },
+        {
           "name": "opacity/86",
           "figmaName": "opacity/86",
           "type": "FLOAT",
@@ -5291,26 +5346,15 @@
           "css": "--sloy-v2-primitives-opacity-98"
         },
         {
-          "name": "opacity/90",
-          "figmaName": "opacity/90",
+          "name": "opacity/95",
+          "figmaName": "opacity/95",
           "type": "FLOAT",
           "values": {
-            "Value": 90
+            "Value": 95
           },
           "scopes": [],
           "description": "Color opacity in percent, 0–100.",
-          "css": "--sloy-v2-primitives-opacity-90"
-        },
-        {
-          "name": "opacity/29",
-          "figmaName": "opacity/29",
-          "type": "FLOAT",
-          "values": {
-            "Value": 29
-          },
-          "scopes": [],
-          "description": "Color opacity in percent, 0–100.",
-          "css": "--sloy-v2-primitives-opacity-29"
+          "css": "--sloy-v2-primitives-opacity-95"
         },
         {
           "name": "opacity/31",
@@ -5335,6 +5379,39 @@
           "css": "--sloy-v2-primitives-opacity-33"
         },
         {
+          "name": "opacity/38",
+          "figmaName": "opacity/38",
+          "type": "FLOAT",
+          "values": {
+            "Value": 38
+          },
+          "scopes": [],
+          "description": "Color opacity in percent, 0–100.",
+          "css": "--sloy-v2-primitives-opacity-38"
+        },
+        {
+          "name": "opacity/37",
+          "figmaName": "opacity/37",
+          "type": "FLOAT",
+          "values": {
+            "Value": 37
+          },
+          "scopes": [],
+          "description": "Color opacity in percent, 0–100.",
+          "css": "--sloy-v2-primitives-opacity-37"
+        },
+        {
+          "name": "opacity/36",
+          "figmaName": "opacity/36",
+          "type": "FLOAT",
+          "values": {
+            "Value": 36
+          },
+          "scopes": [],
+          "description": "Color opacity in percent, 0–100.",
+          "css": "--sloy-v2-primitives-opacity-36"
+        },
+        {
           "name": "opacity/17",
           "figmaName": "opacity/17",
           "type": "FLOAT",
@@ -5355,6 +5432,17 @@
           "scopes": [],
           "description": "Color opacity in percent, 0–100.",
           "css": "--sloy-v2-primitives-opacity-69"
+        },
+        {
+          "name": "opacity/66",
+          "figmaName": "opacity/66",
+          "type": "FLOAT",
+          "values": {
+            "Value": 66
+          },
+          "scopes": [],
+          "description": "Color opacity in percent, 0–100.",
+          "css": "--sloy-v2-primitives-opacity-66"
         },
         {
           "name": "opacity/81",
@@ -5401,37 +5489,15 @@
           "css": "--sloy-v2-primitives-opacity-21"
         },
         {
-          "name": "opacity/34",
-          "figmaName": "opacity/34",
+          "name": "opacity/39",
+          "figmaName": "opacity/39",
           "type": "FLOAT",
           "values": {
-            "Value": 34
+            "Value": 39
           },
           "scopes": [],
           "description": "Color opacity in percent, 0–100.",
-          "css": "--sloy-v2-primitives-opacity-34"
-        },
-        {
-          "name": "opacity/66",
-          "figmaName": "opacity/66",
-          "type": "FLOAT",
-          "values": {
-            "Value": 66
-          },
-          "scopes": [],
-          "description": "Color opacity in percent, 0–100.",
-          "css": "--sloy-v2-primitives-opacity-66"
-        },
-        {
-          "name": "opacity/71",
-          "figmaName": "opacity/71",
-          "type": "FLOAT",
-          "values": {
-            "Value": 71
-          },
-          "scopes": [],
-          "description": "Color opacity in percent, 0–100.",
-          "css": "--sloy-v2-primitives-opacity-71"
+          "css": "--sloy-v2-primitives-opacity-39"
         },
         {
           "name": "opacity/87",
@@ -5443,6 +5509,17 @@
           "scopes": [],
           "description": "Color opacity in percent, 0–100.",
           "css": "--sloy-v2-primitives-opacity-87"
+        },
+        {
+          "name": "opacity/97",
+          "figmaName": "opacity/97",
+          "type": "FLOAT",
+          "values": {
+            "Value": 97
+          },
+          "scopes": [],
+          "description": "Color opacity in percent, 0–100.",
+          "css": "--sloy-v2-primitives-opacity-97"
         },
         {
           "name": "opacity/55",
@@ -5467,26 +5544,26 @@
           "css": "--sloy-v2-primitives-opacity-83"
         },
         {
-          "name": "opacity/99",
-          "figmaName": "opacity/99",
+          "name": "opacity/94",
+          "figmaName": "opacity/94",
           "type": "FLOAT",
           "values": {
-            "Value": 99
+            "Value": 94
           },
           "scopes": [],
           "description": "Color opacity in percent, 0–100.",
-          "css": "--sloy-v2-primitives-opacity-99"
+          "css": "--sloy-v2-primitives-opacity-94"
         },
         {
-          "name": "opacity/97",
-          "figmaName": "opacity/97",
+          "name": "opacity/90",
+          "figmaName": "opacity/90",
           "type": "FLOAT",
           "values": {
-            "Value": 97
+            "Value": 90
           },
           "scopes": [],
           "description": "Color opacity in percent, 0–100.",
-          "css": "--sloy-v2-primitives-opacity-97"
+          "css": "--sloy-v2-primitives-opacity-90"
         },
         {
           "name": "opacity/7",
@@ -5498,6 +5575,17 @@
           "scopes": [],
           "description": "Color opacity in percent, 0–100.",
           "css": "--sloy-v2-primitives-opacity-7"
+        },
+        {
+          "name": "opacity/73",
+          "figmaName": "opacity/73",
+          "type": "FLOAT",
+          "values": {
+            "Value": 73
+          },
+          "scopes": [],
+          "description": "Color opacity in percent, 0–100.",
+          "css": "--sloy-v2-primitives-opacity-73"
         }
       ]
     },
@@ -5745,10 +5833,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/27"
+                "alias": "palette/blue/25"
               },
               "opacity": {
-                "alias": "opacity/32"
+                "alias": "opacity/35"
               }
             },
             "Dark": {
@@ -5887,10 +5975,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/25"
+                "alias": "palette/green/23"
               },
               "opacity": {
-                "alias": "opacity/29"
+                "alias": "opacity/32"
               }
             },
             "Dark": {
@@ -5955,10 +6043,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/28"
+                "alias": "palette/green/24"
               },
               "opacity": {
-                "alias": "opacity/32"
+                "alias": "opacity/38"
               }
             },
             "Dark": {
@@ -6097,10 +6185,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/24"
+                "alias": "palette/orange/20"
               },
               "opacity": {
-                "alias": "opacity/29"
+                "alias": "opacity/35"
               }
             },
             "Dark": {
@@ -6165,10 +6253,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/27"
+                "alias": "palette/orange/23"
               },
               "opacity": {
-                "alias": "opacity/32"
+                "alias": "opacity/38"
               }
             },
             "Dark": {
@@ -6307,10 +6395,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/27"
+                "alias": "palette/red/22"
               },
               "opacity": {
-                "alias": "opacity/21"
+                "alias": "opacity/23"
               }
             },
             "Dark": {
@@ -6375,10 +6463,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/28"
+                "alias": "palette/red/26"
               },
               "opacity": {
-                "alias": "opacity/26"
+                "alias": "opacity/27"
               }
             },
             "Dark": {
@@ -6517,10 +6605,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/28"
+                "alias": "palette/pink/26"
               },
               "opacity": {
-                "alias": "opacity/21"
+                "alias": "opacity/22"
               }
             },
             "Dark": {
@@ -6585,10 +6673,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/31"
+                "alias": "palette/pink/27"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/27"
               }
             },
             "Dark": {
@@ -6727,10 +6815,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/31"
+                "alias": "palette/purple/28"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/21"
               }
             },
             "Dark": {
@@ -6795,10 +6883,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/34"
+                "alias": "palette/purple/29"
               },
               "opacity": {
-                "alias": "opacity/24"
+                "alias": "opacity/26"
               }
             },
             "Dark": {
@@ -7351,10 +7439,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/26"
+                "alias": "palette/blue/23"
               },
               "opacity": {
-                "alias": "opacity/26"
+                "alias": "opacity/29"
               }
             },
             "Dark": {
@@ -7419,10 +7507,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/28"
+                "alias": "palette/blue/24"
               },
               "opacity": {
-                "alias": "opacity/30"
+                "alias": "opacity/35"
               }
             },
             "Dark": {
@@ -7561,10 +7649,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/25"
+                "alias": "palette/green/21"
               },
               "opacity": {
-                "alias": "opacity/28"
+                "alias": "opacity/34"
               }
             },
             "Dark": {
@@ -7629,10 +7717,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/28"
+                "alias": "palette/green/24"
               },
               "opacity": {
-                "alias": "opacity/31"
+                "alias": "opacity/37"
               }
             },
             "Dark": {
@@ -7771,10 +7859,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/24"
+                "alias": "palette/orange/21"
               },
               "opacity": {
-                "alias": "opacity/28"
+                "alias": "opacity/32"
               }
             },
             "Dark": {
@@ -7839,10 +7927,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/25"
+                "alias": "palette/orange/23"
               },
               "opacity": {
-                "alias": "opacity/34"
+                "alias": "opacity/37"
               }
             },
             "Dark": {
@@ -7981,10 +8069,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/26"
+                "alias": "palette/red/20"
               },
               "opacity": {
-                "alias": "opacity/21"
+                "alias": "opacity/28"
               }
             },
             "Dark": {
@@ -8049,10 +8137,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/30"
+                "alias": "palette/red/25"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/27"
               }
             },
             "Dark": {
@@ -8191,10 +8279,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/30"
+                "alias": "palette/pink/25"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/22"
               }
             },
             "Dark": {
@@ -8259,10 +8347,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/31"
+                "alias": "palette/pink/28"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/26"
               }
             },
             "Dark": {
@@ -8401,10 +8489,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/30"
+                "alias": "palette/purple/27"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/21"
               }
             },
             "Dark": {
@@ -8469,10 +8557,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/33"
+                "alias": "palette/purple/30"
               },
               "opacity": {
-                "alias": "opacity/24"
+                "alias": "opacity/25"
               }
             },
             "Dark": {
@@ -9025,10 +9113,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/25"
+                "alias": "palette/blue/15"
               },
               "opacity": {
-                "alias": "opacity/26"
+                "alias": "opacity/50"
               }
             },
             "Dark": {
@@ -9093,10 +9181,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/31"
+                "alias": "palette/blue/24"
               },
               "opacity": {
-                "alias": "opacity/27"
+                "alias": "opacity/34"
               }
             },
             "Dark": {
@@ -9235,10 +9323,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/25"
+                "alias": "palette/green/22"
               },
               "opacity": {
-                "alias": "opacity/27"
+                "alias": "opacity/31"
               }
             },
             "Dark": {
@@ -9303,10 +9391,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/26"
+                "alias": "palette/green/24"
               },
               "opacity": {
-                "alias": "opacity/33"
+                "alias": "opacity/36"
               }
             },
             "Dark": {
@@ -9374,7 +9462,7 @@
                 "alias": "palette/green/39"
               },
               "opacity": {
-                "alias": "opacity/65"
+                "alias": "opacity/66"
               }
             },
             "Dark": {
@@ -9445,10 +9533,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/21"
+                "alias": "palette/orange/19"
               },
               "opacity": {
-                "alias": "opacity/31"
+                "alias": "opacity/34"
               }
             },
             "Dark": {
@@ -9513,10 +9601,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/25"
+                "alias": "palette/orange/21"
               },
               "opacity": {
-                "alias": "opacity/33"
+                "alias": "opacity/39"
               }
             },
             "Dark": {
@@ -9655,10 +9743,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/26"
+                "alias": "palette/red/13"
               },
               "opacity": {
-                "alias": "opacity/21"
+                "alias": "opacity/55"
               }
             },
             "Dark": {
@@ -9723,10 +9811,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/29"
+                "alias": "palette/red/24"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/27"
               }
             },
             "Dark": {
@@ -9865,10 +9953,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/29"
+                "alias": "palette/pink/24"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/22"
               }
             },
             "Dark": {
@@ -9933,10 +10021,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/30"
+                "alias": "palette/pink/28"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/26"
               }
             },
             "Dark": {
@@ -10075,10 +10163,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/29"
+                "alias": "palette/purple/26"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/21"
               }
             },
             "Dark": {
@@ -10143,10 +10231,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/32"
+                "alias": "palette/purple/29"
               },
               "opacity": {
-                "alias": "opacity/24"
+                "alias": "opacity/25"
               }
             },
             "Dark": {
@@ -10214,7 +10302,7 @@
                 "alias": "palette/purple/39"
               },
               "opacity": {
-                "alias": "opacity/64"
+                "alias": "opacity/65"
               }
             },
             "Dark": {
@@ -10699,10 +10787,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/25"
+                "alias": "palette/blue/15"
               },
               "opacity": {
-                "alias": "opacity/26"
+                "alias": "opacity/50"
               }
             },
             "Dark": {
@@ -10767,10 +10855,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/31"
+                "alias": "palette/blue/24"
               },
               "opacity": {
-                "alias": "opacity/27"
+                "alias": "opacity/34"
               }
             },
             "Dark": {
@@ -10842,7 +10930,12 @@
               }
             },
             "Dark": {
-              "alias": "palette/blue/01"
+              "color": {
+                "alias": "palette/white"
+              },
+              "opacity": {
+                "alias": "opacity/98"
+              }
             }
           },
           "scopes": [],
@@ -10904,10 +10997,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/25"
+                "alias": "palette/green/22"
               },
               "opacity": {
-                "alias": "opacity/27"
+                "alias": "opacity/31"
               }
             },
             "Dark": {
@@ -10972,10 +11065,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/26"
+                "alias": "palette/green/24"
               },
               "opacity": {
-                "alias": "opacity/33"
+                "alias": "opacity/36"
               }
             },
             "Dark": {
@@ -11043,11 +11136,16 @@
                 "alias": "palette/green/39"
               },
               "opacity": {
-                "alias": "opacity/65"
+                "alias": "opacity/66"
               }
             },
             "Dark": {
-              "alias": "palette/green/01"
+              "color": {
+                "alias": "palette/white"
+              },
+              "opacity": {
+                "alias": "opacity/98"
+              }
             }
           },
           "scopes": [],
@@ -11109,10 +11207,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/21"
+                "alias": "palette/orange/19"
               },
               "opacity": {
-                "alias": "opacity/31"
+                "alias": "opacity/34"
               }
             },
             "Dark": {
@@ -11177,10 +11275,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/25"
+                "alias": "palette/orange/21"
               },
               "opacity": {
-                "alias": "opacity/33"
+                "alias": "opacity/39"
               }
             },
             "Dark": {
@@ -11252,7 +11350,12 @@
               }
             },
             "Dark": {
-              "alias": "palette/orange/01"
+              "color": {
+                "alias": "palette/white"
+              },
+              "opacity": {
+                "alias": "opacity/97"
+              }
             }
           },
           "scopes": [],
@@ -11314,10 +11417,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/26"
+                "alias": "palette/red/13"
               },
               "opacity": {
-                "alias": "opacity/21"
+                "alias": "opacity/55"
               }
             },
             "Dark": {
@@ -11382,10 +11485,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/29"
+                "alias": "palette/red/24"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/27"
               }
             },
             "Dark": {
@@ -11458,10 +11561,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/red/01"
+                "alias": "palette/white"
               },
               "opacity": {
-                "alias": "opacity/99"
+                "alias": "opacity/97"
               }
             }
           },
@@ -11524,10 +11627,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/29"
+                "alias": "palette/pink/24"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/22"
               }
             },
             "Dark": {
@@ -11592,10 +11695,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/30"
+                "alias": "palette/pink/28"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/26"
               }
             },
             "Dark": {
@@ -11667,7 +11770,12 @@
               }
             },
             "Dark": {
-              "alias": "palette/pink/01"
+              "color": {
+                "alias": "palette/white"
+              },
+              "opacity": {
+                "alias": "opacity/98"
+              }
             }
           },
           "scopes": [],
@@ -11729,10 +11837,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/29"
+                "alias": "palette/purple/26"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/21"
               }
             },
             "Dark": {
@@ -11797,10 +11905,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/32"
+                "alias": "palette/purple/29"
               },
               "opacity": {
-                "alias": "opacity/24"
+                "alias": "opacity/25"
               }
             },
             "Dark": {
@@ -11868,11 +11976,16 @@
                 "alias": "palette/purple/39"
               },
               "opacity": {
-                "alias": "opacity/64"
+                "alias": "opacity/65"
               }
             },
             "Dark": {
-              "alias": "palette/purple/01"
+              "color": {
+                "alias": "palette/white"
+              },
+              "opacity": {
+                "alias": "opacity/98"
+              }
             }
           },
           "scopes": [],
@@ -12398,10 +12511,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/26"
+                "alias": "palette/blue/23"
               },
               "opacity": {
-                "alias": "opacity/26"
+                "alias": "opacity/30"
               }
             },
             "Dark": {
@@ -12466,10 +12579,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/28"
+                "alias": "palette/blue/25"
               },
               "opacity": {
-                "alias": "opacity/30"
+                "alias": "opacity/34"
               }
             },
             "Dark": {
@@ -12520,7 +12633,7 @@
               "alias": "palette/blue/33"
             },
             "Dark": {
-              "alias": "palette/blue/02"
+              "alias": "palette/white"
             }
           },
           "scopes": [],
@@ -12537,15 +12650,15 @@
                 "alias": "palette/blue/40"
               },
               "opacity": {
-                "alias": "opacity/72"
+                "alias": "opacity/71"
               }
             },
             "Dark": {
               "color": {
-                "alias": "palette/blue/01"
+                "alias": "palette/white"
               },
               "opacity": {
-                "alias": "opacity/98"
+                "alias": "opacity/95"
               }
             }
           },
@@ -12608,10 +12721,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/25"
+                "alias": "palette/green/22"
               },
               "opacity": {
-                "alias": "opacity/28"
+                "alias": "opacity/33"
               }
             },
             "Dark": {
@@ -12676,10 +12789,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/27"
+                "alias": "palette/green/24"
               },
               "opacity": {
-                "alias": "opacity/33"
+                "alias": "opacity/38"
               }
             },
             "Dark": {
@@ -12727,10 +12840,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/green/34"
+              "alias": "palette/green/33"
             },
             "Dark": {
-              "alias": "palette/green/01"
+              "alias": "palette/white"
             }
           },
           "scopes": [],
@@ -12747,7 +12860,7 @@
                 "alias": "palette/green/40"
               },
               "opacity": {
-                "alias": "opacity/72"
+                "alias": "opacity/71"
               }
             },
             "Dark": {
@@ -12818,10 +12931,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/25"
+                "alias": "palette/orange/21"
               },
               "opacity": {
-                "alias": "opacity/28"
+                "alias": "opacity/33"
               }
             },
             "Dark": {
@@ -12886,10 +12999,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/27"
+                "alias": "palette/orange/23"
               },
               "opacity": {
-                "alias": "opacity/32"
+                "alias": "opacity/38"
               }
             },
             "Dark": {
@@ -12962,10 +13075,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/orange/01"
+                "alias": "palette/white"
               },
               "opacity": {
-                "alias": "opacity/98"
+                "alias": "opacity/96"
               }
             }
           },
@@ -13028,10 +13141,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/27"
+                "alias": "palette/red/22"
               },
               "opacity": {
-                "alias": "opacity/21"
+                "alias": "opacity/23"
               }
             },
             "Dark": {
@@ -13096,10 +13209,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/29"
+                "alias": "palette/red/25"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/27"
               }
             },
             "Dark": {
@@ -13150,7 +13263,7 @@
               "alias": "palette/red/33"
             },
             "Dark": {
-              "alias": "palette/red/02"
+              "alias": "palette/white"
             }
           },
           "scopes": [],
@@ -13167,15 +13280,15 @@
                 "alias": "palette/red/40"
               },
               "opacity": {
-                "alias": "opacity/71"
+                "alias": "opacity/72"
               }
             },
             "Dark": {
               "color": {
-                "alias": "palette/red/01"
+                "alias": "palette/white"
               },
               "opacity": {
-                "alias": "opacity/97"
+                "alias": "opacity/94"
               }
             }
           },
@@ -13238,10 +13351,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/29"
+                "alias": "palette/pink/25"
               },
               "opacity": {
-                "alias": "opacity/21"
+                "alias": "opacity/22"
               }
             },
             "Dark": {
@@ -13306,10 +13419,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/31"
+                "alias": "palette/pink/28"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/27"
               }
             },
             "Dark": {
@@ -13382,10 +13495,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/pink/01"
+                "alias": "palette/white"
               },
               "opacity": {
-                "alias": "opacity/99"
+                "alias": "opacity/96"
               }
             }
           },
@@ -13448,10 +13561,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/31"
+                "alias": "palette/purple/27"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/21"
               }
             },
             "Dark": {
@@ -13516,10 +13629,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/33"
+                "alias": "palette/purple/29"
               },
               "opacity": {
-                "alias": "opacity/24"
+                "alias": "opacity/25"
               }
             },
             "Dark": {
@@ -13570,7 +13683,7 @@
               "alias": "palette/purple/32"
             },
             "Dark": {
-              "alias": "palette/purple/02"
+              "alias": "palette/white"
             }
           },
           "scopes": [],
@@ -13584,18 +13697,18 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/40"
+                "alias": "palette/purple/39"
               },
               "opacity": {
-                "alias": "opacity/71"
+                "alias": "opacity/73"
               }
             },
             "Dark": {
               "color": {
-                "alias": "palette/purple/01"
+                "alias": "palette/white"
               },
               "opacity": {
-                "alias": "opacity/98"
+                "alias": "opacity/95"
               }
             }
           },
@@ -14080,10 +14193,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/blue/25"
+                "alias": "palette/blue/15"
               },
               "opacity": {
-                "alias": "opacity/26"
+                "alias": "opacity/50"
               }
             }
           },
@@ -14148,10 +14261,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/blue/31"
+                "alias": "palette/blue/24"
               },
               "opacity": {
-                "alias": "opacity/27"
+                "alias": "opacity/34"
               }
             }
           },
@@ -14290,10 +14403,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/green/25"
+                "alias": "palette/green/22"
               },
               "opacity": {
-                "alias": "opacity/27"
+                "alias": "opacity/31"
               }
             }
           },
@@ -14358,10 +14471,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/green/26"
+                "alias": "palette/green/24"
               },
               "opacity": {
-                "alias": "opacity/33"
+                "alias": "opacity/36"
               }
             }
           },
@@ -14429,7 +14542,7 @@
                 "alias": "palette/green/39"
               },
               "opacity": {
-                "alias": "opacity/65"
+                "alias": "opacity/66"
               }
             }
           },
@@ -14500,10 +14613,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/orange/21"
+                "alias": "palette/orange/19"
               },
               "opacity": {
-                "alias": "opacity/31"
+                "alias": "opacity/34"
               }
             }
           },
@@ -14568,10 +14681,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/orange/25"
+                "alias": "palette/orange/21"
               },
               "opacity": {
-                "alias": "opacity/33"
+                "alias": "opacity/39"
               }
             }
           },
@@ -14710,10 +14823,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/red/26"
+                "alias": "palette/red/13"
               },
               "opacity": {
-                "alias": "opacity/21"
+                "alias": "opacity/55"
               }
             }
           },
@@ -14778,10 +14891,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/red/29"
+                "alias": "palette/red/24"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/27"
               }
             }
           },
@@ -14920,10 +15033,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/pink/29"
+                "alias": "palette/pink/24"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/22"
               }
             }
           },
@@ -14988,10 +15101,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/pink/30"
+                "alias": "palette/pink/28"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/26"
               }
             }
           },
@@ -15130,10 +15243,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/purple/29"
+                "alias": "palette/purple/26"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/21"
               }
             }
           },
@@ -15198,10 +15311,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/purple/32"
+                "alias": "palette/purple/29"
               },
               "opacity": {
-                "alias": "opacity/24"
+                "alias": "opacity/25"
               }
             }
           },
@@ -15269,7 +15382,7 @@
                 "alias": "palette/purple/39"
               },
               "opacity": {
-                "alias": "opacity/64"
+                "alias": "opacity/65"
               }
             }
           },
@@ -15746,10 +15859,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/26"
+                "alias": "palette/blue/23"
               },
               "opacity": {
-                "alias": "opacity/26"
+                "alias": "opacity/29"
               }
             },
             "Dark": {
@@ -15814,10 +15927,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/28"
+                "alias": "palette/blue/24"
               },
               "opacity": {
-                "alias": "opacity/30"
+                "alias": "opacity/35"
               }
             },
             "Dark": {
@@ -15956,10 +16069,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/25"
+                "alias": "palette/green/21"
               },
               "opacity": {
-                "alias": "opacity/28"
+                "alias": "opacity/34"
               }
             },
             "Dark": {
@@ -16024,10 +16137,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/28"
+                "alias": "palette/green/24"
               },
               "opacity": {
-                "alias": "opacity/31"
+                "alias": "opacity/37"
               }
             },
             "Dark": {
@@ -16166,10 +16279,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/24"
+                "alias": "palette/orange/21"
               },
               "opacity": {
-                "alias": "opacity/28"
+                "alias": "opacity/32"
               }
             },
             "Dark": {
@@ -16234,10 +16347,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/25"
+                "alias": "palette/orange/23"
               },
               "opacity": {
-                "alias": "opacity/34"
+                "alias": "opacity/37"
               }
             },
             "Dark": {
@@ -16376,10 +16489,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/26"
+                "alias": "palette/red/20"
               },
               "opacity": {
-                "alias": "opacity/21"
+                "alias": "opacity/28"
               }
             },
             "Dark": {
@@ -16444,10 +16557,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/30"
+                "alias": "palette/red/25"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/27"
               }
             },
             "Dark": {
@@ -16586,10 +16699,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/30"
+                "alias": "palette/pink/25"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/22"
               }
             },
             "Dark": {
@@ -16654,10 +16767,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/31"
+                "alias": "palette/pink/28"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/26"
               }
             },
             "Dark": {
@@ -16796,10 +16909,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/30"
+                "alias": "palette/purple/27"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/21"
               }
             },
             "Dark": {
@@ -16864,10 +16977,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/33"
+                "alias": "palette/purple/30"
               },
               "opacity": {
-                "alias": "opacity/24"
+                "alias": "opacity/25"
               }
             },
             "Dark": {
@@ -17420,10 +17533,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/25"
+                "alias": "palette/blue/15"
               },
               "opacity": {
-                "alias": "opacity/26"
+                "alias": "opacity/50"
               }
             },
             "Dark": {
@@ -17488,10 +17601,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/31"
+                "alias": "palette/blue/24"
               },
               "opacity": {
-                "alias": "opacity/27"
+                "alias": "opacity/34"
               }
             },
             "Dark": {
@@ -17630,10 +17743,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/25"
+                "alias": "palette/green/22"
               },
               "opacity": {
-                "alias": "opacity/27"
+                "alias": "opacity/31"
               }
             },
             "Dark": {
@@ -17698,10 +17811,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/26"
+                "alias": "palette/green/24"
               },
               "opacity": {
-                "alias": "opacity/33"
+                "alias": "opacity/36"
               }
             },
             "Dark": {
@@ -17840,10 +17953,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/21"
+                "alias": "palette/orange/19"
               },
               "opacity": {
-                "alias": "opacity/31"
+                "alias": "opacity/34"
               }
             },
             "Dark": {
@@ -17908,10 +18021,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/25"
+                "alias": "palette/orange/21"
               },
               "opacity": {
-                "alias": "opacity/33"
+                "alias": "opacity/39"
               }
             },
             "Dark": {
@@ -18050,10 +18163,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/26"
+                "alias": "palette/red/13"
               },
               "opacity": {
-                "alias": "opacity/21"
+                "alias": "opacity/55"
               }
             },
             "Dark": {
@@ -18118,10 +18231,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/29"
+                "alias": "palette/red/24"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/27"
               }
             },
             "Dark": {
@@ -18260,10 +18373,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/29"
+                "alias": "palette/pink/24"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/22"
               }
             },
             "Dark": {
@@ -18328,10 +18441,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/30"
+                "alias": "palette/pink/28"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/26"
               }
             },
             "Dark": {
@@ -18470,10 +18583,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/29"
+                "alias": "palette/purple/26"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/21"
               }
             },
             "Dark": {
@@ -18538,10 +18651,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/32"
+                "alias": "palette/purple/29"
               },
               "opacity": {
-                "alias": "opacity/24"
+                "alias": "opacity/25"
               }
             },
             "Dark": {
@@ -19094,10 +19207,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/25"
+                "alias": "palette/blue/15"
               },
               "opacity": {
-                "alias": "opacity/26"
+                "alias": "opacity/50"
               }
             },
             "Dark": {
@@ -19162,10 +19275,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/31"
+                "alias": "palette/blue/24"
               },
               "opacity": {
-                "alias": "opacity/27"
+                "alias": "opacity/34"
               }
             },
             "Dark": {
@@ -19304,10 +19417,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/25"
+                "alias": "palette/green/22"
               },
               "opacity": {
-                "alias": "opacity/27"
+                "alias": "opacity/31"
               }
             },
             "Dark": {
@@ -19372,10 +19485,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/26"
+                "alias": "palette/green/24"
               },
               "opacity": {
-                "alias": "opacity/33"
+                "alias": "opacity/36"
               }
             },
             "Dark": {
@@ -19443,7 +19556,7 @@
                 "alias": "palette/green/39"
               },
               "opacity": {
-                "alias": "opacity/65"
+                "alias": "opacity/66"
               }
             },
             "Dark": {
@@ -19514,10 +19627,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/21"
+                "alias": "palette/orange/19"
               },
               "opacity": {
-                "alias": "opacity/31"
+                "alias": "opacity/34"
               }
             },
             "Dark": {
@@ -19582,10 +19695,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/25"
+                "alias": "palette/orange/21"
               },
               "opacity": {
-                "alias": "opacity/33"
+                "alias": "opacity/39"
               }
             },
             "Dark": {
@@ -19724,10 +19837,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/26"
+                "alias": "palette/red/13"
               },
               "opacity": {
-                "alias": "opacity/21"
+                "alias": "opacity/55"
               }
             },
             "Dark": {
@@ -19792,10 +19905,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/29"
+                "alias": "palette/red/24"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/27"
               }
             },
             "Dark": {
@@ -19934,10 +20047,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/29"
+                "alias": "palette/pink/24"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/22"
               }
             },
             "Dark": {
@@ -20002,10 +20115,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/30"
+                "alias": "palette/pink/28"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/26"
               }
             },
             "Dark": {
@@ -20144,10 +20257,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/29"
+                "alias": "palette/purple/26"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/21"
               }
             },
             "Dark": {
@@ -20212,10 +20325,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/32"
+                "alias": "palette/purple/29"
               },
               "opacity": {
-                "alias": "opacity/24"
+                "alias": "opacity/25"
               }
             },
             "Dark": {
@@ -20283,7 +20396,7 @@
                 "alias": "palette/purple/39"
               },
               "opacity": {
-                "alias": "opacity/64"
+                "alias": "opacity/65"
               }
             },
             "Dark": {
@@ -20768,10 +20881,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/25"
+                "alias": "palette/blue/15"
               },
               "opacity": {
-                "alias": "opacity/26"
+                "alias": "opacity/50"
               }
             },
             "Dark": {
@@ -20836,10 +20949,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/31"
+                "alias": "palette/blue/24"
               },
               "opacity": {
-                "alias": "opacity/27"
+                "alias": "opacity/34"
               }
             },
             "Dark": {
@@ -20890,7 +21003,7 @@
               "alias": "palette/blue/31"
             },
             "Dark": {
-              "alias": "palette/blue/03"
+              "alias": "palette/blue/04"
             }
           },
           "scopes": [],
@@ -20912,10 +21025,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/blue/01"
+                "alias": "palette/white"
               },
               "opacity": {
-                "alias": "opacity/90"
+                "alias": "opacity/88"
               }
             }
           },
@@ -20978,10 +21091,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/25"
+                "alias": "palette/green/22"
               },
               "opacity": {
-                "alias": "opacity/27"
+                "alias": "opacity/31"
               }
             },
             "Dark": {
@@ -21046,10 +21159,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/26"
+                "alias": "palette/green/24"
               },
               "opacity": {
-                "alias": "opacity/33"
+                "alias": "opacity/36"
               }
             },
             "Dark": {
@@ -21117,7 +21230,7 @@
                 "alias": "palette/green/39"
               },
               "opacity": {
-                "alias": "opacity/65"
+                "alias": "opacity/66"
               }
             },
             "Dark": {
@@ -21188,10 +21301,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/21"
+                "alias": "palette/orange/19"
               },
               "opacity": {
-                "alias": "opacity/31"
+                "alias": "opacity/34"
               }
             },
             "Dark": {
@@ -21256,10 +21369,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/25"
+                "alias": "palette/orange/21"
               },
               "opacity": {
-                "alias": "opacity/33"
+                "alias": "opacity/39"
               }
             },
             "Dark": {
@@ -21310,7 +21423,7 @@
               "alias": "palette/orange/31"
             },
             "Dark": {
-              "alias": "palette/orange/03"
+              "alias": "palette/orange/04"
             }
           },
           "scopes": [],
@@ -21332,10 +21445,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/orange/01"
+                "alias": "palette/white"
               },
               "opacity": {
-                "alias": "opacity/90"
+                "alias": "opacity/88"
               }
             }
           },
@@ -21398,10 +21511,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/26"
+                "alias": "palette/red/13"
               },
               "opacity": {
-                "alias": "opacity/21"
+                "alias": "opacity/55"
               }
             },
             "Dark": {
@@ -21466,10 +21579,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/29"
+                "alias": "palette/red/24"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/27"
               }
             },
             "Dark": {
@@ -21520,7 +21633,7 @@
               "alias": "palette/red/31"
             },
             "Dark": {
-              "alias": "palette/red/03"
+              "alias": "palette/red/04"
             }
           },
           "scopes": [],
@@ -21542,10 +21655,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/red/01"
+                "alias": "palette/white"
               },
               "opacity": {
-                "alias": "opacity/90"
+                "alias": "opacity/87"
               }
             }
           },
@@ -21608,10 +21721,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/29"
+                "alias": "palette/pink/24"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/22"
               }
             },
             "Dark": {
@@ -21676,10 +21789,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/30"
+                "alias": "palette/pink/28"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/26"
               }
             },
             "Dark": {
@@ -21818,10 +21931,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/29"
+                "alias": "palette/purple/26"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/21"
               }
             },
             "Dark": {
@@ -21886,10 +21999,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/32"
+                "alias": "palette/purple/29"
               },
               "opacity": {
-                "alias": "opacity/24"
+                "alias": "opacity/25"
               }
             },
             "Dark": {
@@ -21957,7 +22070,7 @@
                 "alias": "palette/purple/39"
               },
               "opacity": {
-                "alias": "opacity/64"
+                "alias": "opacity/65"
               }
             },
             "Dark": {
@@ -22492,10 +22605,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/26"
+                "alias": "palette/blue/23"
               },
               "opacity": {
-                "alias": "opacity/26"
+                "alias": "opacity/30"
               }
             },
             "Dark": {
@@ -22560,10 +22673,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/blue/28"
+                "alias": "palette/blue/25"
               },
               "opacity": {
-                "alias": "opacity/30"
+                "alias": "opacity/34"
               }
             },
             "Dark": {
@@ -22614,7 +22727,7 @@
               "alias": "palette/blue/33"
             },
             "Dark": {
-              "alias": "palette/blue/02"
+              "alias": "palette/white"
             }
           },
           "scopes": [],
@@ -22631,15 +22744,15 @@
                 "alias": "palette/blue/40"
               },
               "opacity": {
-                "alias": "opacity/72"
+                "alias": "opacity/71"
               }
             },
             "Dark": {
               "color": {
-                "alias": "palette/blue/01"
+                "alias": "palette/white"
               },
               "opacity": {
-                "alias": "opacity/98"
+                "alias": "opacity/95"
               }
             }
           },
@@ -22702,10 +22815,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/25"
+                "alias": "palette/green/22"
               },
               "opacity": {
-                "alias": "opacity/28"
+                "alias": "opacity/33"
               }
             },
             "Dark": {
@@ -22770,10 +22883,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/green/27"
+                "alias": "palette/green/24"
               },
               "opacity": {
-                "alias": "opacity/33"
+                "alias": "opacity/38"
               }
             },
             "Dark": {
@@ -22821,10 +22934,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/green/34"
+              "alias": "palette/green/33"
             },
             "Dark": {
-              "alias": "palette/green/01"
+              "alias": "palette/white"
             }
           },
           "scopes": [],
@@ -22841,7 +22954,7 @@
                 "alias": "palette/green/40"
               },
               "opacity": {
-                "alias": "opacity/72"
+                "alias": "opacity/71"
               }
             },
             "Dark": {
@@ -22912,10 +23025,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/25"
+                "alias": "palette/orange/21"
               },
               "opacity": {
-                "alias": "opacity/28"
+                "alias": "opacity/33"
               }
             },
             "Dark": {
@@ -22980,10 +23093,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/orange/27"
+                "alias": "palette/orange/23"
               },
               "opacity": {
-                "alias": "opacity/32"
+                "alias": "opacity/38"
               }
             },
             "Dark": {
@@ -23056,10 +23169,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/orange/01"
+                "alias": "palette/white"
               },
               "opacity": {
-                "alias": "opacity/98"
+                "alias": "opacity/96"
               }
             }
           },
@@ -23122,10 +23235,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/27"
+                "alias": "palette/red/22"
               },
               "opacity": {
-                "alias": "opacity/21"
+                "alias": "opacity/23"
               }
             },
             "Dark": {
@@ -23190,10 +23303,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/red/29"
+                "alias": "palette/red/25"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/27"
               }
             },
             "Dark": {
@@ -23244,7 +23357,7 @@
               "alias": "palette/red/33"
             },
             "Dark": {
-              "alias": "palette/red/02"
+              "alias": "palette/white"
             }
           },
           "scopes": [],
@@ -23261,15 +23374,15 @@
                 "alias": "palette/red/40"
               },
               "opacity": {
-                "alias": "opacity/71"
+                "alias": "opacity/72"
               }
             },
             "Dark": {
               "color": {
-                "alias": "palette/red/01"
+                "alias": "palette/white"
               },
               "opacity": {
-                "alias": "opacity/97"
+                "alias": "opacity/94"
               }
             }
           },
@@ -23332,10 +23445,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/29"
+                "alias": "palette/pink/25"
               },
               "opacity": {
-                "alias": "opacity/21"
+                "alias": "opacity/22"
               }
             },
             "Dark": {
@@ -23400,10 +23513,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/pink/31"
+                "alias": "palette/pink/28"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/27"
               }
             },
             "Dark": {
@@ -23476,10 +23589,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/pink/01"
+                "alias": "palette/white"
               },
               "opacity": {
-                "alias": "opacity/99"
+                "alias": "opacity/96"
               }
             }
           },
@@ -23542,10 +23655,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/31"
+                "alias": "palette/purple/27"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/21"
               }
             },
             "Dark": {
@@ -23610,10 +23723,10 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/33"
+                "alias": "palette/purple/29"
               },
               "opacity": {
-                "alias": "opacity/24"
+                "alias": "opacity/25"
               }
             },
             "Dark": {
@@ -23664,7 +23777,7 @@
               "alias": "palette/purple/32"
             },
             "Dark": {
-              "alias": "palette/purple/02"
+              "alias": "palette/white"
             }
           },
           "scopes": [],
@@ -23678,18 +23791,18 @@
           "values": {
             "Light": {
               "color": {
-                "alias": "palette/purple/40"
+                "alias": "palette/purple/39"
               },
               "opacity": {
-                "alias": "opacity/71"
+                "alias": "opacity/73"
               }
             },
             "Dark": {
               "color": {
-                "alias": "palette/purple/01"
+                "alias": "palette/white"
               },
               "opacity": {
-                "alias": "opacity/98"
+                "alias": "opacity/95"
               }
             }
           },
@@ -24174,10 +24287,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/blue/25"
+                "alias": "palette/blue/15"
               },
               "opacity": {
-                "alias": "opacity/26"
+                "alias": "opacity/50"
               }
             }
           },
@@ -24242,10 +24355,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/blue/31"
+                "alias": "palette/blue/24"
               },
               "opacity": {
-                "alias": "opacity/27"
+                "alias": "opacity/34"
               }
             }
           },
@@ -24384,10 +24497,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/green/25"
+                "alias": "palette/green/22"
               },
               "opacity": {
-                "alias": "opacity/27"
+                "alias": "opacity/31"
               }
             }
           },
@@ -24452,10 +24565,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/green/26"
+                "alias": "palette/green/24"
               },
               "opacity": {
-                "alias": "opacity/33"
+                "alias": "opacity/36"
               }
             }
           },
@@ -24523,7 +24636,7 @@
                 "alias": "palette/green/39"
               },
               "opacity": {
-                "alias": "opacity/65"
+                "alias": "opacity/66"
               }
             }
           },
@@ -24594,10 +24707,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/orange/21"
+                "alias": "palette/orange/19"
               },
               "opacity": {
-                "alias": "opacity/31"
+                "alias": "opacity/34"
               }
             }
           },
@@ -24662,10 +24775,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/orange/25"
+                "alias": "palette/orange/21"
               },
               "opacity": {
-                "alias": "opacity/33"
+                "alias": "opacity/39"
               }
             }
           },
@@ -24804,10 +24917,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/red/26"
+                "alias": "palette/red/13"
               },
               "opacity": {
-                "alias": "opacity/21"
+                "alias": "opacity/55"
               }
             }
           },
@@ -24872,10 +24985,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/red/29"
+                "alias": "palette/red/24"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/27"
               }
             }
           },
@@ -25014,10 +25127,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/pink/29"
+                "alias": "palette/pink/24"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/22"
               }
             }
           },
@@ -25082,10 +25195,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/pink/30"
+                "alias": "palette/pink/28"
               },
               "opacity": {
-                "alias": "opacity/25"
+                "alias": "opacity/26"
               }
             }
           },
@@ -25224,10 +25337,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/purple/29"
+                "alias": "palette/purple/26"
               },
               "opacity": {
-                "alias": "opacity/20"
+                "alias": "opacity/21"
               }
             }
           },
@@ -25292,10 +25405,10 @@
             },
             "Dark": {
               "color": {
-                "alias": "palette/purple/32"
+                "alias": "palette/purple/29"
               },
               "opacity": {
-                "alias": "opacity/24"
+                "alias": "opacity/25"
               }
             }
           },
@@ -25363,7 +25476,7 @@
                 "alias": "palette/purple/39"
               },
               "opacity": {
-                "alias": "opacity/64"
+                "alias": "opacity/65"
               }
             }
           },
@@ -42993,19 +43106,34 @@
           "css": "--sloy-v2-opacity-58"
         },
         {
-          "name": "26",
-          "figmaName": "26",
+          "name": "29",
+          "figmaName": "29",
           "type": "FLOAT",
           "values": {
             "Value": {
-              "alias": "primitives/opacity/26"
+              "alias": "primitives/opacity/29"
             }
           },
           "scopes": [
             "COLOR_OPACITY"
           ],
           "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
-          "css": "--sloy-v2-opacity-26"
+          "css": "--sloy-v2-opacity-29"
+        },
+        {
+          "name": "50",
+          "figmaName": "50",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "primitives/opacity/50"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
+          "css": "--sloy-v2-opacity-50"
         },
         {
           "name": "25",
@@ -43083,19 +43211,34 @@
           "css": "--sloy-v2-opacity-9"
         },
         {
-          "name": "27",
-          "figmaName": "27",
+          "name": "35",
+          "figmaName": "35",
           "type": "FLOAT",
           "values": {
             "Value": {
-              "alias": "primitives/opacity/27"
+              "alias": "primitives/opacity/35"
             }
           },
           "scopes": [
             "COLOR_OPACITY"
           ],
           "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
-          "css": "--sloy-v2-opacity-27"
+          "css": "--sloy-v2-opacity-35"
+        },
+        {
+          "name": "34",
+          "figmaName": "34",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "primitives/opacity/34"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
+          "css": "--sloy-v2-opacity-34"
         },
         {
           "name": "28",
@@ -43111,6 +43254,36 @@
           ],
           "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
           "css": "--sloy-v2-opacity-28"
+        },
+        {
+          "name": "27",
+          "figmaName": "27",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "primitives/opacity/27"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
+          "css": "--sloy-v2-opacity-27"
+        },
+        {
+          "name": "26",
+          "figmaName": "26",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "primitives/opacity/26"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
+          "css": "--sloy-v2-opacity-26"
         },
         {
           "name": "13",
@@ -43173,6 +43346,21 @@
           "css": "--sloy-v2-opacity-65"
         },
         {
+          "name": "71",
+          "figmaName": "71",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "primitives/opacity/71"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
+          "css": "--sloy-v2-opacity-71"
+        },
+        {
           "name": "86",
           "figmaName": "86",
           "type": "FLOAT",
@@ -43233,34 +43421,19 @@
           "css": "--sloy-v2-opacity-98"
         },
         {
-          "name": "90",
-          "figmaName": "90",
+          "name": "95",
+          "figmaName": "95",
           "type": "FLOAT",
           "values": {
             "Value": {
-              "alias": "primitives/opacity/90"
+              "alias": "primitives/opacity/95"
             }
           },
           "scopes": [
             "COLOR_OPACITY"
           ],
           "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
-          "css": "--sloy-v2-opacity-90"
-        },
-        {
-          "name": "29",
-          "figmaName": "29",
-          "type": "FLOAT",
-          "values": {
-            "Value": {
-              "alias": "primitives/opacity/29"
-            }
-          },
-          "scopes": [
-            "COLOR_OPACITY"
-          ],
-          "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
-          "css": "--sloy-v2-opacity-29"
+          "css": "--sloy-v2-opacity-95"
         },
         {
           "name": "31",
@@ -43293,6 +43466,51 @@
           "css": "--sloy-v2-opacity-33"
         },
         {
+          "name": "38",
+          "figmaName": "38",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "primitives/opacity/38"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
+          "css": "--sloy-v2-opacity-38"
+        },
+        {
+          "name": "37",
+          "figmaName": "37",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "primitives/opacity/37"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
+          "css": "--sloy-v2-opacity-37"
+        },
+        {
+          "name": "36",
+          "figmaName": "36",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "primitives/opacity/36"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
+          "css": "--sloy-v2-opacity-36"
+        },
+        {
           "name": "17",
           "figmaName": "17",
           "type": "FLOAT",
@@ -43321,6 +43539,21 @@
           ],
           "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
           "css": "--sloy-v2-opacity-69"
+        },
+        {
+          "name": "66",
+          "figmaName": "66",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "primitives/opacity/66"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
+          "css": "--sloy-v2-opacity-66"
         },
         {
           "name": "81",
@@ -43383,49 +43616,19 @@
           "css": "--sloy-v2-opacity-21"
         },
         {
-          "name": "34",
-          "figmaName": "34",
+          "name": "39",
+          "figmaName": "39",
           "type": "FLOAT",
           "values": {
             "Value": {
-              "alias": "primitives/opacity/34"
+              "alias": "primitives/opacity/39"
             }
           },
           "scopes": [
             "COLOR_OPACITY"
           ],
           "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
-          "css": "--sloy-v2-opacity-34"
-        },
-        {
-          "name": "66",
-          "figmaName": "66",
-          "type": "FLOAT",
-          "values": {
-            "Value": {
-              "alias": "primitives/opacity/66"
-            }
-          },
-          "scopes": [
-            "COLOR_OPACITY"
-          ],
-          "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
-          "css": "--sloy-v2-opacity-66"
-        },
-        {
-          "name": "71",
-          "figmaName": "71",
-          "type": "FLOAT",
-          "values": {
-            "Value": {
-              "alias": "primitives/opacity/71"
-            }
-          },
-          "scopes": [
-            "COLOR_OPACITY"
-          ],
-          "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
-          "css": "--sloy-v2-opacity-71"
+          "css": "--sloy-v2-opacity-39"
         },
         {
           "name": "87",
@@ -43441,6 +43644,21 @@
           ],
           "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
           "css": "--sloy-v2-opacity-87"
+        },
+        {
+          "name": "97",
+          "figmaName": "97",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "primitives/opacity/97"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
+          "css": "--sloy-v2-opacity-97"
         },
         {
           "name": "55",
@@ -43473,34 +43691,34 @@
           "css": "--sloy-v2-opacity-83"
         },
         {
-          "name": "99",
-          "figmaName": "99",
+          "name": "94",
+          "figmaName": "94",
           "type": "FLOAT",
           "values": {
             "Value": {
-              "alias": "primitives/opacity/99"
+              "alias": "primitives/opacity/94"
             }
           },
           "scopes": [
             "COLOR_OPACITY"
           ],
           "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
-          "css": "--sloy-v2-opacity-99"
+          "css": "--sloy-v2-opacity-94"
         },
         {
-          "name": "97",
-          "figmaName": "97",
+          "name": "90",
+          "figmaName": "90",
           "type": "FLOAT",
           "values": {
             "Value": {
-              "alias": "primitives/opacity/97"
+              "alias": "primitives/opacity/90"
             }
           },
           "scopes": [
             "COLOR_OPACITY"
           ],
           "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
-          "css": "--sloy-v2-opacity-97"
+          "css": "--sloy-v2-opacity-90"
         },
         {
           "name": "7",
@@ -43516,6 +43734,21 @@
           ],
           "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
           "css": "--sloy-v2-opacity-7"
+        },
+        {
+          "name": "73",
+          "figmaName": "73",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "primitives/opacity/73"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "description": "Shared color opacity percentage; affects the paint, not the whole layer.",
+          "css": "--sloy-v2-opacity-73"
         }
       ]
     },

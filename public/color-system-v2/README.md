@@ -4,7 +4,7 @@
 
 ## Native library
 
-`native-graph.json` содержит 972 переменные в девяти коллекциях. Публичные `V2 · Surface` (86 ролей), `V2 · Accent` (11 ролей), Density, Radius и Borders предназначены для макетов. Palette, Theme и Scheme содержат исходные цвета и служебные маршруты. Palette включает только 327 используемых красок: 104 непрозрачные и 223 RGBA. Режимы Theme — Light/Dark; Scheme — Standard/Dimmed; Surface — Shell/Workspace/Content/Overlay/Invert. Accent содержит Neutral и шесть оттенков.
+`native-graph.json` содержит 974 переменные в девяти коллекциях. Публичные `V2 · Surface` (86 ролей), `V2 · Accent` (11 ролей), Density, Radius и Borders предназначены для макетов. Palette, Theme и Scheme содержат исходные цвета и служебные маршруты. Palette включает только 328 используемых красок: 104 непрозрачные и 224 RGBA. Режимы Theme — Light/Dark; Scheme — Standard/Dimmed; Surface — Shell/Workspace/Content/Overlay/Invert. Accent содержит Neutral и шесть оттенков.
 
 Выбирайте цвет по роли: `surface/bg`, `surface/block`, `surface/{primary,secondary,tertiary}/<hue>-normal` и соседний `-active`, `content/{primary,secondary}/<hue>`, `content/on-primary`, `content/on-bright-primary`, `border/<hue>`. Нейтральные пары находятся в тех же группах. Для компонентов используйте Accent: локальный режим наследуется независимо от Theme и Surface. Hover/pressed акцентного компонента выбирают Active. Alpha принадлежит краске; opacity слоя остаётся 100%.
 
@@ -21,6 +21,10 @@ node figma/color-system-v2/verify-native.mjs
 
 Проверка native-графа разрешает 1720 точных сравнений контекстов, измеряет 6000 текстовых пар на составленных подложках и проверяет отсутствие дробных FLOAT, циклов, пропавших ссылок и недостижимых переменных. Локальная проверка не подтверждает живой импорт Figma.
 
+`sync-native.mjs` обновляет существующую библиотеку с сохранением публичных IDs. Команды выводят Plugin API script для исполнителя Figma. Сначала выполните `plan`, затем `create <palette|theme|scheme> <offset>` и `values <collection-key> <offset>` порциями по 50 переменных (Surface — по 25). План показывает отсутствующие и устаревшие служебные переменные, а также IDs всех страниц.
+
+Перед очисткой выполните `scan-page <pageId>` отдельно для каждой страницы. Каждый script переключает только указанную страницу и возвращает квитанцию с прямыми ссылками на устаревшие внутренние переменные, включая невидимые узлы и смешанные текстовые заливки. Сохраните все результаты JSON-массивом в файл, затем создайте `cleanup-plan <receipts.json>` и проверьте его результат; `cleanup <receipts.json>` удаляет только недостижимые Palette/Theme/Scheme. Между сканированием и очисткой не меняйте холст. Очистка требует квитанции всех текущих страниц с тем же fileKey, SHA графа и набором устаревших IDs, повторно проверяет aliases и локальные стили и прекращается до удаления при оставшихся ссылках. Публичные переменные этот updater не создаёт и не удаляет.
+
 ## Exact custom backgrounds
 
 Произвольный HEX требует отдельного расчёта. Figma смешивает alpha с подложкой, но не запускает solver при ручной смене заливки фрейма. Запускайте команды из корня репозитория после `npm ci`: `export-custom.mjs` импортирует соседние модули редактора, color engine и JSON-данные. Скачанный исходник `.mjs` сам по себе не является автономным генератором. Генерируйте отдельную область проекта из точных Light/Dark фонов:
@@ -30,7 +34,7 @@ node figma/color-system-v2/export-custom.mjs --light '#F1EEF8' --dark '#221D2C' 
 node figma/color-system-v2/verify-custom.mjs artifacts/custom-project/graph.json
 ```
 
-Команда создаёт `graph.json`, `tokens.css`, `verification.json` и `import.js`. Последний содержит готовый Figma Plugin API script для запуска в исполнителе plugin-кода: он создаёт или обновляет только коллекцию `Sloy UI · Custom · Project`. Основные 972 переменные не меняются. Project scope содержит 75 COLOR variables с режимами Light/Dark, точными RGB подложек и целыми процентами alpha. В нём есть neutral, шесть акцентов, foreground, border и focus. Смена фона требует нового запуска команды и применения всего согласованного scope.
+Команда создаёт `graph.json`, `tokens.css`, `verification.json` и `import.js`. Последний содержит готовый Figma Plugin API script для запуска в исполнителе plugin-кода: он создаёт или обновляет только коллекцию `Sloy UI · Custom · Project`. Основная native-библиотека не меняется. Project scope содержит 75 COLOR variables с режимами Light/Dark, точными RGB подложек и целыми процентами alpha. В нём есть neutral, шесть акцентов, foreground, border и focus. Смена фона требует нового запуска команды и применения всего согласованного scope.
 
 При недостижимом контрасте текста команда завершится с ошибкой, запишет конкретные пары в отчёт и не оставит `import.js`. Ограничения различимости заливок и состояний на средних тонах выводятся отдельно даже при читаемом тексте. Картинка или текстура требуют защищённого материала и проверки реальных подложек. Нельзя считать один HEX гарантией для произвольных пикселей под элементом.
 
