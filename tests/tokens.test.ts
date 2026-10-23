@@ -98,7 +98,9 @@ describe('Canonical full palette graph',()=>{
   }
   // A full scheme changes Shell directly; swapping Workspace/Content cannot
   // satisfy these canonical alias routes.
-  for(const role of ['surface/bg','content/neutral'])for(const theme of ['Light','Dark']){
+  // Neutral ink can now be shared across the complete alpha backing family;
+  // it need not acquire a duplicate scheme route when its value is unchanged.
+  for(const role of ['surface/bg'])for(const theme of ['Light','Dark']){
    const token=canonicalGraph.collections.find(c=>c.key==='SurfaceScheme')!.variables.find(v=>v.name===`${role}-${theme.toLowerCase()}`)!;
    expect(token.values).toEqual({Standard:{alias:`Surface/${role}-${theme.toLowerCase()}`},Dimmed:{alias:`Surface/${role}-${theme.toLowerCase()}-dimmed`},Inverted:{alias:`Surface/${role}-${theme.toLowerCase()}-dimmed`}});
   }
@@ -223,21 +225,25 @@ it('preserves the chosen per-hue foreground policy across all primary states',()
 });
 
 it('keeps neutral ButtonGroup surfaces soft, distinct, and readable in every context',()=>{
- for(const mode of Object.keys(graph.contexts)){
-  const surface=resolve('Semantic/surface/current',mode) as RGB;
-  const fills=['background','hover','selected','pressed','prefix'].map(role=>resolve(`Semantic/group/${role}`,mode) as RGB);
-  const ink=resolve('Semantic/group/text',mode) as RGB;
+ for(const mode of Object.keys(graph.contexts))for(const scheme of ['Standard','Dimmed'] as const){
+  const surface=resolve('Semantic/surface/current',mode,[],scheme) as RGB;
+  const fills=['background','hover','selected','pressed','prefix'].map(role=>resolve(`Semantic/group/${role}`,mode,[],scheme) as RGB);
+  const ink=resolve('Semantic/group/text',mode,[],scheme) as RGB;
   const [theme,context]=mode.split(' · ');
-  expect(fills[0],mode).toEqual(referenceColor('Theme/surface/block',theme,context.toLowerCase()));
-  expect(fills[1],mode).toEqual(referenceColor('Theme/surface/secondary/neutral-hover',theme,context.toLowerCase()));
-  expect(fills[3],mode).toEqual(referenceColor('Theme/surface/secondary/neutral-pressed',theme,context.toLowerCase()));
-  expect(ratio(surface,fills[0]),mode).toBeGreaterThanOrEqual(1.045);
-  expect(ratio(fills[0],fills[1]),`${mode} hover`).toBeGreaterThanOrEqual(1.045);
-  expect(ratio(fills[1],fills[3]),`${mode} pressed`).toBeGreaterThanOrEqual(1.045);
+  expect(fills[0],mode).toEqual(canonicalColor('Theme/surface/block',theme,context,scheme).value);
+  expect(fills[1],mode).toEqual(canonicalColor('Theme/surface/secondary/neutral-hover',theme,context,scheme).value);
+  expect(fills[3],mode).toEqual(canonicalColor('Theme/surface/secondary/neutral-pressed',theme,context,scheme).value);
   expect(fills[4]).toEqual(fills[0]);
   expect(fills[2]).toEqual(fills[1]);
-  expect(ratio(fills[0],fills[2]),`${mode} selected differs from normal`).toBeGreaterThan(1.04);
-  for(const [index,fill] of fills.entries())expect(ratio(ink,fill),`${mode} role ${index}`).toBeGreaterThanOrEqual(4.5);
+  for(const underlay of [surface,over(fills[0],surface)]){
+   const background=over(fills[0],underlay);
+   const painted=[background,over(fills[1],background),over(fills[2],background),over(fills[3],background),over(fills[4],underlay)];
+   expect(ratio(underlay,background),mode).toBeGreaterThanOrEqual(1.045);
+   expect(ratio(background,painted[1]),`${mode}/${scheme} hover`).toBeGreaterThanOrEqual(1.045);
+   expect(ratio(painted[1],painted[3]),`${mode}/${scheme} pressed`).toBeGreaterThanOrEqual(1.045);
+   expect(ratio(background,painted[2]),`${mode}/${scheme} selected differs from normal`).toBeGreaterThan(1.04);
+   for(const [index,fill] of [...painted,over(fills[4],background)].entries())expect(textRatio(ink,fill),`${mode}/${scheme} role ${index}`).toBeGreaterThanOrEqual(4.5);
+  }
  }
 });
 

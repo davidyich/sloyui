@@ -51,8 +51,9 @@ export function legacyColorPath(name) {
     if(role.startsWith('border'))return 'Theme/border/'+hue+'-'+(role.slice(7)||'normal');
     return 'Theme/surface/'+(kind==='element'?'secondary':'primary')+'/'+hue+'-'+role;
   }
-  // Attached/grouped secondary shells use the context's block fill; states
-  // select the same neutral ramp as other neutral controls.
+  // The group shell paints block once. Hover/pressed are paints on its child,
+  // composed over that painted shell, not replacement colors on surface/bg.
+  // They replace each other on the child; they never stack on one another.
   if(name==='group/background'||name==='group/prefix')return 'Theme/surface/block';
   if(name==='group/hover'||name==='group/selected')return 'Theme/surface/secondary/neutral-hover';
   if(name==='group/pressed')return 'Theme/surface/secondary/neutral-pressed';

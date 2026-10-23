@@ -2,9 +2,10 @@ import {BLACK,WHITE,clamp,color,chroma,composite,contrast,css,fromHex,luminance,
 import {paletteScaleIds,palettePosition,paletteIndex,validatePaletteEdits,projectedAnchors,interpolateColor,toHsl,fromHsl,toOklab,labDistance,colorDifference} from './palette-math.mjs';
 import {createNeutralSettings,validateNeutralSettings,resolveNeutralSurface} from './neutral-system.mjs';
 import {solveRecommendedFills,fillVisibilityPolicy} from './recommended-fills.mjs';
+import {solveAlphaRecipe,alphaRecipeFamily,neutralFillVisibilityPolicy} from './alpha-recipes.mjs';
 export const schema='sloy-palette-lab/v5';
 export const surfaces=['Shell','Workspace','Content','Overlay','Invert','Glass','Custom'];
-export const defaultRules={minimumContrast:4.5,vividness:1.2,adaptPrimary:true};
+export const defaultRules={minimumContrast:4.5,vividness:1.2,adaptPrimary:true,sharedAlpha:true};
 export const presets=[
  ['blue','#087BE9'],['green','#00995B'],['orange','#F07818'],['red','#E53E3E'],['pink','#DA2DAB'],['purple','#9B3FE0']
 ].map(([name,hex])=>({name,hex}));
@@ -30,7 +31,7 @@ export function validateProject(input){
  if(![schema,'sloy-palette-lab/v4','sloy-palette-lab/v3','sloy-palette-lab/v2','sloy-palette-lab/v1'].includes(input?.schema)||!Array.isArray(input.accents)||!input.accents.length||input.accents.length>128)throw new Error('Нужен проект Palette Lab с 1–128 цветами.');
  const names=new Set(['neutral']),occupied=new Set(input.accents.map(a=>a.name));
  const accents=input.accents.map((a,i)=>{if(input.schema!==schema&&a.name==='neutral'){let name='neutral-accent',suffix=2;while(occupied.has(name)||names.has(name))name=`neutral-accent-${suffix++}`;occupied.add(name);a={...a,name};}return validateAccent(a,i,names);});
- const backgrounds={Light:input.backgrounds?.Light??'#F1EEF8',Dark:input.backgrounds?.Dark??'#221D2C'};Object.values(backgrounds).forEach(fromHex);const rules={...defaultRules,...input.rules,balanceSecondary:true};
+ const backgrounds={Light:input.backgrounds?.Light??'#F1EEF8',Dark:input.backgrounds?.Dark??'#221D2C'};Object.values(backgrounds).forEach(fromHex);const {alphaRecipe:discardedRuntimeRecipe,...savedRules}=input.rules??{};const rules={...defaultRules,...savedRules,balanceSecondary:true,sharedAlpha:true};
  if(!Number.isFinite(rules.minimumContrast)||rules.minimumContrast<4.5||rules.minimumContrast>7||!Number.isFinite(rules.vividness)||rules.vividness<.5||rules.vividness>1.5||typeof rules.adaptPrimary!=='boolean')throw new Error('Некорректные общие правила.');
  const neutral=input.neutral?{accent:{...validateAccent({...input.neutral.accent,name:'neutral'},0,new Set(),true),name:'neutral'},settings:validateNeutralSettings(input.neutral.settings)}:createNeutralSystem();
  return {schema,accents,backgrounds,rules,neutral};
@@ -187,14 +188,12 @@ function solveSoftFills(accent,palette,backings,rules,dark,surface){
  if(cache.size>=32)cache.delete(cache.keys().next().value);cache.set(key,best);softSolutionCache.set(accent,cache);
  return best;
 }
-export function generateContext(accent,theme,scheme,surface,source,resolved,custom={Light:'#F1EEF8',Dark:'#221D2C'},rules=defaultRules,palette,surfacePurpose=surface,neutralSystem){
+export function resolveContextBackings(theme,scheme,surface,source,resolved,custom={Light:'#F1EEF8',Dark:'#221D2C'},rules=defaultRules,neutralSystem){
  const isCustom=surface==='Custom',glass=surface==='Glass';let effectiveTheme=effectiveContextTheme(theme,surface,custom),dark=effectiveTheme==='Dark';
  // Canonical Invert has its own exact black/white backing and local neutrals
  // under the outer theme. Legacy V2 inputs only have opposite Content.
  const exactInvert=surface==='Invert'?resolved[`${theme}/${scheme}/Invert`]:undefined;
  const original=exactInvert??resolved[`${effectiveTheme}/${scheme}/${isCustom||surface==='Invert'?'Content':surface}`];
- if(surface==='Invert'&&!exactInvert&&surfacePurpose===surface)surfacePurpose='Content';
- palette??=generatePalette(accent,rules,effectiveTheme);
  const neutralStepsForProject=neutralSystem?generatePalette(neutralSystem.accent,rules)[0].steps:null;
  let neutralContext=neutralSystem&&!isCustom?resolveNeutralSurface(neutralSystem.settings,neutralStepsForProject,theme,scheme,surface,rules.minimumContrast):null;
  const bg=isCustom?fromHex(custom[theme]):neutralContext?.bg??original['surface/bg'];
@@ -203,18 +202,31 @@ export function generateContext(accent,theme,scheme,surface,source,resolved,cust
  if(isCustom){const inkPole=dark?WHITE:BLACK;if(contrast(inkPole,composite({...customNeutral,a:.12},bg))<rules.minimumContrast+.2)customNeutral=dark?BLACK:WHITE;}
  const neutral={};for(const role of ['secondary','tertiary'])for(const [i,state] of source.states.entries())neutral[`${role}/${state}`]=isCustom?{...customNeutral,a:(role==='secondary'?[.08,.12]:[.03,.05])[i]}:neutralContext?.neutral[`${role}/${state}`]??original[`surface/${role}/${state}`];
  const bases=glass?[BLACK,WHITE].map(back=>composite(bg,back)):[bg];
- const backings=bases.flatMap((base,index)=>[{name:'bg',base,extreme:index},...Object.entries(neutral).map(([name,value])=>({name,base:composite(value,base),extreme:index}))]);
+ const disabled=neutralContext?.roles?.['surface/disabled']??{...(isCustom?customNeutral:dark?WHITE:BLACK),a:.03};
+ const backings=bases.flatMap((base,index)=>{const block=composite(neutral['secondary/normal'],base);return[{name:'bg',base,extreme:index},...Object.entries(neutral).map(([name,value])=>({name,base:composite(value,base),extreme:index})),{name:'disabled',base:composite(disabled,base),extreme:index},...Object.entries({...neutral,disabled}).map(([name,value])=>({name:name+'/on-block',base:composite(value,block),extreme:index}))];});
  if(neutralSystem&&isCustom){
   const backgrounds=backings.map(b=>b.base),pair=selectContentPair([{steps:neutralStepsForProject}],backgrounds,dark?.86:.35,rules.minimumContrast,1),border=selectInk(neutralStepsForProject,bases,dark?.7:.5,3);
   neutralContext={bg,neutral,content:{primary:pair.ink.value,secondary:pair.muted.value,tertiary:pair.muted.value,inverted:dark?BLACK:WHITE},border:border.value,references:{'surface/bg':'custom/'+theme.toLowerCase(),...Object.fromEntries(Object.keys(neutral).map(role=>['surface/'+role,customNeutral===WHITE?'white':'black'])),'content/primary':pair.ink.name,'content/secondary':pair.muted.name,'content/tertiary':pair.muted.name,'content/inverted':dark?'black':'white',border:border.name}};
  }
+ return {isCustom,glass,effectiveTheme,dark,bg,neutral,neutralContext,backings,bases};
+}
+export function generateContext(accent,theme,scheme,surface,source,resolved,custom={Light:'#F1EEF8',Dark:'#221D2C'},rules=defaultRules,palette,surfacePurpose=surface,neutralSystem){
+ const backdrop=resolveContextBackings(theme,scheme,surface,source,resolved,custom,rules,neutralSystem);
+ let {effectiveTheme,dark,neutralContext}=backdrop;const {isCustom,glass,bg,neutral,backings,bases}=backdrop;
+ palette??=generatePalette(accent,rules,effectiveTheme);
+ const sharedRecipe=rules.alphaRecipe??(rules.sharedAlpha?(isCustom?customAlphaRecipe(accent,palette,backings,dark,rules):projectAlphaRecipes(accent,source,resolved,custom,rules,palette,neutralSystem)[alphaRecipeFamily(effectiveTheme,surface,bg)]):null);
  // Choose one exact soft primitive and numeric opacity by measuring the
  // actual rendered layers. Perceptual reaction distance is bounded independently
  // of the surface's black/white polarity or the alpha curve's nonlinearity.
  const towardLight=dark;
  const layerFills={},layerReferences={},balanceDiagnostics={};
  let solution;
- if(rules.balanceSecondary){
+ if(sharedRecipe){
+  for(const name of [...new Set(backings.map(b=>b.name))]){layerFills[name]=sharedRecipe.fills;layerReferences[name]=sharedRecipe.references;balanceDiagnostics[name]=sharedRecipe.diagnostics;}
+  const painted=sharedRecipe.contentBackings;
+  const {ink,muted}=selectContentPair([{steps:[...palette[0].steps,...neutralSteps]}],painted,dark?.86:.35,rules.minimumContrast,accent.textChroma);
+  solution={fills:{...sharedRecipe.fills},ink,muted,quiet:painted.every(bg=>renderedContrast(muted.value,bg)<=renderedContrast(ink.value,bg)+1e-7),visible:!sharedRecipe.diagnostics.limited};
+ }else if(rules.balanceSecondary){
   for(const name of [...new Set(backings.map(b=>b.name))]){
    const layerBases=backings.filter(b=>b.name===name).map(b=>b.base);
    const solved=solveRecommendedFills(accent,palette[0].steps,{base:layerBases[0],extremes:layerBases.slice(1),dark,minimumContrast:rules.minimumContrast});
@@ -225,7 +237,7 @@ export function generateContext(accent,theme,scheme,surface,source,resolved,cust
   solution={fills:{...layerFills.bg},ink,muted,quiet:painted.every(bg=>renderedContrast(muted.value,bg)<=renderedContrast(ink.value,bg)+1e-7),visible:Object.values(balanceDiagnostics).every(d=>Object.values(d.roles).every(r=>r.visible))};
  }else solution=solveSoftFills(accent,palette,backings,rules,dark,surfacePurpose);
  const {fills,ink,muted}=solution,references={};
- for(const role of softRoles)references[role]=rules.balanceSecondary?layerReferences.bg[role]:solution.pigment.name;
+ for(const role of softRoles)references[role]=sharedRecipe||rules.balanceSecondary?layerReferences.bg[role]:solution.pigment.name;
  const primary=primaryPair(accent,effectiveTheme,rules,palette);fills['primary/normal']=primary.normal;fills['primary/active']=primary.active;
  references['primary/normal']=primary.normalStep;references['primary/active']=primary.activeStep;
  references['content/primary']=ink.name;references['content/secondary']=muted.name;references['content/on-primary']=primary.foregroundStep;
@@ -236,26 +248,53 @@ export function generateContext(accent,theme,scheme,surface,source,resolved,cust
  for(const [role,value] of Object.entries(content).filter(([role])=>role!=='on-primary'))for(const {base,name,extreme} of backings){add(`Content ${role} / ${name} [${extreme}]`,renderedContrast(value,base),rules.minimumContrast);for(const fill of ['tertiary/normal','tertiary/active','secondary/normal','secondary/active'])add(`Content ${role} / ${fill} / ${name} [${extreme}]`,renderedContrast(value,composite(layerFills[name]?.[fill]??fills[fill],base)),rules.minimumContrast);}
  if(neutralContext)for(const [role,paint] of Object.entries(neutralContext.content).filter(([role])=>role!=='inverted'))for(const {base,name,extreme} of backings)add(`Neutral content ${role} / ${name} [${extreme}]`,renderedContrast(paint,base),rules.minimumContrast);
  for(const [i,base] of bases.entries())add(`Border [${i}]`,renderedContrast(border,base),3);
- const appearanceChecks=[],hierarchyIssues=[];
+ const appearanceChecks=[],hierarchyIssues=[],appearancePolicy=accent.id==='neutral'?neutralFillVisibilityPolicy:fillVisibilityPolicy;
  for(const {base,name,extreme} of backings){
   const local=layerFills[name]??fills,painted=softRoles.map(role=>composite(local[role],base)),ratios=painted.map(paint=>contrast(paint,base));
   if(!ratios.every((r,i)=>!i||r>ratios[i-1]+1e-6))hierarchyIssues.push(`Порядок заливок на ${name} [${extreme}]`);
-  if(!rules.balanceSecondary)continue;
+  if(!rules.balanceSecondary&&!sharedRecipe)continue;
   const addAppearance=(role,metric,value,min,max=Infinity)=>appearanceChecks.push({layer:name,extreme,role,metric,value,min,max,pass:value>=min-1e-7&&value<=max+1e-7});
   for(const [i,role] of softRoles.entries()){
    const family=role.split('/')[0];
-   addAppearance(role,'surfaceContrast',ratios[i],fillVisibilityPolicy[family+'Contrast']);
-   addAppearance(role,'surfaceDelta',colorDifference(painted[i],base),fillVisibilityPolicy[family+'Delta']);
+   addAppearance(role,'surfaceContrast',ratios[i],appearancePolicy[family+'Contrast']);
+   addAppearance(role,'surfaceDelta',colorDifference(painted[i],base),appearancePolicy[family+'Delta']);
   }
   for(const [i,family] of [[0,'tertiary'],[2,'secondary']]){
-   addAppearance(family,'stateContrast',contrast(painted[i],painted[i+1]),fillVisibilityPolicy.stateContrast);
-   addAppearance(family,'stateDelta',colorDifference(painted[i],painted[i+1]),fillVisibilityPolicy.stateDelta,fillVisibilityPolicy.stateMaximumDelta);
+   addAppearance(family,'stateContrast',contrast(painted[i],painted[i+1]),appearancePolicy.stateContrast);
+   addAppearance(family,'stateDelta',colorDifference(painted[i],painted[i+1]),appearancePolicy.stateDelta,appearancePolicy.stateMaximumDelta);
   }
  }
  const appearanceIssues=[...new Set(appearanceChecks.filter(c=>!c.pass).map(c=>`${c.role} / ${c.layer}: ${c.metric.startsWith('state')?(c.value>c.max?'переход Normal → Active слишком резкий':'Normal и Active недостаточно различаются'):'заливка слишком близка к фону'}`))];
  const balanceIssues=Object.entries(balanceDiagnostics).filter(([,d])=>d.limited).map(([layer,d])=>d.issues.some(issue=>issue.includes('text contrast'))?`${layer}: порог текста ${rules.minimumContrast}:1 ограничивает различимость заливок на этой подложке.`:`${layer}: доступные ступени и прозрачность не позволяют выполнить все условия рекомендации.`);
  const textSeparation=backings.flatMap(({base})=>[base,...softRoles.map(role=>composite(fills[role],base))]).every(bg=>colorDifference(composite(ink.value,bg),composite(muted.value,bg))>.01);
  return {accent:accent.name,theme,effectiveTheme,scheme,surface,bg,neutral,fills,content,border,primary,references,checks,appearanceChecks,layerFills,layerReferences,balanceDiagnostics,neutralContext,issues:[...checks.filter(c=>!c.pass).map(c=>`${c.label}: ${c.value.toFixed(2)}:1`),...hierarchyIssues,...appearanceIssues,...(!textSeparation?['Content: уровни слишком близки']:[]),...(!solution.quiet?['Content secondary: контраст выше primary']:[]),...(!rules.balanceSecondary&&!solution.visible?['Secondary: заливка слишком близка к фону']:[]),...balanceIssues],minimumText:Math.min(...checks.filter(c=>c.label.startsWith('Primary')||c.label.startsWith('Content')||c.label.startsWith('Neutral content')).map(c=>c.value)),neutralText:contrast(BLACK,bg)>contrast(WHITE,bg)?BLACK:WHITE};
+}
+const customRecipeCache=new Map();
+function customAlphaRecipe(accent,palette,backings,dark,rules){
+ const key=JSON.stringify([accent,palette[0].steps.map(s=>[s.name,s.value]),backings.map(b=>b.base),dark,rules.minimumContrast]);
+ if(customRecipeCache.has(key))return customRecipeCache.get(key);
+ const ink=dark?WHITE:BLACK;
+ const alternatives=[dark,!dark].map(direction=>solveAlphaRecipe(accent,palette[0].steps,{backings,dark:direction,ink,minimumContrast:rules.minimumContrast,neutral:accent.id==='neutral',contentReserve:.08}));
+ const recipe=alternatives.sort((a,b)=>Number(a.diagnostics.limited)-Number(b.diagnostics.limited)||a.diagnostics.issues.length-b.diagnostics.issues.length||b.diagnostics.minimumTextContrast-a.diagnostics.minimumTextContrast)[0];
+ if(customRecipeCache.size>=32)customRecipeCache.delete(customRecipeCache.keys().next().value);customRecipeCache.set(key,recipe);return recipe;
+}
+const projectRecipeCache=new WeakMap();
+/** Shared family is content-addressed and bounded per resolved project input.
+ * Ready canonical recipes bypass this cache via rules.alphaRecipe. */
+export function projectAlphaRecipes(accent,source,resolved,custom={Light:'#F1EEF8',Dark:'#221D2C'},rules=defaultRules,palette=generatePalette(accent,rules),neutralSystem){
+ let cache=projectRecipeCache.get(resolved);if(!cache){cache=new Map();projectRecipeCache.set(resolved,cache);}
+ const {alphaRecipe,...recipeRules}=rules,{id,...accentSettings}=accent;
+ const key=JSON.stringify([accentSettings,source.themes,source.schemes,custom,recipeRules,neutralSystem,palette[0].steps.map(s=>[s.name,s.value])]);
+ if(cache.has(key))return cache.get(key);
+ const families={Light:[],'Light/Neutral':[],Dark:[],'Glass/Light':[],'Glass/Dark':[]},referenceBases={};
+ for(const theme of source.themes)for(const scheme of source.schemes)for(const surface of surfaces.filter(s=>s!=='Custom')){
+  // Partial legacy inputs are legal for canonical callers with ready recipes.
+  if(!resolved[`${theme}/${scheme}/${surface}`]&&surface!=='Invert')continue;
+  const ctx=resolveContextBackings(theme,scheme,surface,source,resolved,custom,rules,neutralSystem);
+  const family=alphaRecipeFamily(ctx.effectiveTheme,surface,ctx.bases[0]);families[family].push(...ctx.backings);for(const base of ctx.bases)if(!referenceBases[family]||(family.endsWith('Dark')?luminance(base)>luminance(referenceBases[family]):luminance(base)<luminance(referenceBases[family])))referenceBases[family]=base;
+ }
+ const recipes={};for(const family of Object.keys(families))if(families[family].length)recipes[family]=solveAlphaRecipe(accent,palette[0].steps,{backings:families[family],dark:family.endsWith('Dark'),minimumContrast:rules.minimumContrast,neutral:accent.id==='neutral',referenceBase:referenceBases[family]});
+ if(cache.size>=32)cache.delete(cache.keys().next().value);cache.set(key,recipes);return recipes;
 }
 const contextCache=new WeakMap();
 export function generateAll(accent,source,resolved,custom={Light:'#F1EEF8',Dark:'#221D2C'},rules=defaultRules,neutralSystem){
@@ -272,16 +311,21 @@ export function exportGraph(accents,source,resolved,custom={Light:'#F1EEF8',Dark
  for(const s of [...neutralSteps,...(neutralSystem?generatePalette(neutralSystem.accent,rules)[0].steps:[])])add('palette',s.name,'COLOR',{Value:s.value});
  // Custom backings are authored project data, separate from canonical kit ramps.
  if(neutralSystem)for(const theme of source.themes)add('palette','custom/'+theme.toLowerCase(),'COLOR',{Value:fromHex(custom[theme])});
+ const samePaint=(a,b)=>a&&b&&['r','g','b','a'].every(channel=>a[channel]===b[channel]);
  for(const accent of accents){
   for(const scale of generatePalette(accent,rules))for(const s of scale.steps){add('palette',s.name,'COLOR',{Value:s.value});Object.assign(byKey.get('palette/'+s.name),{position:s.position,modified:s.modified,authored:s.authored,interpolated:s.interpolated,original:s.original});}
-  for(const c of generateAll(accent,source,resolved,custom,rules,neutralSystem)){
+  const contexts=generateAll(accent,source,resolved,custom,rules,neutralSystem),layerOverrides=new Set();
+  // A public layer role is needed only if at least one context actually changes
+  // the paint. Keep every Surface mode when a legacy/per-layer override exists.
+  if(rules.balanceSecondary)for(const c of contexts)for(const [layer,paints] of Object.entries(c.layerFills).filter(([layer])=>layer!=='bg'))for(const [key,value] of Object.entries(paints))if(!samePaint(value,c.fills[key]))layerOverrides.add(`on-layer/${layer}/${key}`);
+  for(const c of contexts){
    const values=[...Object.entries(c.fills).map(([key,value])=>({key,role:`surface/${key.split('/')[0]}/${accent.name}-${key.split('/')[1]}`,value})),...Object.entries(c.content).map(([key,value])=>({key:'content/'+key,role:`content/${key}/${accent.name}`,value})),{key:'border',role:`border/accent/${accent.name}`,value:c.border}];
-   if(rules.balanceSecondary)for(const [layer,paints] of Object.entries(c.layerFills).filter(([layer])=>layer!=='bg'))for(const [key,value] of Object.entries(paints)){const referenceKey=`on-layer/${layer}/${key}`;c.references[referenceKey]=c.layerReferences[layer][key];values.push({key:referenceKey,role:`on-layer/${layer}/surface/${key.split('/')[0]}/${accent.name}-${key.split('/')[1]}`,value});}
+   if(rules.balanceSecondary)for(const [layer,paints] of Object.entries(c.layerFills).filter(([layer])=>layer!=='bg'))for(const [key,value] of Object.entries(paints)){const referenceKey=`on-layer/${layer}/${key}`;if(layerOverrides.has(referenceKey))values.push({key:referenceKey,reference:c.layerReferences[layer][key],role:`on-layer/${layer}/surface/${key.split('/')[0]}/${accent.name}-${key.split('/')[1]}`,value});}
    if(neutralSystem){
     const neutralValues=c.neutralContext?[{key:'surface/bg',value:c.bg},...Object.entries(c.neutral).map(([role,value])=>({key:'surface/'+role,value})),...Object.entries(c.neutralContext.content).map(([role,value])=>({key:'content/'+role,value})),{key:'border',value:c.neutralContext.border}]:[{key:'surface/bg',value:c.bg}];
     for(const {key,value} of neutralValues){const refKey='neutral/'+key;c.references[refKey]=c.neutralContext.references[key];values.push({key:refKey,role:key==='border'?'border/neutral':key,value});}
    }
-   for(const {key,role,value} of values){const name=`${c.scheme.toLowerCase()}/${c.surface.toLowerCase()}/${role}`;add('theme',name,'COLOR',{});byKey.get('theme/'+name).values[c.theme]=ref(c.references[key],value);add('scheme',`${c.surface.toLowerCase()}/${role}`,'COLOR',{});byKey.get('scheme/'+c.surface.toLowerCase()+'/'+role).values[c.scheme]={alias:'theme/'+name};add('surface',role,'COLOR',{},role.startsWith('content/')?['TEXT_FILL','SHAPE_FILL','STROKE_COLOR']:role.startsWith('border/')?['STROKE_COLOR']:['FRAME_FILL','SHAPE_FILL']);byKey.get('surface/'+role).values[c.surface]={alias:`scheme/${c.surface.toLowerCase()}/${role}`};}
+   for(const {key,role,value,reference} of values){const name=`${c.scheme.toLowerCase()}/${c.surface.toLowerCase()}/${role}`;add('theme',name,'COLOR',{});byKey.get('theme/'+name).values[c.theme]=ref(reference??c.references[key],value);add('scheme',`${c.surface.toLowerCase()}/${role}`,'COLOR',{});byKey.get('scheme/'+c.surface.toLowerCase()+'/'+role).values[c.scheme]={alias:'theme/'+name};add('surface',role,'COLOR',{},role.startsWith('content/')?['TEXT_FILL','SHAPE_FILL','STROKE_COLOR']:role.startsWith('border/')?['STROKE_COLOR']:['FRAME_FILL','SHAPE_FILL']);byKey.get('surface/'+role).values[c.surface]={alias:`scheme/${c.surface.toLowerCase()}/${role}`};}
   }
  }
  return {name:'Palette Lab',schema:'sloy-palette-graph/v3',sourceVersion:source.version,accents:accents.map(a=>a.name),paletteSettings:accents.map(({id,...a})=>({...a,vividness:a.vividness??rules.vividness})),customBackgrounds:custom,neutralSystem,rules,collections};
@@ -299,9 +343,12 @@ export function exportCSS(accents,source,resolved,custom={Light:'#F1EEF8',Dark:'
    if(neutralSystem){paint('--pl-surface-bg',variable(c.neutralContext.references['surface/bg']),c.bg);if(c.neutralContext){for(const [role,value] of Object.entries(c.neutral))paint(`--pl-surface-${role.replaceAll('/','-')}`,variable(c.neutralContext.references['surface/'+role]),value);for(const [role,value] of Object.entries(c.neutralContext.content))paint(`--pl-content-${role}`,variable(c.neutralContext.references['content/'+role]),value);paint('--pl-border-neutral',variable(c.neutralContext.references.border),c.neutralContext.border);}}
   }lines.push('}');
  }
+ const samePaint=(a,b)=>a&&b&&['r','g','b','a'].every(channel=>a[channel]===b[channel]);
  if(rules.balanceSecondary)for(const theme of source.themes)for(const scheme of source.schemes)for(const surface of surfaces)for(const layer of ['secondary/normal','secondary/active','tertiary/normal','tertiary/active']){
+  const overrides=accents.flatMap(a=>{const c=contextMap.get(`${a.id}/${theme}/${scheme}/${surface}`);return Object.entries(c.layerFills[layer]??{}).filter(([role,value])=>!samePaint(value,c.fills[role])).map(([role,value])=>({a,c,role,value}));});
+  if(!overrides.length)continue;
   lines.push(`[data-pl-theme="${theme}"][data-pl-scheme="${scheme}"] [data-pl-surface="${surface}"] [data-pl-layer="${layer}"], [data-pl-theme="${theme}"][data-pl-scheme="${scheme}"][data-pl-surface="${surface}"] [data-pl-layer="${layer}"] {`);
-  for(const a of accents){const c=contextMap.get(`${a.id}/${theme}/${scheme}/${surface}`);for(const [role,value] of Object.entries(c.layerFills[layer]??{}))paint(`--pl-surface-${role.replace('/','-')}-${a.name}`,variable(c.layerReferences[layer][role]),value);}lines.push('}');
+  for(const {a,c,role,value} of overrides)paint(`--pl-surface-${role.replace('/','-')}-${a.name}`,variable(c.layerReferences[layer][role]),value);lines.push('}');
  }
  return lines.join('\n');
 }

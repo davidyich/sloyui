@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { selectPaletteColors } from './palette-selection.mjs';
 import { createAccent, presets, generatePalette, generateContext } from '../color-system-v2/editor/model.mjs';
+import { alphaRecipeFamily, solveAlphaRecipe, solveNeutralAlphaRecipe } from '../color-system-v2/editor/alpha-recipes.mjs';
 import { composite as compositeColor, contrast as colorContrast } from '../color-system-v2/color-engine.mjs';
 
 // Authoritative graph shared with Figma and the web runtime adapter.
@@ -291,18 +292,50 @@ for (const theme of themes) {
 surfaceNames = Object.keys(contexts);
 const hues = ['neutral', ...accentNames];
 const opaqueBackings = (surface, roles) => surface === 'Glass' ? ['Palette/black','Palette/white'].map(path => compositeColor(roles['surface/bg'],rawColors.get(path))) : [roles['surface/bg']];
-const localBackings = (surface, roles) => opaqueBackings(surface,roles).flatMap(bg => [bg, compositeColor(roles['surface/block'],bg), ...states.map(state => compositeColor(roles['secondary/neutral-'+state],bg))]);
+// Two local neutral layers cover a card, a nested block and its controls.
+// A region surface resets this envelope; arbitrary chromatic stacks do not.
+const localBackings = (surface, roles) => opaqueBackings(surface,roles).flatMap(bg => {
+  const block = compositeColor(roles['surface/block'], bg);
+  return [bg, ...[bg, block].flatMap(base => [compositeColor(roles['surface/block'],base), compositeColor(roles['disabled/bg'],base), ...states.map(state => compositeColor(roles['secondary/neutral-'+state],base))])];
+});
 const grayCandidates = [...rawColors].filter(([path]) => /^Palette\/(gray\/\d+|black|white)$/.test(path)).map(([,value])=>value);
 const chooseGray = (target, backings, threshold=4.5) => {
   const passing = grayCandidates.filter(value=>backings.every(bg=>colorContrast(value,bg)>=threshold));
   assert(passing.length, 'No neutral ink for protected surface');
   return passing.sort((a,b)=>Math.abs(Y(a)-Y(target))-Math.abs(Y(b)-Y(target)))[0];
 };
+const polarity = (surface, theme) => surface === 'Invert' ? (theme === 'Light' ? 'Dark' : 'Light') : theme;
+const familyKey = (surface, theme) => alphaRecipeFamily(polarity(surface, theme),surface,contexts[surface][theme]['surface/bg']);
+const familyEntries = key => surfaceNames.flatMap(surface => themes.filter(theme => familyKey(surface, theme) === key).map(theme => ({surface, theme, roles: contexts[surface][theme]})));
+const alphaRecipeAudit = {};
+const sharedRecipes = new Map();
+if (accentRules.sharedAlpha) {
+  for (const key of ['Light','Light/Neutral','Dark','Glass/Light','Glass/Dark']) {
+    const entries = familyEntries(key), dark = key === 'Dark' || key === 'Glass/Dark', effectiveTheme = dark ? 'Dark' : 'Light';
+    if (!entries.length) continue;
+    const neutral = solveNeutralAlphaRecipe({backings: entries.flatMap(({surface,roles})=>opaqueBackings(surface,roles)),dark,minimumContrast:accentRules.minimumContrast});
+    assert(!neutral.diagnostics.limited, 'Neutral alpha family: '+effectiveTheme+' '+neutral.diagnostics.issues.join('; '));
+    for (const {roles} of entries) {
+      roles['surface/block'] = neutral.roles['surface/block'];
+      roles['disabled/bg'] = neutral.roles['surface/disabled'];
+      for (const state of states) roles['secondary/neutral-'+state] = neutral.roles['control/'+state];
+    }
+    const backings = entries.flatMap(({surface,roles})=>localBackings(surface,roles));
+    alphaRecipeAudit[key] = {neutral:neutral.diagnostics,accents:{}};
+    for (const accent of accents) {
+      const referenceBase=key==='Light/Neutral'||key.startsWith('Glass/')?entries.flatMap(({surface,roles})=>opaqueBackings(surface,roles)).sort((a,b)=>dark?Y(b)-Y(a):Y(a)-Y(b))[0]:undefined;
+      const recipe = solveAlphaRecipe(accent,palettes.get(accent.name)[0].steps,{backings,dark,minimumContrast:accentRules.minimumContrast,referenceBase});
+      assert(!recipe.diagnostics.limited, 'Accent alpha family: '+key+'/'+accent.name+' '+recipe.diagnostics.issues.join('; '));
+      sharedRecipes.set(key+'/'+accent.name,recipe);
+      alphaRecipeAudit[key].accents[accent.name] = recipe.diagnostics;
+    }
+  }
+}
 for (const surface of surfaceNames) for (const theme of themes) {
   const roles = contexts[surface][theme], effectiveTheme = surface === 'Invert' ? (theme === 'Light' ? 'Dark' : 'Light') : theme;
   const dark = effectiveTheme === 'Dark', bases = localBackings(surface,roles);
   // Refit only the translucent surface's neutral hierarchy to its worst underlay.
-  if (surface === 'Glass' || surface.endsWith('Dimmed')) {
+  if (accentRules.sharedAlpha || surface === 'Glass' || surface.endsWith('Dimmed')) {
     const contentRoles=['primary','secondary','tertiary','muted','caption'];
     const candidates=grayCandidates.filter(value=>bases.every(bg=>colorContrast(value,bg)>=4.5)).sort((a,b)=>dark?Y(b)-Y(a):Y(a)-Y(b));
     const unique=candidates.filter((value,i)=>!i||Math.abs(Y(value)-Y(candidates[i-1]))>1e-9);let cursor=0;
@@ -313,6 +346,7 @@ for (const surface of surfaceNames) for (const theme of themes) {
       roles['content/'+role]=chosen;cursor=unique.indexOf(chosen)+1;
     }
     roles['secondary/neutral-content']=rawColors.get(dark?'Palette/white':'Palette/black');
+    roles['disabled/content']=chooseGray(roles['disabled/content'],bases);
   }
   const neutral = {
     'surface/bg':roles['surface/bg'],
@@ -323,7 +357,8 @@ for (const surface of surfaceNames) for (const theme of themes) {
   };
   for (const accent of accents) {
     const labSurface = surface === 'Glass' ? 'Glass' : 'Content';
-    const context = generateContext(accent,effectiveTheme,'Standard',labSurface,labSource,{[`${effectiveTheme}/Standard/${labSurface}`]:neutral},undefined,accentRules,palettes.get(accent.name),surface.replace(/Dimmed$/,''));
+    const contextRules = {...accentRules, alphaRecipe:sharedRecipes.get(familyKey(surface,theme)+'/'+accent.name)};
+    const context = generateContext(accent,effectiveTheme,'Standard',labSurface,labSource,{[`${effectiveTheme}/Standard/${labSurface}`]:neutral},undefined,contextRules,palettes.get(accent.name),surface.replace(/Dimmed$/,''));
     for (const hue of [accent.name,...Object.keys(accentAliases).filter(key=>accentAliases[key]===accent.name)]) {
       for (const state of states) {
         const labState=source.accentSystem.states[state];
@@ -563,6 +598,7 @@ const audit = {
   note: 'Проверка файлов. Нативные привязки, режимы и внешний вид Figma проверяются отдельно.',
 };
 await mkdir(auditDirectory, { recursive: true });
+await writeFile(new URL('alpha-recipes.json', auditDirectory), JSON.stringify(alphaRecipeAudit,null,2)+'\n');
 // Palette Lab consumes the same resolved region and neutral backing contexts.
 // Keep the bridge separate from the legacy v2 resolved.json and its old surface math.
 const paletteContexts = {};

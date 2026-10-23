@@ -11,8 +11,8 @@
     "name": "--cap-surface-block",
     "original": "surface/block",
     "group": "surface",
-    "light": "#E5E5E5",
-    "dark": "#3A3A3A",
+    "light": "#000000",
+    "dark": "#FFFFFF",
     "runtime": true
   },
   {
@@ -51,15 +51,15 @@
     "name": "--cap-disabled-background",
     "original": "disabled/background",
     "group": "disabled",
-    "light": "#EEEEEE",
-    "dark": "#161616",
+    "light": "#000000",
+    "dark": "#FFFFFF",
     "runtime": true
   },
   {
     "name": "--cap-disabled-text",
     "original": "disabled/text",
     "group": "disabled",
-    "light": "#666666",
+    "light": "#525252",
     "dark": "#B8B8B8",
     "runtime": true
   },
@@ -99,7 +99,7 @@
     "name": "--cap-content-caption",
     "original": "content/caption",
     "group": "content",
-    "light": "#575757",
+    "light": "#525252",
     "dark": "#C6C6C6",
     "runtime": true
   },
@@ -187,40 +187,40 @@
     "name": "--cap-group-background",
     "original": "group/background",
     "group": "group",
-    "light": "#E5E5E5",
-    "dark": "#3A3A3A",
+    "light": "#000000",
+    "dark": "#FFFFFF",
     "runtime": true
   },
   {
     "name": "--cap-group-hover",
     "original": "group/hover",
     "group": "group",
-    "light": "#DDDDDD",
-    "dark": "#3F3F3F",
+    "light": "#000000",
+    "dark": "#FFFFFF",
     "runtime": true
   },
   {
     "name": "--cap-group-selected",
     "original": "group/selected",
     "group": "group",
-    "light": "#DDDDDD",
-    "dark": "#3F3F3F",
+    "light": "#000000",
+    "dark": "#FFFFFF",
     "runtime": true
   },
   {
     "name": "--cap-group-pressed",
     "original": "group/pressed",
     "group": "group",
-    "light": "#D5D5D5",
-    "dark": "#444444",
+    "light": "#000000",
+    "dark": "#FFFFFF",
     "runtime": true
   },
   {
     "name": "--cap-group-prefix",
     "original": "group/prefix",
     "group": "group",
-    "light": "#E5E5E5",
-    "dark": "#3A3A3A",
+    "light": "#000000",
+    "dark": "#FFFFFF",
     "runtime": true
   },
   {
@@ -235,47 +235,47 @@
     "name": "--cap-control-normal",
     "original": "control/normal",
     "group": "control",
-    "light": "#E5E5E5",
-    "dark": "#3A3A3A",
+    "light": "#000000",
+    "dark": "#FFFFFF",
     "runtime": true
   },
   {
     "name": "--cap-control-hover",
     "original": "control/hover",
     "group": "control",
-    "light": "#DDDDDD",
-    "dark": "#3F3F3F",
+    "light": "#000000",
+    "dark": "#FFFFFF",
     "runtime": true
   },
   {
     "name": "--cap-control-pressed",
     "original": "control/pressed",
     "group": "control",
-    "light": "#D5D5D5",
-    "dark": "#444444",
+    "light": "#000000",
+    "dark": "#FFFFFF",
     "runtime": true
   },
   {
     "name": "--cap-control-disabled",
     "original": "control/disabled",
     "group": "control",
-    "light": "#EEEEEE",
-    "dark": "#161616",
+    "light": "#000000",
+    "dark": "#FFFFFF",
     "runtime": true
   },
   {
     "name": "--cap-control-text",
     "original": "control/text",
     "group": "control",
-    "light": "#3F3F3F",
-    "dark": "#EEEEEE",
+    "light": "#000000",
+    "dark": "#FFFFFF",
     "runtime": true
   },
   {
     "name": "--cap-control-disabled-text",
     "original": "control/disabled-text",
     "group": "control",
-    "light": "#666666",
+    "light": "#525252",
     "dark": "#B8B8B8",
     "runtime": true
   },
@@ -291,7 +291,7 @@
     "name": "--cap-feedback-danger-hover",
     "original": "feedback/danger/hover",
     "group": "feedback",
-    "light": "#B00018",
+    "light": "#C9001D",
     "dark": "#FF968D",
     "runtime": true
   },
@@ -299,7 +299,7 @@
     "name": "--cap-feedback-danger-pressed",
     "original": "feedback/danger/pressed",
     "group": "feedback",
-    "light": "#B00018",
+    "light": "#C9001D",
     "dark": "#FF968D",
     "runtime": true
   },
@@ -307,16 +307,16 @@
     "name": "--cap-feedback-danger-disabled",
     "original": "feedback/danger/disabled",
     "group": "feedback",
-    "light": "#EEEEEE",
-    "dark": "#161616",
+    "light": "#000000",
+    "dark": "#FFFFFF",
     "runtime": true
   },
   {
     "name": "--cap-feedback-danger-text",
     "original": "feedback/danger/text",
     "group": "feedback",
-    "light": "#73000C",
-    "dark": "#FFE2DE",
+    "light": "#670009",
+    "dark": "#FFFBFA",
     "runtime": true
   },
   {
@@ -332,7 +332,7 @@
     "original": "feedback/success/hover",
     "group": "feedback",
     "light": "#00804B",
-    "dark": "#70CF97",
+    "dark": "#63C98F",
     "runtime": true
   },
   {
@@ -340,15 +340,15 @@
     "original": "feedback/success/pressed",
     "group": "feedback",
     "light": "#00804B",
-    "dark": "#70CF97",
+    "dark": "#63C98F",
     "runtime": true
   },
   {
     "name": "--cap-feedback-success-disabled",
     "original": "feedback/success/disabled",
     "group": "feedback",
-    "light": "#EEEEEE",
-    "dark": "#161616",
+    "light": "#000000",
+    "dark": "#FFFFFF",
     "runtime": true
   },
   {
@@ -356,7 +356,7 @@
     "original": "feedback/success/text",
     "group": "feedback",
     "light": "#003F22",
-    "dark": "#C6F0D4",
+    "dark": "#E5FAEC",
     "runtime": true
   },
   {
@@ -371,7 +371,7 @@
     "name": "--cap-feedback-warning-hover",
     "original": "feedback/warning/hover",
     "group": "feedback",
-    "light": "#B15400",
+    "light": "#C65F00",
     "dark": "#FFA66F",
     "runtime": true
   },
@@ -379,7 +379,7 @@
     "name": "--cap-feedback-warning-pressed",
     "original": "feedback/warning/pressed",
     "group": "feedback",
-    "light": "#B15400",
+    "light": "#C65F00",
     "dark": "#FFA66F",
     "runtime": true
   },
@@ -387,8 +387,8 @@
     "name": "--cap-feedback-warning-disabled",
     "original": "feedback/warning/disabled",
     "group": "feedback",
-    "light": "#EEEEEE",
-    "dark": "#161616",
+    "light": "#000000",
+    "dark": "#FFFFFF",
     "runtime": true
   },
   {
@@ -396,7 +396,7 @@
     "original": "feedback/warning/text",
     "group": "feedback",
     "light": "#5E2900",
-    "dark": "#FFE3D4",
+    "dark": "#FFFBF8",
     "runtime": true
   },
   {
@@ -411,7 +411,7 @@
     "name": "--cap-feedback-info-hover",
     "original": "feedback/info/hover",
     "group": "feedback",
-    "light": "#0062BE",
+    "light": "#0069CA",
     "dark": "#78B4FF",
     "runtime": true
   },
@@ -419,7 +419,7 @@
     "name": "--cap-feedback-info-pressed",
     "original": "feedback/info/pressed",
     "group": "feedback",
-    "light": "#0062BE",
+    "light": "#0069CA",
     "dark": "#78B4FF",
     "runtime": true
   },
@@ -427,16 +427,16 @@
     "name": "--cap-feedback-info-disabled",
     "original": "feedback/info/disabled",
     "group": "feedback",
-    "light": "#EEEEEE",
-    "dark": "#161616",
+    "light": "#000000",
+    "dark": "#FFFFFF",
     "runtime": true
   },
   {
     "name": "--cap-feedback-info-text",
     "original": "feedback/info/text",
     "group": "feedback",
-    "light": "#003973",
-    "dark": "#D2E6FF",
+    "light": "#003367",
+    "dark": "#FAFCFF",
     "runtime": true
   },
   {
@@ -476,7 +476,7 @@
     "original": "divider/control",
     "group": "divider",
     "light": "#AAAAAA",
-    "dark": "#616161",
+    "dark": "#444444",
     "runtime": true
   }
 ]

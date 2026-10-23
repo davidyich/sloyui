@@ -27,9 +27,9 @@ const common = fs.readFileSync(path.join(dir, 'common.js'), 'utf8')
   .replace('const guideComponentIds = {};', 'const guideComponentIds = ' + JSON.stringify(componentMap) + ';');
 const AsyncFunction = Object.getPrototypeOf(async function(){}).constructor;
 fs.mkdirSync(out, {recursive: true});
-for (const [name, prelude] of [['colors', ''], ['custom-backgrounds', 'const guideCustomSample = ' + JSON.stringify(compact) + ';\n'], ['start', ''], ['components', fs.readFileSync(path.join(dir, 'variant-helper.js'), 'utf8')], ['layouts', ''], ['parity-components', ''], ['parity-buttons', ''], ['parity-layouts', '']]) {
+for (const [name, prelude] of [['alpha-recipes', ''], ['colors', ''], ['custom-backgrounds', 'const guideCustomSample = ' + JSON.stringify(compact) + ';\n'], ['start', ''], ['components', fs.readFileSync(path.join(dir, 'variant-helper.js'), 'utf8')], ['layouts', ''], ['parity-components', ''], ['parity-buttons', ''], ['parity-layouts', '']]) {
   const code = common + '\n' + prelude + fs.readFileSync(path.join(dir, name + '.js'), 'utf8');
   new AsyncFunction(code);
   fs.writeFileSync(path.join(out, name + '.js'), code);
 }
-console.log(JSON.stringify({out, scripts: ['colors.js', 'custom-backgrounds.js', 'start.js', 'components.js', 'layouts.js', 'parity-components.js', 'parity-buttons.js', 'parity-layouts.js'], customBackgrounds: compact.backgrounds, primaryButtonIncluded: Boolean(primaryButton)}));
+console.log(JSON.stringify({out, scripts: ['alpha-recipes.js', 'colors.js', 'custom-backgrounds.js', 'start.js', 'components.js', 'layouts.js', 'parity-components.js', 'parity-buttons.js', 'parity-layouts.js'], customBackgrounds: compact.backgrounds, primaryButtonIncluded: Boolean(primaryButton)}));

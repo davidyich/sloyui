@@ -25,9 +25,9 @@ describe('Canonical accents and authored Palette Lab projects', () => {
       expect(context.neutralContext?.references['surface/bg']).toBe('custom/light');
       expect(context.minimumText).toBeGreaterThanOrEqual(4.5);
       expect(context.checks.every(check => check.pass)).toBe(true);
-      // Mid-tone authored backings can make the requested fill hierarchy impossible.
-      // Keep that evidence visible while preserving the authored background.
-      expect(context.issues.length).toBeGreaterThan(0);
+      // Mid-tone backings may be feasible after the solver chooses a different
+      // fill direction. Report actual limitations, not an unconditional warning.
+      if (context.appearanceChecks.some(check => !check.pass)) expect(context.issues.length).toBeGreaterThan(0);
     }
   });
 

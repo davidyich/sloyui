@@ -1,103 +1,103 @@
 {
-  "version": "0.17.1",
-  "graphFilename": "sloyui-0.17.1-figma-graph.json",
-  "archiveFilename": "sloyui-0.17.1-figma-tokens.zip",
+  "version": "0.18.0",
+  "graphFilename": "sloyui-0.18.0-figma-graph.json",
+  "archiveFilename": "sloyui-0.18.0-figma-tokens.zip",
   "files": [
     {
       "collection": "Palette",
       "mode": "Value",
       "count": 289,
-      "filename": "sloyui-0.17.1-palette-value.tokens.json"
+      "filename": "sloyui-0.18.0-palette-value.tokens.json"
     },
     {
       "collection": "Primitives",
       "mode": "Value",
       "count": 93,
-      "filename": "sloyui-0.17.1-primitives-value.tokens.json"
+      "filename": "sloyui-0.18.0-primitives-value.tokens.json"
     },
     {
       "collection": "Theme",
       "mode": "Light",
-      "count": 206,
-      "filename": "sloyui-0.17.1-theme-light.tokens.json"
+      "count": 148,
+      "filename": "sloyui-0.18.0-theme-light.tokens.json"
     },
     {
       "collection": "Theme",
       "mode": "Dark",
-      "count": 206,
-      "filename": "sloyui-0.17.1-theme-dark.tokens.json"
+      "count": 148,
+      "filename": "sloyui-0.18.0-theme-dark.tokens.json"
     },
     {
       "collection": "SurfaceScheme",
       "mode": "Standard",
-      "count": 77,
-      "filename": "sloyui-0.17.1-surfacescheme-standard.tokens.json"
+      "count": 43,
+      "filename": "sloyui-0.18.0-surfacescheme-standard.tokens.json"
     },
     {
       "collection": "SurfaceScheme",
       "mode": "Inverted",
-      "count": 77,
-      "filename": "sloyui-0.17.1-surfacescheme-inverted.tokens.json"
+      "count": 43,
+      "filename": "sloyui-0.18.0-surfacescheme-inverted.tokens.json"
     },
     {
       "collection": "SurfaceScheme",
       "mode": "Dimmed",
-      "count": 77,
-      "filename": "sloyui-0.17.1-surfacescheme-dimmed.tokens.json"
+      "count": 43,
+      "filename": "sloyui-0.18.0-surfacescheme-dimmed.tokens.json"
     },
     {
       "collection": "Density",
       "mode": "Default",
       "count": 93,
-      "filename": "sloyui-0.17.1-density-default.tokens.json"
+      "filename": "sloyui-0.18.0-density-default.tokens.json"
     },
     {
       "collection": "Density",
       "mode": "Compact",
       "count": 93,
-      "filename": "sloyui-0.17.1-density-compact.tokens.json"
+      "filename": "sloyui-0.18.0-density-compact.tokens.json"
     },
     {
       "collection": "Semantic",
       "mode": "Page",
       "count": 339,
-      "filename": "sloyui-0.17.1-semantic-page.tokens.json"
+      "filename": "sloyui-0.18.0-semantic-page.tokens.json"
     },
     {
       "collection": "Semantic",
       "mode": "Inset",
       "count": 339,
-      "filename": "sloyui-0.17.1-semantic-inset.tokens.json"
+      "filename": "sloyui-0.18.0-semantic-inset.tokens.json"
     },
     {
       "collection": "Semantic",
       "mode": "Panel",
       "count": 339,
-      "filename": "sloyui-0.17.1-semantic-panel.tokens.json"
+      "filename": "sloyui-0.18.0-semantic-panel.tokens.json"
     },
     {
       "collection": "Semantic",
       "mode": "Overlay",
       "count": 339,
-      "filename": "sloyui-0.17.1-semantic-overlay.tokens.json"
+      "filename": "sloyui-0.18.0-semantic-overlay.tokens.json"
     },
     {
       "collection": "Components",
       "mode": "Default",
       "count": 199,
-      "filename": "sloyui-0.17.1-components-default.tokens.json"
+      "filename": "sloyui-0.18.0-components-default.tokens.json"
     },
     {
       "collection": "Borders",
       "mode": "Off",
       "count": 1,
-      "filename": "sloyui-0.17.1-borders-off.tokens.json"
+      "filename": "sloyui-0.18.0-borders-off.tokens.json"
     },
     {
       "collection": "Borders",
       "mode": "On",
       "count": 1,
-      "filename": "sloyui-0.17.1-borders-on.tokens.json"
+      "filename": "sloyui-0.18.0-borders-on.tokens.json"
     }
   ]
 }

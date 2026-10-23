@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.18.0 · 2026-10-23
+
+- Shared alpha recipes fit neutral layers and six accent families jointly across declared surface backings, including Invert and protected Glass.
+- Whole-percent alpha and joint Normal/Active selection preserve composited text contrast, state distinction and color presence; project backgrounds regenerate from exact RGB.
+- Native export selects the smaller routing graph without changing public variable paths, independent modes or integer geometry.
+- Figma color guidance explains shared paints, neutral nesting, state replacement and explicit Custom regeneration.
+
 ## 0.17.1 · 2026-10-23
 
 - Light secondary fills use a stronger chroma target while retaining surface-specific luminance, six accents and verified text contrast.

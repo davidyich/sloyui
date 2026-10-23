@@ -131,10 +131,19 @@ it('lifts dark floating surfaces above Raised and changes ButtonGroup fills with
 it.each(contexts)('$surface / $theme: group reactions contrast against the actual group fill and remain readable',({surface,theme})=>{
  for(const borders of ['off','on'] as const){
   const color=resolveColor({surface,theme,borders,accent:'neutral'});
-  expect(contrast(color('group-background'),color('surface-current'))).toBeGreaterThanOrEqual(1.045);
-  expect(contrast(color('group-hover'),color('group-background'))).toBeGreaterThanOrEqual(1.045);
-  expect(contrast(color('group-pressed'),color('group-hover'))).toBeGreaterThanOrEqual(1.045);
-  for(const role of ['group-background','group-prefix','group-hover','group-pressed'])expect(contrast(color('group-text'),color(role))).toBeGreaterThanOrEqual(4.5);
+  const surfaceColor=color('surface-current');
+  // A group can sit directly on the region or on a local block/card. Its
+  // child's hover/pressed paints replace each other over the painted group.
+  for(const underlay of [surfaceColor,color('surface-block',surfaceColor)]){
+   const background=color('group-background',underlay),prefix=color('group-prefix',underlay);
+   const hover=color('group-hover',background),pressed=color('group-pressed',background);
+   expect(contrast(background,underlay)).toBeGreaterThanOrEqual(1.045);
+   expect(contrast(hover,background)).toBeGreaterThanOrEqual(1.045);
+   expect(contrast(pressed,hover)).toBeGreaterThanOrEqual(1.045);
+   // A framed group's prefix is a distinct count section over the outer fill.
+   const framedPrefix=color('group-prefix',background);
+   for(const backing of [background,prefix,framedPrefix,hover,pressed])expect(contrast(color('group-text',backing),backing)).toBeGreaterThanOrEqual(4.5);
+  }
  }
 });
 

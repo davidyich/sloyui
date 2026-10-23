@@ -1,7 +1,7 @@
 import type { Color, PaletteStep } from './model.mjs';
 export type NeutralTheme = 'Light' | 'Dark';
 export type NeutralSurface = 'Shell' | 'Workspace' | 'Content' | 'Overlay' | 'Invert' | 'Glass';
-export type NeutralSettings = { bases: Record<NeutralTheme, number>; overrides: Partial<Record<NeutralTheme, Partial<Record<NeutralSurface, number>>>> };
+export type NeutralSettings = { version?:number; bases: Record<NeutralTheme, number>; overrides: Partial<Record<NeutralTheme, Partial<Record<NeutralSurface, number>>>> };
 export type NeutralResolved = {
   bg: Color;
   neutral: Record<string, Color>;
@@ -21,4 +21,6 @@ export function setNeutralSurface(settings: NeutralSettings, theme: string, surf
 export function resetNeutralSurface(settings: NeutralSettings, theme: string, surface: string): NeutralSettings;
 export function resetNeutralTheme(settings: NeutralSettings, theme: string): NeutralSettings;
 export function neutralStepAt(steps: PaletteStep[], position: number): PaletteStep;
-export function resolveNeutralSurface(settings: NeutralSettings, steps: PaletteStep[], theme: string, scheme?: string, surface?: string, minimumContrast?: number): NeutralResolved;
+export function resolveNeutralSurface(settings: NeutralSettings, steps: PaletteStep[], theme: string, scheme?: string, surface?: string, minimumContrast?: number,readyRecipe?:import('./alpha-recipes.mjs').NeutralAlphaRecipe): NeutralResolved;
+
+export function neutralAlphaRecipes(settings:NeutralSettings,steps:PaletteStep[],minimumContrast?:number):Record<string,import('./alpha-recipes.mjs').NeutralAlphaRecipe>;
