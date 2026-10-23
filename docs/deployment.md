@@ -4,6 +4,8 @@ The catalogue is served at https://sloyui.com by Caddy on `devos` (`138.124.123.
 
 ## Develop and publication
 
+CI and the deployed catalogue service use Node 24. Keep the workflow runtime aligned with the service: server integration tests import the built-in `node:sqlite` module.
+
 Normal additional development goes to https://sloyui.com/develop/. Run `npm run release:develop`, or run check, pack:kit, verify:package and `bash scripts/deploy-devos.sh devos`. The script defaults to Develop and changes only `/srv/sloyui/develop` and `/srv/sloyui/data/develop-source`; the main release and data stay unchanged.
 
 The main site uses `/srv/sloyui/current`, `/srv/sloyui/data/source` and port 4318. Develop uses its own pointer, SQLite/mirrors and port 4319. Both share the existing owner identity and session cookie; login always runs on the main callback and safely returns to Develop when requested. Production assets use relative URLs so the exact same verified build can run under /develop/ and / without rebuilding. Caddy strips /develop only for its own API/static routes; downloads and document reads resolve within the selected channel.
