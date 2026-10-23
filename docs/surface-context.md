@@ -67,7 +67,7 @@ Card, ObjectCard, ContentCard и FileCard сохраняют Surface родит�
 | Нейтральный secondary | `surface/secondary/neutral-*` | `--cap-control-normal/hover/pressed/text` |
 | Акцентный secondary | `surface/secondary/<hue>-*` | `--cap-accent-normal/hover/pressed/text` |
 | Контент оттенка | `content/<hue>` | `--cap-accent-text` |
-| Контент на primary | Общий `content/on-primary` (чёрный/белый) | Парная text-роль действия |
+| Контент на primary | Neutral: `content/on-primary`; акцент: `content/on-primary-<hue>` | Парная text-роль действия |
 | Текст и иконки | `content/primary/secondary/tertiary/muted/caption` | `--cap-content-*` |
 | Граница оттенка | `border/<hue>-normal/hover/pressed` | Контекстные hue-роли |
 | Постоянный цвет | `stable/neutral/*`, `stable/accent/*`, `stable/alpha/*` | `--cap-stable-*` |
@@ -149,7 +149,7 @@ Theme, Accent, Surface, SurfaceScheme, Density, Radius и Borders наследу
 
 Рецепт проверяет ограниченную композицию, а не бесконечную стопку полупрозрачных слоёв. Для новой области задайте Surface и нарисуйте `surface/bg`; для локальной карточки сохраните контекст. Не наслаивайте Active поверх Normal — замените paint. На цветной подложке используйте парный content того же hue. Custom требует точного RGB и пересчёта всего проектного scope; после ручной смены заливки Figma не пересчитывает контраст.
 
-Текст Primary по умолчанию использует общий `content/on-primary`, точно чёрный или белый; заливка адаптируется под контраст не менее 4.5:1. Не размножайте одинаковый foreground по hue. Дополнительная foreground-роль допустима только при доказанной необходимости для поддерживаемых заливок. Ручное тонирование/custom-политика генератора не должна раздувать публичный picker. `content/<hue>` и `content/secondary/<hue>` дают две насыщенности акцентного текста; `content/inverted` — противоположный нейтральный контент.
+Automatic Primary content is selected per hue from exact black and white, measured on both actual Normal/Active fills. Keep the requested ramp pair when either ink meets the contrast target; otherwise choose the passing pair and ink closest to the authored lightness. Use one ink for both states. Explicit light/dark/custom foreground settings remain authored overrides. Never darken orange merely to preserve a theme-wide white-text policy. Neutral uses `content/on-primary`; native chromatic fills use the matching `content/on-primary-<hue>`, and mode-bound controls use `Accent/on-primary`. The aliases reuse two endpoint pigments; they are needed semantic pairs, not extra color ramps. `content/<hue>` and `content/secondary/<hue>` remain the two accent text strengths for soft fills; `content/inverted` is opposite neutral content.
 
 ## Пользовательская подложка
 

@@ -13,7 +13,7 @@
     "developIconFile": "sloyui-develop-icon.svg"
   },
   "package": "sloyui",
-  "version": "0.18.1",
+  "version": "0.18.2",
   "framework": "React >=19",
   "module": "ESM",
   "componentCount": 92,
@@ -777,7 +777,7 @@
             "Invert",
             "Glass"
           ],
-          "variables": 944
+          "variables": 902
         },
         {
           "name": "SurfaceScheme",
@@ -823,7 +823,7 @@
           "variables": 1
         }
       ],
-      "variableCount": 2110,
+      "variableCount": 2068,
       "source": "figma/token-system-v4/source.json",
       "graph": "figma/token-system-v4/graph.json",
       "sourceHash": "211e379e90b4651ab21f28abbaac839611809a3ebecde142abb1ff078d17ffe3",

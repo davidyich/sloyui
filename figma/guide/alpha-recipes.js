@@ -14,7 +14,7 @@ await gtext(section,'Primary — главный акцент. Secondary — мя
 host.insertChild(Math.min(4,host.children.length-1),section);
 await gtext(section,'Результат = alpha × пигмент + (1 − alpha) × фон',1264,'label');
 await glabel(section,'Прозрачность находится в COLOR. Opacity фрейма, текста и компонента — 100%. Normal и Active заменяют друг друга; не накладывайте Active поверх Normal.');
-const hierarchy=await gsection(section,'Primary / Secondary / Tertiary','Шесть акцентов на одной поверхности. Active усиливает Secondary небольшим шагом; текст сохраняет читаемость.');
+const hierarchy=await gsection(section,'Primary / Secondary / Tertiary','Шесть акцентов на одной поверхности. Текст Primary выбирается отдельно для каждого оттенка и сохраняется между Normal/Active. Secondary остаётся мягкой подложкой.');
 for(const theme of ['Light','Dark']){
  const row=gframe(hierarchy,theme+' · Emphasis hierarchy','HORIZONTAL',1264);row.itemSpacing=8;
  for(const hue of ['blue','green','orange','red','pink','purple']){

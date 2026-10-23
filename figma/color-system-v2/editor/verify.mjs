@@ -59,7 +59,7 @@ for(const preset of presets)for(const theme of ['Light','Dark']){
 }
 // Primary policy is still tested independently from bridge compatibility.
 const green=createAccent('green','#00995B'),greenPair=primaryPair(green,'Light');
-assert.equal(toHex(greenPair.foreground),'#FFFFFF');assert.ok(greenPair.adjusted);assert.ok(greenPair.minimumContrast>=4.5);
+assert.equal(toHex(greenPair.foreground),'#000000');assert.equal(greenPair.adjusted,false);assert.ok(greenPair.minimumContrast>=4.5);
 let policyChecks=0;for(const preset of presets)for(const mode of ['auto','light','dark','custom'])for(const target of [4.5,7])for(const theme of ['Light','Dark']){
  const a={...createAccent(preset.name,preset.hex),foregroundMode:mode,foregroundTint:.65,foregroundLight:'#F4F1E9',foregroundDark:'#122832'};
  const pair=primaryPair(a,theme,{...defaultRules,minimumContrast:target});assert.ok(pair.minimumContrast>=target,`${preset.name} ${mode} ${theme} ${target}`);if(mode==='custom')assert.equal(toHex(pair.foregroundRequest),theme==='Light'?a.foregroundLight:a.foregroundDark);assert.ok(['black','white',...generatePalette(a).flatMap(s=>s.steps.map(s=>s.name))].includes(pair.foregroundStep));policyChecks++;
@@ -157,7 +157,8 @@ const cacheBefore=generateContext(cacheAccent,'Light','Standard','Invert',source
 cacheAccent.stateDelta=.09;const cacheAfter=generateContext(cacheAccent,'Light','Standard','Invert',source,resolved);
 assert.notDeepEqual(cacheAfter.fills['secondary/active'],cacheBefore.fills['secondary/active']);
 cacheAccent.stateDelta=.04;assert.deepEqual(generateContext(cacheAccent,'Light','Standard','Invert',source,resolved).fills,cacheBefore.fills);
-const fixed=primaryPair(green,'Light',{...defaultRules,adaptPrimary:false});assert.equal(fixed.adjusted,false);assert.ok(fixed.minimumContrast<4.5);
+const fixed=primaryPair(green,'Light',{...defaultRules,adaptPrimary:false});assert.equal(fixed.adjusted,false);assert.equal(toHex(fixed.foreground),'#000000');assert.ok(fixed.minimumContrast>=4.5);
+const fixedWhite=primaryPair({...green,foregroundMode:'light'},'Light',{...defaultRules,adaptPrimary:false});assert.equal(fixedWhite.adjusted,false);assert.equal(toHex(fixedWhite.foreground),'#FFFFFF');assert.ok(fixedWhite.minimumContrast<4.5);
 const legacy=validateProject({schema:'sloy-palette-lab/v1',accents:[Object.fromEntries(Object.entries(green).filter(([key])=>!key.startsWith('foreground')))]});assert.equal(legacy.accents[0].foregroundMode,'auto');assert.equal(legacy.rules.vividness,1.2);
 const project={schema,accents:all,backgrounds:{Light:'#F1EEF8',Dark:'#221D2C'}};const round=validateProject(JSON.parse(JSON.stringify(project)));assert.equal(round.accents.length,18);assert.equal(round.accents[5].hue,100);assert.throws(()=>validateProject({...project,accents:[all[0],all[0]]}),/уникальными/);assert.throws(()=>validateProject({...project,accents:[{...all[0],opacityScale:NaN}]}),/диапазона/);assert.throws(()=>updateSeed(all[0],'oops'));
 const graph=exportGraph(all,source,resolved,project.backgrounds);assert.equal(graph.collections.find(c=>c.key==='palette').variables.length,all.length*41+2);assert.ok(graph.collections.find(c=>c.key==='palette').variables.every(v=>/^(black|white|[a-z0-9-]+\/\d{2})$/.test(v.name)),'Palette names contain only ramps and shared poles');const index=new Map(graph.collections.flatMap(c=>c.variables.map(v=>[c.key+'/'+v.name,{...v,collection:c}])));assert.ok(!graph.collections.some(c=>c.key==='accent'));let compositions=0;

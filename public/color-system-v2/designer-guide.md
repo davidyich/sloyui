@@ -4,7 +4,7 @@
 
 Актуальные страницы:
 
-- [Start · 0.18.0](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=164-498) — карта использования.
+- [Start · 0.18.2](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=164-498) — карта использования.
 - [Colors](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=161-4037) — роли, пары и Invert.
 - [Controls](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=162-468) — экземпляры кнопок, полей, переключателей и слайдеров.
 - [Components](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=163-2) — Tag, Card, EmptyState, NavItem и Alert.
@@ -52,7 +52,7 @@
 | Промежуточный текст | `content/tertiary/neutral` |
 | Подпись и placeholder | `content/muted/neutral` |
 | Текст на мягкой синей заливке | `content/primary/blue`; второстепенный — `content/secondary/blue` |
-| Текст на Primary | Общий `content/on-primary`, точно чёрный или белый |
+| Текст на Primary | Для neutral — `content/on-primary`; для blue — `content/on-primary-blue` и аналогично для других оттенков |
 | Disabled | `surface/disabled` + `content/disabled/neutral` |
 | Нейтральная граница | `border/subtle`, `border/default`, `border/strong` |
 | Граница нейтрального контрола | `border/neutral-normal`, `border/neutral-hover`, `border/neutral-pressed` |
@@ -63,9 +63,9 @@
 
 Для других акцентов заменяйте `blue` на поддерживаемое имя. Не создавайте новые пути на основании похожего runtime-имени. В этой native коллекции нет публичных `reaction/*`, `alpha/*` или `surface/primary/invert-*`: Invert задаётся режимом Surface.
 
-Primary непрозрачен. Secondary/Tertiary уже содержат рассчитанную alpha. Нейтральные block, control и disabled также используют alpha-слои. Общий алгоритм выбирает рецепт внутри одной из пяти ограниченных групп: Light, Light/Neutral, Dark, Glass/Light и Glass/Dark. Приглушённые светлые основы с OKLab L < 0.985 отделены от ярких; группа определяется по объявленному фону области и локальной полярности. Это внутренний расчёт, не новые Surface modes и не одна краска на всех поверхностях. Внутри группы отдельный стиль для каждого вложенного фона не нужен. На мягкой заливке используйте Content того же hue, а не on-primary. Общий `content/on-primary` следует теме и поверхности; не заменяйте его постоянным белым. Подробности — [alpha-recipes.md](../../docs/alpha-recipes.md).
+Primary непрозрачен. Secondary/Tertiary уже содержат рассчитанную alpha. Нейтральные block, control и disabled также используют alpha-слои. Общий алгоритм выбирает рецепт внутри одной из пяти ограниченных групп: Light, Light/Neutral, Dark, Glass/Light и Glass/Dark. Приглушённые светлые основы с OKLab L < 0.985 отделены от ярких; группа определяется по объявленному фону области и локальной полярности. Это внутренний расчёт, не новые Surface modes и не одна краска на всех поверхностях. Внутри группы отдельный стиль для каждого вложенного фона не нужен. На мягкой заливке используйте Content того же hue, а не on-primary. Текст Primary выбирается по фактической заливке каждого оттенка: в одной теме у оранжевого может быть чёрный текст, а у фиолетового — белый. Normal и Active используют один цвет текста, проверенный на обеих заливках. Подробности — [alpha-recipes.md](../../docs/alpha-recipes.md).
 
-`content/on-bright-primary` сохранён как отдельная роль для особого светлого Primary, но не нужен в обычных рецептах ниже. Служебные `content/on-primary-blue`, `-green`, `-orange`, `-red`, `-pink`, `-purple` остаются маршрутами для Accent; они скрыты из обычного picker. Для ручного назначения текста Primary используйте общий `content/on-primary`.
+`content/on-bright-primary` сохранён для совместимости. Для ручной цветной Primary-заливки выбирайте парный `content/on-primary-blue`, `-green`, `-orange`, `-red`, `-pink` или `-purple` из Surface. У готового компонента меняйте Accent: его `Accent/on-primary` следует оттенку автоматически. Все эти роли ссылаются на общие чёрный и белый пигменты; новых оттенков текста не добавляется.
 
 ## Рецепты
 
@@ -73,7 +73,7 @@ Primary непрозрачен. Secondary/Tertiary уже содержат ра�
 
 | Элемент | Заливка | Текст / иконка | Дополнение |
 | --- | --- | --- | --- |
-| Основная синяя кнопка | `surface/primary/blue-normal` | `content/on-primary` | Состояние — `surface/primary/blue-active` |
+| Основная синяя кнопка | `surface/primary/blue-normal` | `content/on-primary-blue` | Состояние — `surface/primary/blue-active` |
 | Основная нейтральная кнопка | `surface/primary/neutral-normal` | `content/on-primary` | Состояние — `surface/primary/neutral-active` |
 | Мягкое синее действие или Tag | `surface/secondary/blue-normal` | `content/primary/blue` | При необходимости `border/blue`; статичный Tag остаётся Normal |
 | Карточка | `surface/block` | `content/primary/neutral`, подпись `content/muted/neutral` | Surface наследуется; структурная граница `border/subtle` |
@@ -121,7 +121,7 @@ node figma/color-system-v2/export-custom.mjs --light '#F1EEF8' --dark '#221D2C' 
 
 Примените `import.js` к нужному файлу: он создаёт или обновляет только эту именованную project-коллекцию. Назначайте её роли вместо core Surface только внутри соответствующей пользовательской области. Задайте режим Light/Dark **этой project-коллекции** на содержащем фрейме; одноимённая Theme другой коллекции не переключает её автоматически. Дочерние элементы оставьте на Auto. Не смешивайте пересчитанную заливку с прежним текстом из другого контекста.
 
-В project-экспорте используются свои рассчитанные пары, например `surface/secondary/purple-normal` + `content/primary/purple`, а Primary blue — `surface/primary/blue-normal` + **`content/on-primary-blue`**. Здесь парный foreground относится именно к запрошенному RGB-фону; правило общего core `content/on-primary` не подменяет эту проектную пару.
+В project-экспорте используются свои рассчитанные пары, например `surface/secondary/purple-normal` + `content/primary/purple`, а Primary blue — `surface/primary/blue-normal` + **`content/on-primary-blue`**. Здесь парный foreground относится именно к запрошенному RGB-фону; нейтральный core `content/on-primary` не подменяет эту проектную пару.
 
 При новом фоне пересчитайте и примените весь scope снова. Проверяйте текст, fill/background, Normal/Active и focus после композиции. Посмотрите `verification.json`: результат генерации не подтверждает native-импорт или визуальную проверку. На странице [Custom backgrounds](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=161-4299) показан реальный отдельный экспорт для `#F1EEF8` / `#221D2C`; его данные сохранены в `figma/guide/custom-example.json`.
 

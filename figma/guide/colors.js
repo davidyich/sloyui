@@ -15,16 +15,16 @@ for (const family of ['primary', 'secondary', 'tertiary']) {
   const row = gframe(matrix, family + ' samples', 'HORIZONTAL', 1264); row.itemSpacing = 12;
   for (const hue of hues) {
     const column = gframe(row, hue, 'VERTICAL', 170); column.itemSpacing = 8;
-    const ink = family === 'primary' ? 'content/on-primary' : 'content/primary/' + hue;
+    const ink = family === 'primary' ? 'content/on-primary' + (hue === 'neutral' ? '' : '-' + hue) : 'content/primary/' + hue;
     await gsample(column, hue[0].toUpperCase() + hue.slice(1), 'surface/' + family + '/' + hue + '-normal', ink, 170);
     await gsample(column, 'Active', 'surface/' + family + '/' + hue + '-active', ink, 170);
     await glabel(column, 'surface/' + family + '/' + hue + '-normal', 170);
   }
 }
-const pairs = await gsection(colorsRoot, 'Текст и граница — часть пары', 'Для Primary общий content/on-primary выбирает точный чёрный или белый. На мягкой заливке используйте Content того же hue.');
+const pairs = await gsection(colorsRoot, 'Текст и граница — часть пары', 'Текст Primary — чёрный или белый по фактической паре заливок каждого оттенка. Выберите content/on-primary-<hue>; у готового контрола он следует Accent. На мягкой заливке используйте Content того же hue.');
 const pairsRow = gframe(pairs, 'Usage pairs', 'HORIZONTAL', 1264); pairsRow.itemSpacing = 24;
 for (const [name, fillRole, inkRole, hint] of [
-  ['Primary action', 'surface/primary/blue-normal', 'content/on-primary', 'surface/primary/blue-normal + content/on-primary'],
+  ['Primary action', 'surface/primary/blue-normal', 'content/on-primary-blue', 'surface/primary/blue-normal + content/on-primary-blue'],
   ['Project label', 'surface/secondary/green-normal', 'content/primary/green', 'surface/secondary/green-normal + content/primary/green'],
   ['Quiet field', 'surface/tertiary/neutral-normal', 'content/primary/neutral', 'surface/tertiary/neutral-normal + content/primary/neutral']
 ]) { const card = gcard(pairsRow, name + ' recipe', 405); await gsample(card, name, fillRole, inkRole, 357); if (name === 'Primary action') await gbutton(card, 'Create project', 'Blue'); await glabel(card, hint, 357); }

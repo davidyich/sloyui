@@ -217,6 +217,10 @@ export function buildNativeGraph({ optimizeRouting = true } = {}) {
       v.figmaName ??= figmaName(owner.key, v.name);
       v.scopes ??= [];
       v.description ??= owner.key === 'surface' ? 'Public contextual color; modes establish region purpose independently of Theme.' : 'Generated internal alias; edit the canonical source.';
+      if (owner.key === 'surface' && /^content\/accent\/[^/]+\/on-primary$/.test(v.name)) {
+        v.scopes = ['TEXT_FILL', 'SHAPE_FILL'];
+        delete v.pickerAlias;
+      }
       if (owner.key === 'surface') v.description = 'Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.';
       if (owner.hidden) v.scopes = [];
       v.css ??= `--sloy-v2-${owner.key}-${v.name.replaceAll('/', '-')}`;
