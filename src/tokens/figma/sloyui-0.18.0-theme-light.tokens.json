@@ -1,7 +1,7 @@
 {
   "$extensions": {
     "com.sloyui.export": {
-      "version": "0.17.1",
+      "version": "0.18.0",
       "collection": "Sloy UI · Theme",
       "mode": "Light"
     }
@@ -33,11 +33,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8991073255,
-              0.8991073255,
-              0.8991073255
+              0,
+              0,
+              0
             ],
-            "alpha": 1
+            "alpha": 0.07
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -54,11 +54,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9317619717,
-              0.9317619717,
-              0.9317619717
+              0,
+              0,
+              0
             ],
-            "alpha": 1
+            "alpha": 0.03
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -73,9 +73,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.3992640547,
-              0.3992640547,
-              0.3992640547
+              0.3217808795,
+              0.3217808795,
+              0.3217808795
             ],
             "alpha": 1
           },
@@ -170,9 +170,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.3408628816,
-              0.3408628816,
-              0.3408628816
+              0.3217808795,
+              0.3217808795,
+              0.3217808795
             ],
             "alpha": 1
           },
@@ -326,11 +326,30 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8673824811,
-              0.8673824811,
-              0.8673824811
+              0,
+              0,
+              0
             ],
-            "alpha": 1
+            "alpha": 0.06
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.1
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -348,9 +367,9 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.2457477303,
-                0.2457477303,
-                0.2457477303
+                0,
+                0,
+                0
               ],
               "alpha": 1
             },
@@ -472,11 +491,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    2e-10,
-                    0.3838601889,
-                    0.7431667405
+                    3e-10,
+                    0.4110024815,
+                    0.7925311526
                   ],
-                  "alpha": 0.35
+                  "alpha": 0.36
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -492,9 +511,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  2e-10,
-                  0.2239279564,
-                  0.4522937199
+                  0,
+                  0.1980814543,
+                  0.4052859966
                 ],
                 "alpha": 1
               },
@@ -724,11 +743,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.692806698,
-                    0.3285593428,
-                    1e-10
+                    0.775372804,
+                    0.370908524,
+                    2e-10
                   ],
-                  "alpha": 0.38
+                  "alpha": 0.42
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -850,11 +869,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6908212405,
-                    0,
-                    0.094328273
+                    0.7889798876,
+                    4e-10,
+                    0.1139815901
                   ],
-                  "alpha": 0.27
+                  "alpha": 0.28
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -870,9 +889,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.4501680938,
+                  0.4033573389,
                   0,
-                  0.046144718
+                  0.0368098606
                 ],
                 "alpha": 1
               },
@@ -996,9 +1015,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.4110163946,
+                  0.3678335818,
                   1e-10,
-                  0.3122562393
+                  0.2782249098
                 ],
                 "alpha": 1
               },
@@ -1122,9 +1141,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.3246109719,
-                  0,
-                  0.5068983127
+                  0.2894348069,
+                  1e-10,
+                  0.4548307246
                 ],
                 "alpha": 1
               },
@@ -1340,15 +1359,17 @@
               "codeSyntax": {}
             }
           }
-        },
-        "block": {
+        }
+      },
+      "disabled": {
+        "content": {
           "$type": "color",
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9317619717,
-              0.9317619717,
-              0.9317619717
+              0.3408628816,
+              0.3408628816,
+              0.3408628816
             ],
             "alpha": 1
           },
@@ -1361,15 +1382,15 @@
           }
         }
       },
-      "disabled": {
-        "background": {
+      "content": {
+        "caption": {
           "$type": "color",
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9317619717,
-              0.9317619717,
-              0.9317619717
+              0.3408628816,
+              0.3408628816,
+              0.3408628816
             ],
             "alpha": 1
           },
@@ -1494,409 +1515,6 @@
               "scopes": [],
               "visibility": "internal",
               "codeSyntax": {}
-            }
-          }
-        }
-      },
-      "secondary": {
-        "neutral": {
-          "content": {
-            "$type": "color",
-            "$value": {
-              "colorSpace": "srgb",
-              "components": [
-                0.264872785,
-                0.264872785,
-                0.264872785
-              ],
-              "alpha": 1
-            },
-            "$extensions": {
-              "com.sloyui.variable": {
-                "scopes": [],
-                "visibility": "internal",
-                "codeSyntax": {}
-              }
-            }
-          }
-        }
-      },
-      "color": {
-        "blue": {
-          "secondary": {
-            "background": {
-              "normal": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    1e-10,
-                    0.4382018359,
-                    0.8419993445
-                  ],
-                  "alpha": 0.29
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  }
-                }
-              },
-              "hover": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    3e-10,
-                    0.4110024815,
-                    0.7925311526
-                  ],
-                  "alpha": 0.35
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  }
-                }
-              }
-            },
-            "content": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  2e-10,
-                  0.2239279564,
-                  0.4522937199
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
-            }
-          }
-        },
-        "green": {
-          "secondary": {
-            "background": {
-              "normal": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    3e-10,
-                    0.5981901807,
-                    0.3557246386
-                  ],
-                  "alpha": 0.34
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  }
-                }
-              },
-              "hover": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    2e-10,
-                    0.5008011309,
-                    0.294486605
-                  ],
-                  "alpha": 0.37
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  }
-                }
-              }
-            },
-            "content": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  1e-10,
-                  0.2776773564,
-                  0.1541868356
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
-            }
-          }
-        },
-        "orange": {
-          "secondary": {
-            "background": {
-              "normal": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.775372804,
-                    0.370908524,
-                    2e-10
-                  ],
-                  "alpha": 0.32
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  }
-                }
-              },
-              "hover": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.692806698,
-                    0.3285593428,
-                    1e-10
-                  ],
-                  "alpha": 0.37
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  }
-                }
-              }
-            },
-            "content": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  0.3679185272,
-                  0.1619201651,
-                  2e-10
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
-            }
-          }
-        },
-        "red": {
-          "secondary": {
-            "background": {
-              "normal": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.9517987416,
-                    0.1733095308,
-                    0.2053264314
-                  ],
-                  "alpha": 0.28
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  }
-                }
-              },
-              "hover": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.7398223188,
-                    1e-10,
-                    0.1041392653
-                  ],
-                  "alpha": 0.27
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  }
-                }
-              }
-            },
-            "content": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  0.4501680938,
-                  0,
-                  0.046144718
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
-            }
-          }
-        },
-        "pink": {
-          "secondary": {
-            "background": {
-              "normal": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.6782217452,
-                    3e-10,
-                    0.5228343075
-                  ],
-                  "alpha": 0.22
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  }
-                }
-              },
-              "hover": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.5432484406,
-                    3e-10,
-                    0.4164651136
-                  ],
-                  "alpha": 0.26
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  }
-                }
-              }
-            },
-            "content": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  0.4110163946,
-                  1e-10,
-                  0.3122562393
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
-            }
-          }
-        },
-        "purple": {
-          "secondary": {
-            "background": {
-              "normal": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.4687875168,
-                    1e-10,
-                    0.7203077328
-                  ],
-                  "alpha": 0.21
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  }
-                }
-              },
-              "hover": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.3601878288,
-                    1e-10,
-                    0.5595590032
-                  ],
-                  "alpha": 0.25
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  }
-                }
-              }
-            },
-            "content": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  0.3246109719,
-                  0,
-                  0.5068983127
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
             }
           }
         }
@@ -2039,36 +1657,17 @@
               "codeSyntax": {}
             }
           }
-        },
-        "block": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.9653810442,
-              0.9653810442,
-              0.9653810442
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {}
-            }
-          }
         }
       },
       "disabled": {
-        "background": {
+        "content": {
           "$type": "color",
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9653810442,
-              0.9653810442,
-              0.9653810442
+              0.3601047577,
+              0.3601047577,
+              0.3601047577
             ],
             "alpha": 1
           },
@@ -2187,11 +1786,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.4166053382,
-                    0.6769125792,
-                    1
+                    0.2989986071,
+                    0.6173211063,
+                    0.9999999999
                   ],
-                  "alpha": 0.5
+                  "alpha": 0.42
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2206,11 +1805,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    3e-10,
-                    0.4110024815,
-                    0.7925311526
+                    0.2989986071,
+                    0.6173211063,
+                    0.9999999999
                   ],
-                  "alpha": 0.34
+                  "alpha": 0.53
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2269,11 +1868,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    2e-10,
-                    0.5008011309,
-                    0.294486605
+                    5e-10,
+                    0.5332417992,
+                    0.3148852303
                   ],
-                  "alpha": 0.36
+                  "alpha": 0.37
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2281,6 +1880,25 @@
                     "visibility": "internal",
                     "codeSyntax": {}
                   }
+                }
+              }
+            },
+            "content": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  1e-10,
+                  0.2776773564,
+                  0.1541868356
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
                 }
               }
             }
@@ -2313,11 +1931,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.775372804,
-                    0.370908524,
-                    2e-10
+                    0.8166118327,
+                    0.3920605341,
+                    6e-10
                   ],
-                  "alpha": 0.39
+                  "alpha": 0.41
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2325,25 +1943,6 @@
                     "visibility": "internal",
                     "codeSyntax": {}
                   }
-                }
-              }
-            },
-            "content": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  0.3679185272,
-                  0.1619201651,
-                  2e-10
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
                 }
               }
             }
@@ -2357,11 +1956,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.9999999999,
-                    0.5873578209,
-                    0.5523053479
+                    1,
+                    0.4321800981,
+                    0.4026988442
                   ],
-                  "alpha": 0.55
+                  "alpha": 0.4
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2376,11 +1975,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.7889798876,
-                    4e-10,
-                    0.1139815901
+                    1,
+                    0.3679060227,
+                    0.3468899043
                   ],
-                  "alpha": 0.27
+                  "alpha": 0.46
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2439,11 +2038,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.5432484406,
-                    3e-10,
-                    0.4164651136
+                    0.6330183642,
+                    0,
+                    0.4872106172
                   ],
-                  "alpha": 0.26
+                  "alpha": 0.27
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2502,11 +2101,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.3961097263,
+                    0.4687875168,
                     1e-10,
-                    0.612730421
+                    0.7203077328
                   ],
-                  "alpha": 0.25
+                  "alpha": 0.26
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2677,15 +2276,17 @@
               "codeSyntax": {}
             }
           }
-        },
-        "block": {
+        }
+      },
+      "disabled": {
+        "content": {
           "$type": "color",
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9653810442,
-              0.9653810442,
-              0.9653810442
+              0.3601047577,
+              0.3601047577,
+              0.3601047577
             ],
             "alpha": 1
           },
@@ -2699,6 +2300,25 @@
         }
       },
       "border": {
+        "subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9317619717,
+              0.9317619717,
+              0.9317619717
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
         "default": {
           "$type": "color",
           "$value": {
@@ -2810,270 +2430,6 @@
               "scopes": [],
               "visibility": "internal",
               "codeSyntax": {}
-            }
-          }
-        }
-      },
-      "group": {
-        "hover": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.9317619717,
-              0.9317619717,
-              0.9317619717
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {}
-            }
-          }
-        },
-        "pressed": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.8991073255,
-              0.8991073255,
-              0.8991073255
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {}
-            }
-          }
-        }
-      },
-      "secondary": {
-        "neutral": {
-          "background": {
-            "normal": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  0.9653810442,
-                  0.9653810442,
-                  0.9653810442
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
-            }
-          },
-          "content": {
-            "$type": "color",
-            "$value": {
-              "colorSpace": "srgb",
-              "components": [
-                0.264872785,
-                0.264872785,
-                0.264872785
-              ],
-              "alpha": 1
-            },
-            "$extensions": {
-              "com.sloyui.variable": {
-                "scopes": [],
-                "visibility": "internal",
-                "codeSyntax": {}
-              }
-            }
-          }
-        }
-      },
-      "color": {
-        "blue": {
-          "secondary": {
-            "content": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  2e-10,
-                  0.2239279564,
-                  0.4522937199
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
-            }
-          }
-        },
-        "green": {
-          "secondary": {
-            "content": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  1e-10,
-                  0.2776773564,
-                  0.1541868356
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
-            }
-          }
-        },
-        "orange": {
-          "secondary": {
-            "content": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  0.3679185272,
-                  0.1619201651,
-                  2e-10
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
-            }
-          }
-        },
-        "red": {
-          "secondary": {
-            "background": {
-              "normal": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.9999999999,
-                    0.5873578209,
-                    0.5523053479
-                  ],
-                  "alpha": 0.55
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  }
-                }
-              },
-              "hover": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.7889798876,
-                    4e-10,
-                    0.1139815901
-                  ],
-                  "alpha": 0.27
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  }
-                }
-              }
-            },
-            "content": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  0.4501680938,
-                  0,
-                  0.046144718
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
-            }
-          }
-        },
-        "pink": {
-          "secondary": {
-            "content": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  0.4110163946,
-                  1e-10,
-                  0.3122562393
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
-            }
-          }
-        },
-        "purple": {
-          "secondary": {
-            "content": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  0.3246109719,
-                  0,
-                  0.5068983127
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
             }
           }
         }
@@ -3388,16 +2744,16 @@
   "scheme": {
     "dimmed": {
       "context": {
-        "panel": {
+        "page": {
           "surface": {
             "background": {
               "$type": "color",
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  1,
-                  1,
-                  1
+                  0.9653810442,
+                  0.9653810442,
+                  0.9653810442
                 ],
                 "alpha": 1
               },
@@ -3410,15 +2766,57 @@
               }
             }
           },
-          "disabled": {
+          "border": {
+            "strong": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.7491148896,
+                  0.7491148896,
+                  0.7491148896
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "emphasis": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.3795567932,
+                  0.3795567932,
+                  0.3795567932
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            }
+          }
+        },
+        "panel": {
+          "surface": {
             "background": {
               "$type": "color",
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.9653810442,
-                  0.9653810442,
-                  0.9653810442
+                  1,
+                  1,
+                  1
                 ],
                 "alpha": 1
               },
@@ -3489,146 +2887,6 @@
                 }
               }
             }
-          },
-          "color": {
-            "blue": {
-              "secondary": {
-                "background": {
-                  "normal": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.4166053382,
-                        0.6769125792,
-                        1
-                      ],
-                      "alpha": 0.5
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  },
-                  "hover": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        3e-10,
-                        0.4110024815,
-                        0.7925311526
-                      ],
-                      "alpha": 0.34
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "orange": {
-              "secondary": {
-                "background": {
-                  "normal": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.8577632456,
-                        0.4131676048,
-                        5e-10
-                      ],
-                      "alpha": 0.34
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "red": {
-              "secondary": {
-                "background": {
-                  "hover": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.7889798876,
-                        4e-10,
-                        0.1139815901
-                      ],
-                      "alpha": 0.27
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "purple": {
-              "secondary": {
-                "background": {
-                  "normal": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.5054509259,
-                        4e-10,
-                        0.7745767324
-                      ],
-                      "alpha": 0.21
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  },
-                  "hover": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.3961097263,
-                        1e-10,
-                        0.612730421
-                      ],
-                      "alpha": 0.25
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  }
-                }
-              }
-            }
           }
         },
         "overlay": {
@@ -3654,14 +2912,54 @@
             }
           },
           "disabled": {
-            "background": {
+            "content": {
               "$type": "color",
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.9653810442,
-                  0.9653810442,
-                  0.9653810442
+                  0.3601047577,
+                  0.3601047577,
+                  0.3601047577
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            }
+          },
+          "content": {
+            "muted": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.3028015713,
+                  0.3028015713,
+                  0.3028015713
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "caption": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.3408628816,
+                  0.3408628816,
+                  0.3408628816
                 ],
                 "alpha": 1
               },
@@ -3770,386 +3068,6 @@
                 }
               }
             }
-          },
-          "group": {
-            "hover": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  0.9317619717,
-                  0.9317619717,
-                  0.9317619717
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
-            },
-            "pressed": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  0.8991073255,
-                  0.8991073255,
-                  0.8991073255
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
-            }
-          },
-          "color": {
-            "blue": {
-              "secondary": {
-                "background": {
-                  "normal": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.4166053382,
-                        0.6769125792,
-                        1
-                      ],
-                      "alpha": 0.5
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  },
-                  "hover": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        3e-10,
-                        0.4110024815,
-                        0.7925311526
-                      ],
-                      "alpha": 0.34
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  }
-                },
-                "content": {
-                  "$type": "color",
-                  "$value": {
-                    "colorSpace": "srgb",
-                    "components": [
-                      2e-10,
-                      0.2239279564,
-                      0.4522937199
-                    ],
-                    "alpha": 1
-                  },
-                  "$extensions": {
-                    "com.sloyui.variable": {
-                      "scopes": [],
-                      "visibility": "internal",
-                      "codeSyntax": {}
-                    }
-                  }
-                }
-              }
-            },
-            "green": {
-              "secondary": {
-                "background": {
-                  "normal": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        1e-10,
-                        0.5657161685,
-                        0.3353050467
-                      ],
-                      "alpha": 0.31
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  },
-                  "hover": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        2e-10,
-                        0.5008011309,
-                        0.294486605
-                      ],
-                      "alpha": 0.36
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  }
-                },
-                "content": {
-                  "$type": "color",
-                  "$value": {
-                    "colorSpace": "srgb",
-                    "components": [
-                      1e-10,
-                      0.2776773564,
-                      0.1541868356
-                    ],
-                    "alpha": 1
-                  },
-                  "$extensions": {
-                    "com.sloyui.variable": {
-                      "scopes": [],
-                      "visibility": "internal",
-                      "codeSyntax": {}
-                    }
-                  }
-                }
-              }
-            },
-            "orange": {
-              "secondary": {
-                "background": {
-                  "normal": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.8577632456,
-                        0.4131676048,
-                        5e-10
-                      ],
-                      "alpha": 0.34
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  },
-                  "hover": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.775372804,
-                        0.370908524,
-                        2e-10
-                      ],
-                      "alpha": 0.39
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  }
-                },
-                "content": {
-                  "$type": "color",
-                  "$value": {
-                    "colorSpace": "srgb",
-                    "components": [
-                      0.3679185272,
-                      0.1619201651,
-                      2e-10
-                    ],
-                    "alpha": 1
-                  },
-                  "$extensions": {
-                    "com.sloyui.variable": {
-                      "scopes": [],
-                      "visibility": "internal",
-                      "codeSyntax": {}
-                    }
-                  }
-                }
-              }
-            },
-            "red": {
-              "secondary": {
-                "background": {
-                  "normal": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.9999999999,
-                        0.5873578209,
-                        0.5523053479
-                      ],
-                      "alpha": 0.55
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  },
-                  "hover": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.7889798876,
-                        4e-10,
-                        0.1139815901
-                      ],
-                      "alpha": 0.27
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  }
-                },
-                "content": {
-                  "$type": "color",
-                  "$value": {
-                    "colorSpace": "srgb",
-                    "components": [
-                      0.4501680938,
-                      0,
-                      0.046144718
-                    ],
-                    "alpha": 1
-                  },
-                  "$extensions": {
-                    "com.sloyui.variable": {
-                      "scopes": [],
-                      "visibility": "internal",
-                      "codeSyntax": {}
-                    }
-                  }
-                }
-              }
-            },
-            "pink": {
-              "secondary": {
-                "content": {
-                  "$type": "color",
-                  "$value": {
-                    "colorSpace": "srgb",
-                    "components": [
-                      0.4110163946,
-                      1e-10,
-                      0.3122562393
-                    ],
-                    "alpha": 1
-                  },
-                  "$extensions": {
-                    "com.sloyui.variable": {
-                      "scopes": [],
-                      "visibility": "internal",
-                      "codeSyntax": {}
-                    }
-                  }
-                }
-              }
-            },
-            "purple": {
-              "secondary": {
-                "background": {
-                  "normal": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.5054509259,
-                        4e-10,
-                        0.7745767324
-                      ],
-                      "alpha": 0.21
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  },
-                  "hover": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.3961097263,
-                        1e-10,
-                        0.612730421
-                      ],
-                      "alpha": 0.25
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  }
-                },
-                "content": {
-                  "$type": "color",
-                  "$value": {
-                    "colorSpace": "srgb",
-                    "components": [
-                      0.3246109719,
-                      0,
-                      0.5068983127
-                    ],
-                    "alpha": 1
-                  },
-                  "$extensions": {
-                    "com.sloyui.variable": {
-                      "scopes": [],
-                      "visibility": "internal",
-                      "codeSyntax": {}
-                    }
-                  }
-                }
-              }
-            }
           }
         },
         "inset": {
@@ -4170,192 +3088,6 @@
                   "scopes": [],
                   "visibility": "internal",
                   "codeSyntax": {}
-                }
-              }
-            }
-          }
-        },
-        "page": {
-          "border": {
-            "strong": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  0.7491148896,
-                  0.7491148896,
-                  0.7491148896
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
-            },
-            "emphasis": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  0.3795567932,
-                  0.3795567932,
-                  0.3795567932
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
-            }
-          },
-          "secondary": {
-            "neutral": {
-              "content": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0,
-                    0,
-                    0
-                  ],
-                  "alpha": 1
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  }
-                }
-              }
-            }
-          },
-          "color": {
-            "blue": {
-              "secondary": {
-                "background": {
-                  "normal": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        1e-10,
-                        0.4382018359,
-                        0.8419993445
-                      ],
-                      "alpha": 0.29
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "orange": {
-              "secondary": {
-                "background": {
-                  "normal": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.775372804,
-                        0.370908524,
-                        2e-10
-                      ],
-                      "alpha": 0.32
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "pink": {
-              "secondary": {
-                "background": {
-                  "normal": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.6782217452,
-                        3e-10,
-                        0.5228343075
-                      ],
-                      "alpha": 0.22
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  },
-                  "hover": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.5432484406,
-                        3e-10,
-                        0.4164651136
-                      ],
-                      "alpha": 0.26
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "purple": {
-              "secondary": {
-                "background": {
-                  "normal": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.4687875168,
-                        1e-10,
-                        0.7203077328
-                      ],
-                      "alpha": 0.21
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  }
                 }
               }
             }

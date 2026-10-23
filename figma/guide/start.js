@@ -1,6 +1,6 @@
-const {page: startPage, root: startRoot} = await ginit('00 · Start', 'Sloy UI · 0.17.1 · Start');
+const {page: startPage, root: startRoot} = await ginit('00 · Start', 'Sloy UI · 0.18.0 · Start');
 await gtext(startRoot, 'Sloy UI', 1264, 'title');
-await gtext(startRoot, '0.17.1 · Tokens, components and workspace layouts', 1264, 'label', 'content/secondary/neutral');
+await gtext(startRoot, '0.18.0 · Tokens, components and workspace layouts', 1264, 'label', 'content/secondary/neutral');
 const intro = await gcard(startRoot, 'Start with context', 1264);
 await gtext(intro, 'Start with the frame. Let instances inherit.', 1216, 'title');
 await gtext(intro, 'Choose Theme, Scheme, Surface and Accent on the containing frame. Keep child modes on Auto. Density, Radius and Borders stay independent.', 1040);
@@ -24,4 +24,4 @@ for (const [surface, label, body] of [
 ]) { const card = gcard(contextRow, label, 405, surface); await gtext(card, label, 357, 'label'); await gtext(card, body, 357, 'body', 'content/secondary/neutral'); await gsample(card, 'Project workspace', 'surface/secondary/blue-normal', 'content/primary/blue', 357); }
 await glabel(startRoot, 'Neutral is the default accent. Blue · Green · Orange · Red · Pink · Purple. Color alpha belongs to paint; keep layer opacity at 100%.');
 await glabel(startRoot, 'Design references are editable. Variant states describe appearance; interaction prototypes and release verification are recorded separately.');
-return greport(startPage, startRoot, {versionLabel: '0.17.1', purpose: 'Usage map; no validation claims'});
+return greport(startPage, startRoot, {versionLabel: '0.18.0', purpose: 'Usage map; no validation claims'});

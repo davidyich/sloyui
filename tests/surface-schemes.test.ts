@@ -21,18 +21,20 @@ describe('Reference surface schemes', () => {
   expect(graph.axes.Surface.values).toEqual([...regions, 'Invert', 'Glass']);
  });
  for (const SurfaceScheme of ['Standard', 'Dimmed'] as const) for (const Theme of themes) {
-  it(`${Theme}/${SurfaceScheme} selects backgrounds and blocks from the shared neutral ramp`, () => {
+  it(`${Theme}/${SurfaceScheme} selects opaque backgrounds and translucent blocks from shared neutral pigments`, () => {
    regions.forEach(Surface => {
     const selection={Theme,Surface,SurfaceScheme},bg=resolve('Theme/surface/bg',selection),block=resolve('Theme/surface/block',selection);
     for(const role of ['surface/bg','surface/block']){
      const path=pigmentPath('Theme/'+role,selection);
      expect(path).toMatch(/^Palette\/(?:gray\/\d+|black|white)$/);
-     expect(resolve('Theme/'+role,selection)).toEqual(resolve(path,selection));
+     expect({...resolve('Theme/'+role,selection),a:1}).toEqual(resolve(path,selection));
     }
     expect(bg.r).toBe(bg.g);expect(bg.g).toBe(bg.b);
     expect(bg.a).toBe(1);
-    expect(block.a).toBe(1);
-    expect((block.r-bg.r)*(Theme==='Dark'?1:-1),`${Surface} separates its block`).toBeGreaterThan(0);
+    expect(block.a).toBeGreaterThan(0);expect(block.a).toBeLessThan(1);
+    expect(block.a*100).toBeCloseTo(Math.round(block.a*100),10);
+    const paintedBlock=block.r*block.a+bg.r*(1-block.a);
+    expect((paintedBlock-bg.r)*(Theme==='Dark'?1:-1),`${Surface} separates its composed block`).toBeGreaterThan(0);
    });
   });
  }

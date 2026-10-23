@@ -4,7 +4,7 @@ export type PaletteScaleId='ramp';
 export type PaletteAnchor={scale:PaletteScaleId;position:number;hex:string};
 export type PaletteEdits={interpolate:boolean;anchors:PaletteAnchor[];legacyAnchors?:{scale:'solid'|'soft'|'muted';position:number;hex:string}[]};
 export type Accent={id:string;name:string;hex:string;seedHex?:string;hue:number;primaryChroma:number;lightnessLight:number;lightnessDark:number;stateDelta:number;softChroma:number;opacityScale:number;textChroma:number;paletteSteps:number;foregroundMode:string;foregroundTint:number;foregroundLight:string;foregroundDark:string;vividness?:number;darkChromaMultiplier?:number;paletteEdits?:PaletteEdits};
-export type Rules={minimumContrast:number;vividness:number;adaptPrimary:boolean;balanceSecondary?:boolean};
+export type Rules={minimumContrast:number;vividness:number;adaptPrimary:boolean;balanceSecondary?:boolean;sharedAlpha?:boolean;alphaRecipe?:import('./alpha-recipes.mjs').AlphaRecipe};
 export const defaultRules:Rules;
 export const presets:{name:string;hex:string}[];
 export type Project={schema:string;accents:Accent[];backgrounds:{Light:string;Dark:string};rules:Rules;neutral:NeutralSystem};
@@ -45,3 +45,6 @@ export function fromHsl(h:number,s:number,l:number):Color;
 export function effectiveContextTheme(theme:string,surface:string,custom?:{Light:string;Dark:string}):'Light'|'Dark';
 export function colorDifference(a:Color,b:Color):number;
 export const scaleLabels:Record<PaletteScaleId,string>;
+
+export function projectAlphaRecipes(accent:Accent,source:any,resolved:any,custom?:{Light:string;Dark:string},rules?:Rules,palette?:PaletteScale[],neutralSystem?:NeutralSystem):Record<string,import('./alpha-recipes.mjs').AlphaRecipe>;
+export function resolveContextBackings(theme:string,scheme:string,surface:string,source:any,resolved:any,custom?:{Light:string;Dark:string},rules?:Rules,neutralSystem?:NeutralSystem):{isCustom:boolean;glass:boolean;effectiveTheme:string;dark:boolean;bg:Color;neutral:Record<string,Color>;neutralContext:any;backings:{name:string;base:Color;extreme:number}[];bases:Color[]};

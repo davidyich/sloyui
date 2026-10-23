@@ -21,7 +21,7 @@ const staleSetup = `const targetSHA=${JSON.stringify(targetSHA)};const staleInte
 const aliasScanner = `function aliases(value,result){if(!value||typeof value!=='object')return;if(value.type==='VARIABLE_ALIAS'&&typeof value.id==='string'){result.add(value.id);return;}for(const item of Object.values(value))aliases(item,result);}`;
 let code;
 if (stage === 'plan') {
-  code = base + `return {targetSHA:${JSON.stringify(targetSHA)},pages:figma.root.children.map(p=>({id:p.id,name:p.name})),expectedVariables:spec.reduce((sum,c)=>sum+c.names.length,0),missingInternal:missing,staleInternal:stale.filter(v=>internal.has(v.key)),extraPublic:stale.filter(v=>!internal.has(v.key)),publicIdentitiesPreserved:spec.filter(c=>!internal.has(c.key)).map(c=>({collection:c.name,count:c.names.length}))};`;
+  code = base + `const staleInternal=stale.filter(v=>internal.has(v.key));return {targetSHA:${JSON.stringify(targetSHA)},pages:figma.root.children.map(p=>({id:p.id,name:p.name})),expectedVariables:spec.reduce((sum,c)=>sum+c.names.length,0),missingInternalCount:missing.length,staleInternalCount:staleInternal.length,countsByCollection:spec.map(c=>({key:c.key,missing:missing.filter(v=>v.key===c.key).length,stale:staleInternal.filter(v=>v.key===c.key).length})),missingInternalSample:missing.slice(0,12),staleInternalIds:staleInternal.map(v=>v.id),staleInternalSample:staleInternal.slice(0,12),extraPublic:stale.filter(v=>!internal.has(v.key)),publicIdentitiesPreserved:spec.filter(c=>!internal.has(c.key)).map(c=>({collection:c.name,count:c.names.length}))};`;
 } else if (stage === 'create') {
   if (!internal.includes(key)) throw Error('Only internal variables can be created.');
   const owner = graph.collections.find(c => c.key === key);
@@ -48,8 +48,19 @@ return {pageId,pageName:page.name,fileKey:figma.fileKey??null,targetSHA,nodeCoun
   const payload = JSON.parse(fs.readFileSync(key, 'utf8'));
   const receipts = Array.isArray(payload) ? payload : payload.receipts;
   if (!Array.isArray(receipts)) throw Error('Expected receipts array or {receipts:[...]}.');
+  // Every page receipt commonly repeats the same hundreds of stale IDs. Pack
+  // identical snapshots once, then restore the exact receipt before validation.
+  const receiptSnapshots = [], snapshotIndices = new Map();
+  const packedReceipts = receipts.map(receipt => {
+    if (!Array.isArray(receipt.scannedStaleIds)) return [-1, receipt];
+    const signature = JSON.stringify(receipt.scannedStaleIds);
+    if (!snapshotIndices.has(signature)) { snapshotIndices.set(signature, receiptSnapshots.length); receiptSnapshots.push(receipt.scannedStaleIds); }
+    const { scannedStaleIds, ...rest } = receipt;
+    return [snapshotIndices.get(signature), rest];
+  });
   code = base + staleSetup + aliasScanner + `
-const receipts=${JSON.stringify(receipts)};
+const receiptSnapshots=${JSON.stringify(receiptSnapshots)},packedReceipts=${JSON.stringify(packedReceipts)};
+const receipts=packedReceipts.map(([index,receipt])=>index<0?receipt:{...receipt,scannedStaleIds:receiptSnapshots[index]});
 if(missing.length)throw Error('Create every desired target before cleanup: '+JSON.stringify(missing));
 const pageIds=figma.root.children.map(p=>p.id).sort(),receiptIds=receipts.map(r=>r.pageId).sort();if(JSON.stringify(pageIds)!==JSON.stringify(receiptIds))throw Error('Page receipt coverage differs: '+JSON.stringify({pageIds,receiptIds}));
 const expectedStaleIds=JSON.stringify([...staleIds].sort());const direct=new Set(),references=[];let nodeCount=0;
@@ -66,9 +77,9 @@ for(const c of spec)for(const name of c.names)visit(byName.get(owners.get(c.key)
 for(const id of direct)visit(id);
 const blocked=staleInternal.filter(v=>reachable.has(v.id)),removable=staleInternal.filter(v=>!reachable.has(v.id));
 const incomingFromOutside=[];const removableIds=new Set(removable.map(v=>v.id));for(const v of variables)if(!removableIds.has(v.id))for(const value of Object.values(v.valuesByMode)){const targets=new Set();aliases(value,targets);for(const target of targets)if(removableIds.has(target))incomingFromOutside.push({from:v.id,to:target});}
-if(incomingFromOutside.length)throw Error('Unsafe cleanup: live incoming aliases '+JSON.stringify(incomingFromOutside));
-const deleted=[];${stage === 'cleanup' ? `if(blocked.length)throw Error('Stale internal variables are still used; rebind before cleanup: '+JSON.stringify({blocked,references:references.filter(r=>blocked.some(v=>v.id===r.id))}));for(const item of removable.sort((a,b)=>['scheme','theme','palette'].indexOf(a.key)-['scheme','theme','palette'].indexOf(b.key))){byId.get(item.id).remove();deleted.push(item);}` : ''}
-return {dryRun:${stage !== 'cleanup'},targetSHA,scannedPages:receiptIds,nodeCount,styleCount,liveDirectReferences:direct.size,removable,blocked,directStaleReferences:references,incomingFromOutside,deleted,publicVariableIdsPreserved:true,createdVariables:0};`;
+if(incomingFromOutside.length)throw Error('Unsafe cleanup: live incoming aliases '+JSON.stringify({count:incomingFromOutside.length,sample:incomingFromOutside.slice(0,20)}));
+const deleted=[];${stage === 'cleanup' ? `if(blocked.length)throw Error('Stale internal variables are still used; rebind before cleanup: '+JSON.stringify({blockedCount:blocked.length,blockedIds:blocked.map(v=>v.id),blockedSample:blocked.slice(0,12),referenceCount:references.length,referenceSample:references.filter(r=>blocked.some(v=>v.id===r.id)).slice(0,20)}));for(const item of removable.sort((a,b)=>['scheme','theme','palette'].indexOf(a.key)-['scheme','theme','palette'].indexOf(b.key))){byId.get(item.id).remove();deleted.push(item.id);}` : ''}
+return {dryRun:${stage !== 'cleanup'},targetSHA,scannedPages:receiptIds,nodeCount,styleCount,liveDirectReferences:direct.size,removable:removable.map(v=>v.id),blocked:blocked.map(v=>v.id),deleted,counts:{removable:removable.length,blocked:blocked.length,deleted:deleted.length,directStaleReferences:references.length,incomingFromOutside:incomingFromOutside.length},...(blocked.length?{blockedSample:blocked.slice(0,12),directStaleReferenceSample:references.slice(0,20)}:{}),publicVariableIdsPreserved:true,createdVariables:0};`;
 } else throw Error('Stages: plan | create <key> <offset> | values <key> <offset> [limit] | scan-page <pageId> | cleanup-plan <receipts.json> | cleanup <receipts.json>');
 if (Buffer.byteLength(code) > 50000) throw Error('Figma script exceeds 50000 bytes: ' + Buffer.byteLength(code));
 console.log(code);

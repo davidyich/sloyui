@@ -63,12 +63,12 @@ export function buildColorModel() {
   const structural=(bg,minimum)=>choose(scales.neutral.filter(color=>(dark?color.Y>bg:color.Y<bg)&&contrast(color.Y,bg)>=minimum),dark?(bg+.05)*minimum-.05:(bg+.05)/minimum-.05).name;
   for(const [role,minimum]of Object.entries({subtle:1.5,default:1.8,strong:2.4}))context.values['divider/'+role]=structural(surfaceY,minimum);
   context.values['divider/panel']=structural(surfaceY,dark?1.25:1.15);
-  context.values['divider/control']=structural(luminance(get('control/normal')),1.8);
+  context.values['divider/control']=structural(luminance(compose(get('control/normal'),get('surface/current'))),1.8);
   for(const hue of hues)for(const state of states) {
    const background=context.values[`element/${hue}/${state}`],text=context.values[`element/${hue}/${state==='disabled'?'disabled-text':'text'}`];
    const colors={...palette,...model.secondaryPrimitives},bg=compose(colors[background],get('surface/current')),fg=colors[text];
    const reactionBackgrounds=state==='disabled'?[bg]:['hover','pressed'].map(reaction=>compose(get(`element/${hue}/${reaction}`),get('surface/current')));
-   model.audit.push({theme:context.theme,surface:context.surface,hue,state,background,text,contrast:contrast(luminance(bg),luminance(fg)),reactionContrast:Math.min(...reactionBackgrounds.map(fill=>contrast(luminance(fg),luminance(fill)))),backgroundY:luminance(bg),surfaceContrast:contrast(luminance(bg),surfaceY),source:'figma/token-system-v4/graph.json'});
+   model.audit.push({theme:context.theme,surface:context.surface,hue,state,background,text,contrast:contrast(luminance(bg),luminance(compose(fg,bg))),reactionContrast:Math.min(...reactionBackgrounds.map(fill=>contrast(luminance(compose(fg,fill)),luminance(fill)))),backgroundY:luminance(bg),surfaceContrast:contrast(luminance(bg),surfaceY),source:'figma/token-system-v4/graph.json'});
   }
  }
  const retained=new Set(Object.values(model.contexts).flatMap(context=>Object.values(context.values)));

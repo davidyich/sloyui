@@ -1,6 +1,6 @@
 {
   "name": "sloyui",
-  "version": "0.17.1",
+  "version": "0.18.0",
   "description": "An agent-friendly React UI library with themes, semantic tokens and accessible components.",
   "type": "module",
   "sideEffects": [
@@ -49,7 +49,8 @@
     "figma/token-system-v4/source.json",
     "figma/token-system-v4/graph.json",
     "figma/token-system-v4/guide.md",
-    "figma/color-system-v2/designer-guide.md"
+    "figma/color-system-v2/designer-guide.md",
+    "docs/alpha-recipes.md"
   ],
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 4317 --strictPort",
@@ -58,13 +59,14 @@
     "build:demo": "node scripts/build-token-site.mjs && vite build",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "check": "npm run tokens && npm run verify:custom && npm run manifest && npm run typecheck && npm test && npm run build && npm run build:demo",
+    "check": "npm run tokens && npm run verify:custom && npm run verify:alpha && npm run manifest && npm run typecheck && npm test && npm run build && npm run build:demo",
     "pack:kit": "mkdir -p artifacts && npm pack --pack-destination artifacts",
     "prepack": "npm run build",
     "verify:package": "node scripts/verify-package.mjs",
     "manifest": "node scripts/build-manifest.mjs",
     "release:develop": "npm run check && npm run pack:kit && npm run verify:package && bash scripts/deploy-devos.sh devos",
-    "verify:custom": "node figma/color-system-v2/export-custom.mjs --out artifacts/custom-verification && node figma/color-system-v2/verify-custom.mjs artifacts/custom-verification/graph.json"
+    "verify:custom": "node figma/color-system-v2/export-custom.mjs --out artifacts/custom-verification && node figma/color-system-v2/verify-custom.mjs artifacts/custom-verification/graph.json",
+    "verify:alpha": "node --test scripts/verify-alpha-recipes.test.mjs && node scripts/verify-alpha-recipes.mjs --domain native --out artifacts/alpha-recipes/core.json"
   },
   "peerDependencies": {
     "react": ">=19.0.0",

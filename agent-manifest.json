@@ -13,7 +13,7 @@
     "developIconFile": "sloyui-develop-icon.svg"
   },
   "package": "sloyui",
-  "version": "0.17.1",
+  "version": "0.18.0",
   "framework": "React >=19",
   "module": "ESM",
   "componentCount": 92,
@@ -758,14 +758,14 @@
           "modes": [
             "Value"
           ],
-          "variables": 136
+          "variables": 123
         },
         {
           "name": "Opacity",
           "modes": [
             "Value"
           ],
-          "variables": 68
+          "variables": 55
         },
         {
           "name": "Surface",
@@ -777,7 +777,7 @@
             "Invert",
             "Glass"
           ],
-          "variables": 1126
+          "variables": 976
         },
         {
           "name": "SurfaceScheme",
@@ -786,7 +786,7 @@
             "Dimmed",
             "Inverted"
           ],
-          "variables": 354
+          "variables": 204
         },
         {
           "name": "Theme",
@@ -823,10 +823,10 @@
           "variables": 1
         }
       ],
-      "variableCount": 2516,
+      "variableCount": 2190,
       "source": "figma/token-system-v4/source.json",
       "graph": "figma/token-system-v4/graph.json",
-      "sourceHash": "4deafa9836166d4e3425409c49c70a29be70129e3ea9e5ac04a226474b2b2b7c",
+      "sourceHash": "211e379e90b4651ab21f28abbaac839611809a3ebecde142abb1ff078d17ffe3",
       "includesRuntimeSurfaceContext": true,
       "actualDocumentUpdatedForVersion": true,
       "fileKey": "xRYNECwkEL2UISeHASLa31",

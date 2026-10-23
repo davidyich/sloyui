@@ -1,8 +1,9 @@
 import { BLACK, WHITE, composite, contrast } from '../color-engine.mjs';
+import { solveNeutralAlphaRecipe,alphaRecipeFamily } from './alpha-recipes.mjs';
 
 export const neutralSurfaces = ['Shell', 'Workspace', 'Content', 'Overlay', 'Invert', 'Glass'];
 const themes = ['Light', 'Dark'];
-const defaultBases = { Light: .025, Dark: .9 };
+const defaultBases = { Light: .025, Dark: .95 };
 const clamp = value => Math.max(0, Math.min(1, value));
 const position = (value, fallback) => Number.isFinite(value) ? clamp(value) : fallback;
 const surfaceName = value => neutralSurfaces.find(name => name.toLowerCase() === String(value).toLowerCase()) ?? 'Workspace';
@@ -10,11 +11,13 @@ const themeName = value => String(value).toLowerCase() === 'dark' ? 'Dark' : 'Li
 
 /** Positions survive changes to the number of palette steps. No generated colors are persisted. */
 export function createNeutralSettings() {
-  return { bases: { ...defaultBases }, overrides: {} };
+  return { version: 2, bases: { ...defaultBases }, overrides: {} };
 }
 
 export function normalizeNeutralSettings(input) {
   const result = createNeutralSettings();
+  const legacyDefault=input&&!input.version&&input.bases?.Light===.025&&input.bases?.Dark===.9&&!Object.values(input.overrides??{}).some(overrides=>Object.keys(overrides).length);
+  if(legacyDefault)return result;
   for (const theme of themes) {
     result.bases[theme] = position(input?.bases?.[theme], defaultBases[theme]);
     for (const surface of neutralSurfaces) {
@@ -80,20 +83,35 @@ export function neutralStepAt(steps, requested) {
 function surfacePosition(settings, theme, scheme, surface) {
   const manual = settings.overrides[theme]?.[surface];
   if (manual !== undefined) return manual;
-  if (surface === 'Invert') return settings.bases[theme === 'Light' ? 'Dark' : 'Light'];
+  if(surface==='Invert')return theme==='Light'?1:0;
   const dimmed = String(scheme).toLowerCase() === 'dimmed' || String(scheme).toLowerCase() === 'inverted';
   const offsets = theme === 'Light'
-    ? { Shell: 0, Workspace: dimmed ? .05 : 0, Content: -.025, Overlay: -.025, Glass: -.025 }
+    ? { Shell: dimmed?0:.025, Workspace: dimmed ? -.025 : 0, Content: -.025, Overlay: -.025, Glass: -.025 }
     : dimmed
-      ? { Shell: -.1, Workspace: 0, Content: .05, Overlay: -.075, Glass: .15 }
-      : { Shell: .05, Workspace: 0, Content: -.05, Overlay: -.075, Glass: .15 };
+      ? { Shell: -.075, Workspace: -.025, Content: 0, Overlay: -.1, Glass: .15 }
+      : { Shell: .025, Workspace: 0, Content: -.025, Overlay: -.05, Glass: .15 };
   return clamp(settings.bases[theme] + offsets[surface]);
+}
+
+const neutralRecipeCache=new Map();
+export function neutralAlphaRecipes(input,steps,minimumContrast=4.5){
+ const settings=normalizeNeutralSettings(input),key=JSON.stringify([settings,steps.map(s=>[s.name,s.value]),minimumContrast]);
+ if(neutralRecipeCache.has(key))return neutralRecipeCache.get(key);
+ const families={Light:[],'Light/Neutral':[],Dark:[],'Glass/Light':[],'Glass/Dark':[]};
+ for(const outerTheme of themes)for(const scheme of ['Standard','Dimmed'])for(const surface of neutralSurfaces){
+  const chosen=neutralStepAt(steps,surfacePosition(settings,outerTheme,scheme,surface)),glass=surface==='Glass',customGlass=settings.overrides[outerTheme]?.Glass!==undefined;
+  const bg=glass?{...(customGlass?chosen.value:outerTheme==='Light'?WHITE:BLACK),a:outerTheme==='Light'?.88:.8}:chosen.value;
+  const bases=glass?[composite(bg,BLACK),composite(bg,WHITE)]:[bg];
+  for(const base of bases){const polarity=contrast(BLACK,base)>=contrast(WHITE,base)?'Light':'Dark';families[alphaRecipeFamily(polarity,surface,base)].push(base);}
+ }
+ const result=Object.fromEntries(Object.keys(families).filter(family=>families[family].length).map(family=>[family,solveNeutralAlphaRecipe({backings:families[family],dark:family.endsWith('Dark'),minimumContrast})]));
+ if(neutralRecipeCache.size>=24)neutralRecipeCache.delete(neutralRecipeCache.keys().next().value);neutralRecipeCache.set(key,result);return result;
 }
 
 /** All returned paint is an exact palette step, optionally carrying a numeric alpha.
  * The two stable endpoints only protect Glass, whose readability is measured on both underlays.
  */
-export function resolveNeutralSurface(input, steps, outerTheme, scheme = 'Standard', requestedSurface = 'Workspace', minimumContrast = 4.5) {
+export function resolveNeutralSurface(input, steps, outerTheme, scheme = 'Standard', requestedSurface = 'Workspace', minimumContrast = 4.5, readyRecipe) {
   const settings = normalizeNeutralSettings(input), theme = themeName(outerTheme), surface = surfaceName(requestedSurface);
   const chosen = neutralStepAt(steps, surfacePosition(settings, theme, scheme, surface));
   const glass = surface === 'Glass', customGlass = settings.overrides[theme]?.Glass !== undefined;
@@ -103,12 +121,11 @@ export function resolveNeutralSurface(input, steps, outerTheme, scheme = 'Standa
   const score = (value, backings = bases) => Math.min(...backings.map(base => contrast(composite(value, base), base)));
   const strongest = backings => steps.reduce((best, step) => score(step.value, backings) > score(best.value, backings) ? step : best);
   const pole = strongest(bases);
-  const neutral = {}, references = { 'surface/bg': bgReference };
-  for (const [role, alpha] of Object.entries({ 'tertiary/normal': .03, 'tertiary/active': .05, 'secondary/normal': .08, 'secondary/active': .12 })) {
-    neutral[role] = { ...pole.value, a: alpha };
-    references[`surface/${role}`] = pole.name;
-  }
-  const backings = bases.flatMap(base => [base, ...Object.values(neutral).map(paint => composite(paint, base))]);
+  const effectivePolarity=contrast(BLACK,bases[0])>=contrast(WHITE,bases[0])?'Light':'Dark';
+  const recipe=readyRecipe??neutralAlphaRecipes(settings,steps,minimumContrast)[alphaRecipeFamily(effectivePolarity,surface,bases[0])];
+  const neutral = {...recipe.fills}, references = { 'surface/bg': bgReference,...Object.fromEntries(Object.entries(recipe.references).map(([role,reference])=>['surface/'+role,reference])) };
+  for(const role of Object.keys(neutral))references['surface/'+role]=recipe.references[role];
+  const backings=recipe.contentBackings;
   const ink = strongest(backings), maximum = score(ink.value, backings);
   const nearContrast = target => steps.reduce((best, step) => {
     const current = score(step.value, backings), previous = score(best.value, backings);
@@ -125,5 +142,5 @@ export function resolveNeutralSurface(input, steps, outerTheme, scheme = 'Standa
   // Polarity follows the selected paint, including a dark base under Light.
   // Use the background's pole rather than a content choice measured on overlays.
   const effectiveTheme = contrast(pole.value, WHITE) < contrast(pole.value, BLACK) ? 'Dark' : 'Light';
-  return { bg, neutral, content, border: borderStep.value, references, position: chosen.position, step: chosen, effectiveTheme };
+  return { alphaRecipe:recipe, roles:recipe.roles, bg, neutral, content, border: borderStep.value, references, position: chosen.position, step: chosen, effectiveTheme };
 }
