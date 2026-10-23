@@ -2,6 +2,11 @@
   "schemaVersion": 1,
   "kit": [
     {
+      "version": "0.18.3",
+      "date": "2026-10-23",
+      "summary": "Default Primary content is white in Light and black in Dark local polarity. Fills adapt to both states, with a warmer authored Orange palette and matching Figma guidance."
+    },
+    {
       "version": "0.18.2",
       "date": "2026-10-23",
       "summary": "Primary content is selected per hue from the actual Normal/Active fill pair. Orange retains its brightness; Figma guides and foreground bindings use the matching hue."

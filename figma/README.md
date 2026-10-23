@@ -14,7 +14,7 @@ Default scope is neutral plus Blue, Green, Orange, Red, Pink and Purple. Runtime
 
 ## Designer contract
 
-Use **V2 · Surface** for color picking. Internal Palette, Theme and Scheme route values; they are not alternative public pickers. Semantic groups are flat, neutral first, with Normal/Active adjacent. Primary content resolves to exact black or white per hue from its actual Normal/Active pair. Pair neutral with `content/on-primary`, explicit chromatic fills with `content/on-primary-<hue>`, and inherited controls with `Accent/on-primary`. These routes reuse the same black/white pigments.
+Use **V2 · Surface** for color picking. Internal Palette, Theme and Scheme route values; they are not alternative public pickers. Semantic groups are flat, neutral first, with Normal/Active adjacent. Default Primary content is white in Light local polarity and black in Dark; the shared-ramp fills adapt so both states remain readable. Invert follows local polarity. Pair neutral with `content/on-primary`, explicit chromatic fills with `content/on-primary-<hue>`, and inherited controls with `Accent/on-primary`. These routes preserve explicit per-hue foreground overrides and reuse the same black/white pigments.
 
 Theme has Light/Dark; Scheme has Standard/Dimmed; native Surface has Shell/Workspace/Content/Overlay/Invert. Invert establishes its complete opposite-polarity context without changing Theme. Glass remains a runtime material. Custom backgrounds require explicit generator recalculation and a coherent export; native variables do not sense arbitrary frame backgrounds.
 

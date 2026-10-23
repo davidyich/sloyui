@@ -51,8 +51,8 @@
   },
   "bridge": {
     "source": "figma/token-system-v4/graph.json",
-    "sourceHash": "211e379e90b4651ab21f28abbaac839611809a3ebecde142abb1ff078d17ffe3",
-    "graphSha256": "fd11189df7f385817e10a0a0685fdd5ee8dc3c41ef1acafa6d74eb7a35a0fbda",
+    "sourceHash": "f7f034ce919a11e540fd84956778c8d3020f60044b4fc0fae3e3ad1cfb7e7196",
+    "graphSha256": "373e74337e41893a1c755cb3ad64de51ac135d210a6d85efb4ba6a037c27b992",
     "palette": "One shared opaque ramp per hue; semantic colors select a step and an Opacity alias.",
     "legacyLogicalKeys": "Preserved outside Palette; Figma names group by role with context in the leaf."
   },
@@ -130,36 +130,20 @@
           "css": "--sloy-v2-palette-blue-17"
         },
         {
-          "name": "blue/20",
-          "figmaName": "blue/20",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 3e-10,
-              "g": 0.5198551828,
-              "b": 0.9905044662,
-              "a": 1
-            }
-          },
-          "scopes": [],
-          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-blue-20"
-        },
-        {
-          "name": "blue/22",
-          "figmaName": "blue/22",
+          "name": "blue/23",
+          "figmaName": "blue/23",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 1e-10,
-              "g": 0.4654294464,
-              "b": 0.8915189265,
+              "g": 0.4382018359,
+              "b": 0.8419993445,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-blue-22"
+          "css": "--sloy-v2-palette-blue-23"
         },
         {
           "name": "blue/25",
@@ -258,36 +242,20 @@
           "css": "--sloy-v2-palette-green-17"
         },
         {
-          "name": "green/21",
-          "figmaName": "green/21",
+          "name": "green/24",
+          "figmaName": "green/24",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 3e-10,
-              "g": 0.5981901807,
-              "b": 0.3557246386,
+              "r": 2e-10,
+              "g": 0.5008011309,
+              "b": 0.294486605,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-green-21"
-        },
-        {
-          "name": "green/23",
-          "figmaName": "green/23",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 5e-10,
-              "g": 0.5332417992,
-              "b": 0.3148852303,
-              "a": 1
-            }
-          },
-          "scopes": [],
-          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-green-23"
+          "css": "--sloy-v2-palette-green-24"
         },
         {
           "name": "green/25",
@@ -304,6 +272,22 @@
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
           "css": "--sloy-v2-palette-green-25"
+        },
+        {
+          "name": "green/26",
+          "figmaName": "green/26",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 3e-10,
+              "g": 0.4361589659,
+              "b": 0.2538397449,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
+          "css": "--sloy-v2-palette-green-26"
         },
         {
           "name": "green/31",
@@ -328,8 +312,8 @@
           "values": {
             "Value": {
               "r": 1,
-              "g": 0.8912345622,
-              "b": 0.8300153709,
+              "g": 0.8895342455,
+              "b": 0.8428822263,
               "a": 1
             }
           },
@@ -344,8 +328,8 @@
           "values": {
             "Value": {
               "r": 1,
-              "g": 0.649408992,
-              "b": 0.4367601616,
+              "g": 0.6445577144,
+              "b": 0.4885890937,
               "a": 1
             }
           },
@@ -359,9 +343,9 @@
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.9909293445,
-              "g": 0.5676319445,
-              "b": 0.291842178,
+              "r": 1,
+              "g": 0.5559615385,
+              "b": 0.353645307,
               "a": 1
             }
           },
@@ -375,9 +359,9 @@
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.9388163869,
-              "g": 0.4558117611,
-              "b": 0.0082833655,
+              "r": 0.9791170763,
+              "g": 0.4130961094,
+              "b": 0.0694084233,
               "a": 1
             }
           },
@@ -386,20 +370,36 @@
           "css": "--sloy-v2-palette-orange-17"
         },
         {
-          "name": "orange/19",
-          "figmaName": "orange/19",
+          "name": "orange/22",
+          "figmaName": "orange/22",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.8577632456,
-              "g": 0.4131676048,
-              "b": 5e-10,
+              "r": 0.7720852535,
+              "g": 0.3096264552,
+              "b": 2e-10,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-orange-19"
+          "css": "--sloy-v2-palette-orange-22"
+        },
+        {
+          "name": "orange/24",
+          "figmaName": "orange/24",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.6855879572,
+              "g": 0.2714935029,
+              "b": 3e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
+          "css": "--sloy-v2-palette-orange-24"
         },
         {
           "name": "orange/25",
@@ -407,9 +407,9 @@
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.6104123421,
-              "g": 0.2862982544,
-              "b": 2e-10,
+              "r": 0.6424524465,
+              "g": 0.2524769041,
+              "b": 1e-10,
               "a": 1
             }
           },
@@ -423,9 +423,9 @@
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.3679185272,
-              "g": 0.1619201651,
-              "b": 2e-10,
+              "r": 0.3882823722,
+              "g": 0.1404242072,
+              "b": 0,
               "a": 1
             }
           },
@@ -498,36 +498,36 @@
           "css": "--sloy-v2-palette-red-17"
         },
         {
-          "name": "red/19",
-          "figmaName": "red/19",
+          "name": "red/22",
+          "figmaName": "red/22",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.9766299504,
-              "g": 0.2362831009,
-              "b": 0.2462664741,
+              "r": 0.8875528899,
+              "g": 6e-10,
+              "b": 0.1337178693,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-red-19"
+          "css": "--sloy-v2-palette-red-22"
         },
         {
-          "name": "red/21",
-          "figmaName": "red/21",
+          "name": "red/24",
+          "figmaName": "red/24",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.924821199,
-              "g": 0.0893841701,
-              "b": 0.1633423521,
+              "r": 0.7889798876,
+              "g": 4e-10,
+              "b": 0.1139815901,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-red-21"
+          "css": "--sloy-v2-palette-red-24"
         },
         {
           "name": "red/25",
@@ -626,36 +626,36 @@
           "css": "--sloy-v2-palette-pink-17"
         },
         {
-          "name": "pink/19",
-          "figmaName": "pink/19",
+          "name": "pink/22",
+          "figmaName": "pink/22",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.9289893978,
-              "g": 0.149671416,
-              "b": 0.7261560286,
+              "r": 0.8145028544,
+              "g": 5e-10,
+              "b": 0.6302341506,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-pink-19"
+          "css": "--sloy-v2-palette-pink-22"
         },
         {
-          "name": "pink/21",
-          "figmaName": "pink/21",
+          "name": "pink/24",
+          "figmaName": "pink/24",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.8599926413,
-              "g": 7e-10,
-              "b": 0.6660835504,
+              "r": 0.7235694884,
+              "g": 3e-10,
+              "b": 0.5585717662,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-pink-21"
+          "css": "--sloy-v2-palette-pink-24"
         },
         {
           "name": "pink/25",
@@ -1810,140 +1810,140 @@
           "css": "--sloy-v2-palette-alpha-green-02-90"
         },
         {
-          "name": "alpha/orange-20-18",
+          "name": "alpha/orange-22-16",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.8166118327,
-              "g": 0.3920605341,
-              "b": 6e-10,
+              "r": 0.7720852535,
+              "g": 0.3096264552,
+              "b": 2e-10,
+              "a": 0.16
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/22 pigment at 16% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-22-16",
+          "css": "--sloy-v2-palette-alpha-orange-22-16"
+        },
+        {
+          "name": "alpha/orange-14-14",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.5559615385,
+              "b": 0.353645307,
+              "a": 0.14
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/14 pigment at 14% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-14-14",
+          "css": "--sloy-v2-palette-alpha-orange-14-14"
+        },
+        {
+          "name": "alpha/orange-17-6",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9791170763,
+              "g": 0.4130961094,
+              "b": 0.0694084233,
+              "a": 0.06
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/17 pigment at 6% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-17-6",
+          "css": "--sloy-v2-palette-alpha-orange-17-6"
+        },
+        {
+          "name": "alpha/orange-16-6",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9977055064,
+              "g": 0.4544950456,
+              "b": 0.1704840389,
+              "a": 0.06
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/16 pigment at 6% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-16-6",
+          "css": "--sloy-v2-palette-alpha-orange-16-6"
+        },
+        {
+          "name": "alpha/orange-24-21",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.6855879572,
+              "g": 0.2714935029,
+              "b": 3e-10,
+              "a": 0.21
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/24 pigment at 21% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-24-21",
+          "css": "--sloy-v2-palette-alpha-orange-24-21"
+        },
+        {
+          "name": "alpha/orange-12-18",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.6445577144,
+              "b": 0.4885890937,
               "a": 0.18
             }
           },
           "scopes": [],
-          "description": "Referenced orange/20 pigment at 18% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-20-18",
-          "css": "--sloy-v2-palette-alpha-orange-20-18"
+          "description": "Referenced orange/12 pigment at 18% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-12-18",
+          "css": "--sloy-v2-palette-alpha-orange-12-18"
         },
         {
-          "name": "alpha/orange-14-13",
+          "name": "alpha/orange-24-9",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.9909293445,
-              "g": 0.5676319445,
-              "b": 0.291842178,
-              "a": 0.13
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/14 pigment at 13% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-14-13",
-          "css": "--sloy-v2-palette-alpha-orange-14-13"
-        },
-        {
-          "name": "alpha/orange-18-6",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.8987822969,
-              "g": 0.4342067856,
+              "r": 0.6855879572,
+              "g": 0.2714935029,
               "b": 3e-10,
-              "a": 0.06
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/18 pigment at 6% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-18-6",
-          "css": "--sloy-v2-palette-alpha-orange-18-6"
-        },
-        {
-          "name": "alpha/orange-19-6",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.8577632456,
-              "g": 0.4131676048,
-              "b": 5e-10,
-              "a": 0.06
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/19 pigment at 6% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-19-6",
-          "css": "--sloy-v2-palette-alpha-orange-19-6"
-        },
-        {
-          "name": "alpha/orange-23-23",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.692806698,
-              "g": 0.3285593428,
-              "b": 1e-10,
-              "a": 0.23
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/23 pigment at 23% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-23-23",
-          "css": "--sloy-v2-palette-alpha-orange-23-23"
-        },
-        {
-          "name": "alpha/orange-12-17",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1,
-              "g": 0.649408992,
-              "b": 0.4367601616,
-              "a": 0.17
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/12 pigment at 17% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-12-17",
-          "css": "--sloy-v2-palette-alpha-orange-12-17"
-        },
-        {
-          "name": "alpha/orange-23-10",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.692806698,
-              "g": 0.3285593428,
-              "b": 1e-10,
-              "a": 0.1
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/23 pigment at 10% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-23-10",
-          "css": "--sloy-v2-palette-alpha-orange-23-10"
-        },
-        {
-          "name": "alpha/orange-12-9",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1,
-              "g": 0.649408992,
-              "b": 0.4367601616,
               "a": 0.09
             }
           },
           "scopes": [],
-          "description": "Referenced orange/12 pigment at 9% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-12-9",
-          "css": "--sloy-v2-palette-alpha-orange-12-9"
+          "description": "Referenced orange/24 pigment at 9% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-24-9",
+          "css": "--sloy-v2-palette-alpha-orange-24-9"
+        },
+        {
+          "name": "alpha/orange-12-10",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.6445577144,
+              "b": 0.4885890937,
+              "a": 0.1
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/12 pigment at 10% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-12-10",
+          "css": "--sloy-v2-palette-alpha-orange-12-10"
         },
         {
           "name": "alpha/orange-39-65",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.0740902451,
-              "g": 0.0168152972,
+              "r": 0.0803060374,
+              "g": 0.0130897932,
               "b": 0,
               "a": 0.65
             }
@@ -1954,20 +1954,20 @@
           "css": "--sloy-v2-palette-alpha-orange-39-65"
         },
         {
-          "name": "alpha/orange-02-87",
+          "name": "alpha/orange-02-89",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 1,
-              "g": 0.9666107685,
-              "b": 0.9480658731,
-              "a": 0.87
+              "g": 0.9660748483,
+              "b": 0.9518877428,
+              "a": 0.89
             }
           },
           "scopes": [],
-          "description": "Referenced orange/02 pigment at 87% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-02-87",
-          "css": "--sloy-v2-palette-alpha-orange-02-87"
+          "description": "Referenced orange/02 pigment at 89% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-02-89",
+          "css": "--sloy-v2-palette-alpha-orange-02-89"
         },
         {
           "name": "alpha/red-23-12",
@@ -2578,76 +2578,76 @@
           "css": "--sloy-v2-palette-alpha-green-39-63"
         },
         {
-          "name": "alpha/orange-19-17",
+          "name": "alpha/orange-22-15",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.8577632456,
-              "g": 0.4131676048,
-              "b": 5e-10,
-              "a": 0.17
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/19 pigment at 17% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-19-17",
-          "css": "--sloy-v2-palette-alpha-orange-19-17"
-        },
-        {
-          "name": "alpha/orange-17-6",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.9388163869,
-              "g": 0.4558117611,
-              "b": 0.0082833655,
-              "a": 0.06
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/17 pigment at 6% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-17-6",
-          "css": "--sloy-v2-palette-alpha-orange-17-6"
-        },
-        {
-          "name": "alpha/orange-22-22",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.734089978,
-              "g": 0.3497340499,
+              "r": 0.7720852535,
+              "g": 0.3096264552,
               "b": 2e-10,
-              "a": 0.22
+              "a": 0.15
             }
           },
           "scopes": [],
-          "description": "Referenced orange/22 pigment at 22% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-22-22",
-          "css": "--sloy-v2-palette-alpha-orange-22-22"
+          "description": "Referenced orange/22 pigment at 15% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-22-15",
+          "css": "--sloy-v2-palette-alpha-orange-22-15"
         },
         {
-          "name": "alpha/orange-22-10",
+          "name": "alpha/orange-19-5",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.734089978,
-              "g": 0.3497340499,
-              "b": 2e-10,
-              "a": 0.1
+              "r": 0.9017134818,
+              "g": 0.3667739877,
+              "b": 4e-10,
+              "a": 0.05
             }
           },
           "scopes": [],
-          "description": "Referenced orange/22 pigment at 10% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-22-10",
-          "css": "--sloy-v2-palette-alpha-orange-22-10"
+          "description": "Referenced orange/19 pigment at 5% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-19-5",
+          "css": "--sloy-v2-palette-alpha-orange-19-5"
+        },
+        {
+          "name": "alpha/orange-24-20",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.6855879572,
+              "g": 0.2714935029,
+              "b": 3e-10,
+              "a": 0.2
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/24 pigment at 20% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-24-20",
+          "css": "--sloy-v2-palette-alpha-orange-24-20"
+        },
+        {
+          "name": "alpha/orange-26-8",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.5994542553,
+              "g": 0.2335208438,
+              "b": 3e-10,
+              "a": 0.08
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/26 pigment at 8% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-26-8",
+          "css": "--sloy-v2-palette-alpha-orange-26-8"
         },
         {
           "name": "alpha/orange-39-63",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.0740902451,
-              "g": 0.0168152972,
+              "r": 0.0803060374,
+              "g": 0.0130897932,
               "b": 0,
               "a": 0.63
             }
@@ -3107,7 +3107,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/blue/20"
+              "alias": "palette/blue/23"
             },
             "Dark": {
               "alias": "palette/blue/14"
@@ -3126,7 +3126,7 @@
               "alias": "palette/blue/14"
             },
             "Dark": {
-              "alias": "palette/blue/20"
+              "alias": "palette/blue/23"
             }
           },
           "scopes": [],
@@ -3139,7 +3139,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/blue/22"
+              "alias": "palette/blue/25"
             },
             "Dark": {
               "alias": "palette/blue/12"
@@ -3158,7 +3158,7 @@
               "alias": "palette/blue/12"
             },
             "Dark": {
-              "alias": "palette/blue/22"
+              "alias": "palette/blue/25"
             }
           },
           "scopes": [],
@@ -3171,7 +3171,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/green/21"
+              "alias": "palette/green/24"
             },
             "Dark": {
               "alias": "palette/green/14"
@@ -3190,7 +3190,7 @@
               "alias": "palette/green/14"
             },
             "Dark": {
-              "alias": "palette/green/21"
+              "alias": "palette/green/24"
             }
           },
           "scopes": [],
@@ -3203,7 +3203,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/green/23"
+              "alias": "palette/green/26"
             },
             "Dark": {
               "alias": "palette/green/12"
@@ -3222,7 +3222,7 @@
               "alias": "palette/green/12"
             },
             "Dark": {
-              "alias": "palette/green/23"
+              "alias": "palette/green/26"
             }
           },
           "scopes": [],
@@ -3235,7 +3235,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/red/19"
+              "alias": "palette/red/22"
             },
             "Dark": {
               "alias": "palette/red/14"
@@ -3254,7 +3254,7 @@
               "alias": "palette/red/14"
             },
             "Dark": {
-              "alias": "palette/red/19"
+              "alias": "palette/red/22"
             }
           },
           "scopes": [],
@@ -3267,7 +3267,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/red/21"
+              "alias": "palette/red/24"
             },
             "Dark": {
               "alias": "palette/red/12"
@@ -3286,7 +3286,7 @@
               "alias": "palette/red/12"
             },
             "Dark": {
-              "alias": "palette/red/21"
+              "alias": "palette/red/24"
             }
           },
           "scopes": [],
@@ -3299,7 +3299,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/orange/17"
+              "alias": "palette/orange/22"
             },
             "Dark": {
               "alias": "palette/orange/14"
@@ -3318,7 +3318,7 @@
               "alias": "palette/orange/14"
             },
             "Dark": {
-              "alias": "palette/orange/17"
+              "alias": "palette/orange/22"
             }
           },
           "scopes": [],
@@ -3331,7 +3331,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/orange/19"
+              "alias": "palette/orange/24"
             },
             "Dark": {
               "alias": "palette/orange/12"
@@ -3350,7 +3350,7 @@
               "alias": "palette/orange/12"
             },
             "Dark": {
-              "alias": "palette/orange/19"
+              "alias": "palette/orange/24"
             }
           },
           "scopes": [],
@@ -3427,7 +3427,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/pink/19"
+              "alias": "palette/pink/22"
             },
             "Dark": {
               "alias": "palette/pink/14"
@@ -3446,7 +3446,7 @@
               "alias": "palette/pink/14"
             },
             "Dark": {
-              "alias": "palette/pink/19"
+              "alias": "palette/pink/22"
             }
           },
           "scopes": [],
@@ -3459,7 +3459,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/pink/21"
+              "alias": "palette/pink/24"
             },
             "Dark": {
               "alias": "palette/pink/12"
@@ -3478,7 +3478,7 @@
               "alias": "palette/pink/12"
             },
             "Dark": {
-              "alias": "palette/pink/21"
+              "alias": "palette/pink/24"
             }
           },
           "scopes": [],
@@ -3843,10 +3843,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-20-18"
+              "alias": "palette/alpha/orange-22-16"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-14-13"
+              "alias": "palette/alpha/orange-14-14"
             }
           },
           "scopes": [],
@@ -3859,10 +3859,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-19-17"
+              "alias": "palette/alpha/orange-22-15"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-14-13"
+              "alias": "palette/alpha/orange-14-14"
             }
           },
           "scopes": [],
@@ -3875,10 +3875,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-14-13"
+              "alias": "palette/alpha/orange-14-14"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-19-17"
+              "alias": "palette/alpha/orange-22-15"
             }
           },
           "scopes": [],
@@ -3891,10 +3891,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-23-23"
+              "alias": "palette/alpha/orange-24-21"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-12-17"
+              "alias": "palette/alpha/orange-12-18"
             }
           },
           "scopes": [],
@@ -3907,10 +3907,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-22-22"
+              "alias": "palette/alpha/orange-24-20"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-12-17"
+              "alias": "palette/alpha/orange-12-18"
             }
           },
           "scopes": [],
@@ -3923,10 +3923,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-12-17"
+              "alias": "palette/alpha/orange-12-18"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-22-22"
+              "alias": "palette/alpha/orange-24-20"
             }
           },
           "scopes": [],
@@ -4435,10 +4435,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-18-6"
+              "alias": "palette/alpha/orange-17-6"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-19-6"
+              "alias": "palette/alpha/orange-16-6"
             }
           },
           "scopes": [],
@@ -4451,10 +4451,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-17-6"
+              "alias": "palette/alpha/orange-19-5"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-19-6"
+              "alias": "palette/alpha/orange-16-6"
             }
           },
           "scopes": [],
@@ -4467,10 +4467,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-19-6"
+              "alias": "palette/alpha/orange-16-6"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-17-6"
+              "alias": "palette/alpha/orange-19-5"
             }
           },
           "scopes": [],
@@ -4483,10 +4483,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-23-10"
+              "alias": "palette/alpha/orange-24-9"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-12-9"
+              "alias": "palette/alpha/orange-12-10"
             }
           },
           "scopes": [],
@@ -4499,10 +4499,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-22-10"
+              "alias": "palette/alpha/orange-26-8"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-12-9"
+              "alias": "palette/alpha/orange-12-10"
             }
           },
           "scopes": [],
@@ -4515,10 +4515,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-12-9"
+              "alias": "palette/alpha/orange-12-10"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-22-10"
+              "alias": "palette/alpha/orange-26-8"
             }
           },
           "scopes": [],
@@ -5126,7 +5126,7 @@
               "alias": "palette/alpha/orange-39-65"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-02-87"
+              "alias": "palette/alpha/orange-02-89"
             }
           },
           "scopes": [],
@@ -5142,7 +5142,7 @@
               "alias": "palette/alpha/orange-39-63"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-02-87"
+              "alias": "palette/alpha/orange-02-89"
             }
           },
           "scopes": [],
@@ -5155,7 +5155,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-02-87"
+              "alias": "palette/alpha/orange-02-89"
             },
             "Dark": {
               "alias": "palette/alpha/orange-39-63"
@@ -5453,9 +5453,9 @@
           "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
         },
         {
-          "name": "standard/shell/content/accent/purple/on-primary",
-          "figmaName": "content/on-primary/purple-standard-shell",
-          "css": "--sloy-v2-theme-standard-shell-content-accent-purple-on-primary",
+          "name": "standard/shell/content/accent/blue/on-primary",
+          "figmaName": "content/on-primary/blue-standard-shell",
+          "css": "--sloy-v2-theme-standard-shell-content-accent-blue-on-primary",
           "type": "COLOR",
           "values": {
             "Light": {
@@ -8908,19 +8908,19 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Workspace": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Content": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Overlay": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Invert": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/on-invert"
             }
           },
           "scopes": [
@@ -8936,19 +8936,19 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Workspace": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Content": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Overlay": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Invert": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/on-invert"
             }
           },
           "scopes": [
@@ -8964,19 +8964,19 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Workspace": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Content": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Overlay": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Invert": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/on-invert"
             }
           },
           "scopes": [
@@ -8992,19 +8992,19 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Workspace": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Content": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Overlay": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Invert": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/on-invert"
             }
           },
           "scopes": [
@@ -9020,19 +9020,19 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Workspace": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Content": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Overlay": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Invert": {
-              "alias": "palette/gray/1000"
+              "alias": "theme/standard/shell/content/on-invert"
             }
           },
           "scopes": [
@@ -9048,16 +9048,16 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "theme/standard/shell/content/accent/purple/on-primary"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Workspace": {
-              "alias": "theme/standard/shell/content/accent/purple/on-primary"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Content": {
-              "alias": "theme/standard/shell/content/accent/purple/on-primary"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Overlay": {
-              "alias": "theme/standard/shell/content/accent/purple/on-primary"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Invert": {
               "alias": "theme/standard/shell/content/on-invert"
@@ -9076,16 +9076,16 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "theme/standard/shell/content/accent/purple/on-primary"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Workspace": {
-              "alias": "theme/standard/shell/content/accent/purple/on-primary"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Content": {
-              "alias": "theme/standard/shell/content/accent/purple/on-primary"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Overlay": {
-              "alias": "theme/standard/shell/content/accent/purple/on-primary"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Invert": {
               "alias": "theme/standard/shell/content/on-invert"
@@ -9134,16 +9134,16 @@
           "type": "COLOR",
           "values": {
             "Shell": {
-              "alias": "theme/standard/shell/content/accent/purple/on-primary"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Workspace": {
-              "alias": "theme/standard/shell/content/accent/purple/on-primary"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Content": {
-              "alias": "theme/standard/shell/content/accent/purple/on-primary"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Overlay": {
-              "alias": "theme/standard/shell/content/accent/purple/on-primary"
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
             },
             "Invert": {
               "alias": "theme/standard/shell/content/on-invert"
@@ -11663,7 +11663,7 @@
   "native": {
     "schemaVersion": 1,
     "generatedFrom": "figma/token-system-v4/source.json",
-    "sourceHash": "211e379e90b4651ab21f28abbaac839611809a3ebecde142abb1ff078d17ffe3",
+    "sourceHash": "f7f034ce919a11e540fd84956778c8d3020f60044b4fc0fae3e3ad1cfb7e7196",
     "palette": "Only referenced opaque ramp entries and integer-percent RGBA paints.",
     "publicColorCollection": "surface",
     "cssFile": "native.css",

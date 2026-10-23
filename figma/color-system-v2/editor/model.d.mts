@@ -4,7 +4,7 @@ export type PaletteScaleId='ramp';
 export type PaletteAnchor={scale:PaletteScaleId;position:number;hex:string};
 export type PaletteEdits={interpolate:boolean;anchors:PaletteAnchor[];legacyAnchors?:{scale:'solid'|'soft'|'muted';position:number;hex:string}[]};
 export type Accent={id:string;name:string;hex:string;seedHex?:string;hue:number;primaryChroma:number;lightnessLight:number;lightnessDark:number;stateDelta:number;softChroma:number;opacityScale:number;textChroma:number;paletteSteps:number;foregroundMode:string;foregroundTint:number;foregroundLight:string;foregroundDark:string;vividness?:number;darkChromaMultiplier?:number;paletteEdits?:PaletteEdits};
-export type Rules={minimumContrast:number;vividness:number;adaptPrimary:boolean;balanceSecondary?:boolean;sharedAlpha?:boolean;alphaRecipe?:import('./alpha-recipes.mjs').AlphaRecipe};
+export type Rules={minimumContrast:number;vividness:number;adaptPrimary:boolean;primaryForegroundPolicy?:'theme'|'contrast';balanceSecondary?:boolean;sharedAlpha?:boolean;alphaRecipe?:import('./alpha-recipes.mjs').AlphaRecipe};
 export const defaultRules:Rules;
 export const presets:{name:string;hex:string}[];
 export type Project={schema:string;accents:Accent[];backgrounds:{Light:string;Dark:string};rules:Rules;neutral:NeutralSystem};
@@ -18,7 +18,7 @@ export function updateSeed(accent:Accent,hex:string):Accent;
 export function createNeutralSystem():NeutralSystem;
 export function resetAccentRecommendations(accent:Accent):Accent;
 export function validateProject(input:unknown):Project;
-/** Auto with zero tint jointly selects one exact black/white ink for Normal/Active before adapting either fill. */
+/** Auto with zero tint defaults to white in local Light, black in local Dark. Contrast policy jointly chooses either exact endpoint. Explicit foreground modes remain authored overrides. */
 export function primaryPair(accent:Accent,theme:string,rules?:Rules,palette?:PaletteScale[]):Context['primary'];
 export function generateAll(accent:Accent,source:unknown,resolved:unknown,custom?:{Light:string;Dark:string},rules?:Rules,neutralSystem?:NeutralSystem):Context[];
 export function generateContext(accent:Accent,theme:string,scheme:string,surface:string,source:unknown,resolved:unknown,custom?:{Light:string;Dark:string},rules?:Rules,palette?:PaletteScale[],surfacePurpose?:string,neutralSystem?:NeutralSystem):Context;

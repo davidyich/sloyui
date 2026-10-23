@@ -21,7 +21,7 @@ for (const family of ['primary', 'secondary', 'tertiary']) {
     await glabel(column, 'surface/' + family + '/' + hue + '-normal', 170);
   }
 }
-const pairs = await gsection(colorsRoot, 'Текст и граница — часть пары', 'Текст Primary — чёрный или белый по фактической паре заливок каждого оттенка. Выберите content/on-primary-<hue>; у готового контрола он следует Accent. На мягкой заливке используйте Content того же hue.');
+const pairs = await gsection(colorsRoot, 'Текст и граница — часть пары', 'Текст Primary по умолчанию белый в Light и чёрный в Dark; Invert следует локальной полярности. Заливки Normal/Active рассчитаны под этот текст. Выберите content/on-primary-<hue>; у готового контрола он следует Accent.');
 const pairsRow = gframe(pairs, 'Usage pairs', 'HORIZONTAL', 1264); pairsRow.itemSpacing = 24;
 for (const [name, fillRole, inkRole, hint] of [
   ['Primary action', 'surface/primary/blue-normal', 'content/on-primary-blue', 'surface/primary/blue-normal + content/on-primary-blue'],

@@ -114,7 +114,7 @@
     "Compact": {
       "unit": 3
     },
-    "formula": "Adaptive spacing = round(unit \u00d7 coefficient). Control height = fixed line-height + 2 \u00d7 adaptive vertical inset. Fixed spacing, type and 44 px touch targets do not scale."
+    "formula": "Adaptive spacing = round(unit × coefficient). Control height = fixed line-height + 2 × adaptive vertical inset. Fixed spacing, type and 44 px touch targets do not scale."
   },
   "radius": {
     "modes": {
@@ -129,7 +129,7 @@
       "lg": 1.5,
       "xl": 2
     },
-    "formula": "radius = round(base \u00d7 ratio), base = 0 / 4 / 8 / 16; pill and fixed zero remain constant."
+    "formula": "radius = round(base × ratio), base = 0 / 4 / 8 / 16; pill and fixed zero remain constant."
   },
   "fonts": {
     "family": {
@@ -166,8 +166,8 @@
   },
   "notes": {
     "source": "Shared Palette Lab generates one ramp per named hue; gray provides the shared neutral ramp. Contexts select these primitives by contrast and composition.",
-    "public": "\u041f\u0443\u0431\u043b\u0438\u0447\u043d\u044b\u0435 \u0446\u0432\u0435\u0442\u0430 \u2014 Theme; \u0430\u0434\u0430\u043f\u0442\u0438\u0432\u043d\u0430\u044f \u0438 \u0444\u0438\u043a\u0441\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u0430\u044f \u0433\u0435\u043e\u043c\u0435\u0442\u0440\u0438\u044f \u2014 Density; \u0441\u043a\u0440\u0443\u0433\u043b\u0435\u043d\u0438\u044f \u2014 Radius; \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0435 \u0447\u0438\u0441\u043b\u0430 \u0438 \u0448\u0440\u0438\u0444\u0442\u044b \u2014 Primitives. \u0412\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0435 Surface, SurfaceScheme \u0438 Palette \u043d\u0435 \u0432\u0445\u043e\u0434\u044f\u0442 \u0432 \u043e\u0431\u044b\u0447\u043d\u044b\u0439 \u0432\u044b\u0431\u043e\u0440 \u0442\u043e\u043a\u0435\u043d\u043e\u0432.",
-    "scheme": "Standard uses composition-oriented Shell \u2192 Workspace \u2192 Content and independent Overlay. Inverted swaps complete Workspace/Content pairs only in Dark."
+    "public": "Публичные цвета — Theme; адаптивная и фиксированная геометрия — Density; скругления — Radius; исходные числа и шрифты — Primitives. Внутренние Surface, SurfaceScheme и Palette не входят в обычный выбор токенов.",
+    "scheme": "Standard uses composition-oriented Shell → Workspace → Content and independent Overlay. Inverted swaps complete Workspace/Content pairs only in Dark."
   },
   "paletteSelection": {
     "opaqueCount": 289,
@@ -188,7 +188,8 @@
       "adaptPrimary": true,
       "balanceSecondary": true,
       "alphaStepPercent": 1,
-      "sharedAlpha": true
+      "sharedAlpha": true,
+      "primaryForegroundPolicy": "theme"
     },
     "overrides": {},
     "legacyAliases": {

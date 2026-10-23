@@ -2,7 +2,7 @@
   "$extensions": {
     "com.sloyui.export": {
       "schemaVersion": 2,
-      "version": "0.18.2",
+      "version": "0.18.3",
       "kind": "raw-primitives",
       "source": "figma-modes.json",
       "collection": "Primitives",

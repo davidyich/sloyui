@@ -363,24 +363,24 @@
     "name": "--cap-feedback-warning-normal",
     "original": "feedback/warning/normal",
     "group": "feedback",
-    "light": "#D06400",
-    "dark": "#FD914A",
+    "light": "#C54F00",
+    "dark": "#FF8E5A",
     "runtime": true
   },
   {
     "name": "--cap-feedback-warning-hover",
     "original": "feedback/warning/hover",
     "group": "feedback",
-    "light": "#B15400",
-    "dark": "#FFA66F",
+    "light": "#AF4500",
+    "dark": "#FFA47D",
     "runtime": true
   },
   {
     "name": "--cap-feedback-warning-pressed",
     "original": "feedback/warning/pressed",
     "group": "feedback",
-    "light": "#B15400",
-    "dark": "#FFA66F",
+    "light": "#AF4500",
+    "dark": "#FFA47D",
     "runtime": true
   },
   {
@@ -395,8 +395,8 @@
     "name": "--cap-feedback-warning-text",
     "original": "feedback/warning/text",
     "group": "feedback",
-    "light": "#5E2900",
-    "dark": "#FFE3D4",
+    "light": "#632400",
+    "dark": "#FFE3D7",
     "runtime": true
   },
   {
