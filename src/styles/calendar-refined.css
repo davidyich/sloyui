@@ -1,12 +1,12 @@
 /* The month/year pair sits inside a floating calendar, so its surface stays quiet. */
-.cap-calendar-period.cap-button-group { border-radius: calc(var(--cap-radius-base) + var(--cap-item-gap)); }
+.cap-calendar-period.cap-button-group { border-radius: round(down, calc(var(--cap-radius-base) + var(--cap-item-gap) * var(--cap-radius-enabled)), 1px); }
 .cap-calendar-period.cap-button-group > .cap-button-group-items {
   border-radius: inherit;
   background: var(--cap-reaction-hover);
 }
 .cap-calendar-period.cap-button-group[data-attached] .cap-select-trigger[data-size] {
   border-radius: var(--cap-radius-base);
-  padding-inline: calc(10px + var(--cap-radius-inset));
+  padding-inline: calc(var(--cap-space-detail-10) + var(--cap-radius-inset));
   color: var(--cap-content-primary);
   background: transparent;
 }
@@ -28,7 +28,7 @@
 /* Calendar is transparent: its consumer establishes the surface; overlays establish floating. */
 .cap-calendar { container-type:inline-size; }
 .cap-calendar[data-months='2'] { max-width:52rem; }
-.cap-calendar[data-agenda-position='side'] { max-width:72rem; display:flex; flex-wrap:wrap; align-items:flex-start; gap:24px; }
+.cap-calendar[data-agenda-position='side'] { max-width:72rem; display:flex; flex-wrap:wrap; align-items:flex-start; gap:var(--cap-space-6); }
 .cap-calendar-body { min-width:0; flex:1 1 21rem; }
 .cap-calendar[data-months='2'] > .cap-calendar-body { flex-basis:40rem; }
 .cap-calendar-period.cap-button-group > .cap-button-group-items {
@@ -42,13 +42,13 @@
 .cap-calendar-period .cap-calendar-year .cap-combobox-wrap,
 .cap-calendar-period .cap-calendar-year .cap-combobox-input-wrap { min-width:0; width:100%; }
 .cap-calendar-period.cap-button-group[data-attached] .cap-calendar-year .cap-input {
-  width:100%; max-width:none; padding-inline:10px 24px; border:0; border-radius:var(--cap-radius-base); background:transparent; color:var(--cap-content-primary);
+  width:100%; max-width:none; padding-inline:var(--cap-space-detail-10) var(--cap-space-6); border:0; border-radius:var(--cap-radius-base); background:transparent; color:var(--cap-content-primary);
 }
 .cap-calendar-period .cap-calendar-year .cap-input::placeholder { color:var(--cap-content-primary); opacity:1; }
 .cap-calendar-period .cap-calendar-year .cap-input:hover { background:var(--cap-control-hover); }
 .cap-calendar-period .cap-calendar-year .cap-input[aria-expanded='true'] { background:var(--cap-control-active); }
 .cap-calendar-year .cap-combobox-chevron { right:8px; }
-.cap-calendar-months { position:relative; isolation:isolate; display:grid; gap:24px; grid-template-columns:minmax(0,1fr); }
+.cap-calendar-months { position:relative; isolation:isolate; display:grid; gap:var(--cap-space-6); grid-template-columns:minmax(0,1fr); }
 .cap-calendar[data-months='2'] .cap-calendar-months { grid-template-columns:repeat(2,minmax(0,1fr)); }
 .cap-calendar-month { min-width:0; }
 .cap-calendar-month-title { text-align:center; margin:0 0 10px; font-weight:500; text-transform:capitalize; }
@@ -70,19 +70,19 @@
 .cap-calendar-day:disabled { color:var(--cap-disabled-text); }
 .cap-calendar-footer > span { overflow-wrap:anywhere; text-align:end; }
 .cap-calendar-agenda { border-color:var(--cap-panel-border); }
-.cap-calendar[data-agenda-position='side'] > .cap-calendar-agenda { flex:1 1 14rem; min-width:0; margin:0; padding:14px 0 0; }
+.cap-calendar[data-agenda-position='side'] > .cap-calendar-agenda { flex:1 1 14rem; min-width:0; margin:0; padding:var(--cap-space-detail-14) 0 0; }
 .cap-calendar-agenda-date { font-weight:500; margin-bottom:12px; }
-.cap-calendar-events { list-style:none; margin:0; padding:0; display:grid; gap:14px; }
-.cap-calendar-events li { display:flex; align-items:stretch; gap:10px; min-width:0; }
+.cap-calendar-events { list-style:none; margin:0; padding:0; display:grid; gap:var(--cap-space-detail-14); }
+.cap-calendar-events li { display:flex; align-items:stretch; gap:var(--cap-space-detail-10); min-width:0; }
 .cap-calendar-event-line { background:var(--cap-accent-text); width:3px; }
 .cap-calendar-event-copy { flex:1; min-width:0; }
-.cap-calendar-event-heading { display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 10px; }
+.cap-calendar-event-heading { display:flex; flex-wrap:wrap; align-items:baseline; gap:var(--cap-space-1) var(--cap-space-detail-10); }
 .cap-calendar-event-heading strong { flex:1; color:var(--cap-content-primary); font-size:var(--cap-font-size-sm); font-weight:500; overflow-wrap:anywhere; }
 .cap-calendar-event-heading > span { color:var(--cap-content-muted); font-size:var(--cap-font-size-xs); overflow-wrap:anywhere; }
-.cap-calendar-event-heading[data-emphasis='time'] { display:grid; gap:2px; }
+.cap-calendar-event-heading[data-emphasis='time'] { display:grid; gap:var(--cap-space-half); }
 .cap-calendar-event-copy > p { margin:5px 0 0; color:var(--cap-content-muted); font-size:var(--cap-font-size-xs); line-height:1.5; overflow-wrap:anywhere; white-space:pre-wrap; }
 .cap-tooltip-v2:has(.cap-calendar-event-preview) { display:block; width:21rem; max-width:calc(100vw - 24px); white-space:normal; }
-.cap-tooltip-v2:has(.cap-calendar-event-preview) > .cap-tooltip-body { padding:14px; overscroll-behavior:contain; }
+.cap-tooltip-v2:has(.cap-calendar-event-preview) > .cap-tooltip-body { padding:var(--cap-space-detail-14); overscroll-behavior:contain; }
 .cap-calendar-preview-date { display:block; margin-bottom:14px; color:var(--cap-content-muted); font-size:var(--cap-font-size-xs); font-weight:500; }
 .cap-datepicker-wide { width:46rem; }
 .cap-datepicker-agenda-side { width:44rem; }
@@ -97,3 +97,8 @@
 @media (prefers-reduced-motion:reduce) {
   .cap-calendar-week > [role='gridcell'],.cap-calendar-months > .cap-moving-highlight { transition:none; }
 }
+
+/* A complete date range stays readable inside a bounded field or preview. */
+.cap-popover-root:has(> .cap-button > .cap-datepicker-label) { min-width:0; }
+.cap-popover-root > .cap-button:has(> .cap-datepicker-label) { min-width:0; max-width:100%; flex-shrink:1; height:auto; min-height:var(--cap-control-height); padding-block:var(--cap-space-1); }
+.cap-datepicker-label { min-width:0; white-space:normal; overflow-wrap:anywhere; text-align:start; line-height:var(--cap-line-height-sm); }

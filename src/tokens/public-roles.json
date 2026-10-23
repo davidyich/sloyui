@@ -1,0 +1,2213 @@
+[
+  {
+    "name": "surface/bg",
+    "css": "--cap-v4-theme-surface-bg",
+    "group": "surface",
+    "description": "Фон выбранной поверхности. Режим Surface задаётся на окрашенном контейнере.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/block",
+    "css": "--cap-v4-theme-surface-block",
+    "group": "surface",
+    "description": "Локальный блок на текущей поверхности. Контекст поверхности сохраняется.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/neutral",
+    "css": "--cap-v4-theme-content-neutral",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/secondary/neutral-normal",
+    "css": "--cap-v4-theme-surface-secondary-neutral-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/neutral-normal",
+    "css": "--cap-v4-theme-border-neutral-normal",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/secondary/neutral-hover",
+    "css": "--cap-v4-theme-surface-secondary-neutral-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/neutral-hover",
+    "css": "--cap-v4-theme-border-neutral-hover",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/secondary/neutral-pressed",
+    "css": "--cap-v4-theme-surface-secondary-neutral-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/neutral-pressed",
+    "css": "--cap-v4-theme-border-neutral-pressed",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "content/on-primary",
+    "css": "--cap-v4-theme-content-on-primary",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/neutral-normal",
+    "css": "--cap-v4-theme-surface-primary-neutral-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/neutral-hover",
+    "css": "--cap-v4-theme-surface-primary-neutral-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/neutral-pressed",
+    "css": "--cap-v4-theme-surface-primary-neutral-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/primary",
+    "css": "--cap-v4-theme-content-primary",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/secondary",
+    "css": "--cap-v4-theme-content-secondary",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/tertiary",
+    "css": "--cap-v4-theme-content-tertiary",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/muted",
+    "css": "--cap-v4-theme-content-muted",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/caption",
+    "css": "--cap-v4-theme-content-caption",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/subtle",
+    "css": "--cap-v4-theme-border-subtle",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "border/default",
+    "css": "--cap-v4-theme-border-default",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "border/strong",
+    "css": "--cap-v4-theme-border-strong",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "border/focus",
+    "css": "--cap-v4-theme-border-focus",
+    "group": "border",
+    "description": "Индикатор фокуса: контраст не ниже 3.1:1 на фоне, блоке и secondary.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/disabled",
+    "css": "--cap-v4-theme-surface-disabled",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/disabled",
+    "css": "--cap-v4-theme-content-disabled",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/scrim",
+    "css": "--cap-v4-theme-surface-scrim",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/secondary/blue-normal",
+    "css": "--cap-v4-theme-surface-secondary-blue-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/blue-normal",
+    "css": "--cap-v4-theme-surface-tertiary-blue-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/blue-normal",
+    "css": "--cap-v4-theme-surface-primary-blue-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/blue-normal",
+    "css": "--cap-v4-theme-border-blue-normal",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/secondary/blue-hover",
+    "css": "--cap-v4-theme-surface-secondary-blue-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/blue-hover",
+    "css": "--cap-v4-theme-surface-tertiary-blue-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/blue-hover",
+    "css": "--cap-v4-theme-surface-primary-blue-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/blue-hover",
+    "css": "--cap-v4-theme-border-blue-hover",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/secondary/blue-pressed",
+    "css": "--cap-v4-theme-surface-secondary-blue-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/blue-pressed",
+    "css": "--cap-v4-theme-surface-tertiary-blue-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/blue-pressed",
+    "css": "--cap-v4-theme-surface-primary-blue-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/blue-pressed",
+    "css": "--cap-v4-theme-border-blue-pressed",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "content/blue",
+    "css": "--cap-v4-theme-content-blue",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/secondary/blue",
+    "css": "--cap-v4-theme-content-secondary-blue",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/on-primary/blue",
+    "css": "--cap-v4-theme-content-on-primary-blue",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/secondary/green-normal",
+    "css": "--cap-v4-theme-surface-secondary-green-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/green-normal",
+    "css": "--cap-v4-theme-surface-tertiary-green-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/green-normal",
+    "css": "--cap-v4-theme-surface-primary-green-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/green-normal",
+    "css": "--cap-v4-theme-border-green-normal",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/secondary/green-hover",
+    "css": "--cap-v4-theme-surface-secondary-green-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/green-hover",
+    "css": "--cap-v4-theme-surface-tertiary-green-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/green-hover",
+    "css": "--cap-v4-theme-surface-primary-green-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/green-hover",
+    "css": "--cap-v4-theme-border-green-hover",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/secondary/green-pressed",
+    "css": "--cap-v4-theme-surface-secondary-green-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/green-pressed",
+    "css": "--cap-v4-theme-surface-tertiary-green-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/green-pressed",
+    "css": "--cap-v4-theme-surface-primary-green-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/green-pressed",
+    "css": "--cap-v4-theme-border-green-pressed",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "content/green",
+    "css": "--cap-v4-theme-content-green",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/secondary/green",
+    "css": "--cap-v4-theme-content-secondary-green",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/on-primary/green",
+    "css": "--cap-v4-theme-content-on-primary-green",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/secondary/orange-normal",
+    "css": "--cap-v4-theme-surface-secondary-orange-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/orange-normal",
+    "css": "--cap-v4-theme-surface-tertiary-orange-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/orange-normal",
+    "css": "--cap-v4-theme-surface-primary-orange-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/orange-normal",
+    "css": "--cap-v4-theme-border-orange-normal",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/secondary/orange-hover",
+    "css": "--cap-v4-theme-surface-secondary-orange-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/orange-hover",
+    "css": "--cap-v4-theme-surface-tertiary-orange-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/orange-hover",
+    "css": "--cap-v4-theme-surface-primary-orange-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/orange-hover",
+    "css": "--cap-v4-theme-border-orange-hover",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/secondary/orange-pressed",
+    "css": "--cap-v4-theme-surface-secondary-orange-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/orange-pressed",
+    "css": "--cap-v4-theme-surface-tertiary-orange-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/orange-pressed",
+    "css": "--cap-v4-theme-surface-primary-orange-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/orange-pressed",
+    "css": "--cap-v4-theme-border-orange-pressed",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "content/orange",
+    "css": "--cap-v4-theme-content-orange",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/secondary/orange",
+    "css": "--cap-v4-theme-content-secondary-orange",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/on-primary/orange",
+    "css": "--cap-v4-theme-content-on-primary-orange",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/secondary/red-normal",
+    "css": "--cap-v4-theme-surface-secondary-red-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/red-normal",
+    "css": "--cap-v4-theme-surface-tertiary-red-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/red-normal",
+    "css": "--cap-v4-theme-surface-primary-red-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/red-normal",
+    "css": "--cap-v4-theme-border-red-normal",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/secondary/red-hover",
+    "css": "--cap-v4-theme-surface-secondary-red-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/red-hover",
+    "css": "--cap-v4-theme-surface-tertiary-red-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/red-hover",
+    "css": "--cap-v4-theme-surface-primary-red-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/red-hover",
+    "css": "--cap-v4-theme-border-red-hover",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/secondary/red-pressed",
+    "css": "--cap-v4-theme-surface-secondary-red-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/red-pressed",
+    "css": "--cap-v4-theme-surface-tertiary-red-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/red-pressed",
+    "css": "--cap-v4-theme-surface-primary-red-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/red-pressed",
+    "css": "--cap-v4-theme-border-red-pressed",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "content/red",
+    "css": "--cap-v4-theme-content-red",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/secondary/red",
+    "css": "--cap-v4-theme-content-secondary-red",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/on-primary/red",
+    "css": "--cap-v4-theme-content-on-primary-red",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/secondary/pink-normal",
+    "css": "--cap-v4-theme-surface-secondary-pink-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/pink-normal",
+    "css": "--cap-v4-theme-surface-tertiary-pink-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/pink-normal",
+    "css": "--cap-v4-theme-surface-primary-pink-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/pink-normal",
+    "css": "--cap-v4-theme-border-pink-normal",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/secondary/pink-hover",
+    "css": "--cap-v4-theme-surface-secondary-pink-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/pink-hover",
+    "css": "--cap-v4-theme-surface-tertiary-pink-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/pink-hover",
+    "css": "--cap-v4-theme-surface-primary-pink-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/pink-hover",
+    "css": "--cap-v4-theme-border-pink-hover",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/secondary/pink-pressed",
+    "css": "--cap-v4-theme-surface-secondary-pink-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/pink-pressed",
+    "css": "--cap-v4-theme-surface-tertiary-pink-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/pink-pressed",
+    "css": "--cap-v4-theme-surface-primary-pink-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/pink-pressed",
+    "css": "--cap-v4-theme-border-pink-pressed",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "content/pink",
+    "css": "--cap-v4-theme-content-pink",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/secondary/pink",
+    "css": "--cap-v4-theme-content-secondary-pink",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/on-primary/pink",
+    "css": "--cap-v4-theme-content-on-primary-pink",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/secondary/purple-normal",
+    "css": "--cap-v4-theme-surface-secondary-purple-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/purple-normal",
+    "css": "--cap-v4-theme-surface-tertiary-purple-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/purple-normal",
+    "css": "--cap-v4-theme-surface-primary-purple-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/purple-normal",
+    "css": "--cap-v4-theme-border-purple-normal",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/secondary/purple-hover",
+    "css": "--cap-v4-theme-surface-secondary-purple-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/purple-hover",
+    "css": "--cap-v4-theme-surface-tertiary-purple-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/purple-hover",
+    "css": "--cap-v4-theme-surface-primary-purple-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/purple-hover",
+    "css": "--cap-v4-theme-border-purple-hover",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/secondary/purple-pressed",
+    "css": "--cap-v4-theme-surface-secondary-purple-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/purple-pressed",
+    "css": "--cap-v4-theme-surface-tertiary-purple-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/purple-pressed",
+    "css": "--cap-v4-theme-surface-primary-purple-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/purple-pressed",
+    "css": "--cap-v4-theme-border-purple-pressed",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "content/purple",
+    "css": "--cap-v4-theme-content-purple",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/secondary/purple",
+    "css": "--cap-v4-theme-content-secondary-purple",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/on-primary/purple",
+    "css": "--cap-v4-theme-content-on-primary-purple",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/inverted",
+    "css": "--cap-v4-theme-content-inverted",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "stable/neutral/white",
+    "css": "--cap-v4-theme-stable-neutral-white",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/neutral/black",
+    "css": "--cap-v4-theme-stable-neutral-black",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/neutral/gray-100",
+    "css": "--cap-v4-theme-stable-neutral-gray-100",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/neutral/gray-300",
+    "css": "--cap-v4-theme-stable-neutral-gray-300",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/neutral/gray-500",
+    "css": "--cap-v4-theme-stable-neutral-gray-500",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/neutral/gray-700",
+    "css": "--cap-v4-theme-stable-neutral-gray-700",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/neutral/gray-900",
+    "css": "--cap-v4-theme-stable-neutral-gray-900",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/accent/blue",
+    "css": "--cap-v4-theme-stable-accent-blue",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/accent/green",
+    "css": "--cap-v4-theme-stable-accent-green",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/accent/orange",
+    "css": "--cap-v4-theme-stable-accent-orange",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/accent/red",
+    "css": "--cap-v4-theme-stable-accent-red",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/accent/pink",
+    "css": "--cap-v4-theme-stable-accent-pink",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/accent/purple",
+    "css": "--cap-v4-theme-stable-accent-purple",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-3",
+    "css": "--cap-v4-theme-stable-alpha-white-3",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-5",
+    "css": "--cap-v4-theme-stable-alpha-white-5",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-8",
+    "css": "--cap-v4-theme-stable-alpha-white-8",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-10",
+    "css": "--cap-v4-theme-stable-alpha-white-10",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-12",
+    "css": "--cap-v4-theme-stable-alpha-white-12",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-15",
+    "css": "--cap-v4-theme-stable-alpha-white-15",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-16",
+    "css": "--cap-v4-theme-stable-alpha-white-16",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-20",
+    "css": "--cap-v4-theme-stable-alpha-white-20",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-24",
+    "css": "--cap-v4-theme-stable-alpha-white-24",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-30",
+    "css": "--cap-v4-theme-stable-alpha-white-30",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-32",
+    "css": "--cap-v4-theme-stable-alpha-white-32",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-40",
+    "css": "--cap-v4-theme-stable-alpha-white-40",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-48",
+    "css": "--cap-v4-theme-stable-alpha-white-48",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-60",
+    "css": "--cap-v4-theme-stable-alpha-white-60",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-64",
+    "css": "--cap-v4-theme-stable-alpha-white-64",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-72",
+    "css": "--cap-v4-theme-stable-alpha-white-72",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-80",
+    "css": "--cap-v4-theme-stable-alpha-white-80",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-88",
+    "css": "--cap-v4-theme-stable-alpha-white-88",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-92",
+    "css": "--cap-v4-theme-stable-alpha-white-92",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/white-96",
+    "css": "--cap-v4-theme-stable-alpha-white-96",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-3",
+    "css": "--cap-v4-theme-stable-alpha-black-3",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-5",
+    "css": "--cap-v4-theme-stable-alpha-black-5",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-8",
+    "css": "--cap-v4-theme-stable-alpha-black-8",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-10",
+    "css": "--cap-v4-theme-stable-alpha-black-10",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-12",
+    "css": "--cap-v4-theme-stable-alpha-black-12",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-15",
+    "css": "--cap-v4-theme-stable-alpha-black-15",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-16",
+    "css": "--cap-v4-theme-stable-alpha-black-16",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-20",
+    "css": "--cap-v4-theme-stable-alpha-black-20",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-24",
+    "css": "--cap-v4-theme-stable-alpha-black-24",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-30",
+    "css": "--cap-v4-theme-stable-alpha-black-30",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-32",
+    "css": "--cap-v4-theme-stable-alpha-black-32",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-40",
+    "css": "--cap-v4-theme-stable-alpha-black-40",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-48",
+    "css": "--cap-v4-theme-stable-alpha-black-48",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-60",
+    "css": "--cap-v4-theme-stable-alpha-black-60",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-64",
+    "css": "--cap-v4-theme-stable-alpha-black-64",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-72",
+    "css": "--cap-v4-theme-stable-alpha-black-72",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-80",
+    "css": "--cap-v4-theme-stable-alpha-black-80",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-88",
+    "css": "--cap-v4-theme-stable-alpha-black-88",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-92",
+    "css": "--cap-v4-theme-stable-alpha-black-92",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/alpha/black-96",
+    "css": "--cap-v4-theme-stable-alpha-black-96",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-3",
+    "css": "--cap-v4-theme-adaptive-alpha-base-3",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-5",
+    "css": "--cap-v4-theme-adaptive-alpha-base-5",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-8",
+    "css": "--cap-v4-theme-adaptive-alpha-base-8",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-10",
+    "css": "--cap-v4-theme-adaptive-alpha-base-10",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-12",
+    "css": "--cap-v4-theme-adaptive-alpha-base-12",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-15",
+    "css": "--cap-v4-theme-adaptive-alpha-base-15",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-16",
+    "css": "--cap-v4-theme-adaptive-alpha-base-16",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-20",
+    "css": "--cap-v4-theme-adaptive-alpha-base-20",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-24",
+    "css": "--cap-v4-theme-adaptive-alpha-base-24",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-30",
+    "css": "--cap-v4-theme-adaptive-alpha-base-30",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-32",
+    "css": "--cap-v4-theme-adaptive-alpha-base-32",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-40",
+    "css": "--cap-v4-theme-adaptive-alpha-base-40",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-48",
+    "css": "--cap-v4-theme-adaptive-alpha-base-48",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-60",
+    "css": "--cap-v4-theme-adaptive-alpha-base-60",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-64",
+    "css": "--cap-v4-theme-adaptive-alpha-base-64",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-72",
+    "css": "--cap-v4-theme-adaptive-alpha-base-72",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-80",
+    "css": "--cap-v4-theme-adaptive-alpha-base-80",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-88",
+    "css": "--cap-v4-theme-adaptive-alpha-base-88",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-92",
+    "css": "--cap-v4-theme-adaptive-alpha-base-92",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/base-96",
+    "css": "--cap-v4-theme-adaptive-alpha-base-96",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-3",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-3",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-5",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-5",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-8",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-8",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-10",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-10",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-12",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-12",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-15",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-15",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-16",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-16",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-20",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-20",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-24",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-24",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-30",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-30",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-32",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-32",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-40",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-40",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-48",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-48",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-60",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-60",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-64",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-64",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-72",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-72",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-80",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-80",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-88",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-88",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-92",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-92",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "adaptive/alpha/contrast-96",
+    "css": "--cap-v4-theme-adaptive-alpha-contrast-96",
+    "group": "adaptive",
+    "description": "Прозрачный белый/чёрный зависит только от Theme, независимо от Surface. Base — белый в Light, чёрный в Dark; contrast — обратная пара.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "STROKE_COLOR"
+    ]
+  }
+]

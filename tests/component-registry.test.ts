@@ -1,9 +1,13 @@
 import { describe,expect,it } from 'vitest';
 import registry from '../source/component-registry.json';
 import manifest from '../agent-manifest.json';
+import componentHistory from '../source/component-history.json';
 import { componentNames,filterComponents,resolveRoute } from '../demo/catalog';
 import { documentFiles } from '../demo/document-files';
-import { existsSync } from 'node:fs';
+import { existsSync,readFileSync,mkdtempSync,mkdirSync,writeFileSync,rmSync } from 'node:fs';
+import {spawnSync} from 'node:child_process';
+import {join,resolve} from 'node:path';
+import {tmpdir} from 'node:os';
 
 describe('Persistent component registry',()=>{
  it('keeps unique permanent IDs and valid multiple group memberships',()=>{
@@ -62,12 +66,53 @@ describe('Persistent component registry',()=>{
    }
    expect(manifest.catalogue.groups.filter(group=>group.components.includes('MultiSelect')).map(group=>group.id)).toEqual(registry.components.MultiSelect.groups);
  });
- it('keeps a minimal canonical editable instruction set',()=>{
-   expect(documentFiles).toHaveLength(6);
+ it('keeps core instructions, the protected maintenance guide and upstream task workflow',()=>{
+   const maintenance=documentFiles.filter(file=>file.path==='docs/catalog-maintenance.md');
+   const core=documentFiles.filter(file=>file.path!=='docs/catalog-maintenance.md');
+   expect(core.map(file=>file.path)).toEqual(['AGENTS.md','llms.txt','DESIGN.md','docs/component-guidelines.md','docs/surface-context.md','docs/recipes.md','docs/github-tasks.md']);
+   expect(maintenance).toEqual([{path:'docs/catalog-maintenance.md',label:'catalog-maintenance.md',protected:true}]);
+   expect(documentFiles).toHaveLength(8);
    expect(new Set(documentFiles.map(file=>file.path)).size).toBe(documentFiles.length);
    for(const file of documentFiles){expect(existsSync(file.path),file.path).toBe(true);expect(file.protected).toBe(true);}
    expect(documentFiles.map(file=>file.path)).toContain('docs/component-guidelines.md');
    expect(documentFiles.some(file=>file.path.endsWith('-revision.md'))).toBe(false);
+ });
+ it('publishes unique kit and component versions linked to actual kit releases',()=>{
+   const kitVersions=componentHistory.kit.map(entry=>entry.version);
+   expect(new Set(kitVersions).size).toBe(kitVersions.length);
+   const ids=new Set(Object.values(registry.components).map(record=>record.id));
+   for(const [id,record] of Object.entries(componentHistory.components)){
+     expect(ids.has(id),id).toBe(true);
+     const versions=record.entries.map(entry=>entry.version);
+     expect(new Set(versions).size,id).toBe(versions.length);
+     for(const entry of record.entries)expect(kitVersions,`${id}@${entry.version}`).toContain(entry.kitVersion);
+   }
+   const changelogVersions=Array.from(readFileSync('CHANGELOG.md','utf8').matchAll(/^## (\d+\.\d+\.\d+)\b/gm),match=>match[1]);
+   expect(new Set(changelogVersions).size).toBe(changelogVersions.length);
+   expect(changelogVersions).toEqual(kitVersions);
+ });
+ it('stops manifest generation before writing output for duplicate or unlinked release seeds',()=>{
+   type HistorySeed={schemaVersion:number;kit:{version:string;date:string;summary:string}[];components:Record<string,{name:string;version:string;entries:{version:string;kitVersion:string;date:string;summary:string}[]}>};
+   const baseline:HistorySeed=componentHistory;
+   const first=Object.values(baseline.components).find(record=>record.entries.length)!;
+   const firstId=Object.entries(componentHistory.components).find(([,record])=>record===first)![0];
+   const cases=[
+     {mutate:(history:HistorySeed)=>history.kit.push({...history.kit[0]}),error:`Duplicate kit version ${componentHistory.kit[0].version}`},
+     {mutate:(history:HistorySeed)=>history.components[firstId].entries.push({...first.entries[0]}),error:`Duplicate component version ${firstId}@${first.entries[0].version}`},
+     {mutate:(history:HistorySeed)=>{history.components[firstId].entries[0].kitVersion='99.0.0';},error:'Unknown kit version 99.0.0'},
+     {mutate:(history:HistorySeed)=>{Object.assign(history.components,{'cp-999':{name:'Unknown',version:'0.10.0',entries:[]}});},error:'Unknown component history ID cp-999'},
+   ];
+   for(const scenario of cases){
+     const directory=mkdtempSync(join(tmpdir(),'sloy-invalid-history-'));
+     try{
+       mkdirSync(join(directory,'source'));const history=structuredClone(baseline);scenario.mutate(history);
+       writeFileSync(join(directory,'source/component-registry.json'),JSON.stringify(registry));
+       writeFileSync(join(directory,'source/component-history.json'),JSON.stringify(history));
+       const result=spawnSync(process.execPath,[resolve('scripts/build-manifest.mjs')],{cwd:directory,encoding:'utf8'});
+       expect(result.status).not.toBe(0);expect(result.stderr).toContain(scenario.error);
+       expect(existsSync(join(directory,'agent-manifest.json'))).toBe(false);
+     }finally{rmSync(directory,{recursive:true,force:true});}
+   }
  });
  it('requires design review for every newly introduced component',()=>{
    for(const record of Object.values(registry.components))if('introduced' in record)expect(record.status).toBe('needs-review');

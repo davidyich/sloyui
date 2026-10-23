@@ -14,7 +14,7 @@ Keep full notices with redistributions. Font software remains under OFL 1.1; Slo
 
 ## Reference credits
 
-Capacities by Capacities Labs was the original visual reference. Sloy UI is not affiliated with or endorsed by Capacities Labs. This acknowledgement grants no permission to redistribute its software, captured stylesheets, token datasets or branding. The public palette is independently authored for Sloy UI; original captures and palette exports are excluded. See the [provenance review](docs/third-party.md), including historical artifact scope.
+Visual references include Capacities by Capacities Labs; Sloy UI is not affiliated with or endorsed by them.
 
 [beUI](https://beui.dev/) informed CodeBlock composition, BottomSheet, FileTree, PreviewRail, selection and navigation. Existing implementation records describe local React/CSS implementations without importing beUI source, Shiki or Motion. This credits a design/composition reference and does not assert a license to beUI assets or source.
 

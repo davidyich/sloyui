@@ -25,8 +25,8 @@ describe('curated catalogue translations',()=>{
  it('localizes registered release history while preserving source and unknown changes',()=>{
  const source=readFileSync('CHANGELOG.md','utf8'),english=localizedChangelog(source,'en'),russian=localizedChangelog(source,'ru');
  expect(english).not.toMatch(/[А-Яа-яЁё]/);
- expect(russian).toContain('## 0.6.0');
- expect(russian).toContain('Активные инструкции сокращены');
+ expect(russian).toContain('## 0.10.0');
+ expect(russian).toContain('Приглушены вторичные акценты');
  expect(english.split('\n').filter(line=>line.startsWith('- '))).toHaveLength(source.split('\n').filter(line=>line.startsWith('- ')).length);
  expect(localizedChangelog('# New\n\n- My custom edit\n','ru')).toBe('# New\n\n- My custom edit\n');
  expect(readFileSync('CHANGELOG.md','utf8')).toBe(source);

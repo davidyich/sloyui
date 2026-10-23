@@ -1,0 +1,31 @@
+name: Task
+description: Change a component, catalogue, documentation or infrastructure
+title: "[Task] "
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: What should change and why? Identify the component or page. Write the task in English.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Testable completion criteria, one per line.
+      placeholder: "- [ ] ..."
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Context and scope
+      description: References, dependencies on other Issues and scope boundaries.
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification
+      description: How to verify the outcome; include UI scenarios and states where relevant.
+    validations:
+      required: true

@@ -7,16 +7,21 @@ import { RadioGroup } from '../src/components/selection';
 import { arcPlaygrounds } from '../demo/PlaygroundArc';
 import graph from '../src/tokens/figma-modes.json';
 
-type Color = { components: number[] };
+type Color = { components: number[]; alpha?:number };
 type Token = Color | { alias: string } | string | number;
 const collections = graph.collections as unknown as { name: string; modes: Record<string, Record<string, Token>> }[];
-function color(path: string, context: string): Color {
+const architecture = graph as unknown as { legacyPaths: Record<string, string>; surfaceModes: Record<string, string> };
+function color(path: string, context: string, seen: string[] = []): Color {
+  path = architecture.legacyPaths[path] ?? path;
+  if (seen.includes(path)) throw new Error(`Circular color alias ${path}`);
   const [collection, ...name] = path.split('/'), [theme, surface] = context.split(' · ');
-  const tokens = collections.find(item => item.name === collection)!;
-  const mode = collection === 'Primitives' ? 'Value' : collection === 'Theme' ? theme : surface;
-  const value = tokens.modes[mode][name.join('/')];
-  if (typeof value === 'object' && 'alias' in value) return color(value.alias, context);
+  const tokens = collections.find(item => item.name === collection);
+  if (!tokens) throw new Error(`Missing collection ${collection}`);
+  const mode = collection === 'Theme' ? theme : collection === 'Semantic' ? architecture.surfaceModes[surface.toLowerCase()] ?? surface : Object.keys(tokens.modes)[0];
+  const value = tokens.modes[mode]?.[name.join('/')];
+  if (typeof value === 'object' && 'alias' in value) return color(value.alias, context, [...seen, path]);
   if (typeof value !== 'object' || !('components' in value)) throw new Error(`Missing color ${path}`);
+  if(value.alpha!==undefined&&value.alpha<1){const base=color('Semantic/surface/current',context);return {...value,components:value.components.map((c,i)=>c*value.alpha!+base.components[i]*(1-value.alpha!)),alpha:1};}
   return value;
 }
 function luminance(value: Color) {

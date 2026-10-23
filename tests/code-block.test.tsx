@@ -179,3 +179,61 @@ it('offers labelled contextual actions beside copy with keyboard restoration and
   await user.click(trigger); await user.click(screen.getByRole('menuitem',{name:'Выполнить'}));
   expect(custom).toHaveBeenCalledOnce();
 });
+
+it('switches stack commands by keyboard and copies only the active exact source', async () => {
+  const user = userEvent.setup(), writeText = vi.fn().mockResolvedValue(undefined);
+  Object.defineProperty(navigator, 'clipboard', { configurable:true, value:{ writeText } });
+  const tabs = [{value:'pnpm',label:'pnpm',code:'pnpm add kit\r\n',language:'bash' as const},{value:'disabled',label:'Unavailable',code:'no',disabled:true},{value:'npm',label:'npm',code:'npm install kit',language:'bash' as const}];
+  const { container, rerender } = render(<CodeBlock tabs={tabs} headerVariant="unified">{'fallback'}</CodeBlock>);
+  screen.getByRole('tab',{name:'pnpm'}).focus();
+  await user.keyboard('{ArrowRight}');
+  expect(screen.getByRole('tab',{name:'npm'})).toHaveFocus();
+  expect(screen.getByRole('tabpanel')).toHaveTextContent('npm install kit');
+  await user.click(screen.getByRole('button',{name:'Копировать код'}));
+  expect(writeText).toHaveBeenLastCalledWith('npm install kit');
+  rerender(<CodeBlock tabs={tabs.slice(0,1)} headerVariant="unified">{'fallback'}</CodeBlock>);
+  expect(screen.getByRole('tab',{name:'pnpm'})).toHaveAttribute('aria-selected','true');
+  await user.click(screen.getByRole('button',{name:'Копировать код'}));
+  expect(writeText).toHaveBeenLastCalledWith('pnpm add kit\r\n');
+  rerender(<CodeBlock tabs={[]} headerVariant="unified" showLanguageSelector={false}>{'fallback'}</CodeBlock>);
+  expect(container.querySelector('pre')).toHaveTextContent('fallback');
+});
+
+it('requests controlled tab selection without replacing source until the consumer updates', async () => {
+  const user = userEvent.setup(), changed = vi.fn();
+  const tabs = [{value:'a',label:'A',code:'first'},{value:'b',label:'B',code:'second'}];
+  const { rerender } = render(<CodeBlock tabs={tabs} tab="a" onTabChange={changed}>{''}</CodeBlock>);
+  await user.click(screen.getByRole('tab',{name:'B'}));
+  expect(changed).toHaveBeenCalledWith('b');
+  expect(screen.getByRole('tabpanel')).toHaveTextContent('first');
+  rerender(<CodeBlock tabs={tabs} tab="b" onTabChange={changed}>{''}</CodeBlock>);
+  expect(screen.getByRole('tabpanel')).toHaveTextContent('second');
+});
+
+it('shows the sole wrap action directly with a tooltip for its next action', async () => {
+  const user=userEvent.setup(), changed=vi.fn();
+  const {container}=render(<CodeBlock onWrapChange={changed}>{'a long line'}</CodeBlock>);
+  expect(screen.queryByRole('button',{name:'Действия с кодом'})).toBeNull();
+  const button=screen.getByRole('button',{name:'Переносить строки'});
+  button.focus();
+  await screen.findByRole('tooltip');
+  expect(screen.getByRole('tooltip')).toHaveTextContent('Переносить строки');
+  await user.click(button);
+  expect(changed).toHaveBeenLastCalledWith(true);
+  expect(container.querySelector('.cap-code')).toHaveAttribute('data-wrap');
+  expect(screen.getByRole('button',{name:'Отключить перенос строк'})).toHaveAttribute('aria-pressed','true');
+});
+
+it('tracks option hover in unified compact headers and orders direct actions before copy, menus after copy',async()=>{
+ const user=userEvent.setup();
+ const tabs=[{value:'a',label:'macOS',code:'brew install node'},{value:'b',label:'Windows',code:'winget install node'},{value:'c',label:'Linux',code:'apt install node'}];
+ const {container,rerender}=render(<CodeBlock tabs={tabs} headerVariant="unified" density="compact" actions={<button>Run</button>}>{''}</CodeBlock>);
+ const highlight=container.querySelector('.cap-code-tabs .cap-moving-highlight[data-kind=hover]')!;
+ await user.hover(screen.getByRole('tab',{name:'Windows'}));
+ expect(highlight).toHaveAttribute('data-visible','true');
+ await user.hover(screen.getByRole('tab',{name:'Linux'}));
+ expect(highlight).toHaveAttribute('data-visible','true');
+ expect([...container.querySelectorAll('.cap-code-actions button')].map(e=>e.getAttribute('aria-label')||e.textContent)).toEqual(['Run','Переносить строки','Копировать код']);
+ rerender(<CodeBlock tabs={tabs} headerVariant="unified" contextActions={[{id:'run',label:'Run'}]}>{''}</CodeBlock>);
+ expect([...container.querySelectorAll('.cap-code-actions button')].map(e=>e.getAttribute('aria-label'))).toEqual(['Копировать код','Действия с кодом']);
+});

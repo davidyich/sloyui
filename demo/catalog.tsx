@@ -1,3 +1,6 @@
+import { ParameterSliderStory, Slider2DStory } from './ParameterControlsStory';
+import { PopupSelectStory } from './PopupSelectStory';
+import {catalogSnapshot} from './catalog-state';
 import { FileCardExample } from './FileCardExample';
 import { MarkdownEditorV2Example } from './MarkdownEditorV2Example';
 import {ResizablePanelGroupStory} from './ResizableExample';
@@ -21,6 +24,8 @@ interface CatalogRecord { group: ComponentGroup; description: string; render: Co
 const entry = (group: ComponentGroup, description: string, render: ComponentType<StoryProps>): CatalogRecord => ({group,description,render});
 /** Every public component has one route and one focused, rendered story. */
 export const componentCatalog = {
+  ParameterSlider: entry('Поля и выбор','Слайдер параметра с общей заливкой, иконкой и точным значением.',ParameterSliderStory),
+  Slider2D: entry('Поля и выбор','Две настраиваемые оси с прямым управлением и точными полями.',Slider2DStory),
   FileCard: entry('Объекты и контент','Файл с превью, обозначением формата и независимыми действиями.',FileCardExample),
   ResizablePanelGroup: entry('Навигация','Группа изменяемых панелей с вложенными осями и клавиатурным управлением.',ResizablePanelGroupStory),
   ...arcComponents,
@@ -39,6 +44,7 @@ export const componentCatalog = {
   Kbd: entry('Кнопки и действия','Обозначение клавиши или сочетания клавиш.',Controls.KbdStory),
   Input: entry('Поля и выбор','Однострочное поле с вариантами размера и стандартным поведением ввода.',Controls.InputStory),
   Textarea: entry('Поля и выбор','Многострочное поле с изменяемой высотой.',Controls.TextareaStory),
+  PopupSelect: entry('Поля и выбор','Компактный выбор с поиском внутри отдельного всплывающего окна.',PopupSelectStory),
   Select: entry('Поля и выбор','Выбор одного значения в аккуратном меню с группами и поиском с клавиатуры.',Controls.SelectStory),
   Field: entry('Поля и выбор','Связывает подпись, поле, подсказку и ошибку.',Controls.FieldStory),
   Checkbox: entry('Поля и выбор','Независимый выбор с поддержкой промежуточного состояния.',Controls.CheckboxStory),
@@ -108,7 +114,7 @@ export function toggleCatalogueGroups(groupIds:readonly string[],expandedIds:rea
 export const componentStatuses = manifest.registry.statuses;
 export type ComponentStatus = keyof typeof componentStatuses;
 export type ComponentStatusFilter = ComponentStatus | 'all';
-export function componentMetadata(name: ComponentName) { const record=manifest.components[name]; return {...record,status:record.status as ComponentStatus}; }
+export function componentMetadata(name: ComponentName) { const record=manifest.components[name]; return {...record,status:catalogSnapshot().statuses[record.id]??record.status as ComponentStatus}; }
 /** Archives are discoverable only through their explicit status filter. */
 export function filterComponents({status='all',group='all',query=''}:{status?:ComponentStatusFilter;group?:string;query?:string}={}) {
   const term=query.trim().toLocaleLowerCase();
@@ -118,21 +124,23 @@ export function filterComponents({status='all',group='all',query=''}:{status?:Co
   });
 }
 export const foundationPages = [
+  {id:'tokens',label:'Система токенов'},
   {id:'colors',label:'Цвета и темы'},
   {id:'typography',label:'Типографика'},
   {id:'geometry',label:'Размеры и форма'},
-  {id:'layers',label:'Границы и слои'},
+  {id:'layers',label:'Поверхности и границы'},
   {id:'behavior',label:'Поведение'},
-  {id:'agents',label:'Инструкции'},
 ] as const;
 export type FoundationRoute = typeof foundationPages[number]['id'];
-export const overviewPages = [{id:"overview",label:"Обзор компонентов"},{id:"installation",label:"Установка"},{id:"changelog",label:"Changelog"}] as const;
+export const overviewPages = [{id:"overview",label:"Обзор компонентов"},{id:"installation",label:"Установка"},{id:"changelog",label:"Changelog"},{id:"agents",label:"Инструкции"}] as const;
 export type OverviewRoute = typeof overviewPages[number]["id"];
-export type CatalogRoute = ComponentName | FoundationRoute | OverviewRoute;
+export type CatalogRoute = ComponentName | FoundationRoute | OverviewRoute | 'admin';
 export function isComponentRoute(route: CatalogRoute): route is ComponentName { return Object.hasOwn(componentCatalog,route); }
 const aliases: Record<string,CatalogRoute> = {Badge:'Tag',TypeLabel:'Tag',badge:'Tag','type-label':'Tag',typelabel:'Tag',buttons:'Button',forms:'Input',content:'ContentCard',feedback:'Alert',overlays:'Dialog',workbench:'ActionBar','content-blocks':'Calendar',patterns:'KanbanBoard',rules:'behavior'};
 export function resolveRoute(hash: string): CatalogRoute {
-  let value=hash.replace(/^#/,''); try { value=decodeURIComponent(value); } catch { return 'Button'; }
+  let value=hash.replace(/^#/,'').split('?')[0]; try { value=decodeURIComponent(value); } catch { return 'Button'; }
+  if(!value)return 'overview';
+  if(value==='admin')return 'admin';
   if(value.toLowerCase().replaceAll('-','')==='markdowneditor') return 'RichTextEditor';
   if(value.toLowerCase().replaceAll('-','')==='floatingfield') return 'Input';
   if (Object.hasOwn(componentCatalog,value)) return value as ComponentName;

@@ -1,6 +1,6 @@
 {
   "name": "Sloy UI — Variables",
-  "id": "capacities-ui-v2-variables-local",
+  "id": "sloyui-variables-local",
   "api": "1.0.0",
   "main": "code.js",
   "ui": "ui.html",

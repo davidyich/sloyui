@@ -1,8 +1,8 @@
 .cap-chart,.cap-chart-interactive,.cap-chart-legend,.cap-sparkline,.cap-brush-main,.cap-treemap {
   --cap-chart-series-1:var(--cap-accent-solid-normal);
-  --cap-chart-series-2:light-dark(var(--cap-palette-teal-600),var(--cap-palette-teal-350));
-  --cap-chart-series-3:light-dark(var(--cap-palette-amber-600),var(--cap-palette-amber-350));
-  --cap-chart-series-4:light-dark(var(--cap-palette-rose-600),var(--cap-palette-rose-350));
+  --cap-chart-series-2:var(--cap-v4-theme-stable-accent-green);
+  --cap-chart-series-3:var(--cap-v4-theme-stable-accent-orange);
+  --cap-chart-series-4:var(--cap-v4-theme-stable-accent-red);
   --cap-chart-series-5:color-mix(in oklab,var(--cap-content-primary) 58%,var(--cap-surface-current));
   --cap-chart-series-6:color-mix(in oklab,var(--cap-content-primary) 46%,var(--cap-surface-current));
   --cap-chart-series-7:color-mix(in oklab,var(--cap-content-primary) 34%,var(--cap-surface-current));
@@ -32,10 +32,10 @@
 .cap-chart-data { margin-top:.5rem; color:var(--cap-content-muted); font-size:12px; }
 .cap-chart-data summary { cursor:pointer; width:max-content; }
 .cap-chart-data table { border-collapse:collapse; margin-top:.5rem; width:100%; text-align:left; }
-.cap-chart-data th,.cap-chart-data td { padding:4px 8px; border-bottom:var(--cap-border-width) solid var(--cap-divider-panel); }
+.cap-chart-data th,.cap-chart-data td { padding:var(--cap-space-1) var(--cap-space-2); border-bottom:var(--cap-border-width) solid var(--cap-divider-panel); }
 .cap-chart-interactive { min-width:0; }
-.cap-chart-legend { display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:6px; }
-.cap-chart-legend button { display:inline-flex; min-height:28px; align-items:center; gap:6px; border:0; border-radius:var(--cap-radius-small); padding:3px 6px; background:transparent; color:var(--cap-content-secondary); font:inherit; font-size:var(--cap-font-size-xs); cursor:pointer; }
+.cap-chart-legend { display:flex; flex-wrap:wrap; gap:var(--cap-space-detail-6) var(--cap-space-3); margin-top:6px; }
+.cap-chart-legend button { display:inline-flex; min-height:28px; align-items:center; gap:var(--cap-space-detail-6); border:0; border-radius:var(--cap-radius-small); padding:var(--cap-space-detail-3) var(--cap-space-detail-6); background:transparent; color:var(--cap-content-secondary); font:inherit; font-size:var(--cap-font-size-xs); cursor:pointer; }
 .cap-chart-legend button:hover,.cap-chart-legend button:focus-visible { background:var(--cap-reaction-hover); color:var(--cap-content-primary); }
 .cap-chart-legend button[data-hidden=true] { opacity:.5; text-decoration:line-through; }
 .cap-chart-legend-swatch { width:10px; height:10px; flex:none; border-radius:50%; background:var(--cap-series-color); }
@@ -61,11 +61,11 @@
 .cap-brush-selection { fill:var(--cap-accent-solid-normal); fill-opacity:.28; stroke:var(--cap-accent-solid-normal); stroke-width:1.5; cursor:grab; }
 .cap-brush-selection:active { cursor:grabbing; }
 .cap-brush-handle { fill:var(--cap-accent-solid-normal); stroke:var(--cap-surface-raised); stroke-width:2; cursor:ew-resize; touch-action:none; }
-.cap-brush-controls { display:flex; flex-wrap:wrap; gap:12px; margin-top:4px; }
-.cap-brush-controls label { display:inline-flex; align-items:center; gap:8px; color:var(--cap-content-muted); font-size:12px; }
+.cap-brush-controls { display:flex; flex-wrap:wrap; gap:var(--cap-space-3); margin-top:4px; }
+.cap-brush-controls label { display:inline-flex; align-items:center; gap:var(--cap-space-2); color:var(--cap-content-muted); font-size:12px; }
 .cap-brush-controls input { width:min(28vw,180px); accent-color:var(--cap-accent-solid-normal); }
-.cap-treemap-path { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:0 0 6px; color:var(--cap-content-muted); font-size:var(--cap-font-size-xs); }
-.cap-treemap-path button { border:0; border-radius:var(--cap-radius-small); padding:3px 5px; background:transparent; color:var(--cap-content-secondary); font:inherit; cursor:pointer; }
+.cap-treemap-path { display:flex; flex-wrap:wrap; align-items:center; gap:var(--cap-space-detail-6); margin:0 0 6px; color:var(--cap-content-muted); font-size:var(--cap-font-size-xs); }
+.cap-treemap-path button { border:0; border-radius:var(--cap-radius-small); padding:var(--cap-space-detail-3) var(--cap-space-detail-5); background:transparent; color:var(--cap-content-secondary); font:inherit; cursor:pointer; }
 .cap-treemap-path button:hover,.cap-treemap-path button:focus-visible { background:var(--cap-reaction-hover); color:var(--cap-content-primary); }
 .cap-treemap-item rect { rx:calc((var(--cap-number-radius-xs) + var(--cap-number-radius-sm)) / 2); vector-effect:non-scaling-stroke; }
 .cap-treemap-label,.cap-treemap-value { font-size:calc(12px * var(--cap-chart-text-scale,1)); pointer-events:none; }
@@ -74,7 +74,7 @@
 .cap-treemap-item[data-ink='light'] .cap-treemap-label,.cap-treemap-item[data-ink='light'] .cap-treemap-value { fill:#fff; }
 .cap-treemap-item[data-ink='dark'] .cap-treemap-label,.cap-treemap-item[data-ink='dark'] .cap-treemap-value { fill:#000; }
 .cap-treemap-contrast-probe { visibility:hidden; pointer-events:none; }
-.cap-sparkline-wrap { display:inline-flex; position:relative; max-width:100%; align-items:center; gap:6px; vertical-align:middle; }
+.cap-sparkline-wrap { display:inline-flex; position:relative; max-width:100%; align-items:center; gap:var(--cap-space-detail-6); vertical-align:middle; }
 .cap-sparkline { display:inline-block; max-width:100%; overflow:visible; vertical-align:middle; }
 .cap-sparkline-area { fill-opacity:.16; stroke:none; }
 .cap-sparkline-active { stroke:var(--cap-surface-raised); stroke-width:2; pointer-events:none; }

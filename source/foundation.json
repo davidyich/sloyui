@@ -1,8 +1,10 @@
 {
   "schemaVersion": 1,
   "authoring": {
-    "name": "Sloy UI independent foundation",
-    "method": "Analytic OKLCH ramps and logarithmic neutral luminance; authored without captured palette samples, curve fitting, or perturbation.",
+    "name": "Sloy UI v4 runtime with legacy geometry extensions",
+    "runtimeSource": "figma/token-system-v4/source.json",
+    "note": "Palette and secondary recipes below document the legacy v2 foundation. Runtime colors resolve the authoritative v4 graph; only legacy scalar, radius optical inset and effect extensions are consumed here.",
+    "method": "Authored analytic OKLCH ramps and logarithmic neutral luminance.",
     "gamut": "Reduce OKLCH chroma by binary search to fit sRGB; preserve hue and lightness."
   },
   "palette": {
@@ -74,28 +76,27 @@
       1000
     ],
     "hues": {
-      "rose": 8,
-      "pink": 350,
-      "fuchsia": 326,
-      "purple": 305,
-      "violet": 285,
-      "indigo": 267,
       "blue": 250,
-      "sky": 230,
-      "cyan": 210,
-      "teal": 185,
-      "emerald": 163,
       "green": 145,
-      "lime": 125,
-      "yellow": 100,
-      "amber": 80,
       "orange": 55,
-      "red": 28
+      "red": 28,
+      "pink": 350,
+      "purple": 305
     },
     "lightnessFloor": 0.1,
     "chromaPeak": 0.16,
     "chromaExponent": 0.85,
     "neutralContrastSpan": 21
+  },
+  "secondary": {
+    "dark": {
+      "chromaMultiplier": 0.32,
+      "surfaceContrast": [
+        1.35,
+        1.7,
+        2.15
+      ]
+    }
   },
   "scalars": {
     "font-size": {
@@ -118,6 +119,16 @@
       "3xl": 36,
       "4xl": 44
     },
+    "prose-line-height": {
+      "xs": 20,
+      "sm": 23,
+      "base": 24,
+      "lg": 28,
+      "xl": 32,
+      "2xl": 34,
+      "3xl": 40,
+      "4xl": 48
+    },
     "font-weight": {
       "normal": 400,
       "medium": 500,
@@ -132,12 +143,32 @@
       "lg": 8,
       "xl": 12,
       "2xl": 16,
-      "3xl": 24
+      "3xl": 24,
+      "compact": 4,
+      "full": 9999
     }
   },
   "shadows": {
     "sm": "0 1px 3px rgb(0 0 0 / .08)",
     "md": "0 4px 12px rgb(0 0 0 / .10)",
     "lg": "0 8px 24px rgb(0 0 0 / .12)"
+  },
+  "radiusContexts": {
+    "none": {
+      "scale": 0,
+      "inset": 0
+    },
+    "compact": {
+      "scale": 0.5,
+      "inset": 0
+    },
+    "default": {
+      "scale": 1,
+      "inset": 0
+    },
+    "rounded": {
+      "scale": 2,
+      "inset": 8
+    }
   }
 }

@@ -2,9 +2,18 @@ import { useCallback } from 'react';
 import { useLocale } from '../src';
 /** Curated catalogue UI/metadata translations. Never applied to consumer content or DOM. */
 export const catalogueDictionary: Record<string,string> = {
+  "Поиск во всплывающем окне": "Search inside the popup",
+  "Компактный выбор токена": "Compact token selection",
+  "Компактный выбор с поиском внутри отдельного всплывающего окна.": "Compact selection with search inside a separate floating popup.",
+  "Превью и параметры": "Preview and settings",
+  "Изменить ширину параметров": "Resize settings",
+  "Только точка": "Dot only",
+  "Ширина окна": "Popup width",
+  "Значения справа": "Trailing values",
   "Мягкая акцентная заливка": "Soft accent fill",
   "Храните items в состоянии. В onMove сначала удалите задачу из прежней позиции, затем вставьте в columnId на index. По умолчанию переносится корпус карточки; интерактивные элементы работают отдельно. Для ручки включите dragActivation=\"handle\". Сохраняйте меню и клавиатурные способы переноса.": "Keep items in state. In onMove, remove the task from its previous position, then insert it into columnId at index. Drag starts from the card body by default; interactive elements work independently. Choose dragActivation=\"handle\" for a grip. Preserve menu and keyboard alternatives.",
-  "Наведение подсвечивает весь пункт; после ухода мыши фон сбрасывается, клавиатурный фокус отмечен рамкой заголовка. Только шеврон поворачивается при раскрытии.": "Hover highlights the whole item and clears when the pointer leaves. Keyboard focus uses the summary outline. Only the chevron rotates when expanded.",
+  "Наведение подсвечивает только заголовок, содержимое сохраняет фон. chevronPosition=\"end\" ставит шеврон справа. Его форма плавно меняется вниз → вверх без вращения.": "Hover highlights only the heading while the body keeps its background. chevronPosition=\"end\" places the chevron on the right. Its shape morphs from down to up without rotation.",
+  "start сохраняет стандартный шеврон; end ставит его справа и меняет форму вниз → вверх при раскрытии.": "start preserves the standard chevron; end places it on the right and morphs its shape from down to up on expansion.",
   "Сохраните колонку и порядок. index — позиция в колонке назначения после удаления переносимой карточки.": "Persist both column and order. index is the insertion position in the destination column after removing the moving card.",
   "card: перенос за корпус, без захвата кнопок и полей. handle: явная ручка.": "card: drag the body, excluding buttons and fields. handle: use an explicit grip.",
   "В режиме handle: start размещает ручку рядом с пользовательской карточкой, custom передаёт её в context.handle.": "In handle mode: start places a grip beside the custom card; custom supplies it through context.handle.",
@@ -122,8 +131,12 @@ export const catalogueDictionary: Record<string,string> = {
   "Короткие вспомогательные подписи": "Short supporting labels",
   "Размеры и форма": "Sizes and shapes",
   "Базовый шаг 4 px, пять высот контролов и общая шкала скруглений.": "A 4 px base step, five control heights and a shared radius scale.",
+  "Общие размеры и отступы переключаются через Density. Скругления и типографика независимы.": "Density switches shared sizes and spacing. Corners and typography are independent.",
   "Контролы": "Controls",
   "Скругления": "Radii",
+  "Цвет (токен)": "Color (token)",
+  "Подсказка с количеством": "Count hint",
+  "Толщина и отступ фокусной рамки в пикселях; colorToken выбирает публичный токен цвета.": "Focus ring width and offset in pixels; colorToken chooses a public color token.",
   "Отступы": "Spacing",
   "Обзор компонентов": "Component overview",
   "компонентов для личных проектов. Найдите нужный элемент, откройте живой пример и настройте его под свою поверхность.": "components for personal projects. Find an element, open a live example and adapt it to your surface.",
@@ -312,7 +325,7 @@ export const catalogueDictionary: Record<string,string> = {
   "Недоступно": "Unavailable",
   "ОСНОВЫ / СЛОИ": "FOUNDATIONS / LAYERS",
   "Границы и всплывающие слои": "Borders and floating layers",
-  "Толщина — 0,5 px. Оттенок зависит от поверхности и назначения: мягкая граница панели, граница контрола, усиление и значимый индикатор. Floating светлее Raised в тёмной теме; мягкая тень лишь поддерживает отделение слоёв.": "Width: 0.5 px. Shade follows surface and purpose: subtle panel boundary, control boundary, emphasis and meaningful indicator. Floating is lighter than Raised in dark mode; a soft shadow supports layer separation.",
+  "Толщина — 0,5 px. Оттенок зависит от поверхности и назначения: мягкая граница панели, граница контрола, усиление и значимый индикатор. Overlay светлее Panel в тёмной теме; мягкая тень лишь поддерживает отделение слоёв.": "Width: 0.5 px. Shade follows surface and purpose: subtle panel boundary, control boundary, emphasis and meaningful indicator. Overlay is lighter than Panel in dark mode; a soft shadow supports layer separation.",
   "Степени контраста": "Contrast levels",
   "Последняя степень — для значимого выделения, а не для каждой рамки.": "The last level marks meaningful emphasis; it is not for every border.",
   "Окна и поверхности": "Windows and surfaces",
@@ -334,7 +347,7 @@ export const catalogueDictionary: Record<string,string> = {
   "Настройки представления": "View settings",
   "Готово": "Done",
   "Выбор внутри диалога": "Selection inside dialog",
-  "Primitives содержит number/border/width = 0.5. Semantic определяет цвет границы по теме, поверхности и элементу. Отдельная служебная коллекция Borders переключает Off / On на элементе или родительском фрейме.": "Primitives includes number/border/width = 0.5. Semantic defines border color by theme, surface and element. The Borders utility collection switches Off / On on an element or parent frame.",
+  "Semantic/border/width ссылается на Primitives/dimension/0_5 = 0.5. Режимы Semantic — Page / Inset / Panel / Overlay; Theme выбирает Light / Dark. Независимая коллекция Borders переключает декоративные обводки Off / On на элементе или родительском фрейме.": "Semantic/border/width aliases Primitives/dimension/0_5 = 0.5. Semantic modes are Page / Inset / Panel / Overlay; Theme selects Light / Dark. The independent Borders collection switches decorative outlines Off / On on an element or parent frame.",
   "ОСНОВЫ / ПОВЕДЕНИЕ": "FOUNDATIONS / BEHAVIOR",
   "Детали работают вместе.": "Details work together.",
   "Общие правила движения, состояний и адаптива действуют во всех компонентах.": "Shared motion, state and responsive rules apply across components.",
@@ -1481,330 +1494,41 @@ export function localizeCatalogueFixture<T>(fixture:T,translate:(text:string)=>s
 
 /** Exact release-history translations; the repository Markdown remains unchanged. */
 export const changelogTranslations: Record<string,{ru:string;en:string}> = {
-  "Renamed the library and package to Sloy UI / sloyui, with shared SLOY_UI metadata, an original vector logo and the sloyui.com identity.": {"ru": "Библиотека и пакет переименованы в Sloy UI / sloyui; название, адреса и новый векторный логотип задаются общими метаданными SLOY_UI.", "en": "Renamed the library and package to Sloy UI / sloyui, with shared SLOY_UI metadata, an original vector logo and the sloyui.com identity."},
-  "Replaced the captured color foundation with 417 independently authored OKLCH palette colors; preserved semantic APIs, context axes and contrast checks.": {"ru": "Исходная цветовая база заменена 417 самостоятельными цветами OKLCH; сохранены семантические API, оси контекста и проверки контраста.", "en": "Replaced the captured color foundation with 417 independently authored OKLCH palette colors; preserved semantic APIs, context axes and contrast checks."},
-  "Prepared a public installable package with explicit exports, MIT licensing, complete third-party notices and concise consumer documentation. Removed captures, frozen archives and obsolete audit reports from the current tree.": {"ru": "Подготовлен публичный устанавливаемый пакет с явными экспортами, MIT-лицензией, полными лицензиями сторонних материалов и краткой документацией. Снимки, архивы и устаревшие отчёты удалены из текущей версии.", "en": "Prepared a public installable package with explicit exports, MIT licensing, complete third-party notices and concise consumer documentation. Removed captures, frozen archives and obsolete audit reports from the current tree."},
-  "Excluded private local instruction drafts from static catalogue builds; preserved the local editor and revision checks.": {"ru": "Локальные файлы инструкций исключены из статической сборки каталога; редактор и проверка версий файлов сохранены.", "en": "Excluded private local instruction drafts from static catalogue builds; preserved the local editor and revision checks."},
-  "Increased paragraph and list line spacing, including Changelog and rich text instructions.": {"ru": "Увеличены межстрочные интервалы текста и списков, в том числе Changelog и инструкций в rich-редакторе.", "en": "Increased paragraph and list line spacing, including Changelog and rich text instructions."},
-
-"Added RU/EN Installation under Docs with release archive commands, styles, context setup and agent entry points.": {"ru": "Добавлена страница установки RU/EN в Docs: установка из архива, стили, настройка контекста и инструкции для агентов.", "en": "Added RU/EN Installation under Docs with release archive commands, styles, context setup and agent entry points."},
-"Connected foundation geometry, layer tags, instruction emphasis and text selection to the global accent; kept explicit palette comparisons and semantic status colors.": {"ru": "Образцы формы, теги слоёв, выделенные слова в инструкциях и выделение текста связаны с глобальным акцентом. Палитры сравнения и смысловые цвета статусов сохранены.", "en": "Connected foundation geometry, layer tags, instruction emphasis and text selection to the global accent; kept explicit palette comparisons and semantic status colors."},
-"Separated visible 1 px control dividers from quiet 0.5 px panel lines; both adapt to surfaces and remain independent of decorative border settings. CodeBlock and API tables keep single, consistent boundaries.": {"ru": "Самостоятельные разделители остаются заметными, а линии панелей и составных контролов стали мягче. Границы адаптируются к поверхности, сохраняются без декоративных рамок и не удваиваются.", "en": "Separated visible 1 px control dividers from quiet 0.5 px panel lines; both adapt to surfaces and remain independent of decorative border settings. CodeBlock and API tables keep single, consistent boundaries."},
-"Added controlled Kanban card-body drag between columns and ordered insertion, with keyboard/menu alternatives and optional handles.": {"ru": "В канбане добавлен перенос за корпус карточки между колонками и изменение порядка; доступны клавиатура, меню и необязательные ручки.", "en": "Added controlled Kanban card-body drag between columns and ordered insertion, with keyboard/menu alternatives and optional handles."},
-"Restored global radius and border inheritance for ToastStack previews and framed column actions; slider thumbs and RadioGroup highlights follow radius context.": {"ru": "ToastStack и действия колонок снова наследуют глобальные скругления и рамки; бегунок Slider и подложка RadioGroup следуют radius-контексту.", "en": "Restored global radius and border inheritance for ToastStack previews and framed column actions; slider thumbs and RadioGroup highlights follow radius context."},
-"Made Primary fill a solid local accent distinct from soft accent selection across Checkbox, Radio, Switch, RadioGroup and Slider; neutral Switch remains available.": {"ru": "Primary-заливка контролов выбора использует контрастный локальный акцент и отличается от мягкой заливки; у Switch сохранён нейтральный вариант.", "en": "Made Primary fill a solid local accent distinct from soft accent selection across Checkbox, Radio, Switch, RadioGroup and Slider; neutral Switch remains available."},
-"Unified Ready, Review, Rework and Archive statuses; archived all 12 charts and hid them from default catalogue lists while preserving direct pages and exports.": {"ru": "Добавлены единые статусы Готов, Проверка, Доработка и Архив. Все 12 графиков архивированы и скрыты из общего списка; прямые страницы и экспорты сохранены.", "en": "Unified Ready, Review, Rework and Archive statuses; archived all 12 charts and hid them from default catalogue lists while preserving direct pages and exports."},
-"Fixed Accordion hover coverage and reset; only the chevron rotates while content icons remain stationary.": {"ru": "Исправлены область и сброс наведения Accordion; поворачивается только шеврон, иконка остаётся неподвижной.", "en": "Fixed Accordion hover coverage and reset; only the chevron rotates while content icons remain stationary."},
-"Consolidated navigation and overview into five sections while preserving detailed filter categories; added Collapse all / Expand all without resetting the current page or filters.": {"ru":"Навигация и обзор объединены в пять разделов с подробными категориями в фильтре. Добавлены «Свернуть все» и «Развернуть все» без сброса страницы и фильтров.","en":"Consolidated navigation and overview into five sections while preserving detailed filter categories; added Collapse all / Expand all without resetting the current page or filters."},
-"Restored symmetric popup divider insets and quiet single-line separators in Menu and editor block menus.": {"ru": "Восстановлены симметричные отступы и мягкие одиночные разделители в Menu и контекстных меню редактора.", "en": "Restored symmetric popup divider insets and quiet single-line separators in Menu and editor block menus."},
-"Archived FloatingField in favor of Input with labelPlacement=\"inside\"; existing imports keep working and old catalogue links resolve to Input.": {"ru": "FloatingField архивирован в пользу Input с labelPlacement=\"inside\". Совместимый экспорт сохранён, старые ссылки открывают Input.", "en": "Archived FloatingField in favor of Input with labelPlacement=\"inside\"; existing imports keep working and old catalogue links resolve to Input."},
-"Extended ToastStack with centered container/viewport placement, bounded scrolling, loading states and capsule shape; unread notices retain their lifetime.": {"ru": "ToastStack получил размещение по центру экрана или блока, ограниченную прокрутку, состояние загрузки и форму капсулы; непрочитанные уведомления сохраняют время показа.", "en": "Extended ToastStack with centered container/viewport placement, bounded scrolling, loading states and capsule shape; unread notices retain their lifetime."},
-"Added FileCard for images, PDF, presentations, documents, spreadsheets and other formats with separate open/download/remove actions; marked needs-review.": {"ru": "Добавлена FileCard для изображений, PDF, презентаций, документов, таблиц и других форматов с отдельными действиями открытия, скачивания и удаления; статус — требует проверки.", "en": "Added FileCard for images, PDF, presentations, documents, spreadsheets and other formats with separate open/download/remove actions; marked needs-review."},
-"Changed the compact language switch labels to RU and EN.": {"ru": "Подписи компактного переключателя языка изменены на RU и EN.", "en": "Changed the compact language switch labels to RU and EN."},
-
-  "Added workspace Tabs with a short active underline, framed KanbanColumn groups and framed ButtonGroup actions.": {"ru": "Добавлены Tabs в стиле workspace с короткой отметкой активной вкладки, колонки KanbanColumn с рамками и групповые действия ButtonGroup.", "en": "Added workspace Tabs with a short active underline, framed KanbanColumn groups and framed ButtonGroup actions."},
-  "Added MarkdownEditorV2 using the existing editor engine: selection toolbar, in-place text/highlight palettes, block types, links and editable Markdown tables. The classic editor remains available; the new component is marked needs-review.": {"ru": "Добавлен MarkdownEditorV2 на общем движке: панель по выделению, палитры текста и фона внутри панели, типы блоков, ссылки и редактируемые Markdown-таблицы. Прежний редактор сохранён; новый компонент требует проверки.", "en": "Added MarkdownEditorV2 using the existing editor engine: selection toolbar, in-place text/highlight palettes, block types, links and editable Markdown tables. The classic editor remains available; the new component is marked needs-review."},
-  "Extended DataTable with two-axis scrolling, sticky header and summaries, left/right columns and top/bottom rows. Narrow containers release excess pins to keep a usable scroll lane. The 40-row example combines currency, segmented probability and mini charts.": {"ru": "DataTable получил прокрутку по двум осям, закреплённую шапку и итоги, колонки слева/справа и строки сверху/снизу. Узкие контейнеры снимают лишние закрепления. Пример на 40 строк включает суммы, сегменты вероятности и мини-графики.", "en": "Extended DataTable with two-axis scrolling, sticky header and summaries, left/right columns and top/bottom rows. Narrow containers release excess pins to keep a usable scroll lane. The 40-row example combines currency, segmented probability and mini charts."},
-  "Simplified catalogue navigation: plain group counts, language on the left, a version link to Changelog on the right and component IDs at the page bottom. Palette Columns always wraps without a redundant toggle.": {"ru": "Упрощена навигация каталога: счётчики без подложек, язык слева, ссылка версии на Changelog справа, ID внизу страницы. Столбцы палитр переносятся автоматически, лишний переключатель скрыт.", "en": "Simplified catalogue navigation: plain group counts, language on the left, a version link to Changelog on the right and component IDs at the page bottom. Palette Columns always wraps without a redundant toggle."},
-  "Increased contrast of structural API/table boundaries independently of decorative borders. Updated typed playgrounds, generated API reference and agent contracts.": {"ru": "Усилены структурные границы API и таблиц независимо от декоративных обводок. Обновлены песочницы, генерируемый API Reference и контракты для агентов.", "en": "Increased contrast of structural API/table boundaries independently of decorative borders. Updated typed playgrounds, generated API reference and agent contracts."},
-"Rebuilt the component overview with one centered example per plain preview and a compact caption. Overview and Changelog share the Docs navigation group.":{"ru":"Обзор компонентов перестроен: один центрированный пример на простом превью и компактная подпись. Обзор и Changelog объединены в группу Docs.","en":"Rebuilt the component overview with one centered example per plain preview and a compact caption. Overview and Changelog share the Docs navigation group."},
-"Added Russian/English runtime and catalogue localization, a persistent sidebar switch, locale-aware dates/numbers and portal inheritance. Consumer content and explicit formatters stay unchanged.":{"ru":"Добавлены русская/английская локализация библиотеки и каталога, сохраняемый переключатель в боковом меню, даты/числа по языку и наследование в порталах. Пользовательский контент и явные форматтеры сохраняются.","en":"Added Russian/English runtime and catalogue localization, a persistent sidebar switch, locale-aware dates/numbers and portal inheritance. Consumer content and explicit formatters stay unchanged."},
-"Reduced the active instruction set to six canonical files. Added local instruction creation/deletion with revision checks, draft preservation and protected core files; historical guides remain available in the reference archive.":{"ru":"Активные инструкции сокращены до шести канонических файлов. Добавлены локальное создание/удаление с ревизиями, сохранение черновиков и защита основных файлов; старые руководства сохранены в архиве.","en":"Reduced the active instruction set to six canonical files. Added local instruction creation/deletion with revision checks, draft preservation and protected core files; historical guides remain available in the reference archive."},
-"Added token-based directional ScrollArea fades with configurable depth and reveal distance. Floating actions, shadows and structural boundaries remain outside the mask.":{"ru":"Добавлены направленные затухания ScrollArea на токенах с настраиваемыми глубиной и расстоянием раскрытия. Плавающие действия, тени и структурные границы находятся вне маски.","en":"Added token-based directional ScrollArea fades with configurable depth and reveal distance. Floating actions, shadows and structural boundaries remain outside the mask."},
-"Added ResizablePanelGroup, ResizablePanel and ResizableHandle: percentage layouts, nested axes, min/max limits, pointer and keyboard resizing, RTL and controlled/uncontrolled state. The new canonical component is marked needs-review.":{"ru":"Добавлены ResizablePanelGroup, ResizablePanel и ResizableHandle: процентная раскладка, вложенные оси, min/max, изменение указателем и клавиатурой, RTL и controlled/uncontrolled. Новый канонический компонент требует проверки.","en":"Added ResizablePanelGroup, ResizablePanel and ResizableHandle: percentage layouts, nested axes, min/max limits, pointer and keyboard resizing, RTL and controlled/uncontrolled state. The new canonical component is marked needs-review."},
-"Preserved structural table/API boundaries with decorative borders off; related cards use a raised surface and respect outlined mode.":{"ru":"Структурные границы таблиц/API видимы с выключенными декоративными обводками; связанные карточки используют Raised и учитывают режим обводок.","en":"Preserved structural table/API boundaries with decorative borders off; related cards use a raised surface and respect outlined mode."},
-"Made the RichTextEditor toolbar opt-in, simplified block actions into submenus, spaced adjacent code blocks and fixed popup border inheritance. Cross-block pointer/keyboard selection supports copying and editing partial ranges.":{"ru":"Панель RichTextEditor включается явно; действия блоков собраны в подменю, добавлены промежутки между кодом и исправлено наследование границ popup. Выделение между блоками указателем/клавиатурой поддерживает копирование и редактирование частичных диапазонов.","en":"Made the RichTextEditor toolbar opt-in, simplified block actions into submenus, spaced adjacent code blocks and fixed popup border inheritance. Cross-block pointer/keyboard selection supports copying and editing partial ranges."},
-  "Исправлен сегмент просмотра палитр: стабильная подложка и отдельная строка управления. Добавлен перенос по ширине для оттенков в строках и целых палитр в столбцах; непрерывный режим доступен переключателем.": {
-    "ru": "Исправлен сегмент просмотра палитр: стабильная подложка и отдельная строка управления. Добавлен перенос по ширине для оттенков в строках и целых палитр в столбцах; непрерывный режим доступен переключателем.",
-    "en": "Fixed the palette view selector with a stable surface and a dedicated controls row. Added width wrapping for shades in rows and complete palettes in columns; continuous layout remains available through a switch."
-  },
-  "Primary Button и IconButton всегда нейтральные; accent и accent-secondary дают цветные основной и вторичный варианты. Chip выше Tag, с мягкими углами и полной pill-формой в Rounded.": {
-    "ru": "Primary Button и IconButton всегда нейтральные; accent и accent-secondary дают цветные основной и вторичный варианты. Chip выше Tag, с мягкими углами и полной pill-формой в Rounded.",
-    "en": "Primary Button and IconButton are always neutral; accent and accent-secondary provide colored primary and secondary variants. Chip is taller than Tag, with soft corners and full pill geometry in Rounded mode."
-  },
-  "Исправлен общий hover соседних Select, ComboBox года календаря и строк SidebarPanel. SegmentedControl сразу наследует радиусы; Accordion открывается без повторного native toggle.": {
-    "ru": "Исправлен общий hover соседних Select, ComboBox года календаря и строк SidebarPanel. SegmentedControl сразу наследует радиусы; Accordion открывается без повторного native toggle.",
-    "en": "Fixed shared hover across adjacent Select controls, the calendar year ComboBox and SidebarPanel rows. SegmentedControl inherits radius immediately; Accordion opens without a repeated native toggle."
-  },
-  "CodeBlock получил filename, номера строк, аккуратные поверхности и точное копирование исходника. Пример использования на странице компонента открыт сразу.": {
-    "ru": "CodeBlock получил filename, номера строк, аккуратные поверхности и точное копирование исходника. Пример использования на странице компонента открыт сразу.",
-    "en": "CodeBlock adds filename, line numbers, refined surfaces and exact source copying. The component page shows its usage example immediately."
-  },
-  "Добавлены обзор с превью, Changelog, API Reference из экспортируемых TypeScript-типов, краткие инструкции, контракты для агентов и связанные компоненты. ID имеют формат cp-001; у готовых компонентов нет маркера в меню.": {
-    "ru": "Добавлены обзор с превью, Changelog, API Reference из экспортируемых TypeScript-типов, краткие инструкции, контракты для агентов и связанные компоненты. ID имеют формат cp-001; у готовых компонентов нет маркера в меню.",
-    "en": "Added preview overview, Changelog, API Reference derived from exported TypeScript types, concise instructions, agent contracts and related components. IDs use cp-001; ready components have no navigation marker."
-  },
-  "Размер идёт первым в параметрах песочницы, геометрия фокуса сгруппирована в конце. Sidebar использует Canvas, правая область Base.": {
-    "ru": "Размер идёт первым в параметрах песочницы, геометрия фокуса сгруппирована в конце. Sidebar использует Canvas, правая область Base.",
-    "en": "Size appears first in Playground settings; focus geometry is grouped last. Sidebar uses Canvas and the content area uses Base."
-  },
-  "ContentLayout получил настраиваемый порог автокомпоновки, ограничение размеров по контейнеру и более удобный разделитель. Новый ResizableCard изменяет размер за угол и с клавиатуры; статус требует проверки.": {
-    "ru": "ContentLayout получил настраиваемый порог автокомпоновки, ограничение размеров по контейнеру и более удобный разделитель. Новый ResizableCard изменяет размер за угол и с клавиатуры; статус требует проверки.",
-    "en": "ContentLayout adds a configurable stacking threshold, container size bounds and an improved divider. New ResizableCard resizes by corner or keyboard and requires review."
-  },
-  "Исправлены геометрия, отступы и обрезание стаков при раскрытии и разборе карточек.": {
-    "ru": "Исправлены геометрия, отступы и обрезание стаков при раскрытии и разборе карточек.",
-    "en": "Fixed stack geometry, spacing and clipping during expansion and card review."
-  },
-  "Исправлены независимые Borders/Radius в полях, комментариях, сообщениях, коде, календаре, SVG-графиках и открытых порталах. Декоративные оболочки больше не получают постоянный структурный контур; Card и явные контуры сохраняют свой контракт.": {
-    "ru": "Исправлены независимые Borders/Radius в полях, комментариях, сообщениях, коде, календаре, SVG-графиках и открытых порталах. Декоративные оболочки больше не получают постоянный структурный контур; Card и явные контуры сохраняют свой контракт.",
-    "en": "Fixed independent Borders/Radius in fields, comments, messages, code, calendars, SVG charts and open portals. Decorative shells no longer receive permanent structural outlines; Card and explicit boundaries keep their contract."
-  },
-  "Shared hover непрерывен через промежутки и дочерние иконки/текст, корректно прерывается и восстанавливается после скролла. Активные отметки бокового меню не анимируют смену выбора.": {
-    "ru": "Shared hover непрерывен через промежутки и дочерние иконки/текст, корректно прерывается и восстанавливается после скролла. Активные отметки бокового меню не анимируют смену выбора.",
-    "en": "Shared hover remains continuous across gaps and child icons/text, pauses correctly and restores after scrolling. Active sidebar markers no longer animate selection changes."
-  },
-  "Поиск каталога и фильтр выровнены; `Popover.triggerIcon` предоставляет настоящий иконочный триггер. Добавлены воспроизводимые browser fixtures для всех 98 компонентов, открытых порталов и реальных WAAPI-переходов.": {
-    "ru": "Поиск каталога и фильтр выровнены; `Popover.triggerIcon` предоставляет настоящий иконочный триггер. Добавлены воспроизводимые browser fixtures для всех 98 компонентов, открытых порталов и реальных WAAPI-переходов.",
-    "en": "Aligned catalogue search and filters; `Popover.triggerIcon` provides a real icon trigger. Added reproducible browser fixtures for all 98 components, open portals and actual WAAPI transitions."
-  },
-  "Made clean checkout validation deterministic: token diagnostics create their directory; catalogue self-imports resolve to source before dist exists. Release CI also validates isolated archive consumption.": {
-    "ru": "Проверка чистого checkout стала воспроизводимой: диагностика токенов создаёт свой каталог, импорты каталога разрешаются в исходники до появления dist. Release CI проверяет использование архива в отдельном проекте.",
-    "en": "Made clean checkout validation deterministic: token diagnostics create their directory; catalogue self-imports resolve to source before dist exists. Release CI also validates isolated archive consumption."
-  },
-  "Added permanent component IDs, review statuses, multiple group memberships and catalogue filters: 98 active pages, one archived MarkdownEditor compatibility export. New Chip, BottomSheet, FileTree and PreviewRail require review.": {
-    "ru": "Добавлены постоянные ID компонентов, статусы проверки, несколько групп и фильтры каталога: 98 активных страниц и архивный совместимый экспорт MarkdownEditor. Новые Chip, BottomSheet, FileTree и PreviewRail требуют проверки.",
-    "en": "Added permanent component IDs, review statuses, multiple group memberships and catalogue filters: 98 active pages, one archived MarkdownEditor compatibility export. New Chip, BottomSheet, FileTree and PreviewRail require review."
-  },
-  "Reworked ColorPicker, Slider, neutral selection chips, palette reactions, CodeBlock and Rich/Markdown instruction editing; untouched Markdown round-trips exactly.": {
-    "ru": "Обновлены ColorPicker, Slider, нейтральные выбранные метки, реакции палитры, CodeBlock и редактирование инструкций Rich/Markdown; нетронутый Markdown сохраняется дословно.",
-    "en": "Reworked ColorPicker, Slider, neutral selection chips, palette reactions, CodeBlock and Rich/Markdown instruction editing; untouched Markdown round-trips exactly."
-  },
-  "Added moving shared hover, overflow Tabs, bouncy Accordion, vertical ContentLayout with optional divider, optional card selection and surface-aware Kanban/DataTable/Sidebar.": {
-    "ru": "Добавлены движущийся общий hover, прокрутка Tabs, упругий Accordion, вертикальный ContentLayout с необязательным разделителем, необязательный выбор карточек и контекстные Kanban/DataTable/Sidebar.",
-    "en": "Added moving shared hover, overflow Tabs, bouncy Accordion, vertical ContentLayout with optional divider, optional card selection and surface-aware Kanban/DataTable/Sidebar."
-  },
-  "Repaired stack geometry and explicit expansion, AnnouncementBar, TextShimmer, Tooltip arrows and feedback tone/color/contrast variants. Independent browser review additionally fixed FileTree intrinsic sizing/metadata contrast, pill radius and controlled ToastStack hover.": {
-    "ru": "Исправлены геометрия и явное раскрытие стеков, AnnouncementBar, TextShimmer, стрелки Tooltip и варианты tone/color/contrast сообщений. Независимая браузерная проверка также исправила размеры FileTree, контраст metadata, pill-радиус и управляемый hover ToastStack.",
-    "en": "Repaired stack geometry and explicit expansion, AnnouncementBar, TextShimmer, Tooltip arrows and feedback tone/color/contrast variants. Independent browser review additionally fixed FileTree intrinsic sizing/metadata contrast, pill radius and controlled ToastStack hover."
-  },
-  "Made SidebarPanel footers compact with explicit alignment, added navigation groups and per-item tab/sidebar accents and counters, and fixed reversible disclosure exits and closed-group spacing. — 2026-10-07": {
-    "ru": "Нижний блок SidebarPanel стал компактным с явным выравниванием; добавлены группы навигации, акценты и счётчики вкладок/пунктов, исправлены обратимые анимации закрытия и промежутки закрытых групп. — 2026-10-07",
-    "en": "Made SidebarPanel footers compact with explicit alignment, added navigation groups and per-item tab/sidebar accents and counters, and fixed reversible disclosure exits and closed-group spacing. — 2026-10-07"
-  },
-  "Balanced Rounded code/card insets, protected API summary focus geometry and centered Select chevrons independently of text padding. — 2026-10-07": {
-    "ru": "Согласованы Rounded-отступы кода и карточек, защищена геометрия фокуса API summary; шевроны Select центрируются независимо от текстовых отступов. — 2026-10-07",
-    "en": "Balanced Rounded code/card insets, protected API summary focus geometry and centered Select chevrons independently of text padding. — 2026-10-07"
-  },
-  "Integrated all seven queued changes: aligned rich calendar tooltips, unique schedule landmarks, XL tab counters and tree collapse; preserved editor no-op custom data and verified the packaged CalendarSchedule example. — 2026-10-07": {
-    "ru": "Включены семь ожидавших изменений: подсказки календаря, уникальные landmarks расписания, XL-счётчики Tabs и закрытие дерева. Сохранены custom data редактора без изменений; проверен упакованный пример CalendarSchedule. — 2026-10-07",
-    "en": "Integrated all seven queued changes: aligned rich calendar tooltips, unique schedule landmarks, XL tab counters and tree collapse; preserved editor no-op custom data and verified the packaged CalendarSchedule example. — 2026-10-07"
-  },
-  "Moved ContentCard selection into independent corner overlays; rebuilt CodeBlock header with a compact leading language selector, optional filename, trailing actions, stable divider and accent states; added rich inverse Tooltips with optional arrows. — 2026-10-07": {
-    "ru": "Выбор ContentCard перенесён в независимые угловые слои. Шапка CodeBlock получила компактный выбор языка слева, необязательное имя файла, действия справа, стабильный разделитель и акцентные состояния; добавлены подробные inverse Tooltip со стрелками. — 2026-10-07",
-    "en": "Moved ContentCard selection into independent corner overlays; rebuilt CodeBlock header with a compact leading language selector, optional filename, trailing actions, stable divider and accent states; added rich inverse Tooltips with optional arrows. — 2026-10-07"
-  },
-  "Unified Primary Button, Checkbox, Radio and Switch on the local solid accent pair; corrected the off Switch thumb and isolated RadioGroup styles. Verified all accents, surfaces and themes with real pointer and keyboard input. — 2026-10-07": {
-    "ru": "Primary Button, Checkbox, Radio и Switch объединены на локальной solid accent-паре; исправлен выключенный бегунок Switch и изолированы стили RadioGroup. Все акценты, поверхности и темы проверены реальным указателем и клавиатурой. — 2026-10-07",
-    "en": "Unified Primary Button, Checkbox, Radio and Switch on the local solid accent pair; corrected the off Switch thumb and isolated RadioGroup styles. Verified all accents, surfaces and themes with real pointer and keyboard input. — 2026-10-07"
-  },
-  "Replaced RichTextEditor block arrows with grip-only drag, an insertion marker and block menu; preserved selection, custom data, undo and keyboard alternatives. Softened compound-row reactions across Arc components and fixed nested surface boundaries and comment floating contexts. — 2026-10-07": {
-    "ru": "Стрелки блоков RichTextEditor заменены перетаскиванием за ручку, маркером вставки и меню блока; сохранены выделение, custom data, Undo и клавиатурные альтернативы. Смягчены реакции составных строк Arc, исправлены вложенные границы поверхностей и floating-контекст комментариев. — 2026-10-07",
-    "en": "Replaced RichTextEditor block arrows with grip-only drag, an insertion marker and block menu; preserved selection, custom data, undo and keyboard alternatives. Softened compound-row reactions across Arc components and fixed nested surface boundaries and comment floating contexts. — 2026-10-07"
-  },
-  "Added controlled calendar ranges with two months, searchable years, independent date highlights, animated navigation, and rich day schedules with hover/focus previews and responsive side/bottom placement. Preserved single-date selection and floating surface context. — 2026-10-07": {
-    "ru": "Добавлены управляемый календарный период с двумя месяцами, поиск года, независимые отметки дат, анимированная навигация и подробное расписание дня с hover/focus-превью и адаптивным размещением сбоку/снизу. Сохранены одиночный выбор и floating-контекст. — 2026-10-07",
-    "en": "Added controlled calendar ranges with two months, searchable years, independent date highlights, animated navigation, and rich day schedules with hover/focus previews and responsive side/bottom placement. Preserved single-date selection and floating surface context. — 2026-10-07"
-  },
-  "Restored transparent Outline buttons with persistent semantic borders; completed XL across all size APIs, optical slots, nested groups, selection fields and modal widths, with Playground and browser coverage. — 2026-10-07": {
-    "ru": "Восстановлены прозрачные Outline-кнопки с постоянными смысловыми границами. XL завершён во всех size API, оптических слотах, вложенных группах, полях выбора и ширинах окон; добавлены Playground и браузерные проверки. — 2026-10-07",
-    "en": "Restored transparent Outline buttons with persistent semantic borders; completed XL across all size APIs, optical slots, nested groups, selection fields and modal widths, with Playground and browser coverage. — 2026-10-07"
-  },
-  "Restored Button-only tree-shaking by marking pure component/static registrations; isolated consumer import decreased from 9.65 kB to 1.55 kB gzip. — 2026-10-07": {
-    "ru": "Восстановлен tree-shaking для импорта только Button: чистые регистрации помечены, изолированный импорт уменьшился с 9,65 до 1,55 kB gzip. — 2026-10-07",
-    "en": "Restored Button-only tree-shaking by marking pure component/static registrations; isolated consumer import decreased from 9.65 kB to 1.55 kB gzip. — 2026-10-07"
-  },
-  "Audited all 33 expansion components against Arc source: repaired selection surfaces and popups, RadioGroup composition, live Alt cursor feedback, editor custom blocks, comment mentions, message exits, chart geometry/contrast/empty states, and responsive previews; expanded typed controls and documented remaining Arc differences. Added compact review markers to catalogue navigation. — 2026-10-07": {
-    "ru": "Проверены все 33 дополнительных компонента по исходникам Arc: исправлены поверхности выбора и popup, RadioGroup, обратная связь Alt-курсора, custom blocks редактора, упоминания, выход сообщений, геометрия/контраст/пустые состояния графиков и адаптивное превью. Расширены typed controls, записаны отличия от Arc, добавлены компактные маркеры проверки. — 2026-10-07",
-    "en": "Audited all 33 expansion components against Arc source: repaired selection surfaces and popups, RadioGroup composition, live Alt cursor feedback, editor custom blocks, comment mentions, message exits, chart geometry/contrast/empty states, and responsive previews; expanded typed controls and documented remaining Arc differences. Added compact review markers to catalogue navigation. — 2026-10-07"
-  },
-  "Added inherited field focus geometry, neutral search clearing and corrected pointer selection/ComboBox icon containment. — 2026-10-07": {
-    "ru": "Добавлены наследуемая геометрия фокуса полей и нейтральная очистка поиска; исправлены выбор указателем и размещение иконок ComboBox. — 2026-10-07",
-    "en": "Added inherited field focus geometry, neutral search clearing and corrected pointer selection/ComboBox icon containment. — 2026-10-07"
-  },
-  "Marked the 33 components from the expansion to 95 with a neutral review tag beside the catalogue heading. — 2026-10-07": {
-    "ru": "33 компонента расширения до 95 отмечены нейтральным тегом проверки рядом с заголовком каталога. — 2026-10-07",
-    "en": "Marked the 33 components from the expansion to 95 with a neutral review tag beside the catalogue heading. — 2026-10-07"
-  },
-  "Made ButtonGroup neutral by default across surfaces, with explicit inherited or chosen accent colors; softened canonical group reactions and kept the prefix on the normal fill. Gave the Instructions panel a structural boundary, kept file extensions visible in its navigation, and aligned lg FloatingActionBar examples with accent actions. — 2026-10-07": {
-    "ru": "ButtonGroup нейтрален по умолчанию на всех поверхностях; наследуемый или явный акцент выбирается отдельно. Смягчены реакции группы, prefix сохраняет обычную заливку. Панель инструкций получила structural boundary, расширения файлов остаются видимыми, примеры lg FloatingActionBar используют акцентные действия. — 2026-10-07",
-    "en": "Made ButtonGroup neutral by default across surfaces, with explicit inherited or chosen accent colors; softened canonical group reactions and kept the prefix on the normal fill. Gave the Instructions panel a structural boundary, kept file extensions visible in its navigation, and aligned lg FloatingActionBar examples with accent actions. — 2026-10-07"
-  },
-  "Selected black/white Primary ink from each actual accent shade; validated one stable ink across normal/hover/pressed for vivid and solid fills. — 2026-10-07": {
-    "ru": "Чёрный/белый текст Primary выбирается по фактическому оттенку акцента; проверена стабильность в normal/hover/pressed для vivid и solid заливок. — 2026-10-07",
-    "en": "Selected black/white Primary ink from each actual accent shade; validated one stable ink across normal/hover/pressed for vivid and solid fills. — 2026-10-07"
-  },
-  "Added always-visible structural boundaries for nested equal surfaces and made the catalogue code section follow the selected example surface. — 2026-10-07": {
-    "ru": "Добавлены постоянные structural boundaries вложенных одинаковых поверхностей; секция кода каталога следует выбранной поверхности примера. — 2026-10-07",
-    "en": "Added always-visible structural boundaries for nested equal surfaces and made the catalogue code section follow the selected example surface. — 2026-10-07"
-  },
-  "Animated disclosure opening and closing for Accordion, Alert, TreeView, JsonViewer and chart data, with reversible transitions, focus handling and reduced motion. — 2026-10-07": {
-    "ru": "Раскрытие и закрытие Accordion, Alert, TreeView, JsonViewer и данных графиков анимированы с обратимыми переходами, обработкой фокуса и reduced motion. — 2026-10-07",
-    "en": "Animated disclosure opening and closing for Accordion, Alert, TreeView, JsonViewer and chart data, with reversible transitions, focus handling and reduced motion. — 2026-10-07"
-  },
-  "Added in-block language selection and contextual neutral/accent surfaces to CodeBlock, preserving safe source rendering and copy. — 2026-10-07": {
-    "ru": "CodeBlock получил выбор языка внутри блока и контекстные neutral/accent поверхности; безопасный вывод и копирование исходника сохранены. — 2026-10-07",
-    "en": "Added in-block language selection and contextual neutral/accent surfaces to CodeBlock, preserving safe source rendering and copy. — 2026-10-07"
-  },
-  "Quieted calendar month/year selectors and aligned their nested geometry with the global radius mode. — 2026-10-07": {
-    "ru": "Смягчены селекторы месяца/года календаря; вложенная геометрия согласована с глобальным радиусом. — 2026-10-07",
-    "en": "Quieted calendar month/year selectors and aligned their nested geometry with the global radius mode. — 2026-10-07"
-  },
-  "Matched Checkbox's default fill and checkmark to the solid Primary accent pair, preserving an explicit vivid option. — 2026-10-07": {
-    "ru": "Заливка и знак Checkbox по умолчанию совпадают с solid Primary accent-парой; vivid остаётся явным вариантом. — 2026-10-07",
-    "en": "Matched Checkbox's default fill and checkmark to the solid Primary accent pair, preserving an explicit vivid option. — 2026-10-07"
-  },
-  "Added shared optical insets for rounded text controls and menu rows; inset Playground settings in a Canvas frame that remains visible with borders off. — 2026-10-07": {
-    "ru": "Добавлены общие оптические отступы Rounded-полей и строк меню; настройки Playground помещены в Canvas-рамку, видимую с выключенными обводками. — 2026-10-07",
-    "en": "Added shared optical insets for rounded text controls and menu rows; inset Playground settings in a Canvas frame that remains visible with borders off. — 2026-10-07"
-  },
-  "Fixed initial segmented highlights, vertical scroll chaining over palette swatches and matching swatch radii. TreeView's selection fill and guide marker now move together and remeasure on resize. — 2026-10-07": {
-    "ru": "Исправлены начальные сегментные отметки, вертикальная прокрутка поверх палитры и радиусы образцов. Заливка выбора TreeView и маркер направляющих двигаются вместе и пересчитываются при resize. — 2026-10-07",
-    "en": "Fixed initial segmented highlights, vertical scroll chaining over palette swatches and matching swatch radii. TreeView's selection fill and guide marker now move together and remeasure on resize. — 2026-10-07"
-  },
-  "Added TreeView guide tracks and a current-page marker to catalogue navigation; guides follow nesting, collapse and filtered results. — 2026-10-07": {
-    "ru": "Добавлены направляющие TreeView и маркер текущей страницы каталога; они следуют вложенности, закрытию и фильтрации. — 2026-10-07",
-    "en": "Added TreeView guide tracks and a current-page marker to catalogue navigation; guides follow nesting, collapse and filtered results. — 2026-10-07"
-  },
-  "Show all 18 palettes together with Neutral first, switching between horizontal rows and vertical columns in a horizontal ScrollArea. — 2026-10-07": {
-    "ru": "Все 18 палитр показаны вместе, Neutral первой; строки и столбцы переключаются внутри горизонтального ScrollArea. — 2026-10-07",
-    "en": "Show all 18 palettes together with Neutral first, switching between horizontal rows and vertical columns in a horizontal ScrollArea. — 2026-10-07"
-  },
-  "Fixed the Compact radius mode being overridden on the page root; catalogue blocks now use shared radius tokens and the radius control has a distinct icon. — 2026-10-07": {
-    "ru": "Исправлено переопределение Compact-радиуса на корне страницы; блоки каталога используют общие radius-токены, регулятор радиуса получил отдельную иконку. — 2026-10-07",
-    "en": "Fixed the Compact radius mode being overridden on the page root; catalogue blocks now use shared radius tokens and the radius control has a distinct icon. — 2026-10-07"
-  },
-  "Strengthened contextual ButtonGroup fills and interaction states; fixed wrapping and excess stretching in the Layers floating-toolbar examples. — 2026-10-07": {
-    "ru": "Усилены контекстные заливки и состояния ButtonGroup; исправлены перенос и избыточное растягивание плавающих панелей в примерах Layers. — 2026-10-07",
-    "en": "Strengthened contextual ButtonGroup fills and interaction states; fixed wrapping and excess stretching in the Layers floating-toolbar examples. — 2026-10-07"
-  },
-  "Kept the catalogue content area on a fixed Raised surface (white in Light). Surface selection now applies only to the interactive preview and story islands, preserving stable headings, settings and code. — 2026-10-07": {
-    "ru": "Основной контент каталога закреплён на Raised (белый в Light). Выбор поверхности влияет только на интерактивное превью и примеры, сохраняя стабильность заголовков, настроек и кода. — 2026-10-07",
-    "en": "Kept the catalogue content area on a fixed Raised surface (white in Light). Surface selection now applies only to the interactive preview and story islands, preserving stable headings, settings and code. — 2026-10-07"
-  },
-  "Added 33 Arc-inspired components: selection/number controls, ValueScrubber, block RichTextEditor, tables/tree/JSON, comments and pins, messages, navigation/hover panels, and all 13 charts. Integrated 95 catalogue pages with Playgrounds and an isolated consumer example. Arc MIT attribution is retained. — 2026-10-07": {
-    "ru": "Добавлены 33 компонента по мотивам Arc: выбор/числа, ValueScrubber, блочный RichTextEditor, таблицы/дерево/JSON, комментарии и закрепления, сообщения, навигация/hover и все 13 графиков. Включены 95 страниц с Playground и изолированный пример потребителя. Атрибуция Arc MIT сохранена. — 2026-10-07",
-    "en": "Added 33 Arc-inspired components: selection/number controls, ValueScrubber, block RichTextEditor, tables/tree/JSON, comments and pins, messages, navigation/hover panels, and all 13 charts. Integrated 95 catalogue pages with Playgrounds and an isolated consumer example. Arc MIT attribution is retained. — 2026-10-07"
-  },
-  "Added faster shared highlights, SegmentedControl/Tabs variants and configurable separators. Fixed ButtonGroup surface states and count spacing, joined SplitButton separator, divided/vertical FloatingActionBar sections and icon-only vertical actions. — 2026-10-07": {
-    "ru": "Добавлены более быстрые общие отметки, варианты SegmentedControl/Tabs и настраиваемые разделители. Исправлены поверхности ButtonGroup, отступы счётчиков, разделитель SplitButton, разделённые/вертикальные FloatingActionBar и вертикальные действия с иконками. — 2026-10-07",
-    "en": "Added faster shared highlights, SegmentedControl/Tabs variants and configurable separators. Fixed ButtonGroup surface states and count spacing, joined SplitButton separator, divided/vertical FloatingActionBar sections and icon-only vertical actions. — 2026-10-07"
-  },
-  "Added scoped radius presets and Tag pill geometry. Anchored overlays preserve a 12 px gap, flip/clamp to the viewport and inherit local context; removed visible browser picker controls. Compact agent selection guidance and anti-patterns are separated from internal catalogue reports. — 2026-10-07": {
-    "ru": "Добавлены локальные radius-пресеты и pill-геометрия Tag. Всплывающие панели сохраняют зазор 12 px, переворачиваются/ограничиваются viewport и наследуют контекст; видимые браузерные пикеры удалены. Инструкции выбора компонентов и ошибки отделены от внутренних отчётов. — 2026-10-07",
-    "en": "Added scoped radius presets and Tag pill geometry. Anchored overlays preserve a 12 px gap, flip/clamp to the viewport and inherit local context; removed visible browser picker controls. Compact agent selection guidance and anti-patterns are separated from internal catalogue reports. — 2026-10-07"
-  },
-  "FloatingActionBar adds xl, leading/trailing composition and ScrollArea.floating outside clipping with measured content clearance. Catalogue controls float at the bottom; Playground settings sit beside previews on their own surface. — 2026-10-07": {
-    "ru": "FloatingActionBar получил xl, leading/trailing и ScrollArea.floating вне обрезания с измеряемым зазором. Управление каталогом плавает снизу; настройки Playground расположены рядом с превью на собственной поверхности. — 2026-10-07",
-    "en": "FloatingActionBar adds xl, leading/trailing composition and ScrollArea.floating outside clipping with measured content clearance. Catalogue controls float at the bottom; Playground settings sit beside previews on their own surface. — 2026-10-07"
-  },
-  "Strong neutral Primary fades on interaction; selection controls share optional contrast with readable vivid Light accents. IconPicker adds visual combobox, full Lucide/alias search in every icon Playground and IconSource support throughout the kit. — 2026-10-07": {
-    "ru": "Контрастный нейтральный Primary затухает при взаимодействии; контролы выбора поддерживают необязательный contrast и читаемые vivid-акценты Light. IconPicker получил визуальный ComboBox, полный поиск Lucide/алиасов в Playground и IconSource во всём наборе. — 2026-10-07",
-    "en": "Strong neutral Primary fades on interaction; selection controls share optional contrast with readable vivid Light accents. IconPicker adds visual combobox, full Lucide/alias search in every icon Playground and IconSource support throughout the kit. — 2026-10-07"
-  },
-  "ContentCard now supports ordered, optional custom blocks and a 13-property Playground; fixed mixed-orientation stretching and selection size. Added controlled ReorderableList with a grip, pointer/touch, keyboard, click alternatives and cancellation. — 2026-10-07": {
-    "ru": "ContentCard поддерживает упорядоченные необязательные custom blocks и Playground из 13 свойств; исправлены растягивание разных ориентаций и размер выбора. Добавлен управляемый ReorderableList с ручкой, pointer/touch, клавиатурой, click-альтернативами и отменой. — 2026-10-07",
-    "en": "ContentCard now supports ordered, optional custom blocks and a 13-property Playground; fixed mixed-orientation stretching and selection size. Added controlled ReorderableList with a grip, pointer/touch, keyboard, click alternatives and cancellation. — 2026-10-07"
-  },
-  "Shared labelPlacement/hint/error/size across Input, Select and Textarea; FloatingField delegates to Input. EmptyState icons are neutral, muted and optional. — 2026-10-07": {
-    "ru": "Input, Select и Textarea используют общие labelPlacement/hint/error/size; FloatingField делегирует Input. Иконки EmptyState нейтральные, приглушённые и необязательные. — 2026-10-07",
-    "en": "Shared labelPlacement/hint/error/size across Input, Select and Textarea; FloatingField delegates to Input. EmptyState icons are neutral, muted and optional. — 2026-10-07"
-  },
-  "Fixed document overflow caused by absolute CodeBlock accessibility status; restored equal API insets (16 px). Added geometry checks to the browser audit and recorded anti-patterns. — 2026-10-07": {
-    "ru": "Исправлено переполнение документа из-за абсолютного accessibility status CodeBlock; возвращены равные API-отступы 16 px. В браузерный аудит добавлены проверки геометрии, ошибки записаны в инструкции. — 2026-10-07",
-    "en": "Fixed document overflow caused by absolute CodeBlock accessibility status; restored equal API insets (16 px). Added geometry checks to the browser audit and recorded anti-patterns. — 2026-10-07"
-  },
-  "Added a prop Playground to all 61 component pages; introduced Floating with contextual state pairs and quieter dark shadows, joined/separated SplitButton, surface-aware ButtonGroup, small menu captions and proportional Tag counters. Synced variables, Tag masters and four-surface matrices to Figma.": {
-    "ru": "Добавлен Playground свойств на все 61 страницу; введены Floating с контекстными парами состояний и спокойными тёмными тенями, соединённый/раздельный SplitButton, контекстный ButtonGroup, небольшие подписи меню и пропорциональные счётчики Tag. Variables, Tag masters и матрицы четырёх поверхностей синхронизированы с Figma.",
-    "en": "Added a prop Playground to all 61 component pages; introduced Floating with contextual state pairs and quieter dark shadows, joined/separated SplitButton, surface-aware ButtonGroup, small menu captions and proportional Tag counters. Synced variables, Tag masters and four-surface matrices to Figma."
-  },
-  "Refined static/interactive Tag behavior and six Counter styles with two shapes; accent Switch, composed Select groups, softer configurable shadows and equal popup/accordion insets. Removed redundant catalogue chrome, brightened Light swatches and fixed self-referencing typography aliases.": {
-    "ru": "Уточнены static/interactive Tag и шесть стилей Counter с двумя формами; добавлены accent Switch, группы Select, мягкие настраиваемые тени и равные popup/accordion-отступы. Удалены лишние элементы каталога, осветлены Light-образцы и исправлены самоссылки типографики.",
-    "en": "Refined static/interactive Tag behavior and six Counter styles with two shapes; accent Switch, composed Select groups, softer configurable shadows and equal popup/accordion insets. Removed redundant catalogue chrome, brightened Light swatches and fixed self-referencing typography aliases."
-  },
-  "Unified Badge/Tag/TypeLabel as Tag with four sizes, icon, counter and independent action; compatibility exports retained. Added Counter, TextAction, resizable ContentLayout and visual Lucide IconPicker.": {
-    "ru": "Badge/Tag/TypeLabel объединены в Tag с четырьмя размерами, иконкой, счётчиком и независимым действием; совместимые экспорты сохранены. Добавлены Counter, TextAction, изменяемый ContentLayout и визуальный Lucide IconPicker.",
-    "en": "Unified Badge/Tag/TypeLabel as Tag with four sizes, icon, counter and independent action; compatibility exports retained. Added Counter, TextAction, resizable ContentLayout and visual Lucide IconPicker."
-  },
-  "Added edge/inset Drawer variants and highlighted CodeBlock. Matched calendar control heights; joined ButtonGroup prefix beneath its rounded action container; aligned nested radii and card edges. — 2026-10-07": {
-    "ru": "Добавлены edge/inset Drawer и подсветка CodeBlock. Выровнены высоты календаря, prefix ButtonGroup объединён под округлой оболочкой действий; согласованы вложенные радиусы и края карточек. — 2026-10-07",
-    "en": "Added edge/inset Drawer variants and highlighted CodeBlock. Matched calendar control heights; joined ButtonGroup prefix beneath its rounded action container; aligned nested radii and card edges. — 2026-10-07"
-  },
-  "Replaced the shortened color graph with all 417 original palette colors and independently inherited Figma collections; preserved all 783 original color tokens. Unified numeric control sizes, grouped font parameters, and rebound existing Figma components and 28 text styles.": {
-    "ru": "Сокращённый граф цветов заменён всеми 417 исходными цветами и независимо наследуемыми Figma-коллекциями; сохранены все 783 токена. Объединены числовые размеры контролов, сгруппированы шрифтовые параметры, перепривязаны Figma-компоненты и 28 текстовых стилей.",
-    "en": "Replaced the shortened color graph with all 417 original palette colors and independently inherited Figma collections; preserved all 783 original color tokens. Unified numeric control sizes, grouped font parameters, and rebound existing Figma components and 28 text styles."
-  },
-  "Added surface-specific normal/hover/pressed/disabled pairs in both themes across the web kit; made Tag selection/removal native and disabled-aware. Updated state examples, contrast checks, import tooling and design contracts.": {
-    "ru": "Для обеих тем добавлены контекстные normal/hover/pressed/disabled пары; выбор/удаление Tag поддерживают нативное поведение и disabled. Обновлены примеры состояний, contrast-проверки, импорт и дизайн-контракты.",
-    "en": "Added surface-specific normal/hover/pressed/disabled pairs in both themes across the web kit; made Tag selection/removal native and disabled-aware. Updated state examples, contrast checks, import tooling and design contracts."
-  },
-  "Migrated Rebuildy to independent Theme, Semantic surface and Borders modes; retained foundations, four-state tags and empty surface compositions. Other Figma component pages are deferred.": {
-    "ru": "Rebuildy переведён на независимые Theme, Semantic surface и Borders; сохранены foundations, четырёхсостоянийные теги и пустые композиции. Другие Figma-компоненты отложены.",
-    "en": "Migrated Rebuildy to independent Theme, Semantic surface and Borders modes; retained foundations, four-state tags and empty surface compositions. Other Figma component pages are deferred."
-  },
-  "Added adaptive 0.5 px borders, elevation shadows, alpha reactions and opacity primitives. Refined ButtonGroup and four-size Checkbox/Radio/Slider.": {
-    "ru": "Добавлены адаптивные границы 0,5 px, тени высоты, alpha-реакции и opacity-примитивы. Уточнены ButtonGroup и четыре размера Checkbox/Radio/Slider.",
-    "en": "Added adaptive 0.5 px borders, elevation shadows, alpha reactions and opacity primitives. Refined ButtonGroup and four-size Checkbox/Radio/Slider."
-  },
-  "Rebuilt the responsive preview toolbar with a circular accent picker and icon toggles; added real-file Markdown editing with drafts and conflict checks, concise usage documents and their maintenance rule.": {
-    "ru": "Перестроена адаптивная панель превью с круглым выбором акцента и иконками; добавлены редактирование реального Markdown с черновиками и конфликтами, краткие инструкции и правило их обновления.",
-    "en": "Rebuilt the responsive preview toolbar with a circular accent picker and icon toggles; added real-file Markdown editing with drafts and conflict checks, concise usage documents and their maintenance rule."
-  },
-  "Preserved the 0.2.0 workspace and installable npm archive with SHA-256 checksums and separate-directory rollback instructions.": {
-    "ru": "Сохранены workspace 0.2.0 и npm-архив с SHA-256 и инструкцией отката в отдельном каталоге.",
-    "en": "Preserved the 0.2.0 workspace and installable npm archive with SHA-256 checksums and separate-directory rollback instructions."
-  },
-  "Added inherited base/canvas/raised surface context and an off-by-default decorative border mode; neutral fills, accent tints and supporting text follow the actual container surface.": {
-    "ru": "Добавлен наследуемый base/canvas/raised-контекст и выключенные по умолчанию декоративные границы; нейтральные заливки, акценты и подписи следуют фактической поверхности.",
-    "en": "Added inherited base/canvas/raised surface context and an off-by-default decorative border mode; neutral fills, accent tints and supporting text follow the actual container surface."
-  },
-  "Kept the 12 Neutral / 12 Accent / 24 Appearance Figma base graph separate from runtime context rules. No actual Figma document was updated for this version.": {
-    "ru": "Граф Figma 12 Neutral / 12 Accent / 24 Appearance отделён от runtime-контекста. Реальный документ Figma для этой версии не обновлялся.",
-    "en": "Kept the 12 Neutral / 12 Accent / 24 Appearance Figma base graph separate from runtime context rules. No actual Figma document was updated for this version."
-  },
-  "Updated portaled surfaces to preserve theme/accent/borders and establish their own raised context; added Popover trigger size and visible contextual hover states.": {
-    "ru": "Порталы сохраняют theme/accent/borders и собственный raised-контекст; добавлены размер триггера Popover и видимые контекстные hover-состояния.",
-    "en": "Updated portaled surfaces to preserve theme/accent/borders and establish their own raised context; added Popover trigger size and visible contextual hover states."
-  },
-  "Unified ActionBar, ButtonGroup and SplitButton sizing, added auto/hidden ScrollArea scrollbar selection, and replaced tinted overflow overlays with background-revealing masks.": {
-    "ru": "Объединены размеры ActionBar, ButtonGroup и SplitButton; ScrollArea получил auto/hidden-скроллбар, цветные overflow-слои заменены масками, открывающими фон.",
-    "en": "Unified ActionBar, ButtonGroup and SplitButton sizing, added auto/hidden ScrollArea scrollbar selection, and replaced tinted overflow overlays with background-revealing masks."
-  },
-  "Added plain/surface StatusBar presentation and refined compact status and alert layouts.": {
-    "ru": "Добавлены plain/surface StatusBar и уточнены компактные состояния и Alert.",
-    "en": "Added plain/surface StatusBar presentation and refined compact status and alert layouts."
-  },
-  "Reorganized the catalogue into 59 component pages with canonical #ComponentName routes and grouped navigation; expanded the agent manifest and usage contracts.": {
-    "ru": "Каталог перестроен в 59 страниц с каноническими #ComponentName-маршрутами и группами; расширены manifest и инструкции использования.",
-    "en": "Reorganized the catalogue into 59 component pages with canonical #ComponentName routes and grouped navigation; expanded the agent manifest and usage contracts."
-  },
-  "Preserved the complete 0.1.0 workspace and original npm package with SHA-256 checksums.": {
-    "ru": "Сохранены полный workspace 0.1.0 и исходный npm-пакет с SHA-256.",
-    "en": "Preserved the complete 0.1.0 workspace and original npm package with SHA-256 checksums."
-  },
-  "Replaced the default color model with 12 neutral steps, 12 shared accent steps in 18 modes, and 24 Light/Dark semantic roles. Added Figma Variables graph and rollback-safe development importer.": {
-    "ru": "Цветовая модель заменена 12 нейтральными ступенями, 12 общими accent-ступенями в 18 режимах и 24 Light/Dark-ролями. Добавлены Figma Variables и безопасный для отката импортёр.",
-    "en": "Replaced the default color model with 12 neutral steps, 12 shared accent steps in 18 modes, and 24 Light/Dark semantic roles. Added Figma Variables graph and rollback-safe development importer."
-  },
-  "Replaced visible system Select/Popover surfaces with custom overlays. Added Drawer, scoped theme/accent inheritance, focus/inert/scroll locking, nested overlays, and enter/exit motion.": {
-    "ru": "Видимые системные Select/Popover заменены собственными панелями. Добавлены Drawer, локальные theme/accent, focus/inert/scroll lock, вложенные overlays и анимации входа/выхода.",
-    "en": "Replaced visible system Select/Popover surfaces with custom overlays. Added Drawer, scoped theme/accent inheritance, focus/inert/scroll locking, nested overlays, and enter/exit motion."
-  },
-  "Added ScrollArea, ButtonGroup, SplitButton, ActionBar, FloatingActionBar, FloatingField, StatusBar, Alert, SidebarPanel.": {
-    "ru": "Добавлены ScrollArea, ButtonGroup, SplitButton, ActionBar, FloatingActionBar, FloatingField, StatusBar, Alert, SidebarPanel.",
-    "en": "Added ScrollArea, ButtonGroup, SplitButton, ActionBar, FloatingActionBar, FloatingField, StatusBar, Alert, SidebarPanel."
-  },
-  "Added Calendar, DatePicker, DailyHeader, MarkdownEditor/Preview, configurable ContentCard/TaskCard and controlled KanbanBoard/Column.": {
-    "ru": "Добавлены Calendar, DatePicker, DailyHeader, MarkdownEditor/Preview, настраиваемые ContentCard/TaskCard и управляемые KanbanBoard/Column.",
-    "en": "Added Calendar, DatePicker, DailyHeader, MarkdownEditor/Preview, configurable ContentCard/TaskCard and controlled KanbanBoard/Column."
-  },
-  "Added pill Tabs, accent Button, inherited accent primitives and global state/motion/responsive contracts.": {
-    "ru": "Добавлены pill Tabs, accent Button, наследуемые акценты и общие state/motion/responsive-контракты.",
-    "en": "Added pill Tabs, accent Button, inherited accent primitives and global state/motion/responsive contracts."
-  },
-  "Expanded the catalogue, 59-component agent manifest, working consumer example, package validation, keyboard and accessibility coverage.": {
-    "ru": "Расширены каталог, manifest 59 компонентов, рабочий пример потребителя, проверка пакета, клавиатуры и доступности.",
-    "en": "Expanded the catalogue, 59-component agent manifest, working consumer example, package validation, keyboard and accessibility coverage."
+  "Softened dark secondary accents while keeping solid actions, light themes and surface-specific contrast intact.": {
+    "ru": "Приглушены вторичные акценты в тёмной теме; сохранены насыщенные действия, светлая тема и контраст на разных поверхностях.",
+    "en": "Softened dark secondary accents while keeping solid actions, light themes and surface-specific contrast intact."
+  },
+  "Aligned segmented controls, made tabs follow global corners and removed moving hover from line tabs.": {
+    "ru": "Выровнены сегменты; табы следуют глобальным скруглениям, у линейного стиля убран перемещающийся hover.",
+    "en": "Aligned segmented controls, made tabs follow global corners and removed moving hover from line tabs."
+  },
+  "Simplified preview labels and page headings; component IDs now sit in the upper-right corner.": {
+    "ru": "Убраны лишние подписи в превью и над заголовками; ID компонентов перенесены в правый верхний угол.",
+    "en": "Simplified preview labels and page headings; component IDs now sit in the upper-right corner."
+  },
+  "Added semantic token previews, wrapping in both palette layouts and a horizontal four-surface comparison.": {
+    "ru": "Добавлены превью семантических токенов, перенос в обоих режимах палитр и горизонтальное сравнение четырёх поверхностей.",
+    "en": "Added semantic token previews, wrapping in both palette layouts and a horizontal four-surface comparison."
+  },
+  "Separated interface and prose typography; instruction selection uses soft accents and file selection stays neutral.": {
+    "ru": "Разделены интерфейсная и текстовая типографика; выделение текста в инструкциях использует мягкий акцент, выбор файла остаётся нейтральным.",
+    "en": "Separated interface and prose typography; instruction selection uses soft accents and file selection stays neutral."
+  },
+  "Applied token-based scroll fades to the catalogue content while keeping floating controls outside the mask.": {
+    "ru": "Область контента каталога получила затухание по токенам; плавающие контролы остаются вне маски.",
+    "en": "Applied token-based scroll fades to the catalogue content while keeping floating controls outside the mask."
+  },
+  "Published a focused Sloy UI source tree with installable artifacts, public APIs and complete third-party licenses.": {
+    "ru": "Опубликованы чистые исходники Sloy UI с устанавливаемыми артефактами, публичными API и полными сторонними лицензиями.",
+    "en": "Published a focused Sloy UI source tree with installable artifacts, public APIs and complete third-party licenses."
+  },
+  "Introduced 417 authored palette colors, independent theme and surface contexts, and accessible semantic roles.": {
+    "ru": "Добавлены 417 авторских цветов палитры, независимые контексты темы и поверхности и доступные семантические роли.",
+    "en": "Introduced 417 authored palette colors, independent theme and surface contexts, and accessible semantic roles."
+  },
+  "Provided a bilingual component catalogue, editable agent instructions, API references and installation guidance.": {
+    "ru": "Добавлены двуязычный каталог компонентов, редактируемые инструкции для агентов, API Reference и руководство по установке.",
+    "en": "Provided a bilingual component catalogue, editable agent instructions, API references and installation guidance."
   }
 };
 export function localizedChangelog(source:string,locale:'ru'|'en'):string { return source.split('\n').map(line=>{if(line==='## Unreleased')return locale==='ru'?'## В разработке':line;const match=line.match(/^(- )(.*)$/);return match&&changelogTranslations[match[2]]?match[1]+changelogTranslations[match[2]][locale]:line;}).join('\n'); }

@@ -1,0 +1,47 @@
+/* Mobile chrome occupies one row in the layout, outside the scrolling document. */
+.catalog-mobile-bar { display:none; }
+.catalog-appearance-fields { display:grid; gap:var(--cap-space-2); min-width:0; }
+.catalog-appearance-borders { min-height:var(--cap-touch-target); flex-direction:row-reverse; justify-content:space-between; padding-inline:var(--cap-space-3); }
+.catalog-appearance-sheet .cap-dialog-body { min-height:0; overflow:auto; overscroll-behavior:contain; padding-block-end:calc(var(--cap-space-4) + env(safe-area-inset-bottom)); }
+.cap-modal-layer>.catalog-appearance-sheet[data-side=bottom] { border-start-start-radius:var(--cap-radius-2xl); border-start-end-radius:var(--cap-radius-2xl); }
+.cap-modal-layer>.catalog-history-sheet[data-side=bottom] { height:88dvh; max-height:calc(100dvh - var(--cap-space-4)); border-start-start-radius:var(--cap-radius-2xl); border-start-end-radius:var(--cap-radius-2xl); }
+.catalog-history-sheet>.cap-dialog-body { flex:1; min-height:0; overflow:hidden; padding-block-end:calc(var(--cap-space-4) + env(safe-area-inset-bottom)); }
+.catalog-history-mobile-content { height:100%; min-height:0; }
+.catalog-history-sheet .catalog-component-history { padding:0; border:0; border-radius:0; }
+.catalog-history-sheet .catalog-history-heading :is(h2,button) { display:none; }
+
+@media(max-width:720px) {
+ .catalog-app { padding-inline:max(var(--catalog-shell-inset),env(safe-area-inset-left)) max(var(--catalog-shell-inset),env(safe-area-inset-right)); }
+ .catalog-preview-dock { display:none; }
+ .catalog-mobile-bar { display:flex; flex:none; align-items:center; justify-content:space-between; gap:var(--cap-space-1); padding:var(--cap-space-2) var(--cap-space-3) calc(var(--cap-space-2) + env(safe-area-inset-bottom)); background:var(--cap-surface-current); border-block-start:var(--cap-border-width) solid var(--cap-panel-border); }
+ .catalog-mobile-bar>.cap-button { height:var(--cap-touch-target); min-height:var(--cap-touch-target); padding-inline:var(--cap-space-3); }
+ .catalog-mobile-bar>.cap-icon-button { width:var(--cap-touch-target); min-width:var(--cap-touch-target); padding:0; }
+ .catalog-page { padding:var(--cap-space-4) var(--cap-space-3) var(--cap-space-6); }
+ .catalog-main { scroll-padding-block:var(--cap-space-3) var(--cap-space-6); }
+ .catalog-page-heading h1,.page-intro h1 { font-size:24px; line-height:30px; letter-spacing:-.4px; }
+ .catalog-overview-filters { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--cap-space-2); }
+ .catalog-overview-filters>:first-child { grid-column:1/-1; }
+ .catalog-overview-filters>.cap-select-root { width:100%; min-width:0; }
+ .catalog-overview-filters :is(.cap-input,.cap-input-shell,.cap-select-trigger) { min-height:var(--cap-touch-target); }
+ .catalog-overview-filters .cap-input { font-size:16px; }
+ .playground-controls :is(.cap-input,.cap-textarea,.cap-number-field input,.cap-combobox-input) { font-size:16px; }
+ .playground-controls :is(.cap-input,.cap-select-trigger,.cap-number-field,.cap-combobox),.playground-settings>header>.cap-button { min-height:var(--cap-touch-target); }
+ body:has(.catalog-app) .cap-command input { font-size:16px; }
+ body:has(.catalog-appearance-sheet) .cap-select-option { min-height:var(--cap-touch-target); }
+ .catalog-overview-group { margin-block-start:var(--cap-space-6); }
+ .catalog-overview-group>h2 { margin-block-end:var(--cap-space-3); }
+ .catalog-overview-grid { grid-template-columns:repeat(auto-fill,minmax(min(100%,245px),1fr)); gap:var(--cap-space-4); }
+ .catalog-overview-preview { height:160px; }
+ .catalog-overview-card-footer { min-height:var(--cap-touch-target); padding:var(--cap-space-2) var(--cap-space-3); }
+ .catalog-announcement .cap-announcement-inner { height:var(--cap-touch-target); min-height:var(--cap-touch-target); padding-block:0; }
+ .catalog-announcement .catalog-announcement-cta.cap-button,.catalog-announcement .cap-announcement-controls .cap-button { height:var(--cap-touch-target); min-height:var(--cap-touch-target); }
+ .catalog-announcement .cap-announcement-controls .cap-button { width:var(--cap-touch-target); min-width:var(--cap-touch-target); }
+ .catalog-mobile-drawer .catalog-nav-scroll .cap-tree-item,.catalog-mobile-drawer .catalog-doc-links .cap-sidebar-item { min-height:var(--cap-touch-target); height:var(--cap-touch-target); }
+ .catalog-mobile-drawer .catalog-header-actions>.cap-button-group { --catalog-action-height:var(--cap-touch-target); }
+ .catalog-mobile-drawer .catalog-search-trigger.cap-button { height:var(--cap-touch-target); }
+ .catalog-mobile-drawer .catalog-sidebar-footer { min-height:var(--cap-touch-target); }
+ .catalog-mobile-drawer .catalog-sidebar-footer :is(.cap-button,a) { min-height:var(--cap-touch-target); min-width:var(--cap-touch-target); display:flex; align-items:center; justify-content:center; }
+ .catalog-appearance-sheet .cap-select-trigger,:is(.catalog-appearance-sheet,.catalog-history-sheet,.catalog-mobile-drawer) .cap-dialog-header>.cap-button { min-height:var(--cap-touch-target); }
+ :is(.catalog-appearance-sheet,.catalog-history-sheet,.catalog-mobile-drawer) .cap-dialog-header>.cap-button { min-width:var(--cap-touch-target); }
+ .catalog-history-sheet [role=tab] { min-height:var(--cap-touch-target); }
+}

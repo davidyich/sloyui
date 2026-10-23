@@ -231,7 +231,8 @@ export function DatePicker(props: CalendarSelectionProps) {
   const format = (value?: string) => { const date = parseDate(value); return date ? new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'short', year: 'numeric' }).format(date) : ''; };
   const selection = props.mode === 'range' ? props.range ? `${format(props.range.start)} — ${format(props.range.end) || '…'}` : '' : format(props.value);
   const months = props.numberOfMonths ?? (props.mode === 'range' ? 2 : 1);
-  return <Popover label={selection ? `${label}: ${selection}` : label} open={open} onOpenChange={setOpen} className={cx('cap-datepicker-popover', months === 2 && 'cap-datepicker-wide', props.showAgenda && props.agendaPosition === 'side' && 'cap-datepicker-agenda-side')}>
+  const triggerLabel = selection ? `${label}: ${selection}` : label;
+  return <Popover label={triggerLabel} triggerContent={<span className="cap-datepicker-label">{triggerLabel}</span>} open={open} onOpenChange={setOpen} className={cx('cap-datepicker-popover', months === 2 && 'cap-datepicker-wide', props.showAgenda && props.agendaPosition === 'side' && 'cap-datepicker-agenda-side')}>
     {props.mode === 'range' ? <Calendar {...props} locale={locale} onRangeChange={(next: CalendarRange) => { props.onRangeChange(next); if (next.end) setOpen(false); }} /> : <Calendar {...props} locale={locale} onValueChange={next => { props.onValueChange(next); setOpen(false); }} />}
   </Popover>;
 }
@@ -351,7 +352,7 @@ export function ContentCard({ title, description, header, metadata, footer, cove
   // A leading cover can occupy a side column; a reordered cover becomes an inline block.
   const leadingCover = ordered[0]?.id === 'cover' ? ordered[0] : undefined;
   const renderBlock = (block: ContentCardBlock) => <div key={block.id} data-card-block={block.id} className={cx('cap-content-card-block',block.id === 'cover' && 'cap-content-card-cover',block.kind === 'metadata' && 'cap-content-card-metadata',block.kind === 'footer' && 'cap-content-card-footer')}>{block.content}</div>;
-  return <article className={cx('cap-content-card','cap-surface-boundary', className)} data-surface="raised" data-density={density} data-orientation={orientation} data-selected={currentSelected || undefined} data-selectable={selectionEnabled || undefined} data-leading-cover={!!leadingCover || undefined} {...props}>
+  return <article className={cx('cap-content-card','cap-surface-boundary', className)} data-density={density} data-orientation={orientation} data-selected={currentSelected || undefined} data-selectable={selectionEnabled || undefined} data-leading-cover={!!leadingCover || undefined} {...props}>
     {selectionEnabled && <label className="cap-content-card-selection" data-position={selectionPosition} data-contrast="true"><input className="cap-checkbox" data-size="sm" type="checkbox" aria-label={selectionLabel ?? `${t("Выбрать ", "Select ")}${typeof title === 'string' ? title : t("карточку", "card")}`} checked={currentSelected} onChange={event => { if (selected === undefined) setInternalSelected(event.target.checked); onSelectedChange?.(event.target.checked); }} /></label>}
     {leadingCover && renderBlock(leadingCover)}<div className="cap-content-card-body">{ordered.filter(block => block !== leadingCover).map(renderBlock)}</div>
   </article>;
@@ -359,7 +360,7 @@ export function ContentCard({ title, description, header, metadata, footer, cove
 export interface TaskCardProps extends Omit<ContentCardProps, 'title' | 'header' | 'actions'> {
   title: string; typeLabel?: string; color?: Color; completed?: boolean; onCompletedChange?: (completed: boolean) => void; menuItems?: MenuItem[];
 }
-export function TaskCard({ title, typeLabel: suppliedTypeLabel, color = 'rose', completed, onCompletedChange, menuItems, onOpen, className, ...props }: TaskCardProps) {
+export function TaskCard({ title, typeLabel: suppliedTypeLabel, color = 'red', completed, onCompletedChange, menuItems, onOpen, className, ...props }: TaskCardProps) {
   const t = useTranslate();
   const typeLabel = suppliedTypeLabel === undefined ? (t("Задача", "Task")) : suppliedTypeLabel;
 

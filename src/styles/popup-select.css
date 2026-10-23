@@ -1,0 +1,33 @@
+.cap-popup-select { display:flex; flex-direction:column; gap:var(--cap-space-1); min-width:0; }
+.cap-popup-select-trigger { width:100%; justify-content:space-between; gap:var(--cap-space-2); }
+.cap-popup-select-value { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.cap-popup-select-custom { display:inline-flex; align-items:center; justify-content:center; min-width:0; }
+.cap-popup-select-chevron { flex:none; transition:transform var(--cap-duration-fast); }
+.cap-popup-select-trigger[aria-expanded=true] .cap-popup-select-chevron { transform:rotate(180deg); }
+.cap-popup-select-trigger:focus-visible { outline:var(--cap-field-focus-width,var(--cap-focus-width)) solid var(--cap-field-focus-color,var(--cap-focus-ring)); outline-offset:var(--cap-field-focus-offset,0px); }
+.cap-popup-select-panel { position:fixed; z-index:1100; display:flex; flex-direction:column; width:var(--cap-popup-select-width,320px); box-sizing:border-box; min-width:0; padding:var(--cap-space-2); gap:var(--cap-space-2); border:var(--cap-border-width) solid var(--cap-overlay-border); border-radius:var(--cap-radius-xl); background:var(--cap-surface-current); color:var(--cap-content-primary); box-shadow:var(--cap-shadow-popover); overflow:hidden; font-family:var(--cap-font-sans); animation:cap-overlay-enter var(--cap-duration-fast) var(--cap-ease-out); }
+.cap-popup-select-search { flex:none; min-width:0; }
+.cap-popup-select-search .cap-labeled-field { width:100%; }
+.cap-popup-select-options { position:relative; isolation:isolate; min-height:0; overflow:auto; overscroll-behavior:contain; scrollbar-width:thin; }
+.cap-popup-select-option { position:relative; z-index:1; display:flex; align-items:center; gap:var(--cap-space-2); width:100%; min-width:0; min-height:32px; padding:var(--cap-space-2); border:0; border-radius:round(down,max(0px,calc(var(--cap-radius-xl) - var(--cap-space-2))),1px); background:transparent; color:inherit; font:inherit; font-size:var(--cap-font-size-sm); text-align:start; cursor:pointer; }
+.cap-popup-select-option:disabled { opacity:.45; cursor:default; }
+.cap-popup-select-copy { display:flex; flex-direction:column; flex:1; min-width:0; gap:2px; overflow-wrap:anywhere; }
+.cap-popup-select-copy small { color:var(--cap-content-muted); font-size:var(--cap-font-size-xs); }
+.cap-popup-select-meta { flex:none; color:var(--cap-content-muted); font-variant-numeric:tabular-nums; }
+.cap-popup-select-leading,.cap-popup-select-check { display:inline-flex; align-items:center; justify-content:center; flex:none; }
+.cap-popup-select-check { width:14px; }
+.cap-popup-select-options > .cap-moving-highlight { z-index:0; background:var(--cap-control-hover); }
+.cap-popup-select-panel[data-state=closed] { pointer-events:none; animation:cap-overlay-exit var(--cap-duration-fast) var(--cap-ease-out) forwards; }
+@media(prefers-reduced-motion:reduce) { .cap-popup-select-panel { animation:none; } .cap-popup-select-chevron { transition:none; } }
+
+/* Filtering is optional and has the same scale as a choice row. */
+.cap-popup-select-panel { --cap-popup-row-height:var(--cap-size-control-md); --cap-popup-row-inset:calc(var(--cap-space-2) * var(--cap-radius-enabled) + var(--cap-space-3) * var(--cap-square)); }
+.cap-popup-select-panel .cap-popup-select-option { min-height:var(--cap-popup-row-height); padding:var(--cap-space-1) var(--cap-popup-row-inset); line-height:var(--cap-line-height-sm); }
+.cap-popup-select-options:focus-visible { outline:0; }
+.cap-popup-select-options:focus-visible .cap-popup-select-option[data-active=true] { outline:var(--cap-field-focus-width,var(--cap-focus-width)) solid var(--cap-field-focus-color,var(--cap-focus-ring)); outline-offset:calc(-1 * var(--cap-field-focus-width,var(--cap-focus-width))); }
+.cap-popup-select-panel .cap-popup-select-search .cap-input { height:var(--cap-popup-row-height); min-height:var(--cap-popup-row-height); }
+.cap-popup-select-panel[data-search-placement=inline] .cap-popup-select-search { padding:0; }
+.cap-popup-select-panel[data-search-placement=inline] .cap-popup-select-search .cap-input { border-color:transparent; background:transparent; }
+.cap-popup-select-panel[data-search-placement=separate] .cap-popup-select-search { padding:var(--cap-space-1); }
+.cap-popup-select-options .cap-selection-group { padding-inline:var(--cap-popup-row-inset); }
+@media(pointer:coarse) { .cap-popup-select-panel { --cap-popup-row-height:var(--cap-touch-target); } }

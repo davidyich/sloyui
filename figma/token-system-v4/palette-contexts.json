@@ -1,0 +1,770 @@
+{
+  "Light/Standard/Shell": {
+    "surface/bg": {
+      "r": 0.9317619717,
+      "g": 0.9317619717,
+      "b": 0.9317619717,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.8991073255,
+      "g": 0.8991073255,
+      "b": 0.8991073255,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.836553596,
+      "g": 0.836553596,
+      "b": 0.836553596,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.8991073255,
+      "g": 0.8991073255,
+      "b": 0.8991073255,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.8673824811,
+      "g": 0.8673824811,
+      "b": 0.8673824811,
+      "a": 1
+    }
+  },
+  "Light/Standard/Workspace": {
+    "surface/bg": {
+      "r": 0.9653810442,
+      "g": 0.9653810442,
+      "b": 0.9653810442,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.9317619717,
+      "g": 0.9317619717,
+      "b": 0.9317619717,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.8673824811,
+      "g": 0.8673824811,
+      "b": 0.8673824811,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.9317619717,
+      "g": 0.9317619717,
+      "b": 0.9317619717,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.8991073255,
+      "g": 0.8991073255,
+      "b": 0.8991073255,
+      "a": 1
+    }
+  },
+  "Light/Standard/Content": {
+    "surface/bg": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.9653810442,
+      "g": 0.9653810442,
+      "b": 0.9653810442,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.8991073255,
+      "g": 0.8991073255,
+      "b": 0.8991073255,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.9653810442,
+      "g": 0.9653810442,
+      "b": 0.9653810442,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.9317619717,
+      "g": 0.9317619717,
+      "b": 0.9317619717,
+      "a": 1
+    }
+  },
+  "Light/Standard/Overlay": {
+    "surface/bg": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.9653810442,
+      "g": 0.9653810442,
+      "b": 0.9653810442,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.8991073255,
+      "g": 0.8991073255,
+      "b": 0.8991073255,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.9653810442,
+      "g": 0.9653810442,
+      "b": 0.9653810442,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.9317619717,
+      "g": 0.9317619717,
+      "b": 0.9317619717,
+      "a": 1
+    }
+  },
+  "Light/Standard/Invert": {
+    "surface/bg": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.1647146074,
+      "g": 0.1647146074,
+      "b": 0.1647146074,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.2065551762,
+      "g": 0.2065551762,
+      "b": 0.2065551762,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.1647146074,
+      "g": 0.1647146074,
+      "b": 0.1647146074,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.1861108446,
+      "g": 0.1861108446,
+      "b": 0.1861108446,
+      "a": 1
+    }
+  },
+  "Light/Standard/Glass": {
+    "surface/bg": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.88
+    },
+    "surface/secondary/normal": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0.04
+    },
+    "surface/secondary/active": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0.14
+    },
+    "surface/tertiary/normal": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0.06
+    },
+    "surface/tertiary/active": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0.1
+    }
+  },
+  "Light/Dimmed/Shell": {
+    "surface/bg": {
+      "r": 0.9653810442,
+      "g": 0.9653810442,
+      "b": 0.9653810442,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.8991073255,
+      "g": 0.8991073255,
+      "b": 0.8991073255,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.836553596,
+      "g": 0.836553596,
+      "b": 0.836553596,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.8991073255,
+      "g": 0.8991073255,
+      "b": 0.8991073255,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.8673824811,
+      "g": 0.8673824811,
+      "b": 0.8673824811,
+      "a": 1
+    }
+  },
+  "Light/Dimmed/Workspace": {
+    "surface/bg": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.9317619717,
+      "g": 0.9317619717,
+      "b": 0.9317619717,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.8673824811,
+      "g": 0.8673824811,
+      "b": 0.8673824811,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.9317619717,
+      "g": 0.9317619717,
+      "b": 0.9317619717,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.8991073255,
+      "g": 0.8991073255,
+      "b": 0.8991073255,
+      "a": 1
+    }
+  },
+  "Light/Dimmed/Content": {
+    "surface/bg": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.9653810442,
+      "g": 0.9653810442,
+      "b": 0.9653810442,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.8991073255,
+      "g": 0.8991073255,
+      "b": 0.8991073255,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.9653810442,
+      "g": 0.9653810442,
+      "b": 0.9653810442,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.9317619717,
+      "g": 0.9317619717,
+      "b": 0.9317619717,
+      "a": 1
+    }
+  },
+  "Light/Dimmed/Overlay": {
+    "surface/bg": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.9653810442,
+      "g": 0.9653810442,
+      "b": 0.9653810442,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.8991073255,
+      "g": 0.8991073255,
+      "b": 0.8991073255,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.9653810442,
+      "g": 0.9653810442,
+      "b": 0.9653810442,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.9317619717,
+      "g": 0.9317619717,
+      "b": 0.9317619717,
+      "a": 1
+    }
+  },
+  "Light/Dimmed/Invert": {
+    "surface/bg": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.1647146074,
+      "g": 0.1647146074,
+      "b": 0.1647146074,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.2065551762,
+      "g": 0.2065551762,
+      "b": 0.2065551762,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.1647146074,
+      "g": 0.1647146074,
+      "b": 0.1647146074,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.1861108446,
+      "g": 0.1861108446,
+      "b": 0.1861108446,
+      "a": 1
+    }
+  },
+  "Light/Dimmed/Glass": {
+    "surface/bg": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.88
+    },
+    "surface/secondary/normal": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0.04
+    },
+    "surface/secondary/active": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0.14
+    },
+    "surface/tertiary/normal": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0.06
+    },
+    "surface/tertiary/active": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0.1
+    }
+  },
+  "Dark/Standard/Shell": {
+    "surface/bg": {
+      "r": 0.0502030166,
+      "g": 0.0502030166,
+      "b": 0.0502030166,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.2263616092,
+      "g": 0.2263616092,
+      "b": 0.2263616092,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.264872785,
+      "g": 0.264872785,
+      "b": 0.264872785,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.2263616092,
+      "g": 0.2263616092,
+      "b": 0.2263616092,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.2457477303,
+      "g": 0.2457477303,
+      "b": 0.2457477303,
+      "a": 1
+    }
+  },
+  "Dark/Standard/Workspace": {
+    "surface/bg": {
+      "r": 0.0877167424,
+      "g": 0.0877167424,
+      "b": 0.0877167424,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.1861108446,
+      "g": 0.1861108446,
+      "b": 0.1861108446,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.2263616092,
+      "g": 0.2263616092,
+      "b": 0.2263616092,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.1861108446,
+      "g": 0.1861108446,
+      "b": 0.1861108446,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.2065551762,
+      "g": 0.2065551762,
+      "b": 0.2065551762,
+      "a": 1
+    }
+  },
+  "Dark/Standard/Content": {
+    "surface/bg": {
+      "r": 0.1167714979,
+      "g": 0.1167714979,
+      "b": 0.1167714979,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.1647146074,
+      "g": 0.1647146074,
+      "b": 0.1647146074,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.2065551762,
+      "g": 0.2065551762,
+      "b": 0.2065551762,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.1647146074,
+      "g": 0.1647146074,
+      "b": 0.1647146074,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.1861108446,
+      "g": 0.1861108446,
+      "b": 0.1861108446,
+      "a": 1
+    }
+  },
+  "Dark/Standard/Overlay": {
+    "surface/bg": {
+      "r": 0.1418796635,
+      "g": 0.1418796635,
+      "b": 0.1418796635,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.2457477303,
+      "g": 0.2457477303,
+      "b": 0.2457477303,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.3217808795,
+      "g": 0.3217808795,
+      "b": 0.3217808795,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.2838585422,
+      "g": 0.2838585422,
+      "b": 0.2838585422,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.3028015713,
+      "g": 0.3028015713,
+      "b": 0.3028015713,
+      "a": 1
+    }
+  },
+  "Dark/Standard/Invert": {
+    "surface/bg": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.9653810442,
+      "g": 0.9653810442,
+      "b": 0.9653810442,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.8991073255,
+      "g": 0.8991073255,
+      "b": 0.8991073255,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.9653810442,
+      "g": 0.9653810442,
+      "b": 0.9653810442,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.9317619717,
+      "g": 0.9317619717,
+      "b": 0.9317619717,
+      "a": 1
+    }
+  },
+  "Dark/Standard/Glass": {
+    "surface/bg": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0.8
+    },
+    "surface/secondary/normal": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.08
+    },
+    "surface/secondary/active": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.18
+    },
+    "surface/tertiary/normal": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.1
+    },
+    "surface/tertiary/active": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.14
+    }
+  },
+  "Dark/Dimmed/Shell": {
+    "surface/bg": {
+      "r": 0.1647146074,
+      "g": 0.1647146074,
+      "b": 0.1647146074,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.2263616092,
+      "g": 0.2263616092,
+      "b": 0.2263616092,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.264872785,
+      "g": 0.264872785,
+      "b": 0.264872785,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.2263616092,
+      "g": 0.2263616092,
+      "b": 0.2263616092,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.2457477303,
+      "g": 0.2457477303,
+      "b": 0.2457477303,
+      "a": 1
+    }
+  },
+  "Dark/Dimmed/Workspace": {
+    "surface/bg": {
+      "r": 0.1167714979,
+      "g": 0.1167714979,
+      "b": 0.1167714979,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.1861108446,
+      "g": 0.1861108446,
+      "b": 0.1861108446,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.2263616092,
+      "g": 0.2263616092,
+      "b": 0.2263616092,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.1861108446,
+      "g": 0.1861108446,
+      "b": 0.1861108446,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.2065551762,
+      "g": 0.2065551762,
+      "b": 0.2065551762,
+      "a": 1
+    }
+  },
+  "Dark/Dimmed/Content": {
+    "surface/bg": {
+      "r": 0.0877167424,
+      "g": 0.0877167424,
+      "b": 0.0877167424,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.1647146074,
+      "g": 0.1647146074,
+      "b": 0.1647146074,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.2065551762,
+      "g": 0.2065551762,
+      "b": 0.2065551762,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.1647146074,
+      "g": 0.1647146074,
+      "b": 0.1647146074,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.1861108446,
+      "g": 0.1861108446,
+      "b": 0.1861108446,
+      "a": 1
+    }
+  },
+  "Dark/Dimmed/Overlay": {
+    "surface/bg": {
+      "r": 0.1861108446,
+      "g": 0.1861108446,
+      "b": 0.1861108446,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.2457477303,
+      "g": 0.2457477303,
+      "b": 0.2457477303,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.2838585422,
+      "g": 0.2838585422,
+      "b": 0.2838585422,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.2457477303,
+      "g": 0.2457477303,
+      "b": 0.2457477303,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.264872785,
+      "g": 0.264872785,
+      "b": 0.264872785,
+      "a": 1
+    }
+  },
+  "Dark/Dimmed/Invert": {
+    "surface/bg": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 1
+    },
+    "surface/secondary/normal": {
+      "r": 0.9653810442,
+      "g": 0.9653810442,
+      "b": 0.9653810442,
+      "a": 1
+    },
+    "surface/secondary/active": {
+      "r": 0.8991073255,
+      "g": 0.8991073255,
+      "b": 0.8991073255,
+      "a": 1
+    },
+    "surface/tertiary/normal": {
+      "r": 0.9653810442,
+      "g": 0.9653810442,
+      "b": 0.9653810442,
+      "a": 1
+    },
+    "surface/tertiary/active": {
+      "r": 0.9317619717,
+      "g": 0.9317619717,
+      "b": 0.9317619717,
+      "a": 1
+    }
+  },
+  "Dark/Dimmed/Glass": {
+    "surface/bg": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0.8
+    },
+    "surface/secondary/normal": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.08
+    },
+    "surface/secondary/active": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.18
+    },
+    "surface/tertiary/normal": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.1
+    },
+    "surface/tertiary/active": {
+      "r": 1,
+      "g": 1,
+      "b": 1,
+      "a": 0.14
+    }
+  }
+}

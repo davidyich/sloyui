@@ -1,10 +1,12 @@
+import { DisclosureChevron } from './disclosure-chevron.js';
+import { TooltipButton } from './compact-tooltip.js';
 import { useTranslate } from './locale.js';
 import { MovingHighlight } from './moving-highlight.js';
 import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState, type HTMLAttributes, type ReactNode, type ButtonHTMLAttributes } from 'react';
 import { cx, Icon, IconBox, Counter, TextAction, type Color, type IconSource, type Size } from './primitives.js';
-export function Card({ className, variant = 'default', ...props }: HTMLAttributes<HTMLDivElement> & { variant?: 'default' | 'subtle' | 'elevated' }) { return <div className={cx('cap-card', 'cap-surface-boundary', className)} data-variant={variant} data-surface={variant === 'subtle' ? 'canvas' : 'raised'} {...props} />; }
+export function Card({ className, variant = 'default', ...props }: HTMLAttributes<HTMLDivElement> & { variant?: 'default' | 'subtle' | 'elevated' }) { return <div className={cx('cap-card', 'cap-surface-boundary', className)} data-variant={variant} {...props} />; }
 export function ObjectCard({ title, description, icon = 'page', color = 'gray', meta, cover, className, ...props }: Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> & { title: string; description?: string; icon?: IconSource; color?: Color; meta?: ReactNode; cover?: ReactNode }) {
-  return <button type="button" className={cx('cap-object-card', className)} data-surface="raised" {...props}>{cover && <span className="cap-object-cover">{cover}</span>}<span className="cap-object-body"><IconBox icon={icon} color={color} /><strong>{title}</strong>{description && <span className="cap-object-description">{description}</span>}{meta && <span className="cap-object-meta">{meta}</span>}</span></button>;
+  return <button type="button" className={cx('cap-object-card', 'cap-surface-boundary', className)} {...props}>{cover && <span className="cap-object-cover">{cover}</span>}<span className="cap-object-body"><IconBox icon={icon} color={color} /><strong>{title}</strong>{description && <span className="cap-object-description">{description}</span>}{meta && <span className="cap-object-meta">{meta}</span>}</span></button>;
 }
 export interface SidebarItemProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color'> { icon?: IconSource; active?: boolean; count?: number; color?: Color | 'inherit' }
 export function SidebarItem({ icon, active, count, color = 'neutral', children, className, ...props }: SidebarItemProps) {
@@ -16,11 +18,12 @@ export function CollectionRow({ title, icon = 'page', color = 'gray', meta, clas
 export function PropertyRow({ label, icon, children, className, ...props }: HTMLAttributes<HTMLDivElement> & { label: string; icon?: IconSource }) {
   return <div className={cx('cap-property-row', className)} {...props}><span className="cap-property-label">{icon && <Icon name={icon} />}{label}</span><div>{children}</div></div>;
 }
-export function Breadcrumbs({ items, label: suppliedLabel }: { items: { label: string; href?: string }[]; label?: string }) {
+export interface BreadcrumbItem { label: string; href?: string; /** Display an ellipsis while keeping the full destination label accessible. */ collapsed?: boolean }
+export function Breadcrumbs({ items, label: suppliedLabel }: { items: BreadcrumbItem[]; label?: string }) {
   const t = useTranslate();
   const label = suppliedLabel === undefined ? (t("Хлебные крошки", "Breadcrumbs")) : suppliedLabel;
 
-  return <nav aria-label={label} className="cap-breadcrumbs"><ol>{items.map((item, i) => <li key={i}>{i > 0 && <Icon name="chevron" size={12} />}{item.href && i < items.length - 1 ? <TextAction href={item.href}>{item.label}</TextAction> : <span aria-current={i === items.length - 1 ? 'page' : undefined}>{item.label}</span>}</li>)}</ol></nav>;
+  return <nav aria-label={label} className="cap-breadcrumbs"><ol>{items.map((item, i) => <li key={i}>{i > 0 && <Icon name="chevron" size={12} />}{item.href && i < items.length - 1 ? <TextAction href={item.href} aria-label={item.collapsed ? item.label : undefined} title={item.collapsed ? item.label : undefined} data-collapsed={item.collapsed || undefined}>{item.collapsed ? '…' : item.label}</TextAction> : <span aria-label={item.collapsed ? item.label : undefined} title={item.collapsed ? item.label : undefined} data-collapsed={item.collapsed || undefined} aria-current={i === items.length - 1 ? 'page' : undefined}>{item.collapsed ? '…' : item.label}</span>}</li>)}</ol></nav>;
 }
 export function Callout({ color = 'blue', icon = 'info', title, children, className, ...props }: Omit<HTMLAttributes<HTMLDivElement>, 'color'> & { color?: Color; icon?: IconSource; title?: string }) {
   return <div className={cx('cap-callout', className)} data-color={color} {...props}><Icon name={icon} size={18} /><div>{title && <strong>{title}</strong>}{children}</div></div>;
@@ -28,8 +31,8 @@ export function Callout({ color = 'blue', icon = 'info', title, children, classN
 export function EmptyState({ icon = 'folder', title, description, action }: { icon?: IconSource | false; title: string; description?: string; action?: ReactNode }) {
   return <div className="cap-empty">{icon && <span className="cap-empty-icon" aria-hidden="true"><IconBox icon={icon} color="neutral" size="lg" /></span>}<strong>{title}</strong>{description && <p>{description}</p>}{action}</div>;
 }
-export type AccordionProps = Omit<React.ComponentPropsWithoutRef<'details'>, 'title'> & { title: ReactNode; variant?: 'default' | 'navigation' | 'bouncy'; icon?: IconSource; defaultOpen?: boolean; onOpenChange?: (open: boolean) => void; expandLabel?: string; collapseLabel?: string };
-export function Accordion({ title, children, className, open, onToggle, variant = 'default', icon, defaultOpen = false, onOpenChange, expandLabel, collapseLabel, ...props }: AccordionProps) {
+export type AccordionProps = Omit<React.ComponentPropsWithoutRef<'details'>, 'title'> & { title: ReactNode; variant?: 'default' | 'navigation' | 'bouncy'; chevronPosition?: 'start' | 'end'; icon?: IconSource; defaultOpen?: boolean; onOpenChange?: (open: boolean) => void; expandLabel?: string; collapseLabel?: string };
+export function Accordion({ title, children, className, open, onToggle, variant = 'default', chevronPosition = 'start', icon, defaultOpen = false, onOpenChange, expandLabel, collapseLabel, ...props }: AccordionProps) {
   const [fallback, setFallback] = useState(false);
   const [requestedOpen, setRequestedOpen] = useState(open ?? defaultOpen);
   const [renderedOpen, setRenderedOpen] = useState(open ?? defaultOpen);
@@ -81,14 +84,14 @@ export function Accordion({ title, children, className, open, onToggle, variant 
     if (open === undefined || !onOpenChange) setRequestedOpen(next);
   };
   const toggleFallback = () => request(!requestedOpen);
-  return <details className={cx('cap-accordion', className)} {...props} open={fallback ? renderedOpen : requestedOpen} onToggle={event => { if (!fallback) setRequestedOpen(event.currentTarget.open); onToggle?.(event); }} data-variant={variant} data-fallback={fallback || undefined} data-expanded={requestedOpen}>
-    <summary ref={summary} aria-expanded={requestedOpen} aria-label={requestedOpen ? collapseLabel : expandLabel} onClick={event => { event.preventDefault(); request(!requestedOpen); }} onKeyDown={fallback ? event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleFallback(); } } : undefined}><Icon name="chevron" className="cap-accordion-chevron" />{icon && <Icon name={icon} className="cap-accordion-icon"/>}<span className="cap-accordion-title">{title}</span></summary>
+  return <details className={cx('cap-accordion', className)} {...props} open={fallback ? renderedOpen : requestedOpen} onToggle={event => { if (!fallback) setRequestedOpen(event.currentTarget.open); onToggle?.(event); }} data-variant={variant} data-chevron-position={chevronPosition} data-fallback={fallback || undefined} data-expanded={requestedOpen}>
+    <summary ref={summary} aria-expanded={requestedOpen} aria-label={requestedOpen ? collapseLabel : expandLabel} onClick={event => { event.preventDefault(); request(!requestedOpen); }} onKeyDown={fallback ? event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleFallback(); } } : undefined}><DisclosureChevron expanded={requestedOpen} closed={chevronPosition === 'end' ? 'down' : 'right'} className="cap-accordion-chevron"/>{icon && <Icon name={icon} className="cap-accordion-icon"/>}<span className="cap-accordion-title">{title}</span></summary>
     <div ref={body} className="cap-accordion-body" aria-hidden={!requestedOpen} inert={!requestedOpen}><div className="cap-accordion-content">{children}</div></div>
   </details>;
 }
 export interface TabItem { value: string; label: string; icon?: IconSource; content: ReactNode; disabled?: boolean; count?: number; color?: Color | 'inherit' }
 export interface TabsProps { size?: Size; variant?: 'line' | 'pills' | 'segment' | 'outline' | 'accent' | 'workspace'; trailing?: ReactNode; items: TabItem[]; value: string; onValueChange: (v: string) => void; label: string; className?: string; scrollLabels?: { previous: string; next: string } }
-export function Tabs({ items, value, onValueChange, label, className, variant = 'line', size = 'md', trailing, scrollLabels: suppliedScrollLabels }: TabsProps) {
+export function Tabs({ items, value, onValueChange, label, className, variant = 'segment', size = 'md', trailing, scrollLabels: suppliedScrollLabels }: TabsProps) {
   const t = useTranslate();
   const scrollLabels = suppliedScrollLabels === undefined ? ({ previous: t("Прокрутить вкладки влево", "Scroll tabs left"), next: t("Прокрутить вкладки вправо", "Scroll tabs right") }) : suppliedScrollLabels;
 
@@ -133,7 +136,7 @@ export function Tabs({ items, value, onValueChange, label, className, variant = 
     node?.scrollBy?.({ left: direction * node.clientWidth * 0.75, behavior: globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
   };
   return <div className={cx('cap-tabs', className)}><div className="cap-tab-bar" data-variant={variant} data-overflow={edges.overflow || undefined}>
-    {edges.overflow && <button type="button" className="cap-tab-scroll" data-edge="left" aria-label={scrollLabels.previous} aria-controls={`${id}-viewport`} disabled={!edges.left} onClick={() => scroll(-1)}><Icon name="chevron"/></button>}
+    {edges.overflow && <TooltipButton type="button" className="cap-tab-scroll" data-edge="left" aria-label={scrollLabels.previous} aria-controls={`${id}-viewport`} disabled={!edges.left} onClick={() => scroll(-1)}><Icon name="chevron"/></TooltipButton>}
     <div ref={viewport} id={`${id}-viewport`} className="cap-tab-viewport" data-left={edges.left || undefined} data-right={edges.right || undefined} onFocusCapture={event => { if (event.target instanceof HTMLElement && event.target.getAttribute('role') === 'tab') reveal(event.target); }}>
       <div ref={track} role="tablist" aria-label={label} data-size={size} data-variant={variant} className="cap-tab-list cap-shared-hover" onKeyDown={event => {
         if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key) || !enabled.length) return;
@@ -146,11 +149,11 @@ export function Tabs({ items, value, onValueChange, label, className, variant = 
         if (next) { onValueChange(next.value); document.getElementById(`${id}-tab-${next.value}`)?.focus(); }
       }}>
         {!['line', 'pills', 'workspace'].includes(variant) && <MovingHighlight root={track} selected="[role='tab'][aria-selected='true']" revision={value}/>}
-        <MovingHighlight root={track} hover target="[role='tab']:not(:disabled):not([aria-selected='true'])"/>
+        {variant !== 'line' && <MovingHighlight root={track} hover target="[role='tab']:not(:disabled):not([aria-selected='true'])"/>}
         {items.map(item => <button type="button" key={item.value} id={`${id}-tab-${item.value}`} role="tab" data-color={item.color === 'inherit' ? undefined : item.color} data-accented={item.color !== undefined && item.color !== 'neutral' && item.color !== 'gray' || undefined} aria-selected={value === item.value} aria-controls={`${id}-panel-${item.value}`} tabIndex={value === item.value ? 0 : -1} disabled={item.disabled} onClick={() => onValueChange(item.value)}><span className="cap-tab-label">{item.icon && <Icon name={item.icon}/>}<span>{item.label}</span></span>{item.count !== undefined && <Counter value={item.count} max={99} size="xs" variant="plain"/>}</button>)}
       </div>
     </div>
-    {edges.overflow && <button type="button" className="cap-tab-scroll" data-edge="right" aria-label={scrollLabels.next} aria-controls={`${id}-viewport`} disabled={!edges.right} onClick={() => scroll(1)}><Icon name="chevron"/></button>}
+    {edges.overflow && <TooltipButton type="button" className="cap-tab-scroll" data-edge="right" aria-label={scrollLabels.next} aria-controls={`${id}-viewport`} disabled={!edges.right} onClick={() => scroll(1)}><Icon name="chevron"/></TooltipButton>}
     {trailing && <div className="cap-tab-trailing">{trailing}</div>}
   </div>{items.map(item => <div key={item.value} id={`${id}-panel-${item.value}`} role="tabpanel" aria-labelledby={`${id}-tab-${item.value}`} hidden={value !== item.value} tabIndex={0} className="cap-tab-panel">{item.content}</div>)}</div>;
 }

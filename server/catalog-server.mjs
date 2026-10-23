@@ -1,0 +1,12 @@
+import {createPublication} from './publication.mjs';
+import {createServer} from 'node:http';
+import {createCatalogStore} from './catalog-store.mjs';
+import {createCatalogHandler} from './catalog-api.mjs';
+import {createIdentity} from './oidc.mjs';
+const origin=process.env.SLOY_ORIGIN??'https://sloyui.com';
+const store=await createCatalogStore(process.env.CATALOG_DATA??'/srv/sloyui/data/source');
+const identity=await createIdentity({origin,clientFile:process.env.OIDC_CLIENT_FILE??'/srv/sloyui/private/oidc-client.json',directory:process.env.SESSION_DATA??'/srv/sloyui/private'});
+const server=createServer(createCatalogHandler({store,identity,origin,publication:createPublication({base:process.env.SLOY_BASE,channel:process.env.SLOY_CHANNEL})}));
+server.requestTimeout=15000;server.headersTimeout=10000;
+server.listen(Number(process.env.PORT??4318),'127.0.0.1',()=>console.log('Sloy UI catalogue API ready'));
+for(const signal of ['SIGTERM','SIGINT'])process.on(signal,()=>server.close(()=>{store.close();process.exit(0);}));

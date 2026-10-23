@@ -6,6 +6,20 @@ import { Button, IconButton } from '../src/components/primitives.js';
 
 afterEach(cleanup);
 
+const componentAliases = new Map([...readFileSync('src/styles/tokens.css', 'utf8').matchAll(/(--cap-component-[\w-]+)\s*:\s*(var\(--cap-[\w-]+\))\s*;/g)].map(([, name, value]) => [name, value]));
+function semanticReference(reference: string): string {
+  const seen = new Set<string>();
+  while (reference.startsWith('var(--cap-component-')) {
+    const name = reference.slice(4, -1);
+    if (seen.has(name)) throw new Error(`Circular component binding ${name}`);
+    seen.add(name);
+    const alias = componentAliases.get(name);
+    if (!alias) throw new Error(`Missing component binding ${name}`);
+    reference = alias;
+  }
+  return reference;
+}
+
 it('keeps primary neutral and leaves both accent pairs available for Button and IconButton', () => {
   const style = document.createElement('style');
   style.textContent = readFileSync('src/styles/states.css', 'utf8');
@@ -22,13 +36,13 @@ it('keeps primary neutral and leaves both accent pairs available for Button and 
       for (const name of ['Save', 'Publish']) {
         const button = screen.getByRole('button', { name });
         const css = getComputedStyle(button);
-        for (const state of ['normal', 'hover', 'pressed', 'text']) expect(css.getPropertyValue(`--cap-state-${state}`).trim()).toBe(`var(--cap-action-${state})`);
+        for (const state of ['normal', 'hover', 'pressed', 'text']) expect(semanticReference(css.getPropertyValue(`--cap-state-${state}`).trim())).toBe(`var(--cap-action-${state})`);
         expect(button).not.toHaveAttribute('data-accent');
       }
       expect(ref.current).toBe(screen.getByRole('button', { name: 'Publish' }));
       for (const [name, pair] of [['Color primary', 'accent-solid'], ['Color secondary', 'accent']]) {
         const css = getComputedStyle(screen.getByRole('button', { name }));
-        for (const state of ['normal', 'hover', 'pressed', 'text']) expect(css.getPropertyValue(`--cap-state-${state}`).trim()).toBe(`var(--cap-${pair}-${state})`);
+        for (const state of ['normal', 'hover', 'pressed', 'text']) expect(semanticReference(css.getPropertyValue(`--cap-state-${state}`).trim())).toBe(`var(--cap-${pair}-${state})`);
       }
       unmount();
     }

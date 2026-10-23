@@ -24,8 +24,8 @@ export function ProjectBoard() {
     </div>
     {visible.length ? <div style={{ display: 'grid', gridTemplateColumns: view === 'grid' ? 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))' : '1fr', gap: 'var(--cap-space-3)' }}>
       {visible.map(project => view === 'grid'
-        ? <ObjectCard key={project.id} title={project.title} icon="cube" color="teal" meta={<Tag color="gray">В процессе</Tag>} onClick={() => { setEditingId(project.id); setTitle(project.title); setOpen(true); }} />
-        : <CollectionRow key={project.id} title={project.title} icon="cube" color="teal" onClick={() => { setEditingId(project.id); setTitle(project.title); setOpen(true); }} />)}
+        ? <ObjectCard key={project.id} title={project.title} icon="cube" color="green" meta={<Tag color="gray">В процессе</Tag>} onClick={() => { setEditingId(project.id); setTitle(project.title); setOpen(true); }} />
+        : <CollectionRow key={project.id} title={project.title} icon="cube" color="green" onClick={() => { setEditingId(project.id); setTitle(project.title); setOpen(true); }} />)}
     </div> : <EmptyState icon="search" title="Ничего не найдено" description="Попробуйте другой запрос или создайте проект." />}
     <Dialog open={open} onOpenChange={setOpen} title={editingId ? 'Редактировать проект' : 'Создать проект'} footer={<><Button variant="ghost" onClick={() => setOpen(false)}>Отмена</Button><Button variant="primary" onClick={create} disabled={!title.trim()}>{editingId ? 'Сохранить' : 'Создать'}</Button></>}>
       <Field label="Название проекта" required>{props => <Input {...props} value={title} onChange={e => setTitle(e.target.value)} onKeyDown={e => { if (e.key === 'Enter' && !e.nativeEvent.isComposing) create(); }} />}</Field>

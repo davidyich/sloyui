@@ -1,6 +1,8 @@
+import { DisclosureChevron } from './disclosure-chevron.js';
+import type { Surface } from './surface.js';
 import { useTranslate, useLocale } from './locale.js';
 import { useLayoutEffect, useMemo, useRef, useState, type ReactNode, type CSSProperties, type KeyboardEvent } from 'react';
-import { ArrowDown, ArrowUp, ChevronDown, ChevronLeft, ChevronRight, Copy, Link2, Search } from 'lucide-react';
+import { ArrowDown, ArrowUp, ChevronLeft, ChevronRight, Copy, Link2, Search } from 'lucide-react';
 import { Button, Icon, IconButton, Tag, type IconSource } from './primitives.js';
 import { Checkbox, Input } from './forms.js';
 import { Popover } from './overlays.js';
@@ -47,7 +49,7 @@ export interface DataTableProps<T> {
   /** Keep the selection checkbox column visible during horizontal scrolling. */
   pinSelection?: boolean;
   /** Omit to inherit the composition's painted surface. */
-  surface?: 'base' | 'canvas' | 'raised' | 'floating';
+  surface?: Surface;
 }
 function compareValues(a: string | number | Date | null | undefined, b: string | number | Date | null | undefined, direction: 'asc' | 'desc', collator: Intl.Collator) {
   const emptyA = a === null || a === undefined || a === '', emptyB = b === null || b === undefined || b === '';
@@ -389,7 +391,7 @@ export function JsonViewer({ label, data, rootName = 'root', expanded: controlle
     {rows.length ? <div ref={tree} className="cap-json-tree" role="tree" aria-label={label} style={{ maxHeight }} onKeyDown={keydown}>
       {presentRows.map(({item:row,phase}) => row.more ? <div key={row.path} role="treeitem" tabIndex={phase!=='exit'&&row.path===current?0:-1} data-path={row.path} data-presence={phase} aria-hidden={phase==='exit'||undefined} inert={phase==='exit'||undefined} aria-level={row.depth+1} aria-selected={row.path===current} className="cap-json-row cap-json-more" style={{paddingInlineStart:8+row.depth*18}} onFocus={()=>{if(phase!=='exit')setSelected(row.path)}} onClick={()=>{if(phase!=='exit')showMore(row)}}>{t("Показать ещё", "Show more")} {Math.min(size,row.remaining??0)} {t("из", "of")} {row.remaining}</div>
       : <div key={row.path} role="treeitem" tabIndex={phase!=='exit'&&row.path===current?0:-1} data-path={row.path} data-presence={phase} aria-hidden={phase==='exit'||undefined} inert={phase==='exit'||undefined} aria-level={row.depth+1} aria-expanded={row.branch ? needle ? true : expanded.has(row.path) : undefined} className="cap-json-row" style={{paddingInlineStart:8+row.depth*18}} onFocus={()=>{if(phase!=='exit')setSelected(row.path)}} onClick={()=>{if(phase==='exit')return;setSelected(row.path);onSelect?.({path:row.path,value:row.value,type:row.type}); if(row.branch)updateExpanded(row.path,!expanded.has(row.path));}}>
-        <span className="cap-json-disclosure" aria-hidden="true">{row.branch ? needle || expanded.has(row.path) ? <ChevronDown size={14}/> : <ChevronRight size={14}/> : null}</span>
+        <span className="cap-json-disclosure" aria-hidden="true">{row.branch ? <DisclosureChevron expanded={!!needle || expanded.has(row.path)} closed="right" size={14}/> : null}</span>
         <span className="cap-json-key">{row.name}</span><span className="cap-json-colon">:</span>
         <span className="cap-json-value" data-type={row.type}>{row.cycle ? t("[Циклическая ссылка]", "[Circular]") : row.branch ? row.type === 'array' ? `[${row.count}${t(" элементов]", " items]")}` : `{${row.count}${t(" ключей}", " keys}")}` : jsonPrimitive(row.value,row.type)}</span>
         {copyable&&<span className="cap-json-actions"><IconButton label={`${t("Копировать значение ", "Copy value ")}${row.path}`} icon={Copy} size="xs" variant="ghost" onClick={event=>{event.stopPropagation();void copy(row,'value');}}/><IconButton label={`${t("Копировать путь ", "Copy path ")}${row.path}`} icon={Link2} size="xs" variant="ghost" onClick={event=>{event.stopPropagation();void copy(row,'path');}}/></span>}

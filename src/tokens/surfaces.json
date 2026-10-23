@@ -1,42 +1,158 @@
 {
   "base": {
-    "palette": [
-      "gray/25",
-      "gray/950"
-    ],
-    "background": [
-      "#F6F6F6",
-      "#161616"
-    ]
-  },
-  "canvas": {
-    "palette": [
-      "gray/50",
-      "gray/975"
-    ],
+    "source": "figma/token-system-v4/graph.json",
+    "surface": "Shell",
     "background": [
       "#EEEEEE",
       "#0D0D0D"
+    ],
+    "block": [
+      "#E5E5E5",
+      "#3A3A3A"
+    ]
+  },
+  "page": {
+    "source": "figma/token-system-v4/graph.json",
+    "surface": "Shell",
+    "background": [
+      "#EEEEEE",
+      "#0D0D0D"
+    ],
+    "block": [
+      "#E5E5E5",
+      "#3A3A3A"
+    ]
+  },
+  "shell": {
+    "source": "figma/token-system-v4/graph.json",
+    "surface": "Shell",
+    "background": [
+      "#EEEEEE",
+      "#0D0D0D"
+    ],
+    "block": [
+      "#E5E5E5",
+      "#3A3A3A"
+    ]
+  },
+  "canvas": {
+    "source": "figma/token-system-v4/graph.json",
+    "surface": "Workspace",
+    "background": [
+      "#F6F6F6",
+      "#161616"
+    ],
+    "block": [
+      "#EEEEEE",
+      "#2F2F2F"
+    ]
+  },
+  "inset": {
+    "source": "figma/token-system-v4/graph.json",
+    "surface": "Workspace",
+    "background": [
+      "#F6F6F6",
+      "#161616"
+    ],
+    "block": [
+      "#EEEEEE",
+      "#2F2F2F"
+    ]
+  },
+  "workspace": {
+    "source": "figma/token-system-v4/graph.json",
+    "surface": "Workspace",
+    "background": [
+      "#F6F6F6",
+      "#161616"
+    ],
+    "block": [
+      "#EEEEEE",
+      "#2F2F2F"
     ]
   },
   "raised": {
-    "palette": [
-      "gray/0",
-      "gray/925"
-    ],
+    "source": "figma/token-system-v4/graph.json",
+    "surface": "Content",
     "background": [
       "#FFFFFF",
       "#1E1E1E"
+    ],
+    "block": [
+      "#F6F6F6",
+      "#2A2A2A"
+    ]
+  },
+  "panel": {
+    "source": "figma/token-system-v4/graph.json",
+    "surface": "Content",
+    "background": [
+      "#FFFFFF",
+      "#1E1E1E"
+    ],
+    "block": [
+      "#F6F6F6",
+      "#2A2A2A"
+    ]
+  },
+  "content": {
+    "source": "figma/token-system-v4/graph.json",
+    "surface": "Content",
+    "background": [
+      "#FFFFFF",
+      "#1E1E1E"
+    ],
+    "block": [
+      "#F6F6F6",
+      "#2A2A2A"
     ]
   },
   "floating": {
-    "palette": [
-      "gray/0",
-      "gray/900"
-    ],
+    "source": "figma/token-system-v4/graph.json",
+    "surface": "Overlay",
     "background": [
       "#FFFFFF",
       "#242424"
+    ],
+    "block": [
+      "#F6F6F6",
+      "#3F3F3F"
+    ]
+  },
+  "overlay": {
+    "source": "figma/token-system-v4/graph.json",
+    "surface": "Overlay",
+    "background": [
+      "#FFFFFF",
+      "#242424"
+    ],
+    "block": [
+      "#F6F6F6",
+      "#3F3F3F"
+    ]
+  },
+  "invert": {
+    "source": "figma/token-system-v4/graph.json",
+    "surface": "Invert",
+    "background": [
+      "#000000",
+      "#FFFFFF"
+    ],
+    "block": [
+      "#2A2A2A",
+      "#F6F6F6"
+    ]
+  },
+  "glass": {
+    "source": "figma/token-system-v4/graph.json",
+    "surface": "Glass",
+    "background": [
+      "#FFFFFF",
+      "#000000"
+    ],
+    "block": [
+      "#000000",
+      "#FFFFFF"
     ]
   }
 }

@@ -1,6 +1,6 @@
 # Third-party provenance and distribution
 
-Reviewed 2026-10-08. This inventory records sources and unresolved scope; it does not guarantee legal clearance.
+Reviewed 2026-10-08. This inventory records the licenses and credits shipped with Sloy UI.
 
 ## Licensed material
 
@@ -18,17 +18,6 @@ beUI informed locally implemented BottomSheet, FileTree, PreviewRail, selection,
 shadcn/ui, shadcn.io and Kobra are reference directions for resizing, scroll fades and toast behavior. No associated registry/runtime dependencies are installed. Dependency absence alone does not prove code independence. [shadcn/ui MIT](https://github.com/shadcn-ui/ui/blob/main/LICENSE.md) covers that repository only; future imports from another registry require the actual author's license. [Kobra Toast](https://kobra.systems/components/toast) is credited without asserting a code-license grant.
 
 Simple avatar and landscape SVG fixtures are locally declared inline in `demo/stories-content.tsx` and `demo/FileCardExample.tsx`; they do not fetch third-party photos. Consumers must clear any logos/media they supply themselves.
-
-## Capacities provenance and public cleanup
-
-[Capacities terms, section 7](https://capacities.io/terms-and-conditions-en), reserve rights in software, designs, content and data compilations and provide no general open-source redistribution grant. Credit and renaming do not supply that grant.
-
-Raw stylesheet snapshots, selector/context extracts and original frozen archives must be excluded from public distributions. The reviewed paths include `source/loaded-stylesheets.json`, `source/light-css.json`, `source/dark-css.json`, `source/token-rules.json` and historical `versions/*.tgz`. Removing files from a current checkout does not remove them from Git history.
-
-The public foundation uses independently authored Sloy palette definitions generated from the project's own OKLCH configuration. The original complete Capacities color catalogs, copied token graph and raw palette export are excluded from the public distribution. This replaces the previously unresolved source dataset; the independent semantic/API implementation keeps its own context contract.
-
-Historical Git commits and releases may still contain removed captures. Any existing public history/release cleanup requires its own explicit action; this current-tree review does not certify those historical artifacts.
-Before publication verify the public tree and history, npm tarball and compiled catalogue. Packaging/type checks establish technical behavior, not permission to distribute upstream proprietary material.
 
 ## Arc adaptations
 

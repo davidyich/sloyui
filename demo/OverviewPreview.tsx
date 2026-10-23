@@ -13,6 +13,9 @@ export function OverviewPreview({name}:{name:ComponentName}) {
  const title=t('Сад идей','Idea garden');
  const note=t('Следующий шаг','Next step');
  const compact:Partial<Record<ComponentName,()=>ReactNode>>={
+  Field:()=> <UI.Input aria-label={t('Название проекта','Project name')} placeholder={title}/>,
+  Slider:()=> <div className="playground-field-preview"><UI.Slider label={t('Плотность','Density')} value={48} onChange={noop} showValue={false}/></div>,
+  Tabs:()=> <UI.Tabs label={t('Разделы проекта','Project sections')} value="notes" onValueChange={noop} items={[{value:'notes',label:t('Заметки','Notes'),content:null},{value:'files',label:t('Файлы','Files'),content:null}]}/>,
   FileCard:()=> <UI.FileCard name="brand-guidelines.pdf" sizeLabel="248 KB"/>,
   ToastStack:()=> <UI.ToastStack position="inline" expandDirection="down" label={t('Уведомления','Notifications')} items={[{id:'one',title:t('Сборка готова','Build ready'),duration:Infinity},{id:'two',title:t('Изменения сохранены','Changes saved'),duration:Infinity},{id:'three',title:t('Публикуем проект…','Deploying to production…'),description:t('Собираем страницы проекта.','Building project pages.'),loading:true}]} onDismiss={noop}/>,
   ResizablePanelGroup:()=> <ResizableExample nested={false}/>,
@@ -34,6 +37,7 @@ export function OverviewPreview({name}:{name:ComponentName}) {
  const spec=(playgrounds as Record<string, typeof playgrounds.Button>)[name] ?? (arcPlaygrounds as Record<string, typeof arcPlaygrounds.ComboBox>)[name];
  const values=Object.fromEntries(spec.controls.map(control=>[control.key,typeof control.initial==='string'&&!control.options?c(control.initial):control.initial]));
  // Small, representative values keep the whole example visible without hiding its content.
- Object.assign(values,{height:180,rows:2,count:2,months:'1',showAgenda:false,points:10,events:false,header:false,footer:false});
+ Object.assign(values,{height:180,rows:2,count:2,months:'1',showAgenda:false,points:10,events:false,header:false,footer:false,showLabel:false,showDescription:false,hint:false});
+ if(name==='MultiSelect')values.values='project';
  return <>{spec.render(values,{set:noop,notify:noop,id,icons:[],t:c})}</>;
 }

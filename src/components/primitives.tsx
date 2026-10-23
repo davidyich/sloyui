@@ -1,9 +1,12 @@
+import { TooltipButton } from './compact-tooltip.js';
+import { SharedHoverForegroundContext } from './moving-highlight.js';
 import { useTranslate } from './locale.js';
-import { forwardRef, type ButtonHTMLAttributes, type HTMLAttributes, type ReactNode, type ComponentType, type AnchorHTMLAttributes, type SVGProps } from 'react';
+import { forwardRef, useContext, type ButtonHTMLAttributes, type HTMLAttributes, type ReactNode, type ComponentType, type AnchorHTMLAttributes, type SVGProps } from 'react';
 export const cx = (...values: (string | false | null | undefined)[]) => values.filter(Boolean).join(' ');
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-export type Color = 'neutral' | 'gray' | 'rose' | 'pink' | 'fuchsia' | 'purple' | 'violet' | 'indigo' | 'blue' | 'sky' | 'cyan' | 'teal' | 'emerald' | 'green' | 'lime' | 'yellow' | 'amber' | 'orange' | 'red';
-export const colors: Color[] = ['neutral', 'rose', 'pink', 'fuchsia', 'purple', 'violet', 'indigo', 'blue', 'sky', 'cyan', 'teal', 'emerald', 'green', 'lime', 'yellow', 'amber', 'orange', 'red'];
+export type Color = 'neutral' | 'gray' | 'rose' | 'fuchsia' | 'cyan' | 'emerald' | 'purple' | 'pink' | 'cherry' | 'red' | 'vermilion' | 'orange' | 'amber' | 'yellow' | 'lime' | 'shamrock' | 'green' | 'teal' | 'mint' | 'turquoise' | 'sky' | 'blue' | 'indigo' | 'sapphire' | 'violet' | 'grape';
+/** Canonical choices; Color retains historical identifiers for existing consumers. */
+export const colors: Color[] = ['neutral', 'blue', 'green', 'orange', 'red', 'pink', 'purple'];
 import { Square, PanelsTopLeft, SlidersHorizontal, Minus, ArrowDownWideNarrow, Mic, Plus, Search, X, Check, ChevronRight, ChevronDown, Menu as MenuIcon, Grid2X2, FileText, BookOpen, Box, CalendarDays, Sun, Moon, Settings, Copy, ArrowRight, ExternalLink, Code, Folder, Tag as TagIcon, Sparkles, Info, TriangleAlert, Trash2, Ellipsis, ListFilter, List, Clock, Layers, Heart, PanelLeft, PanelRight } from 'lucide-react';
 const iconGlyphs: Record<IconName, IconGlyph> = { border:Square, table:PanelsTopLeft, sliders:SlidersHorizontal, minus:Minus, sort:ArrowDownWideNarrow, microphone:Mic, plus:Plus, search:Search, close:X, check:Check, chevron:ChevronRight, down:ChevronDown, menu:MenuIcon, grid:Grid2X2, page:FileText, book:BookOpen, cube:Box, calendar:CalendarDays, sun:Sun, moon:Moon, settings:Settings, copy:Copy, arrow:ArrowRight, external:ExternalLink, code:Code, folder:Folder, tag:TagIcon, sparkle:Sparkles, info:Info, warning:TriangleAlert, trash:Trash2, more:Ellipsis, filter:ListFilter, list:List, clock:Clock, layers:Layers, heart:Heart, panelLeft:PanelLeft, panelRight:PanelRight };
 export type IconName = 'border' | 'table' | 'sliders' | 'minus' | 'sort' | 'microphone' | 'plus' | 'search' | 'close' | 'check' | 'chevron' | 'down' | 'menu' | 'grid' | 'page' | 'book' | 'cube' | 'calendar' | 'sun' | 'moon' | 'settings' | 'copy' | 'arrow' | 'external' | 'code' | 'folder' | 'tag' | 'sparkle' | 'info' | 'warning' | 'trash' | 'more' | 'filter' | 'list' | 'clock' | 'layers' | 'heart' | 'panelLeft' | 'panelRight';
@@ -25,7 +28,9 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'ghost' | 'outline' | 'danger' | 'accent' | 'accent-secondary'; size?: Size; loading?: boolean; leading?: ReactNode; trailing?: ReactNode;
 }
 export const Button = /* @__PURE__ */ forwardRef<HTMLButtonElement, ButtonProps>(function Button({ variant = 'secondary', size = 'md', loading, leading, trailing, className, children, disabled, type = 'button', ...props }, ref) {
-  return <button ref={ref} type={type} className={cx('cap-button', className)} data-variant={variant} data-size={size} disabled={disabled || loading} aria-busy={loading || undefined} {...props}>{loading ? <Spinner /> : leading}{children}{trailing}</button>;
+  const foreground = useContext(SharedHoverForegroundContext);
+  const content = <>{loading ? <Spinner /> : leading}{children}{trailing}</>;
+  return <TooltipButton ref={ref} type={type} className={cx('cap-button', className)} data-variant={variant} data-size={size} disabled={disabled || loading} aria-busy={loading || undefined} {...props}>{foreground ? <span className="cap-button-foreground">{content}</span> : content}</TooltipButton>;
 });
 export const IconButton = /* @__PURE__ */ forwardRef<HTMLButtonElement, Omit<ButtonProps, 'children'> & { label: string; icon: IconSource }>(function IconButton({ label, icon, className, ...props }, ref) {
   return <Button ref={ref} className={cx('cap-icon-button', className)} aria-label={label} {...props}>{!props.loading && <Icon name={icon} />}</Button>;
@@ -37,7 +42,7 @@ export function Counter({ value, size = 'sm', variant = 'neutral', shape = 'roun
   return <span className={cx('cap-counter', className)} data-size={size} data-variant={variant === 'soft' ? 'neutral' : variant} data-shape={shape} data-color={color} aria-label={display !== value ? String(value) : undefined} {...props}>{display}</span>;
 }
 export interface TagProps extends Omit<HTMLAttributes<HTMLSpanElement>, 'color' | 'onClick'> {
-  color?: Color; size?: Size; variant?: 'soft' | 'solid' | 'outline'; icon?: IconSource; count?: number | string;
+  color?: Color; size?: Size; variant?: 'soft' | 'solid' | 'outline' | 'plain'; icon?: IconSource; count?: number | string;
   shape?: 'rounded' | 'pill';
   counter?: Pick<CounterProps, 'variant' | 'shape' | 'max'>;
   /** False makes every slot static, even when action handlers are supplied. Omitted infers from handlers. */
@@ -53,7 +58,7 @@ export function Tag({ color, size = 'sm', variant = 'soft', shape = 'rounded', i
   const content = <>{icon && <Icon name={icon} />}<span className="cap-tag-text">{children}</span>{count !== undefined && <Counter value={count} size={size} variant="translucent" {...counter} />}</>;
   return <span {...props} className={cx('cap-tag', className)} data-size={size} data-variant={variant} data-shape={shape} data-color={color} data-interactive={isInteractive || undefined} aria-disabled={disabled || undefined}>
     {isInteractive && onClick ? <button type="button" className="cap-tag-label" disabled={disabled} onClick={onClick}>{content}</button> : <span className="cap-tag-label">{content}</span>}
-    {isInteractive && endAction && <button type="button" className="cap-tag-remove" disabled={disabled} aria-label={endAction.label} onClick={endAction.onClick}><Icon name={endAction.icon} /></button>}
+    {isInteractive && endAction && <TooltipButton type="button" className="cap-tag-remove" disabled={disabled} aria-label={endAction.label} onClick={endAction.onClick}><Icon name={endAction.icon} /></TooltipButton>}
   </span>;
 }
 /** @deprecated Use Tag. Compatibility wrapper; no separate visual system. */

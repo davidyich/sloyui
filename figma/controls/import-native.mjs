@@ -1,0 +1,15 @@
+import fs from 'node:fs';
+const graph=JSON.parse(fs.readFileSync(new URL('../color-system-v2/native-graph.json',import.meta.url)));
+const stage=process.argv[2]??'create';
+const offset=Number(process.argv[3]??0), limit=50;
+const base=`await Promise.all(['Regular','Medium','Semi Bold'].map(style=>figma.loadFontAsync({family:'Inter',style})));\nconst oldC=await figma.variables.getLocalVariableCollectionsAsync();const oldV=await figma.variables.getLocalVariablesAsync();const cm=new Map(oldC.map(c=>[c.name,c]));const vm=new Map(oldV.map(v=>[v.variableCollectionId+'|'+v.name,v]));const createdVariables=[],createdCollections=[],updatedVariables=[];\n`;
+if(stage.startsWith('create')){
+ const spec=(stage==='create'?graph.collections:[graph.collections[Number(stage.slice(6))]]).map(c=>({key:c.key,name:c.name,modes:c.modes,hidden:c.hidden,variables:c.variables.slice(offset,offset+limit).map(v=>({name:v.figmaName??v.name,type:v.type,scopes:v.scopes,css:v.css,description:v.description}))}));
+ console.log(base+`const spec=${JSON.stringify(spec)};for(const c of spec){let live=cm.get(c.name);if(!live){live=figma.variables.createVariableCollection(c.name);live.renameMode(live.defaultModeId,c.modes[0]);for(const m of c.modes.slice(1))live.addMode(m);createdCollections.push(live.id);}for(const v of c.variables){let x=vm.get(live.id+'|'+v.name);if(!x){x=figma.variables.createVariable(v.name,live,v.type);createdVariables.push(x.id);}else updatedVariables.push(x.id);x.scopes=v.scopes;x.description=v.description??'';x.setVariableCodeSyntax('WEB','var('+v.css+')');}}return {createdCollections,createdVariables,updatedVariables,collections:(await figma.variables.getLocalVariableCollectionsAsync()).map(c=>({id:c.id,name:c.name,modes:c.modes,count:c.variableIds.length}))};`);
+}else{
+ const ci=Number(stage);let c=graph.collections[ci];if(!c)throw Error('Invalid collection');c={...c,variables:c.variables.slice(offset,offset+limit)};
+ const spec={...c,variables:c.variables.map(v=>({name:v.figmaName??v.name,values:v.values,scopes:v.scopes,css:v.css,description:v.description}))};
+ const used=new Set(c.variables.flatMap(v=>Object.values(v.values).filter(x=>x?.alias).map(x=>x.alias)));
+ const names=Object.fromEntries(graph.collections.flatMap(c=>c.variables.filter(v=>used.has(c.key+'/'+v.name)).map(v=>[c.key+'/'+v.name,[c.name,v.figmaName??v.name]])));
+ console.log(base+`const names=${JSON.stringify(names)};const spec=${JSON.stringify(spec)};function value(x){if(x?.alias){const [c,n]=names[x.alias];const v=vm.get(cm.get(c).id+'|'+n);if(!v)throw Error('Missing '+x.alias);return figma.variables.createVariableAlias(v);}return x;}const c=cm.get(spec.name);for(const v of spec.variables){const x=vm.get(c.id+'|'+v.name);if(!x)throw Error('Missing target '+c.name+'/'+v.name);x.scopes=v.scopes;x.description=v.description??'';x.setVariableCodeSyntax('WEB','var('+v.css+')');for(const [mode,data]of Object.entries(v.values))x.setValueForMode(c.modes.find(m=>m.name===mode).modeId,value(data));updatedVariables.push(x.id);}return {updatedVariables,collection:c.name,count:updatedVariables.length};`);
+}

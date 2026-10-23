@@ -1,3 +1,4 @@
+import type { Surface } from './surface.js';
 import { useTranslate } from './locale.js';
 import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import type { CSSProperties, PointerEvent as ReactPointerEvent, ReactNode } from 'react';
@@ -10,13 +11,13 @@ import { useDisclosurePresence, type DisclosurePhase } from './disclosure.js';
 
 export type { StackDirection } from './stack-layout.js';
 export interface ToastStackItem extends FeedbackStyleProps { id:string; title:string; description?:string; duration?:number; icon?:ReactNode; loading?:boolean; action?:{label:string;onAction:()=>void} }
-export interface ToastStackProps { items:ToastStackItem[]; onDismiss:(id:string)=>void; position?:'top-left'|'top-center'|'top-right'|'bottom-left'|'bottom-center'|'bottom-right'|'inline'; scope?:'viewport'|'container'; shape?:'rounded'|'pill'; expandDirection?:StackDirection; expanded?:boolean; onExpandedChange?:(expanded:boolean)=>void; label?:string; limit?:number; className?:string }
+export interface ToastStackProps { items:ToastStackItem[]; onDismiss:(id:string)=>void; position?:'top-left'|'top-center'|'top-right'|'bottom-left'|'bottom-center'|'bottom-right'|'inline'; scope?:'viewport'|'container'; shape?:'rounded'|'pill'; expandDirection?:StackDirection; expanded?:boolean; onExpandedChange?:(expanded:boolean)=>void; /** Show the count/expand control. Hidden mode keeps a visually hidden keyboard control and touch toggling on the front notice. */ showExpandHint?:boolean; label?:string; limit?:number; className?:string }
 
 function useStackSizes(ref: React.RefObject<HTMLDivElement | null>, signature: string, selector: string, fallbackHeight: number, horizontalPeek = 0, mountedNode?: HTMLDivElement | null) {
   const [state,setState] = useState<{width:number;sizes:Record<string,StackSize>}>({width:320,sizes:{}});
   useLayoutEffect(()=>{
     const root=mountedNode??ref.current;if(!root)return;
-    const measure=()=>{const style=getComputedStyle(root),width=Math.max(1,((root.clientWidth-(parseFloat(style.paddingLeft)||0)-(parseFloat(style.paddingRight)||0))||320)-horizontalPeek);const sizes=Object.fromEntries(Array.from(root.querySelectorAll<HTMLElement>(selector)).map(node=>[node.dataset.stackKey!,{width,height:node.offsetHeight||fallbackHeight}]));setState(previous=>JSON.stringify(previous)===JSON.stringify({width,sizes})?previous:{width,sizes});};
+    const measure=()=>{const style=getComputedStyle(root),width=Math.max(1,((root.clientWidth-(parseFloat(style.paddingLeft)||0)-(parseFloat(style.paddingRight)||0))||320)-horizontalPeek);const sizes=Object.fromEntries(Array.from(root.querySelectorAll<HTMLElement>(selector)).map(node=>[node.dataset.stackKey!,{width,height:(selector==='.cap-toast-stack-item'?node.querySelector<HTMLElement>('.cap-toast')?.offsetHeight:node.offsetHeight)||fallbackHeight}]));setState(previous=>JSON.stringify(previous)===JSON.stringify({width,sizes})?previous:{width,sizes});};
     measure();if(typeof ResizeObserver==='undefined')return;
     const observer=new ResizeObserver(measure);observer.observe(root);root.querySelectorAll(selector).forEach(node=>observer.observe(node));return()=>observer.disconnect();
   },[signature,selector,fallbackHeight,horizontalPeek,mountedNode]);
@@ -40,20 +41,34 @@ function alignStackViewport(viewport: HTMLDivElement | null, geometry: StackSize
   viewport.scrollLeft = expanded && direction === 'left' ? Math.max(0, geometry.width - innerWidth) : 0;
   viewport.scrollTop = expanded && direction === 'up' ? Math.max(0, geometry.height - innerHeight) : 0;
 }
-function TimedToast({item,onDismiss,paused,depth,expanded,position,phase,x,y,width,shellHeight}:{item:ToastStackItem;onDismiss:(id:string)=>void;paused:boolean;depth:number;expanded:boolean;position:ToastStackProps['position'];phase:DisclosurePhase;x:number;y:number;width:number;shellHeight:number}){
+function TimedToast({item,onDismiss,paused,depth,expanded,position,phase,x,y,width,shellHeight,naturalHeight}:{item:ToastStackItem;onDismiss:(id:string)=>void;paused:boolean;depth:number;expanded:boolean;position:ToastStackProps['position'];phase:DisclosurePhase;x:number;y:number;width:number;shellHeight:number;naturalHeight:number}){
   const remaining=useRef(item.duration??5000),started=useRef(0);
   useEffect(()=>{if(phase==='exit'||item.loading||item.action||item.duration===Infinity||paused||depth>0&&!expanded||remaining.current<=0)return;started.current=performance.now();const timer=setTimeout(()=>onDismiss(item.id),remaining.current);return()=>{clearTimeout(timer);remaining.current=Math.max(0,remaining.current-(performance.now()-started.current))}},[item.id,item.duration,item.loading,item.action,paused,depth,expanded,onDismiss,phase]);
-  return <li className="cap-toast-stack-item" data-toast-id={item.id} data-stack-key={item.id} data-depth={depth} data-phase={phase} data-expanded={expanded||undefined} aria-hidden={phase==='exit'||depth>0&&!expanded||undefined} inert={phase==='exit'||depth>0&&!expanded} style={{'--cap-toast-depth':depth,'--cap-toast-shell-height':`${shellHeight}px`,'--cap-toast-x':`${x}px`,'--cap-toast-y':`${y}px`,width} as CSSProperties}><Toast icon={item.loading?<Spinner aria-hidden="true" role="presentation"/>:item.icon} aria-busy={item.loading||undefined} tone={item.tone} color={item.color} appearance={item.appearance} contrast={item.contrast} surface={item.surface??(position==='inline'?'inherit':'floating')} title={item.title} description={item.description} onDismiss={()=>onDismiss(item.id)} action={item.action&&<Button size="sm" variant="ghost" onClick={item.action.onAction}>{item.action.label}</Button>}/></li>
+  return <li className="cap-toast-stack-item" data-toast-id={item.id} data-stack-key={item.id} data-depth={depth} data-phase={phase} data-expanded={expanded||undefined} aria-hidden={phase==='exit'||depth>0&&!expanded||undefined} inert={phase==='exit'||depth>0&&!expanded} style={{'--cap-toast-depth':depth,'--cap-toast-shell-height':`${shellHeight}px`,'--cap-toast-x':`${x}px`,'--cap-toast-y':`${y}px`,width,height:expanded?naturalHeight:shellHeight} as CSSProperties}><Toast icon={item.loading?<Spinner aria-hidden="true" role="presentation"/>:item.icon} aria-busy={item.loading||undefined} tone={item.tone} color={item.color} appearance={item.appearance} contrast={item.contrast} surface={item.surface??(position==='inline'?'inherit':'floating')} title={item.title} description={item.description} onDismiss={()=>onDismiss(item.id)} action={item.action&&<Button size="sm" variant="ghost" onClick={item.action.onAction}>{item.action.label}</Button>}/></li>
 }
-export function ToastStack({items,onDismiss,position='bottom-right',scope='viewport',shape='rounded',expandDirection,expanded:controlledExpanded,onExpandedChange,label: suppliedLabel,limit=4,className=''}:ToastStackProps){
+export function ToastStack({items,onDismiss,position='bottom-right',scope='viewport',shape='rounded',expandDirection,expanded:controlledExpanded,onExpandedChange,showExpandHint=true,label: suppliedLabel,limit=4,className=''}:ToastStackProps){
   const t = useTranslate();
   const label = suppliedLabel === undefined ? (t("Уведомления", "Notifications")) : suppliedLabel;
 
   const [hovered,setHovered]=useState(false),[focused,setFocused]=useState(false),[manuallyExpanded,setManuallyExpanded]=useState<boolean|null>(null),[hidden,setHidden]=useState(false);
   const viewport=useRef<HTMLDivElement>(null), panel=useRef<HTMLDivElement>(null), anchor=useRef<HTMLSpanElement>(null);
+  const motionSnapshot=useRef<Map<string,DOMRect>|null>(null), motionAnimations=useRef(new Map<string,Animation>());
+  const [motionRevision,setMotionRevision]=useState(0);
+  const captureMotion=()=>{
+    if(!viewport.current||!Element.prototype.animate)return;
+    if(globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches){
+      motionSnapshot.current=null;motionAnimations.current.forEach(animation=>animation.cancel());motionAnimations.current.clear();panel.current?.removeAttribute('data-native-motion');return;
+    }
+    motionSnapshot.current=new Map(Array.from(viewport.current.querySelectorAll<HTMLElement>('.cap-toast-stack-item')).map(node=>[node.dataset.toastId!,node.getBoundingClientRect()]));
+    motionAnimations.current.forEach(animation=>animation.cancel());
+    motionAnimations.current.clear();
+    panel.current?.setAttribute('data-native-motion','true');
+    setMotionRevision(value=>value+1);
+  };
+  useEffect(()=>()=>{motionAnimations.current.forEach(animation=>animation.cancel());},[]);
   const [viewportNode,setViewportNode]=useState<HTMLDivElement|null>(null);
   const mountViewport=useCallback((node:HTMLDivElement|null)=>{viewport.current=node;setViewportNode(node)},[]);
-  const overlayScope=useOverlayScope(anchor);
+  const overlayScope=useOverlayScope(anchor,scope==='viewport'&&position!=='inline'&&items.length>0);
   const [availableHeight,setAvailableHeight]=useState<number>();
   useLayoutEffect(()=>{
     if(scope!=='container'||position==='inline'){setAvailableHeight(undefined);return;}
@@ -64,24 +79,48 @@ export function ToastStack({items,onDismiss,position='bottom-right',scope='viewp
   },[scope,position,viewportNode]);
   useEffect(()=>{const change=()=>setHidden(document.hidden);document.addEventListener('visibilitychange',change);change();return()=>document.removeEventListener('visibilitychange',change)},[]);
   const shown=items.slice(-Math.max(1,limit)).reverse(),present=useDisclosurePresence(shown,item=>item.id);
+  const count=shown.length, russianRemainder=count%100, notificationWord=t(russianRemainder>=11&&russianRemainder<=14?'уведомлений':count%10===1?'уведомление':count%10>=2&&count%10<=4?'уведомления':'уведомлений',count===1?'notification':'notifications');
   const direction=expandDirection??(position.startsWith('bottom')?'up':'down'),expanded=controlledExpanded??(manuallyExpanded??(hovered||focused)),paused=expanded||hovered||focused||hidden;
   const signature=present.map(entry=>entry.key).join('\u0000'),measurement=useStackSizes(viewport,signature,'.cap-toast-stack-item',80,!expanded&&(direction==='left'||direction==='right')?Math.max(0,present.length-1)*8:0,viewportNode);
   const frontHeight=measurement.sizes[present[0]?.key]?.height??80;
   const geometry=stackLayout(present.map(entry=>{const size=measurement.sizes[entry.key]??{width:measurement.width,height:80};return expanded?size:{...size,height:frontHeight}}),direction,expanded);
-  const reflow = useStackReflow(`${direction}:${measurement.width}:${direction==='up'||direction==='left'?`${expanded}:${geometry.width}:${geometry.height}`:''}`);
+  // Keep transform motion enabled when normalization changes the up/left origin.
+
   useLayoutEffect(()=>alignStackViewport(viewport.current,geometry,direction,expanded),[expanded,direction,geometry.width,geometry.height,viewportNode]);
-  const changeExpanded=(next:boolean)=>{if(controlledExpanded===undefined)setManuallyExpanded(next);onExpandedChange?.(next)};
-  const hover=(next:boolean)=>{setHovered(next);if(controlledExpanded===undefined&&!next&&manuallyExpanded===false)setManuallyExpanded(null)};
-  const stack=<div ref={panel} {...(scope==='viewport'&&position!=='inline'?overlayScope:{})} data-surface={position==='inline'?undefined:'floating'} style={availableHeight===undefined?undefined:{maxHeight:availableHeight}} className={`cap-toast-stack ${className}`} role="region" aria-label={label} data-position={position} data-scope={scope} data-shape={shape} data-direction={direction} data-expanded={expanded||undefined} onPointerEnter={e=>{if(e.pointerType==='mouse')hover(true)}} onPointerLeave={e=>{if(e.pointerType==='mouse')hover(false)}} onMouseEnter={()=>hover(true)} onMouseLeave={()=>hover(false)} onFocusCapture={event=>setFocused(!!(event.target as Element).closest('.cap-toast-stack-item'))} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node|null))setFocused(false)}}>
-    {present.length>1&&<Button className="cap-toast-stack-expand" size="xs" variant="ghost" aria-expanded={expanded} onClick={()=>changeExpanded(!expanded)}>{expanded?t("Свернуть уведомления", "Collapse notifications"):t("Развернуть уведомления", "Expand notifications")}</Button>}
-    <div ref={mountViewport} style={availableHeight===undefined?undefined:{maxHeight:Math.max(0,availableHeight-(present.length>1?32:0))}} className="cap-toast-stack-viewport" data-reflow={reflow||undefined}><ol className="cap-toast-stack-list" style={{width:geometry.width,height:geometry.height,'--cap-toast-inline-clearance':`${geometry.height}px`} as CSSProperties}>{present.map(({key,item,phase},i)=><TimedToast key={key} item={item} onDismiss={onDismiss} paused={paused} depth={i} expanded={expanded} position={position} phase={phase} x={geometry.positions[i]?.x??0} y={geometry.positions[i]?.y??0} width={measurement.width} shellHeight={frontHeight}/>)}</ol></div>
+  useLayoutEffect(()=>{
+    const snapshot=motionSnapshot.current;
+    motionSnapshot.current=null;
+    if(!snapshot||!viewport.current)return;
+    // Read every destination after layout/scroll alignment, then animate only transforms.
+    const destinations=Array.from(viewport.current.querySelectorAll<HTMLElement>('.cap-toast-stack-item')).map(node=>({node,rect:node.getBoundingClientRect(),width:node.offsetWidth,height:node.offsetHeight}));
+    for(const {node,rect,width,height} of destinations){
+      const key=node.dataset.toastId!,before=snapshot.get(key);
+      motionAnimations.current.get(key)?.cancel();
+      if(!before||!rect.width||!rect.height)continue;
+      const x=parseFloat(node.style.getPropertyValue('--cap-toast-x'))||0,y=parseFloat(node.style.getPropertyValue('--cap-toast-y'))||0;
+      const scale=expanded?1:1-(Number(node.dataset.depth)||0)*.025;
+      const fromScaleX=scale*before.width/rect.width,fromScaleY=scale*before.height/rect.height;
+      const from=`translate3d(${x+before.left-rect.left+(fromScaleX-scale)*width/2}px,${y+before.top-rect.top+(fromScaleY-scale)*height/2}px,0) scale(${fromScaleX},${fromScaleY})`;
+      const to=`translate3d(${x}px,${y}px,0) scale(${scale},${scale})`;
+      if(before.left===rect.left&&before.top===rect.top&&before.width===rect.width&&before.height===rect.height)continue;
+      const animation=node.animate([{transform:from},{transform:to}],{duration:220,easing:'cubic-bezier(.16,1,.3,1)'});
+      motionAnimations.current.set(key,animation);
+      animation.onfinish=()=>{if(motionAnimations.current.get(key)===animation)motionAnimations.current.delete(key);if(!motionAnimations.current.size)panel.current?.removeAttribute('data-native-motion')};
+    }
+    if(!motionAnimations.current.size)panel.current?.removeAttribute('data-native-motion');
+  },[expanded,direction,geometry.width,geometry.height,signature,motionRevision]);
+  const changeExpanded=(next:boolean)=>{captureMotion();if(controlledExpanded===undefined)setManuallyExpanded(next);onExpandedChange?.(next)};
+  const hover=(next:boolean)=>{captureMotion();setHovered(next);if(controlledExpanded===undefined&&!next&&manuallyExpanded===false)setManuallyExpanded(null)};
+  const stack=<div ref={panel} {...(scope==='viewport'&&position!=='inline'?overlayScope:{})} data-surface={position==='inline'?undefined:'floating'} style={availableHeight===undefined?undefined:{maxHeight:availableHeight}} className={`cap-toast-stack ${className}`} role="region" aria-label={label} data-position={position} data-scope={scope} data-shape={shape} data-direction={direction} data-expanded={expanded||undefined} onPointerEnter={e=>{if(e.pointerType==='mouse')hover(true)}} onPointerLeave={e=>{if(e.pointerType==='mouse')hover(false)}} onMouseEnter={()=>hover(true)} onMouseLeave={()=>hover(false)} onFocusCapture={event=>{captureMotion();setFocused(!!(event.target as Element).closest('.cap-toast-stack-item'))}} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node|null)){captureMotion();setFocused(false)}}}>
+    {count>1&&<Button className="cap-toast-stack-expand" data-hint={showExpandHint||undefined} size="xs" variant="ghost" aria-label={expanded?t("Свернуть уведомления", "Collapse notifications"):t("Развернуть уведомления", "Expand notifications")} aria-expanded={expanded} onClick={()=>changeExpanded(!expanded)}>{expanded&&`${t('Свернуть','Collapse')} · `}{count} {notificationWord}</Button>}
+    <div ref={mountViewport} style={availableHeight===undefined?undefined:{maxHeight:Math.max(0,availableHeight-(count>1&&showExpandHint?28:0))}} className="cap-toast-stack-viewport" onClick={event=>{if(!showExpandHint&&count>1&&!(event.target as Element).closest('button,a,input'))changeExpanded(!expanded)}}><ol className="cap-toast-stack-list" style={{width:geometry.width,height:geometry.height,'--cap-toast-inline-clearance':`${geometry.height}px`} as CSSProperties}>{present.map(({key,item,phase},i)=><TimedToast key={key} item={item} onDismiss={onDismiss} paused={paused} depth={i} expanded={expanded} position={position} phase={phase} x={geometry.positions[i]?.x??0} y={geometry.positions[i]?.y??0} width={measurement.width} shellHeight={frontHeight} naturalHeight={measurement.sizes[key]?.height??80}/>)}</ol></div>
   </div>;
   return <><span hidden ref={anchor}/>{scope==='viewport'&&position!=='inline'?<OverlayPortal anchor={anchor} panel={panel}>{stack}</OverlayPortal>:stack}</>;
 }
 
 export interface AnnouncementAction { label:string; href?:string; onClick?:()=>void }
 export interface Announcement { id:string; message:ReactNode; action?:AnnouncementAction; countdown?:{to:Date|string|number;label?:string} }
-export interface AnnouncementBarProps { surface?: 'inherit'|'base'|'canvas'|'raised'|'floating'; messages:Announcement[]; id?:string; open?:boolean; defaultOpen?:boolean; onOpenChange?:(open:boolean)=>void; index?:number; defaultIndex?:number; onIndexChange?:(index:number)=>void; interval?:number; autoPlay?:boolean; dismissible?:boolean; controls?:boolean; label?:string; onAction?:(message:Announcement)=>void; onCountdownEnd?:(message:Announcement)=>void; className?:string }
+export interface AnnouncementBarProps { surface?: 'inherit' | Surface; messages:Announcement[]; id?:string; open?:boolean; defaultOpen?:boolean; onOpenChange?:(open:boolean)=>void; index?:number; defaultIndex?:number; onIndexChange?:(index:number)=>void; interval?:number; autoPlay?:boolean; dismissible?:boolean; controls?:boolean; label?:string; onAction?:(message:Announcement)=>void; onCountdownEnd?:(message:Announcement)=>void; className?:string }
 const announcementStorageKey=(id:string)=>`cap-announcement:${id}`;
 function wasAnnouncementDismissed(id?:string){if(!id||typeof window==='undefined')return false;try{return window.localStorage.getItem(announcementStorageKey(id))==='1'}catch{return false}}
 export function clearAnnouncementDismissal(id:string){if(typeof window==='undefined')return;try{window.localStorage.removeItem(announcementStorageKey(id))}catch{/* storage can be unavailable */}}

@@ -19,6 +19,16 @@ describe('Markdown source bridge', () => {
     expect(richTextToMarkdown(markdownToRichText(source))).toBe(source);
   });
 
+  it.each(['pink', 'purple', 'teal', 'rose'])('keeps %s text and highlight marks editable through Markdown', color => {
+    for (const attribute of ['color', 'highlight'] as const) {
+      const source = `<span data-cap-${attribute}="${color}">Original</span>\n`;
+      const document = markdownToRichText(source, { extensions: true });
+      expect(document.blocks[0].content![0][attribute]).toBe(color);
+      document.blocks[0].content![0].text = 'Updated';
+      expect(richTextToMarkdown(document)).toBe(source.replace('Original', 'Updated'));
+    }
+  });
+
   it('edits a supported block without rewriting adjacent unsupported source or separators', () => {
     const source = '# Title\r\n\r\n| Left | Right |\r\n| --- | --- |\r\n| a | b |\r\n\r\n[ref]: https://example.com\r\n';
     const document = markdownToRichText(source);
@@ -49,8 +59,7 @@ it('edits source-backed code through CodeBlock and retains exact untouched block
   expect(textbox.closest('.cap-code')).toBeTruthy();
   textbox.textContent = 'const x = 2;'; fireEvent.input(textbox);
   expect(changed).toHaveBeenLastCalledWith('# Note\n\n```js\nconst x = 2;\n```\n\n[ref]: /exact\n');
-  await user.click(container.querySelector('.cap-code-actions button[aria-label="Действия с кодом"]')!);
-  await user.click(screen.getByRole('menuitem', { name: 'Переносить строки' }));
+  await user.click(container.querySelector('.cap-code-actions button[aria-label="Переносить строки"]')!);
   expect(textbox.closest('.cap-code')).toHaveAttribute('data-wrap');
 });
 

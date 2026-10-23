@@ -7,7 +7,7 @@ import { documentsPlugin, documentStore, readDocumentBody } from '../scripts/doc
 const roots:string[]=[];
 async function setup(){const root=await realpath(await mkdtemp(join(tmpdir(),'cap-docs-test-')));roots.push(root);await mkdir(join(root,'docs'));await writeFile(join(root,'docs/component-guidelines.md'),'# Original\n');return {root,store:documentStore(root)};}
 afterEach(async()=>{await Promise.all(roots.splice(0).map(root=>rm(root,{recursive:true,force:true})));});
-it('publishes only the six canonical instructions as read-only while private instructions remain editable locally', async () => {
+it('publishes registered instructions read-only, including task intake and excluding private local instructions', async () => {
  const { root, store } = await setup();
  for (const file of documentFiles) await writeFile(join(root, file.path), `# Public ${file.path}\n`);
  const privatePath = 'docs/instructions/private-release-draft.md';
@@ -28,13 +28,36 @@ it('publishes only the six canonical instructions as read-only while private ins
  if (asset.source === undefined) throw new Error('Expected documents.json source.');
  const source = typeof asset.source === 'string' ? asset.source : Buffer.from(asset.source).toString('utf8');
  const published = JSON.parse(source);
- expect(documentFiles).toHaveLength(6);
+ expect(documentFiles.find(file=>file.path==='docs/github-tasks.md')).toMatchObject({protected:true});
+ expect(documentFiles.find(file=>file.path==='docs/catalog-maintenance.md')).toMatchObject({protected:true});
+ expect(documentFiles).toHaveLength(8);
  expect(published.writable).toBe(false);
  expect(published.files.map((file: { path: string }) => file.path)).toEqual(documentFiles.map(file => file.path));
  for (const file of documentFiles) expect(published.files.find((item: { path: string }) => item.path === file.path)).toMatchObject({ ...file, content: `# Public ${file.path}\n`, revision: expect.any(String) });
  expect(source).not.toContain(privatePath);
  expect(source).not.toContain('PRIVATE');
  expect((await store.read(privatePath)).content).toBe('PRIVATE UPDATED DRAFT');
+});
+it('publishes canonical component guides to the deployment seed while keeping them out of the general document list', async () => {
+ const {root,store}=await setup();
+ for(const file of documentFiles)await writeFile(join(root,file.path),'# Core');
+ await mkdir(join(root,'source'));await mkdir(join(root,'docs/components'));
+ await writeFile(join(root,'source/component-registry.json'),JSON.stringify({components:{Button:{id:'cp-001',status:'ready'},Legacy:{id:'cp-049',status:'archived'}}}));
+ await writeFile(join(root,'docs/components/cp-001.md'),'# Button\n## Делать\nИспользуйте кнопку для действия.');
+ await writeFile(join(root,'docs/components/cp-049.md'),'Archived guide');
+ expect((await store.list()).some(file=>file.path.startsWith('docs/components/'))).toBe(false);
+ const guide=await store.read('docs/components/cp-001.md');
+ expect(guide.revision).toMatch(/^[a-f0-9]{64}$/);
+ await store.save(guide.path,'# Button\nUpdated',guide.revision);
+ await expect(store.save(guide.path,'stale',guide.revision)).rejects.toMatchObject({status:409});
+ const plugin=documentsPlugin();
+ const config=typeof plugin.configResolved==='function'?plugin.configResolved:plugin.configResolved?.handler;
+ const build=typeof plugin.generateBundle==='function'?plugin.generateBundle:plugin.generateBundle?.handler;
+ await config!.call({} as never,{root} as never);
+ const emitted:any[]=[];await build!.call({emitFile:(asset:unknown)=>{emitted.push(asset);return 'docs';}} as never,{} as never,{} as never,false);
+ const seed=JSON.parse(emitted[0].source);
+ expect(seed.files.find((file:{path:string})=>file.path===guide.path)).toMatchObject({label:'Button',protected:true,content:'# Button\nUpdated'});
+ expect(seed.files.some((file:{path:string})=>file.path==='docs/components/cp-049.md')).toBe(false);
 });
 describe('local document persistence',()=>{
  it('writes the actual file atomically and rejects a stale editor revision',async()=>{const {root,store}=await setup(),original=await store.read('docs/component-guidelines.md');const saved=await store.save(original.path,'# Changed\n',original.revision);expect(await readFile(join(root,original.path),'utf8')).toBe('# Changed\n');expect(saved.revision).not.toBe(original.revision);await expect(store.save(original.path,'stale',original.revision)).rejects.toMatchObject({status:409});expect(await readdir(join(root,'docs'))).toEqual(['component-guidelines.md']);});

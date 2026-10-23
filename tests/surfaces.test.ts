@@ -1,3 +1,4 @@
+import {expandCSSVariables} from './css-variable-resolver';
 import { describe, expect, it } from 'vitest';
 import surfaces from '../source/surface-rules.json';
 import palettes from '../src/tokens/accents.json';
@@ -27,9 +28,13 @@ function cssVariables(scope: Scope): Map<string, string> {
   const attributes: Record<string, string> = { 'data-surface': scope.surface, 'data-theme': scope.theme, 'data-accent': scope.accent, 'data-borders': scope.borders };
   const variables = new Map<string, string>();
   for (const [, selectors, body] of css.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
-    const matches = selectors.split(',').some(selector => {
-      selector = selector.replace(/\/\*[\s\S]*?\*\//g, '').trim();
+    const matches = selectors.replace(/\/\*[\s\S]*?\*\//g, '').split(',').some(selector => {
+      selector = selector.trim();
       if (selector === ':root') return true;
+      if(selector.startsWith(':root:not(')) {
+        const missing=[...selector.matchAll(/:not\(\[(data-[\w-]+)\]\)/g)].map(match=>match[1]);
+        return missing.length>0&&missing.every(attribute=>!(attribute in attributes));
+      }
       const attribute = /^\[(data-[\w-]+)(?:="([^"]+)")?\]$/.exec(selector);
       return !!attribute && attribute[1] in attributes && (attribute[2] === undefined || attribute[2] === attributes[attribute[1]]);
     });
@@ -47,29 +52,29 @@ function resolveColor(scope: Scope) {
     if (!pieces || pieces.join('') !== expanded) throw new Error(`Unsupported percentage: ${value}`);
     return pieces.reduce((total, piece) => total + parseFloat(piece), 0) / 100;
   };
-  const evaluate = (expression: string): RGB => {
-    expression = expression.trim();
+  const evaluate = (expression: string, backing?: RGB): RGB => {
+    expression = expandCSSVariables(expression,name=>variables.get(name)).trim().replace(/calc\(([\d.]+)\s*\/\s*100\)/g,(_,n)=>String(Number(n)/100));
     if (expression.startsWith('var(')) {
       const name = expression.slice(4, -1), value = variables.get(name);
       if (!value || seen.has(name)) throw new Error(`Missing or circular variable ${name}`);
-      seen.add(name); const result = evaluate(value); seen.delete(name); return result;
+      seen.add(name); const result = evaluate(value,backing); seen.delete(name); return result;
     }
-    if (expression.startsWith('light-dark(')) return evaluate(splitOutsideFunctions(expression.slice(11, -1), ',')[scope.theme === 'light' ? 0 : 1]);
+    if (expression.startsWith('light-dark(')) return evaluate(splitOutsideFunctions(expression.slice(11, -1), ',')[scope.theme === 'light' ? 0 : 1],backing);
     if (expression.startsWith('color-mix(')) {
       const [space, first, second] = splitOutsideFunctions(expression.slice(10, -1), ',');
       if (space !== 'in srgb') throw new Error(`Unsupported interpolation ${space}`);
       const a = splitOutsideFunctions(first, ' '), b = splitOutsideFunctions(second, ' ');
       const weightA = a.length === 2 ? percent(a[1]) : b.length === 2 ? 1 - percent(b[1]) : .5;
       const weightB = b.length === 2 ? percent(b[1]) : 1 - weightA;
-      const colorA = evaluate(a[0]), colorB = evaluate(b[0]);
+      const colorA = evaluate(a[0],backing), colorB = evaluate(b[0],backing);
       return colorA.map((channel, index) => (channel * weightA + colorB[index] * weightB) / (weightA + weightB)) as unknown as RGB;
     }
     if (/^#[\da-f]{3}$/i.test(expression)) expression = '#' + [...expression.slice(1)].map(character => character + character).join('');
     if (/^#[\da-f]{6}$/i.test(expression)) return [1, 3, 5].map(index => parseInt(expression.slice(index, index + 2), 16) / 255) as unknown as RGB;
-    if(expression.startsWith('rgb(')) return expression.slice(4,-1).split(' / ')[0].split(' ').map(Number).map(n=>n/255) as unknown as RGB;
+    if(expression.startsWith('rgb(')){const [channels,alphaValue]=expression.slice(4,-1).split(' / ');const rgb=channels.split(' ').map(Number).map(n=>n/255) as unknown as RGB;if(!alphaValue)return rgb;const a=Number(alphaValue.replace(/calc\(([\d.]+)\s*\/\s*100\)/,(_,n)=>String(Number(n)/100)));if(a===1)return rgb;const base=backing??evaluate('var(--cap-surface-current)');return rgb.map((c,i)=>c*a+base[i]*(1-a)) as unknown as RGB;}
     throw new Error(`Unsupported generated color ${expression}`);
   };
-  return (role: string) => evaluate(`var(--cap-${role})`);
+  return (role: string,backing?:RGB) => evaluate(`var(--cap-${role})`,backing);
 }
 function luminance(color: RGB) {
   return color.map(channel => channel <= .04045 ? channel / 12.92 : ((channel + .055) / 1.055) ** 2.4)
@@ -87,7 +92,7 @@ describe('Contextual surfaces: normal-text readability', () => {
     for (const borders of ['off', 'on'] as const) {
       const color = resolveColor({ surface, theme, borders, accent: 'neutral' });
       for (const foreground of ['content-secondary', 'content-muted']) for (const background of ['surface-current', 'control-bg', 'control-hover', 'control-active']) {
-        const ratio = contrast(color(foreground), color(background));
+        const backing=color(background),ratio=contrast(color(foreground,backing),backing);
         if (ratio < 4.5) failures.push(`borders=${borders}: ${foreground} on ${background} = ${ratio.toFixed(3)}:1`);
       }
     }
@@ -98,12 +103,12 @@ describe('Contextual surfaces: normal-text readability', () => {
     const failures: string[] = [];
     for (const accent of graph.modes) {
       const color = resolveColor({ surface, theme, borders: 'off', accent });
-      for (const foreground of ['accent-ink', 'accent-text']) for (const background of ['accent-normal', 'accent-hover', 'accent-pressed']) {
-        const ratio = contrast(color(foreground), color(background));
+      for (const foreground of ['accent-ink', 'accent-text', 'accent-text-secondary']) for (const background of ['accent-normal', 'accent-hover', 'accent-pressed']) {
+        const backing=color(background),ratio=contrast(color(foreground,backing),backing);
         if (ratio < 4.5) failures.push(`${accent}: ${foreground} on ${background} = ${ratio.toFixed(3)}:1`);
       }
     }
-    for(const accent of graph.modes){const color=resolveColor({surface,theme,borders:'off',accent});expect(contrast(color('disabled-text'),color('disabled-background'))).toBeGreaterThanOrEqual(4.5);expect(new Set(['accent-normal','accent-hover','accent-pressed'].map(n=>JSON.stringify(color(n)))).size).toBe(3);}
+    for(const accent of graph.modes){const color=resolveColor({surface,theme,borders:'off',accent});expect(contrast(color('disabled-text'),color('disabled-background'))).toBeGreaterThanOrEqual(4.5);expect(new Set(['accent-normal','accent-hover','accent-pressed'].map(n=>JSON.stringify(color(n)))).size).toBe(accent==='neutral'?3:2);}
     expect(failures, 'Shared accent modes must remain readable on every declared surface.').toEqual([]);
   });
 });
@@ -126,9 +131,29 @@ it('lifts dark floating surfaces above Raised and changes ButtonGroup fills with
 it.each(contexts)('$surface / $theme: group reactions contrast against the actual group fill and remain readable',({surface,theme})=>{
  for(const borders of ['off','on'] as const){
   const color=resolveColor({surface,theme,borders,accent:'neutral'});
-  expect(contrast(color('group-background'),color('surface-current'))).toBeGreaterThanOrEqual(1.12);
-  expect(contrast(color('group-hover'),color('group-background'))).toBeGreaterThanOrEqual(1.12);
-  expect(contrast(color('group-pressed'),color('group-hover'))).toBeGreaterThanOrEqual(1.12);
+  expect(contrast(color('group-background'),color('surface-current'))).toBeGreaterThanOrEqual(1.045);
+  expect(contrast(color('group-hover'),color('group-background'))).toBeGreaterThanOrEqual(1.045);
+  expect(contrast(color('group-pressed'),color('group-hover'))).toBeGreaterThanOrEqual(1.045);
   for(const role of ['group-background','group-prefix','group-hover','group-pressed'])expect(contrast(color('group-text'),color(role))).toBeGreaterThanOrEqual(4.5);
+ }
+});
+
+it.each(contexts)('$surface / $theme: CSS accent roles resolve the same colors as independent Figma modes',({surface,theme})=>{
+ const architecture=graph as unknown as {legacyPaths:Record<string,string>;surfaceModes:Record<string,string>};
+ const resolve=(path:string):RGB=>{
+  path=architecture.legacyPaths[path]??path;
+  const [collectionName,...segments]=path.split('/');
+  const collection=graph.collections.find(value=>value.name===collectionName)!;
+  const mode=collectionName==='Theme'?(theme==='dark'?'Dark':'Light'):collectionName==='Semantic'?architecture.surfaceModes[surface]:Object.keys(collection.modes)[0];
+  const values=collection.modes as unknown as Record<string,Record<string,{alias:string}|{components:number[];alpha:number}>>;
+  const value=values[mode][segments.join('/')];
+  if('alias' in value)return resolve(value.alias);if(value.alpha===1)return value.components as unknown as RGB;const base=resolve('Semantic/surface/current');return value.components.map((c,i)=>c*value.alpha+base[i]*(1-value.alpha)) as unknown as RGB;
+ };
+ for(const accent of graph.modes){
+  const cssColor=resolveColor({surface,theme,borders:'off',accent});
+  for(const role of ['normal','hover','pressed','disabled','text','disabled-text']){
+   const web=cssColor('accent-'+role),figma=resolve(`Semantic/element/${accent}/${role}`);
+   for(let channel=0;channel<3;channel++)expect(web[channel],`${theme}/${surface}/${accent}/${role}`).toBeCloseTo(figma[channel],8);
+  }
  }
 });

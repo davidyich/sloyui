@@ -1,0 +1,103 @@
+/* Density changes space and control sizes; radius selects how attached surfaces meet. */
+:root,[data-radius],[data-density]{--cap-square:calc(1 - var(--cap-radius-enabled));--cap-overlay-gutter:calc(var(--cap-space-3) * var(--cap-radius-enabled));--cap-overlay-gap:calc(var(--cap-space-3) * var(--cap-radius-enabled));--cap-overlay-padding:calc(var(--cap-space-2) * var(--cap-radius-enabled) + var(--cap-space-3) * var(--cap-square));}
+
+/* The floating shell keeps the same positive-radius inset. Square actions own their clearance. */
+.cap-floating-action-bar{--cap-floating-inset:var(--cap-component-floating-inset);--cap-floating-control-height:calc(var(--cap-toolbar-control-height,var(--cap-size-control-md)) + var(--cap-space-2) * var(--cap-square));border-radius:round(down,calc(var(--cap-radius-base) + var(--cap-floating-inset) * var(--cap-radius-enabled)),1px);padding:calc(var(--cap-floating-inset) * var(--cap-radius-enabled));gap:calc(var(--cap-space-2) * var(--cap-radius-enabled));}
+.cap-floating-action-bar:is([data-size=lg],[data-size=xl]){--cap-floating-inset:var(--cap-space-2);padding:calc(var(--cap-floating-inset) * var(--cap-radius-enabled));}
+.cap-floating-action-bar[data-position=sticky]{bottom:calc(var(--cap-space-8) * var(--cap-radius-enabled));margin:calc(var(--cap-space-8) * var(--cap-radius-enabled));max-width:calc(100% - 2 * var(--cap-space-8) * var(--cap-radius-enabled));}
+.cap-floating-action-bar .cap-floating-items{gap:calc(var(--cap-space-2) * var(--cap-radius-enabled));}
+.cap-floating-action-bar :is(.cap-button,.cap-input)[data-size]{--cap-control-height:var(--cap-floating-control-height);height:var(--cap-control-height);padding-inline:calc(var(--cap-toolbar-inset,var(--cap-space-detail-10)) * var(--cap-radius-enabled) + var(--cap-space-3) * var(--cap-square));}
+.cap-floating-action-bar .cap-icon-button[data-size]{width:var(--cap-floating-control-height);min-width:var(--cap-floating-control-height);padding:0;}
+.cap-floating-action-bar[data-variant=divided]{padding:0;gap:0;}
+.cap-floating-action-bar[data-variant=divided] > div,.cap-floating-action-bar[data-variant=divided] .cap-floating-segment{padding:calc(var(--cap-floating-inset) * var(--cap-radius-enabled));}
+
+/* With square corners, each menu row paints the whole target; no inset hover islands. */
+.cap-menu-v2,.cap-select-popup,.cap-selection-popup{padding:calc(var(--cap-space-detail-6) * var(--cap-radius-enabled));gap:calc(var(--cap-item-gap) * var(--cap-radius-enabled));}
+.cap-menu-v2 .cap-menu-item,.cap-select-popup .cap-select-option,.cap-selection-popup .cap-selection-option{min-height:var(--cap-size-control-md);border-radius:round(down,max(0px,calc(var(--cap-radius-xl) - var(--cap-space-detail-6) * var(--cap-radius-enabled))),1px);padding-block:calc(var(--cap-space-detail-7) * var(--cap-radius-enabled) + var(--cap-space-3) * var(--cap-square));padding-inline:calc(var(--cap-space-detail-9) * var(--cap-radius-enabled) + var(--cap-space-3) * var(--cap-square));}
+.cap-command-list{padding:calc(var(--cap-item-gap-roomy) * var(--cap-radius-enabled));gap:calc(var(--cap-item-gap-roomy) * var(--cap-radius-enabled));}
+.cap-command-item{padding-inline:calc(var(--cap-space-2) * var(--cap-radius-enabled) + var(--cap-space-3) * var(--cap-square));}
+.cap-button-group[data-attached]{--cap-group-inset:calc(var(--cap-item-gap) * var(--cap-radius-enabled));--cap-group-control-height:calc(var(--cap-toolbar-control-height,var(--cap-size-control-md)) + var(--cap-space-2) * var(--cap-square));height:var(--cap-group-control-height);}
+.cap-button-group[data-attached] > .cap-button-group-items{padding:var(--cap-group-inset);gap:var(--cap-group-inset);}
+.cap-button-group[data-attached] :is(.cap-button,.cap-input)[data-size]{--cap-control-height:calc(var(--cap-group-control-height) - 2 * var(--cap-group-inset));height:var(--cap-control-height);border-radius:round(down,max(0px,calc(var(--cap-radius-xl) - var(--cap-group-inset))),1px);}
+.cap-button-group[data-attached] .cap-icon-button[data-size]{width:var(--cap-control-height);}
+.cap-segmented{--cap-segment-inset:calc(var(--cap-space-detail-3) * var(--cap-radius-enabled));gap:calc(var(--cap-item-gap) * var(--cap-radius-enabled));}
+.cap-tab-list:is([data-variant=segment],[data-variant=outline],[data-variant=accent]){padding:calc(var(--cap-space-1) * var(--cap-radius-enabled));gap:calc(var(--cap-space-1) * var(--cap-radius-enabled));}
+.cap-tree-item{height:var(--cap-component-tree-row-height);min-height:var(--cap-component-tree-row-height);}
+
+@media(pointer:coarse){.cap-floating-action-bar{--cap-floating-control-height:max(var(--cap-touch-target),var(--cap-toolbar-control-height,var(--cap-size-control-md)));}.cap-button-group[data-attached]{--cap-group-control-height:max(calc(var(--cap-touch-target) + 2 * var(--cap-group-inset)),var(--cap-toolbar-control-height,var(--cap-size-control-md)));}.cap-tree-item{height:max(var(--cap-touch-target),var(--cap-size-control-md));min-height:max(var(--cap-touch-target),var(--cap-size-control-md));}}
+
+/* Visual shells use the same geometry collection; explicit icons and type stay readable. */
+.cap-avatar[data-size=xs]{width:var(--cap-component-avatar-size-xs);height:var(--cap-component-avatar-size-xs);}
+.cap-icon-box[data-size=xs]{--cap-icon-box-size:var(--cap-component-icon-box-size-xs);}
+.cap-switch-label[data-size=xs]{--cap-switch-height:var(--cap-component-switch-height-xs);--cap-switch-width:var(--cap-component-switch-width-xs);--cap-switch-inset:var(--cap-component-switch-inset-xs);}
+.cap-avatar[data-size=sm]{width:var(--cap-component-avatar-size-sm);height:var(--cap-component-avatar-size-sm);}
+.cap-icon-box[data-size=sm]{--cap-icon-box-size:var(--cap-component-icon-box-size-sm);}
+.cap-switch-label[data-size=sm]{--cap-switch-height:var(--cap-component-switch-height-sm);--cap-switch-width:var(--cap-component-switch-width-sm);--cap-switch-inset:var(--cap-component-switch-inset-sm);}
+.cap-avatar[data-size=md]{width:var(--cap-component-avatar-size-md);height:var(--cap-component-avatar-size-md);}
+.cap-icon-box[data-size=md]{--cap-icon-box-size:var(--cap-component-icon-box-size-md);}
+.cap-switch-label[data-size=md]{--cap-switch-height:var(--cap-component-switch-height-md);--cap-switch-width:var(--cap-component-switch-width-md);--cap-switch-inset:var(--cap-component-switch-inset-md);}
+.cap-avatar[data-size=lg]{width:var(--cap-component-avatar-size-lg);height:var(--cap-component-avatar-size-lg);}
+.cap-icon-box[data-size=lg]{--cap-icon-box-size:var(--cap-component-icon-box-size-lg);}
+.cap-switch-label[data-size=lg]{--cap-switch-height:var(--cap-component-switch-height-lg);--cap-switch-width:var(--cap-component-switch-width-lg);--cap-switch-inset:var(--cap-component-switch-inset-lg);}
+.cap-avatar[data-size=xl]{width:var(--cap-component-avatar-size-xl);height:var(--cap-component-avatar-size-xl);}
+.cap-icon-box[data-size=xl]{--cap-icon-box-size:var(--cap-component-icon-box-size-xl);}
+.cap-switch-label[data-size=xl]{--cap-switch-height:var(--cap-component-switch-height-xl);--cap-switch-width:var(--cap-component-switch-width-xl);--cap-switch-inset:var(--cap-component-switch-inset-xl);}
+
+.cap-popup-select-panel{padding:calc(var(--cap-space-2) * var(--cap-radius-enabled));gap:calc(var(--cap-space-2) * var(--cap-radius-enabled));}
+.cap-popup-select-option{min-height:var(--cap-size-control-md);padding:calc(var(--cap-space-2) * var(--cap-radius-enabled) + var(--cap-space-3) * var(--cap-square));}
+.cap-popup-select-search{padding:calc(var(--cap-space-3) * var(--cap-square));}
+@media(pointer:coarse){.cap-popup-select-option{min-height:var(--cap-touch-target);}}
+
+.cap-button{padding-inline:calc(var(--cap-control-inset,var(--cap-component-button-inset-inline-md)) + var(--cap-radius-inset));}
+.cap-input{padding-inline:calc(var(--cap-control-inset,var(--cap-component-input-inset-inline-md)) + var(--cap-radius-inset));}
+.cap-icon-button{padding:0;}
+.cap-button[data-size=xs]{--cap-control-inset:var(--cap-component-button-inset-inline-xs);}
+.cap-input[data-size=xs]{--cap-control-inset:var(--cap-component-input-inset-inline-xs);}
+.cap-button[data-size=sm]{--cap-control-inset:var(--cap-component-button-inset-inline-sm);}
+.cap-input[data-size=sm]{--cap-control-inset:var(--cap-component-input-inset-inline-sm);}
+.cap-button[data-size=md]{--cap-control-inset:var(--cap-component-button-inset-inline-md);}
+.cap-input[data-size=md]{--cap-control-inset:var(--cap-component-input-inset-inline-md);}
+.cap-button[data-size=lg]{--cap-control-inset:var(--cap-component-button-inset-inline-lg);}
+.cap-input[data-size=lg]{--cap-control-inset:var(--cap-component-input-inset-inline-lg);}
+.cap-button[data-size=xl]{--cap-control-inset:var(--cap-component-button-inset-inline-xl);}
+.cap-input[data-size=xl]{--cap-control-inset:var(--cap-component-input-inset-inline-xl);}
+
+@media(pointer:coarse){.cap-tree[data-size] .cap-tree-item{min-height:var(--cap-touch-target);}.cap-bottom-sheet-handle{min-height:var(--cap-touch-target);}}
+
+.cap-navigation-panel,.cap-hover-panel-content{padding:calc(var(--cap-space-5) * var(--cap-radius-enabled) + var(--cap-space-6) * var(--cap-square));}
+.cap-button-group-prefix{--cap-group-count-inset:calc(var(--cap-space-detail-6) * var(--cap-radius-enabled) + var(--cap-space-3) * var(--cap-square));}
+
+.cap-floating-action-bar[data-variant=divided] .cap-floating-items > :not(.cap-moving-highlight){padding:calc(var(--cap-floating-inset) * var(--cap-radius-enabled));}
+
+/* Corner geometry follows the visible control, independent of its touch target. */
+:is(.cap-button,.cap-input)[data-size]{--cap-control-radius:round(nearest,min(calc(var(--cap-control-height) * .375),calc(var(--cap-control-height) * .25 * var(--cap-radius-scale))),1px);border-radius:var(--cap-control-radius);}
+.cap-labeled-field[data-size=xs]{--cap-control-height:var(--cap-size-control-xs);}
+.cap-labeled-field[data-size=sm]{--cap-control-height:var(--cap-size-control-sm);}
+.cap-labeled-field[data-size=md]{--cap-control-height:var(--cap-size-control-md);}
+.cap-labeled-field[data-size=lg]{--cap-control-height:var(--cap-size-control-lg);}
+.cap-labeled-field[data-size=xl]{--cap-control-height:var(--cap-size-control-xl);}
+.cap-labeled-field[data-size]{--cap-field-radius:round(nearest,min(calc(var(--cap-control-height,var(--cap-size-control-md)) * .375),calc(var(--cap-control-height,var(--cap-size-control-md)) * .25 * var(--cap-radius-scale))),1px);}
+.cap-selection-field[data-size]{--cap-selection-radius:round(nearest,min(calc(var(--cap-selection-height,var(--cap-size-control-md)) * .375),calc(var(--cap-selection-height,var(--cap-size-control-md)) * .25 * var(--cap-radius-scale))),1px);}
+.cap-tag[data-size]:not([data-shape=pill]){--cap-tag-radius:round(nearest,min(calc(var(--cap-tag-height) * .375),calc(var(--cap-tag-height) * .25 * var(--cap-radius-scale))),1px);}
+.cap-chip:not([data-shape=pill]){border-radius:round(nearest,min(calc(var(--cap-chip-height) * .375),calc(var(--cap-chip-height) * .25 * var(--cap-radius-scale))),1px);}
+.cap-icon-box[data-size]{border-radius:round(nearest,min(calc(var(--cap-icon-box-size) * .375),calc(var(--cap-icon-box-size) * .25 * var(--cap-radius-scale))),1px);}
+.cap-checkbox{border-radius:round(nearest,min(calc(var(--cap-choice-size) * .3),calc(var(--cap-choice-size) * .2 * var(--cap-radius-scale))),1px);}
+.cap-segmented[data-size]{--cap-segment-shell-radius:round(nearest,min(calc(var(--cap-segment-height) * .375),calc(var(--cap-segment-height) * .25 * var(--cap-radius-scale))),1px);--cap-segment-radius:round(nearest,max(0px,calc(var(--cap-segment-shell-radius) - var(--cap-segment-inset) - var(--cap-border-width))),1px);border-radius:var(--cap-segment-shell-radius);}
+/* A nested shell adds its actual inset to the control radius. */
+.cap-button-group[data-attached]{--cap-group-child-height:calc(var(--cap-group-control-height) - 2 * var(--cap-group-inset));--cap-group-child-radius:round(nearest,min(calc(var(--cap-group-child-height) * .375),calc(var(--cap-group-child-height) * .25 * var(--cap-radius-scale))),1px);--cap-group-shell-radius:calc(var(--cap-group-child-radius) + var(--cap-group-inset));border-radius:var(--cap-group-shell-radius);}
+.cap-button-group[data-attached] :is(.cap-button,.cap-input)[data-size]{border-radius:var(--cap-group-child-radius);}
+.cap-floating-action-bar[data-size]{--cap-floating-control-radius:round(nearest,min(calc(var(--cap-floating-control-height) * .375),calc(var(--cap-floating-control-height) * .25 * var(--cap-radius-scale))),1px);border-radius:round(nearest,calc((var(--cap-floating-control-radius) + var(--cap-floating-inset) + var(--cap-border-width)) * var(--cap-radius-enabled)),1px);}
+.cap-floating-action-bar > .cap-floating-items > :is(.cap-button,.cap-input)[data-size],.cap-floating-action-bar > .cap-floating-items > .cap-floating-segment > :is(.cap-button,.cap-input)[data-size]{border-radius:var(--cap-floating-control-radius);}
+.cap-tab-list:is([data-variant=segment],[data-variant=outline],[data-variant=accent]){--cap-tab-inset:calc(var(--cap-space-1) * var(--cap-radius-enabled));}
+.cap-tab-list:is([data-variant=segment],[data-variant=outline],[data-variant=accent]) button{border-radius:round(nearest,max(0px,calc(var(--cap-radius-base) - var(--cap-tab-inset) - var(--cap-border-width))),1px);}
+.cap-menu-v2,.cap-select-popup,.cap-selection-popup,.cap-popup-select-panel{--cap-menu-inset:calc(var(--cap-space-detail-6) * var(--cap-radius-enabled));--cap-menu-row-height:var(--cap-size-control-md);--cap-menu-row-radius:round(nearest,min(calc(var(--cap-menu-row-height) * .375),calc(var(--cap-menu-row-height) * .25 * var(--cap-radius-scale))),1px);border-radius:round(nearest,calc((var(--cap-menu-row-radius) + var(--cap-menu-inset) + var(--cap-border-width)) * var(--cap-radius-enabled)),1px);padding:var(--cap-menu-inset);}
+.cap-popup-select-panel{--cap-menu-inset:calc(var(--cap-space-2) * var(--cap-radius-enabled));--cap-menu-row-height:var(--cap-popup-row-height);}
+.cap-menu-v2 .cap-menu-item,.cap-select-popup .cap-select-option,.cap-selection-popup .cap-selection-option,.cap-popup-select-panel .cap-popup-select-option{border-radius:var(--cap-menu-row-radius);}
+
+/* Parameter rows and pads share the visible field geometry at each size. */
+:is(.cap-parameter-slider,.cap-slider-2d){--cap-control-height:var(--cap-size-control-md);--cap-control-inset:var(--cap-component-input-inset-inline-md);--cap-control-radius:round(nearest,min(calc(var(--cap-control-height) * .375),calc(var(--cap-control-height) * .25 * var(--cap-radius-scale))),1px);}
+:is(.cap-parameter-slider,.cap-slider-2d)[data-size=xs]{--cap-control-height:var(--cap-size-control-xs);--cap-control-inset:var(--cap-component-input-inset-inline-xs);}
+:is(.cap-parameter-slider,.cap-slider-2d)[data-size=sm]{--cap-control-height:var(--cap-size-control-sm);--cap-control-inset:var(--cap-component-input-inset-inline-sm);}
+:is(.cap-parameter-slider,.cap-slider-2d)[data-size=lg]{--cap-control-height:var(--cap-size-control-lg);--cap-control-inset:var(--cap-component-input-inset-inline-lg);}
+:is(.cap-parameter-slider,.cap-slider-2d)[data-size=xl]{--cap-control-height:var(--cap-size-control-xl);--cap-control-inset:var(--cap-component-input-inset-inline-xl);}
+@media(pointer:coarse){.cap-parameter-slider[data-size]{--cap-parameter-height:max(var(--cap-touch-target),var(--cap-control-height));}}

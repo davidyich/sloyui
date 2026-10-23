@@ -7,13 +7,24 @@ import { LocaleProvider } from '../src/components/locale.js';
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '../src/components/resizable-group.js';
 
 class TestPointerEvent extends MouseEvent { pointerId:number;constructor(type:string,init:PointerEventInit={}){super(type,init);this.pointerId=init.pointerId??0;} }
-const progress=(node:HTMLElement,edge:string)=>Number(node.style.getPropertyValue(`--cap-scroll-fade-${edge}-progress`));
+const progress=(node:HTMLElement,edge:string)=>Number(node.parentElement?.querySelector<HTMLElement>(`.cap-scroll-fade[data-edge="${edge}"]`)?.style.opacity ?? 0);
 const frames=()=>{const callbacks=new Map<number,FrameRequestCallback>();let id=0;vi.stubGlobal('requestAnimationFrame',(cb:FrameRequestCallback)=>{callbacks.set(++id,cb);return id});vi.stubGlobal('cancelAnimationFrame',(key:number)=>callbacks.delete(key));return()=>act(()=>{const pending=[...callbacks.values()];callbacks.clear();pending.forEach(cb=>cb(0))});};
 const measureGroup=(width=1000,height=600)=>{vi.spyOn(HTMLElement.prototype,'clientWidth','get').mockReturnValue(width);vi.spyOn(HTMLElement.prototype,'clientHeight','get').mockReturnValue(height);vi.spyOn(HTMLElement.prototype,'offsetWidth','get').mockImplementation(function(this:HTMLElement){return this.classList.contains('cap-resizable-handle')?12:0});vi.spyOn(HTMLElement.prototype,'offsetHeight','get').mockImplementation(function(this:HTMLElement){return this.classList.contains('cap-resizable-handle')?12:0});};
 afterEach(()=>{vi.restoreAllMocks();vi.unstubAllGlobals()});
 
 describe('scroll-aware fades',()=>{
-  it('gradually reveals start/middle/end masks and clears them when overflow disappears',()=>{
+  it('uses local gradient opacity without rereading styles or invalidating the scrolling content',()=>{
+    render(<ScrollArea label="Performance" fade="vertical" fadeReveal={100}>Content</ScrollArea>);
+    const viewport=screen.getByRole('region',{name:'Performance'});
+    Object.defineProperties(viewport,{scrollHeight:{configurable:true,value:400},clientHeight:{configurable:true,value:100}});
+    const styles=vi.spyOn(window,'getComputedStyle');
+    for(let position=10;position<=150;position+=10){viewport.scrollTop=position;fireEvent.scroll(viewport);}
+    expect(styles).not.toHaveBeenCalled();
+    expect(viewport.style.getPropertyValue('--cap-scroll-fade-top-progress')).toBe('');
+    expect(viewport.parentElement?.querySelector('.cap-scroll-fade[data-edge="top"]')).toHaveStyle({opacity:'1'});
+    expect(viewport.parentElement?.querySelectorAll('.cap-scroll-fade')).toHaveLength(4);
+  });
+  it('gradually reveals start/middle/end shades and clears them when overflow disappears',()=>{
     render(<ScrollArea label="Notes" fade="vertical" fadeReveal={100} fadeSize="15%">Content</ScrollArea>);
     const viewport=screen.getByRole('region',{name:'Notes'});let height=400;
     Object.defineProperties(viewport,{scrollHeight:{configurable:true,get:()=>height},clientHeight:{configurable:true,value:100}});

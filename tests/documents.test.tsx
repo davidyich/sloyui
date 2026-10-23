@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import Documents from '../demo/Documents';
 import { documentFiles } from '../demo/document-files';
+vi.mock('../demo/CatalogAdmin',()=>({useCatalogAdmin:()=>({admin:true})}));
 const original={path:'AGENTS.md',content:'# Original',revision:'v1'};
 const response=(data:unknown,ok=true)=>Promise.resolve({ok,json:async()=>data});
 beforeEach(()=>sessionStorage.clear());

@@ -1,0 +1,2698 @@
+{
+  "schemaVersion": 1,
+  "name": "Guide example",
+  "generator": "figma/color-system-v2/export-custom.mjs",
+  "backgrounds": {
+    "Light": "#F1EEF8",
+    "Dark": "#221D2C"
+  },
+  "accents": [
+    "blue",
+    "green",
+    "orange",
+    "red",
+    "pink",
+    "purple"
+  ],
+  "minimumContrast": 4.5,
+  "contexts": {
+    "Light": {
+      "background": {
+        "r": 0.9450980392156862,
+        "g": 0.9333333333333333,
+        "b": 0.9725490196078431,
+        "a": 1
+      },
+      "effectiveTheme": "Light",
+      "roles": {
+        "surface/bg": {
+          "r": 0.9450980392156862,
+          "g": 0.9333333333333333,
+          "b": 0.9725490196078431,
+          "a": 1
+        },
+        "surface/secondary/neutral-normal": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.08
+        },
+        "surface/secondary/neutral-active": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.12
+        },
+        "surface/tertiary/neutral-normal": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.03
+        },
+        "surface/tertiary/neutral-active": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.05
+        },
+        "surface/primary/neutral-normal": {
+          "r": 0.4396054941,
+          "g": 0.4396054941,
+          "b": 0.4396054941,
+          "a": 1
+        },
+        "surface/primary/neutral-active": {
+          "r": 0.3992640547,
+          "g": 0.3992640547,
+          "b": 0.3992640547,
+          "a": 1
+        },
+        "content/primary/neutral": {
+          "r": 0.2263616092,
+          "g": 0.2263616092,
+          "b": 0.2263616092,
+          "a": 1
+        },
+        "content/secondary/neutral": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.58
+        },
+        "content/tertiary/neutral": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.58
+        },
+        "content/inverted/neutral": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "content/muted/neutral": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.58
+        },
+        "content/on-primary": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "border/neutral": {
+          "r": 0.3795567932,
+          "g": 0.3795567932,
+          "b": 0.3795567932,
+          "a": 1
+        },
+        "surface/tertiary/blue-normal": {
+          "r": 2e-10,
+          "g": 0.2239279564,
+          "b": 0.4522937199,
+          "a": 0.08
+        },
+        "surface/tertiary/blue-active": {
+          "r": 1e-10,
+          "g": 0.1725744529,
+          "b": 0.3588957324,
+          "a": 0.13
+        },
+        "surface/secondary/blue-normal": {
+          "r": 0,
+          "g": 0.2500688763,
+          "b": 0.4998369088,
+          "a": 0.23
+        },
+        "surface/secondary/blue-active": {
+          "r": 0,
+          "g": 0.1980814543,
+          "b": 0.4052859966,
+          "a": 0.27
+        },
+        "surface/primary/blue-normal": {
+          "r": 1e-10,
+          "g": 0.4382018359,
+          "b": 0.8419993445,
+          "a": 1
+        },
+        "surface/primary/blue-active": {
+          "r": 2e-10,
+          "g": 0.3838601889,
+          "b": 0.7431667405,
+          "a": 1
+        },
+        "content/primary/blue": {
+          "r": 0,
+          "g": 0.1980814543,
+          "b": 0.4052859966,
+          "a": 1
+        },
+        "content/secondary/blue": {
+          "r": 0,
+          "g": 0.0307443724,
+          "b": 0.0998446484,
+          "a": 0.69
+        },
+        "content/on-primary-blue": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "border/blue": {
+          "r": 2e-10,
+          "g": 0.3838601889,
+          "b": 0.7431667405,
+          "a": 1
+        },
+        "surface/tertiary/green-normal": {
+          "r": 3e-10,
+          "g": 0.630629741,
+          "b": 0.3761225672,
+          "a": 0.13
+        },
+        "surface/tertiary/green-active": {
+          "r": 3e-10,
+          "g": 0.4361589659,
+          "b": 0.2538397449,
+          "a": 0.17
+        },
+        "surface/secondary/green-normal": {
+          "r": 2e-10,
+          "g": 0.5008011309,
+          "b": 0.294486605,
+          "a": 0.3
+        },
+        "surface/secondary/green-active": {
+          "r": 1e-10,
+          "g": 0.4040284773,
+          "b": 0.2336361599,
+          "a": 0.33
+        },
+        "surface/primary/green-normal": {
+          "r": 2e-10,
+          "g": 0.5008011309,
+          "b": 0.294486605,
+          "a": 1
+        },
+        "surface/primary/green-active": {
+          "r": 3e-10,
+          "g": 0.4361589659,
+          "b": 0.2538397449,
+          "a": 1
+        },
+        "content/primary/green": {
+          "r": 0,
+          "g": 0.2468502349,
+          "b": 0.1348028052,
+          "a": 1
+        },
+        "content/secondary/green": {
+          "r": 0,
+          "g": 0.0465453301,
+          "b": 0.0154122898,
+          "a": 0.7
+        },
+        "content/on-primary-green": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "border/green": {
+          "r": 0,
+          "g": 0.4684285202,
+          "b": 0.2741307741,
+          "a": 1
+        },
+        "surface/tertiary/orange-normal": {
+          "r": 0.8577632456,
+          "g": 0.4131676048,
+          "b": 5e-10,
+          "a": 0.13
+        },
+        "surface/tertiary/orange-active": {
+          "r": 0.6515662608,
+          "g": 0.3074066104,
+          "b": 1e-10,
+          "a": 0.18
+        },
+        "surface/secondary/orange-normal": {
+          "r": 0.692806698,
+          "g": 0.3285593428,
+          "b": 1e-10,
+          "a": 0.3
+        },
+        "surface/secondary/orange-active": {
+          "r": 0.5693894348,
+          "g": 0.2652570958,
+          "b": 1e-10,
+          "a": 0.33
+        },
+        "surface/primary/orange-normal": {
+          "r": 0.734089978,
+          "g": 0.3497340499,
+          "b": 2e-10,
+          "a": 1
+        },
+        "surface/primary/orange-active": {
+          "r": 0.6515662608,
+          "g": 0.3074066104,
+          "b": 1e-10,
+          "a": 1
+        },
+        "content/primary/orange": {
+          "r": 0.3679185272,
+          "g": 0.1619201651,
+          "b": 2e-10,
+          "a": 1
+        },
+        "content/secondary/orange": {
+          "r": 0.0421246805,
+          "g": 0.0084947651,
+          "b": 0,
+          "a": 0.67
+        },
+        "content/on-primary-orange": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "border/orange": {
+          "r": 0.6104123421,
+          "g": 0.2862982544,
+          "b": 2e-10,
+          "a": 1
+        },
+        "surface/tertiary/red-normal": {
+          "r": 0.4033573389,
+          "g": 0,
+          "b": 0.0368098606,
+          "a": 0.07
+        },
+        "surface/tertiary/red-active": {
+          "r": 0.3571614558,
+          "g": 0,
+          "b": 0.0285256677,
+          "a": 0.12
+        },
+        "surface/secondary/red-normal": {
+          "r": 0.4975120705,
+          "g": 1e-10,
+          "b": 0.0556239255,
+          "a": 0.2
+        },
+        "surface/secondary/red-active": {
+          "r": 0.4501680938,
+          "g": 0,
+          "b": 0.046144718,
+          "a": 0.25
+        },
+        "surface/primary/red-normal": {
+          "r": 0.8875528899,
+          "g": 6e-10,
+          "b": 0.1337178693,
+          "a": 1
+        },
+        "surface/primary/red-active": {
+          "r": 0.7889798876,
+          "g": 4e-10,
+          "b": 0.1139815901,
+          "a": 1
+        },
+        "content/primary/red": {
+          "r": 0.4501680938,
+          "g": 0,
+          "b": 0.046144718,
+          "a": 1
+        },
+        "content/secondary/red": {
+          "r": 0.0991958293,
+          "g": 0,
+          "b": 0.0026943153,
+          "a": 0.68
+        },
+        "content/on-primary-red": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "border/red": {
+          "r": 0.7398223188,
+          "g": 1e-10,
+          "b": 0.1041392653,
+          "a": 1
+        },
+        "surface/tertiary/pink-normal": {
+          "r": 0.3252179869,
+          "g": 0,
+          "b": 0.2446405911,
+          "a": 0.07
+        },
+        "surface/tertiary/pink-active": {
+          "r": 0.2832539104,
+          "g": 0,
+          "b": 0.2115697183,
+          "a": 0.12
+        },
+        "surface/secondary/pink-normal": {
+          "r": 0.4110163946,
+          "g": 1e-10,
+          "b": 0.3122562393,
+          "a": 0.2
+        },
+        "surface/secondary/pink-active": {
+          "r": 0.2832539104,
+          "g": 0,
+          "b": 0.2115697183,
+          "a": 0.24
+        },
+        "surface/primary/pink-normal": {
+          "r": 0.8145028544,
+          "g": 5e-10,
+          "b": 0.6302341506,
+          "a": 1
+        },
+        "surface/primary/pink-active": {
+          "r": 0.7235694884,
+          "g": 3e-10,
+          "b": 0.5585717662,
+          "a": 1
+        },
+        "content/primary/pink": {
+          "r": 0.4110163946,
+          "g": 1e-10,
+          "b": 0.3122562393,
+          "a": 1
+        },
+        "content/secondary/pink": {
+          "r": 0.0872452948,
+          "g": 0,
+          "b": 0.0571000734,
+          "a": 0.69
+        },
+        "content/on-primary-pink": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "border/pink": {
+          "r": 0.6782217452,
+          "g": 3e-10,
+          "b": 0.5228343075,
+          "a": 1
+        },
+        "surface/tertiary/purple-normal": {
+          "r": 0.2547206904,
+          "g": 1e-10,
+          "b": 0.4034470584,
+          "a": 0.07
+        },
+        "surface/tertiary/purple-active": {
+          "r": 0.0133453972,
+          "g": 0,
+          "b": 0.0342055861,
+          "a": 0.11
+        },
+        "surface/secondary/purple-normal": {
+          "r": 0.2205372925,
+          "g": 0,
+          "b": 0.3528489592,
+          "a": 0.19
+        },
+        "surface/secondary/purple-active": {
+          "r": 0.2205372925,
+          "g": 0,
+          "b": 0.3528489592,
+          "a": 0.24
+        },
+        "surface/primary/purple-normal": {
+          "r": 0.6384188039,
+          "g": 0.1529476029,
+          "b": 0.9530606435,
+          "a": 1
+        },
+        "surface/primary/purple-active": {
+          "r": 0.5792127092,
+          "g": 3e-10,
+          "b": 0.883758565,
+          "a": 1
+        },
+        "content/primary/purple": {
+          "r": 0.3246109719,
+          "g": 0,
+          "b": 0.5068983127,
+          "a": 1
+        },
+        "content/secondary/purple": {
+          "r": 0.0608711909,
+          "g": 0,
+          "b": 0.1165119727,
+          "a": 0.68
+        },
+        "content/on-primary-purple": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "border/purple": {
+          "r": 0.5422730198,
+          "g": 2e-10,
+          "b": 0.8290806166,
+          "a": 1
+        },
+        "border/focus": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        }
+      },
+      "minimumTextContrast": 4.5890921026209925,
+      "issues": [],
+      "minimumFocusContrast": 8.508091895163346
+    },
+    "Dark": {
+      "background": {
+        "r": 0.13333333333333333,
+        "g": 0.11372549019607843,
+        "b": 0.17254901960784313,
+        "a": 1
+      },
+      "effectiveTheme": "Dark",
+      "roles": {
+        "surface/bg": {
+          "r": 0.13333333333333333,
+          "g": 0.11372549019607843,
+          "b": 0.17254901960784313,
+          "a": 1
+        },
+        "surface/secondary/neutral-normal": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 0.08
+        },
+        "surface/secondary/neutral-active": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 0.12
+        },
+        "surface/tertiary/neutral-normal": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 0.03
+        },
+        "surface/tertiary/neutral-active": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 0.05
+        },
+        "surface/primary/neutral-normal": {
+          "r": 0.6947120397,
+          "g": 0.6947120397,
+          "b": 0.6947120397,
+          "a": 1
+        },
+        "surface/primary/neutral-active": {
+          "r": 0.7491148896,
+          "g": 0.7491148896,
+          "b": 0.7491148896,
+          "a": 1
+        },
+        "content/primary/neutral": {
+          "r": 0.8065875574,
+          "g": 0.8065875574,
+          "b": 0.8065875574,
+          "a": 1
+        },
+        "content/secondary/neutral": {
+          "r": 0.6685851228,
+          "g": 0.6685851228,
+          "b": 0.6685851228,
+          "a": 0.95
+        },
+        "content/tertiary/neutral": {
+          "r": 0.6685851228,
+          "g": 0.6685851228,
+          "b": 0.6685851228,
+          "a": 0.95
+        },
+        "content/inverted/neutral": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        },
+        "content/muted/neutral": {
+          "r": 0.6685851228,
+          "g": 0.6685851228,
+          "b": 0.6685851228,
+          "a": 0.95
+        },
+        "content/on-primary": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        },
+        "border/neutral": {
+          "r": 0.618330272,
+          "g": 0.618330272,
+          "b": 0.618330272,
+          "a": 1
+        },
+        "surface/tertiary/blue-normal": {
+          "r": 0.9787851811,
+          "g": 0.9880473367,
+          "b": 1,
+          "a": 0.05
+        },
+        "surface/tertiary/blue-active": {
+          "r": 0.8965741297,
+          "g": 0.9418308681,
+          "b": 1,
+          "a": 0.09
+        },
+        "surface/secondary/blue-normal": {
+          "r": 0.6153195821,
+          "g": 0.7849317428,
+          "b": 1,
+          "a": 0.18
+        },
+        "surface/secondary/blue-active": {
+          "r": 0.6153195821,
+          "g": 0.7849317428,
+          "b": 1,
+          "a": 0.22
+        },
+        "surface/primary/blue-normal": {
+          "r": 0.4696400289,
+          "g": 0.7052058217,
+          "b": 0.9999999999,
+          "a": 1
+        },
+        "surface/primary/blue-active": {
+          "r": 0.568630663,
+          "g": 0.7591709242,
+          "b": 1,
+          "a": 1
+        },
+        "content/primary/blue": {
+          "r": 0.7458602764,
+          "g": 0.8574910136,
+          "b": 1,
+          "a": 1
+        },
+        "content/secondary/blue": {
+          "r": 0.8965741297,
+          "g": 0.9418308681,
+          "b": 1,
+          "a": 0.83
+        },
+        "content/on-primary-blue": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        },
+        "border/blue": {
+          "r": 0.2989986071,
+          "g": 0.6173211063,
+          "b": 0.9999999999,
+          "a": 1
+        },
+        "surface/tertiary/green-normal": {
+          "r": 0.1160444227,
+          "g": 0.6910063151,
+          "b": 0.4251789631,
+          "a": 0.1
+        },
+        "surface/tertiary/green-active": {
+          "r": 0.2724992735,
+          "g": 0.7410796216,
+          "b": 0.4917250757,
+          "a": 0.14
+        },
+        "surface/secondary/green-normal": {
+          "r": 0.1160444227,
+          "g": 0.6910063151,
+          "b": 0.4251789631,
+          "a": 0.25
+        },
+        "surface/secondary/green-active": {
+          "r": 0.2724992735,
+          "g": 0.7410796216,
+          "b": 0.4917250757,
+          "a": 0.28
+        },
+        "surface/primary/green-normal": {
+          "r": 0.3881285185,
+          "g": 0.7881719016,
+          "b": 0.5597005685,
+          "a": 1
+        },
+        "surface/primary/green-active": {
+          "r": 0.4922700149,
+          "g": 0.8320745192,
+          "b": 0.6285094072,
+          "a": 1
+        },
+        "content/primary/green": {
+          "r": 0.6846436734,
+          "g": 0.9093215274,
+          "b": 0.7658272968,
+          "a": 1
+        },
+        "content/secondary/green": {
+          "r": 0.89930591,
+          "g": 0.981006346,
+          "b": 0.9261127246,
+          "a": 0.8
+        },
+        "content/on-primary-green": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        },
+        "border/green": {
+          "r": 0.2045387097,
+          "g": 0.7164025953,
+          "b": 0.4582385322,
+          "a": 1
+        },
+        "surface/tertiary/orange-normal": {
+          "r": 1,
+          "g": 0.689435396,
+          "b": 0.5049635464,
+          "a": 0.07
+        },
+        "surface/tertiary/orange-active": {
+          "r": 1,
+          "g": 0.7274007279,
+          "b": 0.5678457151,
+          "a": 0.11
+        },
+        "surface/secondary/orange-normal": {
+          "r": 0.9909293445,
+          "g": 0.5676319445,
+          "b": 0.291842178,
+          "a": 0.22
+        },
+        "surface/secondary/orange-active": {
+          "r": 1,
+          "g": 0.6069977915,
+          "b": 0.3607898982,
+          "a": 0.25
+        },
+        "surface/primary/orange-normal": {
+          "r": 0.9909293445,
+          "g": 0.5676319445,
+          "b": 0.291842178,
+          "a": 1
+        },
+        "surface/primary/orange-active": {
+          "r": 1,
+          "g": 0.649408992,
+          "b": 0.4367601616,
+          "a": 1
+        },
+        "content/primary/orange": {
+          "r": 1,
+          "g": 0.7979282371,
+          "b": 0.6819826208,
+          "a": 1
+        },
+        "content/secondary/orange": {
+          "r": 1,
+          "g": 0.9187856761,
+          "b": 0.8733011478,
+          "a": 0.83
+        },
+        "content/on-primary-orange": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        },
+        "border/orange": {
+          "r": 0.9388163869,
+          "g": 0.4558117611,
+          "b": 0.0082833655,
+          "a": 1
+        },
+        "surface/tertiary/red-normal": {
+          "r": 1,
+          "g": 0.9825395737,
+          "b": 0.9804641259,
+          "a": 0.05
+        },
+        "surface/tertiary/red-active": {
+          "r": 1,
+          "g": 0.8218437393,
+          "b": 0.8020485345,
+          "a": 0.1
+        },
+        "surface/secondary/red-normal": {
+          "r": 0.9999999999,
+          "g": 0.5873578209,
+          "b": 0.5523053479,
+          "a": 0.2
+        },
+        "surface/secondary/red-active": {
+          "r": 1,
+          "g": 0.6317526273,
+          "b": 0.5979637392,
+          "a": 0.24
+        },
+        "surface/primary/red-normal": {
+          "r": 1,
+          "g": 0.5399467119,
+          "b": 0.5047639459,
+          "a": 1
+        },
+        "surface/primary/red-active": {
+          "r": 1,
+          "g": 0.6317526273,
+          "b": 0.5979637392,
+          "a": 1
+        },
+        "content/primary/red": {
+          "r": 1,
+          "g": 0.8218437393,
+          "b": 0.8020485345,
+          "a": 1
+        },
+        "content/secondary/red": {
+          "r": 1,
+          "g": 0.9411755054,
+          "b": 0.9342692022,
+          "a": 0.81
+        },
+        "content/on-primary-red": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        },
+        "border/red": {
+          "r": 1,
+          "g": 0.3679060227,
+          "b": 0.3468899043,
+          "a": 1
+        },
+        "surface/tertiary/pink-normal": {
+          "r": 1,
+          "g": 0.9809128644,
+          "b": 0.9917372231,
+          "a": 0.05
+        },
+        "surface/tertiary/pink-active": {
+          "r": 1,
+          "g": 0.9355558543,
+          "b": 0.9725967626,
+          "a": 0.09
+        },
+        "surface/secondary/pink-normal": {
+          "r": 1,
+          "g": 0.7238972722,
+          "b": 0.8934741763,
+          "a": 0.17
+        },
+        "surface/secondary/pink-active": {
+          "r": 1,
+          "g": 0.7238972722,
+          "b": 0.8934741763,
+          "a": 0.21
+        },
+        "surface/primary/pink-normal": {
+          "r": 1,
+          "g": 0.4739392329,
+          "b": 0.8252050624,
+          "a": 1
+        },
+        "surface/primary/pink-active": {
+          "r": 1,
+          "g": 0.5855806744,
+          "b": 0.8520484416,
+          "a": 1
+        },
+        "content/primary/pink": {
+          "r": 1,
+          "g": 0.8033379601,
+          "b": 0.9210795224,
+          "a": 1
+        },
+        "content/secondary/pink": {
+          "r": 1,
+          "g": 0.9355558543,
+          "b": 0.9725967626,
+          "a": 0.81
+        },
+        "content/on-primary-pink": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        },
+        "border/pink": {
+          "r": 0.9738086128,
+          "g": 0.2852394668,
+          "b": 0.7737322615,
+          "a": 1
+        },
+        "surface/tertiary/purple-normal": {
+          "r": 0.9908420781,
+          "g": 0.9833438662,
+          "b": 1,
+          "a": 0.05
+        },
+        "surface/tertiary/purple-active": {
+          "r": 0.9694736826,
+          "g": 0.9440196961,
+          "b": 1,
+          "a": 0.09
+        },
+        "surface/secondary/purple-normal": {
+          "r": 0.8945624961,
+          "g": 0.7999775286,
+          "b": 1,
+          "a": 0.16
+        },
+        "surface/secondary/purple-active": {
+          "r": 0.8945624961,
+          "g": 0.7999775286,
+          "b": 1,
+          "a": 0.2
+        },
+        "surface/primary/purple-normal": {
+          "r": 0.793037872,
+          "g": 0.5801694593,
+          "b": 1,
+          "a": 1
+        },
+        "surface/primary/purple-active": {
+          "r": 0.8274757565,
+          "g": 0.6592686116,
+          "b": 1,
+          "a": 1
+        },
+        "content/primary/purple": {
+          "r": 0.8945624961,
+          "g": 0.7999775286,
+          "b": 1,
+          "a": 1
+        },
+        "content/secondary/purple": {
+          "r": 0.9559387417,
+          "g": 0.9187523404,
+          "b": 1,
+          "a": 0.83
+        },
+        "content/on-primary-purple": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        },
+        "border/purple": {
+          "r": 0.7411101774,
+          "g": 0.4451538423,
+          "b": 1,
+          "a": 1
+        },
+        "border/focus": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      },
+      "minimumTextContrast": 4.600607155242982,
+      "issues": [],
+      "minimumFocusContrast": 6.981939326316909
+    }
+  },
+  "collections": [
+    {
+      "key": "custom",
+      "name": "Sloy UI · Custom · Guide example",
+      "modes": [
+        "Light",
+        "Dark"
+      ],
+      "hidden": false,
+      "variables": [
+        {
+          "name": "surface/bg",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.9450980392156862,
+              "g": 0.9333333333333333,
+              "b": 0.9725490196078431,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.13333333333333333,
+              "g": 0.11372549019607843,
+              "b": 0.17254901960784313,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/secondary/neutral-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.08
+            },
+            "Dark": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0.08
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/secondary/neutral-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.12
+            },
+            "Dark": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0.12
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/tertiary/neutral-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.03
+            },
+            "Dark": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0.03
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/tertiary/neutral-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.05
+            },
+            "Dark": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0.05
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/primary/neutral-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.4396054941,
+              "g": 0.4396054941,
+              "b": 0.4396054941,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.6947120397,
+              "g": 0.6947120397,
+              "b": 0.6947120397,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/primary/neutral-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.3992640547,
+              "g": 0.3992640547,
+              "b": 0.3992640547,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.7491148896,
+              "g": 0.7491148896,
+              "b": 0.7491148896,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/primary/neutral",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.2263616092,
+              "g": 0.2263616092,
+              "b": 0.2263616092,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.8065875574,
+              "g": 0.8065875574,
+              "b": 0.8065875574,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/secondary/neutral",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.58
+            },
+            "Dark": {
+              "r": 0.6685851228,
+              "g": 0.6685851228,
+              "b": 0.6685851228,
+              "a": 0.95
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/tertiary/neutral",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.58
+            },
+            "Dark": {
+              "r": 0.6685851228,
+              "g": 0.6685851228,
+              "b": 0.6685851228,
+              "a": 0.95
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/inverted/neutral",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/muted/neutral",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.58
+            },
+            "Dark": {
+              "r": 0.6685851228,
+              "g": 0.6685851228,
+              "b": 0.6685851228,
+              "a": 0.95
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/on-primary",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "border/neutral",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.3795567932,
+              "g": 0.3795567932,
+              "b": 0.3795567932,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.618330272,
+              "g": 0.618330272,
+              "b": 0.618330272,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/tertiary/blue-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 2e-10,
+              "g": 0.2239279564,
+              "b": 0.4522937199,
+              "a": 0.08
+            },
+            "Dark": {
+              "r": 0.9787851811,
+              "g": 0.9880473367,
+              "b": 1,
+              "a": 0.05
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/tertiary/blue-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 1e-10,
+              "g": 0.1725744529,
+              "b": 0.3588957324,
+              "a": 0.13
+            },
+            "Dark": {
+              "r": 0.8965741297,
+              "g": 0.9418308681,
+              "b": 1,
+              "a": 0.09
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/secondary/blue-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0,
+              "g": 0.2500688763,
+              "b": 0.4998369088,
+              "a": 0.23
+            },
+            "Dark": {
+              "r": 0.6153195821,
+              "g": 0.7849317428,
+              "b": 1,
+              "a": 0.18
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/secondary/blue-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0,
+              "g": 0.1980814543,
+              "b": 0.4052859966,
+              "a": 0.27
+            },
+            "Dark": {
+              "r": 0.6153195821,
+              "g": 0.7849317428,
+              "b": 1,
+              "a": 0.22
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/primary/blue-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 1e-10,
+              "g": 0.4382018359,
+              "b": 0.8419993445,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.4696400289,
+              "g": 0.7052058217,
+              "b": 0.9999999999,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/primary/blue-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 2e-10,
+              "g": 0.3838601889,
+              "b": 0.7431667405,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.568630663,
+              "g": 0.7591709242,
+              "b": 1,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/primary/blue",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0,
+              "g": 0.1980814543,
+              "b": 0.4052859966,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.7458602764,
+              "g": 0.8574910136,
+              "b": 1,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/secondary/blue",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0,
+              "g": 0.0307443724,
+              "b": 0.0998446484,
+              "a": 0.69
+            },
+            "Dark": {
+              "r": 0.8965741297,
+              "g": 0.9418308681,
+              "b": 1,
+              "a": 0.83
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/on-primary-blue",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "border/blue",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 2e-10,
+              "g": 0.3838601889,
+              "b": 0.7431667405,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.2989986071,
+              "g": 0.6173211063,
+              "b": 0.9999999999,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/tertiary/green-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 3e-10,
+              "g": 0.630629741,
+              "b": 0.3761225672,
+              "a": 0.13
+            },
+            "Dark": {
+              "r": 0.1160444227,
+              "g": 0.6910063151,
+              "b": 0.4251789631,
+              "a": 0.1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/tertiary/green-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 3e-10,
+              "g": 0.4361589659,
+              "b": 0.2538397449,
+              "a": 0.17
+            },
+            "Dark": {
+              "r": 0.2724992735,
+              "g": 0.7410796216,
+              "b": 0.4917250757,
+              "a": 0.14
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/secondary/green-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 2e-10,
+              "g": 0.5008011309,
+              "b": 0.294486605,
+              "a": 0.3
+            },
+            "Dark": {
+              "r": 0.1160444227,
+              "g": 0.6910063151,
+              "b": 0.4251789631,
+              "a": 0.25
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/secondary/green-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 1e-10,
+              "g": 0.4040284773,
+              "b": 0.2336361599,
+              "a": 0.33
+            },
+            "Dark": {
+              "r": 0.2724992735,
+              "g": 0.7410796216,
+              "b": 0.4917250757,
+              "a": 0.28
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/primary/green-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 2e-10,
+              "g": 0.5008011309,
+              "b": 0.294486605,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.3881285185,
+              "g": 0.7881719016,
+              "b": 0.5597005685,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/primary/green-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 3e-10,
+              "g": 0.4361589659,
+              "b": 0.2538397449,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.4922700149,
+              "g": 0.8320745192,
+              "b": 0.6285094072,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/primary/green",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0,
+              "g": 0.2468502349,
+              "b": 0.1348028052,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.6846436734,
+              "g": 0.9093215274,
+              "b": 0.7658272968,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/secondary/green",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0,
+              "g": 0.0465453301,
+              "b": 0.0154122898,
+              "a": 0.7
+            },
+            "Dark": {
+              "r": 0.89930591,
+              "g": 0.981006346,
+              "b": 0.9261127246,
+              "a": 0.8
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/on-primary-green",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "border/green",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0,
+              "g": 0.4684285202,
+              "b": 0.2741307741,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.2045387097,
+              "g": 0.7164025953,
+              "b": 0.4582385322,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/tertiary/orange-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.8577632456,
+              "g": 0.4131676048,
+              "b": 5e-10,
+              "a": 0.13
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.689435396,
+              "b": 0.5049635464,
+              "a": 0.07
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/tertiary/orange-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.6515662608,
+              "g": 0.3074066104,
+              "b": 1e-10,
+              "a": 0.18
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.7274007279,
+              "b": 0.5678457151,
+              "a": 0.11
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/secondary/orange-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.692806698,
+              "g": 0.3285593428,
+              "b": 1e-10,
+              "a": 0.3
+            },
+            "Dark": {
+              "r": 0.9909293445,
+              "g": 0.5676319445,
+              "b": 0.291842178,
+              "a": 0.22
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/secondary/orange-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.5693894348,
+              "g": 0.2652570958,
+              "b": 1e-10,
+              "a": 0.33
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.6069977915,
+              "b": 0.3607898982,
+              "a": 0.25
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/primary/orange-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.734089978,
+              "g": 0.3497340499,
+              "b": 2e-10,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.9909293445,
+              "g": 0.5676319445,
+              "b": 0.291842178,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/primary/orange-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.6515662608,
+              "g": 0.3074066104,
+              "b": 1e-10,
+              "a": 1
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.649408992,
+              "b": 0.4367601616,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/primary/orange",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.3679185272,
+              "g": 0.1619201651,
+              "b": 2e-10,
+              "a": 1
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.7979282371,
+              "b": 0.6819826208,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/secondary/orange",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.0421246805,
+              "g": 0.0084947651,
+              "b": 0,
+              "a": 0.67
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.9187856761,
+              "b": 0.8733011478,
+              "a": 0.83
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/on-primary-orange",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "border/orange",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.6104123421,
+              "g": 0.2862982544,
+              "b": 2e-10,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.9388163869,
+              "g": 0.4558117611,
+              "b": 0.0082833655,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/tertiary/red-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.4033573389,
+              "g": 0,
+              "b": 0.0368098606,
+              "a": 0.07
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.9825395737,
+              "b": 0.9804641259,
+              "a": 0.05
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/tertiary/red-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.3571614558,
+              "g": 0,
+              "b": 0.0285256677,
+              "a": 0.12
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.8218437393,
+              "b": 0.8020485345,
+              "a": 0.1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/secondary/red-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.4975120705,
+              "g": 1e-10,
+              "b": 0.0556239255,
+              "a": 0.2
+            },
+            "Dark": {
+              "r": 0.9999999999,
+              "g": 0.5873578209,
+              "b": 0.5523053479,
+              "a": 0.2
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/secondary/red-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.4501680938,
+              "g": 0,
+              "b": 0.046144718,
+              "a": 0.25
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.6317526273,
+              "b": 0.5979637392,
+              "a": 0.24
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/primary/red-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.8875528899,
+              "g": 6e-10,
+              "b": 0.1337178693,
+              "a": 1
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.5399467119,
+              "b": 0.5047639459,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/primary/red-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.7889798876,
+              "g": 4e-10,
+              "b": 0.1139815901,
+              "a": 1
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.6317526273,
+              "b": 0.5979637392,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/primary/red",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.4501680938,
+              "g": 0,
+              "b": 0.046144718,
+              "a": 1
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.8218437393,
+              "b": 0.8020485345,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/secondary/red",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.0991958293,
+              "g": 0,
+              "b": 0.0026943153,
+              "a": 0.68
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.9411755054,
+              "b": 0.9342692022,
+              "a": 0.81
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/on-primary-red",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "border/red",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.7398223188,
+              "g": 1e-10,
+              "b": 0.1041392653,
+              "a": 1
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.3679060227,
+              "b": 0.3468899043,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/tertiary/pink-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.3252179869,
+              "g": 0,
+              "b": 0.2446405911,
+              "a": 0.07
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.9809128644,
+              "b": 0.9917372231,
+              "a": 0.05
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/tertiary/pink-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.2832539104,
+              "g": 0,
+              "b": 0.2115697183,
+              "a": 0.12
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.9355558543,
+              "b": 0.9725967626,
+              "a": 0.09
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/secondary/pink-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.4110163946,
+              "g": 1e-10,
+              "b": 0.3122562393,
+              "a": 0.2
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.7238972722,
+              "b": 0.8934741763,
+              "a": 0.17
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/secondary/pink-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.2832539104,
+              "g": 0,
+              "b": 0.2115697183,
+              "a": 0.24
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.7238972722,
+              "b": 0.8934741763,
+              "a": 0.21
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/primary/pink-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.8145028544,
+              "g": 5e-10,
+              "b": 0.6302341506,
+              "a": 1
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.4739392329,
+              "b": 0.8252050624,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/primary/pink-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.7235694884,
+              "g": 3e-10,
+              "b": 0.5585717662,
+              "a": 1
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.5855806744,
+              "b": 0.8520484416,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/primary/pink",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.4110163946,
+              "g": 1e-10,
+              "b": 0.3122562393,
+              "a": 1
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.8033379601,
+              "b": 0.9210795224,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/secondary/pink",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.0872452948,
+              "g": 0,
+              "b": 0.0571000734,
+              "a": 0.69
+            },
+            "Dark": {
+              "r": 1,
+              "g": 0.9355558543,
+              "b": 0.9725967626,
+              "a": 0.81
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/on-primary-pink",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "border/pink",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.6782217452,
+              "g": 3e-10,
+              "b": 0.5228343075,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.9738086128,
+              "g": 0.2852394668,
+              "b": 0.7737322615,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/tertiary/purple-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.2547206904,
+              "g": 1e-10,
+              "b": 0.4034470584,
+              "a": 0.07
+            },
+            "Dark": {
+              "r": 0.9908420781,
+              "g": 0.9833438662,
+              "b": 1,
+              "a": 0.05
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/tertiary/purple-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.0133453972,
+              "g": 0,
+              "b": 0.0342055861,
+              "a": 0.11
+            },
+            "Dark": {
+              "r": 0.9694736826,
+              "g": 0.9440196961,
+              "b": 1,
+              "a": 0.09
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/secondary/purple-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.2205372925,
+              "g": 0,
+              "b": 0.3528489592,
+              "a": 0.19
+            },
+            "Dark": {
+              "r": 0.8945624961,
+              "g": 0.7999775286,
+              "b": 1,
+              "a": 0.16
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/secondary/purple-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.2205372925,
+              "g": 0,
+              "b": 0.3528489592,
+              "a": 0.24
+            },
+            "Dark": {
+              "r": 0.8945624961,
+              "g": 0.7999775286,
+              "b": 1,
+              "a": 0.2
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/primary/purple-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.6384188039,
+              "g": 0.1529476029,
+              "b": 0.9530606435,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.793037872,
+              "g": 0.5801694593,
+              "b": 1,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "surface/primary/purple-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.5792127092,
+              "g": 3e-10,
+              "b": 0.883758565,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.8274757565,
+              "g": 0.6592686116,
+              "b": 1,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/primary/purple",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.3246109719,
+              "g": 0,
+              "b": 0.5068983127,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.8945624961,
+              "g": 0.7999775286,
+              "b": 1,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/secondary/purple",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.0608711909,
+              "g": 0,
+              "b": 0.1165119727,
+              "a": 0.68
+            },
+            "Dark": {
+              "r": 0.9559387417,
+              "g": 0.9187523404,
+              "b": 1,
+              "a": 0.83
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "content/on-primary-purple",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "border/purple",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0.5422730198,
+              "g": 2e-10,
+              "b": 0.8290806166,
+              "a": 1
+            },
+            "Dark": {
+              "r": 0.7411101774,
+              "g": 0.4451538423,
+              "b": 1,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        },
+        {
+          "name": "border/focus",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            },
+            "Dark": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          },
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "description": "Generated for this project background. Regenerate the complete scope after editing a background."
+        }
+      ]
+    }
+  ],
+  "boundary": "Explicit generation for declared solid backgrounds. Editing a frame fill does not recalculate variables. This project scope is separate from the canonical native library.",
+  "audit": {
+    "result": "pass",
+    "textResult": "pass",
+    "appearanceResult": "pass",
+    "minimumFocusContrast": 6.981939326316909,
+    "exactBackgrounds": true,
+    "wholePercentAlpha": true,
+    "fractionalFloatVariables": 0,
+    "variables": 75,
+    "collections": 1,
+    "textChecks": 788,
+    "minimumTextContrast": 4.600607155242982,
+    "failures": [],
+    "appearanceIssues": {
+      "Light": [],
+      "Dark": []
+    },
+    "nativeCoreChanged": false
+  }
+}

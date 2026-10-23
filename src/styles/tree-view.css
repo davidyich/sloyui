@@ -1,11 +1,11 @@
 /* Row highlights may match a nested secondary label; retain its structural edge. */
 .cap-tree-meta .cap-tag { outline-color:var(--cap-border-subtle); }
 .cap-tree-meta .cap-icon-box { border-color:var(--cap-border-subtle); }
-.cap-tree[data-guides=true] { position:relative; isolation:isolate; gap:2px; }
+.cap-tree[data-guides=true] { --cap-tree-indent:var(--cap-space-fixed-4,16px); --cap-tree-guide-inset:calc(var(--cap-space-2) + var(--cap-radius-inset) + 6px); position:relative; isolation:isolate; gap:var(--cap-space-half); }
 .cap-tree[data-guides=true] .cap-tree-entry { display:grid; grid-template-columns:minmax(0,1fr); min-width:0; }
 .cap-tree[data-guides=true] .cap-tree-entry[data-guided-child=true] { grid-template-columns:var(--cap-tree-guide-width) minmax(0,1fr); }
 .cap-tree[data-guides=true] .cap-tree-entry { position:relative; z-index:1; }
-.cap-tree[data-guides=true] .cap-tree-item { width:100%; min-width:0; margin:0; padding:6px calc(8px + var(--cap-radius-inset)); border-radius:var(--cap-radius-base); background:transparent; }
+.cap-tree[data-guides=true] .cap-tree-item { width:100%; min-width:0; margin:0; padding:var(--cap-space-detail-6) calc(var(--cap-space-2) + var(--cap-radius-inset)); border-radius:var(--cap-radius-base); background:transparent; }
 .cap-tree[data-guides=true] .cap-tree-item:hover:not([aria-disabled=true]) { background:var(--cap-reaction-hover); }
 .cap-tree[data-guides=true] .cap-tree-item[aria-selected=true] { background:transparent; color:var(--cap-content-primary); font-weight:500; }
 .cap-tree[data-guides=true] .cap-tree-item[aria-disabled=true] { background:transparent; }
@@ -15,9 +15,17 @@
 .cap-tree-selection-indicator[data-visible] { visibility:visible; }
 .cap-tree-selection-indicator[data-ready=true] { transition:none; }
 .cap-tree-guide-column { position:relative; min-width:0; min-height:100%; }
-.cap-tree-guide { position:absolute; inset-block:0; left:var(--cap-guide-offset); width:1px; }
-.cap-tree-guide[data-continues=true] { inset-block-end:-2px; }
+.cap-tree-guide { position:absolute; inset-block:0 50%; left:var(--cap-guide-offset); width:1px; }
+.cap-tree-guide[data-continues=true] { inset-block-end:calc(-1 * var(--cap-space-half)); }
 .cap-tree-guide::before { position:absolute; inset:0; width:1px; background:color-mix(in srgb,var(--cap-content-muted) 24%,transparent); content:""; }
-.cap-tree-active-guide-indicator[data-visible] { z-index:2; width:1px; height:18px; visibility:visible; background:var(--cap-content-primary); }
+.cap-tree-active-guide-indicator[data-visible] { z-index:3; width:1px; height:18px; visibility:visible; background:var(--cap-content-primary); }
 .cap-tree-active-guide-indicator[data-ready=true] { transition:none; }
 @media (prefers-reduced-motion:reduce) { .cap-tree-selection-indicator[data-ready=true],.cap-tree-active-guide-indicator[data-ready=true] { transition:none; } }
+
+/* Selection stays below the travelling hover surface; rows own text and focus above both. */
+.cap-tree.cap-shared-hover > :is(.cap-tree-item,.cap-tree-entry) { z-index:2; }
+.cap-tree.cap-shared-hover > .cap-moving-highlight[data-kind='hover'] { z-index:1; }
+.cap-tree:has(> .cap-tree-selection-indicator[data-visible]) .cap-tree-item[aria-selected='true'],
+.cap-tree.cap-shared-hover:has(> .cap-moving-highlight[data-kind='hover'][data-visible]) .cap-tree-item[data-shared-hover-target]:not([aria-disabled='true']) { background:transparent; }
+
+.cap-tree-child-guide { position:absolute; top:calc(50% + 8px); bottom:calc(-1 * var(--cap-space-half)); left:var(--cap-tree-guide-inset); width:1px; pointer-events:none; background:color-mix(in srgb,var(--cap-content-muted) 24%,transparent); }

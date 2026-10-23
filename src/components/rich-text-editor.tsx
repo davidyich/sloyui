@@ -199,7 +199,7 @@ function SlashMenuOverlay({ anchor, panel, open, id, options, activeIndex, onSel
 }) {
   const t = useTranslate();
   const scopeAnchor = useMemo(() => ({ get current() { return anchor.current; } }), [anchor, open]);
-  const scope = useOverlayScope(scopeAnchor), position = useAnchoredOverlay(open, anchor, panel, { side: 'bottom' }), present = useOverlayPresence(open);
+  const scope = useOverlayScope(scopeAnchor, open), position = useAnchoredOverlay(open, anchor, panel, { side: 'bottom' }), present = useOverlayPresence(open);
   useOverlayDismiss(open, panel, anchor, restore => { onClose(); if (restore) requestAnimationFrame(() => anchor.current?.focus()); });
   if (!present) return null;
   return <OverlayPortal anchor={anchor} panel={panel}><div ref={panel} id={id} className="cap-rich-editor-slash" role="listbox" aria-label={t('Тип блока', 'Block type')} data-state={open ? 'open' : 'closed'} aria-hidden={!open || undefined} inert={!open} style={position} {...scope}>
@@ -220,7 +220,7 @@ function BlockMenuOverlay({ anchor, open, id, groups, onClose }: {
   const lastGroups = useRef(groups);
   if (open) lastGroups.current = groups;
   const scopeAnchor = useMemo(() => ({ get current() { return anchor.current; } }), [anchor, open]);
-  const scope = useOverlayScope(scopeAnchor), position = useAnchoredOverlay(open, anchor, panel, { align: 'start' }), present = useOverlayPresence(open);
+  const scope = useOverlayScope(scopeAnchor, open), position = useAnchoredOverlay(open, anchor, panel, { align: 'start' }), present = useOverlayPresence(open);
   const buttons = () => Array.from(panel.current?.querySelectorAll<HTMLButtonElement>('[role^="menuitem"]:not(:disabled)') ?? []);
   useOverlayDismiss(open, panel, anchor, onClose);
   useEffect(() => { if (!open) setSubmenu(null); }, [open]);
@@ -516,7 +516,7 @@ export function RichTextEditor({ label, value, onValueChange, presets = [], plac
   };
   const selectionToolbarOpen = selectionToolbar !== null && editable && !menuId && !dragView;
   const selectionScopeAnchor = useMemo(() => ({ get current() { return selectionAnchor.current; } }), [selectionToolbarOpen]);
-  const selectionScope = useOverlayScope(selectionScopeAnchor), selectionPosition = useAnchoredOverlay(selectionToolbarOpen, selectionAnchor, selectionPanel, { align: 'center', side: uiVariant === 'context' ? 'bottom' : 'top' });
+  const selectionScope = useOverlayScope(selectionScopeAnchor, selectionToolbarOpen), selectionPosition = useAnchoredOverlay(selectionToolbarOpen, selectionAnchor, selectionPanel, { align: 'center', side: uiVariant === 'context' ? 'bottom' : 'top' });
   useOverlayDismiss(selectionToolbarOpen, selectionPanel, selectionAnchor, restore => {
     const selectedId = selectionToolbar?.id;
     setSelectionToolbar(null);

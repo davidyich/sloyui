@@ -1,71 +1,166 @@
-# Поверхности, состояния и полные палитры
+# Токены, поверхности и состояния
 
-CSS и Figma строятся из одной модели. Источники: `source/foundation.json`, `source/surface-rules.json`. Правила подбора пар: `scripts/color-model.mjs`. Не меняйте сгенерированные файлы вручную.
+Используйте компоненты кита и семантические роли. Один генератор задаёт Figma и web runtime: `figma/token-system-v4/source.json` → `graph.json` → runtime и native export. После изменения источника выполните `npm run tokens`; сгенерированные CSS и JSON вручную не меняйте. Карта native-экспорта и состояние пересборки — в [Figma README](../figma/README.md).
+
+В Figma V2 основной цветовой picker — **Surface**. Theme, Scheme и Palette служат маршрутизации и не конкурируют с ним в обычном выборе цвета. Внутри `surface/primary`, `surface/secondary` и `surface/tertiary` лежит плоский список: neutral первым, затем blue, green, orange, red, pink и purple; Normal/Active соседствуют. Другие семейства не входят в текущую поставку по умолчанию. Старые имена могут сохраняться только как совместимые входы web API.
+
+## Выберите слой
+
+| Слой | Назначение |
+| --- | --- |
+| Palette | Runtime: общие непрозрачные растяжки. Native: только реально используемые RGBA-цвета с alpha в целых процентах |
+| Primitives | Только нужные исходные размеры и параметры шрифтов; native FLOAT — целые числа |
+| Theme · Light / Dark | Внешняя тема; не переключается ради локальной тёмной области |
+| Scheme · Standard / Dimmed | Схема полных контекстов областей |
+| Surface | Публичные семантические цвета, контекст области и состояния |
+| Accent | Neutral по умолчанию; Blue, Green, Orange, Red, Pink, Purple для наследуемых контролов |
+| Density · Default / Compact | Адаптивные и постоянные размеры |
+| Radius · None / Compact / Default / Rounded | Независимые скругления 0 / 4 / 8 / 16 px |
+| Borders · Off / On | Независимая декоративная граница |
+
+`figma/color-system-v2/build-native.mjs` создаёт `native-graph.json`. Native Surface имеет режимы Shell, Workspace, Content, Overlay и Invert; Glass остаётся runtime-материалом и отдельно проверяется в Palette Lab. Custom применяется через явный пересчёт, не дополнительный постоянно включённый mode.
+
+Точное разделение внутренних маршрутов native-графа определяет exporter; не добавляйте новые коллекции ради повторяющихся aliases. Исходные пигменты принадлежат Palette, геометрия и шрифты — Primitives. Общие конечные роли сохраняют назначение даже при совпадающих значениях. Отдельных публичных Semantic и Components нет.
+
+Runtime-граф может хранить точные промежуточные числа и совместимые opacity aliases для вычислений. **Native Figma не экспортирует дробные FLOAT-примитивы alpha, ratios или промежуточных формул.** Прозрачность native хранится в RGBA COLOR со значением alpha в целых процентах; runtime сохраняет точные composed COLOR aliases. Не заменяйте её opacity целого слоя: это изменяет также текст, иконки и фокус. Проверяйте итог после смешивания с реальной подложкой.
+
+`src/tokens/runtime-v4.json` содержит runtime-граф, а `src/tokens/token-contract.json` — CSS-соответствия и совместимость. Native rebuilt IDs не обязаны совпадать с историческими. Старые импортеры не применяются к актуальной библиотеке. [Отчёт проверки](verification.md) отдельно фиксирует генерацию, native readback, браузер и выпуск; одно не подтверждает другое.
+
+## Задайте назначение области
+
+Поверхность описывает назначение, а не глубину вложенности. Локальный блок не создаёт новую поверхность.
+
+| Surface | Назначение | CSS | Совместимые значения |
+| --- | --- | --- | --- |
+| Shell | Оболочка приложения, общая навигация | `shell` | `page`, `base` |
+| Workspace | Список, боковая панель, рабочая область | `workspace` | `inset`, `canvas` |
+| Content | Документ, редактор, основной контент | `content` | `panel`, `raised` |
+| Overlay | Меню, popover, диалог | `overlay` | `floating` |
+| Invert | Контрастная область: чёрная в Light, белая в Dark | `invert` | — |
+| Glass | Защищённая полупрозрачная область над текстурой | `glass` | — |
+
+Задайте `data-surface` на области. Класс `.cap-surface` рисует её фон. `--cap-surface-bg` и совместимый `--cap-surface-current` выбирают `Theme/surface/bg`. Для блока внутри области используйте `--cap-surface-block`. Сохраните Surface родителя, чтобы вложенные secondary-объекты получили пары этой области.
 
 ```html
-<html data-theme="light" data-borders="off">
-  <section data-surface="canvas" data-accent="purple"
-           style="background:var(--cap-surface-current)">
-    <!-- Компоненты наследуют независимые оси контекста. -->
-  </section>
-</html>
+<div class="cap-surface" data-surface="shell">
+  <aside class="cap-surface" data-surface="workspace">…</aside>
+  <main class="cap-surface" data-surface="content">
+    <section style="background:var(--cap-surface-block)">…</section>
+  </main>
+</div>
 ```
 
-`data-theme` выбирает light/dark, `data-accent` — neutral или один из 17 акцентов, `data-surface` — реальную поверхность canvas/base/raised/floating. Атрибут поверхности наследуется, но сам не рисует произвольный контейнер. Card задаёт raised, SidebarPanel — canvas, окна и FloatingActionBar — floating. Portal сохраняет локальные тему, акцент, границы, скругления и тени, включая изменение открытой панели; его содержимое рассчитывается относительно floating.
+Card, ObjectCard, ContentCard и FileCard сохраняют Surface родителя и рисуют block. Card subtle рисует bg; elevated добавляет тень. Явное `data-surface` допустимо, если карточка создаёт область с другим назначением. Card сохраняет структурную `.cap-surface-boundary` при Borders Off. Не определяйте контекст по цвету DOM и не добавляйте структурную границу каждому контролу.
 
-| Поверхность | Light | Dark |
+`data-surface-scheme="standard|dimmed"` выбирает полные контексты областей: bg, block, secondary, content и border. Standard в Dark строит Shell → Workspace → Content от тёмного к светлому; Dimmed делает Shell светлее Workspace, а Content темнее. Overlay имеет собственный фон в каждой схеме. В Light меняется Workspace; Shell и белые Content/Overlay сохраняются. `inverted` — совместимое имя Dimmed. Invert и Glass от этой оси не зависят.
+
+Схемы воспроизводят согласованные Standard и Dimmed. Целевые значения фоновых областей хранятся в `figma/token-system-v4/source.json` → `surfaceSchemes`. Генератор выбирает существующие нейтральные ступени совместно, сохраняя различимость и контраст; дополнительные цвета поверхностей в Palette не создаются. Не реализуйте схему перестановкой Workspace/Content или сменой одного фона без остальных ролей.
+
+## Выберите цвет объекта
+
+Таблица ниже показывает runtime-имена Theme. Native picker использует соответствующие роли Surface с плоскими именами из native export; не ищите runtime hue-path как отдельную публичную коллекцию.
+
+| Задача | Runtime Theme | CSS совместимых компонентов |
 | --- | --- | --- |
-| canvas | palette/gray/50 | palette/gray/975 |
-| base | palette/gray/25 | palette/gray/950 |
-| raised | palette/gray/0 | palette/gray/925 |
-| floating | palette/gray/0 | palette/gray/900 |
+| Нейтральное основное действие | `surface/primary/neutral-*` | `--cap-action-normal/hover/pressed/text` |
+| Акцентное основное действие | `surface/primary/<hue>-*` | `--cap-accent-solid-normal/hover/pressed/text` |
+| Нейтральный secondary | `surface/secondary/neutral-*` | `--cap-control-normal/hover/pressed/text` |
+| Акцентный secondary | `surface/secondary/<hue>-*` | `--cap-accent-normal/hover/pressed/text` |
+| Контент оттенка | `content/<hue>` | `--cap-accent-text` |
+| Контент на primary | Общий `content/on-primary` (чёрный/белый) | Парная text-роль действия |
+| Текст и иконки | `content/primary/secondary/tertiary/muted/caption` | `--cap-content-*` |
+| Граница оттенка | `border/<hue>-normal/hover/pressed` | Контекстные hue-роли |
+| Постоянный цвет | `stable/neutral/*`, `stable/accent/*`, `stable/alpha/*` | `--cap-stable-*` |
+| Alpha по теме | `adaptive/alpha/base-*`, `contrast-*` | `--cap-adaptive-alpha-*` |
 
-Floating — отдельный контекст для Menu, Select popup, Tooltip, Popover, Dialog, Drawer, Toast и FloatingActionBar. Локальные popup без портала тоже объявляют `data-surface="floating"`; вложенное содержимое не должно возвращать Raised при Floating-фоне. В Dark он светлее Raised, в Light сохраняет белую поверхность. Тень в Dark использует 10%/14% для контактного и рассеянного слоёв. Вложенные контролы получают пары Floating.
+`*` у заливок означает normal, hover или pressed. В одной группе лежат neutral и шесть поддерживаемых акцентов. Secondary — группа заливок в surface; content и border стоят отдельно. Сочетайте заливку, текст и границу одного оттенка. Primary остаётся непрозрачным. Secondary и Tertiary используют пигмент и alpha составного цвета; native export не создаёт для каждого процента FLOAT-переменную. Контраст проверяется после композиции поверх bg, block и нейтральных состояний; сравнение текста с RGB пигмента без alpha неверно. Accent hover и pressed выбирают один active-токен, neutral сохраняет три состояния. Подбор Secondary/Tertiary учитывает назначение поверхности и chroma Primary: обычные Secondary остаются мягче Primary, Dark Glass сохраняет hue на обеих крайних подложках. Насыщенность, порядок и расстояние состояний оцениваются после смешивания с фактическими нейтральными слоями; alpha хранится отдельно от пигмента. После выбора заливок генератор подбирает существующую нейтральную ступень focus с контрастом не менее 3.2:1 — не обесцвечивайте заливки ради прежнего focus-токена.
 
-Нейтральный ButtonGroup по умолчанию использует отдельные канонические `group/background`, `group/hover`, `group/selected`, `group/pressed`, `group/prefix` и `group/text` для текущей поверхности. Normal, hover и pressed последовательно различаются не менее чем на 1.12:1 относительно предыдущей заливки; selected совпадает с hover, prefix — с normal. Текст на каждой заливке сохраняет контраст не менее 4.5:1. `color="inherit"` берёт локальный акцент, а явный цвет задаёт свой; в обоих случаях группа использует вторичную accent-пару текущей поверхности. `content/caption` предназначен для маленьких заголовков групп на чистой поверхности (10 px, 400, uppercase); не применяйте его к тексту внутри залитого контрола.
+`data-accent` выбирает локальный оттенок и наследуется отдельно от поверхности. У Tag и IconBox отсутствие color наследует акцент. gray — совместимое имя neutral. Chip и выбранные значения MultiSelect остаются нейтральными. Button primary/secondary всегда нейтральны; accent/accent-secondary используют локальную пару. Смена темы не должна менять назначение действия.
 
-Заливки вторичных элементов подбираются из самостоятельных палитр Sloy по относительной яркости Y и контрасту относительно поверхности. Normal → hover → pressed последовательно темнеют в Light и светлеют в Dark. Текст стабилен между этими состояниями; контраст во всех парах ≥4.5:1. Нейтральный Primary — исключение: максимальный контраст в normal ослабевает на hover/pressed. Цвета не интерполируются. Небольшие различия яркости между акцентами обусловлены дискретными ступенями палитры.
+Вложенные действия на secondary-контейнере используют готовые состояния той же пары. Не осветляйте pressed дополнительным alpha-слоем: это снижает контраст текста.
 
-| Назначение | CSS роли |
-| --- | --- |
-| Нейтральный контрол | `--cap-control-normal/hover/pressed/text` |
-| Цветной вторичный элемент | `--cap-accent-normal/hover/pressed/text` |
-| Залитое цветное действие | `--cap-accent-solid-normal/hover/pressed/text` |
-| Яркий акцент | `--cap-accent-vivid-normal/hover/pressed/text` |
-| Нейтральное основное действие | `--cap-action-normal/hover/pressed/text` |
-| Недоступное состояние | `--cap-disabled-background/text` |
-| Основной и вспомогательный текст | `--cap-content-primary/secondary/muted` |
+Проверяйте secondary на реальном фоне области и на block. Нейтральные content-роли применяйте на нейтральных подложках; на цветной secondary-заливке используйте парный content/<hue>.
 
-Disabled использует непрозрачную нейтральную пару с читаемым текстом. Нативный disabled блокирует действия; у Tag отключаются отдельные кнопки выбора и удаления. Универсальному Tag передайте `disabled`; у статического IconBox допустим `aria-disabled`. Статические подписи и разделители не получают искусственные hover/pressed.
+Для подписи используйте content/muted. tertiary — отдельный промежуточный уровень. caption предназначен для маленьких заголовков групп на фоне области, а не текста на залитом контроле. Disabled использует нейтральную пару и блокирует действие; цвет не заменяет disabled, aria-disabled и описание ошибки.
 
-`data-borders="off|on"` управляет только декоративными границами. Геометрия и пары состояний не меняются. Используйте `--cap-panel-border` и `--cap-control-border`, а для значимых границ и фокуса — `--cap-border-strong` и `--cap-focus-ring`. `--cap-control-bg/active`, `--cap-accent-soft/bg/block/ink` остаются совместимыми aliases.
+Две alpha-шкалы используют проценты 3, 5, 8, 10, 12, 15, 16, 20, 24, 30, 32, 40, 48, 60, 64, 72, 80, 88, 92 и 96. `stable/alpha/white-*` и `black-*` сохраняют пигмент и процент; `adaptive/alpha/base-*` использует white в Light и black в Dark, `contrast-*` — обратную пару. Adaptive зависит только от Theme и не меняется от Surface, включая Invert. Для локальных контролов Invert используйте его контекстные surface/content роли, а не глобальную alpha-шкалу. Пример CSS: `var(--cap-adaptive-alpha-base-88)`. Runtime alpha-роли соединяют непрозрачный пигмент с точной прозрачностью. Native exporter оставляет только используемые RGBA COLOR с alpha в целых процентах, без дробных FLOAT-примитивов и отдельной дублирующей коллекции Opacity. Дополнительных alpha-растяжек в Palette не создавайте.
 
-Card всегда рисует структурный контур толщиной `--cap-border-width` цветом `--cap-border-subtle`; он остаётся видимым при `data-borders="off"`, в том числе если Card Raised вложен в Raised-контейнер. Для других дочерних поверхностей с намеренно совпадающей ролью используйте `.cap-surface-boundary`. Не пытайтесь определять совпадение по вычисленному DOM-цвету: `data-surface` задаётся контекстом композиции. Контур не меняет тень и `outline` фокуса. Не назначайте `.cap-surface-boundary` автоматически сообщениям, тостам и комментариям: их декоративные оболочки следуют Borders Off/On. Если вложенные панели намеренно имеют одинаковую поверхность, структурный контур задаёт композиция через `className`.
+Stable сохраняет RGBA при смене темы. Примеры: `--cap-stable-neutral-white`, `--cap-stable-accent-blue`. Полупрозрачный stable-цвет выглядит по-разному на разных фонах. Проверяйте контраст в месте применения; постоянство цвета его не гарантирует.
 
-Figma: Primitives / Value содержит palette, number, font. Две прежние группы el-h/el-w объединены в number/control-size. Theme имеет Light/Dark, Semantic — независимые Base/Canvas/Raised/Floating, Borders — Off/On. Задавайте параметры на родительском фрейме. Semantic ссылается на Theme, Theme — на Primitives; общие пары переиспользуются. Группы element и action содержат пары для каждого акцента. Исторические группы source и source-literals удалены; полный граф строится из самостоятельной базы Sloy. В веб-компонентах применяйте общие CSS-роли и локальный data-accent, а не прямые цвета палитры.
+## Разделите масштабируемое и постоянное
 
-## Реакции и границы
+Density меняет только adaptive. Базовая единица u равна 4 px в Default и 3 px в Compact. Генератор вычисляет `round(k × u)` в целых пикселях. Высота контрола равна фиксированной высоте строки плюс двум вертикальным отступам. В Figma режим выбирает ссылку на готовый числовой примитив; переменные не исполняют формулу.
 
-Вложенные действия на цветной подложке используют `--cap-reaction-hover/pressed`: чёрный 4%/8% в Light, белый 6%/10% в Dark. Opacity хранится в `number/opacity`, alpha-нейтрали — в `alpha/black` и `alpha/white`. CSS пересчитывает их из числовых примитивов. В Figma RGBA-alpha не поддерживает ссылку на FLOAT: для редактируемой реакции привяжите отдельный слой к `reaction/base`, opacity — к `reaction/hover-opacity` или `reaction/pressed-opacity`. Минимальный контраст текста с реакцией — 4.51:1.
+| Задача | Роль | Default → Compact |
+| --- | --- | --- |
+| Внутренний отступ | `--cap-padding-md` | 12 → 9 px |
+| Промежуток в строке | `--cap-gap-inline-md` | 8 → 6 px |
+| Промежуток между группами | `--cap-gap-stack-md` | 16 → 12 px |
+| Высота контрола md | `--cap-control-height-md` | 32 → 30 px |
+| Постоянный отступ | `--cap-fixed-space-8` | 8 → 8 px |
+| Иконка md | `--cap-icon-size-md` | 20 → 20 px |
 
-Строки меню, дерева, таблицы и RadioGroup с вложенными иконками/метками используют лёгкую `--cap-reaction-hover`, для pressed/selected — `--cap-reaction-pressed`; непрозрачная `--cap-control-hover` предназначена для самостоятельного контрола. Когда вложенный Tag/IconBox визуально совпадает с реакцией строки, сохраняйте структурную границу через `--cap-border-subtle`, независимо от Borders Off. Не меняйте акцентную пару дочернего элемента ради hover родителя.
+Для padding берите adaptive/padding, для gap — adaptive/gap, для контролов — adaptive/control. Fixed содержит постоянные отступы, размеры иконок и область нажатия 44 px. Шрифт и высота строки не уменьшаются вместе с плотностью. Внутренние и внешние отступы выбирайте по назначению; не умножайте весь компонент через transform:scale.
 
-Общая декоративная толщина — `number/border/width = 0.5`. Степени `border/subtle`, `default`, `strong`, `emphasis` зависят от поверхности. Роли panel/overlay/control и accent-outline выбирают оттенок объекта и состояния. Значимый focus сохраняет ширину 2 px и контраст ≥3:1. Отключение рамок сохраняет фокус и тени floating/popover/modal.
+Существующие `--cap-space-*` и компонентные CSS-роли остаются совместимыми ссылками. В новой композиции предпочитайте понятные роли padding/gap/fixed. Параметр size выбирает размер компонента внутри текущей Density. Локальная CodeBlock.density описывает вариант компоновки и не заменяет глобальный контекст.
 
-Тени: `data-shadow="soft" | "compact"` наследуется и переносится в портал. Soft — широкий мягкий blur по умолчанию; compact использует те же цвета и 55% blur. У CodeBlock auto при Borders On заливка прозрачна, поэтому он сохраняет контекст окружающей поверхности.
+```html
+<div data-density="compact" data-radius="rounded">
+  <section style="padding:var(--cap-padding-lg);gap:var(--cap-gap-stack-md)">…</section>
+  <section data-density="default">…</section>
+</div>
+```
 
-`Button` и `IconButton` с `variant="primary"` всегда используют нейтральные `--cap-action-normal/hover/pressed/text`, независимо от `data-accent`; `secondary` использует нейтральную control-пару. `accent` выбирает `--cap-accent-solid-normal/hover/pressed/text`, `accent-secondary` — мягкую `--cap-accent-normal/hover/pressed/text`. Checkbox, Radio, RadioGroup и Switch при `contrast={true}` используют локальную solid accent-пару. `contrast={false}` выбирает мягкую локальную accent-пару; Slider использует её по умолчанию. `Switch variant="neutral"` выбирает action-роли, а в мягком режиме — control-роли. Знак, текст и бегунок используют парную text-роль без условий по теме. Выключенный Switch использует `--cap-control-text` на нейтральном треке; disabled всегда использует `--cap-disabled-background/text`.
+## Настройте скругления и границы
 
-## Контекст каталога
+Radius независим от Density. База None / Compact / Default / Rounded равна 0 / 4 / 8 / 16 px. Роли sm / md / lg / xl используют коэффициенты 0.5 / 1 / 1.5 / 2. Вложенный угол равен внешнему минус отступ, с ограничением снизу нулём. Все производные длины округляются до целых пикселей. Явные circle и pill сохраняют форму.
 
-Островки preview, примеры и блок «Использование в коде» следуют выбранной поверхности. Заголовок каталога и панель параметров остаются на своей постоянной поверхности, независимо от переключателя образца.
+В None убирайте добавки, которые нужны только из-за угла. Умножайте такие добавки на `--cap-radius-enabled`. Не убирайте содержательные отступы, фокус или область нажатия. FloatingActionBar сохраняет одинаковый внутренний отступ во всех положительных режимах Radius; Density меняет его независимо. Прямые присоединённые группы используют нулевые внешние промежутки и полную область реакции действия.
 
-У цветных action-пар (solid и vivid) text определяется фактическим контрастом normal-заливки к `gray/0` и `gray/1000`, а не темой или флагом contrast. Hover и pressed сохраняют этот цвет текста и контраст не ниже 4.5:1. Vivid выбирает оттенки по каждой палитре, сохраняя более яркую заливку относительно solid.
+Borders Off скрывает декоративную обводку. Используйте `--cap-panel-border` и `--cap-control-border` для её цвета. Структурные разделители и фокус остаются видимыми. Для фокуса используйте `--cap-focus-ring` и отдельную толщину 2 px; ошибка также имеет текст и aria-invalid. Не заменяйте смысловую границу настройкой Borders.
 
-`data-color="inherit"` не останавливает поиск локального акцента для портала: overlay использует ближайший конкретный data-accent/data-color у предка. Tooltip inverse меняет пару text/surface, сохраняя сами оси контекста.
+Реакции строк и вложенных действий могут использовать отдельные reaction-роли. Они не заменяют контекстные secondary-пары. Тени `data-shadow="soft|compact"` остаются независимым совместимым параметром; не обрезайте их границей scroll viewport.
 
-Самостоятельные структурные разделители используют `--cap-divider-subtle/default/strong` и `--cap-number-divider-width` (1 px). Они наследуют `data-surface`, остаются видимыми при Borders Off и имеют минимальный контраст к поверхности 1.5/1.8/2.4:1. `--cap-divider-control` предназначен для нейтральной заливки контрола. Внутренние швы составных контролов тише: joined SplitButton использует 0.5 px и 22% парного text на solid-заливке (muted на остальных); FloatingActionBar использует 0.5 px `--cap-divider-panel`. На стыке рисуется только одна линия.
+## Сохраните контекст
 
-Длинные внутренние линии таблиц, панелей и заголовка CodeBlock используют более тихую `--cap-divider-panel` и `--cap-border-width` (0.5 px). Роль наследует поверхность независимо от Borders и имеет минимальный контраст 1.15:1 в Light, 1.25:1 в Dark. Header CodeBlock рисует ровно одну такую линию; декоративные внешние рамки сохраняют прежние роли и толщину 0.5 px.
+Theme, Accent, Surface, SurfaceScheme, Density, Radius и Borders наследуются независимо. Задавайте только ось, которую нужно переопределить. В Figma оставляйте остальные режимы дочернего фрейма на Auto. В HTML не копируйте все атрибуты на каждого ребёнка.
 
-Разделители внутри меню используют ту же тихую роль и 0.5 px. Боковые отступы симметричны и следуют внутреннему отступу строки с учётом Radius. Не сочетайте width:100% с горизонтальными margin: такая линия выходит за край. Общий Separator не используется как внутренний шов меню.
+Порталы читают ближайшие настройки и отслеживают их изменение. Меню, Select popup, Tooltip, Popover, Dialog, Drawer и Toast устанавливают Overlay; остальные оси сохраняются. `data-color="inherit"` не останавливает поиск акцента. Не возвращайте внутренний контент всплывающего окна к Content без отдельной причины.
+
+В каталоге переключатель Surface управляет только областями превью: песочницей, образцами компонентов и основ. Основная область всех страниц всегда Content. История, инструкции и API-таблицы наследуют Content и не получают выбранную поверхность. Навигация остаётся Workspace, панель параметров — Overlay. Тема, плотность, скругления и границы изменяют каталог целиком. Проверяйте открытый popup после смены режима, а не только его триггер.
+
+## Выберите шрифт по роли
+
+Все исходные параметры шрифтов находятся в Primitives/font. `family/base = Inter`, `code = Overpass Mono`, `heading = Georgia`, `pair = Courier New`. CSS-роли: `--cap-font-base`, `--cap-font-code`, `--cap-font-heading`, `--cap-font-pair`. Для интерфейса используйте base и веса 400/500/600. При замене гарнитуры меняйте значение, сохраняя имя роли. Типографика не зависит от Density.
+
+Граф, короткий гайд и автономная интерактивная схема доступны на странице «Система токенов». Используйте её для проверки конкретной цепочки aliases и выбранного контекста. Сначала измените источник, затем проверьте граф, соберите runtime и осмотрите компоненты в браузере.
+
+## Акценты и Palette Lab
+
+[Palette Lab](../figma/color-system-v2/editor/README.md) и runtime используют один `generatePalette` / `generateContext` из `figma/color-system-v2/editor/model.mjs`. Канонический источник хранит правила и точечные `accentSystem.overrides` по имени акцента. Запуск `npm run tokens` переносит их в graph, CSS и совместимые экспорты. `figma/token-system-v4/palette-contexts.json` даёт Palette Lab точные bg и neutral-подложки того же графа для обеих схем; не подставляйте старый v2 `resolved.json`.
+
+Каждый из шести акцентов по умолчанию имеет одну непрозрачную шкалу по 41 ступени, как нейтральная шкала. Имена имеют вид `blue/01…41`; отдельные solid, soft, muted, Dark, foreground и surface-reference запрещены. Hue сохраняется; gamut mapping уменьшает chroma. Theme, Surface и назначение выбирают ступень общей шкалы и при необходимости alpha; runtime compatibility может хранить её через Opacity aliases. Alpha-текст проверяется после наложения на каждую допустимую подложку. Устаревшие имена акцентов допускаются только как совместимые входы: не создавайте для них дополнительные исходные палитры или режимы выбора.
+
+В рекомендованном режиме Palette Lab Secondary/Tertiary выбирают существующую ступень и числовую alpha по итоговой относительной светимости WCAG Y. Цели рассчитываются относительно фактической подложки; оттенки одной роли сохраняют общую Y внутри одного контекста и слоя. У каждого нейтрального слоя свои ссылки `on-layer/...`. Различимость заливки и Normal/Active проверяется отдельно от контраста текста; при конфликте ограничений сохраняется заданный порог текста и показывается причина. Для Glass подбор проверяет обе защищённые подложки с бюджетом абсолютной ошибки Y 0.03; недостижимые цели, chroma и различимость Active отражаются в `balanceDiagnostics` и замечаниях. Пигмент не выводится обратным вычитанием фона; подробнее — [контракт Palette Lab](../figma/color-system-v2/editor/README.md).
+
+Текст Primary по умолчанию использует общий `content/on-primary`, точно чёрный или белый; заливка адаптируется под контраст не менее 4.5:1. Не размножайте одинаковый foreground по hue. Дополнительная foreground-роль допустима только при доказанной необходимости для поддерживаемых заливок. Ручное тонирование/custom-политика генератора не должна раздувать публичный picker. `content/<hue>` и `content/secondary/<hue>` дают две насыщенности акцентного текста; `content/inverted` — противоположный нейтральный контент.
+
+## Пользовательская подложка
+
+Custom — явный запрос к генератору: задайте фон Light/Dark, пересчитайте пары и примените согласованный экспорт. Изменение произвольного CSS background или заливки фрейма само по себе не пересчитывает переменные. Компоненты не определяют Surface по DOM-цвету и не анализируют фон в Figma. При новом фоне повторно проверьте bg/block, нейтральные и акцентные заливки, content, border, focus и состояния; обновите их вместе. Custom в Palette Lab сохраняет точный RGB подложки и рассчитывает нейтральные и акцентные пары относительно него. Project export ниже создаёт отдельный набор рассчитанных COLOR-ролей и не меняет основной native preset.
+
+```sh
+node figma/color-system-v2/export-custom.mjs --light '#F1EEF8' --dark '#221D2C' --name 'Project' --out artifacts/custom-project
+```
+
+Команда создаёт `graph.json`, `import.js`, `tokens.css` и `verification.json`. `import.js` создаёт или обновляет только именованную project-коллекцию с режимами Light/Dark; проверьте её имена и результат перед применением в другом проекте. `verification.json` проверяет расчёт, но не подтверждает выполнение native-импорта или визуальную проверку. [Генерируемый пример](../figma/guide/custom-example.json) сохраняет точные запрошенные фоны и готовые RGBA-роли для страницы Custom backgrounds; основной native graph остаётся прежним.
+
+Адаптация через alpha — смешивание краски с объявленной подложкой. Она не гарантирует контраст на произвольном изображении. Для Glass проверяются защитный слой и крайние подложки; для Custom проверяется выбранная подложка после пересчёта. Не выдавайте автоматическое смешивание браузера за автоматическую смену токенов.
+
+## Invert и прозрачные материалы
+
+Для чёрной области в Light или белой в Dark задайте `data-surface="invert"`. Это полноценный контекст с собственными bg, block, content, neutral и accent-парами. `data-theme` остаётся прежним. Invert независим от SurfaceScheme; переключение Standard/Dimmed сохраняет его контекст. Всплывающие элементы устанавливают Overlay и сохраняют внешнюю тему.
+
+Glass использует белую основу 88% в Light и чёрную 80% в Dark. В runtime точная прозрачность участвует в вычислении; native COLOR использует RGBA из Palette с alpha в целых процентах, без дробного FLOAT-примитива. Такая основа ограничивает влияние любой RGB-текстуры. Проверка считает композицию над чёрной и белой подложками, поверх блока и нейтральных состояний. Blur смягчает изображение, но не заменяет эту защиту. Не снижайте opacity без нового расчёта. Для прозрачной области рисуйте blur и единственную защитную заливку статичным absolute/pseudo-слоем, а интерактивный контент размещайте выше как соседний слой; `backdrop-filter` не должен охватывать анимированные hover/focus-потомки. Вложенные блоки окрашивайте `surface/block` с сохранением Surface.
+
+Пример с текстурой, Glass и Invert находится на странице «Поверхности и границы». Текстура принадлежит композиции; токены описывают защитные заливки и контент. Подход соответствует разделению материала, tint и читаемого контента в [Fluent Acrylic](https://learn.microsoft.com/en-us/windows/apps/design/style/acrylic). Инверсные роли отделены от темы, как пары `bg-inverse` и `text-inverse` в [архиве Polaris React](https://github.com/Shopify/polaris-react-archive/blob/main/documentation/guides/migrating-from-v10-to-v11.md).

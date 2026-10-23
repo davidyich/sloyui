@@ -1,0 +1,303 @@
+{
+  "name": "Sloy UI V2 · Contextual color",
+  "version": "0.4.0",
+  "fileKey": "E6Qw912qUU0h9JDplYzQsp",
+  "sourceExample": "19:190",
+  "themes": [
+    "Light",
+    "Dark"
+  ],
+  "schemes": [
+    "Standard",
+    "Dimmed"
+  ],
+  "surfaces": [
+    "Shell",
+    "Workspace",
+    "Content",
+    "Overlay",
+    "Glass"
+  ],
+  "accents": [
+    "blue",
+    "green",
+    "yellow",
+    "orange",
+    "red"
+  ],
+  "states": [
+    "normal",
+    "active"
+  ],
+  "alphaSteps": [
+    3,
+    5,
+    8,
+    10,
+    12,
+    15,
+    16,
+    20,
+    24,
+    30,
+    32,
+    40,
+    48,
+    60,
+    64,
+    72,
+    80,
+    88,
+    92,
+    96
+  ],
+  "backgroundSteps": {
+    "Light": {
+      "Standard": [
+        50,
+        25,
+        0,
+        0
+      ],
+      "Dimmed": [
+        75,
+        25,
+        0,
+        0
+      ]
+    },
+    "Dark": {
+      "Standard": [
+        975,
+        950,
+        925,
+        900
+      ],
+      "Dimmed": [
+        875,
+        925,
+        950,
+        850
+      ]
+    }
+  },
+  "primarySteps": {
+    "Light": {
+      "blue": [
+        500,
+        550
+      ],
+      "green": [
+        400,
+        450
+      ],
+      "yellow": [
+        300,
+        350
+      ],
+      "orange": [
+        350,
+        400
+      ],
+      "red": [
+        400,
+        450
+      ]
+    },
+    "Dark": {
+      "blue": [
+        350,
+        300
+      ],
+      "green": [
+        350,
+        300
+      ],
+      "yellow": [
+        250,
+        200
+      ],
+      "orange": [
+        300,
+        250
+      ],
+      "red": [
+        350,
+        300
+      ]
+    }
+  },
+  "glass": {
+    "Light": {
+      "base": "white",
+      "opacity": 88
+    },
+    "Dark": {
+      "base": "black",
+      "opacity": 80
+    },
+    "blur": 24
+  },
+  "reaction": {
+    "default": "Off",
+    "durationMs": 420,
+    "opacity": 5,
+    "reducedOpacity": 3
+  },
+  "intent": "One contextual color system for every supplied interface archetype: quiet workspaces, dense collaboration, mixed dark/light shells, high-contrast overlays, translucent assistants and command palettes.",
+  "boundary": "Independent Figma exploration and executable color contract. The existing v4 kit runtime is not migrated by this package.",
+  "softAccents": {
+    "hues": {
+      "blue": 250,
+      "green": 145,
+      "yellow": 100,
+      "orange": 55,
+      "red": 28
+    },
+    "Light": {
+      "secondary": {
+        "lightnessDelta": [
+          -0.055,
+          -0.08
+        ],
+        "chroma": [
+          0.024,
+          0.034
+        ],
+        "layerAlpha": [
+          0.24,
+          0.32
+        ]
+      },
+      "tertiary": {
+        "lightnessDelta": [
+          -0.018,
+          -0.034
+        ],
+        "chroma": [
+          0.008,
+          0.014
+        ],
+        "layerAlpha": [
+          0.1,
+          0.17
+        ]
+      }
+    },
+    "Dark": {
+      "secondary": {
+        "lightnessDelta": [
+          0.075,
+          0.105
+        ],
+        "chroma": [
+          0.024,
+          0.034
+        ],
+        "layerAlpha": [
+          0.16,
+          0.22
+        ]
+      },
+      "tertiary": {
+        "lightnessDelta": [
+          0.028,
+          0.048
+        ],
+        "chroma": [
+          0.009,
+          0.015
+        ],
+        "layerAlpha": [
+          0.07,
+          0.115
+        ]
+      }
+    },
+    "glass": {
+      "Light": {
+        "lightness": 0.52,
+        "chroma": 0.2
+      },
+      "Dark": {
+        "lightness": 0.8,
+        "chroma": 0.16
+      },
+      "secondary": [
+        16,
+        24
+      ],
+      "tertiary": [
+        7,
+        11
+      ]
+    }
+  },
+  "vividPrimary": {
+    "Light": {
+      "blue": {
+        "lightness": [
+          0.56,
+          0.52
+        ],
+        "chroma": 0.22,
+        "foreground": "white"
+      },
+      "green": {
+        "lightness": [
+          0.54,
+          0.5
+        ],
+        "chroma": 0.19,
+        "foreground": "white"
+      },
+      "yellow": {
+        "lightness": [
+          0.86,
+          0.82
+        ],
+        "chroma": 0.17,
+        "foreground": "black"
+      },
+      "orange": {
+        "lightness": [
+          0.7,
+          0.66
+        ],
+        "chroma": 0.21,
+        "foreground": "black"
+      },
+      "red": {
+        "lightness": [
+          0.57,
+          0.53
+        ],
+        "chroma": 0.23,
+        "foreground": "white"
+      }
+    }
+  },
+  "accentContent": {
+    "minimumContrast": 4.7,
+    "Light": {
+      "primary": {
+        "lightness": 0.43,
+        "chroma": 0.16
+      },
+      "secondary": {
+        "lightness": 0.46,
+        "chroma": 0.06
+      }
+    },
+    "Dark": {
+      "primary": {
+        "lightness": 0.8,
+        "chroma": 0.14
+      },
+      "secondary": {
+        "lightness": 0.76,
+        "chroma": 0.06
+      }
+    }
+  }
+}
