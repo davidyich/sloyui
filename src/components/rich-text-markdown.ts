@@ -95,7 +95,7 @@ export function markdownToRichText(source: string, options: { extensions?: boole
   return { blocks };
 }
 function inlineExtended(text: string): RichTextRun[] | null {
-  const opener = /<span data-cap-(color|highlight)="(red|teal|blue|orange|green|rose)">|<u>|\[([^\]\n]+)\]\(((?:https?:|mailto:|tel:|\/|#)[^\s)]*)\)|\*\*\*|\*\*|~~|\*|`/g;
+  const opener = /<span data-cap-(color|highlight)="(red|teal|blue|orange|green|rose|pink|purple)">|<u>|\[([^\]\n]+)\]\(((?:https?:|mailto:|tel:|\/|#)[^\s)]*)\)|\*\*\*|\*\*|~~|\*|`/g;
   const runs: RichTextRun[] = []; let cursor = 0;
   while (cursor < text.length) {
     opener.lastIndex = cursor; const match = opener.exec(text);
@@ -125,8 +125,8 @@ function serializeInline(runs: RichTextRun[]): string {
     if (run.marks?.includes('strike')) text = `~~${text}~~`;
     if (run.marks?.includes('underline')) text = `<u>${text}</u>`;
     if (run.link && /^(https?:|mailto:|tel:|\/|#)/i.test(run.link)) text = `[${text}](${run.link.replace(/[()\s]/g, char => encodeURIComponent(char))})`;
-    if (run.color && /^(red|teal|blue|orange|green|rose)$/.test(run.color)) text = `<span data-cap-color="${run.color}">${text}</span>`;
-    if (run.highlight && /^(red|teal|blue|orange|green|rose)$/.test(run.highlight)) text = `<span data-cap-highlight="${run.highlight}">${text}</span>`;
+    if (run.color && /^(red|teal|blue|orange|green|rose|pink|purple)$/.test(run.color)) text = `<span data-cap-color="${run.color}">${text}</span>`;
+    if (run.highlight && /^(red|teal|blue|orange|green|rose|pink|purple)$/.test(run.highlight)) text = `<span data-cap-highlight="${run.highlight}">${text}</span>`;
     return text;
   }).join('');
 }

@@ -1,4 +1,6 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
+import { createFigmaExports } from './figma-export.mjs';
+import { createZip } from './zip.mjs';
 const brand = JSON.parse(await readFile('src/brand.json', 'utf8'));
 const pluginManifest = JSON.parse(await readFile('figma/importer/manifest.json', 'utf8'));
 pluginManifest.name = `${brand.name} — Variables`;
@@ -6,6 +8,18 @@ await writeFile('figma/importer/manifest.json', JSON.stringify(pluginManifest, n
 const importerUi = await readFile('figma/importer/ui.html', 'utf8');
 await writeFile('figma/importer/ui.html', importerUi.replace(/<h2>.*?<\/h2>/, `<h2>${brand.name} · Full palettes</h2>`));
 const graph = JSON.parse(await readFile('src/tokens/figma-modes.json', 'utf8'));
+// Both the static catalogue and package expose these exact generated mode files.
+const exportDirectory = 'src/tokens/figma';
+await mkdir(exportDirectory, { recursive: true });
+const exports = createFigmaExports(graph, brand);
+for (const { filename, document } of exports) await writeFile(`${exportDirectory}/${filename}`, JSON.stringify(document, null, 2) + '\n');
+const graphFilename = `${brand.slug}-${graph.version}-figma-graph.json`;
+await writeFile(`${exportDirectory}/${graphFilename}`, JSON.stringify({ ...graph, brand }, null, 2) + '\n');
+const archiveFilename = `${brand.slug}-${graph.version}-figma-tokens.zip`;
+await writeFile(`${exportDirectory}/index.json`, JSON.stringify({ version: graph.version, graphFilename, archiveFilename, files: exports.map(({ document, ...entry }) => entry) }, null, 2) + '\n');
+const filenames = [...exports.map(entry => entry.filename), graphFilename, 'index.json'];
+await writeFile(`${exportDirectory}/${archiveFilename}`, createZip(await Promise.all(filenames.map(async name => ({ name, source: await readFile(`${exportDirectory}/${name}`) })))));
+for (const name of await readdir(exportDirectory)) if (![...filenames, archiveFilename].includes(name)) await rm(`${exportDirectory}/${name}`);
 const implementation = await readFile('figma/importer-core.js', 'utf8');
 await writeFile('figma/importer/code.js', `${implementation}\nconst graph = ${JSON.stringify({...graph,brand})};\nfigma.showUI(__html__, { width: 440, height: 550, themeColors: true });\nfigma.ui.onmessage = async message => {\n if(message.type !== 'import') return;\n try { const result = await importSloyVariables(figma, graph, message.modes); figma.ui.postMessage({type:'success',result}); }\n catch (error) { figma.ui.postMessage({type:'error',message:String(error.message || error)}); }\n};\n`);
-console.log('Figma importer generated from the same runtime token graph.');
+console.log('Legacy compatibility Figma exports generated; canonical v4 is figma/token-system-v4/graph.json.');

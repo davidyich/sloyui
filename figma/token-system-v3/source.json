@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 3,
+  "name": "Sloy UI token system v3",
+  "palette": {
+    "steps": [
+      50,
+      75,
+      100,
+      150,
+      200,
+      250,
+      300,
+      350,
+      400,
+      450,
+      500,
+      550,
+      600,
+      650,
+      700,
+      750,
+      800,
+      850,
+      900,
+      925,
+      950,
+      1000
+    ],
+    "neutralSteps": [
+      0,
+      25,
+      50,
+      75,
+      100,
+      125,
+      150,
+      175,
+      200,
+      225,
+      250,
+      275,
+      300,
+      325,
+      350,
+      375,
+      400,
+      425,
+      450,
+      475,
+      500,
+      525,
+      550,
+      575,
+      600,
+      625,
+      650,
+      675,
+      700,
+      725,
+      750,
+      775,
+      800,
+      825,
+      850,
+      875,
+      900,
+      925,
+      950,
+      975,
+      1000
+    ],
+    "hues": {
+      "rose": 8,
+      "pink": 350,
+      "fuchsia": 326,
+      "purple": 305,
+      "violet": 285,
+      "indigo": 267,
+      "blue": 250,
+      "sky": 230,
+      "cyan": 210,
+      "teal": 185,
+      "emerald": 163,
+      "green": 145,
+      "lime": 125,
+      "yellow": 100,
+      "amber": 80,
+      "orange": 55,
+      "red": 28
+    },
+    "lightnessFloor": 0.1,
+    "chromaPeak": 0.16,
+    "chromaExponent": 0.85,
+    "neutralContrastSpan": 21
+  },
+  "surfaces": {
+    "Shell": {
+      "light": "#F3F3F3",
+      "dark": "#282828",
+      "blockLight": "#E7E8E8",
+      "blockDark": "#3A3A3A",
+      "usage": "Application shell, global navigation and outer workspace."
+    },
+    "Workspace": {
+      "light": "#FBFBFB",
+      "dark": "#1E1E1E",
+      "blockLight": "#EEEFEF",
+      "blockDark": "#303030",
+      "usage": "Secondary working area such as navigation, list or inspector."
+    },
+    "Content": {
+      "light": "#FFFFFF",
+      "dark": "#181818",
+      "blockLight": "#F7F6F6",
+      "blockDark": "#282727",
+      "usage": "Main document, editor or primary work canvas."
+    },
+    "Overlay": {
+      "light": "#FFFFFF",
+      "dark": "#303030",
+      "blockLight": "#F3F3F3",
+      "blockDark": "#404040",
+      "usage": "Temporary floating menu, popover or dialog; independent of composition depth."
+    }
+  },
+  "secondary": {
+    "minimumTextContrast": 4.5,
+    "minimumStateContrast": 1.045,
+    "darkContentLuminance": 0.86,
+    "lightContentLuminance": 0.055,
+    "darkChromaMultiplier": 0.42,
+    "lightChromaMultiplier": 0.62,
+    "stateContrastMultipliers": [
+      1,
+      1.075,
+      1.16
+    ]
+  },
+  "density": {
+    "Default": {
+      "unit": 4
+    },
+    "Compact": {
+      "unit": 3
+    },
+    "formula": "Adaptive spacing = round(unit × coefficient). Control height = fixed line-height + 2 × adaptive vertical inset. Fixed spacing, type and 44 px touch targets do not scale."
+  },
+  "radius": {
+    "modes": {
+      "None": 0,
+      "Compact": 4,
+      "Default": 8,
+      "Rounded": 16
+    },
+    "ratios": {
+      "sm": 0.5,
+      "md": 1,
+      "lg": 1.5,
+      "xl": 2
+    },
+    "formula": "radius = round(base × ratio), base = 0 / 4 / 8 / 16; pill and fixed zero remain constant."
+  },
+  "fonts": {
+    "family": {
+      "base": "Inter",
+      "code": "Overpass Mono",
+      "heading": "Georgia",
+      "pair": "Courier New"
+    },
+    "size": {
+      "caption": 12,
+      "body": 14,
+      "label": 13,
+      "subtitle": 18,
+      "title": 24,
+      "display": 36
+    },
+    "lineHeight": {
+      "caption": 16,
+      "body": 20,
+      "label": 18,
+      "subtitle": 26,
+      "title": 32,
+      "display": 44
+    },
+    "weight": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600
+    },
+    "tracking": {
+      "normal": 0,
+      "tight": -0.2
+    }
+  },
+  "notes": {
+    "source": "Reference surface and block values sampled from the user-provided screenshots and verified by the parent task in Figma. Full original 22-step hue / 41-step neutral palette remains available.",
+    "public": "Consumers bind Semantic colors, Density adaptive geometry, Radius corners and Primitives fixed geometry or fonts. No component color collection.",
+    "scheme": "Standard uses composition-oriented Shell → Workspace → Content and independent Overlay. Inverted swaps complete Workspace/Content pairs only in Dark."
+  }
+}

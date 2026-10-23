@@ -1,0 +1,19 @@
+.catalog-component-usage{min-width:0;padding-block:var(--cap-space-6);border-top:1px solid var(--cap-panel-border)}
+.catalog-usage-heading{display:flex;align-items:center;justify-content:space-between;gap:var(--cap-space-3);margin-bottom:var(--cap-space-4);flex-wrap:wrap}
+.catalog-usage-heading h2{margin:0;font-size:var(--cap-font-size-lg);font-weight:600;color:var(--cap-content-primary)}
+.catalog-usage-sections{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--cap-space-4)}
+.catalog-usage-section{min-width:0;grid-column:1/-1;overflow-wrap:anywhere}
+.catalog-usage-section h3{font-size:var(--cap-font-size-md);font-weight:600;color:var(--cap-content-primary);margin:0 0 var(--cap-space-2)}
+.catalog-usage-section .cap-markdown{min-width:0;font-size:var(--cap-font-size-sm)}
+@media(max-width:640px){.catalog-usage-sections{grid-template-columns:minmax(0,1fr)}}
+
+.catalog-usage-guidance { grid-column:1/-1; min-width:0; overflow-x:auto; }
+.catalog-usage-guidance table { width:100%; table-layout:fixed; border-collapse:separate; border-spacing:0; border:var(--cap-border-width) solid var(--cap-panel-border); border-radius:var(--cap-radius-md); background:var(--cap-surface-block); overflow:hidden; }
+.catalog-usage-guidance th,.catalog-usage-guidance td { width:50%; padding:var(--cap-space-4); text-align:start; vertical-align:top; overflow-wrap:anywhere; }
+.catalog-usage-guidance th { border-bottom:var(--cap-border-width) solid var(--cap-panel-border); font-weight:500; }
+.catalog-usage-guidance th+th,.catalog-usage-guidance td+td { border-inline-start:var(--cap-border-width) solid var(--cap-panel-border); }
+.catalog-usage-guidance h3 { margin:0; font-size:var(--cap-font-size-sm); font-weight:500; }
+.catalog-usage-guidance .cap-markdown { font-size:var(--cap-font-size-sm); }
+.catalog-usage-guidance .cap-markdown>:first-child { margin-top:0; }
+.catalog-usage-guidance .cap-markdown>:last-child { margin-bottom:0; }
+.catalog-usage-guidance .cap-markdown ul { padding-inline-start:var(--cap-space-4); }

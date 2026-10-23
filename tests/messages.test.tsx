@@ -6,6 +6,23 @@ import { AnnouncementBar, CardStack, TextShimmer, ToastStack, clearAnnouncementD
 if(!window.PointerEvent)Object.defineProperty(window,'PointerEvent',{value:MouseEvent});
 afterEach(()=>vi.useRealTimers());
 describe('message components',()=>{
+  it('counts currently displayed notices and removes the hint when only one remains',()=>{
+    const items=Array.from({length:5},(_,index)=>({id:String(index),title:`Notice ${index}`,duration:Infinity}));
+    const {rerender}=render(<ToastStack items={items} limit={3} onDismiss={()=>{}} position="inline"/>);
+    expect(screen.getByRole('button',{name:'Expand notifications'})).toHaveTextContent('3 notifications');
+    rerender(<ToastStack items={items.slice(0,2)} limit={3} onDismiss={()=>{}} position="inline"/>);
+    expect(screen.getByRole('button',{name:'Expand notifications'})).toHaveTextContent('2 notifications');
+    rerender(<ToastStack items={items.slice(0,1)} onDismiss={()=>{}} position="inline"/>);
+    expect(screen.queryByRole('button',{name:'Expand notifications'})).toBeNull();
+  });
+  it('omits visible hint text while retaining explicit expansion for touch and keyboard',()=>{
+    render(<ToastStack items={[{id:'a',title:'A',duration:Infinity},{id:'b',title:'B',duration:Infinity}]} showExpandHint={false} onDismiss={()=>{}} position="inline"/>);
+    const control=screen.getByRole('button',{name:'Expand notifications'});
+    expect(control).toHaveTextContent('2 notifications');
+    fireEvent.click(control);
+    expect(screen.getByRole('region',{name:'Notifications'})).toHaveAttribute('data-expanded');
+    expect(screen.getByRole('button',{name:'Collapse notifications'})).toHaveTextContent('Collapse · 2 notifications');
+  });
   it('pauses toast expiry while hovered and never auto-dismisses actionable toasts',()=>{
     vi.useFakeTimers();const dismiss=vi.fn(),action=vi.fn();const items=[{id:'actionable',title:'Archived',duration:1000,action:{label:'Undo',onAction:action}},{id:'short',title:'Saved',duration:1000}];
     render(<ToastStack items={items} onDismiss={dismiss} position="inline"/>);

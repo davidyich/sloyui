@@ -10,8 +10,8 @@
 .cap-kanban-drag-handle:active { cursor:grabbing; background:var(--cap-control-active); }
 .cap-kanban-drag-handle:focus-visible { outline:var(--cap-focus-width) solid var(--cap-accent-solid); outline-offset:1px; }
 .cap-kanban-custom-handle { position:absolute; inset-block-start:8px; inset-inline-end:8px; z-index:1; }
-.cap-kanban-custom-handle + * { padding-inline-end:36px; }
+.cap-kanban-custom-handle + * { padding-inline-end:var(--cap-space-detail-36); }
 .cap-kanban-drop-placeholder { position:absolute; inset-inline:0; z-index:2; height:3px; border-radius:var(--cap-radius-base); background:var(--cap-accent-solid); pointer-events:none; }
-.cap-kanban-drop-placeholder > span { position:absolute; inset-inline-end:8px; bottom:4px; padding:2px 6px; border-radius:var(--cap-radius-base); background:var(--cap-surface-floating); color:var(--cap-content-primary); box-shadow:var(--cap-shadow-md); font-size:var(--cap-font-size-xs); }
-.cap-kanban-drag-preview { position:fixed; z-index:1000; box-sizing:border-box; padding:12px; border-radius:var(--cap-radius-lg); background:var(--cap-surface-current); color:var(--cap-content-primary); box-shadow:var(--cap-shadow-md); pointer-events:none; font-size:var(--cap-font-size-sm); font-weight:500; }
+.cap-kanban-drop-placeholder > span { position:absolute; inset-inline-end:8px; bottom:4px; padding:var(--cap-space-half) var(--cap-space-detail-6); border-radius:var(--cap-radius-base); background:var(--cap-surface-floating); color:var(--cap-content-primary); box-shadow:var(--cap-shadow-md); font-size:var(--cap-font-size-xs); }
+.cap-kanban-drag-preview { position:fixed; z-index:1000; box-sizing:border-box; padding:var(--cap-space-3); border-radius:var(--cap-radius-lg); background:var(--cap-surface-current); color:var(--cap-content-primary); box-shadow:var(--cap-shadow-md); pointer-events:none; font-size:var(--cap-font-size-sm); font-weight:500; }
 .cap-kanban-board[data-dragging] { scroll-snap-type:none; }

@@ -1,7 +1,7 @@
 import { useTranslate } from './locale.js';
 import { useEffect, useId, useMemo, useRef, useState, type AriaAttributes, type CSSProperties } from 'react';
 import { Icon, iconNames, Button, type IconSource, type Size } from './primitives.js';
-import { Input, type FocusRing } from './forms.js';
+import { Input, fieldFocusStyle, type FocusRing } from './forms.js';
 import { OverlayPortal, useAnchoredOverlay, useOverlayDismiss, useOverlayPresence, useOverlayScope } from './overlays.js';
 export interface IconOption { name: string; icon: IconSource; keywords?: string }
 export interface IconPickerProps extends Pick<AriaAttributes, 'aria-describedby' | 'aria-invalid'> {
@@ -18,7 +18,7 @@ export function IconPicker({ value, onValueChange, options = defaults, iconSize 
 
   const [query,setQuery] = useState(''), [limit,setLimit] = useState(120), [open,setOpen] = useState(false), [active,setActive] = useState(0), generatedId=useId(), id=suppliedId??generatedId;
   const anchor=useRef<HTMLInputElement>(null), panel=useRef<HTMLDivElement>(null);
-  const scope=useOverlayScope(anchor), position=useAnchoredOverlay(open,anchor,panel,{matchWidth:true}), present=useOverlayPresence(open);
+  const scope=useOverlayScope(anchor, open), position=useAnchoredOverlay(open,anchor,panel,{matchWidth:true}), present=useOverlayPresence(open);
   const matches = useMemo(() => options.filter(option => normalize(`${option.name} ${option.keywords ?? ''}`).includes(normalize(query))),[options,query]);
   const visible=matches.slice(0,Math.max(limit,active+1)), selected=options.find(option=>option.name===value);
   const close=(restore=false)=>{setOpen(false);setQuery('');setActive(0);setLimit(120);if(restore)anchor.current?.focus();};
@@ -34,11 +34,11 @@ export function IconPicker({ value, onValueChange, options = defaults, iconSize 
       if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();if(!open){search('');setOpen(true);}else setActive(i=>(i+(e.key==='ArrowDown'?1:-1)+matches.length)%Math.max(1,matches.length));}
       if(open&&e.altKey&&(e.key==='Home'||e.key==='End')){e.preventDefault();setActive(e.key==='Home'?0:Math.max(0,matches.length-1));}
     }}/>
-    {present&&<OverlayPortal anchor={anchor} panel={panel}><div ref={panel} role="region" aria-label={`${label}${t(": результаты поиска", ": search results")}`} tabIndex={0} className="cap-select-popup cap-icon-combobox-popup" data-state={open?'open':'closed'} style={position} {...scope} aria-hidden={!open||undefined} inert={!open} onMouseDown={e=>e.preventDefault()}>
+    {present&&<OverlayPortal anchor={anchor} panel={panel}><div ref={panel} role="region" aria-label={`${label}${t(": результаты поиска", ": search results")}`} tabIndex={0} className="cap-select-popup cap-icon-combobox-popup" data-state={open?'open':'closed'} style={fieldFocusStyle(position,focusRing)} {...scope} aria-hidden={!open||undefined} inert={!open} onMouseDown={e=>e.preventDefault()}>
       <div id={`${id}-options`} role="listbox" aria-label={label}>{visible.map((option,index)=><div key={option.name} id={`${id}-option-${index}`} className="cap-select-option cap-icon-combobox-option" role="option" aria-selected={value===option.name} data-active={active===index||undefined} onPointerMove={()=>setActive(index)} onClick={()=>choose(option)}><Icon name={option.icon} size={iconSize}/><span>{option.name}</span>{option.name===value&&<Icon name="check" size={14}/>}</div>)}</div>
       {!matches.length&&<p className="cap-icon-empty" role="status">{t("Иконки не найдены", "No icons found")}</p>}
       {matches.length>visible.length&&<Button variant="ghost" size="sm" onClick={()=>setLimit(visible.length+120)}>{t("Показать ещё", "Show more")}</Button>}
     </div></OverlayPortal>}
   </span>;
-  return <section className="cap-icon-picker" data-size={size} aria-label={label}><Input size={size} focusRing={focusRing} type="search" aria-label={t("Найти иконку", "Find an icon")} placeholder={t("Найти иконку…", "Find an icon…")} value={query} disabled={disabled} onChange={event=>search(event.target.value)}/><div className="cap-icon-picker-grid" role="radiogroup" aria-label={label}>{visible.map(option=><label key={option.name} className="cap-icon-option" title={option.name}><input type="radio" name={id} value={option.name} checked={value===option.name} disabled={disabled} onChange={()=>onValueChange(option.name)}/><span><Icon name={option.icon} size={iconSize}/><span className="cap-sr-only">{option.name}</span></span></label>)}</div>{matches.length===0 && <p role="status">{t("Иконки не найдены", "No icons found")}</p>}{matches.length>limit && <Button size="sm" variant="ghost" onClick={()=>setLimit(current=>current+120)}>{t("Показать ещё", "Show more")}</Button>}</section>;
+  return <section className="cap-icon-picker" style={fieldFocusStyle(undefined,focusRing)} data-size={size} aria-label={label}><Input size={size} focusRing={focusRing} type="search" aria-label={t("Найти иконку", "Find an icon")} placeholder={t("Найти иконку…", "Find an icon…")} value={query} disabled={disabled} onChange={event=>search(event.target.value)}/><div className="cap-icon-picker-grid" role="radiogroup" aria-label={label}>{visible.map(option=><label key={option.name} className="cap-icon-option" title={option.name}><input type="radio" name={id} value={option.name} checked={value===option.name} disabled={disabled} onChange={()=>onValueChange(option.name)}/><span><Icon name={option.icon} size={iconSize}/><span className="cap-sr-only">{option.name}</span></span></label>)}</div>{matches.length===0 && <p role="status">{t("Иконки не найдены", "No icons found")}</p>}{matches.length>limit && <Button size="sm" variant="ghost" onClick={()=>setLimit(current=>current+120)}>{t("Показать ещё", "Show more")}</Button>}</section>;
 }

@@ -20,8 +20,8 @@ export function WorkspaceV2() {
   const [noteDocument,setNoteDocument]=useState(()=>markdownToRichText(note));
   const [savedNote, setSavedNote] = useState(note);
   const [tasks, setTasks] = useState<KanbanTask[]>([
-    { id: `${instanceId}-first`, title: 'Собрать референсы', columnId: 'inbox', color: 'rose' },
-    { id: `${instanceId}-second`, title: 'Настроить акцент проекта', columnId: 'active', color: 'teal' },
+    { id: `${instanceId}-first`, title: 'Собрать референсы', columnId: 'inbox', color: 'pink' },
+    { id: `${instanceId}-second`, title: 'Настроить акцент проекта', columnId: 'active', color: 'green' },
   ]);
   const [newTaskColumn, setNewTaskColumn] = useState<string | null>(null);
   const [title, setTitle] = useState('');
@@ -31,7 +31,7 @@ export function WorkspaceV2() {
   function createTask() {
     const cleanTitle = title.trim();
     if (!cleanTitle || !newTaskColumn) return;
-    const task: KanbanTask = { id: crypto.randomUUID(), title: cleanTitle, columnId: newTaskColumn, color: 'rose' };
+    const task: KanbanTask = { id: crypto.randomUUID(), title: cleanTitle, columnId: newTaskColumn, color: 'pink' };
     setTasks(current => [...current, task]);
     setNewTaskColumn(null); setTitle(''); setMessage(`Добавлена задача «${cleanTitle}»`);
   }
@@ -40,7 +40,7 @@ export function WorkspaceV2() {
     setMessage(`Задача перемещена в «${columns.find(column => column.id === columnId)?.title}»`);
   }
 
-  return <section aria-label="Личное рабочее пространство" data-accent="teal" style={{ display: 'grid', gap: 'var(--cap-space-6)', minWidth: 0, color: 'var(--cap-text-primary)' }}>
+  return <section aria-label="Личное рабочее пространство" data-accent="green" style={{ display: 'grid', gap: 'var(--cap-space-6)', minWidth: 0, color: 'var(--cap-text-primary)' }}>
     <DailyHeader date={date} tags={<Tag>Личный проект</Tag>} />
     <ActionBar label="Действия рабочего пространства">
       <SplitButton label="Новая задача" leading={<Icon name="plus" />} onClick={() => startTask()}
@@ -56,7 +56,7 @@ export function WorkspaceV2() {
       }} />
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 'var(--cap-space-6)', minWidth: 0 }}>
       <Calendar label="Выбрать день" value={date} onValueChange={setDate} locale="ru-RU" showAgenda
-        events={[{ id: `${instanceId}-event`, date: '2026-09-25', title: 'Время для проекта', time: '18:00–19:00', color: 'teal' }]} />
+        events={[{ id: `${instanceId}-event`, date: '2026-09-25', title: 'Время для проекта', time: '18:00–19:00', color: 'green' }]} />
       <ScrollArea label="Заметка проекта" style={{ height: 360 }}>
         <RichTextEditor label="Заметка проекта" value={noteDocument} onValueChange={value=>{setNoteDocument(value);setNote(richTextToMarkdown(value));}} />
         <Button size="sm" onClick={()=>{setSavedNote(note);setMessage('Заметка сохранена в памяти страницы');}}>Сохранить заметку</Button>

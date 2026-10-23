@@ -1,128 +1,20 @@
 import { useTranslate } from './locale.js';
 import { FeedbackIcon, feedbackColor, type FeedbackStyleProps } from './feedback.js';
 import { MovingHighlight } from './moving-highlight.js';
-import { createContext, useContext, useMemo, cloneElement, useEffect, useLayoutEffect, useId, useRef, useState, type CSSProperties, type ReactNode, type ReactElement, type HTMLAttributes, type KeyboardEvent, type RefObject } from 'react';
+import { useContext, useMemo, cloneElement, useEffect, useLayoutEffect, useId, useRef, useState, type CSSProperties, type ReactNode, type ReactElement, type HTMLAttributes, type KeyboardEvent, type RefObject } from 'react';
 import { createPortal } from 'react-dom';
 import { Button, Icon, IconButton, Kbd, cx, type IconSource, type ButtonProps, type Size } from './primitives.js';
+import { ScrollArea } from './workbench.js';
+import { OverlayParents, OverlayPortal, useOverlayPresence, useOverlayScope, useOverlayDismiss, useAnchoredOverlay, childSurfaceContains } from './overlay-foundations.js';
+import { ExplicitTooltipContext } from './tooltip-context.js';
+export { OverlayPortal, useOverlayPresence, useOverlayScope, useOverlayDismiss, useAnchoredOverlay } from './overlay-foundations.js';
 
-const OverlayParents = /* @__PURE__ */ createContext<RefObject<HTMLElement | null>[]>([]);
 const focusSelector = 'button:not(:disabled),a[href],input:not(:disabled):not([type="hidden"]),select:not(:disabled),textarea:not(:disabled),[tabindex]:not([tabindex="-1"])';
 const focusables = (root: HTMLElement) => Array.from(root.querySelectorAll<HTMLElement>(focusSelector)).filter(element => {
   if (element.tabIndex < 0 || element.matches(':disabled') || element.closest('[hidden],[inert],[aria-hidden="true"]') || getComputedStyle(element).visibility === 'hidden') return false;
   for (let parent: HTMLElement | null = element; parent; parent = parent.parentElement) if (getComputedStyle(parent).display === 'none') return false;
   return true;
 });
-type Scope = { 'data-radius'?: string; 'data-theme'?: string; 'data-accent'?: string; 'data-color'?: string; 'data-borders'?: string; 'data-shadow'?: string; 'data-surface': 'floating' };
-export function useOverlayPresence(open: boolean) {
-  const [present, setPresent] = useState(open);
-  useEffect(() => {
-    if (open) { setPresent(true); return; }
-    const reduced = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const timer = setTimeout(() => setPresent(false), reduced ? 0 : 180);
-    return () => clearTimeout(timer);
-  }, [open]);
-  return open || present;
-}
-/** Keep locally selected appearance and accent when a surface leaves its DOM parent. */
-export function useOverlayScope(anchor: RefObject<HTMLElement | null>) {
-  const [scope, setScope] = useState<Scope>({ 'data-surface': 'floating' });
-  useLayoutEffect(() => {
-    let observed: HTMLElement[] = [];
-    const read = () => {
-      const next: Scope = { 'data-surface': 'floating' };
-      const radius = anchor.current?.closest('[data-radius]')?.getAttribute('data-radius');
-      if (radius) next['data-radius'] = radius;
-      const theme = anchor.current?.closest('[data-theme]')?.getAttribute('data-theme');
-      if (theme) next['data-theme'] = theme;
-      const borders = anchor.current?.closest('[data-borders]')?.getAttribute('data-borders');
-      if (borders) next['data-borders'] = borders;
-      const shadow = anchor.current?.closest('[data-shadow]')?.getAttribute('data-shadow');
-      if (shadow) next['data-shadow'] = shadow;
-      const accent = anchor.current?.closest('[data-accent]:not([data-accent="inherit"]),[data-color]:not([data-color="inherit"])');
-      const accentValue = accent?.getAttribute('data-accent'), colorValue = accent?.getAttribute('data-color');
-      if (accentValue && accentValue !== 'inherit') next['data-accent'] = accentValue;
-      else if (colorValue && colorValue !== 'inherit') next['data-color'] = colorValue;
-      setScope(previous => JSON.stringify(previous) === JSON.stringify(next) ? previous : next);
-      const ancestors: HTMLElement[] = [];
-      for (let element = anchor.current; element; element = element.parentElement) ancestors.push(element);
-      if (ancestors.length !== observed.length || ancestors.some((element, index) => element !== observed[index])) {
-        observer.disconnect();
-        // A moved/replaced anchor must observe its new inheritance chain too.
-        for (const element of ancestors) observer.observe(element, { attributes: true, childList: true, attributeFilter: ['data-theme', 'data-accent', 'data-color', 'data-borders', 'data-shadow', 'data-radius'] });
-        observed = ancestors;
-      }
-    };
-    const observer = new MutationObserver(read);
-    read();
-    return () => observer.disconnect();
-  });
-  return scope;
-}
-export function OverlayPortal({ anchor, panel, children }: { anchor: RefObject<HTMLElement | null>; panel: RefObject<HTMLElement | null>; children: ReactNode }) {
-  const parents = useContext(OverlayParents), descendants = useMemo(() => [...parents, panel], [parents, panel]);
-  if (typeof document === 'undefined') return null;
-  // A floating child belongs to its modal, so background inertness never disables it.
-  return createPortal(<OverlayParents.Provider value={descendants}>{children}</OverlayParents.Provider>, anchor.current?.closest('.cap-modal-layer') ?? document.body);
-}
-type Layer = { id: string; element: HTMLElement; parents: (HTMLElement | null)[] };
-const dismissLayers: Layer[] = [];
-export function useOverlayDismiss(open: boolean, panel: RefObject<HTMLElement | null>, anchor: RefObject<HTMLElement | null>, onClose: (restoreFocus: boolean) => void, outside = true) {
-  const id = useId(), close = useRef(onClose), parents = useContext(OverlayParents); close.current = onClose;
-  useEffect(() => {
-    if (!open || !panel.current) return;
-    const entry = { id, element: panel.current, parents: parents.map(parent => parent.current) };
-    const descendant = dismissLayers.findIndex(layer => layer.parents.includes(panel.current));
-    if (descendant < 0) dismissLayers.push(entry); else dismissLayers.splice(descendant, 0, entry);
-    const pointer = (event: PointerEvent) => {
-      if (!outside || dismissLayers.at(-1) !== entry || panel.current?.contains(event.target as Node) || anchor.current?.contains(event.target as Node)) return;
-      close.current(false);
-    };
-    const key = (event: globalThis.KeyboardEvent) => {
-      if (event.key !== 'Escape' || event.defaultPrevented || dismissLayers.at(-1) !== entry) return;
-      event.preventDefault(); event.stopPropagation(); close.current(true);
-    };
-    document.addEventListener('pointerdown', pointer); document.addEventListener('keydown', key);
-    return () => { const index = dismissLayers.indexOf(entry); if (index !== -1) dismissLayers.splice(index, 1); document.removeEventListener('pointerdown', pointer); document.removeEventListener('keydown', key); };
-  }, [open, panel, anchor, outside, id]);
-}
-export function useAnchoredOverlay(open: boolean, anchor: RefObject<HTMLElement | null>, panel: RefObject<HTMLElement | null>, { align = 'start', side = 'bottom', matchWidth = false, arrow = false }: { align?: 'start' | 'center' | 'end'; side?: 'top' | 'bottom'; matchWidth?: boolean; arrow?: boolean } = {}) {
-  const [position, setPosition] = useState<CSSProperties>({ left: 0, top: 0, visibility: 'hidden' });
-  useLayoutEffect(() => {
-    if (!open) return;
-    const update = () => {
-      const trigger = anchor.current, surface = panel.current; if (!trigger || !surface) return;
-      const rect = trigger.getBoundingClientRect();
-      const styles = getComputedStyle(surface);
-      const gutter = parseFloat(styles.getPropertyValue('--cap-overlay-gutter')) || 12;
-      const gap = parseFloat(styles.getPropertyValue('--cap-overlay-gap')) || 12;
-      const viewport = window.visualViewport, width = viewport?.width ?? window.innerWidth, height = viewport?.height ?? window.innerHeight;
-      const viewportLeft = viewport?.offsetLeft ?? 0, viewportTop = viewport?.offsetTop ?? 0;
-      if (matchWidth) surface.style.minWidth = `${Math.min(rect.width, width - gutter * 2)}px`;
-      const measured = surface.getBoundingClientRect(), bounds = { width: surface.offsetWidth || measured.width, height: surface.offsetHeight || measured.height };
-      // Measure content independently of the last constrained height: otherwise resizing
-      // a long menu can repeatedly flip its side and erase the visual anchor gap.
-      const preferredLimit = parseFloat(styles.getPropertyValue('--cap-overlay-max-height')) || 360;
-      const naturalHeight = Math.max(bounds.height, surface.scrollHeight + surface.offsetHeight - surface.clientHeight);
-      const wantedHeight = Math.min(naturalHeight, preferredLimit);
-      const below = height + viewportTop - rect.bottom - gutter - gap, above = rect.top - viewportTop - gutter - gap;
-      const placeAbove = side === 'top' ? above >= wantedHeight || above > below : below < wantedHeight && above > below;
-      const available = Math.max(0, Math.min(height - gutter * 2, placeAbove ? above : below));
-      const panelHeight = Math.min(wantedHeight, available);
-      const left = align === 'end' ? rect.right - bounds.width : align === 'center' ? rect.left + (rect.width - bounds.width) / 2 : rect.left;
-      const top = placeAbove ? rect.top - panelHeight - gap : rect.bottom + gap;
-      const placedLeft = Math.max(viewportLeft + gutter, Math.min(left, viewportLeft + width - bounds.width - gutter));
-      const arrowPosition = arrow ? { '--cap-tooltip-arrow-x': `${rect.left + rect.width / 2 - placedLeft}px` } : {};
-      const next: CSSProperties = { ...arrowPosition, left: placedLeft, top: Math.max(viewportTop + gutter, Math.min(top, viewportTop + height - panelHeight - gutter)), maxHeight: Math.min(preferredLimit, available), maxWidth: width - gutter * 2, visibility: 'visible', transformOrigin: placeAbove ? 'bottom center' : 'top center' };
-      setPosition(previous => JSON.stringify(previous) === JSON.stringify(next) ? previous : next);
-    };
-    update();
-    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(update);
-    if (anchor.current) observer?.observe(anchor.current); if (panel.current) observer?.observe(panel.current);
-    window.addEventListener('resize', update); window.addEventListener('scroll', update, true); window.visualViewport?.addEventListener('resize', update); window.visualViewport?.addEventListener('scroll', update);
-    return () => { observer?.disconnect(); window.removeEventListener('resize', update); window.removeEventListener('scroll', update, true); window.visualViewport?.removeEventListener('resize', update); window.visualViewport?.removeEventListener('scroll', update); };
-  }, [open, anchor, panel, align, side, matchWidth, arrow]);
-  return position;
-}
 const modalLayers: HTMLElement[] = [];
 const modalParents = new Map<HTMLElement, (HTMLElement | null)[]>();
 const inertValues = new Map<HTMLElement, { inert: boolean; ariaHidden: string | null }>();
@@ -142,11 +34,6 @@ function syncModalBackground() {
     for (const [element, original] of inertValues) { if (element.classList.contains('cap-modal-layer') && element.dataset.state === 'closed') continue; element.inert = original.inert; original.ariaHidden === null ? element.removeAttribute('aria-hidden') : element.setAttribute('aria-hidden', original.ariaHidden); }
     inertValues.clear();
   }
-}
-function childSurfaceContains(parent: HTMLElement | null, target: EventTarget | null) {
-  if (!(target instanceof Node)) return false;
-  const index = dismissLayers.findIndex(layer => layer.element === parent);
-  return index !== -1 && dismissLayers.slice(index + 1).some(layer => layer.element.contains(target));
 }
 function useModalFocus(open: boolean, layer: RefObject<HTMLDivElement | null>, panel: RefObject<HTMLDivElement | null>, opener: RefObject<HTMLElement | null>, onClose: () => void) {
   const close = useRef(onClose), parents = useContext(OverlayParents); close.current = onClose;
@@ -187,19 +74,19 @@ function useModalFocus(open: boolean, layer: RefObject<HTMLDivElement | null>, p
 }
 export interface DialogProps { open: boolean; onOpenChange: (open: boolean) => void; title: string; description?: string; children: ReactNode; footer?: ReactNode; className?: string; size?: 'sm' | 'md' | 'lg' | 'xl'; closeLabel?: string; dismissOnOutside?: boolean }
 export interface DrawerProps extends DialogProps { side?: 'left' | 'right' | 'bottom'; variant?: 'inset' | 'edge' }
-function Modal({ open, onOpenChange, title, description, children, footer, className, size = 'md', closeLabel: suppliedCloseLabel, dismissOnOutside = true, side, variant = 'inset' }: DrawerProps) {
+function Modal({ open, onOpenChange, title, description, children, footer, className, size = 'md', closeLabel: suppliedCloseLabel, dismissOnOutside = true, side, variant = 'inset', showTitle = true, headerContent }: DrawerProps & { showTitle?: boolean; headerContent?: ReactNode }) {
   const t = useTranslate();
   const closeLabel = suppliedCloseLabel === undefined ? (t("Закрыть", "Close")) : suppliedCloseLabel;
 
   const anchor = useRef<HTMLSpanElement>(null), layer = useRef<HTMLDivElement>(null), panel = useRef<HTMLDivElement>(null), id = useId();
-  const scope = useOverlayScope(anchor), present = useOverlayPresence(open), wasOpen = useRef(false), opener = useRef<HTMLElement | null>(null);
+  const scope = useOverlayScope(anchor, open), present = useOverlayPresence(open), wasOpen = useRef(false), opener = useRef<HTMLElement | null>(null);
   const parents = useContext(OverlayParents), descendants = useMemo(() => [...parents, panel], [parents, panel]);
   // Capture before React commits descendants with autoFocus.
   if (open && !wasOpen.current && typeof document !== 'undefined') opener.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
   wasOpen.current = open;
   useModalFocus(open, layer, panel, opener, () => onOpenChange(false));
   useOverlayDismiss(open, panel, anchor, () => onOpenChange(false), dismissOnOutside);
-  return <><span hidden ref={anchor} />{present && typeof document !== 'undefined' && createPortal(<OverlayParents.Provider value={descendants}><div ref={layer} className="cap-modal-layer" data-state={open ? 'open' : 'closed'} data-side={side} data-variant={side ? variant : undefined} {...scope}><div aria-hidden="true" className="cap-modal-backdrop" /><div ref={panel} role="dialog" aria-hidden={!open || undefined} inert={!open} aria-modal="true" aria-labelledby={`${id}-title`} aria-describedby={description ? `${id}-description` : undefined} tabIndex={-1} className={cx('cap-dialog', side && 'cap-drawer', className)} data-surface="floating" data-size={size} data-side={side} data-variant={side ? variant : undefined}><div className="cap-dialog-header"><div><h2 id={`${id}-title`}>{title}</h2>{description && <p id={`${id}-description`}>{description}</p>}</div><IconButton variant="ghost" icon="close" label={closeLabel} onClick={() => onOpenChange(false)} /></div><div className="cap-dialog-body">{children}</div>{footer && <div className="cap-dialog-footer">{footer}</div>}</div></div></OverlayParents.Provider>, document.body)}</>;
+  return <><span hidden ref={anchor} />{present && typeof document !== 'undefined' && createPortal(<OverlayParents.Provider value={descendants}><div ref={layer} className="cap-modal-layer" data-state={open ? 'open' : 'closed'} data-side={side} data-variant={side ? variant : undefined} {...scope}><div aria-hidden="true" className="cap-modal-backdrop" /><div ref={panel} role="dialog" aria-hidden={!open || undefined} inert={!open} aria-modal="true" aria-labelledby={`${id}-title`} aria-describedby={description ? `${id}-description` : undefined} tabIndex={-1} className={cx('cap-dialog', side && 'cap-drawer', className)} data-surface="floating" data-size={size} data-side={side} data-variant={side ? variant : undefined}><div className="cap-dialog-header">{showTitle ? <div><h2 id={`${id}-title`}>{title}</h2>{description && <p id={`${id}-description`}>{description}</p>}</div> : <h2 id={`${id}-title`} className="cap-sr-only">{title}</h2>}{headerContent}<IconButton variant="ghost" icon="close" label={closeLabel} onClick={() => onOpenChange(false)} /></div><div className="cap-dialog-body">{children}</div>{footer && <div className="cap-dialog-footer">{footer}</div>}</div></div></OverlayParents.Provider>, document.body)}</>;
 }
 export function Dialog(props: DialogProps) { return <Modal {...props} />; }
 export function Drawer({ side = 'right', ...props }: DrawerProps) { return <Modal {...props} side={side} />; }
@@ -215,21 +102,26 @@ export interface TooltipProps {
   arrow?: boolean;
   side?: 'top' | 'bottom';
   align?: 'start' | 'center' | 'end';
+  /** Maximum readable width in pixels or a CSS length; always capped to the viewport. */
+  maxWidth?: number | string;
 }
-export function Tooltip({ content, children, shortcut, caption, description, variant = 'default', arrow = false, side = 'top', align = 'center' }: TooltipProps) {
+export function Tooltip({ content, children, shortcut, caption, description, variant = 'default', arrow = false, side = 'top', align = 'center', maxWidth = 288 }: TooltipProps) {
   const [open, setOpen] = useState(false), id = useId(), anchor = useRef<HTMLSpanElement>(null), panel = useRef<HTMLDivElement>(null), timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
-  const scope = useOverlayScope(anchor), position = useAnchoredOverlay(open, anchor, panel, { side, align, arrow }), present = useOverlayPresence(open);
+  const scope = useOverlayScope(anchor, open), position = useAnchoredOverlay(open, anchor, panel, { side, align, arrow }), present = useOverlayPresence(open);
+  const width = typeof maxWidth === 'number' ? Number.isFinite(maxWidth) ? Math.max(1, maxWidth) : 288 : maxWidth;
+  const limitedWidth = typeof width === 'number' && typeof position.maxWidth === 'number' ? Math.min(width, position.maxWidth)
+    : typeof width === 'number' ? `min(${width}px, calc(100vw - var(--cap-overlay-gutter, 12px) * 2))` : `min(${width}, ${typeof position.maxWidth === 'number' ? `${position.maxWidth}px` : 'calc(100vw - 24px)'})`;
   const hide = () => { clearTimeout(timer.current); setOpen(false); };
   const hideLater = () => { clearTimeout(timer.current); timer.current = setTimeout(() => setOpen(false), 100); };
   useOverlayDismiss(open, panel, anchor, hide);
   useEffect(() => () => clearTimeout(timer.current), []);
-  return <span ref={anchor} className="cap-tooltip-wrap" onMouseEnter={() => { clearTimeout(timer.current); timer.current = setTimeout(() => setOpen(true), 350); }} onMouseLeave={hideLater} onFocus={() => { clearTimeout(timer.current); setOpen(true); }} onBlur={hide} onPointerDown={hide}>{cloneElement(children, { 'aria-describedby': [children.props['aria-describedby'], open && id].filter(Boolean).join(' ') || undefined })}{present && <OverlayPortal anchor={anchor} panel={panel}><div ref={panel} id={id} role="tooltip" aria-hidden={!open || undefined} data-state={open ? 'open' : 'closed'} data-variant={variant} data-arrow={arrow || undefined} data-side={position.transformOrigin === 'bottom center' ? 'top' : 'bottom'} onMouseEnter={() => clearTimeout(timer.current)} onMouseLeave={hideLater} className="cap-tooltip cap-tooltip-v2" style={position} {...scope}><div className="cap-tooltip-body">{caption && <div className="cap-tooltip-caption">{caption}</div>}<div className="cap-tooltip-content">{content}</div>{description && <div className="cap-tooltip-description">{description}</div>}{shortcut && <span className="cap-tooltip-shortcut">{shortcut.map((key, index) => <Kbd key={`${key}-${index}`}>{key}</Kbd>)}</span>}</div></div></OverlayPortal>}</span>;
+  return <ExplicitTooltipContext.Provider value={true}><span ref={anchor} className="cap-tooltip-wrap" onMouseEnter={() => { clearTimeout(timer.current); timer.current = setTimeout(() => setOpen(true), 350); }} onMouseLeave={hideLater} onFocus={() => { clearTimeout(timer.current); setOpen(true); }} onBlur={hide} onPointerDown={hide}>{cloneElement(children, { 'aria-describedby': [children.props['aria-describedby'], open && id].filter(Boolean).join(' ') || undefined })}{present && <OverlayPortal anchor={anchor} panel={panel}><div ref={panel} id={id} role="tooltip" aria-hidden={!open || undefined} data-state={open ? 'open' : 'closed'} data-variant={variant} data-arrow={arrow || undefined} data-side={position.transformOrigin === 'bottom center' ? 'top' : 'bottom'} onMouseEnter={() => clearTimeout(timer.current)} onMouseLeave={hideLater} className="cap-tooltip cap-tooltip-v2" style={{...position,maxWidth:limitedWidth}} {...scope}><div className="cap-tooltip-body">{caption && <div className="cap-tooltip-caption">{caption}</div>}<div className="cap-tooltip-content">{content}</div>{description && <div className="cap-tooltip-description">{description}</div>}{shortcut && <span className="cap-tooltip-shortcut">{shortcut.map((key, index) => <Kbd key={`${key}-${index}`}>{key}</Kbd>)}</span>}</div></div></OverlayPortal>}</span></ExplicitTooltipContext.Provider>;
 }
 export interface MenuItem { id: string; label: string; icon?: IconSource; shortcut?: string; disabled?: boolean; danger?: boolean; separator?: boolean; onSelect?: () => void }
-export interface MenuProps { label: string; items: MenuItem[]; icon?: IconSource; disabled?: boolean; size?: Size; variant?: ButtonProps['variant']; className?: string }
-export function Menu({ label, items, icon = 'more', disabled, size, variant = 'ghost', className }: MenuProps) {
+export interface MenuProps { label: string; items: MenuItem[]; icon?: IconSource; triggerContent?: ReactNode; disabled?: boolean; size?: Size; variant?: ButtonProps['variant']; className?: string }
+export function Menu({ label, items, icon = 'more', triggerContent, disabled, size, variant = 'ghost', className }: MenuProps) {
   const [open, setOpen] = useState(false), panel = useRef<HTMLDivElement>(null), trigger = useRef<HTMLButtonElement>(null), id = useId(), startAtEnd = useRef(false);
-  const scope = useOverlayScope(trigger), position = useAnchoredOverlay(open, trigger, panel, { align: 'end' }), present = useOverlayPresence(open);
+  const scope = useOverlayScope(trigger, open), position = useAnchoredOverlay(open, trigger, panel, { align: 'end' }), present = useOverlayPresence(open);
   const hoverRoot = useRef<HTMLDivElement>(null);
   const search = useRef(''), searchTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const buttons = () => Array.from(panel.current?.querySelectorAll<HTMLButtonElement>('[role="menuitem"]:not(:disabled)') ?? []);
@@ -251,13 +143,14 @@ export function Menu({ label, items, icon = 'more', disabled, size, variant = 'g
       searchTimer.current = setTimeout(() => { search.current = ''; }, 600);
     }
   };
-  return <span className="cap-menu-root"><IconButton ref={trigger} label={label} icon={icon} variant={variant} size={size} disabled={disabled} aria-haspopup="menu" aria-expanded={open} aria-controls={open ? id : undefined} onClick={() => { startAtEnd.current = false; setOpen(!open); }} onKeyDown={e => { if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); startAtEnd.current = e.key === 'ArrowUp'; setOpen(true); } }} />{present && <OverlayPortal anchor={trigger} panel={panel}><div ref={panel} role="menu" aria-hidden={!open || undefined} inert={!open} data-state={open ? 'open' : 'closed'} aria-label={label} id={id} className={cx('cap-menu', 'cap-menu-v2', className)} style={position} {...scope} onKeyDown={onKeyDown} onBlur={e => { if (e.relatedTarget && !e.currentTarget.contains(e.relatedTarget) && e.relatedTarget !== trigger.current) close(false); }}><div ref={hoverRoot} className="cap-menu-items cap-shared-hover"><MovingHighlight root={hoverRoot} hover target=".cap-menu-item:not(:disabled)"/>{items.map(item => <div key={item.id} role="none">{item.separator && <hr className="cap-menu-separator" />}<button type="button" role="menuitem" className="cap-menu-item" tabIndex={-1} data-label={item.label} data-danger={item.danger || undefined} disabled={item.disabled} onClick={() => { close(); item.onSelect?.(); }}>{item.icon && <Icon name={item.icon} />}<span>{item.label}</span>{item.shortcut && <Kbd>{item.shortcut}</Kbd>}</button></div>)}</div></div></OverlayPortal>}</span>;
+  const triggerProps: ButtonProps = {variant,size,disabled,'aria-label':label,'aria-haspopup':'menu','aria-expanded':open,'aria-controls':open?id:undefined,onClick:()=>{startAtEnd.current=false;setOpen(!open);},onKeyDown:e=>{if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();startAtEnd.current=e.key==='ArrowUp';setOpen(true);}}};
+  return <span className="cap-menu-root" data-custom-trigger={triggerContent!==undefined||undefined}>{triggerContent!==undefined?<Button ref={trigger} {...triggerProps}>{triggerContent}</Button>:<IconButton ref={trigger} {...triggerProps} label={label} icon={icon}/>} {present && <OverlayPortal anchor={trigger} panel={panel}><div ref={panel} role="menu" aria-hidden={!open || undefined} inert={!open} data-state={open ? 'open' : 'closed'} aria-label={label} id={id} className={cx('cap-menu', 'cap-menu-v2', className)} style={position} {...scope} onKeyDown={onKeyDown} onBlur={e => { if (e.relatedTarget && !e.currentTarget.contains(e.relatedTarget) && e.relatedTarget !== trigger.current) close(false); }}><div ref={hoverRoot} className="cap-menu-items cap-shared-hover"><MovingHighlight root={hoverRoot} hover target=".cap-menu-item:not(:disabled)"/>{items.map(item => <div key={item.id} role="none">{item.separator && <hr className="cap-menu-separator" />}<button type="button" role="menuitem" className="cap-menu-item" tabIndex={-1} data-label={item.label} data-danger={item.danger || undefined} disabled={item.disabled} onClick={() => { close(); item.onSelect?.(); }}>{item.icon && <Icon name={item.icon} />}<span>{item.label}</span>{item.shortcut && <Kbd>{item.shortcut}</Kbd>}</button></div>)}</div></div></OverlayPortal>}</span>;
 }
 export interface PopoverProps { label: string; triggerContent?: ReactNode; triggerIcon?: IconSource; children: ReactNode; open?: boolean; onOpenChange?: (open: boolean) => void; className?: string; align?: 'start' | 'center' | 'end'; side?: 'top' | 'bottom'; disabled?: boolean; size?: Size }
 export function Popover({ label, triggerContent, triggerIcon, children, open: controlledOpen, onOpenChange, className, align, side, disabled, size = 'md' }: PopoverProps) {
   const [internal, setInternal] = useState(false), open = controlledOpen ?? internal;
   const id = useId(), trigger = useRef<HTMLButtonElement>(null), panel = useRef<HTMLDivElement>(null);
-  const scope = useOverlayScope(trigger), position = useAnchoredOverlay(open, trigger, panel, { align, side }), present = useOverlayPresence(open);
+  const scope = useOverlayScope(trigger, open), position = useAnchoredOverlay(open, trigger, panel, { align, side }), present = useOverlayPresence(open);
   const restoreFocus = useRef(true);
   const setOpen = (value: boolean) => { if (value) restoreFocus.current = true; if (controlledOpen === undefined) setInternal(value); onOpenChange?.(value); };
   const close = (restore = true) => { restoreFocus.current = restore; setOpen(false); if (restore) trigger.current?.focus(); };
@@ -273,21 +166,37 @@ export function Popover({ label, triggerContent, triggerIcon, children, open: co
   }}>{children}</div></OverlayPortal>}</span>;
 }
 export interface CommandItem { id: string; label: string; description?: string; icon?: IconSource; shortcut?: string; onSelect: () => void }
-export function CommandPalette({ open, onOpenChange, items, placeholder: suppliedPlaceholder }: { open: boolean; onOpenChange: (open: boolean) => void; items: CommandItem[]; placeholder?: string }) {
+export interface CommandPaletteProps { open: boolean; onOpenChange: (open: boolean) => void; items: CommandItem[]; placeholder?: string; /** Hide the visual title while preserving the dialog's accessible name. */ showTitle?: boolean }
+export function CommandPalette({ open, onOpenChange, items, placeholder: suppliedPlaceholder, showTitle = false }: CommandPaletteProps) {
   const t = useTranslate();
   const placeholder = suppliedPlaceholder === undefined ? (t("Найти команду или объект…", "Find a command or object…")) : suppliedPlaceholder;
-
   const [query, setQuery] = useState(''), [active, setActive] = useState(0), id = useId();
-  const input = useRef<HTMLInputElement>(null), hoverRoot = useRef<HTMLDivElement>(null);
-  const filtered = items.filter(i => `${i.label} ${i.description ?? ''}`.toLocaleLowerCase().includes(query.toLocaleLowerCase()));
-  useEffect(() => { if (open) { setQuery(''); setActive(0); input.current?.focus(); } }, [open]);
+  const input = useRef<HTMLInputElement>(null), hoverRoot = useRef<HTMLDivElement>(null), viewport = useRef<HTMLDivElement>(null), revealActive = useRef(true);
+  const filtered = useMemo(() => { const term = query.toLocaleLowerCase(); return items.filter(i => `${i.label} ${i.description ?? ''}`.toLocaleLowerCase().includes(term)); }, [items, query]);
+  useEffect(() => { if (open) { revealActive.current = true; setQuery(''); setActive(0); input.current?.focus(); } }, [open]);
   const choose = (item: CommandItem) => { onOpenChange(false); item.onSelect(); };
   const index = Math.min(active, Math.max(0, filtered.length - 1));
-  useEffect(() => { if (open) document.getElementById(`${id}-${index}`)?.scrollIntoView?.({ block: 'nearest' }); }, [id, index, open]);
-  return <Dialog open={open} onOpenChange={onOpenChange} title={t("Быстрый поиск", "Quick search")} className="cap-command" footer={<span className="cap-command-help"><Kbd>↑↓</Kbd> {t("навигация", "navigate")}<Kbd>↵</Kbd> {t("выбрать", "select")}<Kbd>esc</Kbd> {t("закрыть", "close")}</span>}><div className="cap-command-input"><Icon name="search" size={20} /><input ref={input} autoFocus role="combobox" aria-label={t("Поиск команд", "Search commands")} aria-expanded={true} aria-controls={`${id}-list`} aria-autocomplete="list" aria-activedescendant={filtered.length ? `${id}-${index}` : undefined} value={query} placeholder={placeholder} onChange={e => { setQuery(e.target.value); setActive(0); }} onKeyDown={e => {
-    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); setActive(filtered.length ? (index + (e.key === 'ArrowDown' ? 1 : -1) + filtered.length) % filtered.length : 0); }
+  useLayoutEffect(() => {
+    if (!open || !revealActive.current) return;
+    const node = viewport.current, option = document.getElementById(`${id}-${index}`);
+    if (!node || !option) return;
+    const bounds = node.getBoundingClientRect(), item = option.getBoundingClientRect();
+    const clearance = Math.min(24, bounds.height / 4), top = bounds.top + clearance, bottom = bounds.bottom - clearance;
+    const delta = item.top < top ? item.top - top : item.bottom > bottom ? item.bottom - bottom : 0;
+    // Reveal only the command list; scrollIntoView can move the document behind it.
+    if (delta) node.scrollTop += delta;
+  }, [id, index, open, filtered.length, query]);
+  const search = <div className="cap-command-input"><Icon name="search" size={16} /><input ref={input} autoFocus role="combobox" aria-label={t("Поиск команд", "Search commands")} aria-expanded={true} aria-controls={`${id}-list`} aria-autocomplete="list" aria-activedescendant={filtered.length ? `${id}-${index}` : undefined} value={query} placeholder={placeholder} onChange={e => { revealActive.current = true; setQuery(e.target.value); setActive(0); }} onKeyDown={e => {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); revealActive.current = true; setActive(filtered.length ? (index + (e.key === 'ArrowDown' ? 1 : -1) + filtered.length) % filtered.length : 0); }
     if (e.key === 'Enter' && !e.nativeEvent.isComposing && filtered[index]) { e.preventDefault(); choose(filtered[index]); }
-  }} /></div><div id={`${id}-list`} role="listbox" aria-label={t("Результаты поиска", "Search results")} ref={hoverRoot} className="cap-command-list cap-shared-hover"><MovingHighlight root={hoverRoot} selected="[aria-selected=true]" hover target=".cap-command-item" revision={`${query}:${index}`}/>{filtered.map((item, i) => <div key={item.id} id={`${id}-${i}`} role="option" aria-selected={i === index} className="cap-command-item" onPointerMove={() => setActive(i)} onMouseDown={e => e.preventDefault()} onClick={() => choose(item)}>{item.icon && <Icon name={item.icon} />}<span>{item.label}{item.description && <small>{item.description}</small>}</span>{item.shortcut && <Kbd>{item.shortcut}</Kbd>}</div>)}</div>{!filtered.length && <p className="cap-command-empty" role="status">{t("Ничего не найдено", "No results")}</p>}</Dialog>;
+  }} /></div>;
+  return <Modal open={open} onOpenChange={onOpenChange} title={t("Быстрый поиск", "Quick search")} showTitle={showTitle} headerContent={!showTitle ? search : undefined} className={cx("cap-command", !showTitle && "cap-command-compact")} footer={<span className="cap-command-help"><Kbd>↑↓</Kbd> {t("навигация", "navigate")}<Kbd>↵</Kbd> {t("выбрать", "select")}<Kbd>esc</Kbd> {t("закрыть", "close")}</span>}>
+    {showTitle && search}
+    <ScrollArea ref={viewport} label={t("Результаты поиска", "Search results")} className="cap-command-scroll" fade="vertical" fadeSize={24} fadeReveal={0} scrollbar="hidden" viewportProps={{ tabIndex: -1 }}>
+      <div id={`${id}-list`} role="listbox" aria-label={t("Результаты поиска", "Search results")} ref={hoverRoot} className="cap-command-list cap-shared-hover"><MovingHighlight root={hoverRoot} selected="[aria-selected=true]" revision={`${query}:${index}`}/>{filtered.map((item, i) => <div key={item.id} id={`${id}-${i}`} role="option" aria-selected={i === index} className="cap-command-item" onPointerMove={event => { if (event.pointerType === 'touch') return; revealActive.current = false; setActive(previous => previous === i ? previous : i); }} onMouseDown={e => e.preventDefault()} onClick={() => choose(item)}>{item.icon && <Icon name={item.icon} />}<span>{item.label}{item.description && <small>{item.description}</small>}</span>{item.shortcut && <Kbd>{item.shortcut}</Kbd>}</div>)}</div>
+      {!filtered.length && <p className="cap-command-empty" role="status">{t("Ничего не найдено", "No results")}</p>}
+    </ScrollArea>
+  </Modal>;
 }
 export interface ToastProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title' | 'color'>, FeedbackStyleProps {
   title: string;

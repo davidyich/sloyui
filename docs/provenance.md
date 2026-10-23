@@ -1,6 +1,8 @@
 # Sloy UI provenance
 
-The current color foundation is independently authored in `source/foundation.json`. Its analytic OKLCH scales use gamut mapping to generate 17 hue families with 22 steps, a 41-step neutral scale and black/white. `source/surface-rules.json` maps surfaces to these palettes. `scripts/color-model.mjs` derives accessible semantic pairs; CSS and Figma exports share this source.
+The current color contract is authored in `figma/token-system-v4/source.json`, with shared OKLCH/gamut-mapping calculations in `figma/color-system-v2/editor/model.mjs` and `color-engine.mjs`. Runtime Palette contains six 41-step hue ramps, a 41-step neutral scale and black/white: 289 opaque colors. Compact native Figma Palette retains 327 referenced paints, including integer-percent RGBA colors, without an Opacity-number collection. `source/foundation.json` and `source/surface-rules.json` retain web compatibility inputs; CSS and native exports derive from the shared model.
+
+Custom project backgrounds preserve exact requested RGB and require explicit generation through `figma/color-system-v2/export-custom.mjs`. Run this script from the repository with its imports and JSON inputs: a downloaded source `.mjs` alone is not standalone. See the [color export instructions](../figma/color-system-v2/README.md).
 
 The `cap-*` CSS namespace and `cp-*` component IDs are stable public API identifiers. The palette model, semantic roles and vector logo are authored for Sloy UI.
 

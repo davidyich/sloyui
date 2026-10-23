@@ -39,3 +39,18 @@ it('combines rich inverse tooltip text with existing descriptions and preserves 
   expect(screen.queryByRole('tooltip')).toBeNull();
   expect(screen.getByRole('button')).toHaveAttribute('aria-describedby','existing');
 });
+
+it('caps descriptive tooltips by default and allows a caller width without exceeding the viewport', async()=>{
+  const user=userEvent.setup();
+  const description='A very long explanation with an unbroken alias '+ 'palette/very-long-alias/'.repeat(12);
+  const {rerender}=render(<Tooltip content="Explanation" description={description}><Button>Explain</Button></Tooltip>);
+  await user.tab();
+  expect(screen.getByRole('tooltip')).toHaveStyle({maxWidth:'288px'});
+  expect(screen.getByRole('button')).toHaveAccessibleDescription(`Explanation ${description}`);
+  rerender(<Tooltip content="Explanation" description={description} maxWidth={420}><Button>Explain</Button></Tooltip>);
+  expect(screen.getByRole('tooltip')).toHaveStyle({maxWidth:'420px'});
+  rerender(<Tooltip content="Explanation" description={description} maxWidth={10000}><Button>Explain</Button></Tooltip>);
+  expect(parseFloat(screen.getByRole('tooltip').style.maxWidth)).toBeLessThanOrEqual(window.innerWidth-24);
+  await user.keyboard('{Escape}');
+  expect(screen.queryByRole('tooltip')).toBeNull();
+});

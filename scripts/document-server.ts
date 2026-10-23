@@ -2,11 +2,18 @@ import { readFile, realpath, writeFile, rename, unlink, stat, mkdir, readdir, ls
 import { createHash, randomUUID } from 'node:crypto';
 import { resolve, dirname, join } from 'node:path';
 import type { Plugin } from 'vite';
-import { documentFiles, type DocumentFile } from '../demo/document-files';
+import { documentFiles, documentLanguage, type DocumentFile } from '../demo/document-files';
 
 const limit = 256 * 1024;
 export class DocumentError extends Error { constructor(public status:number, message:string){super(message);} }
 const revision = (content:string) => createHash('sha256').update(content).digest('hex');
+/** Component guides use stable IDs and stay out of the general instruction list. */
+export async function componentInstructionFiles(root:string):Promise<DocumentFile[]> {
+ let registry:{components:Record<string,{id:string;status:string}>};
+ try {registry=JSON.parse(await readFile(resolve(root,'source/component-registry.json'),'utf8'));}
+ catch(error){if((error as NodeJS.ErrnoException).code==='ENOENT')return [];throw error;}
+ return Object.entries(registry.components).filter(([,record])=>record.status!=='archived'&&/^cp-\d+$/.test(record.id)).map(([name,record])=>({path:`docs/components/${record.id}.md`,label:name,protected:true}));
+}
 /** Decode only after complete UTF-8 byte sequences are collected; HTTP chunks can split any character. */
 export async function readDocumentBody(request: AsyncIterable<Uint8Array | string>): Promise<string> {
  const chunks: Buffer[] = [];
@@ -35,10 +42,11 @@ export function documentStore(root:string) {
   const directory=await folder(), names=await readdir(directory);
   const extra:DocumentFile[]=[];
   for(const name of names.sort()) {const path='docs/instructions/'+name;if(custom(path)&&(await lstat(join(directory,name))).isFile())extra.push({path,label:name,protected:false});}
-  return [...documentFiles,...extra];
+  return Promise.all([...documentFiles,...extra].map(async file=>{try{return {...file,language:documentLanguage((await read(file.path)).content)};}catch{return file;}}));
  };
  const file = async (path:string) => {
-  if (!documentFiles.some(item=>item.path===path)&&!custom(path)) throw new DocumentError(404,'Document not found.');
+  const component=/^docs\/components\/cp-\d+\.md$/.test(path)&&(await componentInstructionFiles(root)).some(item=>item.path===path);
+  if (!documentFiles.some(item=>item.path===path)&&!custom(path)&&!component) throw new DocumentError(404,'Document not found.');
   if(custom(path))await folder();
   const target=resolve(root,path);
   if (await realpath(target)!==target) throw new DocumentError(403,'Symbolic links cannot be edited.');
@@ -96,6 +104,6 @@ export function documentsPlugin():Plugin {
     }catch(error){send(error instanceof DocumentError?error.status:(error as NodeJS.ErrnoException).code==='ENOENT'?404:500,{error:error instanceof DocumentError?error.message:'Could not read or save the file.'});}
    });
   },
-  async generateBundle(){const store=documentStore(root);const files=await Promise.all(documentFiles.map(async item=>({...item,...await store.read(item.path)})));this.emitFile({type:'asset',fileName:'documents.json',source:JSON.stringify({files,writable:false})});},
+  async generateBundle(){const store=documentStore(root);const files=await Promise.all([...documentFiles,...await componentInstructionFiles(root)].map(async item=>{const doc=await store.read(item.path);return {...item,...doc,language:documentLanguage(doc.content)};}));this.emitFile({type:'asset',fileName:'documents.json',source:JSON.stringify({files,writable:false})});},
  };
 }

@@ -50,7 +50,7 @@ export function inferFileKind(name: string, mimeType?: string): FileKind {
 const formats: Record<FileKind, { label: string; color: Color }> = {
   image: { label: 'IMG', color: 'purple' }, pdf: { label: 'PDF', color: 'red' },
   presentation: { label: 'P', color: 'orange' }, document: { label: 'W', color: 'blue' },
-  spreadsheet: { label: 'X', color: 'green' }, archive: { label: 'ZIP', color: 'amber' },
+  spreadsheet: { label: 'X', color: 'green' }, archive: { label: 'ZIP', color: 'orange' },
   audio: { label: 'AUD', color: 'purple' }, video: { label: 'VID', color: 'pink' },
   code: { label: '</>', color: 'blue' }, unknown: { label: 'FILE', color: 'neutral' },
 };
@@ -63,7 +63,7 @@ export function FileCard({ name, sizeLabel, mimeType, kind: explicitKind, thumbn
   const content = <><span className="cap-file-card-preview" aria-hidden={thumbnailAlt ? undefined : true}>
     {thumbnail && failedThumbnail !== thumbnail ? <img src={thumbnail} alt={thumbnailAlt} onError={() => setFailedThumbnail(thumbnail)} /> : <span className="cap-file-card-format" data-accent={format.color} aria-hidden="true">{format.label}</span>}
   </span><span className="cap-file-card-copy"><span className="cap-file-card-name" id={id}>{name}</span>{(sizeLabel || loading) && <span className="cap-file-card-meta">{loading ? t('Загрузка…','Loading…') : sizeLabel}</span>}</span></>;
-  return <div {...props} className={`cap-file-card cap-surface-boundary ${className}`} data-surface="raised" data-size={size} data-kind={kind} data-disabled={disabled || undefined} aria-busy={loading || undefined}>
+  return <div {...props} className={`cap-file-card cap-surface-boundary ${className}`} data-size={size} data-kind={kind} data-disabled={disabled || undefined} aria-busy={loading || undefined}>
     {href && !blocked ? <a className="cap-file-card-main" href={href} aria-labelledby={id}>{content}</a> : onOpen ? <button className="cap-file-card-main" type="button" onClick={onOpen} disabled={blocked} aria-labelledby={id}>{content}</button> : <div className="cap-file-card-main">{content}</div>}
     {(downloadHref || onDownload || onRemove) && <div className="cap-file-card-actions">
       {downloadHref && !blocked ? <a className="cap-file-card-download" href={downloadHref} download={name} aria-label={`${t('Скачать','Download')} ${name}`}><Icon name="down" /></a> : (downloadHref || onDownload) ? <IconButton label={`${t('Скачать','Download')} ${name}`} icon="down" variant="ghost" size="sm" disabled={blocked} onClick={onDownload} /> : null}

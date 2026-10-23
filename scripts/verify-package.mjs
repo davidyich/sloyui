@@ -25,6 +25,15 @@ try {
   for (const path of ['LICENSE', 'THIRD_PARTY_NOTICES.md', 'docs/third-party.md', 'licenses/lucide-ISC-MIT.txt', 'licenses/inter-OFL-1.1.txt', 'licenses/overpass-mono-OFL-1.1.txt', 'licenses/arc-library-MIT.txt', 'licenses/react-MIT.txt', 'licenses/react-dom-MIT.txt']) {
     if ((await readFile(join(target,path),'utf8')).length < 200) throw new Error('Missing or incomplete notice: '+path);
   }
+  const packedGraph = JSON.parse(await readFile(join(target, 'dist/tokens/runtime-v4.json'), 'utf8'));
+  const authoredGraph = JSON.parse(await readFile(join(target, 'figma/token-system-v4/graph.json'), 'utf8'));
+  if (JSON.stringify(packedGraph) !== JSON.stringify(authoredGraph)) throw new Error('Packed runtime and Figma v4 graphs differ');
+  const packedManifest = JSON.parse(await readFile(join(target, 'agent-manifest.json'), 'utf8'));
+  const activeInstructions = Object.values(packedManifest.components).filter(record => record.status !== 'archived');
+  for (const record of activeInstructions) {
+    const instruction = await readFile(join(target, record.instruction), 'utf8');
+    if (!instruction.includes('## Делать') || !instruction.includes('## Не делать')) throw new Error('Missing component usage guidance: ' + record.id);
+  }
   for (const entry of ['types', 'import']) {
     const path = packedPackage.exports?.['.']?.[entry];
     if (typeof path !== 'string' || !path.startsWith('./dist/') || !resolve(target, path).startsWith(resolve(target, 'dist') + sep)) throw new Error('Archive ' + entry + ' export must resolve inside dist');
@@ -34,18 +43,21 @@ try {
 import {
   Alert, AnnouncementBar, BottomSheet, Button, ButtonGroup, CardStack, Chip, ColorPicker,
   ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, Dialog, Field, FileCard, FloatingField, FileTree, Input, KanbanBoard, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
-  Popover, PreviewRail, MarkdownEditorV2, Tabs, RichTextEditor, Slider, StatusBar, Toast, ToastStack,
+  Popover, PopupSelect, PreviewRail, MarkdownEditorV2, Tabs, RichTextEditor, Slider, StatusBar, Toast, ToastStack,
   markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit,
-  type MarkdownEditorV2Props, type TabsProps, type ButtonGroupProps, type KanbanBoardProps, type KanbanColumnProps, type DataTableProps, type DataTableColumn,
+  type Surface, type MarkdownEditorV2Props, type TabsProps, type ButtonGroupProps, type KanbanBoardProps, type KanbanColumnProps, type DataTableProps, type DataTableColumn,
   type BottomSheetProps, type ChipProps, type Color, type ContentLayoutProps,
   type FeedbackStyleProps, type FileTreeNode, type PreviewRailItem, type Size,
   type SliderProps, type ToastStackItem, type Locale, type ScrollAreaProps, type ScrollFadeDirection, type ScrollFadeSize,
-  type ResizablePanelGroupProps, type ResizablePanelProps, type ResizableHandleProps, type RichTextEditorProps,
+  type ResizablePanelGroupProps, type ResizablePanelProps, type ResizableHandleProps, type RichTextEditorProps, type PopupSelectProps,
 } from 'sloyui';
 import { IntegratedWorkspace } from './IntegratedWorkspace.js';
 import 'sloyui/styles.css';
 
 const color: Color = 'teal'; const size: Size = 'xl';
+const surfaces: Surface[] = ['shell', 'workspace', 'content', 'overlay', 'page', 'inset', 'panel', 'base', 'canvas', 'raised', 'floating']; void surfaces;
+const canonicalFocus = { label: 'v4 focus', focusRing: { colorToken: '--cap-v4-theme-border-orange-normal' } } satisfies Parameters<typeof Input>[0];
+const popup = { label: 'Archive choice', name: 'choice', defaultValue: 'a', popupWidth: 360, triggerContent: option => <span>{option?.meta}</span>, options: [{ value: 'a', label: 'Alpha', aliases: ['first'], leading: <span>A</span>, description: 'First entry', meta: '4 px' }], onValueChange: (value: string) => { void value; } } satisfies PopupSelectProps;
 const feedback = { tone: 'success', color, appearance: 'soft', contrast: true, surface: 'raised' } satisfies FeedbackStyleProps;
 const chip = { size, shape: 'pill', icon: 'folder', count: 3, selected: true, onClick: () => {}, action: { icon: 'close', label: 'Remove chip', onClick: () => {} } } satisfies ChipProps;
 const sheet = { title: 'Consumer sheet', open: false, onOpenChange: (open: boolean) => { void open; }, snapPoints: [0.3, 0.8], snap: 0, onSnapChange: (index: number) => { void index; }, variant: 'edge', edgeGap: 8, dismissThreshold: 100, draggable: true } satisfies BottomSheetProps;
@@ -76,6 +88,7 @@ function LocaleProbe() { const current: Locale = useLocale(), t = useTranslate()
 
 export const demo = <Dialog size="xl" open={false} onOpenChange={() => {}} title="Test"><Field label="Title">{props => <Input {...props} size={size}/>}</Field><Button variant="outline" size={size}>{color}</Button></Dialog>;
 export const components = <>
+  <PopupSelect {...popup}/>
   <MarkdownEditorV2 {...markdownV2}/><Tabs {...workspaceTabs}/><ButtonGroup {...framedGroup}><Button>Save</Button></ButtonGroup><KanbanBoard {...dragBoard}/><KanbanColumn {...framedColumn}>Task</KanbanColumn><DataTable {...pinnedTable}/>
   <Chip {...chip}>Archive chip</Chip><BottomSheet {...sheet}>Closed sheet body</BottomSheet>
   <FileTree label="Files" nodes={files} selectedId="app" expandedIds={['src']} onSelect={file => { const id: string = file.id; void id; }} onExpandedChange={ids => { const values: string[] = ids; void values; }}/>
@@ -108,7 +121,7 @@ void preserved;
 `);
   await writeFile(join(temp, 'tsconfig.json'), JSON.stringify({ compilerOptions: { target: 'ES2022', module: 'NodeNext', moduleResolution: 'NodeNext', jsx: 'react-jsx', strict: true, noEmit: true, skipLibCheck: false, lib: ['ES2022', 'DOM', 'DOM.Iterable'] }, include: ['*.tsx'] }));
   execFileSync(join(root, 'node_modules/.bin/tsc'), ['-p', join(temp, 'tsconfig.json')], { stdio: 'pipe' });
-  const serverRenderedExports = ['Button', 'ComboBox', 'MultiSelect', 'TagInput', 'RadioGroup', 'ColorPicker', 'NumberField', 'ValueScrubber', 'NavigationMenu', 'HoverPanel', 'TreeView', 'LineChart', 'BarChart', 'RichTextEditor', 'DataTable', 'ToastStack', 'Chip', 'BottomSheet', 'FileTree', 'PreviewRail', 'ContentLayout', 'ResizableCard', 'ContentCard', 'KanbanColumn', 'Slider', 'Alert', 'StatusBar', 'Toast', 'AnnouncementBar', 'CardStack', 'LocaleProvider', 'ResizablePanelGroup', 'ResizablePanel', 'ResizableHandle', 'ScrollArea', 'DailyHeader', 'MarkdownEditorV2', 'Tabs', 'ButtonGroup', 'FileCard', 'FloatingField'];
+  const serverRenderedExports = ['Button', 'PopupSelect', 'ComboBox', 'MultiSelect', 'TagInput', 'RadioGroup', 'ColorPicker', 'NumberField', 'ValueScrubber', 'NavigationMenu', 'HoverPanel', 'TreeView', 'LineChart', 'BarChart', 'RichTextEditor', 'DataTable', 'ToastStack', 'Chip', 'BottomSheet', 'FileTree', 'PreviewRail', 'ContentLayout', 'ResizableCard', 'ContentCard', 'KanbanColumn', 'Slider', 'Alert', 'StatusBar', 'Toast', 'AnnouncementBar', 'CardStack', 'LocaleProvider', 'ResizablePanelGroup', 'ResizablePanel', 'ResizableHandle', 'ScrollArea', 'DailyHeader', 'MarkdownEditorV2', 'Tabs', 'ButtonGroup', 'FileCard', 'FloatingField'];
   const markdownBridgeExports = ['markdownToRichText', 'richTextToMarkdown', 'preserveMarkdownSourceEdit'];
   await writeFile(join(temp, 'render.mjs'), String.raw`
 import React from 'react';
@@ -117,7 +130,7 @@ import { fileURLToPath } from 'node:url';
 import { resolve, sep } from 'node:path';
 import {
   Alert, AnnouncementBar, BarChart, BottomSheet, Button, ButtonGroup, CardStack, Chip, ColorPicker,
-  ComboBox, ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, DailyHeader, FileCard, FloatingField, FileTree, HoverPanel, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
+  ComboBox, PopupSelect, ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, DailyHeader, FileCard, FloatingField, FileTree, HoverPanel, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
   LineChart, MultiSelect, NavigationMenu, NumberField, PreviewRail, RadioGroup,
   MarkdownEditorV2, Tabs, RichTextEditor, Slider, StatusBar, TagInput, Toast, ToastStack, TreeView, ValueScrubber,
   markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit,
@@ -154,6 +167,7 @@ const closedSheet = renderToString(node(BottomSheet,{open:false,onOpenChange:noo
 if (/cap-bottom-sheet|role="dialog"|Closed sheet body/.test(closedSheet)) throw Error('Closed BottomSheet rendered its modal body during SSR');
 const html = renderToString(node(React.Fragment,null,
   node(Button,{variant:'primary'},'Hello'),
+  node(PopupSelect,{label:'Archive popup choice',name:'choice',defaultValue:'a',options:[{value:'a',label:'Alpha',meta:'4 px'}]}),
   node(ComboBox,{label:'Project',options:[{value:'a',label:'Alpha'}]}),
   node(MultiSelect,{label:'Topics',options:[{value:'a',label:'Alpha',group:'Work',color:'blue'}],defaultValue:['a']}),
   node(TagInput,{label:'Tags'}),node(RadioGroup,{label:'Layout',options:[{value:'grid',label:'Grid'}]}),
@@ -179,7 +193,7 @@ const html = renderToString(node(React.Fragment,null,
   node(AnnouncementBar,{surface:'canvas',id:'archive-news',autoPlay:false,controls:true,messages:[{id:'news',message:'News'}]}),
   node(CardStack,{items:rows,getKey:row=>row.id,renderCard:row=>node(ContentCard,{title:row.name}),expandDirection:'right',expanded:true,review:true,onDecide:noop,onReset:noop}),
 ));
-for (const token of ['cap-button','cap-selection-field','cap-value-scrubber','cap-navigation-menu','cap-tree','cap-chart','cap-rich-editor','cap-data-table','cap-toast-stack','cap-chip','cap-file-card','cap-floating-field','cap-file-tree','cap-preview-rail','cap-content-layout','cap-content-card','cap-kanban-column','cap-slider','cap-alert','cap-status-bar','cap-toast','cap-announcement-bar','cap-card-stack']) {
+for (const token of ['cap-button','cap-popup-select','cap-selection-field','cap-value-scrubber','cap-navigation-menu','cap-tree','cap-chart','cap-rich-editor','cap-data-table','cap-toast-stack','cap-chip','cap-file-card','cap-floating-field','cap-file-tree','cap-preview-rail','cap-content-layout','cap-content-card','cap-kanban-column','cap-slider','cap-alert','cap-status-bar','cap-toast','cap-announcement-bar','cap-card-stack']) {
   if (!html.includes(token)) throw Error('SSR smoke missing '+token);
 }
 for (const marker of ['data-orientation="vertical"','aria-label="Высота: Before"','aria-valuetext="50%"','Archive file preview','data-feedback-appearance="soft"']) {

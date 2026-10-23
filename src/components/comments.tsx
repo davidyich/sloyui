@@ -40,7 +40,7 @@ function InlineThreadPopup({anchorRef,anchorId,anchorIndex,title,currentUser,peo
   const t = useTranslate();
 
   const panel=useRef<HTMLDivElement|null>(null);
-  const scope=useOverlayScope(anchorRef),position=useAnchoredOverlay(open,anchorRef,panel,{align:'center',side:'bottom'}),present=useOverlayPresence(open);
+  const scope=useOverlayScope(anchorRef, open),position=useAnchoredOverlay(open,anchorRef,panel,{align:'center',side:'bottom'}),present=useOverlayPresence(open);
   useOverlayDismiss(open,panel,anchorRef,restore=>{onClose();if(restore)requestAnimationFrame(()=>anchorRef.current?.focus())});
   useEffect(()=>{panel.current?.querySelector<HTMLTextAreaElement>('.cap-comment-composer textarea')?.focus()},[]);
   if(!present)return null;

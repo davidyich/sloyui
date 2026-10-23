@@ -1,0 +1,4491 @@
+{
+  "$extensions": {
+    "com.sloyui.export": {
+      "version": "0.17.0",
+      "collection": "Sloy UI · Components",
+      "mode": "Default"
+    }
+  },
+  "counter": {
+    "height": {
+      "xs": {
+        "$type": "number",
+        "$value": 14,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-counter-height-xs)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/inline/xs"
+          }
+        }
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 16,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-counter-height-sm)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/inline/sm"
+          }
+        }
+      },
+      "md": {
+        "$type": "number",
+        "$value": 18,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-counter-height-md)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/inline/md"
+          }
+        }
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 20,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-counter-height-lg)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/inline/lg"
+          }
+        }
+      },
+      "xl": {
+        "$type": "number",
+        "$value": 24,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-counter-height-xl)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/inline/xl"
+          }
+        }
+      }
+    }
+  },
+  "selection": {
+    "size": {
+      "xs": {
+        "$type": "number",
+        "$value": 14,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-selection-size-xs)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/marker/xs"
+          }
+        }
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 16,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-selection-size-sm)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/marker/sm"
+          }
+        }
+      },
+      "md": {
+        "$type": "number",
+        "$value": 18,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-selection-size-md)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/marker/md"
+          }
+        }
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 22,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-selection-size-lg)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/marker/lg"
+          }
+        }
+      },
+      "xl": {
+        "$type": "number",
+        "$value": 24,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-selection-size-xl)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/marker/xl"
+          }
+        }
+      }
+    }
+  },
+  "slider": {
+    "thumb": {
+      "xs": {
+        "$type": "number",
+        "$value": 14,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-slider-thumb-xs)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/marker/xs"
+          }
+        }
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 16,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-slider-thumb-sm)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/marker/sm"
+          }
+        }
+      },
+      "md": {
+        "$type": "number",
+        "$value": 18,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-slider-thumb-md)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/marker/md"
+          }
+        }
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 22,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-slider-thumb-lg)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/marker/lg"
+          }
+        }
+      },
+      "xl": {
+        "$type": "number",
+        "$value": 24,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-slider-thumb-xl)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/marker/xl"
+          }
+        }
+      }
+    },
+    "track": {
+      "xs": {
+        "$type": "number",
+        "$value": 3,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-slider-track-xs)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/track/xs"
+          }
+        }
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 4,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-slider-track-sm)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/track/sm"
+          }
+        }
+      },
+      "md": {
+        "$type": "number",
+        "$value": 5,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-slider-track-md)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/track/md"
+          }
+        }
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 6,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-slider-track-lg)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/track/lg"
+          }
+        }
+      },
+      "xl": {
+        "$type": "number",
+        "$value": 8,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-slider-track-xl)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/track/xl"
+          }
+        }
+      }
+    }
+  },
+  "elevation": {
+    "floating": {
+      "contact": {
+        "x": {
+          "$type": "number",
+          "$value": 0,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-floating-contact-x)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/0"
+            }
+          }
+        },
+        "y": {
+          "$type": "number",
+          "$value": 3,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-floating-contact-y)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/3"
+            }
+          }
+        },
+        "blur": {
+          "$type": "number",
+          "$value": 14,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-floating-contact-blur)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/14"
+            }
+          }
+        },
+        "spread": {
+          "$type": "number",
+          "$value": -2,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-floating-contact-spread)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/-2"
+            }
+          }
+        }
+      },
+      "ambient": {
+        "x": {
+          "$type": "number",
+          "$value": 0,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-floating-ambient-x)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/0"
+            }
+          }
+        },
+        "y": {
+          "$type": "number",
+          "$value": 12,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-floating-ambient-y)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/12"
+            }
+          }
+        },
+        "blur": {
+          "$type": "number",
+          "$value": 40,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-floating-ambient-blur)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/40"
+            }
+          }
+        },
+        "spread": {
+          "$type": "number",
+          "$value": -8,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-floating-ambient-spread)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/-8"
+            }
+          }
+        }
+      }
+    },
+    "popover": {
+      "contact": {
+        "x": {
+          "$type": "number",
+          "$value": 0,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-popover-contact-x)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/0"
+            }
+          }
+        },
+        "y": {
+          "$type": "number",
+          "$value": 4,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-popover-contact-y)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/4"
+            }
+          }
+        },
+        "blur": {
+          "$type": "number",
+          "$value": 18,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-popover-contact-blur)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/18"
+            }
+          }
+        },
+        "spread": {
+          "$type": "number",
+          "$value": -3,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-popover-contact-spread)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/-3"
+            }
+          }
+        }
+      },
+      "ambient": {
+        "x": {
+          "$type": "number",
+          "$value": 0,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-popover-ambient-x)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/0"
+            }
+          }
+        },
+        "y": {
+          "$type": "number",
+          "$value": 16,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-popover-ambient-y)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/16"
+            }
+          }
+        },
+        "blur": {
+          "$type": "number",
+          "$value": 56,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-popover-ambient-blur)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/56"
+            }
+          }
+        },
+        "spread": {
+          "$type": "number",
+          "$value": -10,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-popover-ambient-spread)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/-10"
+            }
+          }
+        }
+      }
+    },
+    "modal": {
+      "contact": {
+        "x": {
+          "$type": "number",
+          "$value": 0,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-modal-contact-x)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/0"
+            }
+          }
+        },
+        "y": {
+          "$type": "number",
+          "$value": 6,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-modal-contact-y)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/6"
+            }
+          }
+        },
+        "blur": {
+          "$type": "number",
+          "$value": 24,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-modal-contact-blur)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/24"
+            }
+          }
+        },
+        "spread": {
+          "$type": "number",
+          "$value": -4,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-modal-contact-spread)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/-4"
+            }
+          }
+        }
+      },
+      "ambient": {
+        "x": {
+          "$type": "number",
+          "$value": 0,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-modal-ambient-x)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/0"
+            }
+          }
+        },
+        "y": {
+          "$type": "number",
+          "$value": 24,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-modal-ambient-y)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/24"
+            }
+          }
+        },
+        "blur": {
+          "$type": "number",
+          "$value": 80,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-modal-ambient-blur)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/80"
+            }
+          }
+        },
+        "spread": {
+          "$type": "number",
+          "$value": -12,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-number-elevation-modal-ambient-spread)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Primitives",
+              "targetVariableName": "dimension/-12"
+            }
+          }
+        }
+      }
+    }
+  },
+  "button": {
+    "inset": {
+      "inline": {
+        "xs": {
+          "$type": "number",
+          "$value": 6,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-inset-inline-xs)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Density",
+              "targetVariableName": "space/detail/6"
+            }
+          },
+          "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+        },
+        "sm": {
+          "$type": "number",
+          "$value": 8,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-inset-inline-sm)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Density",
+              "targetVariableName": "space/control/inset-x/sm"
+            }
+          },
+          "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+        },
+        "md": {
+          "$type": "number",
+          "$value": 12,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-inset-inline-md)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Density",
+              "targetVariableName": "space/control/inset-x/md"
+            }
+          },
+          "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+        },
+        "lg": {
+          "$type": "number",
+          "$value": 16,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-inset-inline-lg)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Density",
+              "targetVariableName": "space/control/inset-x/lg"
+            }
+          },
+          "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+        },
+        "xl": {
+          "$type": "number",
+          "$value": 20,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-inset-inline-xl)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Density",
+              "targetVariableName": "space/control/inset-x/xl"
+            }
+          },
+          "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+        }
+      }
+    },
+    "height": {
+      "xs": {
+        "$type": "number",
+        "$value": 22,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-button-height-xs)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/control/xs"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 24,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-button-height-sm)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/control/sm"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "md": {
+        "$type": "number",
+        "$value": 32,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-button-height-md)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/control/md"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 36,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-button-height-lg)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/control/lg"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "xl": {
+        "$type": "number",
+        "$value": 44,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-button-height-xl)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/control/xl"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      }
+    },
+    "secondary": {
+      "background": {
+        "normal": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8991073255,
+              0.8991073255,
+              0.8991073255
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-secondary-background-normal)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "secondary/neutral/background/normal"
+            }
+          },
+          "$description": "Компонентная роль button/secondary/background/normal."
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8673824811,
+              0.8673824811,
+              0.8673824811
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-secondary-background-hover)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "secondary/neutral/background/hover"
+            }
+          },
+          "$description": "Компонентная роль button/secondary/background/hover."
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.836553596,
+              0.836553596,
+              0.836553596
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-secondary-background-pressed)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "secondary/neutral/background/pressed"
+            }
+          },
+          "$description": "Компонентная роль button/secondary/background/pressed."
+        }
+      },
+      "content": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2457477303,
+            0.2457477303,
+            0.2457477303
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-button-secondary-content)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "secondary/neutral/content"
+          }
+        },
+        "$description": "Компонентная роль button/secondary/content."
+      }
+    },
+    "primary": {
+      "background": {
+        "normal": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1418796635,
+              0.1418796635,
+              0.1418796635
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-primary-background-normal)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "primary/background/normal"
+            }
+          },
+          "$description": "Компонентная роль button/primary/background/normal."
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1861108446,
+              0.1861108446,
+              0.1861108446
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-primary-background-hover)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "primary/background/hover"
+            }
+          },
+          "$description": "Компонентная роль button/primary/background/hover."
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2263616092,
+              0.2263616092,
+              0.2263616092
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-primary-background-pressed)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "primary/background/pressed"
+            }
+          },
+          "$description": "Компонентная роль button/primary/background/pressed."
+        }
+      },
+      "content": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-button-primary-content)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "primary/content"
+          }
+        },
+        "$description": "Компонентная роль button/primary/content."
+      }
+    },
+    "disabled": {
+      "background": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9317619717,
+            0.9317619717,
+            0.9317619717
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-button-disabled-background)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "disabled/background"
+          }
+        },
+        "$description": "Компонентная роль button/disabled/background."
+      },
+      "content": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3992640547,
+            0.3992640547,
+            0.3992640547
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-button-disabled-content)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "disabled/content"
+          }
+        },
+        "$description": "Компонентная роль button/disabled/content."
+      }
+    },
+    "accent-secondary": {
+      "neutral": {
+        "background": {
+          "normal": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.8991073255,
+                0.8991073255,
+                0.8991073255
+              ],
+              "alpha": 1
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-neutral-background-normal)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/neutral/secondary/background/normal"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/neutral/background/normal."
+          },
+          "hover": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.8673824811,
+                0.8673824811,
+                0.8673824811
+              ],
+              "alpha": 1
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-neutral-background-hover)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/neutral/secondary/background/hover"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/neutral/background/hover."
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.836553596,
+                0.836553596,
+                0.836553596
+              ],
+              "alpha": 1
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-neutral-background-pressed)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/neutral/secondary/background/pressed"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/neutral/background/pressed."
+          }
+        },
+        "content": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2457477303,
+              0.2457477303,
+              0.2457477303
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-accent-secondary-neutral-content)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/neutral/secondary/content"
+            }
+          },
+          "$description": "Компонентная роль button/accent-secondary/neutral/content."
+        }
+      },
+      "blue": {
+        "background": {
+          "normal": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                1e-10,
+                0.4382018359,
+                0.8419993445
+              ],
+              "alpha": 0.3
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-blue-background-normal)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/blue/secondary/background/normal"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/blue/background/normal."
+          },
+          "hover": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                2e-10,
+                0.3298650131,
+                0.6449642729
+              ],
+              "alpha": 0.32
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-blue-background-hover)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/blue/secondary/background/hover"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/blue/background/hover."
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                2e-10,
+                0.3298650131,
+                0.6449642729
+              ],
+              "alpha": 0.32
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-blue-background-pressed)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/blue/secondary/background/pressed"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/blue/background/pressed."
+          }
+        },
+        "content": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              2e-10,
+              0.2239279564,
+              0.4522937199
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-accent-secondary-blue-content)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/blue/secondary/content"
+            }
+          },
+          "$description": "Компонентная роль button/accent-secondary/blue/content."
+        }
+      },
+      "green": {
+        "background": {
+          "normal": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0.4684285202,
+                0.2741307741
+              ],
+              "alpha": 0.29
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-green-background-normal)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/green/secondary/background/normal"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/green/background/normal."
+          },
+          "hover": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                2e-10,
+                0.3720744805,
+                0.2135435527
+              ],
+              "alpha": 0.32
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-green-background-hover)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/green/secondary/background/hover"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/green/background/hover."
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                2e-10,
+                0.3720744805,
+                0.2135435527
+              ],
+              "alpha": 0.32
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-green-background-pressed)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/green/secondary/background/pressed"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/green/background/pressed."
+          }
+        },
+        "content": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0.2468502349,
+              0.1348028052
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-accent-secondary-green-content)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/green/secondary/content"
+            }
+          },
+          "$description": "Компонентная роль button/accent-secondary/green/content."
+        }
+      },
+      "orange": {
+        "background": {
+          "normal": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.6515662608,
+                0.3074066104,
+                1e-10
+              ],
+              "alpha": 0.29
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-orange-background-normal)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/orange/secondary/background/normal"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/orange/background/normal."
+          },
+          "hover": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.5285433157,
+                0.244306614,
+                2e-10
+              ],
+              "alpha": 0.32
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-orange-background-hover)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/orange/secondary/background/hover"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/orange/background/hover."
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.5285433157,
+                0.244306614,
+                2e-10
+              ],
+              "alpha": 0.32
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-orange-background-pressed)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/orange/secondary/background/pressed"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/orange/background/pressed."
+          }
+        },
+        "content": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.3679185272,
+              0.1619201651,
+              2e-10
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-accent-secondary-orange-content)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/orange/secondary/content"
+            }
+          },
+          "$description": "Компонентная роль button/accent-secondary/orange/content."
+        }
+      },
+      "red": {
+        "background": {
+          "normal": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.6420313322,
+                2e-10,
+                0.0845595613
+              ],
+              "alpha": 0.21
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-red-background-normal)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/red/secondary/background/normal"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/red/background/normal."
+          },
+          "hover": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.5935094255,
+                3e-10,
+                0.0748445088
+              ],
+              "alpha": 0.26
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-red-background-hover)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/red/secondary/background/hover"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/red/background/hover."
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.5935094255,
+                3e-10,
+                0.0748445088
+              ],
+              "alpha": 0.26
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-red-background-pressed)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/red/secondary/background/pressed"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/red/background/pressed."
+          }
+        },
+        "content": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.4501680938,
+              0,
+              0.046144718
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-accent-secondary-red-content)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/red/secondary/content"
+            }
+          },
+          "$description": "Компонентная роль button/accent-secondary/red/content."
+        }
+      },
+      "pink": {
+        "background": {
+          "normal": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.5432484406,
+                3e-10,
+                0.4164651136
+              ],
+              "alpha": 0.21
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-pink-background-normal)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/pink/secondary/background/normal"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/pink/background/normal."
+          },
+          "hover": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.4110163946,
+                1e-10,
+                0.3122562393
+              ],
+              "alpha": 0.25
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-pink-background-hover)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/pink/secondary/background/hover"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/pink/background/hover."
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.4110163946,
+                1e-10,
+                0.3122562393
+              ],
+              "alpha": 0.25
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-pink-background-pressed)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/pink/secondary/background/pressed"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/pink/background/pressed."
+          }
+        },
+        "content": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.4110163946,
+              1e-10,
+              0.3122562393
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-accent-secondary-pink-content)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/pink/secondary/content"
+            }
+          },
+          "$description": "Компонентная роль button/accent-secondary/pink/content."
+        }
+      },
+      "purple": {
+        "background": {
+          "normal": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.3246109719,
+                0,
+                0.5068983127
+              ],
+              "alpha": 0.2
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-purple-background-normal)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/purple/secondary/background/normal"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/purple/background/normal."
+          },
+          "hover": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.2205372925,
+                0,
+                0.3528489592
+              ],
+              "alpha": 0.24
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-purple-background-hover)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/purple/secondary/background/hover"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/purple/background/hover."
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.2205372925,
+                0,
+                0.3528489592
+              ],
+              "alpha": 0.24
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-component-button-accent-secondary-purple-background-pressed)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Semantic",
+                "targetVariableName": "color/purple/secondary/background/pressed"
+              }
+            },
+            "$description": "Компонентная роль button/accent-secondary/purple/background/pressed."
+          }
+        },
+        "content": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.3246109719,
+              0,
+              0.5068983127
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-button-accent-secondary-purple-content)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/purple/secondary/content"
+            }
+          },
+          "$description": "Компонентная роль button/accent-secondary/purple/content."
+        }
+      }
+    }
+  },
+  "input": {
+    "inset": {
+      "inline": {
+        "xs": {
+          "$type": "number",
+          "$value": 6,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-input-inset-inline-xs)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Density",
+              "targetVariableName": "space/detail/6"
+            }
+          },
+          "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+        },
+        "sm": {
+          "$type": "number",
+          "$value": 8,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-input-inset-inline-sm)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Density",
+              "targetVariableName": "space/control/inset-x/sm"
+            }
+          },
+          "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+        },
+        "md": {
+          "$type": "number",
+          "$value": 12,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-input-inset-inline-md)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Density",
+              "targetVariableName": "space/control/inset-x/md"
+            }
+          },
+          "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+        },
+        "lg": {
+          "$type": "number",
+          "$value": 16,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-input-inset-inline-lg)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Density",
+              "targetVariableName": "space/control/inset-x/lg"
+            }
+          },
+          "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+        },
+        "xl": {
+          "$type": "number",
+          "$value": 20,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-input-inset-inline-xl)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Density",
+              "targetVariableName": "space/control/inset-x/xl"
+            }
+          },
+          "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+        }
+      }
+    },
+    "height": {
+      "xs": {
+        "$type": "number",
+        "$value": 22,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-input-height-xs)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/control/xs"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 24,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-input-height-sm)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/control/sm"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "md": {
+        "$type": "number",
+        "$value": 32,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-input-height-md)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/control/md"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 36,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-input-height-lg)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/control/lg"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "xl": {
+        "$type": "number",
+        "$value": 44,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-input-height-xl)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/control/xl"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      }
+    },
+    "inside": {
+      "height": {
+        "xs": {
+          "$type": "number",
+          "$value": 42,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-input-inside-height-xs)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Density",
+              "targetVariableName": "size/inside/xs"
+            }
+          },
+          "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+        },
+        "sm": {
+          "$type": "number",
+          "$value": 44,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-input-inside-height-sm)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Density",
+              "targetVariableName": "size/inside/sm"
+            }
+          },
+          "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+        },
+        "md": {
+          "$type": "number",
+          "$value": 52,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-input-inside-height-md)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Density",
+              "targetVariableName": "size/inside/md"
+            }
+          },
+          "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+        },
+        "lg": {
+          "$type": "number",
+          "$value": 56,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-input-inside-height-lg)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Density",
+              "targetVariableName": "size/inside/lg"
+            }
+          },
+          "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+        },
+        "xl": {
+          "$type": "number",
+          "$value": 64,
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-input-inside-height-xl)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Density",
+              "targetVariableName": "size/inside/xl"
+            }
+          },
+          "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+        }
+      }
+    },
+    "background": {
+      "normal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8991073255,
+            0.8991073255,
+            0.8991073255
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-input-background-normal)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "secondary/neutral/background/normal"
+          }
+        },
+        "$description": "Компонентная роль input/background/normal."
+      },
+      "hover": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8673824811,
+            0.8673824811,
+            0.8673824811
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-input-background-hover)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "secondary/neutral/background/hover"
+          }
+        },
+        "$description": "Компонентная роль input/background/hover."
+      },
+      "pressed": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.836553596,
+            0.836553596,
+            0.836553596
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-input-background-pressed)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "secondary/neutral/background/pressed"
+          }
+        },
+        "$description": "Компонентная роль input/background/pressed."
+      }
+    },
+    "content": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1167714979,
+          0.1167714979,
+          0.1167714979
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-component-input-content)"
+          }
+        },
+        "com.figma.aliasData": {
+          "targetVariableSetName": "Sloy UI · Semantic",
+          "targetVariableName": "content/primary"
+        }
+      },
+      "$description": "Компонентная роль input/content."
+    },
+    "disabled": {
+      "background": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9317619717,
+            0.9317619717,
+            0.9317619717
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-input-disabled-background)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "disabled/background"
+          }
+        },
+        "$description": "Компонентная роль input/disabled/background."
+      },
+      "content": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3992640547,
+            0.3992640547,
+            0.3992640547
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-input-disabled-content)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "disabled/content"
+          }
+        },
+        "$description": "Компонентная роль input/disabled/content."
+      }
+    }
+  },
+  "select": {
+    "height": {
+      "xs": {
+        "$type": "number",
+        "$value": 22,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-select-height-xs)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/control/xs"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 24,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-select-height-sm)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/control/sm"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "md": {
+        "$type": "number",
+        "$value": 32,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-select-height-md)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/control/md"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 36,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-select-height-lg)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/control/lg"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "xl": {
+        "$type": "number",
+        "$value": 44,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-select-height-xl)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/control/xl"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      }
+    }
+  },
+  "card": {
+    "padding": {
+      "$type": "number",
+      "$value": 16,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-component-card-padding)"
+          }
+        },
+        "com.figma.aliasData": {
+          "targetVariableSetName": "Sloy UI · Density",
+          "targetVariableName": "space/4"
+        }
+      },
+      "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+    },
+    "background": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8991073255,
+          0.8991073255,
+          0.8991073255
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-component-card-background)"
+          }
+        },
+        "com.figma.aliasData": {
+          "targetVariableSetName": "Sloy UI · Semantic",
+          "targetVariableName": "surface/block"
+        }
+      },
+      "$description": "Компонентная роль card/background."
+    }
+  },
+  "menu": {
+    "item": {
+      "padding": {
+        "$type": "number",
+        "$value": 12,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-menu-item-padding)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "space/3"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      }
+    }
+  },
+  "floating": {
+    "inset": {
+      "$type": "number",
+      "$value": 6,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-component-floating-inset)"
+          }
+        },
+        "com.figma.aliasData": {
+          "targetVariableSetName": "Sloy UI · Density",
+          "targetVariableName": "space/detail/6"
+        }
+      },
+      "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+    }
+  },
+  "tree": {
+    "row": {
+      "height": {
+        "$type": "number",
+        "$value": 32,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-tree-row-height)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/control/md"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      }
+    }
+  },
+  "avatar": {
+    "size": {
+      "xs": {
+        "$type": "number",
+        "$value": 22,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-avatar-size-xs)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/avatar/size/xs"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 28,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-avatar-size-sm)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/avatar/size/sm"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "md": {
+        "$type": "number",
+        "$value": 32,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-avatar-size-md)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/avatar/size/md"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 40,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-avatar-size-lg)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/avatar/size/lg"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "xl": {
+        "$type": "number",
+        "$value": 48,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-avatar-size-xl)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/avatar/size/xl"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      }
+    }
+  },
+  "icon-box": {
+    "size": {
+      "xs": {
+        "$type": "number",
+        "$value": 18,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-icon-box-size-xs)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/icon-box/size/xs"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 24,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-icon-box-size-sm)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/icon-box/size/sm"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "md": {
+        "$type": "number",
+        "$value": 32,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-icon-box-size-md)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/icon-box/size/md"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 48,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-icon-box-size-lg)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/icon-box/size/lg"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "xl": {
+        "$type": "number",
+        "$value": 64,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-icon-box-size-xl)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/icon-box/size/xl"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      }
+    }
+  },
+  "switch": {
+    "height": {
+      "xs": {
+        "$type": "number",
+        "$value": 16,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-switch-height-xs)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/switch/height/xs"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 20,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-switch-height-sm)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/switch/height/sm"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "md": {
+        "$type": "number",
+        "$value": 24,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-switch-height-md)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/switch/height/md"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 28,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-switch-height-lg)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/switch/height/lg"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "xl": {
+        "$type": "number",
+        "$value": 32,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-switch-height-xl)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/switch/height/xl"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      }
+    },
+    "width": {
+      "xs": {
+        "$type": "number",
+        "$value": 28,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-switch-width-xs)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/switch/width/xs"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 34,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-switch-width-sm)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/switch/width/sm"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "md": {
+        "$type": "number",
+        "$value": 42,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-switch-width-md)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/switch/width/md"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 50,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-switch-width-lg)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/switch/width/lg"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "xl": {
+        "$type": "number",
+        "$value": 56,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-switch-width-xl)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/switch/width/xl"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      }
+    },
+    "inset": {
+      "xs": {
+        "$type": "number",
+        "$value": 2,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-switch-inset-xs)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/switch/inset/xs"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 3,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-switch-inset-sm)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/switch/inset/sm"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "md": {
+        "$type": "number",
+        "$value": 3,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-switch-inset-md)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/switch/inset/md"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 4,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-switch-inset-lg)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/switch/inset/lg"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      },
+      "xl": {
+        "$type": "number",
+        "$value": 4,
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-switch-inset-xl)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Density",
+            "targetVariableName": "size/switch/inset/xl"
+          }
+        },
+        "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
+      }
+    }
+  },
+  "tag": {
+    "disabled": {
+      "background": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9317619717,
+            0.9317619717,
+            0.9317619717
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-tag-disabled-background)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "disabled/background"
+          }
+        },
+        "$description": "Компонентная роль tag/disabled/background."
+      },
+      "content": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3992640547,
+            0.3992640547,
+            0.3992640547
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-tag-disabled-content)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "disabled/content"
+          }
+        },
+        "$description": "Компонентная роль tag/disabled/content."
+      }
+    },
+    "neutral": {
+      "background": {
+        "normal": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8991073255,
+              0.8991073255,
+              0.8991073255
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-neutral-background-normal)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/neutral/secondary/background/normal"
+            }
+          },
+          "$description": "Компонентная роль tag/neutral/background/normal."
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8673824811,
+              0.8673824811,
+              0.8673824811
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-neutral-background-hover)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/neutral/secondary/background/hover"
+            }
+          },
+          "$description": "Компонентная роль tag/neutral/background/hover."
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.836553596,
+              0.836553596,
+              0.836553596
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-neutral-background-pressed)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/neutral/secondary/background/pressed"
+            }
+          },
+          "$description": "Компонентная роль tag/neutral/background/pressed."
+        }
+      },
+      "border": {
+        "normal": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.836553596,
+              0.836553596,
+              0.836553596
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-neutral-border-normal)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/neutral/secondary/border/normal"
+            }
+          },
+          "$description": "Компонентная роль tag/neutral/border/normal."
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8065875574,
+              0.8065875574,
+              0.8065875574
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-neutral-border-hover)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/neutral/secondary/border/hover"
+            }
+          },
+          "$description": "Компонентная роль tag/neutral/border/hover."
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7491148896,
+              0.7491148896,
+              0.7491148896
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-neutral-border-pressed)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/neutral/secondary/border/pressed"
+            }
+          },
+          "$description": "Компонентная роль tag/neutral/border/pressed."
+        }
+      },
+      "content": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2457477303,
+            0.2457477303,
+            0.2457477303
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-tag-neutral-content)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "color/neutral/secondary/content"
+          }
+        },
+        "$description": "Компонентная роль tag/neutral/content."
+      }
+    },
+    "blue": {
+      "background": {
+        "normal": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1e-10,
+              0.4382018359,
+              0.8419993445
+            ],
+            "alpha": 0.3
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-blue-background-normal)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/blue/secondary/background/normal"
+            }
+          },
+          "$description": "Компонентная роль tag/blue/background/normal."
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              2e-10,
+              0.3298650131,
+              0.6449642729
+            ],
+            "alpha": 0.32
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-blue-background-hover)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/blue/secondary/background/hover"
+            }
+          },
+          "$description": "Компонентная роль tag/blue/background/hover."
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              2e-10,
+              0.3298650131,
+              0.6449642729
+            ],
+            "alpha": 0.32
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-blue-background-pressed)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/blue/secondary/background/pressed"
+            }
+          },
+          "$description": "Компонентная роль tag/blue/background/pressed."
+        }
+      },
+      "border": {
+        "normal": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              2e-10,
+              0.3838601889,
+              0.7431667405
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-blue-border-normal)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/blue/secondary/border/normal"
+            }
+          },
+          "$description": "Компонентная роль tag/blue/border/normal."
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              2e-10,
+              0.3838601889,
+              0.7431667405
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-blue-border-hover)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/blue/secondary/border/hover"
+            }
+          },
+          "$description": "Компонентная роль tag/blue/border/hover."
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              2e-10,
+              0.3838601889,
+              0.7431667405
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-blue-border-pressed)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/blue/secondary/border/pressed"
+            }
+          },
+          "$description": "Компонентная роль tag/blue/border/pressed."
+        }
+      },
+      "content": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            2e-10,
+            0.2239279564,
+            0.4522937199
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-tag-blue-content)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "color/blue/secondary/content"
+          }
+        },
+        "$description": "Компонентная роль tag/blue/content."
+      }
+    },
+    "green": {
+      "background": {
+        "normal": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0.4684285202,
+              0.2741307741
+            ],
+            "alpha": 0.29
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-green-background-normal)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/green/secondary/background/normal"
+            }
+          },
+          "$description": "Компонентная роль tag/green/background/normal."
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              2e-10,
+              0.3720744805,
+              0.2135435527
+            ],
+            "alpha": 0.32
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-green-background-hover)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/green/secondary/background/hover"
+            }
+          },
+          "$description": "Компонентная роль tag/green/background/hover."
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              2e-10,
+              0.3720744805,
+              0.2135435527
+            ],
+            "alpha": 0.32
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-green-background-pressed)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/green/secondary/background/pressed"
+            }
+          },
+          "$description": "Компонентная роль tag/green/background/pressed."
+        }
+      },
+      "border": {
+        "normal": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0.4684285202,
+              0.2741307741
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-green-border-normal)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/green/secondary/border/normal"
+            }
+          },
+          "$description": "Компонентная роль tag/green/border/normal."
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0.4684285202,
+              0.2741307741
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-green-border-hover)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/green/secondary/border/hover"
+            }
+          },
+          "$description": "Компонентная роль tag/green/border/hover."
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0.4684285202,
+              0.2741307741
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-green-border-pressed)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/green/secondary/border/pressed"
+            }
+          },
+          "$description": "Компонентная роль tag/green/border/pressed."
+        }
+      },
+      "content": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0.2468502349,
+            0.1348028052
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-tag-green-content)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "color/green/secondary/content"
+          }
+        },
+        "$description": "Компонентная роль tag/green/content."
+      }
+    },
+    "orange": {
+      "background": {
+        "normal": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6515662608,
+              0.3074066104,
+              1e-10
+            ],
+            "alpha": 0.29
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-orange-background-normal)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/orange/secondary/background/normal"
+            }
+          },
+          "$description": "Компонентная роль tag/orange/background/normal."
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5285433157,
+              0.244306614,
+              2e-10
+            ],
+            "alpha": 0.32
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-orange-background-hover)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/orange/secondary/background/hover"
+            }
+          },
+          "$description": "Компонентная роль tag/orange/background/hover."
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5285433157,
+              0.244306614,
+              2e-10
+            ],
+            "alpha": 0.32
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-orange-background-pressed)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/orange/secondary/background/pressed"
+            }
+          },
+          "$description": "Компонентная роль tag/orange/background/pressed."
+        }
+      },
+      "border": {
+        "normal": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6104123421,
+              0.2862982544,
+              2e-10
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-orange-border-normal)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/orange/secondary/border/normal"
+            }
+          },
+          "$description": "Компонентная роль tag/orange/border/normal."
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6104123421,
+              0.2862982544,
+              2e-10
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-orange-border-hover)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/orange/secondary/border/hover"
+            }
+          },
+          "$description": "Компонентная роль tag/orange/border/hover."
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6104123421,
+              0.2862982544,
+              2e-10
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-orange-border-pressed)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/orange/secondary/border/pressed"
+            }
+          },
+          "$description": "Компонентная роль tag/orange/border/pressed."
+        }
+      },
+      "content": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3679185272,
+            0.1619201651,
+            2e-10
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-tag-orange-content)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "color/orange/secondary/content"
+          }
+        },
+        "$description": "Компонентная роль tag/orange/content."
+      }
+    },
+    "red": {
+      "background": {
+        "normal": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6420313322,
+              2e-10,
+              0.0845595613
+            ],
+            "alpha": 0.21
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-red-background-normal)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/red/secondary/background/normal"
+            }
+          },
+          "$description": "Компонентная роль tag/red/background/normal."
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5935094255,
+              3e-10,
+              0.0748445088
+            ],
+            "alpha": 0.26
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-red-background-hover)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/red/secondary/background/hover"
+            }
+          },
+          "$description": "Компонентная роль tag/red/background/hover."
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5935094255,
+              3e-10,
+              0.0748445088
+            ],
+            "alpha": 0.26
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-red-background-pressed)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/red/secondary/background/pressed"
+            }
+          },
+          "$description": "Компонентная роль tag/red/background/pressed."
+        }
+      },
+      "border": {
+        "normal": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7398223188,
+              1e-10,
+              0.1041392653
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-red-border-normal)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/red/secondary/border/normal"
+            }
+          },
+          "$description": "Компонентная роль tag/red/border/normal."
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7398223188,
+              1e-10,
+              0.1041392653
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-red-border-hover)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/red/secondary/border/hover"
+            }
+          },
+          "$description": "Компонентная роль tag/red/border/hover."
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7398223188,
+              1e-10,
+              0.1041392653
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-red-border-pressed)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/red/secondary/border/pressed"
+            }
+          },
+          "$description": "Компонентная роль tag/red/border/pressed."
+        }
+      },
+      "content": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4501680938,
+            0,
+            0.046144718
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-tag-red-content)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "color/red/secondary/content"
+          }
+        },
+        "$description": "Компонентная роль tag/red/content."
+      }
+    },
+    "pink": {
+      "background": {
+        "normal": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5432484406,
+              3e-10,
+              0.4164651136
+            ],
+            "alpha": 0.21
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-pink-background-normal)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/pink/secondary/background/normal"
+            }
+          },
+          "$description": "Компонентная роль tag/pink/background/normal."
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.4110163946,
+              1e-10,
+              0.3122562393
+            ],
+            "alpha": 0.25
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-pink-background-hover)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/pink/secondary/background/hover"
+            }
+          },
+          "$description": "Компонентная роль tag/pink/background/hover."
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.4110163946,
+              1e-10,
+              0.3122562393
+            ],
+            "alpha": 0.25
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-pink-background-pressed)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/pink/secondary/background/pressed"
+            }
+          },
+          "$description": "Компонентная роль tag/pink/background/pressed."
+        }
+      },
+      "border": {
+        "normal": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6782217452,
+              3e-10,
+              0.5228343075
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-pink-border-normal)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/pink/secondary/border/normal"
+            }
+          },
+          "$description": "Компонентная роль tag/pink/border/normal."
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6782217452,
+              3e-10,
+              0.5228343075
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-pink-border-hover)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/pink/secondary/border/hover"
+            }
+          },
+          "$description": "Компонентная роль tag/pink/border/hover."
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6782217452,
+              3e-10,
+              0.5228343075
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-pink-border-pressed)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/pink/secondary/border/pressed"
+            }
+          },
+          "$description": "Компонентная роль tag/pink/border/pressed."
+        }
+      },
+      "content": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4110163946,
+            1e-10,
+            0.3122562393
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-tag-pink-content)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "color/pink/secondary/content"
+          }
+        },
+        "$description": "Компонентная роль tag/pink/content."
+      }
+    },
+    "purple": {
+      "background": {
+        "normal": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.3246109719,
+              0,
+              0.5068983127
+            ],
+            "alpha": 0.2
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-purple-background-normal)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/purple/secondary/background/normal"
+            }
+          },
+          "$description": "Компонентная роль tag/purple/background/normal."
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2205372925,
+              0,
+              0.3528489592
+            ],
+            "alpha": 0.24
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-purple-background-hover)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/purple/secondary/background/hover"
+            }
+          },
+          "$description": "Компонентная роль tag/purple/background/hover."
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2205372925,
+              0,
+              0.3528489592
+            ],
+            "alpha": 0.24
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-purple-background-pressed)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/purple/secondary/background/pressed"
+            }
+          },
+          "$description": "Компонентная роль tag/purple/background/pressed."
+        }
+      },
+      "border": {
+        "normal": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5422730198,
+              2e-10,
+              0.8290806166
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-purple-border-normal)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/purple/secondary/border/normal"
+            }
+          },
+          "$description": "Компонентная роль tag/purple/border/normal."
+        },
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5422730198,
+              2e-10,
+              0.8290806166
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-purple-border-hover)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/purple/secondary/border/hover"
+            }
+          },
+          "$description": "Компонентная роль tag/purple/border/hover."
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5422730198,
+              2e-10,
+              0.8290806166
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-component-tag-purple-border-pressed)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Semantic",
+              "targetVariableName": "color/purple/secondary/border/pressed"
+            }
+          },
+          "$description": "Компонентная роль tag/purple/border/pressed."
+        }
+      },
+      "content": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3246109719,
+            0,
+            0.5068983127
+          ],
+          "alpha": 1
+        },
+        "$extensions": {
+          "com.sloyui.variable": {
+            "scopes": [],
+            "visibility": "internal",
+            "codeSyntax": {
+              "WEB": "var(--cap-component-tag-purple-content)"
+            }
+          },
+          "com.figma.aliasData": {
+            "targetVariableSetName": "Sloy UI · Semantic",
+            "targetVariableName": "color/purple/secondary/content"
+          }
+        },
+        "$description": "Компонентная роль tag/purple/content."
+      }
+    }
+  }
+}

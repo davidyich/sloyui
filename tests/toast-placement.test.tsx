@@ -83,7 +83,13 @@ it('bounds expanded local stacks by their measured containing block', () => {
     const view = render(<div data-test-frame="true"><ToastStack items={items} expanded position="bottom-center" scope="container" onDismiss={() => {}}/></div>);
     const region = view.container.querySelector<HTMLElement>('.cap-toast-stack')!;
     expect(region.style.maxHeight).toBe('148px');
-    expect(region.querySelector<HTMLElement>('.cap-toast-stack-viewport')!.style.maxHeight).toBe('116px');
+    // The compact count control reserves 28px, including its row gap.
+    expect(region.querySelector<HTMLElement>('.cap-toast-stack-viewport')!.style.maxHeight).toBe('120px');
+    view.rerender(<div data-test-frame="true"><ToastStack items={items} expanded showExpandHint={false} position="bottom-center" scope="container" onDismiss={() => {}}/></div>);
+    // An icon-only expand action is outside the grid and consumes no scrolling space.
+    expect(region.querySelector<HTMLElement>('.cap-toast-stack-viewport')!.style.maxHeight).toBe('148px');
+    view.rerender(<div data-test-frame="true"><ToastStack items={[items[0]]} expanded position="bottom-center" scope="container" onDismiss={() => {}}/></div>);
+    expect(region.querySelector<HTMLElement>('.cap-toast-stack-viewport')!.style.maxHeight).toBe('148px');
   } finally {
     if (parentDescriptor) Object.defineProperty(HTMLElement.prototype, 'offsetParent', parentDescriptor);
     else delete (HTMLElement.prototype as { offsetParent?: Element }).offsetParent;
@@ -112,7 +118,7 @@ it('measures the mounted portal and remeasures after switching placement scope',
 
 it('uses the front height for collapsed shells while retaining each natural expanded height', () => {
   const descriptor = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetHeight');
-  Object.defineProperty(HTMLElement.prototype, 'offsetHeight', { configurable: true, get() { return this.dataset.toastId === 'rear' ? 180 : this.dataset.toastId === 'front' ? 80 : 0; } });
+  Object.defineProperty(HTMLElement.prototype, 'offsetHeight', { configurable: true, get() { const toastId = this.dataset.toastId ?? (this.closest('[data-toast-id]') as HTMLElement | null)?.dataset.toastId; return toastId === 'rear' ? 180 : toastId === 'front' ? 80 : 0; } });
   try {
     const props = { items: [{ id: 'rear', title: 'Long title', description: 'A longer multiline description', duration: Infinity }, { id: 'front', title: 'Short', duration: Infinity }], onDismiss: () => {}, position: 'inline' as const };
     const view = render(<ToastStack {...props} expanded={false}/>);

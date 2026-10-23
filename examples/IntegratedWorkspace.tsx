@@ -55,7 +55,7 @@ export function IntegratedWorkspace() {
   const [bars, setBars] = useState([{ label: 'План', value: 3 }, { label: 'Текст', value: 2 }, { label: 'Источники', value: 5 }]);
   const notify = (title: string) => setToasts(current => [...current, { id: `${Date.now()}-${current.length}`, title, description: 'Состояние страницы обновлено', duration: 5000 }]);
 
-  return <main data-accent="teal" style={{ display: 'grid', gap: 'var(--cap-space-6)', maxWidth: 1080, margin: '0 auto', padding: 'var(--cap-space-6)', color: 'var(--cap-content-primary)' }}>
+  return <main data-accent="green" style={{ display: 'grid', gap: 'var(--cap-space-6)', maxWidth: 1080, margin: '0 auto', padding: 'var(--cap-space-6)', color: 'var(--cap-content-primary)' }}>
     <header><h1>Рабочая область проекта</h1><p>Контролы, данные и редактор работают от состояния приложения.</p></header>
     <section aria-label="Параметры проекта" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: 'var(--cap-space-4)' }}>
       <ComboBox label="Проект" options={[{ value: 'garden', label: 'Сад идей', aliases: ['личный'] }, { value: 'archive', label: 'Архив', disabled: true }]} value={project} onValueChange={setProject}/>

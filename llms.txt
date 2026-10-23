@@ -5,19 +5,28 @@ Read narrowly:
 - AGENTS.md — development and consumer invariants.
 - agent-manifest.json — only selected component records: exact props, defaults, variants, keyboard behavior, examples and related.
 - docs/component-guidelines.md — component choice, composition, behavior, content and catalogue maintenance.
-- docs/surface-context.md — semantic paint, independent context axes and CSS/Figma graph.
+- docs/surface-context.md — shared token graph v4, public roles, semantic paint and independent context axes.
 - docs/recipes.md — working compositions; examples/ProjectBoard.tsx and examples/WorkspaceV2.tsx are executable examples.
 - DESIGN.md — typography and visual language.
 - docs/instructions/*.md — optional project-specific instructions created in the local editor.
 - docs/github-tasks.md — GitHub Issues task workflow and verified Orca workspace links for davidyich/sloyui.
 
-These seven core files form the canonical instructions; avoid loading all at once. Identity: src/brand.json, exported as SLOY_UI. Independent palette generation: source/foundation.json and source/surface-rules.json. Licensing: THIRD_PARTY_NOTICES.md and licenses/. Local audit logs and private drafts do not belong in public distributions.
+These core files plus docs/catalog-maintenance.md and docs/github-tasks.md form the canonical instructions; avoid loading all at once. Identity: src/brand.json, exported as SLOY_UI. Independent palette generation: source/foundation.json and source/surface-rules.json. Licensing: THIRD_PARTY_NOTICES.md and licenses/. Local audit logs and private drafts do not belong in public distributions.
+
+Token consumers: figma/token-system-v4/source.json owns shared rules; graph.json is the canonical calculation graph and src/tokens/runtime-v4.json its runtime export. Default palette scope is neutral plus blue/green/orange/red/pink/purple, one opaque runtime ramp per hue; native export retains only referenced RGBA colors with whole-percent alpha. Surface is the native designer picker; Theme/Scheme route context. Native primitives contain whole-number FLOAT values only; composed COLOR alpha must not become fractional FLOAT variables or whole-layer opacity. Density/Radius/Borders inherit independently. See docs/surface-context.md for Custom background regeneration, true Invert and public role usage. Native export: figma/color-system-v2/build-native.mjs → native-graph.json. Current Figma status is mapped in figma/README.md.
+Palette Lab: figma/color-system-v2/editor/README.md maps pinned navigation, one shared ramp per accent, exact HEX/HSL anchors, interpolation/reset, project persistence and exports. It consumes the same generator as v4.
+
+Figma designer usage: figma/color-system-v2/designer-guide.md maps semantic roles to recipes; figma/controls/README.md records the reusable controls coverage and migration status. Use only Surface for ordinary color picking; set independent context modes on the outer frame and leave children on Auto.
+
+Figma target: E6Qw912qUU0h9JDplYzQsp (SloyUI V2). Historical files and node IDs are not current migration evidence. Read figma/README.md before native writes and docs/verification.md for actual checks/deployment. docs/consolidation-20261023.md records source precedence, backups and recovery checks. docs/components/<stable-id>.md gives component guidance; the catalogue edits the same revision-safe files.
 
 Import { Button, Tag, Dialog, ScrollArea } from 'sloyui';
 Import 'sloyui/styles.css' once. Fonts are opt-in via fonts.css.
-Set data-theme on html; theme/accent/surface/borders/radius/shadow inherit independently. Paint custom surfaces using --cap-surface-current. Portals preserve nearest context and establish floating.
+Set data-theme on html; theme/accent/surface/surface-scheme/borders/radius/density/shadow inherit independently. Canonical surfaces are shell/workspace/content/overlay/invert/glass, chosen by region purpose. Compatibility names page/base, inset/canvas, panel/raised and floating remain supported. Use .cap-surface + data-surface for a region; --cap-surface-block highlights a local block without resetting context. Standard/Dimmed select complete reference contexts in both themes; Inverted is a compatibility name for Dimmed. Invert is an opposite-polarity surface without a theme change; Glass uses protected translucent backings. Portals follow live axes and establish Overlay.
 
-npm run dev — local catalogue at http://127.0.0.1:4317. #ComponentName routes are case-sensitive. #agents edits real core/custom files with revision checks; production build is read-only.
+npm run dev — local catalogue at http://127.0.0.1:4317. #ComponentName routes are case-sensitive. #agents edits real core/custom files locally; production owner editing uses the revision-safe catalogue API. Guests can read only.
 npm run check — tokens, manifest, types, tests, package and demo build.
 npm run pack:kit and npm run verify:package — package validation.
 docs/verification.md records actual checks; CHANGELOG.md records release changes. Generated exports do not prove a live Figma update or deployment.
+
+Catalogue maintenance: docs/catalog-maintenance.md maps component/kit versions, owner editing, SQLite persistence and release checks. Component histories live in source/component-history.json, keyed by stable registry IDs; update changed components in the same task as their release.

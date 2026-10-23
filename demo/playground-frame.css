@@ -1,0 +1,17 @@
+.playground-frame { min-width:0; width:100%; }
+.playground-frame .playground-layout.cap-resizable-group { display:flex; align-items:stretch; gap:0; }
+.playground-frame .cap-resizable-panel { min-width:0; overflow:visible; }
+.playground-frame .playground-preview,.playground-frame .playground-settings { height:100%; box-sizing:border-box; }
+.playground-frame .playground-settings-resizer { flex-basis:12px; }
+.playground-frame .playground-controls { grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr)); }
+.playground-frame .playground-controls > * { min-width:0; }
+.playground-frame .playground-control-pair { grid-column:1/-1; display:flex; flex-wrap:wrap; align-items:end; gap:var(--cap-space-2); min-width:0; }
+.playground-frame .playground-control-pair > * { flex:1 1 96px; min-width:96px; max-width:100%; }
+.playground-frame .playground-control-pair > .playground-focus-token { flex:0 1 90px; min-width:64px; }
+.playground-frame[data-stacked] .playground-layout.cap-resizable-group { display:block; }
+.playground-frame[data-stacked] .playground-settings-resizer { display:none; }
+.playground-frame[data-stacked] .playground-settings-pane { margin-top:var(--cap-space-2); }
+.playground-frame[data-stacked] .playground-preview,.playground-frame[data-stacked] .playground-settings { height:auto; }
+
+/* Date labels include the formatted value and need the full settings row. */
+.playground-frame .playground-control-wide { grid-column:1/-1; min-width:0; }

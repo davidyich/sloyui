@@ -1,10 +1,19 @@
 import { useTranslate } from './locale.js';
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
 import { IconButton, cx, type Color } from './primitives.js';
+import { Tabs } from './layout.js';
 import { Select } from './forms.js';
-import { Menu, type MenuItem } from './overlays.js';
+import { TextWrap } from 'lucide-react';
+import { Menu, Tooltip, type MenuItem } from './overlays.js';
 
 export type CodeLanguage = 'text' | 'js' | 'ts' | 'tsx' | 'json' | 'css' | 'bash';
+export interface CodeBlockTab {
+  value: string;
+  label: string;
+  code: string;
+  language?: CodeLanguage;
+  disabled?: boolean;
+}
 export interface CodeBlockProps {
   children: string;
   label?: string;
@@ -26,12 +35,22 @@ export interface CodeBlockProps {
   /** Wrap long lines visually; copying always preserves the original source. */
   wrap?: boolean;
   onWrapChange?: (wrap: boolean) => void;
-  /** Context menu beside copy; built-in line wrapping precedes consumer actions. */
+  /** Shows wrap directly when it is the only action; otherwise opens a context menu. */
   showActionsMenu?: boolean;
   contextActions?: MenuItem[];
   /** Editable code slot. Children remain the exact source used by copy. */
   editor?: ReactNode;
   variant?: 'auto' | 'surface' | 'outline' | 'filled-outline';
+  /** Unified shares the body fill and omits the header divider. */
+  headerVariant?: 'separated' | 'unified';
+  /** Shared spacing for every header, frame and code body. */
+  density?: 'compact' | 'comfortable';
+  /** Unique values; disabled entries cannot be selected. Empty arrays use children. */
+  tabs?: CodeBlockTab[];
+  tab?: string;
+  defaultTab?: string;
+  onTabChange?: (value: string) => void;
+  tabsLabel?: string;
   className?: string;
 }
 type TokenKind = 'comment' | 'string' | 'number' | 'keyword' | 'tag' | 'property' | 'variable' | 'punctuation' | 'operator' | 'selector' | 'command' | 'boolean';
@@ -173,40 +192,54 @@ function NumberedCode({ source, language, wrap, label }: { source: string; langu
 }
 
 /** A small, dependency-free code surface with safe syntax tokens and optional copy/language controls. */
-export function CodeBlock({ children, label, filename, lineNumbers = false, language: controlledLanguage, defaultLanguage, onLanguageChange, showLanguageSelector = true, color, copyable = true, actions, wrap: controlledWrap, onWrapChange, showActionsMenu = copyable, contextActions = [], editor, variant = 'auto', className }: CodeBlockProps) {
+export function CodeBlock({ children, label, filename, lineNumbers = false, language: controlledLanguage, defaultLanguage, onLanguageChange, showLanguageSelector = true, color, copyable = true, actions, wrap: controlledWrap, onWrapChange, showActionsMenu = copyable, contextActions = [], editor, variant = 'auto', headerVariant = 'separated', density = 'compact', tabs = [], tab: controlledTab, defaultTab, onTabChange, tabsLabel, className }: CodeBlockProps) {
   const t = useTranslate();
 
+  const [internalTab, setInternalTab] = useState(defaultTab);
+  const enabledTabs = tabs.filter(item => !item.disabled);
+  const selectedTab = enabledTabs.find(item => item.value === (controlledTab ?? internalTab)) ?? enabledTabs[0];
+  const source = selectedTab?.code ?? children;
+  const changeTab = (value: string) => {
+    if (controlledTab === undefined) setInternalTab(value);
+    onTabChange?.(value);
+  };
   const title = filename ?? label;
   const [internalLanguage, setInternalLanguage] = useState<CodeLanguage>(defaultLanguage ?? inferLanguage(title));
   const [status, setStatus] = useState<'idle' | 'copied' | 'error'>('idle');
   const [internalWrap, setInternalWrap] = useState(false);
   const wrap = controlledWrap ?? internalWrap;
   const toggleWrap = () => { const next = !wrap; if (controlledWrap === undefined) setInternalWrap(next); onWrapChange?.(next); };
-  useEffect(() => { setStatus('idle'); }, [children]);
+  useEffect(() => { setStatus('idle'); }, [source, selectedTab?.value]);
   useEffect(() => {
     if (status === 'idle') return;
     const timer = setTimeout(() => setStatus('idle'), 4000);
     return () => clearTimeout(timer);
   }, [status]);
-  const language = controlledLanguage ?? internalLanguage;
+  const language = selectedTab?.language ?? controlledLanguage ?? internalLanguage;
   const changeLanguage = (value: string) => {
     const next = value as CodeLanguage;
     if (controlledLanguage === undefined) setInternalLanguage(next);
     onLanguageChange?.(next);
   };
-  return <figure className={cx('cap-code', className)} data-variant={variant} data-wrap={wrap || undefined} data-color={color ?? 'neutral'} data-accent={color === 'inherit' ? undefined : color ?? 'neutral'}>
-    {(showLanguageSelector || title || copyable || actions || showActionsMenu) && <figcaption>
-      <span className="cap-code-heading">
-        {showLanguageSelector && <Select aria-label={t("Язык кода", "Code language")} className="cap-code-language-select" popupClassName="cap-code-language-popup" size="xs" variant="ghost" value={language} onValueChange={changeLanguage} options={languageOptions.map(option => option.value === 'text' ? { ...option, label: t('Обычный текст', 'Plain text') } : option)}/>}
-        {title && <span className="cap-code-label" title={title}>{title}</span>}
-      </span>
-      <span className="cap-code-actions">
-        {copyable && <IconButton className="cap-code-copy" size="sm" variant="ghost" icon={status === 'copied' ? 'check' : 'copy'} label={t("Копировать код", "Copy code")} onClick={async () => { try { await navigator.clipboard.writeText(children); setStatus('copied'); } catch { setStatus('error'); } }}/>}
-        {showActionsMenu && <Menu label={t("Действия с кодом", "Code actions")} size="sm" items={[{ id: 'wrap', label: wrap ? t("Отключить перенос строк", "Disable line wrapping") : t("Переносить строки", "Wrap lines"), icon: 'code', onSelect: toggleWrap }, ...contextActions]}/>}
-        {actions}
-      </span>
-    </figcaption>}
-    {editor ? <div className="cap-code-editor">{editor}</div> : lineNumbers ? <NumberedCode source={children} language={language} wrap={wrap} label={title}/> : <pre tabIndex={0} aria-label={title ?? `${language} ${t('код', 'code')}`}><code className={`language-${language}`}>{highlightCode(children, language)}</code></pre>}
+  const wrapLabel = wrap ? t("Отключить перенос строк", "Disable line wrapping") : t("Переносить строки", "Wrap lines");
+  const controls = <span className="cap-code-actions">
+    {actions}
+    {showActionsMenu && contextActions.length === 0 && <Tooltip content={wrapLabel}><IconButton className="cap-code-wrap" size="sm" variant="ghost" icon={TextWrap} label={wrapLabel} aria-pressed={wrap} onClick={toggleWrap}/></Tooltip>}
+    {copyable && <IconButton className="cap-code-copy" size="sm" variant="ghost" icon={status === 'copied' ? 'check' : 'copy'} label={t("Копировать код", "Copy code")} onClick={async () => { try { await navigator.clipboard.writeText(source); setStatus('copied'); } catch { setStatus('error'); } }}/>}
+    {showActionsMenu && contextActions.length > 0 && <Menu label={t("Действия с кодом", "Code actions")} size="sm" items={[{ id: 'wrap', label: wrapLabel, icon: 'code', onSelect: toggleWrap }, ...contextActions]}/>}
+  </span>;
+  const body = (code: string, codeLanguage: CodeLanguage) => editor ? <div className="cap-code-editor">{editor}</div> : lineNumbers ? <NumberedCode source={code} language={codeLanguage} wrap={wrap} label={title}/> : <pre tabIndex={0} aria-label={title ?? `${codeLanguage} ${t('код', 'code')}`}><code className={`language-${codeLanguage}`}>{highlightCode(code, codeLanguage)}</code></pre>;
+  return <figure className={cx('cap-code', className)} data-variant={variant} data-header-variant={headerVariant} data-density={density} data-wrap={wrap || undefined} data-color={color ?? 'neutral'} data-accent={color === 'inherit' ? undefined : color ?? 'neutral'}>
+    {selectedTab ? <Tabs className="cap-code-tabs" variant="pills" size="sm" label={tabsLabel ?? t('Стек или команда', 'Stack or command')} value={selectedTab.value} onValueChange={changeTab} trailing={controls} items={tabs.map(item => ({ value: item.value, label: item.label, disabled: item.disabled, content: body(item.code, item.language ?? language) }))}/> : <>
+      {(showLanguageSelector || title || copyable || actions || showActionsMenu) && <figcaption>
+        <span className="cap-code-heading">
+          {showLanguageSelector && <Select aria-label={t("Язык кода", "Code language")} className="cap-code-language-select" popupClassName="cap-code-language-popup" size="xs" variant="ghost" value={language} onValueChange={changeLanguage} options={languageOptions.map(option => option.value === 'text' ? { ...option, label: t('Обычный текст', 'Plain text') } : option)}/>}
+          {title && <span className="cap-code-label" title={title}>{title}</span>}
+        </span>
+        {controls}
+      </figcaption>}
+      {body(source, language)}
+    </>}
     <span role="status" className="cap-sr-only">{status === 'copied' ? t('Скопировано', 'Copied') : status === 'error' ? t('Не удалось скопировать. Выделите код вручную.', 'Could not copy. Select the code manually.') : ''}</span>
   </figure>;
 }

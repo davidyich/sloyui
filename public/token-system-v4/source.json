@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 4,
+  "name": "Sloy UI token system v4",
+  "palette": {
+    "neutralSteps": [
+      0,
+      25,
+      50,
+      75,
+      100,
+      125,
+      150,
+      175,
+      200,
+      225,
+      250,
+      275,
+      300,
+      325,
+      350,
+      375,
+      400,
+      425,
+      450,
+      475,
+      500,
+      525,
+      550,
+      575,
+      600,
+      625,
+      650,
+      675,
+      700,
+      725,
+      750,
+      775,
+      800,
+      825,
+      850,
+      875,
+      900,
+      925,
+      950,
+      975,
+      1000
+    ],
+    "neutralContrastSpan": 21
+  },
+  "surfaces": {
+    "Shell": {
+      "light": "#F3F3F3",
+      "dark": "#282828",
+      "blockLight": "#E7E8E8",
+      "blockDark": "#3A3A3A",
+      "usage": "Application shell, global navigation and outer workspace."
+    },
+    "Workspace": {
+      "light": "#FBFBFB",
+      "dark": "#1E1E1E",
+      "blockLight": "#EEEFEF",
+      "blockDark": "#303030",
+      "usage": "Secondary working area such as navigation, list or inspector."
+    },
+    "Content": {
+      "light": "#FFFFFF",
+      "dark": "#181818",
+      "blockLight": "#F7F6F6",
+      "blockDark": "#282727",
+      "usage": "Main document, editor or primary work canvas."
+    },
+    "Overlay": {
+      "light": "#FFFFFF",
+      "dark": "#303030",
+      "blockLight": "#F3F3F3",
+      "blockDark": "#404040",
+      "usage": "Temporary floating menu, popover or dialog; independent of composition depth."
+    },
+    "Invert": {
+      "light": "#000000",
+      "dark": "#FFFFFF",
+      "blockLight": "#282727",
+      "blockDark": "#F7F6F6",
+      "usage": "Inverse-polarity region with its own content, controls and accents; outer Theme stays unchanged."
+    },
+    "Glass": {
+      "light": "#FFFFFF",
+      "dark": "#000000",
+      "opacityLight": 88,
+      "opacityDark": 80,
+      "usage": "Protected translucent region over imagery or texture. White 88% in Light, black 80% in Dark; content is checked over both black and white underlays."
+    }
+  },
+  "secondary": {
+    "minimumTextContrast": 4.5,
+    "minimumStateContrast": 1.045,
+    "minimumSurfaceContrast": 1.025,
+    "darkContentLuminance": 0.86,
+    "lightContentLuminance": 0.055,
+    "stateContrastMultipliers": [
+      1,
+      1.075,
+      1.16
+    ],
+    "darkOverlay": {
+      "minimumBgContrast": 1.4,
+      "minimumBlockContrast": 1.15
+    }
+  },
+  "density": {
+    "Default": {
+      "unit": 4
+    },
+    "Compact": {
+      "unit": 3
+    },
+    "formula": "Adaptive spacing = round(unit × coefficient). Control height = fixed line-height + 2 × adaptive vertical inset. Fixed spacing, type and 44 px touch targets do not scale."
+  },
+  "radius": {
+    "modes": {
+      "None": 0,
+      "Compact": 4,
+      "Default": 8,
+      "Rounded": 16
+    },
+    "ratios": {
+      "sm": 0.5,
+      "md": 1,
+      "lg": 1.5,
+      "xl": 2
+    },
+    "formula": "radius = round(base × ratio), base = 0 / 4 / 8 / 16; pill and fixed zero remain constant."
+  },
+  "fonts": {
+    "family": {
+      "base": "Inter",
+      "code": "Overpass Mono",
+      "heading": "Georgia",
+      "pair": "Courier New"
+    },
+    "size": {
+      "caption": 12,
+      "body": 14,
+      "label": 13,
+      "subtitle": 18,
+      "title": 24,
+      "display": 36
+    },
+    "lineHeight": {
+      "caption": 16,
+      "body": 20,
+      "label": 18,
+      "subtitle": 26,
+      "title": 32,
+      "display": 44
+    },
+    "weight": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600
+    },
+    "tracking": {
+      "normal": 0,
+      "tight": 0
+    }
+  },
+  "notes": {
+    "source": "Shared Palette Lab generates one ramp per named hue; gray provides the shared neutral ramp. Contexts select these primitives by contrast and composition.",
+    "public": "Публичные цвета — Theme; адаптивная и фиксированная геометрия — Density; скругления — Radius; исходные числа и шрифты — Primitives. Внутренние Surface, SurfaceScheme и Palette не входят в обычный выбор токенов.",
+    "scheme": "Standard uses composition-oriented Shell → Workspace → Content and independent Overlay. Inverted swaps complete Workspace/Content pairs only in Dark."
+  },
+  "paletteSelection": {
+    "opaqueCount": 289,
+    "alphaCount": 0,
+    "naming": "<hue>/<step>; gray/<step>; black; white",
+    "strategy": "One opaque ramp per hue, independent of theme, role and surface. All semantic paints select an existing ramp step and optionally compose its alias with Opacity. Never create role-specific, theme-specific or alpha RGB values in Palette.",
+    "minimumTextContrast": 4.5,
+    "preferredTextContrast": 7,
+    "minimumFocusContrast": 3.2,
+    "steps": 41
+  },
+  "accentSystem": {
+    "source": "figma/color-system-v2/editor/model.mjs",
+    "paletteSteps": 41,
+    "rules": {
+      "minimumContrast": 4.5,
+      "vividness": 1.2,
+      "adaptPrimary": true,
+      "balanceSecondary": true,
+      "alphaStepPercent": 1
+    },
+    "overrides": {},
+    "legacyAliases": {
+      "rose": "red",
+      "cherry": "red",
+      "fuchsia": "pink",
+      "grape": "purple",
+      "violet": "purple",
+      "cyan": "blue",
+      "sky": "blue",
+      "indigo": "blue",
+      "sapphire": "blue",
+      "turquoise": "blue",
+      "emerald": "green",
+      "shamrock": "green",
+      "teal": "green",
+      "mint": "green",
+      "lime": "green",
+      "amber": "orange",
+      "yellow": "orange",
+      "vermilion": "orange"
+    },
+    "states": {
+      "normal": "normal",
+      "hover": "active",
+      "pressed": "active"
+    },
+    "notes": "One shared ramp per hue. Recommended fills select steps and opacity by actual backing contrast and bounded perceptual state difference; impossible text/fill combinations are reported explicitly.",
+    "accents": [
+      "blue",
+      "green",
+      "orange",
+      "red",
+      "pink",
+      "purple"
+    ]
+  },
+  "alphaSteps": [
+    3,
+    5,
+    8,
+    10,
+    12,
+    15,
+    16,
+    20,
+    24,
+    30,
+    32,
+    40,
+    48,
+    60,
+    64,
+    72,
+    80,
+    88,
+    92,
+    96
+  ],
+  "alphaRules": {
+    "stable": "Named white/black pigment and opacity remain constant across Theme and Surface.",
+    "adaptive": "base is white in Light and black in Dark; contrast is the inverse. Adaptive alpha depends only on Theme, not Surface. Local Invert controls use contextual surface roles instead."
+  },
+  "surfaceSchemes": {
+    "reference": {
+      "fileKey": "E6Qw912qUU0h9JDplYzQsp",
+      "standardNode": "19:60",
+      "dimmedNode": "19:130"
+    },
+    "Standard": {
+      "Shell": {
+        "light": 0.9519330263,
+        "dark": 0.0502030179
+      },
+      "Workspace": {
+        "light": 0.9653810263,
+        "dark": 0.0877167434
+      },
+      "Content": {
+        "light": 1,
+        "dark": 0.1167714968
+      },
+      "Overlay": {
+        "light": 1,
+        "dark": 0.1418796629
+      }
+    },
+    "Dimmed": {
+      "Shell": {
+        "light": 0.9519330263,
+        "dark": 0.1568627450980392
+      },
+      "Workspace": {
+        "light": 0.984313725490196,
+        "dark": 0.11764705882352941
+      },
+      "Content": {
+        "light": 1,
+        "dark": 0.09411764705882353
+      },
+      "Overlay": {
+        "light": 1,
+        "dark": 0.1825232804
+      }
+    }
+  },
+  "nativeExport": {
+    "accents": [
+      "blue",
+      "green",
+      "orange",
+      "red",
+      "pink",
+      "purple"
+    ],
+    "surfaces": [
+      "Shell",
+      "Workspace",
+      "Content",
+      "Overlay",
+      "Invert"
+    ],
+    "alphaStepPercent": 1,
+    "maximumVariables": 1200,
+    "description": "Sparse referenced colors and complete contexts; integer opacity is compiled into RGBA COLOR leaves."
+  }
+}

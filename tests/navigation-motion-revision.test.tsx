@@ -8,6 +8,7 @@ import { FloatingActionBar, SidebarPanel } from '../src/components/workbench';
 import { Button, IconButton } from '../src/components/primitives';
 import { SegmentedControl, Select } from '../src/components/forms';
 import { ComboBox } from '../src/components/selection';
+import { PopupSelect } from '../src/components/popup-select';
 import { Calendar } from '../src/components/content';
 
 const rect = (left: number, top: number, width: number, height: number) => ({ left, top, width, height, right: left + width, bottom: top + height, x: left, y: top, toJSON() {} }) as DOMRect;
@@ -40,7 +41,7 @@ describe('local shared hover motion', () => {
     fireEvent(screen.getByRole('button', { name: 'First' }), touch);
     expect(layer).not.toHaveAttribute('data-visible');
   });
-  it('morphs the measured layer with a finite transform animation, respecting reduced motion', async () => {
+  it('morphs the measured layer with a finite box animation without scaled corners, respecting reduced motion', async () => {
     const animate = vi.fn(() => ({ cancel: vi.fn() }));
     vi.stubGlobal('matchMedia', () => ({ matches: false }));
     Object.defineProperty(Element.prototype, 'animate', { configurable: true, value: animate });
@@ -57,8 +58,8 @@ describe('local shared hover motion', () => {
       expect(animate).not.toHaveBeenCalled();
       fireEvent.pointerOver(screen.getByRole('button', { name: 'Second' }));
       expect(animate).toHaveBeenLastCalledWith([
-        { transform: 'translate3d(0px,30px,0) scale(0.5,1)' },
-        { transform: 'translate3d(0px,70px,0) scale(1,1)' },
+        { transform: 'translate3d(0px,30px,0)', width: '100px', height: '32px' },
+        { transform: 'translate3d(0px,70px,0)', width: '200px', height: '32px' },
       ], { duration: 220, easing: 'cubic-bezier(.16,1,.3,1)' });
       animate.mockClear();
       vi.stubGlobal('matchMedia', () => ({ matches: true }));
@@ -119,8 +120,8 @@ describe('local shared hover motion', () => {
       fireEvent.pointerOver(screen.getByText('Selected'));
       fireEvent.pointerOver(screen.getByText('One'));
       expect(animate).toHaveBeenLastCalledWith([
-        { transform: 'translate3d(0px,42px,0) scale(0.8125,1)' },
-        { transform: 'translate3d(0px,30px,0) scale(1,1)' },
+        { transform: 'translate3d(0px,42px,0)', width: '130px', height: '32px', borderRadius: '16px' },
+        { transform: 'translate3d(0px,30px,0)', width: '160px', height: '32px', borderRadius: '8px' },
       ], { duration: 220, easing: 'cubic-bezier(.16,1,.3,1)' });
       fireEvent.pointerLeave(screen.getByTestId('scope'));
       expect(layer).not.toHaveAttribute('data-visible');
@@ -132,6 +133,133 @@ describe('local shared hover motion', () => {
       expect(animate).not.toHaveBeenCalled();
       expect(layer.style.transform).toBe('translate3d(0px,70px,0)');
     } finally { delete (Element.prototype as unknown as { animate?: unknown }).animate; }
+  });
+  it('moves across filled island controls without replacing their resting paint, then fades out', async () => {
+    vi.useFakeTimers();
+    try {
+      const { container } = render(<FloatingActionBar label="Paint ownership" position="static">
+        <IconButton label="Ghost A" icon="list" variant="ghost"/>
+        <PopupSelect label="Filled A" options={[{value:'a',label:'A'}]}/><PopupSelect label="Filled B" options={[{value:'b',label:'B'}]}/>
+        <Select aria-label="Filled choice" options={[{value:'a',label:'A'}]}/>
+        <IconButton label="Ghost B" icon="grid" variant="ghost"/>
+      </FloatingActionBar>);
+      await act(async () => {});
+      const layer = container.querySelector<HTMLElement>('.cap-moving-highlight')!;
+      const scope = layer.parentElement!;
+      fireEvent.pointerOver(screen.getByRole('button', {name:'Ghost A'}));
+      expect(layer).toHaveAttribute('data-visible');
+      for (const name of ['Filled A', 'Filled B']) {
+        const filled = screen.getByRole('button', {name});
+        fireEvent.pointerOver(filled);
+        expect(layer).toHaveAttribute('data-visible');
+        expect(filled).toHaveAttribute('data-shared-hover-target');
+        expect(filled).not.toHaveAttribute('data-shared-hover-surface');
+        expect(filled).toHaveAttribute('data-variant','secondary');
+      }
+      fireEvent.pointerOver(screen.getByRole('combobox', {name:'Filled choice'}));
+      expect(layer).toHaveAttribute('data-visible');
+      fireEvent.pointerOver(screen.getByRole('button', {name:'Ghost B'}));
+      expect(layer).toHaveAttribute('data-visible');
+      fireEvent.pointerLeave(scope);
+      expect(layer.style.opacity).toBe('0');
+      expect(scope).toHaveAttribute('data-shared-hover-active');
+      act(() => vi.advanceTimersByTime(110));
+      expect(scope).not.toHaveAttribute('data-shared-hover-active');
+      expect(container.querySelector('[data-shared-hover-surface]')).toBeNull();
+    } finally { vi.useRealTimers(); }
+  });
+  it('animates continuously between wrapped PopupSelects and keeps all foreground slots', async () => {
+    const animate = vi.fn((_frames: Keyframe[], _options: KeyframeAnimationOptions) => ({cancel:vi.fn()}));
+    Object.defineProperty(Element.prototype,'animate',{configurable:true,value:animate});
+    vi.spyOn(HTMLElement.prototype,'getBoundingClientRect').mockImplementation(function(this:HTMLElement) {
+      if(this.getAttribute('aria-label') === 'First popup') return rect(10,0,100,32);
+      if(this.getAttribute('aria-label') === 'Second popup') return rect(120,0,160,32);
+      if(this.classList.contains('cap-moving-highlight')) return rect(10,0,100,32);
+      return rect(0,0,300,44);
+    });
+    try {
+      const {container} = render(<><Button>Outside</Button><FloatingActionBar label="Shared paint" position="static" variant="divided">
+        <PopupSelect label="First popup" defaultValue="a" options={[{value:'a',label:'Alpha'}]}/>
+        <PopupSelect label="Second popup" defaultValue="b" options={[{value:'b',label:'Long Beta'}]}/>
+        <Button leading={<span>Leading</span>} trailing={<span>Trailing</span>}>Center</Button>
+      </FloatingActionBar></>);
+      await act(async () => {});
+      const layer = container.querySelector<HTMLElement>('.cap-floating-items > .cap-moving-highlight')!;
+      const first = screen.getByRole('button',{name:'First popup'}), second = screen.getByRole('button',{name:'Second popup'});
+      fireEvent.pointerOver(first);
+      expect(layer.style.transform).toBe('translate3d(10px,0px,0)');
+      fireEvent.pointerOver(second);
+      expect(layer.style.transform).toBe('translate3d(120px,0px,0)');
+      expect(animate).toHaveBeenCalledTimes(1);
+      expect(animate.mock.calls[0][0]).toEqual(expect.arrayContaining([
+        expect.objectContaining({transform:'translate3d(10px,0px,0)',width:'100px'}),
+        expect.objectContaining({transform:'translate3d(120px,0px,0)',width:'160px'}),
+      ]));
+      expect(first).toHaveAttribute('data-variant','secondary');
+      expect(first.style.background).toBe('');
+      expect(second.style.background).toBe('');
+      expect(first.querySelector('.cap-button-foreground > .cap-popup-select-value')).toHaveTextContent('Alpha');
+      expect(first.querySelector('.cap-button-foreground > .cap-popup-select-chevron')).not.toBeNull();
+      expect(screen.getByRole('button',{name:'Leading Center Trailing'}).querySelector('.cap-button-foreground')).toHaveTextContent('LeadingCenterTrailing');
+      expect(screen.getByRole('button',{name:'Outside'}).querySelector('.cap-button-foreground')).toBeNull();
+    } finally { delete (Element.prototype as unknown as {animate?:unknown}).animate; }
+  });
+  it('leaves opaque controls in ordinary groups on their local hover path', async () => {
+    function Local() { const root=useRef<HTMLDivElement>(null); return <div ref={root} className="cap-shared-hover"><MovingHighlight root={root} hover/><Button>Filled local</Button></div>; }
+    const {container}=render(<Local/>);
+    await act(async () => {});
+    fireEvent.pointerOver(screen.getByRole('button',{name:'Filled local'}));
+    expect(container.querySelector('.cap-moving-highlight')).not.toHaveAttribute('data-visible');
+    expect(screen.getByRole('button',{name:'Filled local'})).not.toHaveAttribute('data-shared-hover-target');
+  });
+  it('clears temporary promotion when its finite animation finishes', async () => {
+    const animations: {cancel: ReturnType<typeof vi.fn>; onfinish: (() => void) | null}[] = [];
+    Object.defineProperty(Element.prototype, 'animate', { configurable:true,value:vi.fn(() => {
+      const animation = {cancel:vi.fn(),onfinish:null}; animations.push(animation); return animation;
+    }) });
+    movingRects();
+    try {
+      const {container} = render(<ContinuousScope/>);
+      await act(async () => {});
+      const layer = container.querySelector('.cap-moving-highlight')!;
+      fireEvent.pointerOver(screen.getByText('One'));
+      fireEvent.pointerOver(screen.getByText('Selected'));
+      expect(layer).toHaveAttribute('data-moving');
+      act(() => animations.at(-1)!.onfinish?.());
+      expect(layer).not.toHaveAttribute('data-moving');
+    } finally { delete (Element.prototype as unknown as {animate?:unknown}).animate; }
+  });
+  it('clears hovered segment paint as soon as the controlled selection commits', async () => {
+    const options = [{value:'one',label:'One'},{value:'two',label:'Two'}];
+    const {container,rerender} = render(<SegmentedControl label="Choice" value="one" onValueChange={()=>{}} options={options}/>);
+    await act(async () => {});
+    const hover = container.querySelector('.cap-moving-highlight[data-kind=hover]')!;
+    fireEvent.pointerOver(screen.getByText('Two'));
+    expect(hover).toHaveAttribute('data-visible');
+    rerender(<SegmentedControl label="Choice" value="two" onValueChange={()=>{}} options={options}/>);
+    expect(hover).not.toHaveAttribute('data-visible');
+    expect(hover).toHaveAttribute('data-hide-immediately');
+    expect(screen.getByRole('radio',{name:'Two'})).toBeChecked();
+    expect(container.querySelector('.cap-moving-highlight[data-kind=selection]')).toHaveAttribute('data-visible');
+  });
+  it('measures painted segment bounds in the scaled parent coordinate system', async () => {
+    function Scaled() {
+      const root = useRef<HTMLDivElement>(null);
+      return <div ref={root} className="cap-shared-hover" style={{width:200,height:80,boxSizing:'border-box',border:'1px solid transparent'}}>
+        <MovingHighlight root={root} selected="label"/><label className="cap-segment"><span>Painted</span></label>
+      </div>;
+    }
+    vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(function(this: HTMLElement) {
+      if(this.classList.contains('cap-shared-hover')) return rect(20,20,100,40);
+      if(this.tagName === 'LABEL') return rect(20,20,80,30);
+      return rect(23,24,40,16);
+    });
+    const {container} = render(<Scaled/>);
+    await act(async () => {});
+    const layer = container.querySelector<HTMLElement>('.cap-moving-highlight')!;
+    expect(layer.style.transform).toBe('translate3d(5px,7px,0)');
+    expect(layer.style.width).toBe('80px');
+    expect(layer.style.height).toBe('32px');
   });
   it('keeps nested scopes and disabled controls from borrowing the outer layer', async () => {
     const { container } = render(<ContinuousScope/>);
@@ -251,19 +379,6 @@ describe('composite shared surfaces', () => {
     expect(layer).not.toHaveAttribute('data-accent');
     fireEvent.pointerOver(screen.getByText('Notes'));
     expect(layer).not.toHaveAttribute('data-accented');
-  });
-  it('aligns selected segments with fractional borders despite rounded client offsets', async () => {
-    vi.spyOn(HTMLElement.prototype, 'clientLeft', 'get').mockReturnValue(1);
-    vi.spyOn(HTMLElement.prototype, 'clientTop', 'get').mockReturnValue(1);
-    vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(function(this: HTMLElement) {
-      if (this.classList.contains('cap-segment')) return rect(13.5, 13.5, 75, 21);
-      return rect(10, 10, 160, 28);
-    });
-    const {container}=render(<SegmentedControl style={{border:'0.5px solid'}} label="View" value="one" onValueChange={()=>{}} options={[{value:'one',label:'One'},{value:'two',label:'Two'}]}/>);
-    await act(async()=>{});
-    const layer=container.querySelector<HTMLElement>('.cap-moving-highlight')!;
-    expect(layer.style.transform).toBe('translate3d(3px,3px,0)');
-    expect(layer.style.height).toBe('21px');
   });
   it('keeps the selected segment radius in CSS so global radius changes cannot leave a frozen inline corner', async () => {
     const {container}=render(<SegmentedControl label="View" value="one" onValueChange={()=>{}} options={[{value:'one',label:'One'},{value:'two',label:'Two'}]}/>);

@@ -2,7 +2,9 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createRef, type ChangeEvent } from 'react';
-import { Checkbox, Input, Radio, Select, Slider, Switch, Textarea } from '../src/components/forms';
+import { Checkbox, Input, Radio, Select, Slider, Switch, Textarea, fieldFocusStyle, focusRingColorTokens, type FocusRing } from '../src/components/forms';
+import publicRoles from '../src/tokens/public-roles.json';
+import { canonicalFocusRingColorTokens } from '../src/tokens/focus-roles';
 import { ComboBox, ColorPicker, MultiSelect, NumberField, TagInput } from '../src/components/selection';
 import { FloatingField } from '../src/components/workbench';
 afterEach(cleanup);
@@ -28,12 +30,31 @@ describe('Refined native choice controls',()=>{
 });
 
 describe('Field clear and focus-ring contracts',()=>{
+ it('offers only public semantic stroke tokens and ignores runtime color injection',()=>{
+  expect([...canonicalFocusRingColorTokens].sort()).toEqual(publicRoles.filter(role=>role.scopes.includes('STROKE_COLOR')).map(role=>role.css).sort());
+  expect(focusRingColorTokens).toContain('--cap-status-warning-border');
+  expect(fieldFocusStyle(undefined,{colorToken:'--cap-status-warning-border'})).toEqual({'--cap-field-focus-color':'var(--cap-status-warning-border)'});
+  expect(fieldFocusStyle(undefined,{colorToken:'--cap-v4-theme-border-orange-normal'})).toEqual({'--cap-field-focus-color':'var(--cap-v4-theme-border-orange-normal)'});
+  expect(fieldFocusStyle({color:'inherit'}, {colorToken:'#ff0000'} as unknown as FocusRing)).toEqual({color:'inherit'});
+  expect(fieldFocusStyle(undefined,{colorToken:'--cap-v4-theme-border-injected'} as unknown as FocusRing)).toEqual({});
+ });
+ it('preserves fractional focus geometry and semantic color through a portaled color editor',async()=>{
+  const changed=vi.fn(),focusRing={width:.5,offset:0,colorToken:'--cap-status-warning-border'} as const;
+  const {container}=render(<div data-borders="off"><Input label="Title" focusRing={focusRing}/><ColorPicker label="Tint" value="#3E63DD" onValueChange={changed} focusRing={focusRing}/></div>);
+  expect(screen.getByRole('textbox',{name:'Title'})).toHaveStyle({'--cap-field-focus-width':'0.5px','--cap-field-focus-offset':'0px','--cap-field-focus-color':'var(--cap-status-warning-border)'});
+  expect(container.querySelector('.cap-color-picker')).toHaveStyle({'--cap-field-focus-color':'var(--cap-status-warning-border)'});
+  await userEvent.click(screen.getByRole('button',{name:'Tint'}));
+  const editor=screen.getByRole('dialog',{name:'Tint: цвет'});
+  expect(editor).toHaveStyle({'--cap-field-focus-width':'0.5px','--cap-field-focus-offset':'0px','--cap-field-focus-color':'var(--cap-status-warning-border)'});
+  fireEvent.keyDown(screen.getByRole('slider',{name:'Оттенок'}),{key:'ArrowRight'});
+  expect(changed).toHaveBeenCalledOnce();
+ });
  it.each(['number','checkbox','radio','switch','slider'] as const)('shares direct runtime contexts with the %s shell and retains native actions',kind=>{
   const changed=vi.fn(),focused=vi.fn();
-  const axes={'data-theme':'dark','data-accent':'purple','data-color':'purple','data-surface':'canvas','data-borders':'on','data-radius':'rounded','data-shadow':'compact'} as const;
+  const axes={'data-theme':'dark','data-accent':'purple','data-color':'purple','data-surface':'canvas','data-surface-scheme':'inverted','data-borders':'on','data-radius':'rounded','data-shadow':'compact'} as const;
   const common={...axes,'aria-describedby':'extra',onFocus:focused};
   const element=kind==='number'?<NumberField {...common} label="Local" defaultValue={1} onValueChange={changed}/> : kind==='checkbox'?<Checkbox {...common} label="Local" onChange={changed}/> : kind==='radio'?<Radio {...common} label="Local" name="choice" onChange={changed}/> : kind==='switch'?<Switch {...common} label="Local" onChange={changed}/> : <Slider {...common} label="Local" defaultValue={1} onChange={changed}/>;
-  render(<div data-theme="light" data-accent="green" data-color="green" data-surface="base" data-borders="off" data-radius="compact" data-shadow="soft"><span id="extra">Description</span>{element}</div>);
+  render(<div data-theme="light" data-accent="green" data-color="green" data-surface="base" data-surface-scheme="standard" data-borders="off" data-radius="compact" data-shadow="soft"><span id="extra">Description</span>{element}</div>);
   const role=kind==='number'?'spinbutton':kind==='slider'?'slider':kind==='radio'?'radio':kind==='switch'?'switch':'checkbox';
   const native=screen.getByRole(role,{name:'Local'}),shell=native.closest(kind==='number'?'.cap-selection-field':kind==='slider'?'.cap-slider-field':'label')!;
   for(const [axis,value] of Object.entries(axes)){expect(shell).toHaveAttribute(axis,value);expect(native).toHaveAttribute(axis,value);}
@@ -53,7 +74,7 @@ describe('Field clear and focus-ring contracts',()=>{
  });
  it.each(['input','textarea','select','floating'] as const)('shares direct runtime contexts with the %s label wrapper without duplicating native wiring',kind=>{
   const changed=vi.fn(),ref=createRef<HTMLInputElement>();
-  const axes={'data-theme':'dark','data-accent':'purple','data-color':'purple','data-surface':'canvas','data-borders':'on','data-radius':'rounded','data-shadow':'compact'} as const;
+  const axes={'data-theme':'dark','data-accent':'purple','data-color':'purple','data-surface':'canvas','data-surface-scheme':'inverted','data-borders':'on','data-radius':'rounded','data-shadow':'compact'} as const;
   const element=kind==='input'?<Input {...axes} ref={ref} id="local-field" label="Local" labelPlacement="inside" aria-describedby="extra" onChange={changed}/> : kind==='textarea'?<Textarea {...axes} id="local-field" label="Local" labelPlacement="inside" size="xs" aria-describedby="extra" onChange={changed}/> : kind==='select'?<Select {...axes} id="local-field" label="Local" labelPlacement="inside" aria-describedby="extra" onChange={changed} options={[{value:'a',label:'A'},{value:'b',label:'B'}]}/> : <FloatingField {...axes} ref={ref} id="local-field" label="Local" aria-describedby="extra" onChange={changed}/>;
   const {container}=render(<div data-theme="light" data-borders="off" data-radius="compact"><span id="extra">Description</span>{element}</div>);
   const field=screen.getByLabelText('Local'),wrapper=field.closest('.cap-labeled-field')!;
@@ -131,4 +152,14 @@ it('keeps an accent switch native, controlled and disabled through keyboard inpu
  const user=userEvent.setup(),change=vi.fn();const view=render(<Switch label="Notifications" color="purple" size="lg" checked onChange={change}/>);
  const control=screen.getByRole('switch',{name:'Notifications'});control.focus();await user.keyboard(' ');expect(change).toHaveBeenCalledTimes(1);expect(control).toBeChecked();
  view.rerender(<Switch label="Notifications" color="green" checked disabled onChange={change}/>);await user.click(control);expect(change).toHaveBeenCalledTimes(1);expect(control).toBeDisabled();
+});
+
+it('shares a directly supplied density with field labels, hints and trailing controls',()=>{
+ const {container}=render(<Input data-density="compact" label="Search" labelPlacement="inside" hint="Keep geometry together" trailing={<span>suffix</span>}/>);
+ const field=container.querySelector('.cap-labeled-field')!;
+ expect(field).toHaveAttribute('data-density','compact');
+ expect(field.querySelector('label')).toHaveTextContent('Search');
+ expect(field.querySelector('.cap-field-hint')).toHaveTextContent('Keep geometry together');
+ expect(field.querySelector('.cap-field-trailing')).toHaveTextContent('suffix');
+ expect(screen.getByRole('textbox',{name:'Search'})).toHaveAttribute('data-density','compact');
 });

@@ -1,26 +1,14 @@
 {
   "canvas": {
-    "palette": [
-      "gray/50",
-      "gray/975"
-    ]
+    "surface": "Workspace", "source": "figma/token-system-v4/graph.json", "background": "Theme/surface/bg", "block": "Theme/surface/block"
   },
   "base": {
-    "palette": [
-      "gray/25",
-      "gray/950"
-    ]
+    "surface": "Shell", "source": "figma/token-system-v4/graph.json", "background": "Theme/surface/bg", "block": "Theme/surface/block"
   },
   "raised": {
-    "palette": [
-      "gray/0",
-      "gray/925"
-    ]
+    "surface": "Content", "source": "figma/token-system-v4/graph.json", "background": "Theme/surface/bg", "block": "Theme/surface/block"
   },
   "floating": {
-    "palette": [
-      "gray/0",
-      "gray/900"
-    ]
+    "surface": "Overlay", "source": "figma/token-system-v4/graph.json", "background": "Theme/surface/bg", "block": "Theme/surface/block"
   }
 }

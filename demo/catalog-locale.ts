@@ -2,9 +2,18 @@ import { useCallback } from 'react';
 import { useLocale } from '../src';
 /** Curated catalogue UI/metadata translations. Never applied to consumer content or DOM. */
 export const catalogueDictionary: Record<string,string> = {
+  "Поиск во всплывающем окне": "Search inside the popup",
+  "Компактный выбор токена": "Compact token selection",
+  "Компактный выбор с поиском внутри отдельного всплывающего окна.": "Compact selection with search inside a separate floating popup.",
+  "Превью и параметры": "Preview and settings",
+  "Изменить ширину параметров": "Resize settings",
+  "Только точка": "Dot only",
+  "Ширина окна": "Popup width",
+  "Значения справа": "Trailing values",
   "Мягкая акцентная заливка": "Soft accent fill",
   "Храните items в состоянии. В onMove сначала удалите задачу из прежней позиции, затем вставьте в columnId на index. По умолчанию переносится корпус карточки; интерактивные элементы работают отдельно. Для ручки включите dragActivation=\"handle\". Сохраняйте меню и клавиатурные способы переноса.": "Keep items in state. In onMove, remove the task from its previous position, then insert it into columnId at index. Drag starts from the card body by default; interactive elements work independently. Choose dragActivation=\"handle\" for a grip. Preserve menu and keyboard alternatives.",
-  "Наведение подсвечивает весь пункт; после ухода мыши фон сбрасывается, клавиатурный фокус отмечен рамкой заголовка. Только шеврон поворачивается при раскрытии.": "Hover highlights the whole item and clears when the pointer leaves. Keyboard focus uses the summary outline. Only the chevron rotates when expanded.",
+  "Наведение подсвечивает только заголовок, содержимое сохраняет фон. chevronPosition=\"end\" ставит шеврон справа. Его форма плавно меняется вниз → вверх без вращения.": "Hover highlights only the heading while the body keeps its background. chevronPosition=\"end\" places the chevron on the right. Its shape morphs from down to up without rotation.",
+  "start сохраняет стандартный шеврон; end ставит его справа и меняет форму вниз → вверх при раскрытии.": "start preserves the standard chevron; end places it on the right and morphs its shape from down to up on expansion.",
   "Сохраните колонку и порядок. index — позиция в колонке назначения после удаления переносимой карточки.": "Persist both column and order. index is the insertion position in the destination column after removing the moving card.",
   "card: перенос за корпус, без захвата кнопок и полей. handle: явная ручка.": "card: drag the body, excluding buttons and fields. handle: use an explicit grip.",
   "В режиме handle: start размещает ручку рядом с пользовательской карточкой, custom передаёт её в context.handle.": "In handle mode: start places a grip beside the custom card; custom supplies it through context.handle.",
@@ -122,8 +131,12 @@ export const catalogueDictionary: Record<string,string> = {
   "Короткие вспомогательные подписи": "Short supporting labels",
   "Размеры и форма": "Sizes and shapes",
   "Базовый шаг 4 px, пять высот контролов и общая шкала скруглений.": "A 4 px base step, five control heights and a shared radius scale.",
+  "Общие размеры и отступы переключаются через Density. Скругления и типографика независимы.": "Density switches shared sizes and spacing. Corners and typography are independent.",
   "Контролы": "Controls",
   "Скругления": "Radii",
+  "Цвет (токен)": "Color (token)",
+  "Подсказка с количеством": "Count hint",
+  "Толщина и отступ фокусной рамки в пикселях; colorToken выбирает публичный токен цвета.": "Focus ring width and offset in pixels; colorToken chooses a public color token.",
   "Отступы": "Spacing",
   "Обзор компонентов": "Component overview",
   "компонентов для личных проектов. Найдите нужный элемент, откройте живой пример и настройте его под свою поверхность.": "components for personal projects. Find an element, open a live example and adapt it to your surface.",
@@ -312,7 +325,7 @@ export const catalogueDictionary: Record<string,string> = {
   "Недоступно": "Unavailable",
   "ОСНОВЫ / СЛОИ": "FOUNDATIONS / LAYERS",
   "Границы и всплывающие слои": "Borders and floating layers",
-  "Толщина — 0,5 px. Оттенок зависит от поверхности и назначения: мягкая граница панели, граница контрола, усиление и значимый индикатор. Floating светлее Raised в тёмной теме; мягкая тень лишь поддерживает отделение слоёв.": "Width: 0.5 px. Shade follows surface and purpose: subtle panel boundary, control boundary, emphasis and meaningful indicator. Floating is lighter than Raised in dark mode; a soft shadow supports layer separation.",
+  "Толщина — 0,5 px. Оттенок зависит от поверхности и назначения: мягкая граница панели, граница контрола, усиление и значимый индикатор. Overlay светлее Panel в тёмной теме; мягкая тень лишь поддерживает отделение слоёв.": "Width: 0.5 px. Shade follows surface and purpose: subtle panel boundary, control boundary, emphasis and meaningful indicator. Overlay is lighter than Panel in dark mode; a soft shadow supports layer separation.",
   "Степени контраста": "Contrast levels",
   "Последняя степень — для значимого выделения, а не для каждой рамки.": "The last level marks meaningful emphasis; it is not for every border.",
   "Окна и поверхности": "Windows and surfaces",
@@ -334,7 +347,7 @@ export const catalogueDictionary: Record<string,string> = {
   "Настройки представления": "View settings",
   "Готово": "Done",
   "Выбор внутри диалога": "Selection inside dialog",
-  "Primitives содержит number/border/width = 0.5. Semantic определяет цвет границы по теме, поверхности и элементу. Отдельная служебная коллекция Borders переключает Off / On на элементе или родительском фрейме.": "Primitives includes number/border/width = 0.5. Semantic defines border color by theme, surface and element. The Borders utility collection switches Off / On on an element or parent frame.",
+  "Semantic/border/width ссылается на Primitives/dimension/0_5 = 0.5. Режимы Semantic — Page / Inset / Panel / Overlay; Theme выбирает Light / Dark. Независимая коллекция Borders переключает декоративные обводки Off / On на элементе или родительском фрейме.": "Semantic/border/width aliases Primitives/dimension/0_5 = 0.5. Semantic modes are Page / Inset / Panel / Overlay; Theme selects Light / Dark. The independent Borders collection switches decorative outlines Off / On on an element or parent frame.",
   "ОСНОВЫ / ПОВЕДЕНИЕ": "FOUNDATIONS / BEHAVIOR",
   "Детали работают вместе.": "Details work together.",
   "Общие правила движения, состояний и адаптива действуют во всех компонентах.": "Shared motion, state and responsive rules apply across components.",
@@ -1485,9 +1498,9 @@ export const changelogTranslations: Record<string,{ru:string;en:string}> = {
     "ru": "Приглушены вторичные акценты в тёмной теме; сохранены насыщенные действия, светлая тема и контраст на разных поверхностях.",
     "en": "Softened dark secondary accents while keeping solid actions, light themes and surface-specific contrast intact."
   },
-  "Aligned segmented controls with fractional borders, softened default corners and made rounded segments fully pill-shaped. Tabs now default to segments; line tabs keep local hover.": {
-    "ru": "Выровнены сегменты с дробными рамками, смягчены обычные углы; максимальное скругление даёт капсулу. Tabs по умолчанию используют сегменты, линейные табы — локальный hover.",
-    "en": "Aligned segmented controls with fractional borders, softened default corners and made rounded segments fully pill-shaped. Tabs now default to segments; line tabs keep local hover."
+  "Aligned segmented controls, made tabs follow global corners and removed moving hover from line tabs.": {
+    "ru": "Выровнены сегменты; табы следуют глобальным скруглениям, у линейного стиля убран перемещающийся hover.",
+    "en": "Aligned segmented controls, made tabs follow global corners and removed moving hover from line tabs."
   },
   "Simplified preview labels and page headings; component IDs now sit in the upper-right corner.": {
     "ru": "Убраны лишние подписи в превью и над заголовками; ID компонентов перенесены в правый верхний угол.",

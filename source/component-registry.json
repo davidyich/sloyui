@@ -1092,6 +1092,36 @@
       ],
       "primaryGroup": "content",
       "introduced": "0.8.0"
+    },
+    "PopupSelect": {
+      "id": "cp-104",
+      "status": "needs-review",
+      "groups": [
+        "selection",
+        "fields"
+      ],
+      "primaryGroup": "selection",
+      "introduced": "0.12.1"
+    },
+    "ParameterSlider": {
+      "id": "cp-105",
+      "status": "needs-review",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields",
+      "introduced": "0.14.0"
+    },
+    "Slider2D": {
+      "id": "cp-106",
+      "status": "needs-review",
+      "groups": [
+        "fields",
+        "selection"
+      ],
+      "primaryGroup": "fields",
+      "introduced": "0.14.0"
     }
   }
 }

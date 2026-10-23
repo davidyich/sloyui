@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru" data-v2-theme="Light" data-v2-scheme="Standard" data-v2-surface="Shell">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sloy UI V2 — проверка реакций</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+*{box-sizing:border-box}body{margin:0;background:var(--sloy-v2-surface-surface-bg);color:var(--sloy-v2-surface-content-primary);font:14px/1.5 Inter,system-ui,sans-serif}main{max-width:1120px;margin:auto;padding:40px 24px}h1{font-size:28px;line-height:1.2;margin:0 0 12px;font-weight:600}h2{font-size:18px;margin:0;font-weight:600}p{margin:0;color:var(--sloy-v2-surface-content-secondary)}header{display:grid;gap:16px;margin-bottom:28px}.controls{display:flex;flex-wrap:wrap;gap:8px}button{font:inherit;font-weight:500;border:1px solid transparent;border-radius:8px;cursor:pointer;min-height:44px;padding:10px 16px;background:var(--sloy-v2-surface-surface-secondary-normal);color:var(--sloy-v2-surface-content-primary)}button:hover{background:var(--sloy-v2-surface-surface-secondary-active)}button:focus-visible{outline:2px solid var(--sloy-v2-surface-border-strong);outline-offset:3px}button:disabled{cursor:default;opacity:.6}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.card{display:grid;gap:16px;padding:24px;border-radius:16px;background:var(--sloy-v2-surface-surface-bg);border:1px solid var(--sloy-v2-surface-border-default)}.targets{display:flex;flex-wrap:wrap;gap:12px}.target{position:relative;isolation:isolate;overflow:hidden;flex:1;min-width:128px;min-height:72px;border:0;background:var(--normal);color:var(--text)}.target:hover,.target:active{background:var(--active)}.target span.label{position:relative;z-index:1}.target.primary{--normal:var(--sloy-v2-surface-surface-primary-normal);--active:var(--sloy-v2-surface-surface-primary-active);--text:var(--sloy-v2-surface-content-on-primary);--reaction:var(--sloy-v2-surface-reaction-on-primary)}.target.accent{--normal:var(--sloy-v2-surface-surface-accent-blue-primary-normal);--active:var(--sloy-v2-surface-surface-accent-blue-primary-active);--text:var(--sloy-v2-surface-content-accent-blue-on-primary);--reaction:var(--sloy-v2-surface-reaction-on-surface)}.ripple{position:absolute;border-radius:50%;background:var(--reaction);pointer-events:none;animation:ripple var(--reaction-duration,420ms) ease-out forwards;z-index:0}.glass-backdrop{grid-column:1/-1;padding:24px;border-radius:16px;background:repeating-linear-gradient(135deg,var(--sloy-v2-surface-stable-black) 0 90px,var(--sloy-v2-surface-stable-white) 90px 180px)}.glass-backdrop .card{backdrop-filter:blur(24px)}.status{min-height:24px;margin-top:24px;color:var(--sloy-v2-surface-content-secondary)}@keyframes ripple{from{transform:translate(-50%,-50%) scale(0);opacity:1}to{transform:translate(-50%,-50%) scale(1);opacity:0}}@keyframes reaction-fade{from{opacity:1}to{opacity:0}}@media(prefers-reduced-motion:reduce){.ripple{inset:0!important;width:auto!important;height:auto!important;border-radius:inherit;animation:reaction-fade 120ms linear forwards}}@media(max-width:640px){main{padding:24px 16px}.grid{grid-template-columns:1fr}.card{padding:20px}.glass-backdrop{padding:16px}.target{min-width:110px}.controls button{flex:1 1 auto}}
+</style>
+</head>
+<body><main>
+<header><h1>Sloy UI V2 · реакция на нажатие</h1><p>Нажмите в разные точки кнопки. Цвет имеет два состояния — normal и active; круг реакции добавляется отдельным слоем.</p>
+<div class="controls" aria-label="Контекст примеров">
+<button id="theme" type="button">Тема: Light</button><button id="scheme" type="button">Схема: Standard</button><button id="accent" type="button">Цвет образца: blue</button><button id="reaction" type="button" aria-pressed="false">Реакция: Off</button>
+</div></header>
+<div class="grid" id="grid"></div><p class="status" id="status" role="status">Реакция выключена. Переключите её для проверки.</p>
+</main>
+<script type="module">
+const config=await fetch('./source.json').then(r=>r.json());
+const root=document.documentElement,grid=document.querySelector('#grid'),status=document.querySelector('#status');
+let enabled=false;
+root.style.setProperty('--reaction-duration',`${config.reaction.durationMs}ms`);
+for(const surface of config.surfaces){
+ const card=document.createElement('section');card.className='card';card.dataset.v2Surface=surface;card.setAttribute('aria-label',surface);
+ const heading=document.createElement('h2');heading.textContent=surface;card.append(heading);
+ const copy=document.createElement('p');copy.textContent=surface==='Glass'?'Полупрозрачная поверхность над чёрной и белой подложкой.':'Контент и заливки наследуют текущую тему и схему.';card.append(copy);
+ const row=document.createElement('div');row.className='targets';card.append(row);
+ for(const [role,label] of [['primary','Primary'],['accent','Accent']]){const button=document.createElement('button');button.type='button';button.className=`target ${role}`;button.dataset.surface=surface;button.setAttribute('aria-label',`${surface} ${label}`);const span=document.createElement('span');span.className='label';span.textContent=label;button.append(span);row.append(button);}
+ if(surface==='Glass'){const backing=document.createElement('div');backing.className='glass-backdrop';backing.append(card);grid.append(backing);}else grid.append(card);
+}
+function clear(){document.querySelectorAll('.ripple').forEach(n=>n.remove());}
+function reaction(button,x,y){
+ if(!enabled||button.disabled)return;
+ const rect=button.getBoundingClientRect();
+ const size=2*Math.hypot(Math.max(x,rect.width-x),Math.max(y,rect.height-y));
+ button.querySelectorAll('.ripple').forEach(n=>n.remove());
+ const ripple=document.createElement('span');ripple.className='ripple';ripple.setAttribute('aria-hidden','true');
+ Object.assign(ripple.style,{left:`${x}px`,top:`${y}px`,width:`${size}px`,height:`${size}px`});
+ button.prepend(ripple);ripple.addEventListener('animationend',()=>ripple.remove(),{once:true});
+ setTimeout(()=>ripple.remove(),config.reaction.durationMs+80);
+}
+for(const button of document.querySelectorAll('.target')){
+ button.addEventListener('pointerdown',event=>{if(event.button!==0||!event.isPrimary)return;const rect=button.getBoundingClientRect();reaction(button,event.clientX-rect.left,event.clientY-rect.top);});
+ button.addEventListener('pointercancel',()=>button.querySelectorAll('.ripple').forEach(n=>n.remove()));
+ button.addEventListener('keydown',event=>{if(event.repeat||!['Enter',' '].includes(event.key))return;const rect=button.getBoundingClientRect();reaction(button,rect.width/2,rect.height/2);});
+ button.addEventListener('click',()=>{status.textContent=`${button.dataset.surface}: действие выполнено. Реакция ${enabled?'On':'Off'}.`;});
+}
+document.querySelector('#reaction').addEventListener('click',event=>{enabled=!enabled;event.currentTarget.setAttribute('aria-pressed',String(enabled));event.currentTarget.textContent=`Реакция: ${enabled?'On':'Off'}`;if(!enabled)clear();status.textContent=enabled?'Нажмите у края кнопки или используйте Enter / пробел.':'Реакция выключена.';});
+for(const [id,key,values] of [['theme','v2Theme',config.themes],['scheme','v2Scheme',config.schemes]])document.querySelector(`#${id}`).addEventListener('click',event=>{clear();const next=values[(values.indexOf(root.dataset[key])+1)%values.length];root.dataset[key]=next;event.currentTarget.textContent=`${{theme:'Тема',scheme:'Схема',accent:'Акцент'}[id]}: ${next}`;});
+let hue='blue';
+document.querySelector('#accent').addEventListener('click',event=>{clear();hue=config.accents[(config.accents.indexOf(hue)+1)%config.accents.length];for(const button of document.querySelectorAll('.target.accent')){for(const [property,role] of [['--normal','surface-accent-'+hue+'-primary-normal'],['--active','surface-accent-'+hue+'-primary-active'],['--text','content-accent-'+hue+'-on-primary']])button.style.setProperty(property,'var(--sloy-v2-surface-'+role+')');}event.currentTarget.textContent='Цвет образца: '+hue;});
+</script></body></html>

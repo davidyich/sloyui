@@ -1,0 +1,21 @@
+{
+  "contexts": 20,
+  "contrastChecks": 11720,
+  "hierarchyChecks": 120,
+  "nestedHierarchyChecks": 600,
+  "nestedBackings": [
+    "bg",
+    "tertiary/normal",
+    "tertiary/active",
+    "secondary/normal",
+    "secondary/active"
+  ],
+  "minimumSecondaryFillContrast": 1.1128959719599376,
+  "minimumTextContrast": 4.545620477156425,
+  "minimumBoundaryContrast": 3.451056240349142,
+  "glassBackdrops": [
+    "pure black",
+    "pure white"
+  ],
+  "errors": []
+}

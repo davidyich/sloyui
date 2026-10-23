@@ -1,3 +1,4 @@
+import type { Surface } from './surface.js';
 import { useTranslate } from './locale.js';
 import { useEffect, useId, useRef, useState, type CSSProperties, type HTMLAttributes, type ReactNode } from 'react';
 import { IconButton, cx } from './primitives.js';
@@ -6,7 +7,7 @@ export interface ContentPane {
   content: ReactNode; label: string; open?: boolean; onOpenChange?: (open: boolean) => void;
   width?: number; defaultWidth?: number; minWidth?: number; maxWidth?: number; onWidthChange?: (width: number) => void;
   height?: number; defaultHeight?: number; minHeight?: number; maxHeight?: number; onHeightChange?: (height: number) => void;
-  contentWidth?: number | string; surface?: 'base' | 'canvas' | 'raised' | 'floating';
+  contentWidth?: number | string; surface?: Surface;
 }
 export interface ContentLayoutProps extends HTMLAttributes<HTMLDivElement> {
   left?: ContentPane; right?: ContentPane; contentWidth?: number | string; label?: string;

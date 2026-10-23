@@ -21,7 +21,7 @@ const presets = (ct:(text:string)=>string): RichTextPreset[] => [{
   render: ({ block, disabled, readOnly, onDataChange }) => {
     const data = block.data as { tone: 'info' | 'warning'; text: string } | undefined;
     const tone = data?.tone ?? 'info';
-    return <div className="cap-surface-boundary" data-accent={tone === 'warning' ? 'amber' : 'blue'} style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap', padding: 12, borderRadius: 'var(--cap-radius-base)', background: 'var(--cap-accent-normal)', color: 'var(--cap-accent-text)' }}>
+    return <div className="cap-surface-boundary" data-accent={tone === 'warning' ? 'orange' : 'blue'} style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap', padding: 12, borderRadius: 'var(--cap-radius-base)', background: 'var(--cap-accent-normal)', color: 'var(--cap-accent-text)' }}>
       <Icon name={tone === 'warning' ? TriangleAlert : Info}/>
       <span>{data?.text ?? ct('Врезка')}</span>
       <Tag interactive={false} size="xs">{tone === 'warning' ? ct('Предупреждение') : ct('Заметка')}</Tag>

@@ -1,0 +1,24 @@
+import type { Color, PaletteStep } from './model.mjs';
+export type NeutralTheme = 'Light' | 'Dark';
+export type NeutralSurface = 'Shell' | 'Workspace' | 'Content' | 'Overlay' | 'Invert' | 'Glass';
+export type NeutralSettings = { bases: Record<NeutralTheme, number>; overrides: Partial<Record<NeutralTheme, Partial<Record<NeutralSurface, number>>>> };
+export type NeutralResolved = {
+  bg: Color;
+  neutral: Record<string, Color>;
+  content: { primary: Color; secondary: Color; tertiary: Color; inverted: Color };
+  border: Color;
+  references: Record<string, string>;
+  position: number;
+  step: PaletteStep;
+  effectiveTheme: NeutralTheme;
+};
+export const neutralSurfaces: NeutralSurface[];
+export function createNeutralSettings(): NeutralSettings;
+export function normalizeNeutralSettings(input: unknown): NeutralSettings;
+export function validateNeutralSettings(input: unknown): NeutralSettings;
+export function setNeutralBase(settings: NeutralSettings, theme: string, value: number): NeutralSettings;
+export function setNeutralSurface(settings: NeutralSettings, theme: string, surface: string, value: number): NeutralSettings;
+export function resetNeutralSurface(settings: NeutralSettings, theme: string, surface: string): NeutralSettings;
+export function resetNeutralTheme(settings: NeutralSettings, theme: string): NeutralSettings;
+export function neutralStepAt(steps: PaletteStep[], position: number): PaletteStep;
+export function resolveNeutralSurface(settings: NeutralSettings, steps: PaletteStep[], theme: string, scheme?: string, surface?: string, minimumContrast?: number): NeutralResolved;

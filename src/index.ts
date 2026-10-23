@@ -1,12 +1,13 @@
 export { SLOY_UI } from './brand.js';
+export type { Surface } from './components/surface.js';
 export { Button, IconButton, Icon, iconNames, Spinner, Counter, TextAction, Badge, Tag, TypeLabel, IconBox, Avatar, Kbd, Separator, Skeleton, Progress, colors } from './components/primitives.js';
 export type { ButtonProps, CounterProps, CounterVariant, TagProps, TextActionProps, Color, Size, IconName, IconSource, IconGlyph } from './components/primitives.js';
-export { Input, Textarea, Select, Field, Checkbox, Radio, Switch, Slider, SegmentedControl } from './components/forms.js';
-export type { FocusRing, FieldLabelProps, InputProps, TextareaProps, Choice, SelectProps, SwitchProps, SelectOption } from './components/forms.js';
+export { Input, Textarea, Select, Field, Checkbox, Radio, Switch, Slider, SegmentedControl, focusRingColorTokens } from './components/forms.js';
+export type { FocusRing, FocusRingColorToken, FieldLabelProps, InputProps, TextareaProps, Choice, SelectProps, SwitchProps, SelectOption } from './components/forms.js';
 export { Card, ObjectCard, SidebarItem, CollectionRow, PropertyRow, Breadcrumbs, Callout, EmptyState, Accordion, Tabs, Table } from './components/layout.js';
-export type { SidebarItemProps, AccordionProps, TabItem, TabsProps } from './components/layout.js';
+export type { SidebarItemProps, AccordionProps, TabItem, TabsProps, BreadcrumbItem } from './components/layout.js';
 export { Dialog, Drawer, Tooltip, Menu, Popover, CommandPalette, Toast } from './components/overlays.js';
-export type { DialogProps, DrawerProps, TooltipProps, PopoverProps, MenuProps, MenuItem, CommandItem } from './components/overlays.js';
+export type { DialogProps, DrawerProps, TooltipProps, PopoverProps, MenuProps, MenuItem, CommandItem, CommandPaletteProps } from './components/overlays.js';
 
 export { ScrollArea, ButtonGroup, SplitButton, ActionBar, FloatingActionBar, FloatingField, StatusBar, Alert, SidebarPanel } from './components/workbench.js';
 export type { ScrollAreaProps, ScrollEdges, ButtonGroupProps, SplitButtonProps, ActionBarProps, FloatingActionBarProps, FloatingFieldProps, FeedbackTone, StatusBarProps, AlertProps, SidebarPanelProps } from './components/workbench.js';
@@ -14,7 +15,7 @@ export { Calendar, DatePicker, MarkdownPreview, MarkdownEditor, ContentCard, Tas
 export type { CalendarProps, CalendarRangeProps, CalendarSelectionProps, CalendarBaseProps, CalendarRange, CalendarDateHighlight, CalendarEvent, MarkdownPreviewProps, MarkdownEditorProps, ContentCardProps, ContentCardBlock, TaskCardProps, KanbanBoardProps, KanbanCardContext, KanbanColumnProps, KanbanLane, KanbanTask, DailyHeaderProps } from './components/content.js';
 
 export { CodeBlock } from './components/code-block.js';
-export type { CodeBlockProps, CodeLanguage } from './components/code-block.js';
+export type { CodeBlockProps, CodeBlockTab, CodeLanguage } from './components/code-block.js';
 export { ContentLayout } from './components/content-layout.js';
 export type { ContentLayoutProps, ContentPane } from './components/content-layout.js';
 export { IconPicker } from './components/icon-picker.js';
@@ -29,6 +30,8 @@ export type { SeparatorProps } from './components/primitives.js';
 
 export { ComboBox, MultiSelect, TagInput, RadioGroup, ColorPicker, NumberField } from './components/selection.js';
 export type { SelectionOption, FieldVariant, ComboBoxProps, MultiSelectProps, TagInputProps, RadioGroupOption, RadioGroupProps, ColorFormat, ColorSwatch, ColorPickerProps, NumberFieldProps } from './components/selection.js';
+export { PopupSelect } from './components/popup-select.js';
+export type { PopupSelectProps, PopupSelectOption } from './components/popup-select.js';
 
 export { createRichTextBlock, richTextPlainText, RichTextEditor } from './components/rich-text-editor.js';
 export type { RichTextMark, RichTextRun, RichTextBlockType, RichTextJson, RichTextBlock, RichTextDocument, RichTextPreset, RichTextEditorProps } from './components/rich-text-editor.js';
@@ -82,3 +85,6 @@ export type { MarkdownEditorV2Props } from './components/markdown-editor-v2.js';
 
 export { FileCard, inferFileKind } from './components/file-card.js';
 export type { FileCardProps, FileKind } from './components/file-card.js';
+
+export { ParameterSlider, Slider2D } from './components/parameter-controls.js';
+export type { ParameterSliderProps, Slider2DProps, Slider2DAxis, Slider2DValue } from './components/parameter-controls.js';

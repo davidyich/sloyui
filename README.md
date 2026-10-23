@@ -31,8 +31,8 @@ import 'sloyui/fonts.css'; // optional
 export function App() {
   return (
     <LocaleProvider locale="en">
-      <main data-accent="teal" data-surface="canvas"
-        style={{ padding: 24, background: 'var(--cap-surface-current)',
+      <main data-accent="teal" data-surface="workspace"
+        style={{ padding: 'var(--cap-padding-xl)', background: 'var(--cap-surface-current)',
           color: 'var(--cap-content-primary)', fontFamily: 'var(--cap-font-sans)' }}>
         <Card>
           <Tag>In progress</Tag>
@@ -53,21 +53,22 @@ Set `data-theme="light"` or `"dark"` on `html`. Layout, application data and per
 | Attribute | Values | Purpose |
 | --- | --- | --- |
 | `data-theme` | `light`, `dark` | Appearance; set on `html` or override locally |
-| `data-accent` | `neutral` and 17 hue families | Local accent inherited by colored controls |
-| `data-surface` | `canvas`, `base`, `raised`, `floating` | Actual surface context; paint custom wrappers with `--cap-surface-current` |
+| `data-accent` | `neutral`, `blue`, `green`, `orange`, `red`, `pink`, `purple` | Local accent inherited by colored controls |
+| `data-surface` | `shell`, `workspace`, `content`, `overlay`, `invert`, `glass` | Region purpose; use bg for the region and block for local content |
 | `data-borders` | `off`, `on` | Decorative outlines; focus and structural separators remain visible |
-| `data-radius` | `compact`, `default`, `rounded` | Shared corner geometry |
+| `data-radius` | `none`, `compact`, `default`, `rounded` | Shared corners: 0 / 4 / 8 / 16 px; default 8 px |
+| `data-density` | `default`, `compact` | Shared spacing and control sizes; default Default |
 | `data-shadow` | `soft`, `compact` | Floating shadow profile |
 
-Contexts inherit independently. Cards establish raised surfaces; portals preserve local context and establish floating surfaces. Primary buttons stay neutral; accent buttons and selection controls use the local accent. Semantic status colors keep their meaning.
+Contexts inherit independently. [Density](figma/token-system-v4/guide.md) separates adaptive spacing from fixed dimensions. Compact changes adaptive spacing and controls while preserving typography, icons and touch targets. Square corners keep Borders available. Cards preserve their parent surface and paint block; portals preserve the other axes and establish Overlay. Primary buttons stay neutral; accent buttons and selection controls use the local accent. Semantic status colors keep their meaning.
 
-The color system contains **417 independently generated colors**: 17 hue ramps with 22 steps, a 41-step neutral ramp, black and white. The source is [foundation.json](source/foundation.json); semantic mappings live in [surface-rules.json](source/surface-rules.json). See the [surface contract](docs/surface-context.md).
+The shared **v4 token graph** drives the web runtime and compact native Figma export. Runtime Palette contains six 41-step hue ramps, 41 neutral steps and black/white: 289 opaque colors. Native Palette contains 327 referenced opaque/RGBA paints. Runtime Theme exposes surface, content, border and stable roles; native designs pick colors from Surface and inherit Accent independently. Invert switches the complete local polarity while preserving Theme; Glass is a protected runtime material. Density separates adaptive and fixed geometry; Radius and Borders inherit independently. Existing `--cap-*` names and legacy surface spellings remain compatible. See the [source](figma/token-system-v4/source.json), [short guide](figma/token-system-v4/guide.md) and [surface contract](docs/surface-context.md).
 
 `SLOY_UI` exposes the shared name, slug, domain, URL, repository, package name and logo path. Its source is [src/brand.json](src/brand.json). Existing `cap-*` CSS names and `cp-*` component IDs are stable compatibility identifiers.
 
 ## Components and documentation
 
-The catalogue has 89 active component pages across Controls, Navigation, Content and data, Layout and overlays, and Feedback and motion. Twelve chart pages are archived and available through the Archive filter. `FloatingField` and `MarkdownEditor` remain compatibility exports; use `Input` and `RichTextEditor` for new work.
+The catalogue has 90 active component pages across Controls, Navigation, Content and data, Layout and overlays, and Feedback and motion. Twelve chart pages are archived and available through the Archive filter. `FloatingField` and `MarkdownEditor` remain compatibility exports; use `Input` and `RichTextEditor` for new work.
 
 Each component page includes a live playground, usage, typed API reference, usage guidance and related components. New components carry a Review status. Use [agent-manifest.json](agent-manifest.json) for exact exports, properties, status and stable IDs.
 
@@ -84,7 +85,7 @@ npm ci
 npm run dev
 ```
 
-The local catalogue runs at `http://127.0.0.1:4317`; Installation is under Docs. Its instruction editor writes actual project files with revision checks. Static builds expose read-only core instructions; local custom drafts are excluded.
+The local catalogue runs at `http://127.0.0.1:4317`; Installation is under Docs. Its instruction editor writes actual project files with revision checks. Production owners edit persistent instructions through the catalogue API; guests have read-only access. Local custom drafts are excluded from builds.
 
 ```sh
 npm run check          # tokens, manifest, types, tests, library and catalogue

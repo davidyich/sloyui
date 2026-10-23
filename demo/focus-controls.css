@@ -1,0 +1,4 @@
+.playground-control-pair[data-color-control] :is(.cap-field,.cap-labeled-field,.cap-selection-field,.cap-popup-select) { min-width:0; }
+.playground-focus-token { min-width:0; }
+.playground-focus-token .cap-popup-select-trigger { width:56px; min-width:56px; padding-inline:8px; gap:8px; }
+.playground-focus-dot { display:block; flex:none; width:12px; height:12px; border-radius:50%; background:var(--playground-focus-color); border:var(--cap-border-width) solid var(--cap-panel-border); }

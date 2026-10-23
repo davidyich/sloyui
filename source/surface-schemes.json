@@ -1,0 +1,32 @@
+{
+  "standard": {
+    "label": "Standard",
+    "dark": {
+      "base": "base",
+      "canvas": "canvas",
+      "raised": "raised",
+      "floating": "floating"
+    },
+    "canonical": "Standard"
+  },
+  "inverted": {
+    "label": "Inverted",
+    "dark": {
+      "base": "base",
+      "canvas": "canvas",
+      "raised": "raised",
+      "floating": "floating"
+    },
+    "canonical": "Dimmed"
+  },
+  "dimmed": {
+    "label": "Dimmed",
+    "canonical": "Dimmed",
+    "dark": {
+      "base": "base",
+      "canvas": "canvas",
+      "raised": "raised",
+      "floating": "floating"
+    }
+  }
+}

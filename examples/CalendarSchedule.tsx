@@ -4,7 +4,7 @@ import { Calendar, Card, DatePicker, type CalendarEvent, type CalendarRange, use
 export const scheduleEvents: CalendarEvent[] = [
   { id:'review', date:'2026-10-07', title:'Обсудить дизайн', time:'10:00–11:00', color:'blue', description:'Проверить прототип календаря и договориться о следующем шаге.' },
   { id:'focus', date:'2026-10-07', title:'Работа над прототипом', time:'14:00–16:00', color:'purple', emphasis:'time', description:'Без встреч. Подготовить сценарий выбора периода.' },
-  { id:'handoff', date:'2026-10-09', title:'Передать макеты', time:'12:30', color:'teal' },
+  { id:'handoff', date:'2026-10-09', title:'Передать макеты', time:'12:30', color:'green' },
   { id:'planning', date:'2026-11-03', title:'Планирование', time:'09:30', color:'orange' },
 ];
 /** Both consumers own their selection; the inline calendar inherits Card's raised surface. */

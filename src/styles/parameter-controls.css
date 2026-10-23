@@ -1,0 +1,58 @@
+/* Inherit the nearest theme, including nested previews and floating contexts. */
+:root,[data-theme=light] { --cap-parameter-fill-ink:8%; --cap-parameter-fill-ink-hover:12%; }
+[data-theme=dark] { --cap-parameter-fill-ink:20%; --cap-parameter-fill-ink-hover:24%; }
+.cap-parameter-slider { --cap-parameter-fill-color:color-mix(in srgb,var(--cap-control-active),var(--cap-content-secondary) var(--cap-parameter-fill-ink,8%)); --cap-parameter-inline-inset:calc(var(--cap-control-inset) + var(--cap-radius-inset)); --cap-parameter-height:var(--cap-control-height); position:relative; isolation:isolate; width:100%; min-width:0; min-height:var(--cap-parameter-height); overflow:hidden; border-radius:var(--cap-control-radius); background:var(--cap-control-bg); color:var(--cap-content-primary); transition:background-color var(--cap-duration-fast) var(--cap-ease-standard); }
+.cap-parameter-fill { position:absolute; inset-block:0; inset-inline-start:0; width:var(--cap-parameter-progress); background:var(--cap-parameter-fill-color); pointer-events:none; transition:background-color var(--cap-duration-fast) var(--cap-ease-standard); }
+.cap-parameter-content { position:relative; z-index:1; display:flex; align-items:center; gap:var(--cap-space-3); min-height:var(--cap-parameter-height); padding:0 var(--cap-parameter-inline-inset); font-size:var(--cap-font-size-sm); line-height:var(--cap-line-height-sm); pointer-events:none; }
+.cap-parameter-content label { display:flex; align-items:center; gap:var(--cap-space-2); flex:1; min-width:0; color:var(--cap-content-secondary); }
+.cap-parameter-label-ink { display:inline-flex; align-items:center; gap:var(--cap-space-2); width:max-content; max-width:100%; min-width:0; }
+.cap-parameter-label-text { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.cap-parameter-icon { display:flex; justify-content:center; flex:0 0 16px; width:16px; }
+.cap-parameter-icon svg { width:16px; height:16px; }
+.cap-parameter-content output { display:inline-flex; align-items:baseline; justify-content:flex-end; gap:3px; flex:0 1 auto; min-width:0; max-width:50%; overflow:hidden; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.cap-parameter-content output > span:first-child { min-width:0; overflow:hidden; text-overflow:ellipsis; }
+.cap-parameter-unit { flex:none; color:var(--cap-content-secondary); }
+.cap-parameter-handle-layer { position:absolute; z-index:0; inset:0; pointer-events:none; }
+.cap-parameter-handle-slot { position:absolute; left:var(--cap-parameter-progress); top:50%; display:grid; place-items:center; width:20px; height:100%; transform:translate(-50%,-50%); pointer-events:none; }
+.cap-parameter-handle { width:2px; height:calc(clamp(16px,calc(var(--cap-parameter-height) - 10px),28px) / 1.5); border-radius:calc(2px * var(--cap-radius-enabled)); background:var(--cap-content-secondary); opacity:.35; pointer-events:none; transition:opacity var(--cap-duration-fast) var(--cap-ease-standard); }
+.cap-parameter-slider[data-handle-position=start] .cap-parameter-handle-slot { transform:translate(calc(-50% + 1px),-50%); }
+.cap-parameter-slider[data-handle-position=end] .cap-parameter-handle-slot { transform:translate(calc(-50% - 1px),-50%); }
+.cap-parameter-input { appearance:none; position:absolute; inset:0; width:100%; height:100%; margin:0; padding:0; border:0; opacity:0; cursor:ew-resize; touch-action:pan-y; }
+.cap-parameter-input::-webkit-slider-thumb { appearance:none; width:1px; height:44px; }
+.cap-parameter-input::-moz-range-thumb { width:1px; height:44px; border:0; }
+.cap-parameter-slider:has(.cap-parameter-input:not(:disabled):is(:hover,:active)) { --cap-parameter-fill-color:color-mix(in srgb,var(--cap-control-active),var(--cap-content-secondary) var(--cap-parameter-fill-ink-hover,12%)); }
+.cap-parameter-slider:has(.cap-parameter-input:not(:disabled):is(:hover,:focus-visible)) .cap-parameter-handle { opacity:.55; }
+.cap-parameter-slider:has(.cap-parameter-input:not(:disabled):active) .cap-parameter-handle { opacity:.7; }
+.cap-parameter-slider:has(.cap-parameter-input:focus-visible) { outline:var(--cap-field-focus-width,1px) solid var(--cap-field-focus-color,var(--cap-focus-ring)); outline-offset:var(--cap-field-focus-offset,0px); }
+.cap-parameter-slider[data-disabled] :is(label,output) { color:var(--cap-disabled-text); }
+.cap-parameter-slider[data-disabled] { --cap-parameter-fill-color:color-mix(in srgb,var(--cap-control-bg),var(--cap-control-active) 50%); }
+.cap-parameter-slider[data-disabled] .cap-parameter-handle { background:var(--cap-disabled-text); }
+.cap-parameter-input:disabled { cursor:not-allowed; }
+/* Paint above the full-row fill without changing the control or pad geometry. */
+:is(.cap-parameter-slider,.cap-slider-2d-pad)::after { content:''; position:absolute; inset:0; z-index:2; box-sizing:border-box; border:var(--cap-border-width) solid var(--cap-control-border); border-radius:inherit; pointer-events:none; }
+.cap-slider-2d { min-width:0; width:100%; display:grid; gap:var(--cap-space-3); }
+.cap-slider-2d-pad { position:relative; min-width:0; min-height:180px; aspect-ratio:1.35; overflow:hidden; border-radius:var(--cap-control-radius); background:var(--cap-control-bg); touch-action:none; user-select:none; cursor:crosshair; transition:background-color var(--cap-duration-fast) var(--cap-ease-standard); }
+.cap-slider-2d-pad[data-grid]::before { content:''; position:absolute; inset:24px; background-image:radial-gradient(circle,var(--cap-content-caption) 1px,transparent 1px); opacity:.2; background-size:20px 20px; background-position:center; pointer-events:none; }
+.cap-slider-2d:not([data-disabled]) .cap-slider-2d-pad:hover { background:var(--cap-control-hover); }
+.cap-slider-2d:not([data-disabled]) .cap-slider-2d-pad:active { background:var(--cap-control-pressed); }
+.cap-slider-2d-pad:is(:focus-visible,:has(input:focus-visible)) { outline:var(--cap-field-focus-width,1px) solid var(--cap-field-focus-color,var(--cap-focus-ring)); outline-offset:var(--cap-field-focus-offset,0px); }
+.cap-slider-2d-pad > span:not(.cap-slider-2d-point) { position:absolute; font-size:var(--cap-font-size-xs); color:var(--cap-content-secondary); line-height:var(--cap-line-height-sm); pointer-events:none; }
+.cap-slider-2d-top { top:var(--cap-space-3); left:50%; transform:translateX(-50%); }
+.cap-slider-2d-bottom { bottom:var(--cap-space-3); left:50%; transform:translateX(-50%); }
+.cap-slider-2d-left { top:50%; left:var(--cap-space-3); writing-mode:vertical-rl; transform:translateY(-50%) rotate(180deg); }
+.cap-slider-2d-right { top:50%; right:var(--cap-space-3); writing-mode:vertical-rl; transform:translateY(-50%); }
+.cap-slider-2d-point { position:absolute; left:calc(24px + (100% - 48px) * var(--cap-pad-x)); top:calc(24px + (100% - 48px) * var(--cap-pad-y)); width:18px; height:18px; border:3px solid var(--cap-surface-current); border-radius:50%; background:var(--cap-content-primary); box-shadow:0 0 0 1px var(--cap-control-border); transform:translate(-50%,-50%); pointer-events:none; }
+.cap-slider-2d-fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--cap-space-3); }
+.cap-slider-2d-fields .cap-selection-field { min-width:0; max-width:none; }
+.cap-slider-2d-fields .cap-number-field { min-width:0; width:100%; }
+.cap-slider-2d-fields .cap-number-field input { min-width:0; width:100%; flex:1; }
+.cap-slider-2d[data-disabled] .cap-slider-2d-pad { cursor:not-allowed; }
+.cap-slider-2d[data-disabled] .cap-slider-2d-point { background:var(--cap-disabled-text); }
+.cap-select-root[data-appearance=parameter] { display:flex; width:100%; }
+.cap-select-trigger[data-appearance=parameter] { gap:var(--cap-space-2); min-width:0; border-color:var(--cap-control-border); }
+.cap-select-trigger[data-appearance=parameter] > .cap-select-parameter-label { flex:1 1 0; min-width:0; color:var(--cap-content-secondary); }
+.cap-select-trigger[data-appearance=parameter] > .cap-select-value { flex:0 1 auto; max-width:60%; margin-inline-start:auto; text-align:end; color:var(--cap-content-primary); }
+.cap-select-trigger[data-appearance=parameter]:not(:disabled):is(:hover,[aria-expanded=true]) { background:var(--cap-control-hover); }
+.cap-select-trigger[data-appearance=parameter]:disabled > span { color:var(--cap-disabled-text); }
+@media (pointer:coarse) { .cap-parameter-content { font-size:16px; } .cap-slider-2d-fields input { font-size:16px; } }
+@media (forced-colors:active) { .cap-parameter-slider,.cap-slider-2d-pad { border:1px solid CanvasText; } .cap-parameter-input { appearance:auto; opacity:1; } .cap-parameter-content { visibility:hidden; } .cap-slider-2d-point { background:Highlight; border-color:Canvas; } }

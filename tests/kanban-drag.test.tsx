@@ -61,6 +61,7 @@ it('supports controlled keyboard order and column moves, keeps focus, and expose
  await userEvent.keyboard('{ArrowRight}');expect(order('todo')).toEqual(['b','c']);expect(order('done')).toEqual(['a']);
  await waitFor(()=>expect(screen.getByLabelText('Переместить: Alpha')).toHaveFocus());expect(screen.getByRole('status')).toHaveTextContent('Alpha. Done. Позиция 1.');
  await userEvent.click(screen.getByRole('button',{name:'Действия: Alpha'}));await userEvent.click(screen.getByRole('menuitem',{name:'В Todo'}));expect(order('todo')).toEqual(['b','c','a']);
+ await waitFor(()=>expect(screen.getByLabelText('Переместить: Alpha')).toHaveFocus());
  await userEvent.click(screen.getByRole('button',{name:'Действия: Alpha'}));await userEvent.click(screen.getByRole('menuitem',{name:'Переместить вверх'}));expect(order('todo')).toEqual(['b','a','c']);
 });
 it('preserves card open and completion clicks and supports custom card slots',async()=>{
