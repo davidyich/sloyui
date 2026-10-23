@@ -46,5 +46,7 @@ describe('Canonical accents and authored Palette Lab projects', () => {
         }
       }
     }
-  }, 15000);
+  // This exhaustive correctness matrix is not a timing benchmark; shared CI
+  // runners take 10–16 seconds for the same six-hue/context search.
+  }, 30000);
 });
