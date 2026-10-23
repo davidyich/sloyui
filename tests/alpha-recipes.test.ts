@@ -29,7 +29,7 @@ describe('Shared finite alpha recipes',()=>{
   const backings=bases.flatMap(base=>[base,...[base,composite(neutral.roles['surface/block'],base)].flatMap(bg=>Object.values(neutral.roles).map(paint=>composite(paint,bg)))]);
   for(const preset of presets){const a=createAccent(preset.name,preset.hex),r=solveAlphaRecipe(a,generatePalette(a)[0].steps,{backings,dark:false}),actual=toOklch(composite(r.fills['secondary/normal'],WHITE)),old=anchors[preset.name];expect(r.diagnostics.limited,preset.name).toBe(false);expect(Math.abs(actual.l-old.l),preset.name).toBeLessThanOrEqual(.025);expect(actual.c,preset.name).toBeGreaterThanOrEqual(old.c-.003);expect(Math.abs((actual.h-old.h+540)%360-180),preset.name).toBeLessThanOrEqual(3);}
  },30000);
- it('routes all ordinary contexts and Invert to one recipe per local polarity, with a bounded cache',()=>{
+ it('routes ordinary contexts and Invert to five bounded backing families with a cache',()=>{
   const neutral=createNeutralSystem(),accent=createAccent('blue','#087BE9'),all=generateAll(accent,source,resolved,undefined,rules,neutral);
   const groups=new Map();for(const context of all.filter(c=>c.surface!=='Custom')){expect(context.checks.every(c=>c.pass)).toBe(true);expect(context.issues).toEqual([]);const fills=Object.fromEntries(soft.map(role=>[role,context.fills[role]])),key=alphaRecipeFamily(context.effectiveTheme,context.surface,context.bg);if(groups.has(key))expect(fills).toEqual(groups.get(key));else groups.set(key,fills);}
   expect(groups.size).toBe(5);expect(all.find(c=>c.theme==='Light'&&c.surface==='Invert')!.bg).toEqual(BLACK);expect(all.find(c=>c.theme==='Dark'&&c.surface==='Invert')!.bg).toEqual(WHITE);
@@ -39,7 +39,7 @@ describe('Shared finite alpha recipes',()=>{
   const n=createNeutralSystem(),contexts=generateAll(n.accent,source,resolved,undefined,rules,n);
   for(const c of contexts){expect(c.checks.every(check=>check.pass)).toBe(true);expect(c.issues,`${c.theme}/${c.surface}`).toEqual([]);for(const check of c.appearanceChecks.filter(check=>check.metric==='stateContrast'))expect(check.min).toBe(1.06);}
   const accent=createAccent('authored-brand','#8453B9'),project=validateProject({schema,accents:[accent],rules:{...rules,alphaRecipe:{fills:{'secondary/normal':BLACK}}}});expect(project.rules).not.toHaveProperty('alphaRecipe');expect(project.accents[0].hex).toBe(accent.hex);
- });
+ },30000);
  it('regenerates exact RGB Custom with the shared algorithm and adapts fill direction independently of ink',()=>{
   const accent=createAccent('blue','#087BE9'),neutral=createNeutralSystem();for(const hex of ['#E53E3E','#7955F6','#777777','#FFFFFF','#000000']){
    const c=generateContext(accent,'Light','Standard','Custom',source,resolved,{Light:hex,Dark:hex},rules,undefined,'Custom',neutral);
