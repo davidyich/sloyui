@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.17.1 · 2026-10-23
+
+- Light secondary fills use a stronger chroma target while retaining surface-specific luminance, six accents and verified text contrast.
+- Figma Borders defaults to On and toggles inherited 0.5 px boundaries across controls, cards and overlays.
+- Figma controls use focus through semantic fill changes, readable disabled pairs and the filled Palette Lab ParameterSlider.
+- Native selections, overlays and editable Sloy Today/Library compositions extend the library; the color guide exposes neutral and stable black/white roles first.
+
 ## 0.17.0 — 2026-10-23
 
 - Consolidated the latest catalogue, Palette Lab and native Figma controls work into one source tree.

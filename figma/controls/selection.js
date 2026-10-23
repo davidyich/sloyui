@@ -7,8 +7,7 @@ for(const kind of SELECTION_KINDS){
  const track=frame('Control','HORIZONTAL');c.appendChild(track);track.resize(kind==='Switch'?42:18,kind==='Switch'?24:18);track.layoutSizingHorizontal='FIXED';track.layoutSizingVertical='FIXED';track.primaryAxisAlignItems=kind==='Switch'?(selected?'MAX':'MIN'):'CENTER';track.counterAxisAlignItems='CENTER';
  if(kind==='Switch'||kind==='Radio')bind(track,'cornerRadius','radius/pill','Primitives');else radius(track,'sm');
  if(disabled)fill(track,'surface/disabled');else if(selected)fill(track,'surface/primary-'+s,'Accent');else fill(track,'surface/secondary/neutral-'+(kind==='Switch'&&state==='Default'?'pressed':s));
- if(kind!=='Switch')border(track,disabled?'content/disabled':selected?'content':'content/muted',selected&&!disabled?'Accent':'Theme',true);
- if(state==='Focus'){border(track,'content','Accent',true);track.strokeWeight=2;track.strokeAlign='OUTSIDE';}
+ selectionBorder(track,selected,state);
  if(kind==='Switch'){
   track.paddingLeft=3;track.paddingRight=3;const thumb=figma.createEllipse();thumb.name='Thumb';thumb.resize(18,18);track.appendChild(thumb);fill(thumb,disabled?'content/disabled':selected?'on-primary':'content/primary',selected&&!disabled?'Accent':'Theme');
  }else if(kind==='Radio'){

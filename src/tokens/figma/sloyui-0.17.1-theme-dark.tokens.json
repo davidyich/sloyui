@@ -1,9 +1,9 @@
 {
   "$extensions": {
     "com.sloyui.export": {
-      "version": "0.17.0",
+      "version": "0.17.1",
       "collection": "Sloy UI · Theme",
-      "mode": "Light"
+      "mode": "Dark"
     }
   },
   "context": {
@@ -14,9 +14,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9317619717,
-              0.9317619717,
-              0.9317619717
+              0.0502030166,
+              0.0502030166,
+              0.0502030166
             ],
             "alpha": 1
           },
@@ -33,9 +33,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8991073255,
-              0.8991073255,
-              0.8991073255
+              0.2263616092,
+              0.2263616092,
+              0.2263616092
             ],
             "alpha": 1
           },
@@ -54,9 +54,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9317619717,
-              0.9317619717,
-              0.9317619717
+              0.0877167424,
+              0.0877167424,
+              0.0877167424
             ],
             "alpha": 1
           },
@@ -73,9 +73,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.3992640547,
-              0.3992640547,
-              0.3992640547
+              0.7215451819,
+              0.7215451819,
+              0.7215451819
             ],
             "alpha": 1
           },
@@ -94,9 +94,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.1167714979,
-              0.1167714979,
-              0.1167714979
+              0.9653810442,
+              0.9653810442,
+              0.9653810442
             ],
             "alpha": 1
           },
@@ -113,9 +113,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.2065551762,
-              0.2065551762,
-              0.2065551762
+              0.9317619717,
+              0.9317619717,
+              0.9317619717
             ],
             "alpha": 1
           },
@@ -132,9 +132,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.264872785,
-              0.264872785,
-              0.264872785
+              0.8673824811,
+              0.8673824811,
+              0.8673824811
             ],
             "alpha": 1
           },
@@ -147,141 +147,6 @@
           }
         },
         "muted": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.3028015713,
-              0.3028015713,
-              0.3028015713
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {}
-            }
-          }
-        },
-        "caption": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.3408628816,
-              0.3408628816,
-              0.3408628816
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {}
-            }
-          }
-        }
-      },
-      "border": {
-        "subtle": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.8991073255,
-              0.8991073255,
-              0.8991073255
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {}
-            }
-          }
-        },
-        "default": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.836553596,
-              0.836553596,
-              0.836553596
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {}
-            }
-          }
-        },
-        "strong": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.7491148896,
-              0.7491148896,
-              0.7491148896
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {}
-            }
-          }
-        },
-        "emphasis": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.3601047577,
-              0.3601047577,
-              0.3601047577
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {}
-            }
-          }
-        },
-        "control": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.836553596,
-              0.836553596,
-              0.836553596
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {}
-            }
-          }
-        },
-        "control-hover": {
           "$type": "color",
           "$value": {
             "colorSpace": "srgb",
@@ -300,14 +165,149 @@
             }
           }
         },
+        "caption": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7774519281,
+              0.7774519281,
+              0.7774519281
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "border": {
+        "subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1167714979,
+              0.1167714979,
+              0.1167714979
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1418796635,
+              0.1418796635,
+              0.1418796635
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2263616092,
+              0.2263616092,
+              0.2263616092
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "emphasis": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5941430661,
+              0.5941430661,
+              0.5941430661
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "control": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.264872785,
+              0.264872785,
+              0.264872785
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "control-hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.3028015713,
+              0.3028015713,
+              0.3028015713
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
         "control-pressed": {
           "$type": "color",
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7491148896,
-              0.7491148896,
-              0.7491148896
+              0.3217808795,
+              0.3217808795,
+              0.3217808795
             ],
             "alpha": 1
           },
@@ -326,9 +326,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8673824811,
-              0.8673824811,
-              0.8673824811
+              0.2457477303,
+              0.2457477303,
+              0.2457477303
             ],
             "alpha": 1
           },
@@ -348,9 +348,9 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.2457477303,
-                0.2457477303,
-                0.2457477303
+                0.9317619717,
+                0.9317619717,
+                0.9317619717
               ],
               "alpha": 1
             },
@@ -371,9 +371,9 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.1418796635,
-                0.1418796635,
-                0.1418796635
+                0.9653810442,
+                0.9653810442,
+                0.9653810442
               ],
               "alpha": 1
             },
@@ -390,9 +390,9 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.1861108446,
-                0.1861108446,
-                0.1861108446
+                0.8991073255,
+                0.8991073255,
+                0.8991073255
               ],
               "alpha": 1
             },
@@ -409,9 +409,9 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.2263616092,
-                0.2263616092,
-                0.2263616092
+                0.836553596,
+                0.836553596,
+                0.836553596
               ],
               "alpha": 1
             },
@@ -429,9 +429,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              1
+              0,
+              0,
+              0
             ],
             "alpha": 1
           },
@@ -453,11 +453,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    1e-10,
-                    0.4382018359,
-                    0.8419993445
+                    0.4166053382,
+                    0.6769125792,
+                    1
                   ],
-                  "alpha": 0.3
+                  "alpha": 0.23
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -472,11 +472,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    2e-10,
-                    0.3298650131,
-                    0.6449642729
+                    0.4696400289,
+                    0.7052058217,
+                    0.9999999999
                   ],
-                  "alpha": 0.32
+                  "alpha": 0.27
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -492,9 +492,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  2e-10,
-                  0.2239279564,
-                  0.4522937199
+                  0.8249633886,
+                  0.901695687,
+                  1
                 ],
                 "alpha": 1
               },
@@ -512,9 +512,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    2e-10,
-                    0.3838601889,
-                    0.7431667405
+                    0.2989986071,
+                    0.6173211063,
+                    0.9999999999
                   ],
                   "alpha": 1
                 },
@@ -535,9 +535,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    1e-10,
-                    0.4382018359,
-                    0.8419993445
+                    0.4696400289,
+                    0.7052058217,
+                    0.9999999999
                   ],
                   "alpha": 1
                 },
@@ -554,9 +554,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    2e-10,
-                    0.3838601889,
-                    0.7431667405
+                    0.568630663,
+                    0.7591709242,
+                    1
                   ],
                   "alpha": 1
                 },
@@ -579,11 +579,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0,
-                    0.4684285202,
-                    0.2741307741
+                    0.3324559089,
+                    0.7650112948,
+                    0.525569882
                   ],
-                  "alpha": 0.29
+                  "alpha": 0.23
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -598,11 +598,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    2e-10,
-                    0.3720744805,
-                    0.2135435527
+                    0.4411272769,
+                    0.8105354006,
+                    0.5940407354
                   ],
-                  "alpha": 0.32
+                  "alpha": 0.25
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -618,9 +618,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0,
-                  0.2468502349,
-                  0.1348028052
+                  0.7745984301,
+                  0.9419160491,
+                  0.8325625668
                 ],
                 "alpha": 1
               },
@@ -638,9 +638,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0,
-                    0.4684285202,
-                    0.2741307741
+                    0.2045387097,
+                    0.7164025953,
+                    0.4582385322
                   ],
                   "alpha": 1
                 },
@@ -661,9 +661,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    2e-10,
-                    0.5008011309,
-                    0.294486605
+                    0.3881285185,
+                    0.7881719016,
+                    0.5597005685
                   ],
                   "alpha": 1
                 },
@@ -680,9 +680,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    3e-10,
-                    0.4361589659,
-                    0.2538397449
+                    0.4922700149,
+                    0.8320745192,
+                    0.6285094072
                   ],
                   "alpha": 1
                 },
@@ -705,11 +705,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6515662608,
-                    0.3074066104,
-                    1e-10
+                    1,
+                    0.6069977915,
+                    0.3607898982
                   ],
-                  "alpha": 0.29
+                  "alpha": 0.22
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -724,11 +724,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.5285433157,
-                    0.244306614,
-                    2e-10
+                    1,
+                    0.649408992,
+                    0.4367601616
                   ],
-                  "alpha": 0.32
+                  "alpha": 0.26
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -744,9 +744,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.3679185272,
-                  0.1619201651,
-                  2e-10
+                  1,
+                  0.8912345622,
+                  0.8300153709
                 ],
                 "alpha": 1
               },
@@ -764,9 +764,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6104123421,
-                    0.2862982544,
-                    2e-10
+                    0.9388163869,
+                    0.4558117611,
+                    0.0082833655
                   ],
                   "alpha": 1
                 },
@@ -787,9 +787,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.734089978,
-                    0.3497340499,
-                    2e-10
+                    0.9909293445,
+                    0.5676319445,
+                    0.291842178
                   ],
                   "alpha": 1
                 },
@@ -806,9 +806,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6515662608,
-                    0.3074066104,
-                    1e-10
+                    1,
+                    0.649408992,
+                    0.4367601616
                   ],
                   "alpha": 1
                 },
@@ -831,11 +831,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6420313322,
-                    2e-10,
-                    0.0845595613
+                    1,
+                    0.5399467119,
+                    0.5047639459
                   ],
-                  "alpha": 0.21
+                  "alpha": 0.23
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -850,11 +850,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.5935094255,
-                    3e-10,
-                    0.0748445088
+                    0.9999999999,
+                    0.5873578209,
+                    0.5523053479
                   ],
-                  "alpha": 0.26
+                  "alpha": 0.27
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -870,9 +870,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.4501680938,
-                  0,
-                  0.046144718
+                  1,
+                  0.8854927411,
+                  0.8723364373
                 ],
                 "alpha": 1
               },
@@ -890,9 +890,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.7398223188,
-                    1e-10,
-                    0.1041392653
+                    1,
+                    0.3679060227,
+                    0.3468899043
                   ],
                   "alpha": 1
                 },
@@ -913,9 +913,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.8875528899,
-                    6e-10,
-                    0.1337178693
+                    1,
+                    0.5399467119,
+                    0.5047639459
                   ],
                   "alpha": 1
                 },
@@ -932,9 +932,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.7889798876,
-                    4e-10,
-                    0.1139815901
+                    1,
+                    0.6317526273,
+                    0.5979637392
                   ],
                   "alpha": 1
                 },
@@ -957,9 +957,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.5432484406,
-                    3e-10,
-                    0.4164651136
+                    1,
+                    0.5855806744,
+                    0.8520484416
                   ],
                   "alpha": 0.21
                 },
@@ -976,9 +976,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.4110163946,
-                    1e-10,
-                    0.3122562393
+                    1,
+                    0.6347337373,
+                    0.8657636943
                   ],
                   "alpha": 0.25
                 },
@@ -996,9 +996,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.4110163946,
-                  1e-10,
-                  0.3122562393
+                  1,
+                  0.8741442317,
+                  0.9478452285
                 ],
                 "alpha": 1
               },
@@ -1016,9 +1016,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6782217452,
-                    3e-10,
-                    0.5228343075
+                    0.9738086128,
+                    0.2852394668,
+                    0.7737322615
                   ],
                   "alpha": 1
                 },
@@ -1039,9 +1039,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.8145028544,
-                    5e-10,
-                    0.6302341506
+                    1,
+                    0.4739392329,
+                    0.8252050624
                   ],
                   "alpha": 1
                 },
@@ -1058,9 +1058,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.7235694884,
-                    3e-10,
-                    0.5585717662
+                    1,
+                    0.5855806744,
+                    0.8520484416
                   ],
                   "alpha": 1
                 },
@@ -1083,11 +1083,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.3246109719,
-                    0,
-                    0.5068983127
+                    0.8102966224,
+                    0.6205658941,
+                    1
                   ],
-                  "alpha": 0.2
+                  "alpha": 0.22
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1102,11 +1102,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.2205372925,
-                    0,
-                    0.3528489592
+                    0.8274757565,
+                    0.6592686116,
+                    1
                   ],
-                  "alpha": 0.24
+                  "alpha": 0.25
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1122,9 +1122,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.3246109719,
-                  0,
-                  0.5068983127
+                  0.9414788021,
+                  0.8914223274,
+                  1
                 ],
                 "alpha": 1
               },
@@ -1142,9 +1142,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.5422730198,
-                    2e-10,
-                    0.8290806166
+                    0.7411101774,
+                    0.4451538423,
+                    1
                   ],
                   "alpha": 1
                 },
@@ -1165,9 +1165,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6384188039,
-                    0.1529476029,
-                    0.9530606435
+                    0.793037872,
+                    0.5801694593,
+                    1
                   ],
                   "alpha": 1
                 },
@@ -1184,9 +1184,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.5792127092,
-                    3e-10,
-                    0.883758565
+                    0.8274757565,
+                    0.6592686116,
+                    1
                   ],
                   "alpha": 1
                 },
@@ -1208,9 +1208,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7491148896,
-              0.7491148896,
-              0.7491148896
+              0.2065551762,
+              0.2065551762,
+              0.2065551762
             ],
             "alpha": 1
           },
@@ -1222,7 +1222,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/200"
+              "targetVariableName": "gray/825"
             }
           }
         },
@@ -1231,9 +1231,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6947120397,
-              0.6947120397,
-              0.6947120397
+              0.2457477303,
+              0.2457477303,
+              0.2457477303
             ],
             "alpha": 1
           },
@@ -1245,7 +1245,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/250"
+              "targetVariableName": "gray/775"
             }
           }
         },
@@ -1254,9 +1254,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.5941430661,
-              0.5941430661,
-              0.5941430661
+              0.3217808795,
+              0.3217808795,
+              0.3217808795
             ],
             "alpha": 1
           },
@@ -1268,7 +1268,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/350"
+              "targetVariableName": "gray/675"
             }
           }
         },
@@ -1277,9 +1277,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8673824811,
-              0.8673824811,
-              0.8673824811
+              0.1418796635,
+              0.1418796635,
+              0.1418796635
             ],
             "alpha": 1
           },
@@ -1291,7 +1291,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/100"
+              "targetVariableName": "gray/900"
             }
           }
         },
@@ -1300,9 +1300,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6685851228,
-              0.6685851228,
-              0.6685851228
+              0.3795567932,
+              0.3795567932,
+              0.3795567932
             ],
             "alpha": 1
           },
@@ -1314,7 +1314,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/275"
+              "targetVariableName": "gray/600"
             }
           }
         }
@@ -1327,9 +1327,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9653810442,
-              0.9653810442,
-              0.9653810442
+              0.0877167424,
+              0.0877167424,
+              0.0877167424
             ],
             "alpha": 1
           },
@@ -1346,9 +1346,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9317619717,
-              0.9317619717,
-              0.9317619717
+              0.1861108446,
+              0.1861108446,
+              0.1861108446
             ],
             "alpha": 1
           },
@@ -1367,9 +1367,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9317619717,
-              0.9317619717,
-              0.9317619717
+              0.1167714979,
+              0.1167714979,
+              0.1167714979
             ],
             "alpha": 1
           },
@@ -1388,9 +1388,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8991073255,
-              0.8991073255,
-              0.8991073255
+              0.1418796635,
+              0.1418796635,
+              0.1418796635
             ],
             "alpha": 1
           },
@@ -1407,9 +1407,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8673824811,
-              0.8673824811,
-              0.8673824811
+              0.1647146074,
+              0.1647146074,
+              0.1647146074
             ],
             "alpha": 1
           },
@@ -1426,9 +1426,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7491148896,
-              0.7491148896,
-              0.7491148896
+              0.2457477303,
+              0.2457477303,
+              0.2457477303
             ],
             "alpha": 1
           },
@@ -1445,9 +1445,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.3795567932,
-              0.3795567932,
-              0.3795567932
+              0.5705433443,
+              0.5705433443,
+              0.5705433443
             ],
             "alpha": 1
           },
@@ -1464,9 +1464,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8673824811,
-              0.8673824811,
-              0.8673824811
+              0.2263616092,
+              0.2263616092,
+              0.2263616092
             ],
             "alpha": 1
           },
@@ -1483,9 +1483,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8065875574,
-              0.8065875574,
-              0.8065875574
+              0.264872785,
+              0.264872785,
+              0.264872785
             ],
             "alpha": 1
           },
@@ -1505,9 +1505,9 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.264872785,
-                0.264872785,
-                0.264872785
+                0.9317619717,
+                0.9317619717,
+                0.9317619717
               ],
               "alpha": 1
             },
@@ -1530,11 +1530,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    3e-10,
-                    0.3568043023,
-                    0.6939594773
+                    0.4166053382,
+                    0.6769125792,
+                    1
                   ],
-                  "alpha": 0.26
+                  "alpha": 0.22
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1549,11 +1549,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    1e-10,
-                    0.3030737006,
-                    0.5962381977
+                    0.4696400289,
+                    0.7052058217,
+                    0.9999999999
                   ],
-                  "alpha": 0.3
+                  "alpha": 0.26
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1569,9 +1569,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  2e-10,
-                  0.2239279564,
-                  0.4522937199
+                  0.7458602764,
+                  0.8574910136,
+                  1
                 ],
                 "alpha": 1
               },
@@ -1593,11 +1593,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0,
-                    0.4684285202,
-                    0.2741307741
+                    0.2724992735,
+                    0.7410796216,
+                    0.4917250757
                   ],
-                  "alpha": 0.28
+                  "alpha": 0.22
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1612,11 +1612,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    2e-10,
-                    0.3720744805,
-                    0.2135435527
+                    0.3881285185,
+                    0.7881719016,
+                    0.5597005685
                   ],
-                  "alpha": 0.31
+                  "alpha": 0.25
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1632,9 +1632,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  1e-10,
-                  0.2776773564,
-                  0.1541868356
+                  0.6381060806,
+                  0.8914271751,
+                  0.73178682
                 ],
                 "alpha": 1
               },
@@ -1656,11 +1656,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6515662608,
-                    0.3074066104,
-                    1e-10
+                    1,
+                    0.6069977915,
+                    0.3607898982
                   ],
-                  "alpha": 0.28
+                  "alpha": 0.21
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1675,11 +1675,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6104123421,
-                    0.2862982544,
-                    2e-10
+                    1,
+                    0.649408992,
+                    0.4367601616
                   ],
-                  "alpha": 0.34
+                  "alpha": 0.24
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1695,9 +1695,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.3679185272,
-                  0.1619201651,
-                  2e-10
+                  1,
+                  0.7979282371,
+                  0.6819826208
                 ],
                 "alpha": 1
               },
@@ -1719,11 +1719,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6908212405,
-                    0,
-                    0.094328273
+                    1,
+                    0.5399467119,
+                    0.5047639459
                   ],
-                  "alpha": 0.21
+                  "alpha": 0.22
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1738,11 +1738,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.4975120705,
-                    1e-10,
-                    0.0556239255
+                    0.9999999999,
+                    0.5873578209,
+                    0.5523053479
                   ],
-                  "alpha": 0.25
+                  "alpha": 0.26
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1758,9 +1758,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.4501680938,
-                  0,
-                  0.046144718
+                  1,
+                  0.787432472,
+                  0.7643501547
                 ],
                 "alpha": 1
               },
@@ -1782,9 +1782,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.4546911033,
-                    2e-10,
-                    0.3466752199
+                    1,
+                    0.5855806744,
+                    0.8520484416
                   ],
                   "alpha": 0.2
                 },
@@ -1801,11 +1801,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.4110163946,
-                    1e-10,
-                    0.3122562393
+                    1,
+                    0.6347337373,
+                    0.8657636943
                   ],
-                  "alpha": 0.25
+                  "alpha": 0.24
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1821,9 +1821,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.4110163946,
-                  1e-10,
-                  0.3122562393
+                  1,
+                  0.7647241135,
+                  0.9073301934
                 ],
                 "alpha": 1
               },
@@ -1845,11 +1845,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.3601878288,
-                    1e-10,
-                    0.5595590032
+                    0.8102966224,
+                    0.6205658941,
+                    1
                   ],
-                  "alpha": 0.2
+                  "alpha": 0.21
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1864,9 +1864,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.2547206904,
-                    1e-10,
-                    0.4034470584
+                    0.8274757565,
+                    0.6592686116,
+                    1
                   ],
                   "alpha": 0.24
                 },
@@ -1884,9 +1884,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.3246109719,
-                  0,
-                  0.5068983127
+                  0.8945624961,
+                  0.7999775286,
+                  1
                 ],
                 "alpha": 1
               },
@@ -1907,9 +1907,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7774519281,
-              0.7774519281,
-              0.7774519281
+              0.2263616092,
+              0.2263616092,
+              0.2263616092
             ],
             "alpha": 1
           },
@@ -1921,7 +1921,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/175"
+              "targetVariableName": "gray/800"
             }
           }
         },
@@ -1930,9 +1930,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7215451819,
-              0.7215451819,
-              0.7215451819
+              0.264872785,
+              0.264872785,
+              0.264872785
             ],
             "alpha": 1
           },
@@ -1944,7 +1944,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/225"
+              "targetVariableName": "gray/750"
             }
           }
         },
@@ -1953,9 +1953,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.618330272,
-              0.618330272,
-              0.618330272
+              0.3408628816,
+              0.3408628816,
+              0.3408628816
             ],
             "alpha": 1
           },
@@ -1967,7 +1967,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/325"
+              "targetVariableName": "gray/650"
             }
           }
         },
@@ -1976,9 +1976,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8991073255,
-              0.8991073255,
-              0.8991073255
+              0.1647146074,
+              0.1647146074,
+              0.1647146074
             ],
             "alpha": 1
           },
@@ -1990,7 +1990,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/75"
+              "targetVariableName": "gray/875"
             }
           }
         },
@@ -1999,9 +1999,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6947120397,
-              0.6947120397,
-              0.6947120397
+              0.3408628816,
+              0.3408628816,
+              0.3408628816
             ],
             "alpha": 1
           },
@@ -2013,7 +2013,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/250"
+              "targetVariableName": "gray/650"
             }
           }
         }
@@ -2026,9 +2026,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              1
+              0.1167714979,
+              0.1167714979,
+              0.1167714979
             ],
             "alpha": 1
           },
@@ -2045,9 +2045,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9653810442,
-              0.9653810442,
-              0.9653810442
+              0.1647146074,
+              0.1647146074,
+              0.1647146074
             ],
             "alpha": 1
           },
@@ -2066,9 +2066,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9653810442,
-              0.9653810442,
-              0.9653810442
+              0.1418796635,
+              0.1418796635,
+              0.1418796635
             ],
             "alpha": 1
           },
@@ -2087,9 +2087,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9317619717,
-              0.9317619717,
-              0.9317619717
+              0.1647146074,
+              0.1647146074,
+              0.1647146074
             ],
             "alpha": 1
           },
@@ -2106,9 +2106,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8991073255,
-              0.8991073255,
-              0.8991073255
+              0.1861108446,
+              0.1861108446,
+              0.1861108446
             ],
             "alpha": 1
           },
@@ -2125,9 +2125,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7774519281,
-              0.7774519281,
-              0.7774519281
+              0.264872785,
+              0.264872785,
+              0.264872785
             ],
             "alpha": 1
           },
@@ -2144,9 +2144,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.3992640547,
-              0.3992640547,
-              0.3992640547
+              0.5941430661,
+              0.5941430661,
+              0.5941430661
             ],
             "alpha": 1
           },
@@ -2163,9 +2163,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.836553596,
-              0.836553596,
-              0.836553596
+              0.2263616092,
+              0.2263616092,
+              0.2263616092
             ],
             "alpha": 1
           },
@@ -2187,11 +2187,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    2e-10,
-                    0.3838601889,
-                    0.7431667405
+                    0.3602428243,
+                    0.6476518376,
+                    1
                   ],
-                  "alpha": 0.26
+                  "alpha": 0.23
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2206,9 +2206,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    2e-10,
-                    0.2239279564,
-                    0.4522937199
+                    0.4166053382,
+                    0.6769125792,
+                    1
                   ],
                   "alpha": 0.27
                 },
@@ -2226,9 +2226,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  2e-10,
-                  0.2239279564,
-                  0.4522937199
+                  0.7038904604,
+                  0.8340996661,
+                  1
                 ],
                 "alpha": 1
               },
@@ -2250,11 +2250,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0,
-                    0.4684285202,
-                    0.2741307741
+                    0.2724992735,
+                    0.7410796216,
+                    0.4917250757
                   ],
-                  "alpha": 0.27
+                  "alpha": 0.22
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2269,11 +2269,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    3e-10,
-                    0.4361589659,
-                    0.2538397449
+                    0.3881285185,
+                    0.7881719016,
+                    0.5597005685
                   ],
-                  "alpha": 0.33
+                  "alpha": 0.25
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2294,11 +2294,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.775372804,
-                    0.370908524,
-                    2e-10
+                    0.9909293445,
+                    0.5676319445,
+                    0.291842178
                   ],
-                  "alpha": 0.31
+                  "alpha": 0.21
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2313,11 +2313,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6104123421,
-                    0.2862982544,
-                    2e-10
+                    1,
+                    0.649408992,
+                    0.4367601616
                   ],
-                  "alpha": 0.33
+                  "alpha": 0.24
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2333,9 +2333,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.3679185272,
-                  0.1619201651,
-                  2e-10
+                  1,
+                  0.763520234,
+                  0.6266309713
                 ],
                 "alpha": 1
               },
@@ -2352,14 +2352,33 @@
         "red": {
           "secondary": {
             "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    1,
+                    0.5399467119,
+                    0.5047639459
+                  ],
+                  "alpha": 0.22
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
               "hover": {
                 "$type": "color",
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.5453152106,
-                    3e-10,
-                    0.0651950667
+                    0.9999999999,
+                    0.5873578209,
+                    0.5523053479
                   ],
                   "alpha": 0.25
                 },
@@ -2377,9 +2396,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.4501680938,
-                  0,
-                  0.046144718
+                  1,
+                  0.7513220126,
+                  0.7250797634
                 ],
                 "alpha": 1
               },
@@ -2401,9 +2420,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.4987893891,
-                    2e-10,
-                    0.3814280114
+                    1,
+                    0.5855806744,
+                    0.8520484416
                   ],
                   "alpha": 0.2
                 },
@@ -2420,11 +2439,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.4546911033,
-                    2e-10,
-                    0.3466752199
+                    1,
+                    0.6347337373,
+                    0.8657636943
                   ],
-                  "alpha": 0.25
+                  "alpha": 0.23
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2440,9 +2459,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.4110163946,
-                  1e-10,
-                  0.3122562393
+                  1,
+                  0.7238972722,
+                  0.8934741763
                 ],
                 "alpha": 1
               },
@@ -2464,11 +2483,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.3961097263,
-                    1e-10,
-                    0.612730421
+                    0.793037872,
+                    0.5801694593,
+                    1
                   ],
-                  "alpha": 0.2
+                  "alpha": 0.21
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2483,11 +2502,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.2894348069,
-                    1e-10,
-                    0.4548307246
+                    0.8102966224,
+                    0.6205658941,
+                    1
                   ],
-                  "alpha": 0.24
+                  "alpha": 0.25
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2503,9 +2522,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.3246109719,
-                  0,
-                  0.5068983127
+                  0.8781337687,
+                  0.7667740587,
+                  0.9999999999
                 ],
                 "alpha": 1
               },
@@ -2526,9 +2545,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8065875574,
-              0.8065875574,
-              0.8065875574
+              0.2457477303,
+              0.2457477303,
+              0.2457477303
             ],
             "alpha": 1
           },
@@ -2540,7 +2559,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/150"
+              "targetVariableName": "gray/775"
             }
           }
         },
@@ -2549,9 +2568,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7491148896,
-              0.7491148896,
-              0.7491148896
+              0.2838585422,
+              0.2838585422,
+              0.2838585422
             ],
             "alpha": 1
           },
@@ -2563,7 +2582,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/200"
+              "targetVariableName": "gray/725"
             }
           }
         },
@@ -2572,9 +2591,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6431344413,
-              0.6431344413,
-              0.6431344413
+              0.3601047577,
+              0.3601047577,
+              0.3601047577
             ],
             "alpha": 1
           },
@@ -2586,7 +2605,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/300"
+              "targetVariableName": "gray/625"
             }
           }
         },
@@ -2595,9 +2614,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9317619717,
-              0.9317619717,
-              0.9317619717
+              0.1861108446,
+              0.1861108446,
+              0.1861108446
             ],
             "alpha": 1
           },
@@ -2609,7 +2628,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/50"
+              "targetVariableName": "gray/850"
             }
           }
         },
@@ -2618,9 +2637,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7215451819,
-              0.7215451819,
-              0.7215451819
+              0.3217808795,
+              0.3217808795,
+              0.3217808795
             ],
             "alpha": 1
           },
@@ -2632,7 +2651,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/225"
+              "targetVariableName": "gray/675"
             }
           }
         }
@@ -2645,9 +2664,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              1
+              0.1418796635,
+              0.1418796635,
+              0.1418796635
             ],
             "alpha": 1
           },
@@ -2664,9 +2683,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9653810442,
-              0.9653810442,
-              0.9653810442
+              0.2457477303,
+              0.2457477303,
+              0.2457477303
             ],
             "alpha": 1
           },
@@ -2685,9 +2704,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8991073255,
-              0.8991073255,
-              0.8991073255
+              0.2065551762,
+              0.2065551762,
+              0.2065551762
             ],
             "alpha": 1
           },
@@ -2704,9 +2723,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7774519281,
-              0.7774519281,
-              0.7774519281
+              0.2838585422,
+              0.2838585422,
+              0.2838585422
             ],
             "alpha": 1
           },
@@ -2723,9 +2742,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.3992640547,
-              0.3992640547,
-              0.3992640547
+              0.6685851228,
+              0.6685851228,
+              0.6685851228
             ],
             "alpha": 1
           },
@@ -2742,9 +2761,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8673824811,
-              0.8673824811,
-              0.8673824811
+              0.3217808795,
+              0.3217808795,
+              0.3217808795
             ],
             "alpha": 1
           },
@@ -2761,9 +2780,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.836553596,
-              0.836553596,
-              0.836553596
+              0.3408628816,
+              0.3408628816,
+              0.3408628816
             ],
             "alpha": 1
           },
@@ -2780,9 +2799,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7774519281,
-              0.7774519281,
-              0.7774519281
+              0.3601047577,
+              0.3601047577,
+              0.3601047577
             ],
             "alpha": 1
           },
@@ -2801,9 +2820,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9317619717,
-              0.9317619717,
-              0.9317619717
+              0.3028015713,
+              0.3028015713,
+              0.3028015713
             ],
             "alpha": 1
           },
@@ -2820,9 +2839,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8991073255,
-              0.8991073255,
-              0.8991073255
+              0.3217808795,
+              0.3217808795,
+              0.3217808795
             ],
             "alpha": 1
           },
@@ -2843,9 +2862,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.9653810442,
-                  0.9653810442,
-                  0.9653810442
+                  0.2838585422,
+                  0.2838585422,
+                  0.2838585422
                 ],
                 "alpha": 1
               },
@@ -2863,9 +2882,9 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.264872785,
-                0.264872785,
-                0.264872785
+                0.9653810442,
+                0.9653810442,
+                0.9653810442
               ],
               "alpha": 1
             },
@@ -2887,9 +2906,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  2e-10,
-                  0.2239279564,
-                  0.4522937199
+                  0.9787851811,
+                  0.9880473367,
+                  1
                 ],
                 "alpha": 1
               },
@@ -2910,9 +2929,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  1e-10,
-                  0.2776773564,
-                  0.1541868356
+                  0.9656051975,
+                  0.9965554818,
+                  0.9754741763
                 ],
                 "alpha": 1
               },
@@ -2933,9 +2952,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.3679185272,
-                  0.1619201651,
-                  2e-10
+                  1,
+                  0.9834247999,
+                  0.9742449957
                 ],
                 "alpha": 1
               },
@@ -2957,11 +2976,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6908212405,
-                    0,
-                    0.094328273
+                    0.9999999999,
+                    0.4886828589,
+                    0.455052085
                   ],
-                  "alpha": 0.21
+                  "alpha": 0.23
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2976,11 +2995,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.5453152106,
-                    3e-10,
-                    0.0651950667
+                    1,
+                    0.5399467119,
+                    0.5047639459
                   ],
-                  "alpha": 0.25
+                  "alpha": 0.27
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -2996,9 +3015,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.4501680938,
-                  0,
-                  0.046144718
+                  1,
+                  0.9825395737,
+                  0.9804641259
                 ],
                 "alpha": 1
               },
@@ -3019,9 +3038,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.4110163946,
-                  1e-10,
-                  0.3122562393
+                  1,
+                  0.9809128644,
+                  0.9917372231
                 ],
                 "alpha": 1
               },
@@ -3042,9 +3061,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.3246109719,
-                  0,
-                  0.5068983127
+                  0.9908420781,
+                  0.9833438662,
+                  1
                 ],
                 "alpha": 1
               },
@@ -3065,9 +3084,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8065875574,
-              0.8065875574,
-              0.8065875574
+              0.264872785,
+              0.264872785,
+              0.264872785
             ],
             "alpha": 1
           },
@@ -3079,7 +3098,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/150"
+              "targetVariableName": "gray/750"
             }
           }
         },
@@ -3088,9 +3107,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7491148896,
-              0.7491148896,
-              0.7491148896
+              0.3028015713,
+              0.3028015713,
+              0.3028015713
             ],
             "alpha": 1
           },
@@ -3102,7 +3121,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/200"
+              "targetVariableName": "gray/700"
             }
           }
         },
@@ -3111,9 +3130,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6431344413,
-              0.6431344413,
-              0.6431344413
+              0.3795567932,
+              0.3795567932,
+              0.3795567932
             ],
             "alpha": 1
           },
@@ -3125,7 +3144,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/300"
+              "targetVariableName": "gray/600"
             }
           }
         },
@@ -3134,9 +3153,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9317619717,
-              0.9317619717,
-              0.9317619717
+              0.2065551762,
+              0.2065551762,
+              0.2065551762
             ],
             "alpha": 1
           },
@@ -3148,7 +3167,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/50"
+              "targetVariableName": "gray/825"
             }
           }
         },
@@ -3157,9 +3176,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7215451819,
-              0.7215451819,
-              0.7215451819
+              0.4396054941,
+              0.4396054941,
+              0.4396054941
             ],
             "alpha": 1
           },
@@ -3171,7 +3190,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Palette",
-              "targetVariableName": "gray/225"
+              "targetVariableName": "gray/525"
             }
           }
         }
@@ -3184,9 +3203,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0,
-          0,
-          0
+          1,
+          1,
+          1
         ],
         "alpha": 0
       },
@@ -3218,11 +3237,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0,
-          0,
-          0
+          1,
+          1,
+          1
         ],
-        "alpha": 0.04
+        "alpha": 0.06
       },
       "$extensions": {
         "com.sloyui.variable": {
@@ -3234,7 +3253,7 @@
     },
     "hover-opacity": {
       "$type": "number",
-      "$value": 4,
+      "$value": 6,
       "$extensions": {
         "com.sloyui.variable": {
           "scopes": [],
@@ -3243,7 +3262,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Primitives",
-          "targetVariableName": "opacity/04"
+          "targetVariableName": "opacity/06"
         }
       }
     },
@@ -3252,11 +3271,11 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0,
-          0,
-          0
+          1,
+          1,
+          1
         ],
-        "alpha": 0.08
+        "alpha": 0.1
       },
       "$extensions": {
         "com.sloyui.variable": {
@@ -3268,7 +3287,7 @@
     },
     "pressed-opacity": {
       "$type": "number",
-      "$value": 8,
+      "$value": 10,
       "$extensions": {
         "com.sloyui.variable": {
           "scopes": [],
@@ -3277,7 +3296,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Primitives",
-          "targetVariableName": "opacity/08"
+          "targetVariableName": "opacity/10"
         }
       }
     },
@@ -3286,9 +3305,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0,
-          0,
-          0
+          1,
+          1,
+          1
         ],
         "alpha": 1
       },
@@ -3300,7 +3319,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Palette",
-          "targetVariableName": "black"
+          "targetVariableName": "white"
         }
       }
     }
@@ -3315,7 +3334,7 @@
           0,
           0
         ],
-        "alpha": 0.06
+        "alpha": 0.1
       },
       "$extensions": {
         "com.sloyui.variable": {
@@ -3334,7 +3353,7 @@
           0,
           0
         ],
-        "alpha": 0.1
+        "alpha": 0.14
       },
       "$extensions": {
         "com.sloyui.variable": {
@@ -3355,7 +3374,7 @@
           0,
           0
         ],
-        "alpha": 0.32
+        "alpha": 0.58
       },
       "$extensions": {
         "com.sloyui.variable": {
@@ -3376,9 +3395,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  1,
-                  1,
-                  1
+                  0.0877167424,
+                  0.0877167424,
+                  0.0877167424
                 ],
                 "alpha": 1
               },
@@ -3397,9 +3416,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.9653810442,
-                  0.9653810442,
-                  0.9653810442
+                  0.1167714979,
+                  0.1167714979,
+                  0.1167714979
                 ],
                 "alpha": 1
               },
@@ -3418,9 +3437,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.9317619717,
-                  0.9317619717,
-                  0.9317619717
+                  0.1418796635,
+                  0.1418796635,
+                  0.1418796635
                 ],
                 "alpha": 1
               },
@@ -3437,9 +3456,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.7774519281,
-                  0.7774519281,
-                  0.7774519281
+                  0.2457477303,
+                  0.2457477303,
+                  0.2457477303
                 ],
                 "alpha": 1
               },
@@ -3456,9 +3475,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.3992640547,
-                  0.3992640547,
-                  0.3992640547
+                  0.5705433443,
+                  0.5705433443,
+                  0.5705433443
                 ],
                 "alpha": 1
               },
@@ -3480,11 +3499,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        2e-10,
-                        0.3838601889,
-                        0.7431667405
+                        0.4166053382,
+                        0.6769125792,
+                        1
                       ],
-                      "alpha": 0.26
+                      "alpha": 0.22
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -3499,11 +3518,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        2e-10,
-                        0.2239279564,
-                        0.4522937199
+                        0.4696400289,
+                        0.7052058217,
+                        0.9999999999
                       ],
-                      "alpha": 0.27
+                      "alpha": 0.26
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -3524,11 +3543,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        0.775372804,
-                        0.370908524,
-                        2e-10
+                        1,
+                        0.6069977915,
+                        0.3607898982
                       ],
-                      "alpha": 0.31
+                      "alpha": 0.21
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -3549,36 +3568,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        0.5453152106,
-                        3e-10,
-                        0.0651950667
+                        0.9999999999,
+                        0.5873578209,
+                        0.5523053479
                       ],
-                      "alpha": 0.25
-                    },
-                    "$extensions": {
-                      "com.sloyui.variable": {
-                        "scopes": [],
-                        "visibility": "internal",
-                        "codeSyntax": {}
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "pink": {
-              "secondary": {
-                "background": {
-                  "hover": {
-                    "$type": "color",
-                    "$value": {
-                      "colorSpace": "srgb",
-                      "components": [
-                        0.4546911033,
-                        2e-10,
-                        0.3466752199
-                      ],
-                      "alpha": 0.25
+                      "alpha": 0.26
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -3599,11 +3593,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        0.3961097263,
-                        1e-10,
-                        0.612730421
+                        0.8102966224,
+                        0.6205658941,
+                        1
                       ],
-                      "alpha": 0.2
+                      "alpha": 0.21
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -3618,9 +3612,9 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        0.2894348069,
-                        1e-10,
-                        0.4548307246
+                        0.8274757565,
+                        0.6592686116,
+                        1
                       ],
                       "alpha": 0.24
                     },
@@ -3644,9 +3638,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  1,
-                  1,
-                  1
+                  0.1861108446,
+                  0.1861108446,
+                  0.1861108446
                 ],
                 "alpha": 1
               },
@@ -3665,9 +3659,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.9653810442,
-                  0.9653810442,
-                  0.9653810442
+                  0.2065551762,
+                  0.2065551762,
+                  0.2065551762
                 ],
                 "alpha": 1
               },
@@ -3686,9 +3680,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.9317619717,
-                  0.9317619717,
-                  0.9317619717
+                  0.2263616092,
+                  0.2263616092,
+                  0.2263616092
                 ],
                 "alpha": 1
               },
@@ -3705,9 +3699,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.8991073255,
-                  0.8991073255,
-                  0.8991073255
+                  0.2457477303,
+                  0.2457477303,
+                  0.2457477303
                 ],
                 "alpha": 1
               },
@@ -3724,9 +3718,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.7774519281,
-                  0.7774519281,
-                  0.7774519281
+                  0.3028015713,
+                  0.3028015713,
+                  0.3028015713
                 ],
                 "alpha": 1
               },
@@ -3743,9 +3737,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.8673824811,
-                  0.8673824811,
-                  0.8673824811
+                  0.2838585422,
+                  0.2838585422,
+                  0.2838585422
                 ],
                 "alpha": 1
               },
@@ -3762,9 +3756,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.836553596,
-                  0.836553596,
-                  0.836553596
+                  0.3217808795,
+                  0.3217808795,
+                  0.3217808795
                 ],
                 "alpha": 1
               },
@@ -3783,9 +3777,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.9317619717,
-                  0.9317619717,
-                  0.9317619717
+                  0.264872785,
+                  0.264872785,
+                  0.264872785
                 ],
                 "alpha": 1
               },
@@ -3802,9 +3796,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.8991073255,
-                  0.8991073255,
-                  0.8991073255
+                  0.2838585422,
+                  0.2838585422,
+                  0.2838585422
                 ],
                 "alpha": 1
               },
@@ -3826,11 +3820,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        2e-10,
-                        0.3838601889,
-                        0.7431667405
+                        0.3602428243,
+                        0.6476518376,
+                        1
                       ],
-                      "alpha": 0.26
+                      "alpha": 0.24
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -3845,11 +3839,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        2e-10,
-                        0.2239279564,
-                        0.4522937199
+                        0.4166053382,
+                        0.6769125792,
+                        1
                       ],
-                      "alpha": 0.27
+                      "alpha": 0.28
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -3865,9 +3859,9 @@
                   "$value": {
                     "colorSpace": "srgb",
                     "components": [
-                      2e-10,
-                      0.2239279564,
-                      0.4522937199
+                      0.8965741297,
+                      0.9418308681,
+                      1
                     ],
                     "alpha": 1
                   },
@@ -3889,11 +3883,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        0,
-                        0.4684285202,
-                        0.2741307741
+                        0.2724992735,
+                        0.7410796216,
+                        0.4917250757
                       ],
-                      "alpha": 0.27
+                      "alpha": 0.23
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -3908,11 +3902,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        3e-10,
-                        0.4361589659,
-                        0.2538397449
+                        0.3881285185,
+                        0.7881719016,
+                        0.5597005685
                       ],
-                      "alpha": 0.33
+                      "alpha": 0.26
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -3928,9 +3922,9 @@
                   "$value": {
                     "colorSpace": "srgb",
                     "components": [
-                      1e-10,
-                      0.2776773564,
-                      0.1541868356
+                      0.859508971,
+                      0.9695363671,
+                      0.8962298607
                     ],
                     "alpha": 1
                   },
@@ -3952,11 +3946,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        0.775372804,
-                        0.370908524,
-                        2e-10
+                        0.9909293445,
+                        0.5676319445,
+                        0.291842178
                       ],
-                      "alpha": 0.31
+                      "alpha": 0.22
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -3971,11 +3965,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        0.6104123421,
-                        0.2862982544,
-                        2e-10
+                        1,
+                        0.649408992,
+                        0.4367601616
                       ],
-                      "alpha": 0.33
+                      "alpha": 0.25
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -3991,9 +3985,9 @@
                   "$value": {
                     "colorSpace": "srgb",
                     "components": [
-                      0.3679185272,
-                      0.1619201651,
-                      2e-10
+                      1,
+                      0.9187856761,
+                      0.8733011478
                     ],
                     "alpha": 1
                   },
@@ -4015,11 +4009,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        0.6908212405,
-                        0,
-                        0.094328273
+                        0.9999999999,
+                        0.4886828589,
+                        0.455052085
                       ],
-                      "alpha": 0.21
+                      "alpha": 0.24
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -4034,11 +4028,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        0.5453152106,
-                        3e-10,
-                        0.0651950667
+                        1,
+                        0.5399467119,
+                        0.5047639459
                       ],
-                      "alpha": 0.25
+                      "alpha": 0.28
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -4054,9 +4048,9 @@
                   "$value": {
                     "colorSpace": "srgb",
                     "components": [
-                      0.4501680938,
-                      0,
-                      0.046144718
+                      1,
+                      0.9144813461,
+                      0.9045367441
                     ],
                     "alpha": 1
                   },
@@ -4077,9 +4071,9 @@
                   "$value": {
                     "colorSpace": "srgb",
                     "components": [
-                      0.4110163946,
-                      1e-10,
-                      0.3122562393
+                      1,
+                      0.906170165,
+                      0.9605813271
                     ],
                     "alpha": 1
                   },
@@ -4101,11 +4095,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        0.3961097263,
-                        1e-10,
-                        0.612730421
+                        0.793037872,
+                        0.5801694593,
+                        1
                       ],
-                      "alpha": 0.2
+                      "alpha": 0.22
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -4120,11 +4114,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        0.2894348069,
-                        1e-10,
-                        0.4548307246
+                        0.8102966224,
+                        0.6205658941,
+                        1
                       ],
-                      "alpha": 0.24
+                      "alpha": 0.26
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -4140,9 +4134,9 @@
                   "$value": {
                     "colorSpace": "srgb",
                     "components": [
-                      0.3246109719,
-                      0,
-                      0.5068983127
+                      0.9559387417,
+                      0.9187523404,
+                      1
                     ],
                     "alpha": 1
                   },
@@ -4165,9 +4159,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.8673824811,
-                  0.8673824811,
-                  0.8673824811
+                  0.1861108446,
+                  0.1861108446,
+                  0.1861108446
                 ],
                 "alpha": 1
               },
@@ -4188,9 +4182,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.7491148896,
-                  0.7491148896,
-                  0.7491148896
+                  0.2838585422,
+                  0.2838585422,
+                  0.2838585422
                 ],
                 "alpha": 1
               },
@@ -4207,9 +4201,9 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.3795567932,
-                  0.3795567932,
-                  0.3795567932
+                  0.6431344413,
+                  0.6431344413,
+                  0.6431344413
                 ],
                 "alpha": 1
               },
@@ -4229,9 +4223,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0,
-                    0,
-                    0
+                    1,
+                    1,
+                    1
                   ],
                   "alpha": 1
                 },
@@ -4254,11 +4248,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        3e-10,
-                        0.3568043023,
-                        0.6939594773
+                        0.3602428243,
+                        0.6476518376,
+                        1
                       ],
-                      "alpha": 0.26
+                      "alpha": 0.23
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -4279,11 +4273,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        0.6515662608,
-                        0.3074066104,
-                        1e-10
+                        0.9909293445,
+                        0.5676319445,
+                        0.291842178
                       ],
-                      "alpha": 0.28
+                      "alpha": 0.22
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -4304,11 +4298,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        0.4546911033,
-                        2e-10,
-                        0.3466752199
+                        1,
+                        0.5324194576,
+                        0.8385097517
                       ],
-                      "alpha": 0.2
+                      "alpha": 0.21
                     },
                     "$extensions": {
                       "com.sloyui.variable": {
@@ -4323,9 +4317,9 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        0.4110163946,
-                        1e-10,
-                        0.3122562393
+                        1,
+                        0.5855806744,
+                        0.8520484416
                       ],
                       "alpha": 0.25
                     },
@@ -4348,11 +4342,11 @@
                     "$value": {
                       "colorSpace": "srgb",
                       "components": [
-                        0.3601878288,
-                        1e-10,
-                        0.5595590032
+                        0.793037872,
+                        0.5801694593,
+                        1
                       ],
-                      "alpha": 0.2
+                      "alpha": 0.21
                     },
                     "$extensions": {
                       "com.sloyui.variable": {

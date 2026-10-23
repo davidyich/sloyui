@@ -65,8 +65,8 @@ export function attachRuntimeV4(architecture, legacy) {
  for(const [old,role]of Object.entries({normal:'regular',medium:'medium',semibold:'semibold'}))aliases['--cap-font-weight-'+old]=v4CSSName('Primitives/font/weight/'+role);
  const theme=runtimeV4Graph.collections.find(collection=>collection.key==='Theme');
  let css='\n/* Runtime v4: authoritative Figma graph, SHA-256 '+runtimeV4GraphHash+'. */\n';
- // Raw entries are declared once. Every public color has the graph's exact
- // opaque Palette value; secondary fills never use alpha approximations.
+ // Raw entries are declared once. Public colors preserve the graph's exact
+ // opaque values or composed pigment plus alpha paints.
  css+=':root {\n';
  for(const collection of runtimeV4Graph.collections.filter(collection=>collection.modes.length===1))for(const token of collection.variables)css+=`  ${v4CSSName(collection.key+'/'+token.name)}: ${valueCSS(token.values[collection.modes[0]],token)};\n`;
  for(const token of runtimeV4Graph.collections.find(collection=>collection.key==='Palette').variables){const value=token.values.Value;css+=`  ${v4CSSName('Palette/'+token.name)}-rgb: ${[value.r,value.g,value.b].map(channel=>+(channel*255).toFixed(10)).join(' ')};\n`;}

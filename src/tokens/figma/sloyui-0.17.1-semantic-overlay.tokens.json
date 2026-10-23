@@ -1,9 +1,9 @@
 {
   "$extensions": {
     "com.sloyui.export": {
-      "version": "0.17.0",
+      "version": "0.17.1",
       "collection": "Sloy UI · Semantic",
-      "mode": "Page"
+      "mode": "Overlay"
     }
   },
   "typography": {
@@ -2796,9 +2796,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.8991073255,
-          0.8991073255,
-          0.8991073255
+          0.9317619717,
+          0.9317619717,
+          0.9317619717
         ],
         "alpha": 1
       },
@@ -2814,7 +2814,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · SurfaceScheme",
-          "targetVariableName": "context/page/border/subtle"
+          "targetVariableName": "context/overlay/border/subtle"
         }
       },
       "$description": "Структурная граница; не отключается вместе с декоративными обводками."
@@ -2824,9 +2824,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.836553596,
-          0.836553596,
-          0.836553596
+          0.8991073255,
+          0.8991073255,
+          0.8991073255
         ],
         "alpha": 1
       },
@@ -2842,7 +2842,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · SurfaceScheme",
-          "targetVariableName": "context/page/border/default"
+          "targetVariableName": "context/overlay/border/default"
         }
       },
       "$description": "Структурная граница; не отключается вместе с декоративными обводками."
@@ -2852,9 +2852,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.7491148896,
-          0.7491148896,
-          0.7491148896
+          0.7774519281,
+          0.7774519281,
+          0.7774519281
         ],
         "alpha": 1
       },
@@ -2870,7 +2870,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · SurfaceScheme",
-          "targetVariableName": "context/page/border/strong"
+          "targetVariableName": "context/overlay/border/strong"
         }
       },
       "$description": "Структурная граница; не отключается вместе с декоративными обводками."
@@ -2880,9 +2880,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.3601047577,
-          0.3601047577,
-          0.3601047577
+          0.3992640547,
+          0.3992640547,
+          0.3992640547
         ],
         "alpha": 1
       },
@@ -2895,13 +2895,39 @@
           }
         },
         "com.figma.aliasData": {
-          "targetVariableSetName": "Sloy UI · SurfaceScheme",
-          "targetVariableName": "context/page/border/emphasis"
+          "targetVariableSetName": "Sloy UI · Theme",
+          "targetVariableName": "context/overlay/border/emphasis"
         }
       },
       "$description": "Структурная граница; не отключается вместе с декоративными обводками."
     },
     "panel": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9317619717,
+          0.9317619717,
+          0.9317619717
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-border-panel)"
+          }
+        },
+        "com.figma.aliasData": {
+          "targetVariableSetName": "Sloy UI · SurfaceScheme",
+          "targetVariableName": "context/overlay/border/subtle"
+        }
+      },
+      "$description": "Структурная граница; не отключается вместе с декоративными обводками."
+    },
+    "overlay": {
       "$type": "color",
       "$value": {
         "colorSpace": "srgb",
@@ -2917,38 +2943,12 @@
           "scopes": [],
           "visibility": "internal",
           "codeSyntax": {
-            "WEB": "var(--cap-border-panel)"
-          }
-        },
-        "com.figma.aliasData": {
-          "targetVariableSetName": "Sloy UI · SurfaceScheme",
-          "targetVariableName": "context/page/border/subtle"
-        }
-      },
-      "$description": "Структурная граница; не отключается вместе с декоративными обводками."
-    },
-    "overlay": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.836553596,
-          0.836553596,
-          0.836553596
-        ],
-        "alpha": 1
-      },
-      "$extensions": {
-        "com.sloyui.variable": {
-          "scopes": [],
-          "visibility": "internal",
-          "codeSyntax": {
             "WEB": "var(--cap-border-overlay)"
           }
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · SurfaceScheme",
-          "targetVariableName": "context/page/border/default"
+          "targetVariableName": "context/overlay/border/default"
         }
       },
       "$description": "Структурная граница; не отключается вместе с декоративными обводками."
@@ -2958,9 +2958,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.836553596,
-          0.836553596,
-          0.836553596
+          0.8673824811,
+          0.8673824811,
+          0.8673824811
         ],
         "alpha": 1
       },
@@ -2973,8 +2973,8 @@
           }
         },
         "com.figma.aliasData": {
-          "targetVariableSetName": "Sloy UI · Theme",
-          "targetVariableName": "context/page/border/control"
+          "targetVariableSetName": "Sloy UI · SurfaceScheme",
+          "targetVariableName": "context/overlay/border/control"
         }
       },
       "$description": "Структурная граница; не отключается вместе с декоративными обводками."
@@ -2984,9 +2984,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.8065875574,
-          0.8065875574,
-          0.8065875574
+          0.836553596,
+          0.836553596,
+          0.836553596
         ],
         "alpha": 1
       },
@@ -2999,8 +2999,8 @@
           }
         },
         "com.figma.aliasData": {
-          "targetVariableSetName": "Sloy UI · Theme",
-          "targetVariableName": "context/page/border/control-hover"
+          "targetVariableSetName": "Sloy UI · SurfaceScheme",
+          "targetVariableName": "context/overlay/border/control-hover"
         }
       },
       "$description": "Структурная граница; не отключается вместе с декоративными обводками."
@@ -3010,9 +3010,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.7491148896,
-          0.7491148896,
-          0.7491148896
+          0.7774519281,
+          0.7774519281,
+          0.7774519281
         ],
         "alpha": 1
       },
@@ -3026,7 +3026,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Theme",
-          "targetVariableName": "context/page/border/control-pressed"
+          "targetVariableName": "context/overlay/border/control-pressed"
         }
       },
       "$description": "Структурная граница; не отключается вместе с декоративными обводками."
@@ -3057,9 +3057,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.7491148896,
-          0.7491148896,
-          0.7491148896
+          0.8065875574,
+          0.8065875574,
+          0.8065875574
         ],
         "alpha": 1
       },
@@ -3073,7 +3073,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Theme",
-          "targetVariableName": "context/page/divider/subtle"
+          "targetVariableName": "context/overlay/divider/subtle"
         }
       },
       "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -3083,9 +3083,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.6947120397,
-          0.6947120397,
-          0.6947120397
+          0.7491148896,
+          0.7491148896,
+          0.7491148896
         ],
         "alpha": 1
       },
@@ -3099,7 +3099,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Theme",
-          "targetVariableName": "context/page/divider/default"
+          "targetVariableName": "context/overlay/divider/default"
         }
       },
       "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -3109,9 +3109,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.5941430661,
-          0.5941430661,
-          0.5941430661
+          0.6431344413,
+          0.6431344413,
+          0.6431344413
         ],
         "alpha": 1
       },
@@ -3125,7 +3125,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Theme",
-          "targetVariableName": "context/page/divider/strong"
+          "targetVariableName": "context/overlay/divider/strong"
         }
       },
       "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -3135,9 +3135,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.8673824811,
-          0.8673824811,
-          0.8673824811
+          0.9317619717,
+          0.9317619717,
+          0.9317619717
         ],
         "alpha": 1
       },
@@ -3151,7 +3151,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Theme",
-          "targetVariableName": "context/page/divider/panel"
+          "targetVariableName": "context/overlay/divider/panel"
         }
       },
       "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -3161,9 +3161,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.6685851228,
-          0.6685851228,
-          0.6685851228
+          0.7215451819,
+          0.7215451819,
+          0.7215451819
         ],
         "alpha": 1
       },
@@ -3177,7 +3177,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Theme",
-          "targetVariableName": "context/page/divider/control"
+          "targetVariableName": "context/overlay/divider/control"
         }
       },
       "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -3430,9 +3430,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.3601047577,
-          0.3601047577,
-          0.3601047577
+          0.3992640547,
+          0.3992640547,
+          0.3992640547
         ],
         "alpha": 1
       },
@@ -3447,8 +3447,8 @@
           }
         },
         "com.figma.aliasData": {
-          "targetVariableSetName": "Sloy UI · SurfaceScheme",
-          "targetVariableName": "context/page/border/emphasis"
+          "targetVariableSetName": "Sloy UI · Theme",
+          "targetVariableName": "context/overlay/border/emphasis"
         }
       },
       "$description": "Видимый индикатор клавиатурного фокуса."
@@ -3818,9 +3818,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.9317619717,
-          0.9317619717,
-          0.9317619717
+          1,
+          1,
+          1
         ],
         "alpha": 1
       },
@@ -3837,7 +3837,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · SurfaceScheme",
-          "targetVariableName": "context/page/surface/background"
+          "targetVariableName": "context/overlay/surface/background"
         }
       },
       "$description": "Фон контейнера. Выберите Page, Inset, Panel или Overlay на самом контейнере."
@@ -3847,9 +3847,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.8991073255,
-          0.8991073255,
-          0.8991073255
+          0.9653810442,
+          0.9653810442,
+          0.9653810442
         ],
         "alpha": 1
       },
@@ -3863,7 +3863,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Theme",
-          "targetVariableName": "context/page/surface/block"
+          "targetVariableName": "context/overlay/surface/block"
         }
       },
       "$description": "Фон контейнера. Выберите Page, Inset, Panel или Overlay на самом контейнере."
@@ -3875,9 +3875,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.9317619717,
-          0.9317619717,
-          0.9317619717
+          0.9653810442,
+          0.9653810442,
+          0.9653810442
         ],
         "alpha": 1
       },
@@ -3894,7 +3894,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · SurfaceScheme",
-          "targetVariableName": "context/page/disabled/background"
+          "targetVariableName": "context/overlay/disabled/background"
         }
       },
       "$description": "Общая нейтральная пара недоступного состояния."
@@ -4088,9 +4088,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.8991073255,
-          0.8991073255,
-          0.8991073255
+          0.9653810442,
+          0.9653810442,
+          0.9653810442
         ],
         "alpha": 1
       },
@@ -4104,7 +4104,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Theme",
-          "targetVariableName": "context/page/surface/block"
+          "targetVariableName": "context/overlay/surface/block"
         }
       },
       "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -4114,9 +4114,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.8673824811,
-          0.8673824811,
-          0.8673824811
+          0.9317619717,
+          0.9317619717,
+          0.9317619717
         ],
         "alpha": 1
       },
@@ -4129,8 +4129,8 @@
           }
         },
         "com.figma.aliasData": {
-          "targetVariableSetName": "Sloy UI · Theme",
-          "targetVariableName": "context/page/group/hover"
+          "targetVariableSetName": "Sloy UI · SurfaceScheme",
+          "targetVariableName": "context/overlay/group/hover"
         }
       },
       "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -4140,9 +4140,9 @@
       "$value": {
         "colorSpace": "srgb",
         "components": [
-          0.8673824811,
-          0.8673824811,
-          0.8673824811
+          0.9317619717,
+          0.9317619717,
+          0.9317619717
         ],
         "alpha": 1
       },
@@ -4155,39 +4155,13 @@
           }
         },
         "com.figma.aliasData": {
-          "targetVariableSetName": "Sloy UI · Theme",
-          "targetVariableName": "context/page/group/hover"
+          "targetVariableSetName": "Sloy UI · SurfaceScheme",
+          "targetVariableName": "context/overlay/group/hover"
         }
       },
       "$description": "Внутренняя роль компонента; наследует тему и поверхность."
     },
     "pressed": {
-      "$type": "color",
-      "$value": {
-        "colorSpace": "srgb",
-        "components": [
-          0.836553596,
-          0.836553596,
-          0.836553596
-        ],
-        "alpha": 1
-      },
-      "$extensions": {
-        "com.sloyui.variable": {
-          "scopes": [],
-          "visibility": "internal",
-          "codeSyntax": {
-            "WEB": "var(--cap-group-pressed)"
-          }
-        },
-        "com.figma.aliasData": {
-          "targetVariableSetName": "Sloy UI · Theme",
-          "targetVariableName": "context/page/border/control"
-        }
-      },
-      "$description": "Внутренняя роль компонента; наследует тему и поверхность."
-    },
-    "prefix": {
       "$type": "color",
       "$value": {
         "colorSpace": "srgb",
@@ -4203,12 +4177,38 @@
           "scopes": [],
           "visibility": "internal",
           "codeSyntax": {
+            "WEB": "var(--cap-group-pressed)"
+          }
+        },
+        "com.figma.aliasData": {
+          "targetVariableSetName": "Sloy UI · SurfaceScheme",
+          "targetVariableName": "context/overlay/group/pressed"
+        }
+      },
+      "$description": "Внутренняя роль компонента; наследует тему и поверхность."
+    },
+    "prefix": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9653810442,
+          0.9653810442,
+          0.9653810442
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
             "WEB": "var(--cap-group-prefix)"
           }
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Theme",
-          "targetVariableName": "context/page/surface/block"
+          "targetVariableName": "context/overlay/surface/block"
         }
       },
       "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -4248,9 +4248,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8991073255,
-              0.8991073255,
-              0.8991073255
+              0.9653810442,
+              0.9653810442,
+              0.9653810442
             ],
             "alpha": 1
           },
@@ -4266,8 +4266,8 @@
               }
             },
             "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "context/page/surface/block"
+              "targetVariableSetName": "Sloy UI · SurfaceScheme",
+              "targetVariableName": "context/overlay/secondary/neutral/background/normal"
             }
           },
           "$description": "Нейтральный secondary: отдельная непрозрачная пара для текущей поверхности и состояния."
@@ -4277,9 +4277,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8673824811,
-              0.8673824811,
-              0.8673824811
+              0.9317619717,
+              0.9317619717,
+              0.9317619717
             ],
             "alpha": 1
           },
@@ -4295,8 +4295,8 @@
               }
             },
             "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "context/page/group/hover"
+              "targetVariableSetName": "Sloy UI · SurfaceScheme",
+              "targetVariableName": "context/overlay/group/hover"
             }
           },
           "$description": "Нейтральный secondary: отдельная непрозрачная пара для текущей поверхности и состояния."
@@ -4306,9 +4306,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.836553596,
-              0.836553596,
-              0.836553596
+              0.8991073255,
+              0.8991073255,
+              0.8991073255
             ],
             "alpha": 1
           },
@@ -4324,8 +4324,8 @@
               }
             },
             "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "context/page/border/control"
+              "targetVariableSetName": "Sloy UI · SurfaceScheme",
+              "targetVariableName": "context/overlay/group/pressed"
             }
           },
           "$description": "Нейтральный secondary: отдельная непрозрачная пара для текущей поверхности и состояния."
@@ -4336,9 +4336,9 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.2457477303,
-            0.2457477303,
-            0.2457477303
+            0.264872785,
+            0.264872785,
+            0.264872785
           ],
           "alpha": 1
         },
@@ -4356,7 +4356,7 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · SurfaceScheme",
-            "targetVariableName": "context/page/secondary/neutral/content"
+            "targetVariableName": "context/overlay/secondary/neutral/content"
           }
         },
         "$description": "Нейтральный secondary: отдельная непрозрачная пара для текущей поверхности и состояния."
@@ -4372,9 +4372,9 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.8991073255,
-                0.8991073255,
-                0.8991073255
+                0.9653810442,
+                0.9653810442,
+                0.9653810442
               ],
               "alpha": 1
             },
@@ -4387,13 +4387,93 @@
                 }
               },
               "com.figma.aliasData": {
-                "targetVariableSetName": "Sloy UI · Theme",
-                "targetVariableName": "context/page/surface/block"
+                "targetVariableSetName": "Sloy UI · SurfaceScheme",
+                "targetVariableName": "context/overlay/secondary/neutral/background/normal"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
           },
           "hover": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.9317619717,
+                0.9317619717,
+                0.9317619717
+              ],
+              "alpha": 1
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-color-neutral-secondary-background-hover)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · SurfaceScheme",
+                "targetVariableName": "context/overlay/group/hover"
+              }
+            },
+            "$description": "Внутренняя роль компонента; наследует тему и поверхность."
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.8991073255,
+                0.8991073255,
+                0.8991073255
+              ],
+              "alpha": 1
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {
+                  "WEB": "var(--cap-color-neutral-secondary-background-pressed)"
+                }
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · SurfaceScheme",
+                "targetVariableName": "context/overlay/group/pressed"
+              }
+            },
+            "$description": "Внутренняя роль компонента; наследует тему и поверхность."
+          }
+        },
+        "content": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.264872785,
+              0.264872785,
+              0.264872785
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {
+                "WEB": "var(--cap-color-neutral-secondary-content)"
+              }
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · SurfaceScheme",
+              "targetVariableName": "context/overlay/secondary/neutral/content"
+            }
+          },
+          "$description": "Внутренняя роль компонента; наследует тему и поверхность."
+        },
+        "border": {
+          "normal": {
             "$type": "color",
             "$value": {
               "colorSpace": "srgb",
@@ -4409,92 +4489,12 @@
                 "scopes": [],
                 "visibility": "internal",
                 "codeSyntax": {
-                  "WEB": "var(--cap-color-neutral-secondary-background-hover)"
-                }
-              },
-              "com.figma.aliasData": {
-                "targetVariableSetName": "Sloy UI · Theme",
-                "targetVariableName": "context/page/group/hover"
-              }
-            },
-            "$description": "Внутренняя роль компонента; наследует тему и поверхность."
-          },
-          "pressed": {
-            "$type": "color",
-            "$value": {
-              "colorSpace": "srgb",
-              "components": [
-                0.836553596,
-                0.836553596,
-                0.836553596
-              ],
-              "alpha": 1
-            },
-            "$extensions": {
-              "com.sloyui.variable": {
-                "scopes": [],
-                "visibility": "internal",
-                "codeSyntax": {
-                  "WEB": "var(--cap-color-neutral-secondary-background-pressed)"
-                }
-              },
-              "com.figma.aliasData": {
-                "targetVariableSetName": "Sloy UI · Theme",
-                "targetVariableName": "context/page/border/control"
-              }
-            },
-            "$description": "Внутренняя роль компонента; наследует тему и поверхность."
-          }
-        },
-        "content": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.2457477303,
-              0.2457477303,
-              0.2457477303
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {
-                "WEB": "var(--cap-color-neutral-secondary-content)"
-              }
-            },
-            "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · SurfaceScheme",
-              "targetVariableName": "context/page/secondary/neutral/content"
-            }
-          },
-          "$description": "Внутренняя роль компонента; наследует тему и поверхность."
-        },
-        "border": {
-          "normal": {
-            "$type": "color",
-            "$value": {
-              "colorSpace": "srgb",
-              "components": [
-                0.836553596,
-                0.836553596,
-                0.836553596
-              ],
-              "alpha": 1
-            },
-            "$extensions": {
-              "com.sloyui.variable": {
-                "scopes": [],
-                "visibility": "internal",
-                "codeSyntax": {
                   "WEB": "var(--cap-color-neutral-secondary-border-normal)"
                 }
               },
               "com.figma.aliasData": {
-                "targetVariableSetName": "Sloy UI · Theme",
-                "targetVariableName": "context/page/border/control"
+                "targetVariableSetName": "Sloy UI · SurfaceScheme",
+                "targetVariableName": "context/overlay/border/control"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -4504,9 +4504,9 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.8065875574,
-                0.8065875574,
-                0.8065875574
+                0.836553596,
+                0.836553596,
+                0.836553596
               ],
               "alpha": 1
             },
@@ -4519,8 +4519,8 @@
                 }
               },
               "com.figma.aliasData": {
-                "targetVariableSetName": "Sloy UI · Theme",
-                "targetVariableName": "context/page/border/control-hover"
+                "targetVariableSetName": "Sloy UI · SurfaceScheme",
+                "targetVariableName": "context/overlay/border/control-hover"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -4530,9 +4530,9 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.7491148896,
-                0.7491148896,
-                0.7491148896
+                0.7774519281,
+                0.7774519281,
+                0.7774519281
               ],
               "alpha": 1
             },
@@ -4546,7 +4546,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · Theme",
-                "targetVariableName": "context/page/border/control-pressed"
+                "targetVariableName": "context/overlay/border/control-pressed"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -4670,11 +4670,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                1e-10,
-                0.4382018359,
-                0.8419993445
+                0.4166053382,
+                0.6769125792,
+                1
               ],
-              "alpha": 0.3
+              "alpha": 0.5
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -4686,7 +4686,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/blue/secondary/background/normal"
+                "targetVariableName": "context/overlay/color/blue/secondary/background/normal"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -4696,11 +4696,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                2e-10,
-                0.3298650131,
-                0.6449642729
+                3e-10,
+                0.4110024815,
+                0.7925311526
               ],
-              "alpha": 0.32
+              "alpha": 0.34
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -4712,7 +4712,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/blue/secondary/background/hover"
+                "targetVariableName": "context/overlay/color/blue/secondary/background/hover"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -4722,11 +4722,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                2e-10,
-                0.3298650131,
-                0.6449642729
+                3e-10,
+                0.4110024815,
+                0.7925311526
               ],
-              "alpha": 0.32
+              "alpha": 0.34
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -4738,7 +4738,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/blue/secondary/background/hover"
+                "targetVariableName": "context/overlay/color/blue/secondary/background/hover"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -4764,8 +4764,8 @@
               }
             },
             "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "context/page/color/blue/secondary/content"
+              "targetVariableSetName": "Sloy UI · SurfaceScheme",
+              "targetVariableName": "context/overlay/color/blue/secondary/content"
             }
           },
           "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -5076,11 +5076,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0,
-                0.4684285202,
-                0.2741307741
+                1e-10,
+                0.5657161685,
+                0.3353050467
               ],
-              "alpha": 0.29
+              "alpha": 0.31
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5092,7 +5092,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/green/secondary/background/normal"
+                "targetVariableName": "context/overlay/color/green/secondary/background/normal"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -5103,10 +5103,10 @@
               "colorSpace": "srgb",
               "components": [
                 2e-10,
-                0.3720744805,
-                0.2135435527
+                0.5008011309,
+                0.294486605
               ],
-              "alpha": 0.32
+              "alpha": 0.36
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5118,7 +5118,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/green/secondary/background/hover"
+                "targetVariableName": "context/overlay/color/green/secondary/background/hover"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -5129,10 +5129,10 @@
               "colorSpace": "srgb",
               "components": [
                 2e-10,
-                0.3720744805,
-                0.2135435527
+                0.5008011309,
+                0.294486605
               ],
-              "alpha": 0.32
+              "alpha": 0.36
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5144,7 +5144,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/green/secondary/background/hover"
+                "targetVariableName": "context/overlay/color/green/secondary/background/hover"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -5155,9 +5155,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0,
-              0.2468502349,
-              0.1348028052
+              1e-10,
+              0.2776773564,
+              0.1541868356
             ],
             "alpha": 1
           },
@@ -5170,8 +5170,8 @@
               }
             },
             "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "context/page/color/green/secondary/content"
+              "targetVariableSetName": "Sloy UI · SurfaceScheme",
+              "targetVariableName": "context/overlay/color/green/secondary/content"
             }
           },
           "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -5482,11 +5482,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.6515662608,
-                0.3074066104,
-                1e-10
+                0.8577632456,
+                0.4131676048,
+                5e-10
               ],
-              "alpha": 0.29
+              "alpha": 0.34
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5498,7 +5498,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/orange/secondary/background/normal"
+                "targetVariableName": "context/overlay/color/orange/secondary/background/normal"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -5508,11 +5508,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.5285433157,
-                0.244306614,
+                0.775372804,
+                0.370908524,
                 2e-10
               ],
-              "alpha": 0.32
+              "alpha": 0.39
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5524,7 +5524,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/orange/secondary/background/hover"
+                "targetVariableName": "context/overlay/color/orange/secondary/background/hover"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -5534,11 +5534,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.5285433157,
-                0.244306614,
+                0.775372804,
+                0.370908524,
                 2e-10
               ],
-              "alpha": 0.32
+              "alpha": 0.39
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5550,7 +5550,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/orange/secondary/background/hover"
+                "targetVariableName": "context/overlay/color/orange/secondary/background/hover"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -5576,8 +5576,8 @@
               }
             },
             "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "context/page/color/orange/secondary/content"
+              "targetVariableSetName": "Sloy UI · SurfaceScheme",
+              "targetVariableName": "context/overlay/color/orange/secondary/content"
             }
           },
           "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -5888,11 +5888,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.6420313322,
-                2e-10,
-                0.0845595613
+                0.9999999999,
+                0.5873578209,
+                0.5523053479
               ],
-              "alpha": 0.21
+              "alpha": 0.55
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5904,7 +5904,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/red/secondary/background/normal"
+                "targetVariableName": "context/overlay/color/red/secondary/background/normal"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -5914,11 +5914,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.5935094255,
-                3e-10,
-                0.0748445088
+                0.7889798876,
+                4e-10,
+                0.1139815901
               ],
-              "alpha": 0.26
+              "alpha": 0.27
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5930,7 +5930,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/red/secondary/background/hover"
+                "targetVariableName": "context/overlay/color/red/secondary/background/hover"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -5940,11 +5940,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.5935094255,
-                3e-10,
-                0.0748445088
+                0.7889798876,
+                4e-10,
+                0.1139815901
               ],
-              "alpha": 0.26
+              "alpha": 0.27
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5956,7 +5956,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/red/secondary/background/hover"
+                "targetVariableName": "context/overlay/color/red/secondary/background/hover"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -5982,8 +5982,8 @@
               }
             },
             "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "context/page/color/red/secondary/content"
+              "targetVariableSetName": "Sloy UI · SurfaceScheme",
+              "targetVariableName": "context/overlay/color/red/secondary/content"
             }
           },
           "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -6294,11 +6294,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.5432484406,
+                0.7235694884,
                 3e-10,
-                0.4164651136
+                0.5585717662
               ],
-              "alpha": 0.21
+              "alpha": 0.22
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -6309,8 +6309,8 @@
                 }
               },
               "com.figma.aliasData": {
-                "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/pink/secondary/background/normal"
+                "targetVariableSetName": "Sloy UI · Theme",
+                "targetVariableName": "context/panel/color/pink/secondary/background/normal"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -6320,11 +6320,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.4110163946,
-                1e-10,
-                0.3122562393
+                0.5432484406,
+                3e-10,
+                0.4164651136
               ],
-              "alpha": 0.25
+              "alpha": 0.26
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -6336,7 +6336,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/pink/secondary/background/hover"
+                "targetVariableName": "context/panel/color/pink/secondary/background/hover"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -6346,11 +6346,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.4110163946,
-                1e-10,
-                0.3122562393
+                0.5432484406,
+                3e-10,
+                0.4164651136
               ],
-              "alpha": 0.25
+              "alpha": 0.26
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -6362,7 +6362,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/pink/secondary/background/hover"
+                "targetVariableName": "context/panel/color/pink/secondary/background/hover"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -6388,8 +6388,8 @@
               }
             },
             "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "context/page/color/pink/secondary/content"
+              "targetVariableSetName": "Sloy UI · SurfaceScheme",
+              "targetVariableName": "context/overlay/color/pink/secondary/content"
             }
           },
           "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -6700,11 +6700,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.3246109719,
-                0,
-                0.5068983127
+                0.5054509259,
+                4e-10,
+                0.7745767324
               ],
-              "alpha": 0.2
+              "alpha": 0.21
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -6716,7 +6716,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/purple/secondary/background/normal"
+                "targetVariableName": "context/overlay/color/purple/secondary/background/normal"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -6726,11 +6726,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.2205372925,
-                0,
-                0.3528489592
+                0.3961097263,
+                1e-10,
+                0.612730421
               ],
-              "alpha": 0.24
+              "alpha": 0.25
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -6742,7 +6742,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/purple/secondary/background/hover"
+                "targetVariableName": "context/overlay/color/purple/secondary/background/hover"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -6752,11 +6752,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.2205372925,
-                0,
-                0.3528489592
+                0.3961097263,
+                1e-10,
+                0.612730421
               ],
-              "alpha": 0.24
+              "alpha": 0.25
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -6768,7 +6768,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · SurfaceScheme",
-                "targetVariableName": "context/page/color/purple/secondary/background/hover"
+                "targetVariableName": "context/overlay/color/purple/secondary/background/hover"
               }
             },
             "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -6794,8 +6794,8 @@
               }
             },
             "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "context/page/color/purple/secondary/content"
+              "targetVariableSetName": "Sloy UI · SurfaceScheme",
+              "targetVariableName": "context/overlay/color/purple/secondary/content"
             }
           },
           "$description": "Внутренняя роль компонента; наследует тему и поверхность."
@@ -7228,11 +7228,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6420313322,
-              2e-10,
-              0.0845595613
+              0.9999999999,
+              0.5873578209,
+              0.5523053479
             ],
-            "alpha": 0.21
+            "alpha": 0.55
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7247,7 +7247,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · SurfaceScheme",
-              "targetVariableName": "context/page/color/red/secondary/background/normal"
+              "targetVariableName": "context/overlay/color/red/secondary/background/normal"
             }
           },
           "$description": "Смысловой статус. Используйте соответствующие друг другу фон, содержимое и границу."
@@ -7257,11 +7257,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.5935094255,
-              3e-10,
-              0.0748445088
+              0.7889798876,
+              4e-10,
+              0.1139815901
             ],
-            "alpha": 0.26
+            "alpha": 0.27
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7273,7 +7273,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · SurfaceScheme",
-              "targetVariableName": "context/page/color/red/secondary/background/hover"
+              "targetVariableName": "context/overlay/color/red/secondary/background/hover"
             }
           },
           "$description": "Смысловой статус. Используйте соответствующие друг другу фон, содержимое и границу."
@@ -7283,11 +7283,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.5935094255,
-              3e-10,
-              0.0748445088
+              0.7889798876,
+              4e-10,
+              0.1139815901
             ],
-            "alpha": 0.26
+            "alpha": 0.27
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7299,7 +7299,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · SurfaceScheme",
-              "targetVariableName": "context/page/color/red/secondary/background/hover"
+              "targetVariableName": "context/overlay/color/red/secondary/background/hover"
             }
           },
           "$description": "Смысловой статус. Используйте соответствующие друг другу фон, содержимое и границу."
@@ -7329,8 +7329,8 @@
             }
           },
           "com.figma.aliasData": {
-            "targetVariableSetName": "Sloy UI · Theme",
-            "targetVariableName": "context/page/color/red/secondary/content"
+            "targetVariableSetName": "Sloy UI · SurfaceScheme",
+            "targetVariableName": "context/overlay/color/red/secondary/content"
           }
         },
         "$description": "Смысловой статус. Используйте соответствующие друг другу фон, содержимое и границу."
@@ -7371,11 +7371,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0,
-              0.4684285202,
-              0.2741307741
+              1e-10,
+              0.5657161685,
+              0.3353050467
             ],
-            "alpha": 0.29
+            "alpha": 0.31
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7390,7 +7390,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · SurfaceScheme",
-              "targetVariableName": "context/page/color/green/secondary/background/normal"
+              "targetVariableName": "context/overlay/color/green/secondary/background/normal"
             }
           },
           "$description": "Смысловой статус. Используйте соответствующие друг другу фон, содержимое и границу."
@@ -7401,10 +7401,10 @@
             "colorSpace": "srgb",
             "components": [
               2e-10,
-              0.3720744805,
-              0.2135435527
+              0.5008011309,
+              0.294486605
             ],
-            "alpha": 0.32
+            "alpha": 0.36
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7416,7 +7416,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · SurfaceScheme",
-              "targetVariableName": "context/page/color/green/secondary/background/hover"
+              "targetVariableName": "context/overlay/color/green/secondary/background/hover"
             }
           },
           "$description": "Смысловой статус. Используйте соответствующие друг другу фон, содержимое и границу."
@@ -7427,10 +7427,10 @@
             "colorSpace": "srgb",
             "components": [
               2e-10,
-              0.3720744805,
-              0.2135435527
+              0.5008011309,
+              0.294486605
             ],
-            "alpha": 0.32
+            "alpha": 0.36
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7442,7 +7442,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · SurfaceScheme",
-              "targetVariableName": "context/page/color/green/secondary/background/hover"
+              "targetVariableName": "context/overlay/color/green/secondary/background/hover"
             }
           },
           "$description": "Смысловой статус. Используйте соответствующие друг другу фон, содержимое и границу."
@@ -7453,9 +7453,9 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0,
-            0.2468502349,
-            0.1348028052
+            1e-10,
+            0.2776773564,
+            0.1541868356
           ],
           "alpha": 1
         },
@@ -7472,8 +7472,8 @@
             }
           },
           "com.figma.aliasData": {
-            "targetVariableSetName": "Sloy UI · Theme",
-            "targetVariableName": "context/page/color/green/secondary/content"
+            "targetVariableSetName": "Sloy UI · SurfaceScheme",
+            "targetVariableName": "context/overlay/color/green/secondary/content"
           }
         },
         "$description": "Смысловой статус. Используйте соответствующие друг другу фон, содержимое и границу."
@@ -7514,11 +7514,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6515662608,
-              0.3074066104,
-              1e-10
+              0.8577632456,
+              0.4131676048,
+              5e-10
             ],
-            "alpha": 0.29
+            "alpha": 0.34
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7533,7 +7533,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · SurfaceScheme",
-              "targetVariableName": "context/page/color/orange/secondary/background/normal"
+              "targetVariableName": "context/overlay/color/orange/secondary/background/normal"
             }
           },
           "$description": "Смысловой статус. Используйте соответствующие друг другу фон, содержимое и границу."
@@ -7543,11 +7543,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.5285433157,
-              0.244306614,
+              0.775372804,
+              0.370908524,
               2e-10
             ],
-            "alpha": 0.32
+            "alpha": 0.39
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7559,7 +7559,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · SurfaceScheme",
-              "targetVariableName": "context/page/color/orange/secondary/background/hover"
+              "targetVariableName": "context/overlay/color/orange/secondary/background/hover"
             }
           },
           "$description": "Смысловой статус. Используйте соответствующие друг другу фон, содержимое и границу."
@@ -7569,11 +7569,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.5285433157,
-              0.244306614,
+              0.775372804,
+              0.370908524,
               2e-10
             ],
-            "alpha": 0.32
+            "alpha": 0.39
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7585,7 +7585,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · SurfaceScheme",
-              "targetVariableName": "context/page/color/orange/secondary/background/hover"
+              "targetVariableName": "context/overlay/color/orange/secondary/background/hover"
             }
           },
           "$description": "Смысловой статус. Используйте соответствующие друг другу фон, содержимое и границу."
@@ -7615,8 +7615,8 @@
             }
           },
           "com.figma.aliasData": {
-            "targetVariableSetName": "Sloy UI · Theme",
-            "targetVariableName": "context/page/color/orange/secondary/content"
+            "targetVariableSetName": "Sloy UI · SurfaceScheme",
+            "targetVariableName": "context/overlay/color/orange/secondary/content"
           }
         },
         "$description": "Смысловой статус. Используйте соответствующие друг другу фон, содержимое и границу."
@@ -7657,11 +7657,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1e-10,
-              0.4382018359,
-              0.8419993445
+              0.4166053382,
+              0.6769125792,
+              1
             ],
-            "alpha": 0.3
+            "alpha": 0.5
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7676,7 +7676,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · SurfaceScheme",
-              "targetVariableName": "context/page/color/blue/secondary/background/normal"
+              "targetVariableName": "context/overlay/color/blue/secondary/background/normal"
             }
           },
           "$description": "Смысловой статус. Используйте соответствующие друг другу фон, содержимое и границу."
@@ -7686,11 +7686,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              2e-10,
-              0.3298650131,
-              0.6449642729
+              3e-10,
+              0.4110024815,
+              0.7925311526
             ],
-            "alpha": 0.32
+            "alpha": 0.34
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7702,7 +7702,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · SurfaceScheme",
-              "targetVariableName": "context/page/color/blue/secondary/background/hover"
+              "targetVariableName": "context/overlay/color/blue/secondary/background/hover"
             }
           },
           "$description": "Смысловой статус. Используйте соответствующие друг другу фон, содержимое и границу."
@@ -7712,11 +7712,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              2e-10,
-              0.3298650131,
-              0.6449642729
+              3e-10,
+              0.4110024815,
+              0.7925311526
             ],
-            "alpha": 0.32
+            "alpha": 0.34
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7728,7 +7728,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · SurfaceScheme",
-              "targetVariableName": "context/page/color/blue/secondary/background/hover"
+              "targetVariableName": "context/overlay/color/blue/secondary/background/hover"
             }
           },
           "$description": "Смысловой статус. Используйте соответствующие друг другу фон, содержимое и границу."
@@ -7758,8 +7758,8 @@
             }
           },
           "com.figma.aliasData": {
-            "targetVariableSetName": "Sloy UI · Theme",
-            "targetVariableName": "context/page/color/blue/secondary/content"
+            "targetVariableSetName": "Sloy UI · SurfaceScheme",
+            "targetVariableName": "context/overlay/color/blue/secondary/content"
           }
         },
         "$description": "Смысловой статус. Используйте соответствующие друг другу фон, содержимое и границу."

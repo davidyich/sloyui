@@ -1,7 +1,7 @@
 {
   "$extensions": {
     "com.sloyui.export": {
-      "version": "0.17.0",
+      "version": "0.17.1",
       "collection": "Sloy UI · Semantic",
       "mode": "Inset"
     }
@@ -4670,11 +4670,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                3e-10,
-                0.3568043023,
-                0.6939594773
+                1e-10,
+                0.4382018359,
+                0.8419993445
               ],
-              "alpha": 0.26
+              "alpha": 0.29
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -4696,11 +4696,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                1e-10,
-                0.3030737006,
-                0.5962381977
+                3e-10,
+                0.4110024815,
+                0.7925311526
               ],
-              "alpha": 0.3
+              "alpha": 0.35
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -4722,11 +4722,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                1e-10,
-                0.3030737006,
-                0.5962381977
+                3e-10,
+                0.4110024815,
+                0.7925311526
               ],
-              "alpha": 0.3
+              "alpha": 0.35
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5076,11 +5076,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0,
-                0.4684285202,
-                0.2741307741
+                3e-10,
+                0.5981901807,
+                0.3557246386
               ],
-              "alpha": 0.28
+              "alpha": 0.34
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5103,10 +5103,10 @@
               "colorSpace": "srgb",
               "components": [
                 2e-10,
-                0.3720744805,
-                0.2135435527
+                0.5008011309,
+                0.294486605
               ],
-              "alpha": 0.31
+              "alpha": 0.37
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5129,10 +5129,10 @@
               "colorSpace": "srgb",
               "components": [
                 2e-10,
-                0.3720744805,
-                0.2135435527
+                0.5008011309,
+                0.294486605
               ],
-              "alpha": 0.31
+              "alpha": 0.37
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5482,11 +5482,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.6515662608,
-                0.3074066104,
-                1e-10
+                0.775372804,
+                0.370908524,
+                2e-10
               ],
-              "alpha": 0.28
+              "alpha": 0.32
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5508,11 +5508,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.6104123421,
-                0.2862982544,
-                2e-10
+                0.692806698,
+                0.3285593428,
+                1e-10
               ],
-              "alpha": 0.34
+              "alpha": 0.37
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5534,11 +5534,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.6104123421,
-                0.2862982544,
-                2e-10
+                0.692806698,
+                0.3285593428,
+                1e-10
               ],
-              "alpha": 0.34
+              "alpha": 0.37
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5888,11 +5888,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.6908212405,
-                0,
-                0.094328273
+                0.9517987416,
+                0.1733095308,
+                0.2053264314
               ],
-              "alpha": 0.21
+              "alpha": 0.28
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5903,7 +5903,7 @@
                 }
               },
               "com.figma.aliasData": {
-                "targetVariableSetName": "Sloy UI · Theme",
+                "targetVariableSetName": "Sloy UI · SurfaceScheme",
                 "targetVariableName": "context/inset/color/red/secondary/background/normal"
               }
             },
@@ -5914,11 +5914,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.4975120705,
+                0.7398223188,
                 1e-10,
-                0.0556239255
+                0.1041392653
               ],
-              "alpha": 0.25
+              "alpha": 0.27
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -5940,11 +5940,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.4975120705,
+                0.7398223188,
                 1e-10,
-                0.0556239255
+                0.1041392653
               ],
-              "alpha": 0.25
+              "alpha": 0.27
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -6294,11 +6294,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.4546911033,
-                2e-10,
-                0.3466752199
+                0.6782217452,
+                3e-10,
+                0.5228343075
               ],
-              "alpha": 0.2
+              "alpha": 0.22
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -6320,11 +6320,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.4110163946,
-                1e-10,
-                0.3122562393
+                0.5432484406,
+                3e-10,
+                0.4164651136
               ],
-              "alpha": 0.25
+              "alpha": 0.26
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -6346,11 +6346,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.4110163946,
-                1e-10,
-                0.3122562393
+                0.5432484406,
+                3e-10,
+                0.4164651136
               ],
-              "alpha": 0.25
+              "alpha": 0.26
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -6700,11 +6700,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.3601878288,
+                0.4687875168,
                 1e-10,
-                0.5595590032
+                0.7203077328
               ],
-              "alpha": 0.2
+              "alpha": 0.21
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -6726,11 +6726,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.2547206904,
+                0.3601878288,
                 1e-10,
-                0.4034470584
+                0.5595590032
               ],
-              "alpha": 0.24
+              "alpha": 0.25
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -6752,11 +6752,11 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.2547206904,
+                0.3601878288,
                 1e-10,
-                0.4034470584
+                0.5595590032
               ],
-              "alpha": 0.24
+              "alpha": 0.25
             },
             "$extensions": {
               "com.sloyui.variable": {
@@ -7228,11 +7228,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6908212405,
-              0,
-              0.094328273
+              0.9517987416,
+              0.1733095308,
+              0.2053264314
             ],
-            "alpha": 0.21
+            "alpha": 0.28
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7246,7 +7246,7 @@
               }
             },
             "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · Theme",
+              "targetVariableSetName": "Sloy UI · SurfaceScheme",
               "targetVariableName": "context/inset/color/red/secondary/background/normal"
             }
           },
@@ -7257,11 +7257,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.4975120705,
+              0.7398223188,
               1e-10,
-              0.0556239255
+              0.1041392653
             ],
-            "alpha": 0.25
+            "alpha": 0.27
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7283,11 +7283,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.4975120705,
+              0.7398223188,
               1e-10,
-              0.0556239255
+              0.1041392653
             ],
-            "alpha": 0.25
+            "alpha": 0.27
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7371,11 +7371,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0,
-              0.4684285202,
-              0.2741307741
+              3e-10,
+              0.5981901807,
+              0.3557246386
             ],
-            "alpha": 0.28
+            "alpha": 0.34
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7401,10 +7401,10 @@
             "colorSpace": "srgb",
             "components": [
               2e-10,
-              0.3720744805,
-              0.2135435527
+              0.5008011309,
+              0.294486605
             ],
-            "alpha": 0.31
+            "alpha": 0.37
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7427,10 +7427,10 @@
             "colorSpace": "srgb",
             "components": [
               2e-10,
-              0.3720744805,
-              0.2135435527
+              0.5008011309,
+              0.294486605
             ],
-            "alpha": 0.31
+            "alpha": 0.37
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7514,11 +7514,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6515662608,
-              0.3074066104,
-              1e-10
+              0.775372804,
+              0.370908524,
+              2e-10
             ],
-            "alpha": 0.28
+            "alpha": 0.32
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7543,11 +7543,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6104123421,
-              0.2862982544,
-              2e-10
+              0.692806698,
+              0.3285593428,
+              1e-10
             ],
-            "alpha": 0.34
+            "alpha": 0.37
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7569,11 +7569,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6104123421,
-              0.2862982544,
-              2e-10
+              0.692806698,
+              0.3285593428,
+              1e-10
             ],
-            "alpha": 0.34
+            "alpha": 0.37
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7657,11 +7657,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              3e-10,
-              0.3568043023,
-              0.6939594773
+              1e-10,
+              0.4382018359,
+              0.8419993445
             ],
-            "alpha": 0.26
+            "alpha": 0.29
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7686,11 +7686,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1e-10,
-              0.3030737006,
-              0.5962381977
+              3e-10,
+              0.4110024815,
+              0.7925311526
             ],
-            "alpha": 0.3
+            "alpha": 0.35
           },
           "$extensions": {
             "com.sloyui.variable": {
@@ -7712,11 +7712,11 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1e-10,
-              0.3030737006,
-              0.5962381977
+              3e-10,
+              0.4110024815,
+              0.7925311526
             ],
-            "alpha": 0.3
+            "alpha": 0.35
           },
           "$extensions": {
             "com.sloyui.variable": {

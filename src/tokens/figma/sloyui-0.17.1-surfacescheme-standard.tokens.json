@@ -1,9 +1,9 @@
 {
   "$extensions": {
     "com.sloyui.export": {
-      "version": "0.17.0",
+      "version": "0.17.1",
       "collection": "Sloy UI · SurfaceScheme",
-      "mode": "Dimmed"
+      "mode": "Standard"
     }
   },
   "context": {
@@ -14,9 +14,9 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9653810442,
-              0.9653810442,
-              0.9653810442
+              0.9317619717,
+              0.9317619717,
+              0.9317619717
             ],
             "alpha": 1
           },
@@ -28,7 +28,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "context/panel/surface/block"
+              "targetVariableName": "context/page/surface/background"
             }
           },
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -54,7 +54,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "context/inset/surface/block"
+              "targetVariableName": "context/page/disabled/background"
             }
           },
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -80,7 +80,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "context/panel/border/default"
+              "targetVariableName": "context/page/border/subtle"
             }
           },
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -104,7 +104,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "context/panel/border/control-hover"
+              "targetVariableName": "context/page/border/default"
             }
           },
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -128,7 +128,513 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/page/border/strong"
+              "targetVariableName": "context/page/border/strong"
+            }
+          },
+          "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+        },
+        "emphasis": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.3601047577,
+              0.3601047577,
+              0.3601047577
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Theme",
+              "targetVariableName": "context/page/border/emphasis"
+            }
+          },
+          "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+        }
+      },
+      "secondary": {
+        "neutral": {
+          "content": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.2457477303,
+                0.2457477303,
+                0.2457477303
+              ],
+              "alpha": 1
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {}
+              },
+              "com.figma.aliasData": {
+                "targetVariableSetName": "Sloy UI · Theme",
+                "targetVariableName": "context/page/secondary/neutral/content"
+              }
+            },
+            "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+          }
+        }
+      },
+      "color": {
+        "blue": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    1e-10,
+                    0.4382018359,
+                    0.8419993445
+                  ],
+                  "alpha": 0.3
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  },
+                  "com.figma.aliasData": {
+                    "targetVariableSetName": "Sloy UI · Theme",
+                    "targetVariableName": "context/page/color/blue/secondary/background/normal"
+                  }
+                },
+                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    2e-10,
+                    0.3838601889,
+                    0.7431667405
+                  ],
+                  "alpha": 0.35
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  },
+                  "com.figma.aliasData": {
+                    "targetVariableSetName": "Sloy UI · Theme",
+                    "targetVariableName": "context/page/color/blue/secondary/background/hover"
+                  }
+                },
+                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+              }
+            }
+          }
+        },
+        "green": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    5e-10,
+                    0.5332417992,
+                    0.3148852303
+                  ],
+                  "alpha": 0.32
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  },
+                  "com.figma.aliasData": {
+                    "targetVariableSetName": "Sloy UI · Theme",
+                    "targetVariableName": "context/page/color/green/secondary/background/normal"
+                  }
+                },
+                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    2e-10,
+                    0.5008011309,
+                    0.294486605
+                  ],
+                  "alpha": 0.38
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  },
+                  "com.figma.aliasData": {
+                    "targetVariableSetName": "Sloy UI · Theme",
+                    "targetVariableName": "context/page/color/green/secondary/background/hover"
+                  }
+                },
+                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+              }
+            }
+          }
+        },
+        "orange": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.8166118327,
+                    0.3920605341,
+                    6e-10
+                  ],
+                  "alpha": 0.35
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  },
+                  "com.figma.aliasData": {
+                    "targetVariableSetName": "Sloy UI · Theme",
+                    "targetVariableName": "context/page/color/orange/secondary/background/normal"
+                  }
+                },
+                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.692806698,
+                    0.3285593428,
+                    1e-10
+                  ],
+                  "alpha": 0.38
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  },
+                  "com.figma.aliasData": {
+                    "targetVariableSetName": "Sloy UI · Theme",
+                    "targetVariableName": "context/page/color/orange/secondary/background/hover"
+                  }
+                },
+                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+              }
+            }
+          }
+        },
+        "red": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.8875528899,
+                    6e-10,
+                    0.1337178693
+                  ],
+                  "alpha": 0.23
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  },
+                  "com.figma.aliasData": {
+                    "targetVariableSetName": "Sloy UI · Theme",
+                    "targetVariableName": "context/page/color/red/secondary/background/normal"
+                  }
+                },
+                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.6908212405,
+                    0,
+                    0.094328273
+                  ],
+                  "alpha": 0.27
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  },
+                  "com.figma.aliasData": {
+                    "targetVariableSetName": "Sloy UI · Theme",
+                    "targetVariableName": "context/page/color/red/secondary/background/hover"
+                  }
+                },
+                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+              }
+            }
+          }
+        },
+        "pink": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.6330183642,
+                    0,
+                    0.4872106172
+                  ],
+                  "alpha": 0.22
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  },
+                  "com.figma.aliasData": {
+                    "targetVariableSetName": "Sloy UI · Theme",
+                    "targetVariableName": "context/page/color/pink/secondary/background/normal"
+                  }
+                },
+                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.5880097869,
+                    3e-10,
+                    0.4517404471
+                  ],
+                  "alpha": 0.27
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  },
+                  "com.figma.aliasData": {
+                    "targetVariableSetName": "Sloy UI · Theme",
+                    "targetVariableName": "context/page/color/pink/secondary/background/hover"
+                  }
+                },
+                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+              }
+            }
+          }
+        },
+        "purple": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.4323254987,
+                    3e-10,
+                    0.6663368311
+                  ],
+                  "alpha": 0.21
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  },
+                  "com.figma.aliasData": {
+                    "targetVariableSetName": "Sloy UI · Theme",
+                    "targetVariableName": "context/page/color/purple/secondary/background/normal"
+                  }
+                },
+                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.3961097263,
+                    1e-10,
+                    0.612730421
+                  ],
+                  "alpha": 0.26
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  },
+                  "com.figma.aliasData": {
+                    "targetVariableSetName": "Sloy UI · Theme",
+                    "targetVariableName": "context/page/color/purple/secondary/background/hover"
+                  }
+                },
+                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+              }
+            }
+          }
+        }
+      }
+    },
+    "inset": {
+      "surface": {
+        "background": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9653810442,
+              0.9653810442,
+              0.9653810442
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Theme",
+              "targetVariableName": "context/inset/surface/background"
+            }
+          },
+          "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+        }
+      },
+      "disabled": {
+        "background": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9317619717,
+              0.9317619717,
+              0.9317619717
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Theme",
+              "targetVariableName": "context/inset/disabled/background"
+            }
+          },
+          "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+        }
+      },
+      "border": {
+        "subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8991073255,
+              0.8991073255,
+              0.8991073255
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Theme",
+              "targetVariableName": "context/inset/border/subtle"
+            }
+          },
+          "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+        },
+        "default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8673824811,
+              0.8673824811,
+              0.8673824811
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Theme",
+              "targetVariableName": "context/inset/border/default"
+            }
+          },
+          "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+        },
+        "strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7491148896,
+              0.7491148896,
+              0.7491148896
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Theme",
+              "targetVariableName": "context/inset/border/strong"
             }
           },
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -152,7 +658,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/page/border/emphasis"
+              "targetVariableName": "context/inset/border/emphasis"
             }
           },
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -165,9 +671,9 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0,
-                0,
-                0
+                0.264872785,
+                0.264872785,
+                0.264872785
               ],
               "alpha": 1
             },
@@ -179,7 +685,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · Theme",
-                "targetVariableName": "scheme/dimmed/context/page/secondary/neutral/content"
+                "targetVariableName": "context/inset/secondary/neutral/content"
               }
             },
             "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -195,11 +701,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    3e-10,
-                    0.3568043023,
-                    0.6939594773
+                    1e-10,
+                    0.4382018359,
+                    0.8419993445
                   ],
-                  "alpha": 0.26
+                  "alpha": 0.29
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -209,7 +715,7 @@
                   },
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/page/color/blue/secondary/background/normal"
+                    "targetVariableName": "context/inset/color/blue/secondary/background/normal"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -219,11 +725,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    1e-10,
-                    0.3030737006,
-                    0.5962381977
+                    3e-10,
+                    0.4110024815,
+                    0.7925311526
                   ],
-                  "alpha": 0.3
+                  "alpha": 0.35
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -249,11 +755,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0,
-                    0.4684285202,
-                    0.2741307741
+                    3e-10,
+                    0.5981901807,
+                    0.3557246386
                   ],
-                  "alpha": 0.28
+                  "alpha": 0.34
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -274,10 +780,10 @@
                   "colorSpace": "srgb",
                   "components": [
                     2e-10,
-                    0.3720744805,
-                    0.2135435527
+                    0.5008011309,
+                    0.294486605
                   ],
-                  "alpha": 0.31
+                  "alpha": 0.37
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -303,11 +809,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6515662608,
-                    0.3074066104,
-                    1e-10
+                    0.775372804,
+                    0.370908524,
+                    2e-10
                   ],
-                  "alpha": 0.28
+                  "alpha": 0.32
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -317,7 +823,7 @@
                   },
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/page/color/orange/secondary/background/normal"
+                    "targetVariableName": "context/inset/color/orange/secondary/background/normal"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -327,11 +833,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6104123421,
-                    0.2862982544,
-                    2e-10
+                    0.692806698,
+                    0.3285593428,
+                    1e-10
                   ],
-                  "alpha": 0.34
+                  "alpha": 0.37
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -357,11 +863,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6908212405,
-                    0,
-                    0.094328273
+                    0.9517987416,
+                    0.1733095308,
+                    0.2053264314
                   ],
-                  "alpha": 0.21
+                  "alpha": 0.28
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -381,11 +887,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.4975120705,
+                    0.7398223188,
                     1e-10,
-                    0.0556239255
+                    0.1041392653
                   ],
-                  "alpha": 0.25
+                  "alpha": 0.27
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -411,11 +917,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.4546911033,
-                    2e-10,
-                    0.3466752199
+                    0.6782217452,
+                    3e-10,
+                    0.5228343075
                   ],
-                  "alpha": 0.2
+                  "alpha": 0.22
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -425,7 +931,7 @@
                   },
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/page/color/pink/secondary/background/normal"
+                    "targetVariableName": "context/inset/color/pink/secondary/background/normal"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -435,11 +941,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.4110163946,
-                    1e-10,
-                    0.3122562393
+                    0.5432484406,
+                    3e-10,
+                    0.4164651136
                   ],
-                  "alpha": 0.25
+                  "alpha": 0.26
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -449,7 +955,7 @@
                   },
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/page/color/pink/secondary/background/hover"
+                    "targetVariableName": "context/inset/color/pink/secondary/background/hover"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -465,11 +971,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.3601878288,
+                    0.4687875168,
                     1e-10,
-                    0.5595590032
+                    0.7203077328
                   ],
-                  "alpha": 0.2
+                  "alpha": 0.21
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -479,7 +985,7 @@
                   },
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/page/color/purple/secondary/background/normal"
+                    "targetVariableName": "context/inset/color/purple/secondary/background/normal"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -489,11 +995,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.2547206904,
+                    0.3601878288,
                     1e-10,
-                    0.4034470584
+                    0.5595590032
                   ],
-                  "alpha": 0.24
+                  "alpha": 0.25
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -513,7 +1019,7 @@
         }
       }
     },
-    "inset": {
+    "panel": {
       "surface": {
         "background": {
           "$type": "color",
@@ -591,30 +1097,6 @@
           },
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
         },
-        "default": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.8673824811,
-              0.8673824811,
-              0.8673824811
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {}
-            },
-            "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/inset/border/default"
-            }
-          },
-          "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-        },
         "strong": {
           "$type": "color",
           "$value": {
@@ -664,34 +1146,6 @@
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
         }
       },
-      "secondary": {
-        "neutral": {
-          "content": {
-            "$type": "color",
-            "$value": {
-              "colorSpace": "srgb",
-              "components": [
-                0,
-                0,
-                0
-              ],
-              "alpha": 1
-            },
-            "$extensions": {
-              "com.sloyui.variable": {
-                "scopes": [],
-                "visibility": "internal",
-                "codeSyntax": {}
-              },
-              "com.figma.aliasData": {
-                "targetVariableSetName": "Sloy UI · Theme",
-                "targetVariableName": "scheme/dimmed/context/page/secondary/neutral/content"
-              }
-            },
-            "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-          }
-        }
-      },
       "color": {
         "blue": {
           "secondary": {
@@ -701,11 +1155,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    2e-10,
-                    0.3838601889,
-                    0.7431667405
+                    0.4166053382,
+                    0.6769125792,
+                    1
                   ],
-                  "alpha": 0.26
+                  "alpha": 0.5
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -725,11 +1179,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    2e-10,
-                    0.2239279564,
-                    0.4522937199
+                    3e-10,
+                    0.4110024815,
+                    0.7925311526
                   ],
-                  "alpha": 0.27
+                  "alpha": 0.34
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -747,60 +1201,6 @@
             }
           }
         },
-        "green": {
-          "secondary": {
-            "background": {
-              "normal": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0,
-                    0.4684285202,
-                    0.2741307741
-                  ],
-                  "alpha": 0.27
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  },
-                  "com.figma.aliasData": {
-                    "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "context/panel/color/green/secondary/background/normal"
-                  }
-                },
-                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-              },
-              "hover": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    3e-10,
-                    0.4361589659,
-                    0.2538397449
-                  ],
-                  "alpha": 0.33
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  },
-                  "com.figma.aliasData": {
-                    "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "context/panel/color/green/secondary/background/hover"
-                  }
-                },
-                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-              }
-            }
-          }
-        },
         "orange": {
           "secondary": {
             "background": {
@@ -809,11 +1209,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.775372804,
-                    0.370908524,
-                    2e-10
+                    0.8577632456,
+                    0.4131676048,
+                    5e-10
                   ],
-                  "alpha": 0.31
+                  "alpha": 0.34
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -824,30 +1224,6 @@
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
                     "targetVariableName": "context/panel/color/orange/secondary/background/normal"
-                  }
-                },
-                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-              },
-              "hover": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.6104123421,
-                    0.2862982544,
-                    2e-10
-                  ],
-                  "alpha": 0.33
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  },
-                  "com.figma.aliasData": {
-                    "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "context/panel/color/orange/secondary/background/hover"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -863,11 +1239,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.5453152106,
-                    3e-10,
-                    0.0651950667
+                    0.7889798876,
+                    4e-10,
+                    0.1139815901
                   ],
-                  "alpha": 0.25
+                  "alpha": 0.27
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -888,40 +1264,16 @@
         "pink": {
           "secondary": {
             "background": {
-              "normal": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.4987893891,
-                    2e-10,
-                    0.3814280114
-                  ],
-                  "alpha": 0.2
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  },
-                  "com.figma.aliasData": {
-                    "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "context/panel/color/pink/secondary/background/normal"
-                  }
-                },
-                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-              },
               "hover": {
                 "$type": "color",
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.4546911033,
-                    2e-10,
-                    0.3466752199
+                    0.5432484406,
+                    3e-10,
+                    0.4164651136
                   ],
-                  "alpha": 0.25
+                  "alpha": 0.26
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -947,11 +1299,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.3961097263,
-                    1e-10,
-                    0.612730421
+                    0.5054509259,
+                    4e-10,
+                    0.7745767324
                   ],
-                  "alpha": 0.2
+                  "alpha": 0.21
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -971,11 +1323,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.2894348069,
+                    0.3961097263,
                     1e-10,
-                    0.4548307246
+                    0.612730421
                   ],
-                  "alpha": 0.24
+                  "alpha": 0.25
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -986,334 +1338,6 @@
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
                     "targetVariableName": "context/panel/color/purple/secondary/background/hover"
-                  }
-                },
-                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-              }
-            }
-          }
-        }
-      }
-    },
-    "panel": {
-      "surface": {
-        "background": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              1,
-              1,
-              1
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {}
-            },
-            "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/panel/surface/background"
-            }
-          },
-          "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-        }
-      },
-      "disabled": {
-        "background": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.9653810442,
-              0.9653810442,
-              0.9653810442
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {}
-            },
-            "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/panel/disabled/background"
-            }
-          },
-          "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-        }
-      },
-      "border": {
-        "subtle": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.9317619717,
-              0.9317619717,
-              0.9317619717
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {}
-            },
-            "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/panel/border/subtle"
-            }
-          },
-          "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-        },
-        "strong": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.7774519281,
-              0.7774519281,
-              0.7774519281
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {}
-            },
-            "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/panel/border/strong"
-            }
-          },
-          "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-        },
-        "emphasis": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.3992640547,
-              0.3992640547,
-              0.3992640547
-            ],
-            "alpha": 1
-          },
-          "$extensions": {
-            "com.sloyui.variable": {
-              "scopes": [],
-              "visibility": "internal",
-              "codeSyntax": {}
-            },
-            "com.figma.aliasData": {
-              "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/panel/border/emphasis"
-            }
-          },
-          "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-        }
-      },
-      "color": {
-        "blue": {
-          "secondary": {
-            "background": {
-              "normal": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    2e-10,
-                    0.3838601889,
-                    0.7431667405
-                  ],
-                  "alpha": 0.26
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  },
-                  "com.figma.aliasData": {
-                    "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/panel/color/blue/secondary/background/normal"
-                  }
-                },
-                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-              },
-              "hover": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    2e-10,
-                    0.2239279564,
-                    0.4522937199
-                  ],
-                  "alpha": 0.27
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  },
-                  "com.figma.aliasData": {
-                    "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/panel/color/blue/secondary/background/hover"
-                  }
-                },
-                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-              }
-            }
-          }
-        },
-        "orange": {
-          "secondary": {
-            "background": {
-              "normal": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.775372804,
-                    0.370908524,
-                    2e-10
-                  ],
-                  "alpha": 0.31
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  },
-                  "com.figma.aliasData": {
-                    "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/panel/color/orange/secondary/background/normal"
-                  }
-                },
-                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-              }
-            }
-          }
-        },
-        "red": {
-          "secondary": {
-            "background": {
-              "hover": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.5453152106,
-                    3e-10,
-                    0.0651950667
-                  ],
-                  "alpha": 0.25
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  },
-                  "com.figma.aliasData": {
-                    "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/panel/color/red/secondary/background/hover"
-                  }
-                },
-                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-              }
-            }
-          }
-        },
-        "pink": {
-          "secondary": {
-            "background": {
-              "hover": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.4546911033,
-                    2e-10,
-                    0.3466752199
-                  ],
-                  "alpha": 0.25
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  },
-                  "com.figma.aliasData": {
-                    "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/panel/color/pink/secondary/background/hover"
-                  }
-                },
-                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-              }
-            }
-          }
-        },
-        "purple": {
-          "secondary": {
-            "background": {
-              "normal": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.3961097263,
-                    1e-10,
-                    0.612730421
-                  ],
-                  "alpha": 0.2
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  },
-                  "com.figma.aliasData": {
-                    "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/panel/color/purple/secondary/background/normal"
-                  }
-                },
-                "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-              },
-              "hover": {
-                "$type": "color",
-                "$value": {
-                  "colorSpace": "srgb",
-                  "components": [
-                    0.2894348069,
-                    1e-10,
-                    0.4548307246
-                  ],
-                  "alpha": 0.24
-                },
-                "$extensions": {
-                  "com.sloyui.variable": {
-                    "scopes": [],
-                    "visibility": "internal",
-                    "codeSyntax": {}
-                  },
-                  "com.figma.aliasData": {
-                    "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/panel/color/purple/secondary/background/hover"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1344,7 +1368,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/overlay/surface/background"
+              "targetVariableName": "context/overlay/surface/background"
             }
           },
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1370,7 +1394,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/overlay/disabled/background"
+              "targetVariableName": "context/panel/surface/block"
             }
           },
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1396,7 +1420,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/overlay/border/subtle"
+              "targetVariableName": "context/inset/surface/block"
             }
           },
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1420,7 +1444,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/overlay/border/default"
+              "targetVariableName": "context/overlay/border/default"
             }
           },
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1444,7 +1468,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/overlay/border/strong"
+              "targetVariableName": "context/overlay/border/strong"
             }
           },
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1468,7 +1492,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/overlay/border/control"
+              "targetVariableName": "context/overlay/border/control"
             }
           },
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1492,7 +1516,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/overlay/border/control-hover"
+              "targetVariableName": "context/overlay/border/control-hover"
             }
           },
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1518,7 +1542,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/overlay/group/hover"
+              "targetVariableName": "context/overlay/group/hover"
             }
           },
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1542,7 +1566,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Theme",
-              "targetVariableName": "scheme/dimmed/context/overlay/group/pressed"
+              "targetVariableName": "context/overlay/group/pressed"
             }
           },
           "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1570,7 +1594,7 @@
                 },
                 "com.figma.aliasData": {
                   "targetVariableSetName": "Sloy UI · Theme",
-                  "targetVariableName": "context/overlay/surface/block"
+                  "targetVariableName": "context/overlay/secondary/neutral/background/normal"
                 }
               },
               "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1581,9 +1605,9 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0,
-                0,
-                0
+                0.264872785,
+                0.264872785,
+                0.264872785
               ],
               "alpha": 1
             },
@@ -1595,7 +1619,7 @@
               },
               "com.figma.aliasData": {
                 "targetVariableSetName": "Sloy UI · Theme",
-                "targetVariableName": "scheme/dimmed/context/page/secondary/neutral/content"
+                "targetVariableName": "context/overlay/secondary/neutral/content"
               }
             },
             "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1611,11 +1635,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    2e-10,
-                    0.3838601889,
-                    0.7431667405
+                    0.4166053382,
+                    0.6769125792,
+                    1
                   ],
-                  "alpha": 0.26
+                  "alpha": 0.5
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1625,7 +1649,7 @@
                   },
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/overlay/color/blue/secondary/background/normal"
+                    "targetVariableName": "context/panel/color/blue/secondary/background/normal"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1635,11 +1659,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    2e-10,
-                    0.2239279564,
-                    0.4522937199
+                    3e-10,
+                    0.4110024815,
+                    0.7925311526
                   ],
-                  "alpha": 0.27
+                  "alpha": 0.34
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1649,7 +1673,7 @@
                   },
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/overlay/color/blue/secondary/background/hover"
+                    "targetVariableName": "context/panel/color/blue/secondary/background/hover"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1674,7 +1698,7 @@
                 },
                 "com.figma.aliasData": {
                   "targetVariableSetName": "Sloy UI · Theme",
-                  "targetVariableName": "scheme/dimmed/context/overlay/color/blue/secondary/content"
+                  "targetVariableName": "context/overlay/color/blue/secondary/content"
                 }
               },
               "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1689,11 +1713,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0,
-                    0.4684285202,
-                    0.2741307741
+                    1e-10,
+                    0.5657161685,
+                    0.3353050467
                   ],
-                  "alpha": 0.27
+                  "alpha": 0.31
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1703,7 +1727,7 @@
                   },
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/overlay/color/green/secondary/background/normal"
+                    "targetVariableName": "context/panel/color/green/secondary/background/normal"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1713,11 +1737,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    3e-10,
-                    0.4361589659,
-                    0.2538397449
+                    2e-10,
+                    0.5008011309,
+                    0.294486605
                   ],
-                  "alpha": 0.33
+                  "alpha": 0.36
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1727,7 +1751,7 @@
                   },
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/overlay/color/green/secondary/background/hover"
+                    "targetVariableName": "context/panel/color/green/secondary/background/hover"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1752,7 +1776,7 @@
                 },
                 "com.figma.aliasData": {
                   "targetVariableSetName": "Sloy UI · Theme",
-                  "targetVariableName": "scheme/dimmed/context/overlay/color/green/secondary/content"
+                  "targetVariableName": "context/overlay/color/green/secondary/content"
                 }
               },
               "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1767,11 +1791,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.775372804,
-                    0.370908524,
-                    2e-10
+                    0.8577632456,
+                    0.4131676048,
+                    5e-10
                   ],
-                  "alpha": 0.31
+                  "alpha": 0.34
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1781,7 +1805,7 @@
                   },
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/overlay/color/orange/secondary/background/normal"
+                    "targetVariableName": "context/panel/color/orange/secondary/background/normal"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1791,11 +1815,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6104123421,
-                    0.2862982544,
+                    0.775372804,
+                    0.370908524,
                     2e-10
                   ],
-                  "alpha": 0.33
+                  "alpha": 0.39
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1805,7 +1829,7 @@
                   },
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/overlay/color/orange/secondary/background/hover"
+                    "targetVariableName": "context/panel/color/orange/secondary/background/hover"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1830,7 +1854,7 @@
                 },
                 "com.figma.aliasData": {
                   "targetVariableSetName": "Sloy UI · Theme",
-                  "targetVariableName": "scheme/dimmed/context/overlay/color/orange/secondary/content"
+                  "targetVariableName": "context/overlay/color/orange/secondary/content"
                 }
               },
               "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1845,11 +1869,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.6908212405,
-                    0,
-                    0.094328273
+                    0.9999999999,
+                    0.5873578209,
+                    0.5523053479
                   ],
-                  "alpha": 0.21
+                  "alpha": 0.55
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1859,7 +1883,7 @@
                   },
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/overlay/color/red/secondary/background/normal"
+                    "targetVariableName": "context/overlay/color/red/secondary/background/normal"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1869,11 +1893,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.5453152106,
-                    3e-10,
-                    0.0651950667
+                    0.7889798876,
+                    4e-10,
+                    0.1139815901
                   ],
-                  "alpha": 0.25
+                  "alpha": 0.27
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1883,7 +1907,7 @@
                   },
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/overlay/color/red/secondary/background/hover"
+                    "targetVariableName": "context/overlay/color/red/secondary/background/hover"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1908,7 +1932,7 @@
                 },
                 "com.figma.aliasData": {
                   "targetVariableSetName": "Sloy UI · Theme",
-                  "targetVariableName": "scheme/dimmed/context/overlay/color/red/secondary/content"
+                  "targetVariableName": "context/overlay/color/red/secondary/content"
                 }
               },
               "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1936,7 +1960,7 @@
                 },
                 "com.figma.aliasData": {
                   "targetVariableSetName": "Sloy UI · Theme",
-                  "targetVariableName": "scheme/dimmed/context/overlay/color/pink/secondary/content"
+                  "targetVariableName": "context/overlay/color/pink/secondary/content"
                 }
               },
               "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1951,11 +1975,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.3961097263,
-                    1e-10,
-                    0.612730421
+                    0.5054509259,
+                    4e-10,
+                    0.7745767324
                   ],
-                  "alpha": 0.2
+                  "alpha": 0.21
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1965,7 +1989,7 @@
                   },
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/overlay/color/purple/secondary/background/normal"
+                    "targetVariableName": "context/panel/color/purple/secondary/background/normal"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -1975,11 +1999,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.2894348069,
+                    0.3961097263,
                     1e-10,
-                    0.4548307246
+                    0.612730421
                   ],
-                  "alpha": 0.24
+                  "alpha": 0.25
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1989,7 +2013,7 @@
                   },
                   "com.figma.aliasData": {
                     "targetVariableSetName": "Sloy UI · Theme",
-                    "targetVariableName": "scheme/dimmed/context/overlay/color/purple/secondary/background/hover"
+                    "targetVariableName": "context/panel/color/purple/secondary/background/hover"
                   }
                 },
                 "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
@@ -2014,7 +2038,7 @@
                 },
                 "com.figma.aliasData": {
                   "targetVariableSetName": "Sloy UI · Theme",
-                  "targetVariableName": "scheme/dimmed/context/overlay/color/purple/secondary/content"
+                  "targetVariableName": "context/overlay/color/purple/secondary/content"
                 }
               },
               "$description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."

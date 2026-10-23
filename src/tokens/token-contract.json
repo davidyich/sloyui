@@ -3297,7 +3297,7 @@
       "Theme/context/floating/action-vivid/orange/text": "Theme/context/page/primary/content",
       "Theme/context/base/element/red/normal": "Theme/context/page/color/red/secondary/background/normal",
       "Theme/context/canvas/element/red/normal": "Theme/context/inset/color/red/secondary/background/normal",
-      "Theme/context/raised/element/red/normal": "Theme/context/inset/color/red/secondary/background/normal",
+      "Theme/context/raised/element/red/normal": "Theme/context/panel/color/red/secondary/background/normal",
       "Theme/context/floating/element/red/normal": "Theme/context/overlay/color/red/secondary/background/normal",
       "Theme/context/base/element/red/hover": "Theme/context/page/color/red/secondary/background/hover",
       "Theme/context/canvas/element/red/hover": "Theme/context/inset/color/red/secondary/background/hover",
@@ -3501,7 +3501,7 @@
       "Theme/context/floating/action-vivid/purple/text": "Theme/context/page/primary/content",
       "Theme/context/base/feedback/danger/normal": "Theme/context/page/color/red/secondary/background/normal",
       "Theme/context/canvas/feedback/danger/normal": "Theme/context/inset/color/red/secondary/background/normal",
-      "Theme/context/raised/feedback/danger/normal": "Theme/context/inset/color/red/secondary/background/normal",
+      "Theme/context/raised/feedback/danger/normal": "Theme/context/panel/color/red/secondary/background/normal",
       "Theme/context/floating/feedback/danger/normal": "Theme/context/overlay/color/red/secondary/background/normal",
       "Theme/context/base/feedback/danger/hover": "Theme/context/page/color/red/secondary/background/hover",
       "Theme/context/canvas/feedback/danger/hover": "Theme/context/inset/color/red/secondary/background/hover",
@@ -4586,6 +4586,6 @@
   },
   "graph": "figma/token-system-v4/graph.json",
   "sourceHash": "4deafa9836166d4e3425409c49c70a29be70129e3ea9e5ac04a226474b2b2b7c",
-  "graphHash": "cdcd62b4b4f648ac4a69af9de785955ff3df520d3678020fb1cc94a5ee6f1157",
+  "graphHash": "08c361d0c6b35526fba3c41041cf75ae7262fae561847becf0f67e052aa10691",
   "canonicalExport": "runtime-v4.json"
 }

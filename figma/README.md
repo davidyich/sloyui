@@ -26,7 +26,7 @@ Generated JSON or local mock checks do not confirm live Figma. Record native col
 
 The rebuilt V2 now contains the controls and editable guide pages:
 
-- [Start · 0.17.0](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=164-498)
+- [Start · 0.17.1](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=164-498)
 - [Colors and Invert](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=161-4037)
 - [Controls showcase](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=162-468)
 - [Composition components](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=163-2)
@@ -36,3 +36,16 @@ The rebuilt V2 now contains the controls and editable guide pages:
 These links record created assets. The actual acceptance/deployment scope remains in verification. Layout state variants do not imply working drag/click prototypes. [Control-to-web mapping](controls/README.md) distinguishes Figma appearances from web variants; composition components are recipes, not a new web API.
 
 [Consolidation record](../docs/consolidation-20261023.md) gives source precedence, session references, backup inventory and outstanding recovery checks. Historical v3/v4 guides and legacy importers remain reference/compatibility material; their counts, public Theme picker and old Inverted behavior are superseded for V2.
+
+## Native refinement 0.17.1
+
+- [Neutral roles: Surface, Invert and stable black/white](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=182-6).
+- [Selections and overlays](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=179-2195): MenuItem, Select/Menu, Select/Open, ComboBox, MultiSelect, DropdownMenu, Popover, Dialog, Drawer, Tooltip, Toast and CommandPalette.
+- [Sloy composition components](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=185-1243): rail item, 3/5 tabs, segmented control, task row, material list/grid card, week strip, agenda item, note and reader.
+- [Sloy Today and Library](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=187-2710): four editable Light/Dark screens assembled from linked instances. Material examples quote local project documents; they are not live account records.
+
+Native Focus uses a fill/handle change with no additional outline. Boundaries use literal 0.5 px; `.Border` is an empty shape whose opacity alone follows the integer Borders 0/100 percent switch. This does not attenuate content or add fractional primitives. The native Slider follows Palette Lab ParameterSlider: filled row, inline label/value and slim midpoint handle by default.
+
+Native graph now contains 974 variables across the same nine collections (Palette 328, Theme 333, Scheme 113, Surface 86). Public variable IDs remain stable. Light Secondary chroma is 0.06; 36 stale internal values were removed after alias/style/all-page binding checks. See verification for actual measured scope.
+
+[Borders On / Off guide](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=200-7) shows inherited 0.5 px boundaries in Light, Dark and Light+Invert. Native Borders defaults to On; set the containing frame mode and leave children on Auto. `border/opacity` uses integer percentages 100/0; it never changes content opacity.

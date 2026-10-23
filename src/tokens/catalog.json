@@ -283,7 +283,7 @@
     "name": "--cap-feedback-danger-normal",
     "original": "feedback/danger/normal",
     "group": "feedback",
-    "light": "#A40016",
+    "light": "#E20022",
     "dark": "#FF8A81",
     "runtime": true
   },
@@ -291,7 +291,7 @@
     "name": "--cap-feedback-danger-hover",
     "original": "feedback/danger/hover",
     "group": "feedback",
-    "light": "#970013",
+    "light": "#B00018",
     "dark": "#FF968D",
     "runtime": true
   },
@@ -299,7 +299,7 @@
     "name": "--cap-feedback-danger-pressed",
     "original": "feedback/danger/pressed",
     "group": "feedback",
-    "light": "#970013",
+    "light": "#B00018",
     "dark": "#FF968D",
     "runtime": true
   },
@@ -323,7 +323,7 @@
     "name": "--cap-feedback-success-normal",
     "original": "feedback/success/normal",
     "group": "feedback",
-    "light": "#007746",
+    "light": "#008850",
     "dark": "#55C386",
     "runtime": true
   },
@@ -331,7 +331,7 @@
     "name": "--cap-feedback-success-hover",
     "original": "feedback/success/hover",
     "group": "feedback",
-    "light": "#005F36",
+    "light": "#00804B",
     "dark": "#70CF97",
     "runtime": true
   },
@@ -339,7 +339,7 @@
     "name": "--cap-feedback-success-pressed",
     "original": "feedback/success/pressed",
     "group": "feedback",
-    "light": "#005F36",
+    "light": "#00804B",
     "dark": "#70CF97",
     "runtime": true
   },
@@ -363,7 +363,7 @@
     "name": "--cap-feedback-warning-normal",
     "original": "feedback/warning/normal",
     "group": "feedback",
-    "light": "#A64E00",
+    "light": "#D06400",
     "dark": "#FF9B5C",
     "runtime": true
   },
@@ -371,7 +371,7 @@
     "name": "--cap-feedback-warning-hover",
     "original": "feedback/warning/hover",
     "group": "feedback",
-    "light": "#873E00",
+    "light": "#B15400",
     "dark": "#FFA66F",
     "runtime": true
   },
@@ -379,7 +379,7 @@
     "name": "--cap-feedback-warning-pressed",
     "original": "feedback/warning/pressed",
     "group": "feedback",
-    "light": "#873E00",
+    "light": "#B15400",
     "dark": "#FFA66F",
     "runtime": true
   },
@@ -411,7 +411,7 @@
     "name": "--cap-feedback-info-hover",
     "original": "feedback/info/hover",
     "group": "feedback",
-    "light": "#0054A4",
+    "light": "#0062BE",
     "dark": "#78B4FF",
     "runtime": true
   },
@@ -419,7 +419,7 @@
     "name": "--cap-feedback-info-pressed",
     "original": "feedback/info/pressed",
     "group": "feedback",
-    "light": "#0054A4",
+    "light": "#0062BE",
     "dark": "#78B4FF",
     "runtime": true
   },

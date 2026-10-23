@@ -9,9 +9,8 @@ for(const {kind,appearance} of BUTTON_KINDS){
  else if(['Outline','Ghost'].includes(appearance)){bg='surface/tertiary/neutral-active';ink='content/primary';group='Theme';}
  else if(appearance==='Danger'){bg='surface/secondary/red-'+s;ink='content/red';group='Theme';}
  else {bg='surface/'+(appearance==='Primary'?'primary':'secondary')+'-'+s;ink=appearance==='Primary'?'on-primary':'content';}
- if(['Ghost','Outline'].includes(appearance)&&['Default','Focus'].includes(state))c.fills=[];else fill(c,bg,group);
- if(appearance==='Outline')border(c,'border/strong','Theme',true);else if(appearance==='Secondary')border(c,'border/'+s,'Accent');else c.strokes=[];
- if(state==='Focus'){border(c,['Outline','Ghost'].includes(appearance)?'border/focus':'content',['Outline','Ghost'].includes(appearance)?'Theme':'Accent',true);c.strokeAlign='OUTSIDE';c.strokeWeight=2;}
+ if(['Ghost','Outline'].includes(appearance)&&state==='Default')c.fills=[];else fill(c,bg,group);
+ buttonBorder(c,appearance,state);
  const leading=icon('Plus');c.appendChild(leading);leading.componentPropertyReferences={mainComponent:keys.leading,...(keys.show?{visible:keys.show}:{})};leading.visible=kind==='IconButton';recolorIcon(leading,ink,group);if(size==='xl')leading.resize(20,20);
  if(kind==='Button'){
   const spinner=icon('LoaderCircle');spinner.name='Loading indicator';c.appendChild(spinner);spinner.componentPropertyReferences={visible:keys.loading};spinner.visible=false;recolorIcon(spinner,ink,group);

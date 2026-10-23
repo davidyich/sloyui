@@ -14,7 +14,7 @@ npm run tokens
 
 ## Runtime-коллекции
 
-Ниже описан вычислительный граф для web runtime. Native compiler создаёт отдельный `../color-system-v2/native-graph.json`: 972 переменные, 327 используемых красок Palette, публичные Surface/Accent и пять Surface-режимов без Glass. Native RGBA хранит alpha в самом COLOR и не создаёт Opacity или переменных процентов.
+Ниже описан вычислительный граф для web runtime. Native compiler создаёт отдельный `../color-system-v2/native-graph.json`: 974 переменные, 328 используемых красок Palette, публичные Surface/Accent и пять Surface-режимов без Glass. Native RGBA хранит alpha в самом COLOR и не создаёт Opacity или переменных процентов.
 
 - **Palette**: 289 непрозрачных цветов: 6 именованных шкал × 41 ступень, 41 нейтральная ступень, black и white. Шкалы не зависят от темы или назначения; дополнительные исходные цвета для ролей запрещены.
 - **Primitives**: исходные числа, проценты и параметры шрифтов.
