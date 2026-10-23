@@ -1,5 +1,5 @@
 {
-  "version": "0.18.0",
+  "version": "0.18.1",
   "modes": [
     "neutral",
     "blue",
@@ -3017,36 +3017,36 @@
           "context/page/border/emphasis": {
             "colorSpace": "srgb",
             "components": [
-              0.3601047577,
-              0.3601047577,
-              0.3601047577
+              0.4192676192,
+              0.4192676192,
+              0.4192676192
             ],
             "alpha": 1
           },
           "context/inset/border/emphasis": {
             "colorSpace": "srgb",
             "components": [
-              0.3795567932,
-              0.3795567932,
-              0.3795567932
+              0.4396054941,
+              0.4396054941,
+              0.4396054941
             ],
             "alpha": 1
           },
           "context/panel/border/emphasis": {
             "colorSpace": "srgb",
             "components": [
-              0.3992640547,
-              0.3992640547,
-              0.3992640547
+              0.4603133193,
+              0.4603133193,
+              0.4603133193
             ],
             "alpha": 1
           },
           "context/overlay/border/emphasis": {
             "colorSpace": "srgb",
             "components": [
-              0.3992640547,
-              0.3992640547,
-              0.3992640547
+              0.4603133193,
+              0.4603133193,
+              0.4603133193
             ],
             "alpha": 1
           },
@@ -3201,7 +3201,7 @@
               0.4382018359,
               0.8419993445
             ],
-            "alpha": 0.3
+            "alpha": 0.15
           },
           "context/panel/color/blue/secondary/background/normal": {
             "colorSpace": "srgb",
@@ -3210,36 +3210,27 @@
               0.6173211063,
               0.9999999999
             ],
-            "alpha": 0.42
+            "alpha": 0.21
           },
           "context/page/color/blue/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              3e-10,
-              0.4110024815,
-              0.7925311526
+              2e-10,
+              0.3838601889,
+              0.7431667405
             ],
-            "alpha": 0.36
+            "alpha": 0.2
           },
           "context/panel/color/blue/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.2989986071,
-              0.6173211063,
-              0.9999999999
+              0.2294055269,
+              0.5857835938,
+              1
             ],
-            "alpha": 0.53
+            "alpha": 0.28
           },
           "context/page/color/blue/secondary/content": {
-            "colorSpace": "srgb",
-            "components": [
-              0,
-              0.1980814543,
-              0.4052859966
-            ],
-            "alpha": 1
-          },
-          "context/panel/color/blue/secondary/content": {
             "colorSpace": "srgb",
             "components": [
               2e-10,
@@ -3282,7 +3273,7 @@
               0.5332417992,
               0.3148852303
             ],
-            "alpha": 0.32
+            "alpha": 0.15
           },
           "context/panel/color/green/secondary/background/normal": {
             "colorSpace": "srgb",
@@ -3291,36 +3282,27 @@
               0.5657161685,
               0.3353050467
             ],
-            "alpha": 0.31
+            "alpha": 0.15
           },
           "context/page/color/green/secondary/background/hover": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0.4684285202,
+              0.2741307741
+            ],
+            "alpha": 0.2
+          },
+          "context/panel/color/green/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
               2e-10,
               0.5008011309,
               0.294486605
             ],
-            "alpha": 0.38
-          },
-          "context/panel/color/green/secondary/background/hover": {
-            "colorSpace": "srgb",
-            "components": [
-              5e-10,
-              0.5332417992,
-              0.3148852303
-            ],
-            "alpha": 0.37
+            "alpha": 0.2
           },
           "context/page/color/green/secondary/content": {
-            "colorSpace": "srgb",
-            "components": [
-              0,
-              0.2468502349,
-              0.1348028052
-            ],
-            "alpha": 1
-          },
-          "context/panel/color/green/secondary/content": {
             "colorSpace": "srgb",
             "components": [
               1e-10,
@@ -3363,7 +3345,7 @@
               0.3920605341,
               6e-10
             ],
-            "alpha": 0.35
+            "alpha": 0.18
           },
           "context/panel/color/orange/secondary/background/normal": {
             "colorSpace": "srgb",
@@ -3372,25 +3354,25 @@
               0.4131676048,
               5e-10
             ],
-            "alpha": 0.34
+            "alpha": 0.17
           },
           "context/page/color/orange/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.775372804,
-              0.370908524,
-              2e-10
+              0.692806698,
+              0.3285593428,
+              1e-10
             ],
-            "alpha": 0.42
+            "alpha": 0.23
           },
           "context/panel/color/orange/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.8166118327,
-              0.3920605341,
-              6e-10
+              0.734089978,
+              0.3497340499,
+              2e-10
             ],
-            "alpha": 0.41
+            "alpha": 0.22
           },
           "context/page/color/orange/secondary/content": {
             "colorSpace": "srgb",
@@ -3431,11 +3413,11 @@
           "context/page/color/red/secondary/background/normal": {
             "colorSpace": "srgb",
             "components": [
-              0.8875528899,
-              6e-10,
-              0.1337178693
+              0.8382408014,
+              4e-10,
+              0.1238446065
             ],
-            "alpha": 0.23
+            "alpha": 0.12
           },
           "context/panel/color/red/secondary/background/normal": {
             "colorSpace": "srgb",
@@ -3444,36 +3426,27 @@
               0.4321800981,
               0.4026988442
             ],
-            "alpha": 0.4
+            "alpha": 0.21
           },
           "context/page/color/red/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.7889798876,
-              4e-10,
-              0.1139815901
+              0.6908212405,
+              0,
+              0.094328273
             ],
-            "alpha": 0.28
+            "alpha": 0.16
           },
           "context/panel/color/red/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
               1,
-              0.3679060227,
-              0.3468899043
+              0.4321800981,
+              0.4026988442
             ],
-            "alpha": 0.46
+            "alpha": 0.31
           },
           "context/page/color/red/secondary/content": {
-            "colorSpace": "srgb",
-            "components": [
-              0.4033573389,
-              0,
-              0.0368098606
-            ],
-            "alpha": 1
-          },
-          "context/panel/color/red/secondary/content": {
             "colorSpace": "srgb",
             "components": [
               0.4501680938,
@@ -3516,7 +3489,7 @@
               0,
               0.4872106172
             ],
-            "alpha": 0.22
+            "alpha": 0.11
           },
           "context/panel/color/pink/secondary/background/normal": {
             "colorSpace": "srgb",
@@ -3525,36 +3498,27 @@
               3e-10,
               0.5585717662
             ],
-            "alpha": 0.22
+            "alpha": 0.11
           },
           "context/page/color/pink/secondary/background/hover": {
+            "colorSpace": "srgb",
+            "components": [
+              0.4987893891,
+              2e-10,
+              0.3814280114
+            ],
+            "alpha": 0.16
+          },
+          "context/panel/color/pink/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
               0.5880097869,
               3e-10,
               0.4517404471
             ],
-            "alpha": 0.27
-          },
-          "context/panel/color/pink/secondary/background/hover": {
-            "colorSpace": "srgb",
-            "components": [
-              0.6330183642,
-              0,
-              0.4872106172
-            ],
-            "alpha": 0.27
+            "alpha": 0.16
           },
           "context/page/color/pink/secondary/content": {
-            "colorSpace": "srgb",
-            "components": [
-              0.3678335818,
-              1e-10,
-              0.2782249098
-            ],
-            "alpha": 1
-          },
-          "context/panel/color/pink/secondary/content": {
             "colorSpace": "srgb",
             "components": [
               0.4110163946,
@@ -3597,45 +3561,36 @@
               3e-10,
               0.6663368311
             ],
-            "alpha": 0.21
+            "alpha": 0.11
           },
           "context/panel/color/purple/secondary/background/normal": {
-            "colorSpace": "srgb",
-            "components": [
-              0.5054509259,
-              4e-10,
-              0.7745767324
-            ],
-            "alpha": 0.21
-          },
-          "context/page/color/purple/secondary/background/hover": {
-            "colorSpace": "srgb",
-            "components": [
-              0.3961097263,
-              1e-10,
-              0.612730421
-            ],
-            "alpha": 0.26
-          },
-          "context/panel/color/purple/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
               0.4687875168,
               1e-10,
               0.7203077328
             ],
-            "alpha": 0.26
+            "alpha": 0.11
           },
-          "context/page/color/purple/secondary/content": {
+          "context/page/color/purple/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.2894348069,
-              1e-10,
-              0.4548307246
+              0.3246109719,
+              0,
+              0.5068983127
             ],
-            "alpha": 1
+            "alpha": 0.15
           },
-          "context/panel/color/purple/secondary/content": {
+          "context/panel/color/purple/secondary/background/hover": {
+            "colorSpace": "srgb",
+            "components": [
+              0.3601878288,
+              1e-10,
+              0.5595590032
+            ],
+            "alpha": 0.15
+          },
+          "context/page/color/purple/secondary/content": {
             "colorSpace": "srgb",
             "components": [
               0.3246109719,
@@ -3917,18 +3872,27 @@
           "scheme/dimmed/context/page/border/emphasis": {
             "colorSpace": "srgb",
             "components": [
-              0.3795567932,
-              0.3795567932,
-              0.3795567932
+              0.4396054941,
+              0.4396054941,
+              0.4396054941
             ],
             "alpha": 1
           },
           "scheme/dimmed/context/panel/border/emphasis": {
             "colorSpace": "srgb",
             "components": [
-              0.3992640547,
-              0.3992640547,
-              0.3992640547
+              0.4603133193,
+              0.4603133193,
+              0.4603133193
+            ],
+            "alpha": 1
+          },
+          "scheme/dimmed/context/overlay/border/emphasis": {
+            "colorSpace": "srgb",
+            "components": [
+              0.4603133193,
+              0.4603133193,
+              0.4603133193
             ],
             "alpha": 1
           },
@@ -4216,18 +4180,18 @@
           "context/inset/border/emphasis": {
             "colorSpace": "srgb",
             "components": [
-              0.5705433443,
-              0.5705433443,
-              0.5705433443
+              0.5475015781,
+              0.5475015781,
+              0.5475015781
             ],
             "alpha": 1
           },
           "context/panel/border/emphasis": {
             "colorSpace": "srgb",
             "components": [
-              0.5941430661,
-              0.5941430661,
-              0.5941430661
+              0.5475015781,
+              0.5475015781,
+              0.5475015781
             ],
             "alpha": 1
           },
@@ -4391,7 +4355,7 @@
               0.6769125792,
               1
             ],
-            "alpha": 0.25
+            "alpha": 0.15
           },
           "context/panel/color/blue/secondary/background/normal": {
             "colorSpace": "srgb",
@@ -4400,40 +4364,31 @@
               0.6769125792,
               1
             ],
-            "alpha": 0.25
+            "alpha": 0.15
           },
           "context/page/color/blue/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.4696400289,
-              0.7052058217,
+              0.5201609984,
+              0.7326073079,
               0.9999999999
             ],
-            "alpha": 0.28
+            "alpha": 0.18
           },
           "context/panel/color/blue/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.4696400289,
-              0.7052058217,
+              0.5201609984,
+              0.7326073079,
               0.9999999999
             ],
-            "alpha": 0.28
+            "alpha": 0.18
           },
           "context/page/color/blue/secondary/content": {
             "colorSpace": "srgb",
             "components": [
-              0.9787851811,
-              0.9880473367,
-              1
-            ],
-            "alpha": 1
-          },
-          "context/panel/color/blue/secondary/content": {
-            "colorSpace": "srgb",
-            "components": [
-              0.9787851811,
-              0.9880473367,
+              0.8618303012,
+              0.9223445468,
               1
             ],
             "alpha": 1
@@ -4472,7 +4427,7 @@
               0.7650112948,
               0.525569882
             ],
-            "alpha": 0.24
+            "alpha": 0.14
           },
           "context/panel/color/green/secondary/background/normal": {
             "colorSpace": "srgb",
@@ -4481,41 +4436,32 @@
               0.7650112948,
               0.525569882
             ],
-            "alpha": 0.24
+            "alpha": 0.14
           },
           "context/page/color/green/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.3881285185,
-              0.7881719016,
-              0.5597005685
+              0.4922700149,
+              0.8320745192,
+              0.6285094072
             ],
-            "alpha": 0.27
+            "alpha": 0.18
           },
           "context/panel/color/green/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.3881285185,
-              0.7881719016,
-              0.5597005685
+              0.4922700149,
+              0.8320745192,
+              0.6285094072
             ],
-            "alpha": 0.27
+            "alpha": 0.18
           },
           "context/page/color/green/secondary/content": {
             "colorSpace": "srgb",
             "components": [
-              0.89930591,
-              0.981006346,
-              0.9261127246
-            ],
-            "alpha": 1
-          },
-          "context/panel/color/green/secondary/content": {
-            "colorSpace": "srgb",
-            "components": [
-              0.89930591,
-              0.981006346,
-              0.9261127246
+              0.8177937281,
+              0.9564226794,
+              0.8649054294
             ],
             "alpha": 1
           },
@@ -4549,20 +4495,20 @@
           "context/page/color/orange/secondary/background/normal": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.6069977915,
-              0.3607898982
+              0.9909293445,
+              0.5676319445,
+              0.291842178
             ],
-            "alpha": 0.23
+            "alpha": 0.13
           },
           "context/panel/color/orange/secondary/background/normal": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.6069977915,
-              0.3607898982
+              0.9909293445,
+              0.5676319445,
+              0.291842178
             ],
-            "alpha": 0.23
+            "alpha": 0.13
           },
           "context/page/color/orange/secondary/background/hover": {
             "colorSpace": "srgb",
@@ -4571,7 +4517,7 @@
               0.649408992,
               0.4367601616
             ],
-            "alpha": 0.26
+            "alpha": 0.17
           },
           "context/panel/color/orange/secondary/background/hover": {
             "colorSpace": "srgb",
@@ -4580,14 +4526,14 @@
               0.649408992,
               0.4367601616
             ],
-            "alpha": 0.26
+            "alpha": 0.17
           },
           "context/page/color/orange/secondary/content": {
             "colorSpace": "srgb",
             "components": [
               1,
-              0.9834247999,
-              0.9742449957
+              0.8912345622,
+              0.8300153709
             ],
             "alpha": 1
           },
@@ -4625,7 +4571,7 @@
               0.5399467119,
               0.5047639459
             ],
-            "alpha": 0.25
+            "alpha": 0.15
           },
           "context/panel/color/red/secondary/background/normal": {
             "colorSpace": "srgb",
@@ -4634,41 +4580,32 @@
               0.5399467119,
               0.5047639459
             ],
-            "alpha": 0.25
+            "alpha": 0.15
           },
           "context/page/color/red/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.9999999999,
-              0.5873578209,
-              0.5523053479
+              1,
+              0.6317526273,
+              0.5979637392
             ],
-            "alpha": 0.28
+            "alpha": 0.19
           },
           "context/panel/color/red/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.9999999999,
-              0.5873578209,
-              0.5523053479
+              1,
+              0.6317526273,
+              0.5979637392
             ],
-            "alpha": 0.28
+            "alpha": 0.19
           },
           "context/page/color/red/secondary/content": {
             "colorSpace": "srgb",
             "components": [
               1,
-              0.9825395737,
-              0.9804641259
-            ],
-            "alpha": 1
-          },
-          "context/panel/color/red/secondary/content": {
-            "colorSpace": "srgb",
-            "components": [
-              1,
-              0.9825395737,
-              0.9804641259
+              0.8854927411,
+              0.8723364373
             ],
             "alpha": 1
           },
@@ -4703,53 +4640,44 @@
             "colorSpace": "srgb",
             "components": [
               1,
-              0.5855806744,
-              0.8520484416
+              0.5324194576,
+              0.8385097517
             ],
-            "alpha": 0.22
+            "alpha": 0.12
           },
           "context/panel/color/pink/secondary/background/normal": {
             "colorSpace": "srgb",
             "components": [
               1,
-              0.5855806744,
-              0.8520484416
+              0.5324194576,
+              0.8385097517
             ],
-            "alpha": 0.22
+            "alpha": 0.12
           },
           "context/page/color/pink/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
               1,
-              0.5855806744,
-              0.8520484416
+              0.6347337373,
+              0.8657636943
             ],
-            "alpha": 0.27
+            "alpha": 0.16
           },
           "context/panel/color/pink/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
               1,
-              0.5855806744,
-              0.8520484416
+              0.6347337373,
+              0.8657636943
             ],
-            "alpha": 0.27
+            "alpha": 0.16
           },
           "context/page/color/pink/secondary/content": {
             "colorSpace": "srgb",
             "components": [
               1,
-              0.9809128644,
-              0.9917372231
-            ],
-            "alpha": 1
-          },
-          "context/panel/color/pink/secondary/content": {
-            "colorSpace": "srgb",
-            "components": [
-              1,
-              0.9809128644,
-              0.9917372231
+              0.8741442317,
+              0.9478452285
             ],
             "alpha": 1
           },
@@ -4787,7 +4715,7 @@
               0.5801694593,
               1
             ],
-            "alpha": 0.21
+            "alpha": 0.13
           },
           "context/panel/color/purple/secondary/background/normal": {
             "colorSpace": "srgb",
@@ -4796,40 +4724,31 @@
               0.5801694593,
               1
             ],
-            "alpha": 0.21
+            "alpha": 0.13
           },
           "context/page/color/purple/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.8102966224,
-              0.6205658941,
+              0.8274757565,
+              0.6592686116,
               1
             ],
-            "alpha": 0.24
+            "alpha": 0.16
           },
           "context/panel/color/purple/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.8102966224,
-              0.6205658941,
+              0.8274757565,
+              0.6592686116,
               1
             ],
-            "alpha": 0.24
+            "alpha": 0.16
           },
           "context/page/color/purple/secondary/content": {
             "colorSpace": "srgb",
             "components": [
-              0.9694736826,
-              0.9440196961,
-              1
-            ],
-            "alpha": 1
-          },
-          "context/panel/color/purple/secondary/content": {
-            "colorSpace": "srgb",
-            "components": [
-              0.9694736826,
-              0.9440196961,
+              0.9414788021,
+              0.8914223274,
               1
             ],
             "alpha": 1
@@ -5107,18 +5026,27 @@
           "scheme/dimmed/context/page/border/emphasis": {
             "colorSpace": "srgb",
             "components": [
-              0.6431344413,
-              0.6431344413,
-              0.6431344413
+              0.5941430661,
+              0.5941430661,
+              0.5941430661
             ],
             "alpha": 1
           },
           "scheme/dimmed/context/panel/border/emphasis": {
             "colorSpace": "srgb",
             "components": [
-              0.5705433443,
-              0.5705433443,
-              0.5705433443
+              0.524988051,
+              0.524988051,
+              0.524988051
+            ],
+            "alpha": 1
+          },
+          "scheme/dimmed/context/overlay/border/emphasis": {
+            "colorSpace": "srgb",
+            "components": [
+              0.618330272,
+              0.618330272,
+              0.618330272
             ],
             "alpha": 1
           },
@@ -5219,6 +5147,9 @@
           "context/panel/border/emphasis": {
             "alias": "Theme/context/panel/border/emphasis"
           },
+          "context/overlay/border/emphasis": {
+            "alias": "Theme/context/overlay/border/emphasis"
+          },
           "context/overlay/border/control": {
             "alias": "Theme/context/overlay/border/control"
           },
@@ -5231,17 +5162,11 @@
           "context/inset/color/blue/secondary/background/hover": {
             "alias": "Theme/context/page/color/blue/secondary/background/hover"
           },
-          "context/inset/color/blue/secondary/content": {
-            "alias": "Theme/context/page/color/blue/secondary/content"
-          },
           "context/inset/color/green/secondary/background/normal": {
             "alias": "Theme/context/page/color/green/secondary/background/normal"
           },
           "context/inset/color/green/secondary/background/hover": {
             "alias": "Theme/context/page/color/green/secondary/background/hover"
-          },
-          "context/inset/color/green/secondary/content": {
-            "alias": "Theme/context/page/color/green/secondary/content"
           },
           "context/inset/color/orange/secondary/background/normal": {
             "alias": "Theme/context/page/color/orange/secondary/background/normal"
@@ -5255,26 +5180,17 @@
           "context/inset/color/red/secondary/background/hover": {
             "alias": "Theme/context/page/color/red/secondary/background/hover"
           },
-          "context/inset/color/red/secondary/content": {
-            "alias": "Theme/context/page/color/red/secondary/content"
-          },
           "context/inset/color/pink/secondary/background/normal": {
             "alias": "Theme/context/page/color/pink/secondary/background/normal"
           },
           "context/inset/color/pink/secondary/background/hover": {
             "alias": "Theme/context/page/color/pink/secondary/background/hover"
           },
-          "context/inset/color/pink/secondary/content": {
-            "alias": "Theme/context/page/color/pink/secondary/content"
-          },
           "context/inset/color/purple/secondary/background/normal": {
             "alias": "Theme/context/page/color/purple/secondary/background/normal"
           },
           "context/inset/color/purple/secondary/background/hover": {
             "alias": "Theme/context/page/color/purple/secondary/background/hover"
-          },
-          "context/inset/color/purple/secondary/content": {
-            "alias": "Theme/context/page/color/purple/secondary/content"
           }
         },
         "Inverted": {
@@ -5350,6 +5266,9 @@
           "context/panel/border/emphasis": {
             "alias": "Theme/scheme/dimmed/context/panel/border/emphasis"
           },
+          "context/overlay/border/emphasis": {
+            "alias": "Theme/scheme/dimmed/context/overlay/border/emphasis"
+          },
           "context/overlay/border/control": {
             "alias": "Theme/scheme/dimmed/context/overlay/border/control"
           },
@@ -5362,17 +5281,11 @@
           "context/inset/color/blue/secondary/background/hover": {
             "alias": "Theme/context/panel/color/blue/secondary/background/hover"
           },
-          "context/inset/color/blue/secondary/content": {
-            "alias": "Theme/context/panel/color/blue/secondary/content"
-          },
           "context/inset/color/green/secondary/background/normal": {
             "alias": "Theme/context/panel/color/green/secondary/background/normal"
           },
           "context/inset/color/green/secondary/background/hover": {
             "alias": "Theme/context/panel/color/green/secondary/background/hover"
-          },
-          "context/inset/color/green/secondary/content": {
-            "alias": "Theme/context/panel/color/green/secondary/content"
           },
           "context/inset/color/orange/secondary/background/normal": {
             "alias": "Theme/context/panel/color/orange/secondary/background/normal"
@@ -5386,26 +5299,17 @@
           "context/inset/color/red/secondary/background/hover": {
             "alias": "Theme/context/panel/color/red/secondary/background/hover"
           },
-          "context/inset/color/red/secondary/content": {
-            "alias": "Theme/context/panel/color/red/secondary/content"
-          },
           "context/inset/color/pink/secondary/background/normal": {
             "alias": "Theme/context/panel/color/pink/secondary/background/normal"
           },
           "context/inset/color/pink/secondary/background/hover": {
             "alias": "Theme/context/panel/color/pink/secondary/background/hover"
           },
-          "context/inset/color/pink/secondary/content": {
-            "alias": "Theme/context/panel/color/pink/secondary/content"
-          },
           "context/inset/color/purple/secondary/background/normal": {
             "alias": "Theme/context/panel/color/purple/secondary/background/normal"
           },
           "context/inset/color/purple/secondary/background/hover": {
             "alias": "Theme/context/panel/color/purple/secondary/background/hover"
-          },
-          "context/inset/color/purple/secondary/content": {
-            "alias": "Theme/context/panel/color/purple/secondary/content"
           }
         },
         "Dimmed": {
@@ -5481,6 +5385,9 @@
           "context/panel/border/emphasis": {
             "alias": "Theme/scheme/dimmed/context/panel/border/emphasis"
           },
+          "context/overlay/border/emphasis": {
+            "alias": "Theme/scheme/dimmed/context/overlay/border/emphasis"
+          },
           "context/overlay/border/control": {
             "alias": "Theme/scheme/dimmed/context/overlay/border/control"
           },
@@ -5493,17 +5400,11 @@
           "context/inset/color/blue/secondary/background/hover": {
             "alias": "Theme/context/panel/color/blue/secondary/background/hover"
           },
-          "context/inset/color/blue/secondary/content": {
-            "alias": "Theme/context/panel/color/blue/secondary/content"
-          },
           "context/inset/color/green/secondary/background/normal": {
             "alias": "Theme/context/panel/color/green/secondary/background/normal"
           },
           "context/inset/color/green/secondary/background/hover": {
             "alias": "Theme/context/panel/color/green/secondary/background/hover"
-          },
-          "context/inset/color/green/secondary/content": {
-            "alias": "Theme/context/panel/color/green/secondary/content"
           },
           "context/inset/color/orange/secondary/background/normal": {
             "alias": "Theme/context/panel/color/orange/secondary/background/normal"
@@ -5517,26 +5418,17 @@
           "context/inset/color/red/secondary/background/hover": {
             "alias": "Theme/context/panel/color/red/secondary/background/hover"
           },
-          "context/inset/color/red/secondary/content": {
-            "alias": "Theme/context/panel/color/red/secondary/content"
-          },
           "context/inset/color/pink/secondary/background/normal": {
             "alias": "Theme/context/panel/color/pink/secondary/background/normal"
           },
           "context/inset/color/pink/secondary/background/hover": {
             "alias": "Theme/context/panel/color/pink/secondary/background/hover"
           },
-          "context/inset/color/pink/secondary/content": {
-            "alias": "Theme/context/panel/color/pink/secondary/content"
-          },
           "context/inset/color/purple/secondary/background/normal": {
             "alias": "Theme/context/panel/color/purple/secondary/background/normal"
           },
           "context/inset/color/purple/secondary/background/hover": {
             "alias": "Theme/context/panel/color/purple/secondary/background/hover"
-          },
-          "context/inset/color/purple/secondary/content": {
-            "alias": "Theme/context/panel/color/purple/secondary/content"
           }
         }
       }
@@ -7783,7 +7675,7 @@
             "alias": "SurfaceScheme/context/inset/color/blue/secondary/background/hover"
           },
           "color/blue/secondary/content": {
-            "alias": "SurfaceScheme/context/inset/color/blue/secondary/content"
+            "alias": "Theme/context/page/color/blue/secondary/content"
           },
           "color/blue/secondary/border/normal": {
             "alias": "Theme/context/page/color/blue/secondary/border/normal"
@@ -7828,7 +7720,7 @@
             "alias": "SurfaceScheme/context/inset/color/green/secondary/background/hover"
           },
           "color/green/secondary/content": {
-            "alias": "SurfaceScheme/context/inset/color/green/secondary/content"
+            "alias": "Theme/context/page/color/green/secondary/content"
           },
           "color/green/secondary/border/normal": {
             "alias": "Theme/context/page/color/green/secondary/border/normal"
@@ -7918,7 +7810,7 @@
             "alias": "SurfaceScheme/context/inset/color/red/secondary/background/hover"
           },
           "color/red/secondary/content": {
-            "alias": "SurfaceScheme/context/inset/color/red/secondary/content"
+            "alias": "Theme/context/page/color/red/secondary/content"
           },
           "color/red/secondary/border/normal": {
             "alias": "Theme/context/page/color/red/secondary/border/normal"
@@ -7963,7 +7855,7 @@
             "alias": "SurfaceScheme/context/inset/color/pink/secondary/background/hover"
           },
           "color/pink/secondary/content": {
-            "alias": "SurfaceScheme/context/inset/color/pink/secondary/content"
+            "alias": "Theme/context/page/color/pink/secondary/content"
           },
           "color/pink/secondary/border/normal": {
             "alias": "Theme/context/page/color/pink/secondary/border/normal"
@@ -8008,7 +7900,7 @@
             "alias": "SurfaceScheme/context/inset/color/purple/secondary/background/hover"
           },
           "color/purple/secondary/content": {
-            "alias": "SurfaceScheme/context/inset/color/purple/secondary/content"
+            "alias": "Theme/context/page/color/purple/secondary/content"
           },
           "color/purple/secondary/border/normal": {
             "alias": "Theme/context/page/color/purple/secondary/border/normal"
@@ -8053,7 +7945,7 @@
             "alias": "SurfaceScheme/context/inset/color/red/secondary/background/hover"
           },
           "status/danger/content": {
-            "alias": "SurfaceScheme/context/inset/color/red/secondary/content"
+            "alias": "Theme/context/page/color/red/secondary/content"
           },
           "status/success/background/normal": {
             "alias": "SurfaceScheme/context/inset/color/green/secondary/background/normal"
@@ -8065,7 +7957,7 @@
             "alias": "SurfaceScheme/context/inset/color/green/secondary/background/hover"
           },
           "status/success/content": {
-            "alias": "SurfaceScheme/context/inset/color/green/secondary/content"
+            "alias": "Theme/context/page/color/green/secondary/content"
           },
           "status/warning/background/normal": {
             "alias": "SurfaceScheme/context/inset/color/orange/secondary/background/normal"
@@ -8089,7 +7981,7 @@
             "alias": "SurfaceScheme/context/inset/color/blue/secondary/background/hover"
           },
           "status/info/content": {
-            "alias": "SurfaceScheme/context/inset/color/blue/secondary/content"
+            "alias": "Theme/context/page/color/blue/secondary/content"
           },
           "divider/subtle": {
             "alias": "Theme/context/inset/divider/subtle"
@@ -8802,7 +8694,7 @@
             "alias": "Theme/context/panel/color/blue/secondary/background/hover"
           },
           "color/blue/secondary/content": {
-            "alias": "Theme/context/panel/color/blue/secondary/content"
+            "alias": "Theme/context/page/color/blue/secondary/content"
           },
           "color/blue/secondary/border/normal": {
             "alias": "Theme/context/page/color/blue/secondary/border/normal"
@@ -8847,7 +8739,7 @@
             "alias": "Theme/context/panel/color/green/secondary/background/hover"
           },
           "color/green/secondary/content": {
-            "alias": "Theme/context/panel/color/green/secondary/content"
+            "alias": "Theme/context/page/color/green/secondary/content"
           },
           "color/green/secondary/border/normal": {
             "alias": "Theme/context/page/color/green/secondary/border/normal"
@@ -8937,7 +8829,7 @@
             "alias": "Theme/context/panel/color/red/secondary/background/hover"
           },
           "color/red/secondary/content": {
-            "alias": "Theme/context/panel/color/red/secondary/content"
+            "alias": "Theme/context/page/color/red/secondary/content"
           },
           "color/red/secondary/border/normal": {
             "alias": "Theme/context/page/color/red/secondary/border/normal"
@@ -8982,7 +8874,7 @@
             "alias": "Theme/context/panel/color/pink/secondary/background/hover"
           },
           "color/pink/secondary/content": {
-            "alias": "Theme/context/panel/color/pink/secondary/content"
+            "alias": "Theme/context/page/color/pink/secondary/content"
           },
           "color/pink/secondary/border/normal": {
             "alias": "Theme/context/page/color/pink/secondary/border/normal"
@@ -9027,7 +8919,7 @@
             "alias": "Theme/context/panel/color/purple/secondary/background/hover"
           },
           "color/purple/secondary/content": {
-            "alias": "Theme/context/panel/color/purple/secondary/content"
+            "alias": "Theme/context/page/color/purple/secondary/content"
           },
           "color/purple/secondary/border/normal": {
             "alias": "Theme/context/page/color/purple/secondary/border/normal"
@@ -9072,7 +8964,7 @@
             "alias": "Theme/context/panel/color/red/secondary/background/hover"
           },
           "status/danger/content": {
-            "alias": "Theme/context/panel/color/red/secondary/content"
+            "alias": "Theme/context/page/color/red/secondary/content"
           },
           "status/success/background/normal": {
             "alias": "Theme/context/panel/color/green/secondary/background/normal"
@@ -9084,7 +8976,7 @@
             "alias": "Theme/context/panel/color/green/secondary/background/hover"
           },
           "status/success/content": {
-            "alias": "Theme/context/panel/color/green/secondary/content"
+            "alias": "Theme/context/page/color/green/secondary/content"
           },
           "status/warning/background/normal": {
             "alias": "Theme/context/panel/color/orange/secondary/background/normal"
@@ -9108,7 +9000,7 @@
             "alias": "Theme/context/panel/color/blue/secondary/background/hover"
           },
           "status/info/content": {
-            "alias": "Theme/context/panel/color/blue/secondary/content"
+            "alias": "Theme/context/page/color/blue/secondary/content"
           },
           "divider/subtle": {
             "alias": "Theme/context/panel/divider/subtle"
@@ -9716,7 +9608,7 @@
             "alias": "SurfaceScheme/context/overlay/border/strong"
           },
           "border/emphasis": {
-            "alias": "Theme/context/overlay/border/emphasis"
+            "alias": "SurfaceScheme/context/overlay/border/emphasis"
           },
           "border/panel": {
             "alias": "SurfaceScheme/context/overlay/border/subtle"
@@ -9734,7 +9626,7 @@
             "alias": "Theme/context/overlay/border/control-pressed"
           },
           "focus/ring": {
-            "alias": "Theme/context/overlay/border/emphasis"
+            "alias": "SurfaceScheme/context/overlay/border/emphasis"
           },
           "group/background": {
             "alias": "Theme/context/page/surface/block"
@@ -9821,7 +9713,7 @@
             "alias": "Theme/context/panel/color/blue/secondary/background/hover"
           },
           "color/blue/secondary/content": {
-            "alias": "Theme/context/panel/color/blue/secondary/content"
+            "alias": "Theme/context/page/color/blue/secondary/content"
           },
           "color/blue/secondary/border/normal": {
             "alias": "Theme/context/page/color/blue/secondary/border/normal"
@@ -9866,7 +9758,7 @@
             "alias": "Theme/context/panel/color/green/secondary/background/hover"
           },
           "color/green/secondary/content": {
-            "alias": "Theme/context/panel/color/green/secondary/content"
+            "alias": "Theme/context/page/color/green/secondary/content"
           },
           "color/green/secondary/border/normal": {
             "alias": "Theme/context/page/color/green/secondary/border/normal"
@@ -9956,7 +9848,7 @@
             "alias": "Theme/context/panel/color/red/secondary/background/hover"
           },
           "color/red/secondary/content": {
-            "alias": "Theme/context/panel/color/red/secondary/content"
+            "alias": "Theme/context/page/color/red/secondary/content"
           },
           "color/red/secondary/border/normal": {
             "alias": "Theme/context/page/color/red/secondary/border/normal"
@@ -10001,7 +9893,7 @@
             "alias": "Theme/context/panel/color/pink/secondary/background/hover"
           },
           "color/pink/secondary/content": {
-            "alias": "Theme/context/panel/color/pink/secondary/content"
+            "alias": "Theme/context/page/color/pink/secondary/content"
           },
           "color/pink/secondary/border/normal": {
             "alias": "Theme/context/page/color/pink/secondary/border/normal"
@@ -10046,7 +9938,7 @@
             "alias": "Theme/context/panel/color/purple/secondary/background/hover"
           },
           "color/purple/secondary/content": {
-            "alias": "Theme/context/panel/color/purple/secondary/content"
+            "alias": "Theme/context/page/color/purple/secondary/content"
           },
           "color/purple/secondary/border/normal": {
             "alias": "Theme/context/page/color/purple/secondary/border/normal"
@@ -10091,7 +9983,7 @@
             "alias": "Theme/context/panel/color/red/secondary/background/hover"
           },
           "status/danger/content": {
-            "alias": "Theme/context/panel/color/red/secondary/content"
+            "alias": "Theme/context/page/color/red/secondary/content"
           },
           "status/success/background/normal": {
             "alias": "Theme/context/panel/color/green/secondary/background/normal"
@@ -10103,7 +9995,7 @@
             "alias": "Theme/context/panel/color/green/secondary/background/hover"
           },
           "status/success/content": {
-            "alias": "Theme/context/panel/color/green/secondary/content"
+            "alias": "Theme/context/page/color/green/secondary/content"
           },
           "status/warning/background/normal": {
             "alias": "Theme/context/panel/color/orange/secondary/background/normal"
@@ -10127,7 +10019,7 @@
             "alias": "Theme/context/panel/color/blue/secondary/background/hover"
           },
           "status/info/content": {
-            "alias": "Theme/context/panel/color/blue/secondary/content"
+            "alias": "Theme/context/page/color/blue/secondary/content"
           },
           "divider/subtle": {
             "alias": "Theme/context/overlay/divider/subtle"
@@ -16771,11 +16663,6 @@
       "scopes": [],
       "visibility": "internal"
     },
-    "Theme/context/panel/color/blue/secondary/content": {
-      "type": "COLOR",
-      "scopes": [],
-      "visibility": "internal"
-    },
     "Theme/context/page/color/blue/secondary/border/normal": {
       "type": "COLOR",
       "scopes": [],
@@ -16812,11 +16699,6 @@
       "visibility": "internal"
     },
     "Theme/context/page/color/green/secondary/content": {
-      "type": "COLOR",
-      "scopes": [],
-      "visibility": "internal"
-    },
-    "Theme/context/panel/color/green/secondary/content": {
       "type": "COLOR",
       "scopes": [],
       "visibility": "internal"
@@ -16901,11 +16783,6 @@
       "scopes": [],
       "visibility": "internal"
     },
-    "Theme/context/panel/color/red/secondary/content": {
-      "type": "COLOR",
-      "scopes": [],
-      "visibility": "internal"
-    },
     "Theme/context/page/color/red/secondary/border/normal": {
       "type": "COLOR",
       "scopes": [],
@@ -16946,11 +16823,6 @@
       "scopes": [],
       "visibility": "internal"
     },
-    "Theme/context/panel/color/pink/secondary/content": {
-      "type": "COLOR",
-      "scopes": [],
-      "visibility": "internal"
-    },
     "Theme/context/page/color/pink/secondary/border/normal": {
       "type": "COLOR",
       "scopes": [],
@@ -16987,11 +16859,6 @@
       "visibility": "internal"
     },
     "Theme/context/page/color/purple/secondary/content": {
-      "type": "COLOR",
-      "scopes": [],
-      "visibility": "internal"
-    },
-    "Theme/context/panel/color/purple/secondary/content": {
       "type": "COLOR",
       "scopes": [],
       "visibility": "internal"
@@ -17503,6 +17370,17 @@
       "visibility": "internal",
       "description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
     },
+    "Theme/scheme/dimmed/context/overlay/border/emphasis": {
+      "type": "COLOR",
+      "scopes": [],
+      "visibility": "internal"
+    },
+    "SurfaceScheme/context/overlay/border/emphasis": {
+      "type": "COLOR",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+    },
     "Semantic/border/emphasis": {
       "type": "COLOR",
       "css": "--cap-border-emphasis",
@@ -17810,12 +17688,6 @@
       "visibility": "internal",
       "description": "Внутренняя роль компонента; наследует тему и поверхность."
     },
-    "SurfaceScheme/context/inset/color/blue/secondary/content": {
-      "type": "COLOR",
-      "scopes": [],
-      "visibility": "internal",
-      "description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-    },
     "Semantic/color/blue/secondary/content": {
       "type": "COLOR",
       "css": "--cap-color-blue-secondary-content",
@@ -17932,12 +17804,6 @@
       "scopes": [],
       "visibility": "internal",
       "description": "Внутренняя роль компонента; наследует тему и поверхность."
-    },
-    "SurfaceScheme/context/inset/color/green/secondary/content": {
-      "type": "COLOR",
-      "scopes": [],
-      "visibility": "internal",
-      "description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
     },
     "Semantic/color/green/secondary/content": {
       "type": "COLOR",
@@ -18173,12 +18039,6 @@
       "visibility": "internal",
       "description": "Внутренняя роль компонента; наследует тему и поверхность."
     },
-    "SurfaceScheme/context/inset/color/red/secondary/content": {
-      "type": "COLOR",
-      "scopes": [],
-      "visibility": "internal",
-      "description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-    },
     "Semantic/color/red/secondary/content": {
       "type": "COLOR",
       "css": "--cap-color-red-secondary-content",
@@ -18296,12 +18156,6 @@
       "visibility": "internal",
       "description": "Внутренняя роль компонента; наследует тему и поверхность."
     },
-    "SurfaceScheme/context/inset/color/pink/secondary/content": {
-      "type": "COLOR",
-      "scopes": [],
-      "visibility": "internal",
-      "description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
-    },
     "Semantic/color/pink/secondary/content": {
       "type": "COLOR",
       "css": "--cap-color-pink-secondary-content",
@@ -18418,12 +18272,6 @@
       "scopes": [],
       "visibility": "internal",
       "description": "Внутренняя роль компонента; наследует тему и поверхность."
-    },
-    "SurfaceScheme/context/inset/color/purple/secondary/content": {
-      "type": "COLOR",
-      "scopes": [],
-      "visibility": "internal",
-      "description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
     },
     "Semantic/color/purple/secondary/content": {
       "type": "COLOR",
@@ -20216,8 +20064,8 @@
     "Theme/context/floating/element/blue/disabled": "Theme/context/page/disabled/background",
     "Theme/context/base/element/blue/text": "Theme/context/page/color/blue/secondary/content",
     "Theme/context/canvas/element/blue/text": "Theme/context/page/color/blue/secondary/content",
-    "Theme/context/raised/element/blue/text": "Theme/context/panel/color/blue/secondary/content",
-    "Theme/context/floating/element/blue/text": "Theme/context/panel/color/blue/secondary/content",
+    "Theme/context/raised/element/blue/text": "Theme/context/page/color/blue/secondary/content",
+    "Theme/context/floating/element/blue/text": "Theme/context/page/color/blue/secondary/content",
     "Theme/context/base/element/blue/disabled-text": "Theme/context/page/disabled/content",
     "Theme/context/canvas/element/blue/disabled-text": "Theme/context/inset/disabled/content",
     "Theme/context/raised/element/blue/disabled-text": "Theme/context/panel/disabled/content",
@@ -20284,8 +20132,8 @@
     "Theme/context/floating/element/green/disabled": "Theme/context/page/disabled/background",
     "Theme/context/base/element/green/text": "Theme/context/page/color/green/secondary/content",
     "Theme/context/canvas/element/green/text": "Theme/context/page/color/green/secondary/content",
-    "Theme/context/raised/element/green/text": "Theme/context/panel/color/green/secondary/content",
-    "Theme/context/floating/element/green/text": "Theme/context/panel/color/green/secondary/content",
+    "Theme/context/raised/element/green/text": "Theme/context/page/color/green/secondary/content",
+    "Theme/context/floating/element/green/text": "Theme/context/page/color/green/secondary/content",
     "Theme/context/base/element/green/disabled-text": "Theme/context/page/disabled/content",
     "Theme/context/canvas/element/green/disabled-text": "Theme/context/inset/disabled/content",
     "Theme/context/raised/element/green/disabled-text": "Theme/context/panel/disabled/content",
@@ -20420,8 +20268,8 @@
     "Theme/context/floating/element/red/disabled": "Theme/context/page/disabled/background",
     "Theme/context/base/element/red/text": "Theme/context/page/color/red/secondary/content",
     "Theme/context/canvas/element/red/text": "Theme/context/page/color/red/secondary/content",
-    "Theme/context/raised/element/red/text": "Theme/context/panel/color/red/secondary/content",
-    "Theme/context/floating/element/red/text": "Theme/context/panel/color/red/secondary/content",
+    "Theme/context/raised/element/red/text": "Theme/context/page/color/red/secondary/content",
+    "Theme/context/floating/element/red/text": "Theme/context/page/color/red/secondary/content",
     "Theme/context/base/element/red/disabled-text": "Theme/context/page/disabled/content",
     "Theme/context/canvas/element/red/disabled-text": "Theme/context/inset/disabled/content",
     "Theme/context/raised/element/red/disabled-text": "Theme/context/panel/disabled/content",
@@ -20488,8 +20336,8 @@
     "Theme/context/floating/element/pink/disabled": "Theme/context/page/disabled/background",
     "Theme/context/base/element/pink/text": "Theme/context/page/color/pink/secondary/content",
     "Theme/context/canvas/element/pink/text": "Theme/context/page/color/pink/secondary/content",
-    "Theme/context/raised/element/pink/text": "Theme/context/panel/color/pink/secondary/content",
-    "Theme/context/floating/element/pink/text": "Theme/context/panel/color/pink/secondary/content",
+    "Theme/context/raised/element/pink/text": "Theme/context/page/color/pink/secondary/content",
+    "Theme/context/floating/element/pink/text": "Theme/context/page/color/pink/secondary/content",
     "Theme/context/base/element/pink/disabled-text": "Theme/context/page/disabled/content",
     "Theme/context/canvas/element/pink/disabled-text": "Theme/context/inset/disabled/content",
     "Theme/context/raised/element/pink/disabled-text": "Theme/context/panel/disabled/content",
@@ -20556,8 +20404,8 @@
     "Theme/context/floating/element/purple/disabled": "Theme/context/page/disabled/background",
     "Theme/context/base/element/purple/text": "Theme/context/page/color/purple/secondary/content",
     "Theme/context/canvas/element/purple/text": "Theme/context/page/color/purple/secondary/content",
-    "Theme/context/raised/element/purple/text": "Theme/context/panel/color/purple/secondary/content",
-    "Theme/context/floating/element/purple/text": "Theme/context/panel/color/purple/secondary/content",
+    "Theme/context/raised/element/purple/text": "Theme/context/page/color/purple/secondary/content",
+    "Theme/context/floating/element/purple/text": "Theme/context/page/color/purple/secondary/content",
     "Theme/context/base/element/purple/disabled-text": "Theme/context/page/disabled/content",
     "Theme/context/canvas/element/purple/disabled-text": "Theme/context/inset/disabled/content",
     "Theme/context/raised/element/purple/disabled-text": "Theme/context/panel/disabled/content",
@@ -20624,8 +20472,8 @@
     "Theme/context/floating/feedback/danger/disabled": "Theme/context/page/disabled/background",
     "Theme/context/base/feedback/danger/text": "Theme/context/page/color/red/secondary/content",
     "Theme/context/canvas/feedback/danger/text": "Theme/context/page/color/red/secondary/content",
-    "Theme/context/raised/feedback/danger/text": "Theme/context/panel/color/red/secondary/content",
-    "Theme/context/floating/feedback/danger/text": "Theme/context/panel/color/red/secondary/content",
+    "Theme/context/raised/feedback/danger/text": "Theme/context/page/color/red/secondary/content",
+    "Theme/context/floating/feedback/danger/text": "Theme/context/page/color/red/secondary/content",
     "Theme/context/base/feedback/success/normal": "Theme/context/page/color/green/secondary/background/normal",
     "Theme/context/canvas/feedback/success/normal": "Theme/context/page/color/green/secondary/background/normal",
     "Theme/context/raised/feedback/success/normal": "Theme/context/panel/color/green/secondary/background/normal",
@@ -20644,8 +20492,8 @@
     "Theme/context/floating/feedback/success/disabled": "Theme/context/page/disabled/background",
     "Theme/context/base/feedback/success/text": "Theme/context/page/color/green/secondary/content",
     "Theme/context/canvas/feedback/success/text": "Theme/context/page/color/green/secondary/content",
-    "Theme/context/raised/feedback/success/text": "Theme/context/panel/color/green/secondary/content",
-    "Theme/context/floating/feedback/success/text": "Theme/context/panel/color/green/secondary/content",
+    "Theme/context/raised/feedback/success/text": "Theme/context/page/color/green/secondary/content",
+    "Theme/context/floating/feedback/success/text": "Theme/context/page/color/green/secondary/content",
     "Theme/context/base/feedback/warning/normal": "Theme/context/page/color/orange/secondary/background/normal",
     "Theme/context/canvas/feedback/warning/normal": "Theme/context/page/color/orange/secondary/background/normal",
     "Theme/context/raised/feedback/warning/normal": "Theme/context/panel/color/orange/secondary/background/normal",
@@ -20684,8 +20532,8 @@
     "Theme/context/floating/feedback/info/disabled": "Theme/context/page/disabled/background",
     "Theme/context/base/feedback/info/text": "Theme/context/page/color/blue/secondary/content",
     "Theme/context/canvas/feedback/info/text": "Theme/context/page/color/blue/secondary/content",
-    "Theme/context/raised/feedback/info/text": "Theme/context/panel/color/blue/secondary/content",
-    "Theme/context/floating/feedback/info/text": "Theme/context/panel/color/blue/secondary/content",
+    "Theme/context/raised/feedback/info/text": "Theme/context/page/color/blue/secondary/content",
+    "Theme/context/floating/feedback/info/text": "Theme/context/page/color/blue/secondary/content",
     "Theme/context/base/divider/subtle": "Theme/context/page/divider/subtle",
     "Theme/context/canvas/divider/subtle": "Theme/context/inset/divider/subtle",
     "Theme/context/raised/divider/subtle": "Theme/context/panel/divider/subtle",
@@ -20987,7 +20835,7 @@
     "schemaVersion": 4,
     "source": "figma/token-system-v4/graph.json",
     "sourceHash": "211e379e90b4651ab21f28abbaac839611809a3ebecde142abb1ff078d17ffe3",
-    "graphHash": "c70da0700888c87e36f4390e0dea6c3a32b0dae95a23ab04cd660c00d024ad71",
+    "graphHash": "31f4660cefdc94021537e7280e1fcd4f9d392ab9429911c8b32b23559aed0b47",
     "kind": "resolved-legacy-compatibility-graph",
     "canonicalExport": "runtime-v4.json"
   }
