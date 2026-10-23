@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.18.1 · 2026-10-23
+
+- Secondary uses quieter composited tint targets, with upper prominence bounds in addition to minimum visibility checks.
+- Joint alpha fitting retains readable text, hue identity and gentle Normal/Active states without the previous dense Light appearance anchor.
+- Figma guidance compares Primary, Secondary and Tertiary across all six accents.
+
 ## 0.18.0 · 2026-10-23
 
 - Shared alpha recipes fit neutral layers and six accent families jointly across declared surface backings, including Invert and protected Glass.

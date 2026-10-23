@@ -1,47 +1,68 @@
-# Общий рецепт alpha-слоёв
+# Shared alpha recipes
 
-Источник расчёта — `figma/color-system-v2/editor/alpha-recipes.mjs`. Канонический v4, Palette Lab и проектный Custom вызывают один solver. Правила использования ролей находятся в [surface-context.md](surface-context.md), пути Figma — в [designer-guide.md](../figma/color-system-v2/designer-guide.md).
+`figma/color-system-v2/editor/alpha-recipes.mjs` supplies the canonical v4 generator, Palette Lab and exact-RGB Custom scopes. [Surface context](surface-context.md) defines semantic roles and independent axes; the [designer guide](../figma/color-system-v2/designer-guide.md) maps them to Figma.
 
-## Что объединяется
+## Semantic hierarchy
 
-Основы областей остаются определёнными цветами. Нейтральные block/control/disabled и акцентные Secondary/Tertiary используют полупрозрачные краски. Один алгоритм рассчитывает рецепт для ограниченной группы подложек, включая разрешённое локальное вложение. Это не одна универсальная краска для всех обычных поверхностей. Публичные роли сохраняют назначение, даже если ссылаются на одну краску. Переключатели Theme, Scheme, Surface, Accent и Borders независимы.
+Primary is the strong, opaque emphasis. Secondary is a quiet tinted surface, and Tertiary is the faintest interactive tint. Judge the composited result against its actual backing, not the pigment or its alpha alone. Secondary must have an upper prominence bound as well as a lower visibility bound. A dense old sample is not an appearance anchor that overrides owner review.
 
-`alphaRecipeFamily(localTheme, surface, base)` выбирает одну из пяти групп:
+Normal and Active are fitted jointly. Active increases emphasis gently and replaces Normal; never paint it on top. Text must remain at least 4.5:1 after composition. Fill prominence and state distinction are project appearance criteria, separate from WCAG text contrast. Lower tint chroma is expected when reducing fill prominence; preserve hue identity instead of forcing the previous dense chroma/lightness pair.
 
-| Группа | Объявленный фон области |
+Default fill appearance bounds are measured against every declared backing:
+
+| Role | Target contrast | Allowed contrast |
+| --- | --- | --- |
+| Tertiary Normal | 1.06 | 1.035–1.16 |
+| Tertiary Active | 1.13 | 1.10–1.25 |
+| Secondary Normal | 1.22 | 1.12–1.35 |
+| Secondary Active | 1.34 | 1.20–1.50 |
+
+The upper values are safety limits, not targets. Normal/Active retain at least 1.06 contrast and an OKLab distance of 0.015–0.05. Authored strength scales prominence bounds; incompatible authored settings remain explicit diagnostics. Neutral paints use their separate quiet policy.
+
+## Bounded backing families
+
+Region backgrounds remain defined colors. Neutral block/control/disabled and accent Secondary/Tertiary use alpha paints. A recipe is shared across a declared family of backgrounds and supported neutral nesting; it is not universal for arbitrary RGB or unlimited nesting. Public semantic roles retain their meaning even when internal paints are deduplicated.
+
+`alphaRecipeFamily(localTheme, surface, base)` selects five internal families:
+
+| Family | Declared region background |
 | --- | --- |
-| `Light` | Обычный светлый фон с OKLab L ≥ 0.985 |
-| `Light/Neutral` | Приглушённый светлый фон с OKLab L < 0.985 |
-| `Dark` | Обычный фон тёмной локальной полярности |
-| `Glass/Light` | Защищённый Glass светлой локальной полярности |
-| `Glass/Dark` | Защищённый Glass тёмной локальной полярности |
+| `Light` | Ordinary light background with OKLab L ≥ 0.985 |
+| `Light/Neutral` | Muted light background with OKLab L < 0.985 |
+| `Dark` | Ordinary background with dark local polarity |
+| `Glass/Light` | Protected Glass with light local polarity |
+| `Glass/Dark` | Protected Glass with dark local polarity |
 
-Группа определяется по объявленному фону области и локальной полярности, включая Invert; вложенный block сам не меняет группу. Каждый рецепт проверяется по всей своей группе. Разделение сохраняет светлоту, hue и chroma на белых, серых и защищённых подложках без отдельного решения для каждого слоя. Это внутренние группы solver, не новые режимы Surface. Custom рассчитывается отдельно по точному авторскому RGB.
+The declared region background and local polarity select the family, including Invert. A nested block inherits the family. These are solver groups, not additional public Surface modes. Custom is regenerated separately from exact authored RGB.
 
-Invert меняет локальную основу, нейтральные слои, текст, границы и акценты; внешняя Theme остаётся прежней. В канонической библиотеке и автоматическом проектном режиме основа Invert точно чёрная в Light и белая в Dark. Явное авторское переопределение Palette Lab сохраняется и заново проверяется. Glass использует защищённую основу и проверяется на крайних чёрной и белой подложках. Эти контексты не заменяются слабым прозрачным слоем поверх случайного фона.
+Invert changes the local background, neutral layers, text, boundaries and accents without changing the outer Theme. The canonical and automatic project backgrounds are exact black in Light and exact white in Dark. Authored Palette Lab overrides are preserved and rechecked. Glass uses its protected base and is checked over both black and white underlays.
 
-## Порядок расчёта
+## Calculation
 
-1. Выбрать ограниченную группу через `alphaRecipeFamily` и собрать её точные sRGB подложки: фон области, block, нейтральные состояния и разрешённое вложение. Для Glass сначала скомпозировать защищённую основу с обеими крайними подложками.
-2. Перебрать существующие непрозрачные пигменты и целые проценты alpha. Новые промежуточные RGB и дробные FLOAT не создаются.
-3. Совместно выбрать Normal/Active для Tertiary/Secondary. Измерять видимость заливки, насыщенность, порядок ролей и мягкую, но различимую реакцию на всех подложках. Не выбирать две пары по отдельности, если их сочетание нарушает иерархию.
-4. Подобрать основной и второстепенный content по всему набору смешанных фонов. Проверить реальную alpha текста и контраст не ниже 4.5:1. Primary/on-primary остаётся отдельной непрозрачной парой.
-5. Удалить точные дубли внутренних paints и маршрутов. В native выбрать меньший эквивалентный порядок Theme/Scheme; публичные Surface/Accent и геометрия сохраняются.
+1. Collect the family's composed sRGB backgrounds: the region base, block, neutral controls and supported nesting. Compose protected Glass over both extreme underlays first.
+2. Search existing opaque pigments at whole-percent alpha. Do not create intermediate RGB primitives or fractional FLOAT variables.
+3. Fit Tertiary/Secondary Normal/Active jointly against every backing. Check lower visibility, upper prominence, hue identity, hierarchy and gentle state distinction.
+4. Select primary and secondary content across the complete set of rendered backgrounds, including the content's own alpha. Preserve at least 4.5:1 text contrast. Primary/on-primary remains a separate opaque pair.
+5. Remove exact internal paint and routing duplicates. The native exporter chooses the smaller equivalent Theme/Scheme order while preserving public paths, independent modes and geometry.
 
-Смешивание выполняется в sRGB: `result = alpha × pigment + (1 − alpha) × backing`. Относительная светимость WCAG вычисляется после смешивания. Поэтому одинаковый процент не означает одинаковую яркость на разных фонах. Alpha принадлежит COLOR; opacity текстового слоя и компонента остаётся 100%.
+Composition is in sRGB: `result = alpha × pigment + (1 − alpha) × backing`. WCAG luminance is evaluated afterward. Equal alpha does not mean equal visual strength on different backgrounds. Alpha belongs to COLOR; text and component layer opacity remain 100%.
 
-## Применение
+## Use
 
-Выберите Surface на области и нарисуйте `surface/bg`. Локальная карточка наследует контекст и использует `surface/block`. На Secondary/Tertiary используйте парный content того же оттенка. Active заменяет Normal, а не накладывается поверх него. Disabled использует собственную заливку и content; не уменьшайте opacity всего компонента.
+Set Surface on a region and paint `surface/bg`. A local card inherits its context and paints `surface/block`. Use paired content of the same hue on Secondary/Tertiary. Disabled has its own fill and content; never fade the whole component. Theme, Scheme, Surface, Accent and Borders inherit independently.
 
-Рецепт имеет конечную проверенную область применения. Произвольная глубина цветных слоёв не может сохранять контраст автоматически. Для новой области задайте новый Surface; для изображения используйте защищённый материал или определённую основу. Не выводите контекст из DOM-цвета.
+A recipe has a finite verified domain. Arbitrarily stacked chromatic paints or images require a new calculation. Establish a Surface for a distinct region; use protected Glass or a defined Overlay background for image-backed content. Never infer context by sampling DOM colors.
 
-## Custom
+## Custom backgrounds
 
-Пользовательский HEX сохраняется точно. Для него пересчитывается отдельная проектная группа подложек тем же алгоритмом. При конфликте читаемости, насыщенности или состояний solver возвращает измеренную причину ограничения. Произвольные авторские ступени и завышенный порог не дают универсальной гарантии; контраст проверяется на фактических фонах.
+Preserve the exact authored HEX and recalculate a coherent project scope. When readability, tint strength or state separation cannot be satisfied together, report the measured limitation. Arbitrary authored ramp points and higher contrast settings do not imply universal feasibility.
 
-Изменение HEX требует нового экспорта всего проектного scope. Ручная смена заливки в Figma не запускает вычисления. Core library не пополняется копиями каждого проекта.
+A fixed opaque Primary can have less backing contrast than Secondary on an arbitrary authored background, even when its paired text is readable. Soft-fill acceptance does not prove universal Primary prominence or a distinct secondary text level on every RGB. Keep those diagnostics visible.
 
-## Проверка
+Changing HEX requires regenerating the complete export. Editing a frame background in Figma does not run the generator. Keep project-specific colors out of the core native library.
 
-`npm run check` проверяет общий граф, Custom, компоненты и сборку. `node scripts/verify-alpha-recipes.mjs --help` описывает независимую матрицу и сравнение с замороженной версией. `node figma/color-system-v2/verify-native.mjs --compare-routing` проверяет эквивалентность вариантов внутренней маршрутизации. Фактические результаты и live-проверки фиксируются в [verification.md](verification.md).
+## Verification
+
+`npm run check` verifies the graph, Custom exports, components and builds. `node scripts/verify-alpha-recipes.mjs --help` describes independent numerical acceptance and frozen comparisons. Before/after appearance comparisons with different policy bounds must be labelled as such. A numeric pass does not replace inspection of Primary/Secondary/Tertiary together on Light, Dark, Invert and nested backgrounds.
+
+`node figma/color-system-v2/verify-native.mjs --compare-routing` checks equivalent routing orders. Record actual native readback, rendered screenshots and deployment evidence in [verification.md](verification.md).

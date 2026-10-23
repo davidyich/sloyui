@@ -52,7 +52,7 @@
   "bridge": {
     "source": "figma/token-system-v4/graph.json",
     "sourceHash": "211e379e90b4651ab21f28abbaac839611809a3ebecde142abb1ff078d17ffe3",
-    "graphSha256": "c70da0700888c87e36f4390e0dea6c3a32b0dae95a23ab04cd660c00d024ad71",
+    "graphSha256": "31f4660cefdc94021537e7280e1fcd4f9d392ab9429911c8b32b23559aed0b47",
     "palette": "One shared opaque ramp per hue; semantic colors select a step and an Opacity alias.",
     "legacyLogicalKeys": "Preserved outside Palette; Figma names group by role with context in the leaf."
   },
@@ -66,20 +66,20 @@
       "hidden": true,
       "variables": [
         {
-          "name": "blue/01",
-          "figmaName": "blue/01",
+          "name": "blue/05",
+          "figmaName": "blue/05",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.9787851811,
-              "g": 0.9880473367,
+              "r": 0.8618303012,
+              "g": 0.9223445468,
               "b": 1,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-blue-01"
+          "css": "--sloy-v2-palette-blue-05"
         },
         {
           "name": "blue/12",
@@ -178,36 +178,20 @@
           "css": "--sloy-v2-palette-blue-31"
         },
         {
-          "name": "blue/32",
-          "figmaName": "blue/32",
+          "name": "green/05",
+          "figmaName": "green/05",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0,
-              "g": 0.1980814543,
-              "b": 0.4052859966,
+              "r": 0.8177937281,
+              "g": 0.9564226794,
+              "b": 0.8649054294,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-blue-32"
-        },
-        {
-          "name": "green/03",
-          "figmaName": "green/03",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.89930591,
-              "g": 0.981006346,
-              "b": 0.9261127246,
-              "a": 1
-            }
-          },
-          "scopes": [],
-          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-green-03"
+          "css": "--sloy-v2-palette-green-05"
         },
         {
           "name": "green/12",
@@ -322,36 +306,20 @@
           "css": "--sloy-v2-palette-green-31"
         },
         {
-          "name": "green/32",
-          "figmaName": "green/32",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0,
-              "g": 0.2468502349,
-              "b": 0.1348028052,
-              "a": 1
-            }
-          },
-          "scopes": [],
-          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-green-32"
-        },
-        {
-          "name": "orange/01",
-          "figmaName": "orange/01",
+          "name": "orange/05",
+          "figmaName": "orange/05",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 1,
-              "g": 0.9834247999,
-              "b": 0.9742449957,
+              "g": 0.8912345622,
+              "b": 0.8300153709,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-orange-01"
+          "css": "--sloy-v2-palette-orange-05"
         },
         {
           "name": "orange/12",
@@ -466,20 +434,20 @@
           "css": "--sloy-v2-palette-orange-31"
         },
         {
-          "name": "red/01",
-          "figmaName": "red/01",
+          "name": "red/05",
+          "figmaName": "red/05",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 1,
-              "g": 0.9825395737,
-              "b": 0.9804641259,
+              "g": 0.8854927411,
+              "b": 0.8723364373,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-red-01"
+          "css": "--sloy-v2-palette-red-05"
         },
         {
           "name": "red/12",
@@ -594,36 +562,20 @@
           "css": "--sloy-v2-palette-red-31"
         },
         {
-          "name": "red/32",
-          "figmaName": "red/32",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.4033573389,
-              "g": 0,
-              "b": 0.0368098606,
-              "a": 1
-            }
-          },
-          "scopes": [],
-          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-red-32"
-        },
-        {
-          "name": "pink/01",
-          "figmaName": "pink/01",
+          "name": "pink/05",
+          "figmaName": "pink/05",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 1,
-              "g": 0.9809128644,
-              "b": 0.9917372231,
+              "g": 0.8741442317,
+              "b": 0.9478452285,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-pink-01"
+          "css": "--sloy-v2-palette-pink-05"
         },
         {
           "name": "pink/12",
@@ -738,36 +690,20 @@
           "css": "--sloy-v2-palette-pink-31"
         },
         {
-          "name": "pink/32",
-          "figmaName": "pink/32",
+          "name": "purple/05",
+          "figmaName": "purple/05",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.3678335818,
-              "g": 1e-10,
-              "b": 0.2782249098,
-              "a": 1
-            }
-          },
-          "scopes": [],
-          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-pink-32"
-        },
-        {
-          "name": "purple/03",
-          "figmaName": "purple/03",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.9694736826,
-              "g": 0.9440196961,
+              "r": 0.9414788021,
+              "g": 0.8914223274,
               "b": 1,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-purple-03"
+          "css": "--sloy-v2-palette-purple-05"
         },
         {
           "name": "purple/12",
@@ -880,22 +816,6 @@
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
           "css": "--sloy-v2-palette-purple-31"
-        },
-        {
-          "name": "purple/32",
-          "figmaName": "purple/32",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.2894348069,
-              "g": 1e-10,
-              "b": 0.4548307246,
-              "a": 1
-            }
-          },
-          "scopes": [],
-          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-purple-32"
         },
         {
           "name": "gray/0",
@@ -1074,20 +994,20 @@
           "css": "--sloy-v2-palette-gray-275"
         },
         {
-          "name": "gray/300",
-          "figmaName": "gray/300",
+          "name": "gray/325",
+          "figmaName": "gray/325",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.6431344413,
-              "g": 0.6431344413,
-              "b": 0.6431344413,
+              "r": 0.618330272,
+              "g": 0.618330272,
+              "b": 0.618330272,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-gray-300"
+          "css": "--sloy-v2-palette-gray-325"
         },
         {
           "name": "gray/350",
@@ -1106,20 +1026,20 @@
           "css": "--sloy-v2-palette-gray-350"
         },
         {
-          "name": "gray/375",
-          "figmaName": "gray/375",
+          "name": "gray/400",
+          "figmaName": "gray/400",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.5705433443,
-              "g": 0.5705433443,
-              "b": 0.5705433443,
+              "r": 0.5475015781,
+              "g": 0.5475015781,
+              "b": 0.5475015781,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-gray-375"
+          "css": "--sloy-v2-palette-gray-400"
         },
         {
           "name": "gray/425",
@@ -1138,36 +1058,52 @@
           "css": "--sloy-v2-palette-gray-425"
         },
         {
-          "name": "gray/575",
-          "figmaName": "gray/575",
+          "name": "gray/500",
+          "figmaName": "gray/500",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.3992640547,
-              "g": 0.3992640547,
-              "b": 0.3992640547,
+              "r": 0.4603133193,
+              "g": 0.4603133193,
+              "b": 0.4603133193,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-gray-575"
+          "css": "--sloy-v2-palette-gray-500"
         },
         {
-          "name": "gray/600",
-          "figmaName": "gray/600",
+          "name": "gray/525",
+          "figmaName": "gray/525",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.3795567932,
-              "g": 0.3795567932,
-              "b": 0.3795567932,
+              "r": 0.4396054941,
+              "g": 0.4396054941,
+              "b": 0.4396054941,
               "a": 1
             }
           },
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
-          "css": "--sloy-v2-palette-gray-600"
+          "css": "--sloy-v2-palette-gray-525"
+        },
+        {
+          "name": "gray/550",
+          "figmaName": "gray/550",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.4192676192,
+              "g": 0.4192676192,
+              "b": 0.4192676192,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
+          "css": "--sloy-v2-palette-gray-550"
         },
         {
           "name": "gray/625",
@@ -1554,980 +1490,132 @@
           "css": "--sloy-v2-palette-alpha-white-7"
         },
         {
-          "name": "alpha/blue-23-30",
+          "name": "alpha/blue-23-15",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 1e-10,
               "g": 0.4382018359,
               "b": 0.8419993445,
-              "a": 0.3
+              "a": 0.15
             }
           },
           "scopes": [],
-          "description": "Referenced blue/23 pigment at 30% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/blue-23-30",
-          "css": "--sloy-v2-palette-alpha-blue-23-30"
+          "description": "Referenced blue/23 pigment at 15% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/blue-23-15",
+          "css": "--sloy-v2-palette-alpha-blue-23-15"
         },
         {
-          "name": "alpha/blue-15-25",
+          "name": "alpha/blue-15-15",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 0.4166053382,
               "g": 0.6769125792,
               "b": 1,
-              "a": 0.25
+              "a": 0.15
             }
           },
           "scopes": [],
-          "description": "Referenced blue/15 pigment at 25% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/blue-15-25",
-          "css": "--sloy-v2-palette-alpha-blue-15-25"
+          "description": "Referenced blue/15 pigment at 15% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/blue-15-15",
+          "css": "--sloy-v2-palette-alpha-blue-15-15"
         },
         {
-          "name": "alpha/blue-25-10",
+          "name": "alpha/blue-20-5",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 3e-10,
+              "g": 0.5198551828,
+              "b": 0.9905044662,
+              "a": 0.05
+            }
+          },
+          "scopes": [],
+          "description": "Referenced blue/20 pigment at 5% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/blue-20-5",
+          "css": "--sloy-v2-palette-alpha-blue-20-5"
+        },
+        {
+          "name": "alpha/blue-18-6",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.2294055269,
+              "g": 0.5857835938,
+              "b": 1,
+              "a": 0.06
+            }
+          },
+          "scopes": [],
+          "description": "Referenced blue/18 pigment at 6% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/blue-18-6",
+          "css": "--sloy-v2-palette-alpha-blue-18-6"
+        },
+        {
+          "name": "alpha/blue-25-20",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 2e-10,
               "g": 0.3838601889,
               "b": 0.7431667405,
-              "a": 0.1
+              "a": 0.2
             }
           },
           "scopes": [],
-          "description": "Referenced blue/25 pigment at 10% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/blue-25-10",
-          "css": "--sloy-v2-palette-alpha-blue-25-10"
+          "description": "Referenced blue/25 pigment at 20% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/blue-25-20",
+          "css": "--sloy-v2-palette-alpha-blue-25-20"
         },
         {
-          "name": "alpha/blue-15-11",
+          "name": "alpha/blue-13-18",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.4166053382,
-              "g": 0.6769125792,
-              "b": 1,
-              "a": 0.11
-            }
-          },
-          "scopes": [],
-          "description": "Referenced blue/15 pigment at 11% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/blue-15-11",
-          "css": "--sloy-v2-palette-alpha-blue-15-11"
-        },
-        {
-          "name": "alpha/blue-24-36",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 3e-10,
-              "g": 0.4110024815,
-              "b": 0.7925311526,
-              "a": 0.36
-            }
-          },
-          "scopes": [],
-          "description": "Referenced blue/24 pigment at 36% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/blue-24-36",
-          "css": "--sloy-v2-palette-alpha-blue-24-36"
-        },
-        {
-          "name": "alpha/blue-14-28",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.4696400289,
-              "g": 0.7052058217,
+              "r": 0.5201609984,
+              "g": 0.7326073079,
               "b": 0.9999999999,
-              "a": 0.28
+              "a": 0.18
             }
           },
           "scopes": [],
-          "description": "Referenced blue/14 pigment at 28% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/blue-14-28",
-          "css": "--sloy-v2-palette-alpha-blue-14-28"
+          "description": "Referenced blue/13 pigment at 18% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/blue-13-18",
+          "css": "--sloy-v2-palette-alpha-blue-13-18"
         },
         {
-          "name": "alpha/blue-29-15",
+          "name": "alpha/blue-27-8",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 2e-10,
-              "g": 0.2764633227,
-              "b": 0.547841193,
-              "a": 0.15
-            }
-          },
-          "scopes": [],
-          "description": "Referenced blue/29 pigment at 15% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/blue-29-15",
-          "css": "--sloy-v2-palette-alpha-blue-29-15"
-        },
-        {
-          "name": "alpha/blue-12-14",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.568630663,
-              "g": 0.7591709242,
-              "b": 1,
-              "a": 0.14
-            }
-          },
-          "scopes": [],
-          "description": "Referenced blue/12 pigment at 14% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/blue-12-14",
-          "css": "--sloy-v2-palette-alpha-blue-12-14"
-        },
-        {
-          "name": "alpha/blue-39-70",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0,
-              "g": 0.0307443724,
-              "b": 0.0998446484,
-              "a": 0.7
-            }
-          },
-          "scopes": [],
-          "description": "Referenced blue/39 pigment at 70% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/blue-39-70",
-          "css": "--sloy-v2-palette-alpha-blue-39-70"
-        },
-        {
-          "name": "alpha/white-92",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 0.92
-            }
-          },
-          "scopes": [],
-          "description": "Referenced white pigment at 92% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/white-92",
-          "css": "--sloy-v2-palette-alpha-white-92"
-        },
-        {
-          "name": "alpha/green-23-32",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 5e-10,
-              "g": 0.5332417992,
-              "b": 0.3148852303,
-              "a": 0.32
-            }
-          },
-          "scopes": [],
-          "description": "Referenced green/23 pigment at 32% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/green-23-32",
-          "css": "--sloy-v2-palette-alpha-green-23-32"
-        },
-        {
-          "name": "alpha/green-15-24",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.3324559089,
-              "g": 0.7650112948,
-              "b": 0.525569882,
-              "a": 0.24
-            }
-          },
-          "scopes": [],
-          "description": "Referenced green/15 pigment at 24% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/green-15-24",
-          "css": "--sloy-v2-palette-alpha-green-15-24"
-        },
-        {
-          "name": "alpha/green-22-12",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1e-10,
-              "g": 0.5657161685,
-              "b": 0.3353050467,
-              "a": 0.12
-            }
-          },
-          "scopes": [],
-          "description": "Referenced green/22 pigment at 12% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/green-22-12",
-          "css": "--sloy-v2-palette-alpha-green-22-12"
-        },
-        {
-          "name": "alpha/green-15-10",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.3324559089,
-              "g": 0.7650112948,
-              "b": 0.525569882,
-              "a": 0.1
-            }
-          },
-          "scopes": [],
-          "description": "Referenced green/15 pigment at 10% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/green-15-10",
-          "css": "--sloy-v2-palette-alpha-green-15-10"
-        },
-        {
-          "name": "alpha/green-24-38",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 2e-10,
-              "g": 0.5008011309,
-              "b": 0.294486605,
-              "a": 0.38
-            }
-          },
-          "scopes": [],
-          "description": "Referenced green/24 pigment at 38% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/green-24-38",
-          "css": "--sloy-v2-palette-alpha-green-24-38"
-        },
-        {
-          "name": "alpha/green-14-27",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.3881285185,
-              "g": 0.7881719016,
-              "b": 0.5597005685,
-              "a": 0.27
-            }
-          },
-          "scopes": [],
-          "description": "Referenced green/14 pigment at 27% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/green-14-27",
-          "css": "--sloy-v2-palette-alpha-green-14-27"
-        },
-        {
-          "name": "alpha/green-26-17",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 3e-10,
-              "g": 0.4361589659,
-              "b": 0.2538397449,
-              "a": 0.17
-            }
-          },
-          "scopes": [],
-          "description": "Referenced green/26 pigment at 17% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/green-26-17",
-          "css": "--sloy-v2-palette-alpha-green-26-17"
-        },
-        {
-          "name": "alpha/green-12-13",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.4922700149,
-              "g": 0.8320745192,
-              "b": 0.6285094072,
-              "a": 0.13
-            }
-          },
-          "scopes": [],
-          "description": "Referenced green/12 pigment at 13% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/green-12-13",
-          "css": "--sloy-v2-palette-alpha-green-12-13"
-        },
-        {
-          "name": "alpha/green-39-70",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0,
-              "g": 0.0465453301,
-              "b": 0.0154122898,
-              "a": 0.7
-            }
-          },
-          "scopes": [],
-          "description": "Referenced green/39 pigment at 70% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/green-39-70",
-          "css": "--sloy-v2-palette-alpha-green-39-70"
-        },
-        {
-          "name": "alpha/orange-20-35",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.8166118327,
-              "g": 0.3920605341,
-              "b": 6e-10,
-              "a": 0.35
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/20 pigment at 35% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-20-35",
-          "css": "--sloy-v2-palette-alpha-orange-20-35"
-        },
-        {
-          "name": "alpha/orange-13-23",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1,
-              "g": 0.6069977915,
-              "b": 0.3607898982,
-              "a": 0.23
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/13 pigment at 23% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-13-23",
-          "css": "--sloy-v2-palette-alpha-orange-13-23"
-        },
-        {
-          "name": "alpha/orange-21-12",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.775372804,
-              "g": 0.370908524,
-              "b": 2e-10,
-              "a": 0.12
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/21 pigment at 12% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-21-12",
-          "css": "--sloy-v2-palette-alpha-orange-21-12"
-        },
-        {
-          "name": "alpha/orange-13-10",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1,
-              "g": 0.6069977915,
-              "b": 0.3607898982,
-              "a": 0.1
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/13 pigment at 10% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-13-10",
-          "css": "--sloy-v2-palette-alpha-orange-13-10"
-        },
-        {
-          "name": "alpha/orange-21-42",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.775372804,
-              "g": 0.370908524,
-              "b": 2e-10,
-              "a": 0.42
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/21 pigment at 42% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-21-42",
-          "css": "--sloy-v2-palette-alpha-orange-21-42"
-        },
-        {
-          "name": "alpha/orange-12-26",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1,
-              "g": 0.649408992,
-              "b": 0.4367601616,
-              "a": 0.26
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/12 pigment at 26% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-12-26",
-          "css": "--sloy-v2-palette-alpha-orange-12-26"
-        },
-        {
-          "name": "alpha/orange-26-17",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.5693894348,
-              "g": 0.2652570958,
-              "b": 1e-10,
-              "a": 0.17
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/26 pigment at 17% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-26-17",
-          "css": "--sloy-v2-palette-alpha-orange-26-17"
-        },
-        {
-          "name": "alpha/orange-11-13",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1,
-              "g": 0.689435396,
-              "b": 0.5049635464,
-              "a": 0.13
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/11 pigment at 13% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-11-13",
-          "css": "--sloy-v2-palette-alpha-orange-11-13"
-        },
-        {
-          "name": "alpha/orange-40-67",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.0421246805,
-              "g": 0.0084947651,
-              "b": 0,
-              "a": 0.67
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/40 pigment at 67% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-40-67",
-          "css": "--sloy-v2-palette-alpha-orange-40-67"
-        },
-        {
-          "name": "alpha/white-93",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 0.93
-            }
-          },
-          "scopes": [],
-          "description": "Referenced white pigment at 93% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/white-93",
-          "css": "--sloy-v2-palette-alpha-white-93"
-        },
-        {
-          "name": "alpha/red-22-23",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.8875528899,
-              "g": 6e-10,
-              "b": 0.1337178693,
-              "a": 0.23
-            }
-          },
-          "scopes": [],
-          "description": "Referenced red/22 pigment at 23% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/red-22-23",
-          "css": "--sloy-v2-palette-alpha-red-22-23"
-        },
-        {
-          "name": "alpha/red-14-25",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1,
-              "g": 0.5399467119,
-              "b": 0.5047639459,
-              "a": 0.25
-            }
-          },
-          "scopes": [],
-          "description": "Referenced red/14 pigment at 25% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/red-14-25",
-          "css": "--sloy-v2-palette-alpha-red-14-25"
-        },
-        {
-          "name": "alpha/red-23-8",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.8382408014,
-              "g": 4e-10,
-              "b": 0.1238446065,
+              "g": 0.3298650131,
+              "b": 0.6449642729,
               "a": 0.08
             }
           },
           "scopes": [],
-          "description": "Referenced red/23 pigment at 8% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/red-23-8",
-          "css": "--sloy-v2-palette-alpha-red-23-8"
+          "description": "Referenced blue/27 pigment at 8% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/blue-27-8",
+          "css": "--sloy-v2-palette-alpha-blue-27-8"
         },
         {
-          "name": "alpha/red-14-11",
+          "name": "alpha/blue-13-10",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 1,
-              "g": 0.5399467119,
-              "b": 0.5047639459,
-              "a": 0.11
-            }
-          },
-          "scopes": [],
-          "description": "Referenced red/14 pigment at 11% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/red-14-11",
-          "css": "--sloy-v2-palette-alpha-red-14-11"
-        },
-        {
-          "name": "alpha/red-24-28",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.7889798876,
-              "g": 4e-10,
-              "b": 0.1139815901,
-              "a": 0.28
-            }
-          },
-          "scopes": [],
-          "description": "Referenced red/24 pigment at 28% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/red-24-28",
-          "css": "--sloy-v2-palette-alpha-red-24-28"
-        },
-        {
-          "name": "alpha/red-13-28",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.9999999999,
-              "g": 0.5873578209,
-              "b": 0.5523053479,
-              "a": 0.28
-            }
-          },
-          "scopes": [],
-          "description": "Referenced red/13 pigment at 28% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/red-13-28",
-          "css": "--sloy-v2-palette-alpha-red-13-28"
-        },
-        {
-          "name": "alpha/red-28-13",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.5935094255,
-              "g": 3e-10,
-              "b": 0.0748445088,
-              "a": 0.13
-            }
-          },
-          "scopes": [],
-          "description": "Referenced red/28 pigment at 13% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/red-28-13",
-          "css": "--sloy-v2-palette-alpha-red-28-13"
-        },
-        {
-          "name": "alpha/red-12-14",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1,
-              "g": 0.6317526273,
-              "b": 0.5979637392,
-              "a": 0.14
-            }
-          },
-          "scopes": [],
-          "description": "Referenced red/12 pigment at 14% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/red-12-14",
-          "css": "--sloy-v2-palette-alpha-red-12-14"
-        },
-        {
-          "name": "alpha/red-39-70",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.0991958293,
-              "g": 0,
-              "b": 0.0026943153,
-              "a": 0.7
-            }
-          },
-          "scopes": [],
-          "description": "Referenced red/39 pigment at 70% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/red-39-70",
-          "css": "--sloy-v2-palette-alpha-red-39-70"
-        },
-        {
-          "name": "alpha/pink-26-22",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.6330183642,
-              "g": 0,
-              "b": 0.4872106172,
-              "a": 0.22
-            }
-          },
-          "scopes": [],
-          "description": "Referenced pink/26 pigment at 22% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/pink-26-22",
-          "css": "--sloy-v2-palette-alpha-pink-26-22"
-        },
-        {
-          "name": "alpha/pink-12-22",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1,
-              "g": 0.5855806744,
-              "b": 0.8520484416,
-              "a": 0.22
-            }
-          },
-          "scopes": [],
-          "description": "Referenced pink/12 pigment at 22% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/pink-12-22",
-          "css": "--sloy-v2-palette-alpha-pink-12-22"
-        },
-        {
-          "name": "alpha/pink-25-8",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.6782217452,
-              "g": 3e-10,
-              "b": 0.5228343075,
-              "a": 0.08
-            }
-          },
-          "scopes": [],
-          "description": "Referenced pink/25 pigment at 8% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/pink-25-8",
-          "css": "--sloy-v2-palette-alpha-pink-25-8"
-        },
-        {
-          "name": "alpha/pink-12-10",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1,
-              "g": 0.5855806744,
-              "b": 0.8520484416,
-              "a": 0.1
-            }
-          },
-          "scopes": [],
-          "description": "Referenced pink/12 pigment at 10% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/pink-12-10",
-          "css": "--sloy-v2-palette-alpha-pink-12-10"
-        },
-        {
-          "name": "alpha/pink-27-27",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.5880097869,
-              "g": 3e-10,
-              "b": 0.4517404471,
-              "a": 0.27
-            }
-          },
-          "scopes": [],
-          "description": "Referenced pink/27 pigment at 27% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/pink-27-27",
-          "css": "--sloy-v2-palette-alpha-pink-27-27"
-        },
-        {
-          "name": "alpha/pink-12-27",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1,
-              "g": 0.5855806744,
-              "b": 0.8520484416,
-              "a": 0.27
-            }
-          },
-          "scopes": [],
-          "description": "Referenced pink/12 pigment at 27% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/pink-12-27",
-          "css": "--sloy-v2-palette-alpha-pink-12-27"
-        },
-        {
-          "name": "alpha/pink-30-13",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.4546911033,
-              "g": 2e-10,
-              "b": 0.3466752199,
-              "a": 0.13
-            }
-          },
-          "scopes": [],
-          "description": "Referenced pink/30 pigment at 13% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/pink-30-13",
-          "css": "--sloy-v2-palette-alpha-pink-30-13"
-        },
-        {
-          "name": "alpha/pink-10-13",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.9999999999,
-              "g": 0.6806723582,
-              "b": 0.8795943287,
-              "a": 0.13
-            }
-          },
-          "scopes": [],
-          "description": "Referenced pink/10 pigment at 13% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/pink-10-13",
-          "css": "--sloy-v2-palette-alpha-pink-10-13"
-        },
-        {
-          "name": "alpha/pink-39-70",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.0872452948,
-              "g": 0,
-              "b": 0.0571000734,
-              "a": 0.7
-            }
-          },
-          "scopes": [],
-          "description": "Referenced pink/39 pigment at 70% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/pink-39-70",
-          "css": "--sloy-v2-palette-alpha-pink-39-70"
-        },
-        {
-          "name": "alpha/purple-28-21",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.4323254987,
-              "g": 3e-10,
-              "b": 0.6663368311,
-              "a": 0.21
-            }
-          },
-          "scopes": [],
-          "description": "Referenced purple/28 pigment at 21% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/purple-28-21",
-          "css": "--sloy-v2-palette-alpha-purple-28-21"
-        },
-        {
-          "name": "alpha/purple-14-21",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.793037872,
-              "g": 0.5801694593,
-              "b": 1,
-              "a": 0.21
-            }
-          },
-          "scopes": [],
-          "description": "Referenced purple/14 pigment at 21% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/purple-14-21",
-          "css": "--sloy-v2-palette-alpha-purple-14-21"
-        },
-        {
-          "name": "alpha/purple-33-7",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.2547206904,
-              "g": 1e-10,
-              "b": 0.4034470584,
-              "a": 0.07
-            }
-          },
-          "scopes": [],
-          "description": "Referenced purple/33 pigment at 7% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/purple-33-7",
-          "css": "--sloy-v2-palette-alpha-purple-33-7"
-        },
-        {
-          "name": "alpha/purple-13-10",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.8102966224,
-              "g": 0.6205658941,
-              "b": 1,
-              "a": 0.1
-            }
-          },
-          "scopes": [],
-          "description": "Referenced purple/13 pigment at 10% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/purple-13-10",
-          "css": "--sloy-v2-palette-alpha-purple-13-10"
-        },
-        {
-          "name": "alpha/purple-29-26",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.3961097263,
-              "g": 1e-10,
-              "b": 0.612730421,
-              "a": 0.26
-            }
-          },
-          "scopes": [],
-          "description": "Referenced purple/29 pigment at 26% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/purple-29-26",
-          "css": "--sloy-v2-palette-alpha-purple-29-26"
-        },
-        {
-          "name": "alpha/purple-13-24",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.8102966224,
-              "g": 0.6205658941,
-              "b": 1,
-              "a": 0.24
-            }
-          },
-          "scopes": [],
-          "description": "Referenced purple/13 pigment at 24% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/purple-13-24",
-          "css": "--sloy-v2-palette-alpha-purple-13-24"
-        },
-        {
-          "name": "alpha/purple-34-12",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.2205372925,
-              "g": 0,
-              "b": 0.3528489592,
-              "a": 0.12
-            }
-          },
-          "scopes": [],
-          "description": "Referenced purple/34 pigment at 12% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/purple-34-12",
-          "css": "--sloy-v2-palette-alpha-purple-34-12"
-        },
-        {
-          "name": "alpha/purple-11-13",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.8445376217,
-              "g": 0.6964659491,
-              "b": 1,
-              "a": 0.13
-            }
-          },
-          "scopes": [],
-          "description": "Referenced purple/11 pigment at 13% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/purple-11-13",
-          "css": "--sloy-v2-palette-alpha-purple-11-13"
-        },
-        {
-          "name": "alpha/purple-39-71",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.0608711909,
-              "g": 0,
-              "b": 0.1165119727,
-              "a": 0.71
-            }
-          },
-          "scopes": [],
-          "description": "Referenced purple/39 pigment at 71% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/purple-39-71",
-          "css": "--sloy-v2-palette-alpha-purple-39-71"
-        },
-        {
-          "name": "alpha/white-89",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 0.89
-            }
-          },
-          "scopes": [],
-          "description": "Referenced white pigment at 89% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/white-89",
-          "css": "--sloy-v2-palette-alpha-white-89"
-        },
-        {
-          "name": "alpha/blue-17-42",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.2989986071,
-              "g": 0.6173211063,
+              "r": 0.5201609984,
+              "g": 0.7326073079,
               "b": 0.9999999999,
-              "a": 0.42
-            }
-          },
-          "scopes": [],
-          "description": "Referenced blue/17 pigment at 42% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/blue-17-42",
-          "css": "--sloy-v2-palette-alpha-blue-17-42"
-        },
-        {
-          "name": "alpha/blue-23-10",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1e-10,
-              "g": 0.4382018359,
-              "b": 0.8419993445,
               "a": 0.1
             }
           },
           "scopes": [],
-          "description": "Referenced blue/23 pigment at 10% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/blue-23-10",
-          "css": "--sloy-v2-palette-alpha-blue-23-10"
-        },
-        {
-          "name": "alpha/blue-17-53",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.2989986071,
-              "g": 0.6173211063,
-              "b": 0.9999999999,
-              "a": 0.53
-            }
-          },
-          "scopes": [],
-          "description": "Referenced blue/17 pigment at 53% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/blue-17-53",
-          "css": "--sloy-v2-palette-alpha-blue-17-53"
-        },
-        {
-          "name": "alpha/blue-28-15",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1e-10,
-              "g": 0.3030737006,
-              "b": 0.5962381977,
-              "a": 0.15
-            }
-          },
-          "scopes": [],
-          "description": "Referenced blue/28 pigment at 15% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/blue-28-15",
-          "css": "--sloy-v2-palette-alpha-blue-28-15"
+          "description": "Referenced blue/13 pigment at 10% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/blue-13-10",
+          "css": "--sloy-v2-palette-alpha-blue-13-10"
         },
         {
           "name": "alpha/blue-39-65",
@@ -2546,180 +1634,1076 @@
           "css": "--sloy-v2-palette-alpha-blue-39-65"
         },
         {
-          "name": "alpha/green-22-31",
+          "name": "alpha/blue-02-88",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 1e-10,
-              "g": 0.5657161685,
-              "b": 0.3353050467,
-              "a": 0.31
+              "r": 0.9573162936,
+              "g": 0.9759629121,
+              "b": 1,
+              "a": 0.88
             }
           },
           "scopes": [],
-          "description": "Referenced green/22 pigment at 31% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/green-22-31",
-          "css": "--sloy-v2-palette-alpha-green-22-31"
+          "description": "Referenced blue/02 pigment at 88% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/blue-02-88",
+          "css": "--sloy-v2-palette-alpha-blue-02-88"
         },
         {
-          "name": "alpha/green-22-11",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1e-10,
-              "g": 0.5657161685,
-              "b": 0.3353050467,
-              "a": 0.11
-            }
-          },
-          "scopes": [],
-          "description": "Referenced green/22 pigment at 11% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/green-22-11",
-          "css": "--sloy-v2-palette-alpha-green-22-11"
-        },
-        {
-          "name": "alpha/green-23-37",
+          "name": "alpha/green-23-15",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 5e-10,
               "g": 0.5332417992,
               "b": 0.3148852303,
-              "a": 0.37
+              "a": 0.15
             }
           },
           "scopes": [],
-          "description": "Referenced green/23 pigment at 37% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/green-23-37",
-          "css": "--sloy-v2-palette-alpha-green-23-37"
+          "description": "Referenced green/23 pigment at 15% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/green-23-15",
+          "css": "--sloy-v2-palette-alpha-green-23-15"
         },
         {
-          "name": "alpha/green-25-17",
+          "name": "alpha/green-15-14",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.3324559089,
+              "g": 0.7650112948,
+              "b": 0.525569882,
+              "a": 0.14
+            }
+          },
+          "scopes": [],
+          "description": "Referenced green/15 pigment at 14% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/green-15-14",
+          "css": "--sloy-v2-palette-alpha-green-15-14"
+        },
+        {
+          "name": "alpha/green-19-6",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 2e-10,
+              "g": 0.6630003806,
+              "b": 0.3964771587,
+              "a": 0.06
+            }
+          },
+          "scopes": [],
+          "description": "Referenced green/19 pigment at 6% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/green-19-6",
+          "css": "--sloy-v2-palette-alpha-green-19-6"
+        },
+        {
+          "name": "alpha/green-18-6",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.1160444227,
+              "g": 0.6910063151,
+              "b": 0.4251789631,
+              "a": 0.06
+            }
+          },
+          "scopes": [],
+          "description": "Referenced green/18 pigment at 6% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/green-18-6",
+          "css": "--sloy-v2-palette-alpha-green-18-6"
+        },
+        {
+          "name": "alpha/green-25-20",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 0,
               "g": 0.4684285202,
               "b": 0.2741307741,
-              "a": 0.17
+              "a": 0.2
             }
           },
           "scopes": [],
-          "description": "Referenced green/25 pigment at 17% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/green-25-17",
-          "css": "--sloy-v2-palette-alpha-green-25-17"
+          "description": "Referenced green/25 pigment at 20% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/green-25-20",
+          "css": "--sloy-v2-palette-alpha-green-25-20"
         },
         {
-          "name": "alpha/green-39-67",
+          "name": "alpha/green-12-18",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.4922700149,
+              "g": 0.8320745192,
+              "b": 0.6285094072,
+              "a": 0.18
+            }
+          },
+          "scopes": [],
+          "description": "Referenced green/12 pigment at 18% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/green-12-18",
+          "css": "--sloy-v2-palette-alpha-green-12-18"
+        },
+        {
+          "name": "alpha/green-25-9",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0,
+              "g": 0.4684285202,
+              "b": 0.2741307741,
+              "a": 0.09
+            }
+          },
+          "scopes": [],
+          "description": "Referenced green/25 pigment at 9% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/green-25-9",
+          "css": "--sloy-v2-palette-alpha-green-25-9"
+        },
+        {
+          "name": "alpha/green-12-9",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.4922700149,
+              "g": 0.8320745192,
+              "b": 0.6285094072,
+              "a": 0.09
+            }
+          },
+          "scopes": [],
+          "description": "Referenced green/12 pigment at 9% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/green-12-9",
+          "css": "--sloy-v2-palette-alpha-green-12-9"
+        },
+        {
+          "name": "alpha/green-39-66",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 0,
               "g": 0.0465453301,
               "b": 0.0154122898,
-              "a": 0.67
+              "a": 0.66
             }
           },
           "scopes": [],
-          "description": "Referenced green/39 pigment at 67% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/green-39-67",
-          "css": "--sloy-v2-palette-alpha-green-39-67"
+          "description": "Referenced green/39 pigment at 66% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/green-39-66",
+          "css": "--sloy-v2-palette-alpha-green-39-66"
         },
         {
-          "name": "alpha/orange-19-34",
+          "name": "alpha/green-02-90",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.8577632456,
-              "g": 0.4131676048,
-              "b": 5e-10,
-              "a": 0.34
+              "r": 0.9362086771,
+              "g": 0.9903955155,
+              "b": 0.9537097898,
+              "a": 0.9
             }
           },
           "scopes": [],
-          "description": "Referenced orange/19 pigment at 34% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-19-34",
-          "css": "--sloy-v2-palette-alpha-orange-19-34"
+          "description": "Referenced green/02 pigment at 90% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/green-02-90",
+          "css": "--sloy-v2-palette-alpha-green-02-90"
         },
         {
-          "name": "alpha/orange-21-11",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.775372804,
-              "g": 0.370908524,
-              "b": 2e-10,
-              "a": 0.11
-            }
-          },
-          "scopes": [],
-          "description": "Referenced orange/21 pigment at 11% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-21-11",
-          "css": "--sloy-v2-palette-alpha-orange-21-11"
-        },
-        {
-          "name": "alpha/orange-20-41",
+          "name": "alpha/orange-20-18",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 0.8166118327,
               "g": 0.3920605341,
               "b": 6e-10,
-              "a": 0.41
+              "a": 0.18
             }
           },
           "scopes": [],
-          "description": "Referenced orange/20 pigment at 41% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-20-41",
-          "css": "--sloy-v2-palette-alpha-orange-20-41"
+          "description": "Referenced orange/20 pigment at 18% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-20-18",
+          "css": "--sloy-v2-palette-alpha-orange-20-18"
         },
         {
-          "name": "alpha/orange-24-17",
+          "name": "alpha/orange-14-13",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.6515662608,
-              "g": 0.3074066104,
+              "r": 0.9909293445,
+              "g": 0.5676319445,
+              "b": 0.291842178,
+              "a": 0.13
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/14 pigment at 13% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-14-13",
+          "css": "--sloy-v2-palette-alpha-orange-14-13"
+        },
+        {
+          "name": "alpha/orange-18-6",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.8987822969,
+              "g": 0.4342067856,
+              "b": 3e-10,
+              "a": 0.06
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/18 pigment at 6% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-18-6",
+          "css": "--sloy-v2-palette-alpha-orange-18-6"
+        },
+        {
+          "name": "alpha/orange-19-6",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.8577632456,
+              "g": 0.4131676048,
+              "b": 5e-10,
+              "a": 0.06
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/19 pigment at 6% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-19-6",
+          "css": "--sloy-v2-palette-alpha-orange-19-6"
+        },
+        {
+          "name": "alpha/orange-23-23",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.692806698,
+              "g": 0.3285593428,
               "b": 1e-10,
+              "a": 0.23
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/23 pigment at 23% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-23-23",
+          "css": "--sloy-v2-palette-alpha-orange-23-23"
+        },
+        {
+          "name": "alpha/orange-12-17",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.649408992,
+              "b": 0.4367601616,
               "a": 0.17
             }
           },
           "scopes": [],
-          "description": "Referenced orange/24 pigment at 17% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-24-17",
-          "css": "--sloy-v2-palette-alpha-orange-24-17"
+          "description": "Referenced orange/12 pigment at 17% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-12-17",
+          "css": "--sloy-v2-palette-alpha-orange-12-17"
         },
         {
-          "name": "alpha/orange-39-66",
+          "name": "alpha/orange-23-10",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.692806698,
+              "g": 0.3285593428,
+              "b": 1e-10,
+              "a": 0.1
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/23 pigment at 10% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-23-10",
+          "css": "--sloy-v2-palette-alpha-orange-23-10"
+        },
+        {
+          "name": "alpha/orange-12-9",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.649408992,
+              "b": 0.4367601616,
+              "a": 0.09
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/12 pigment at 9% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-12-9",
+          "css": "--sloy-v2-palette-alpha-orange-12-9"
+        },
+        {
+          "name": "alpha/orange-39-65",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 0.0740902451,
               "g": 0.0168152972,
               "b": 0,
+              "a": 0.65
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/39 pigment at 65% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-39-65",
+          "css": "--sloy-v2-palette-alpha-orange-39-65"
+        },
+        {
+          "name": "alpha/orange-02-87",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.9666107685,
+              "b": 0.9480658731,
+              "a": 0.87
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/02 pigment at 87% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-02-87",
+          "css": "--sloy-v2-palette-alpha-orange-02-87"
+        },
+        {
+          "name": "alpha/red-23-12",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.8382408014,
+              "g": 4e-10,
+              "b": 0.1238446065,
+              "a": 0.12
+            }
+          },
+          "scopes": [],
+          "description": "Referenced red/23 pigment at 12% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/red-23-12",
+          "css": "--sloy-v2-palette-alpha-red-23-12"
+        },
+        {
+          "name": "alpha/red-14-15",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.5399467119,
+              "b": 0.5047639459,
+              "a": 0.15
+            }
+          },
+          "scopes": [],
+          "description": "Referenced red/14 pigment at 15% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/red-14-15",
+          "css": "--sloy-v2-palette-alpha-red-14-15"
+        },
+        {
+          "name": "alpha/red-22-5",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.8875528899,
+              "g": 6e-10,
+              "b": 0.1337178693,
+              "a": 0.05
+            }
+          },
+          "scopes": [],
+          "description": "Referenced red/22 pigment at 5% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/red-22-5",
+          "css": "--sloy-v2-palette-alpha-red-22-5"
+        },
+        {
+          "name": "alpha/red-17-6",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.3679060227,
+              "b": 0.3468899043,
+              "a": 0.06
+            }
+          },
+          "scopes": [],
+          "description": "Referenced red/17 pigment at 6% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/red-17-6",
+          "css": "--sloy-v2-palette-alpha-red-17-6"
+        },
+        {
+          "name": "alpha/red-26-16",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.6908212405,
+              "g": 0,
+              "b": 0.094328273,
+              "a": 0.16
+            }
+          },
+          "scopes": [],
+          "description": "Referenced red/26 pigment at 16% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/red-26-16",
+          "css": "--sloy-v2-palette-alpha-red-26-16"
+        },
+        {
+          "name": "alpha/red-12-19",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.6317526273,
+              "b": 0.5979637392,
+              "a": 0.19
+            }
+          },
+          "scopes": [],
+          "description": "Referenced red/12 pigment at 19% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/red-12-19",
+          "css": "--sloy-v2-palette-alpha-red-12-19"
+        },
+        {
+          "name": "alpha/red-27-8",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.6420313322,
+              "g": 2e-10,
+              "b": 0.0845595613,
+              "a": 0.08
+            }
+          },
+          "scopes": [],
+          "description": "Referenced red/27 pigment at 8% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/red-27-8",
+          "css": "--sloy-v2-palette-alpha-red-27-8"
+        },
+        {
+          "name": "alpha/red-13-10",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9999999999,
+              "g": 0.5873578209,
+              "b": 0.5523053479,
+              "a": 0.1
+            }
+          },
+          "scopes": [],
+          "description": "Referenced red/13 pigment at 10% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/red-13-10",
+          "css": "--sloy-v2-palette-alpha-red-13-10"
+        },
+        {
+          "name": "alpha/red-39-66",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.0991958293,
+              "g": 0,
+              "b": 0.0026943153,
               "a": 0.66
             }
           },
           "scopes": [],
-          "description": "Referenced orange/39 pigment at 66% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/orange-39-66",
-          "css": "--sloy-v2-palette-alpha-orange-39-66"
+          "description": "Referenced red/39 pigment at 66% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/red-39-66",
+          "css": "--sloy-v2-palette-alpha-red-39-66"
         },
         {
-          "name": "alpha/red-16-40",
+          "name": "alpha/red-02-89",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.9648307207,
+              "b": 0.9606709334,
+              "a": 0.89
+            }
+          },
+          "scopes": [],
+          "description": "Referenced red/02 pigment at 89% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/red-02-89",
+          "css": "--sloy-v2-palette-alpha-red-02-89"
+        },
+        {
+          "name": "alpha/pink-26-11",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.6330183642,
+              "g": 0,
+              "b": 0.4872106172,
+              "a": 0.11
+            }
+          },
+          "scopes": [],
+          "description": "Referenced pink/26 pigment at 11% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/pink-26-11",
+          "css": "--sloy-v2-palette-alpha-pink-26-11"
+        },
+        {
+          "name": "alpha/pink-13-12",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.5324194576,
+              "b": 0.8385097517,
+              "a": 0.12
+            }
+          },
+          "scopes": [],
+          "description": "Referenced pink/13 pigment at 12% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/pink-13-12",
+          "css": "--sloy-v2-palette-alpha-pink-13-12"
+        },
+        {
+          "name": "alpha/pink-20-4",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9036270012,
+              "g": 0.019874814,
+              "b": 0.7009382689,
+              "a": 0.04
+            }
+          },
+          "scopes": [],
+          "description": "Referenced pink/20 pigment at 4% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/pink-20-4",
+          "css": "--sloy-v2-palette-alpha-pink-20-4"
+        },
+        {
+          "name": "alpha/pink-15-5",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.4077864711,
+              "b": 0.8121888937,
+              "a": 0.05
+            }
+          },
+          "scopes": [],
+          "description": "Referenced pink/15 pigment at 5% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/pink-15-5",
+          "css": "--sloy-v2-palette-alpha-pink-15-5"
+        },
+        {
+          "name": "alpha/pink-29-16",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.4987893891,
+              "g": 2e-10,
+              "b": 0.3814280114,
+              "a": 0.16
+            }
+          },
+          "scopes": [],
+          "description": "Referenced pink/29 pigment at 16% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/pink-29-16",
+          "css": "--sloy-v2-palette-alpha-pink-29-16"
+        },
+        {
+          "name": "alpha/pink-11-16",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.6347337373,
+              "b": 0.8657636943,
+              "a": 0.16
+            }
+          },
+          "scopes": [],
+          "description": "Referenced pink/11 pigment at 16% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/pink-11-16",
+          "css": "--sloy-v2-palette-alpha-pink-11-16"
+        },
+        {
+          "name": "alpha/pink-28-7",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.5432484406,
+              "g": 3e-10,
+              "b": 0.4164651136,
+              "a": 0.07
+            }
+          },
+          "scopes": [],
+          "description": "Referenced pink/28 pigment at 7% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/pink-28-7",
+          "css": "--sloy-v2-palette-alpha-pink-28-7"
+        },
+        {
+          "name": "alpha/pink-11-9",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.6347337373,
+              "b": 0.8657636943,
+              "a": 0.09
+            }
+          },
+          "scopes": [],
+          "description": "Referenced pink/11 pigment at 9% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/pink-11-9",
+          "css": "--sloy-v2-palette-alpha-pink-11-9"
+        },
+        {
+          "name": "alpha/pink-39-66",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.0872452948,
+              "g": 0,
+              "b": 0.0571000734,
+              "a": 0.66
+            }
+          },
+          "scopes": [],
+          "description": "Referenced pink/39 pigment at 66% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/pink-39-66",
+          "css": "--sloy-v2-palette-alpha-pink-39-66"
+        },
+        {
+          "name": "alpha/pink-02-87",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.9615194724,
+              "b": 0.9834668374,
+              "a": 0.87
+            }
+          },
+          "scopes": [],
+          "description": "Referenced pink/02 pigment at 87% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/pink-02-87",
+          "css": "--sloy-v2-palette-alpha-pink-02-87"
+        },
+        {
+          "name": "alpha/purple-28-11",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.4323254987,
+              "g": 3e-10,
+              "b": 0.6663368311,
+              "a": 0.11
+            }
+          },
+          "scopes": [],
+          "description": "Referenced purple/28 pigment at 11% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/purple-28-11",
+          "css": "--sloy-v2-palette-alpha-purple-28-11"
+        },
+        {
+          "name": "alpha/purple-14-13",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.793037872,
+              "g": 0.5801694593,
+              "b": 1,
+              "a": 0.13
+            }
+          },
+          "scopes": [],
+          "description": "Referenced purple/14 pigment at 13% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/purple-14-13",
+          "css": "--sloy-v2-palette-alpha-purple-14-13"
+        },
+        {
+          "name": "alpha/purple-31-3",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.3246109719,
+              "g": 0,
+              "b": 0.5068983127,
+              "a": 0.03
+            }
+          },
+          "scopes": [],
+          "description": "Referenced purple/31 pigment at 3% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/purple-31-3",
+          "css": "--sloy-v2-palette-alpha-purple-31-3"
+        },
+        {
+          "name": "alpha/purple-17-5",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.7411101774,
+              "g": 0.4451538423,
+              "b": 1,
+              "a": 0.05
+            }
+          },
+          "scopes": [],
+          "description": "Referenced purple/17 pigment at 5% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/purple-17-5",
+          "css": "--sloy-v2-palette-alpha-purple-17-5"
+        },
+        {
+          "name": "alpha/purple-31-15",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.3246109719,
+              "g": 0,
+              "b": 0.5068983127,
+              "a": 0.15
+            }
+          },
+          "scopes": [],
+          "description": "Referenced purple/31 pigment at 15% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/purple-31-15",
+          "css": "--sloy-v2-palette-alpha-purple-31-15"
+        },
+        {
+          "name": "alpha/purple-12-16",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.8274757565,
+              "g": 0.6592686116,
+              "b": 1,
+              "a": 0.16
+            }
+          },
+          "scopes": [],
+          "description": "Referenced purple/12 pigment at 16% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/purple-12-16",
+          "css": "--sloy-v2-palette-alpha-purple-12-16"
+        },
+        {
+          "name": "alpha/purple-33-6",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.2547206904,
+              "g": 1e-10,
+              "b": 0.4034470584,
+              "a": 0.06
+            }
+          },
+          "scopes": [],
+          "description": "Referenced purple/33 pigment at 6% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/purple-33-6",
+          "css": "--sloy-v2-palette-alpha-purple-33-6"
+        },
+        {
+          "name": "alpha/purple-12-9",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.8274757565,
+              "g": 0.6592686116,
+              "b": 1,
+              "a": 0.09
+            }
+          },
+          "scopes": [],
+          "description": "Referenced purple/12 pigment at 9% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/purple-12-9",
+          "css": "--sloy-v2-palette-alpha-purple-12-9"
+        },
+        {
+          "name": "alpha/purple-39-66",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.0608711909,
+              "g": 0,
+              "b": 0.1165119727,
+              "a": 0.66
+            }
+          },
+          "scopes": [],
+          "description": "Referenced purple/39 pigment at 66% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/purple-39-66",
+          "css": "--sloy-v2-palette-alpha-purple-39-66"
+        },
+        {
+          "name": "alpha/purple-02-87",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9816365094,
+              "g": 0.9664842803,
+              "b": 1,
+              "a": 0.87
+            }
+          },
+          "scopes": [],
+          "description": "Referenced purple/02 pigment at 87% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/purple-02-87",
+          "css": "--sloy-v2-palette-alpha-purple-02-87"
+        },
+        {
+          "name": "alpha/blue-17-21",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.2989986071,
+              "g": 0.6173211063,
+              "b": 0.9999999999,
+              "a": 0.21
+            }
+          },
+          "scopes": [],
+          "description": "Referenced blue/17 pigment at 21% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/blue-17-21",
+          "css": "--sloy-v2-palette-alpha-blue-17-21"
+        },
+        {
+          "name": "alpha/blue-18-28",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.2294055269,
+              "g": 0.5857835938,
+              "b": 1,
+              "a": 0.28
+            }
+          },
+          "scopes": [],
+          "description": "Referenced blue/18 pigment at 28% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/blue-18-28",
+          "css": "--sloy-v2-palette-alpha-blue-18-28"
+        },
+        {
+          "name": "alpha/blue-26-8",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 3e-10,
+              "g": 0.3568043023,
+              "b": 0.6939594773,
+              "a": 0.08
+            }
+          },
+          "scopes": [],
+          "description": "Referenced blue/26 pigment at 8% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/blue-26-8",
+          "css": "--sloy-v2-palette-alpha-blue-26-8"
+        },
+        {
+          "name": "alpha/blue-39-62",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0,
+              "g": 0.0307443724,
+              "b": 0.0998446484,
+              "a": 0.62
+            }
+          },
+          "scopes": [],
+          "description": "Referenced blue/39 pigment at 62% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/blue-39-62",
+          "css": "--sloy-v2-palette-alpha-blue-39-62"
+        },
+        {
+          "name": "alpha/green-22-15",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1e-10,
+              "g": 0.5657161685,
+              "b": 0.3353050467,
+              "a": 0.15
+            }
+          },
+          "scopes": [],
+          "description": "Referenced green/22 pigment at 15% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/green-22-15",
+          "css": "--sloy-v2-palette-alpha-green-22-15"
+        },
+        {
+          "name": "alpha/green-24-20",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 2e-10,
+              "g": 0.5008011309,
+              "b": 0.294486605,
+              "a": 0.2
+            }
+          },
+          "scopes": [],
+          "description": "Referenced green/24 pigment at 20% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/green-24-20",
+          "css": "--sloy-v2-palette-alpha-green-24-20"
+        },
+        {
+          "name": "alpha/green-24-9",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 2e-10,
+              "g": 0.5008011309,
+              "b": 0.294486605,
+              "a": 0.09
+            }
+          },
+          "scopes": [],
+          "description": "Referenced green/24 pigment at 9% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/green-24-9",
+          "css": "--sloy-v2-palette-alpha-green-24-9"
+        },
+        {
+          "name": "alpha/green-39-63",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0,
+              "g": 0.0465453301,
+              "b": 0.0154122898,
+              "a": 0.63
+            }
+          },
+          "scopes": [],
+          "description": "Referenced green/39 pigment at 63% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/green-39-63",
+          "css": "--sloy-v2-palette-alpha-green-39-63"
+        },
+        {
+          "name": "alpha/orange-19-17",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.8577632456,
+              "g": 0.4131676048,
+              "b": 5e-10,
+              "a": 0.17
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/19 pigment at 17% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-19-17",
+          "css": "--sloy-v2-palette-alpha-orange-19-17"
+        },
+        {
+          "name": "alpha/orange-17-6",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9388163869,
+              "g": 0.4558117611,
+              "b": 0.0082833655,
+              "a": 0.06
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/17 pigment at 6% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-17-6",
+          "css": "--sloy-v2-palette-alpha-orange-17-6"
+        },
+        {
+          "name": "alpha/orange-22-22",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.734089978,
+              "g": 0.3497340499,
+              "b": 2e-10,
+              "a": 0.22
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/22 pigment at 22% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-22-22",
+          "css": "--sloy-v2-palette-alpha-orange-22-22"
+        },
+        {
+          "name": "alpha/orange-22-10",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.734089978,
+              "g": 0.3497340499,
+              "b": 2e-10,
+              "a": 0.1
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/22 pigment at 10% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-22-10",
+          "css": "--sloy-v2-palette-alpha-orange-22-10"
+        },
+        {
+          "name": "alpha/orange-39-63",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.0740902451,
+              "g": 0.0168152972,
+              "b": 0,
+              "a": 0.63
+            }
+          },
+          "scopes": [],
+          "description": "Referenced orange/39 pigment at 63% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/orange-39-63",
+          "css": "--sloy-v2-palette-alpha-orange-39-63"
+        },
+        {
+          "name": "alpha/red-16-21",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 1,
               "g": 0.4321800981,
               "b": 0.4026988442,
-              "a": 0.4
+              "a": 0.21
             }
           },
           "scopes": [],
-          "description": "Referenced red/16 pigment at 40% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/red-16-40",
-          "css": "--sloy-v2-palette-alpha-red-16-40"
+          "description": "Referenced red/16 pigment at 21% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/red-16-21",
+          "css": "--sloy-v2-palette-alpha-red-16-21"
+        },
+        {
+          "name": "alpha/red-11-15",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.6736652696,
+              "b": 0.6419171924,
+              "a": 0.15
+            }
+          },
+          "scopes": [],
+          "description": "Referenced red/11 pigment at 15% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/red-11-15",
+          "css": "--sloy-v2-palette-alpha-red-11-15"
+        },
+        {
+          "name": "alpha/red-16-31",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.4321800981,
+              "b": 0.4026988442,
+              "a": 0.31
+            }
+          },
+          "scopes": [],
+          "description": "Referenced red/16 pigment at 31% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/red-16-31",
+          "css": "--sloy-v2-palette-alpha-red-16-31"
         },
         {
           "name": "alpha/red-14-20",
@@ -2738,212 +2722,180 @@
           "css": "--sloy-v2-palette-alpha-red-14-20"
         },
         {
-          "name": "alpha/red-17-46",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1,
-              "g": 0.3679060227,
-              "b": 0.3468899043,
-              "a": 0.46
-            }
-          },
-          "scopes": [],
-          "description": "Referenced red/17 pigment at 46% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/red-17-46",
-          "css": "--sloy-v2-palette-alpha-red-17-46"
-        },
-        {
-          "name": "alpha/red-14-32",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 1,
-              "g": 0.5399467119,
-              "b": 0.5047639459,
-              "a": 0.32
-            }
-          },
-          "scopes": [],
-          "description": "Referenced red/14 pigment at 32% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/red-14-32",
-          "css": "--sloy-v2-palette-alpha-red-14-32"
-        },
-        {
-          "name": "alpha/red-39-65",
+          "name": "alpha/red-39-62",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 0.0991958293,
               "g": 0,
               "b": 0.0026943153,
-              "a": 0.65
+              "a": 0.62
             }
           },
           "scopes": [],
-          "description": "Referenced red/39 pigment at 65% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/red-39-65",
-          "css": "--sloy-v2-palette-alpha-red-39-65"
+          "description": "Referenced red/39 pigment at 62% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/red-39-62",
+          "css": "--sloy-v2-palette-alpha-red-39-62"
         },
         {
-          "name": "alpha/pink-24-22",
+          "name": "alpha/pink-24-11",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 0.7235694884,
               "g": 3e-10,
               "b": 0.5585717662,
-              "a": 0.22
+              "a": 0.11
             }
           },
           "scopes": [],
-          "description": "Referenced pink/24 pigment at 22% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/pink-24-22",
-          "css": "--sloy-v2-palette-alpha-pink-24-22"
+          "description": "Referenced pink/24 pigment at 11% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/pink-24-11",
+          "css": "--sloy-v2-palette-alpha-pink-24-11"
         },
         {
-          "name": "alpha/pink-23-8",
+          "name": "alpha/pink-16-6",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.7690125671,
-              "g": 5e-10,
-              "b": 0.5943843564,
-              "a": 0.08
+              "r": 0.99320351,
+              "g": 0.3407893665,
+              "b": 0.796072232,
+              "a": 0.06
             }
           },
           "scopes": [],
-          "description": "Referenced pink/23 pigment at 8% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/pink-23-8",
-          "css": "--sloy-v2-palette-alpha-pink-23-8"
+          "description": "Referenced pink/16 pigment at 6% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/pink-16-6",
+          "css": "--sloy-v2-palette-alpha-pink-16-6"
         },
         {
-          "name": "alpha/pink-26-27",
+          "name": "alpha/pink-27-16",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.5880097869,
+              "g": 3e-10,
+              "b": 0.4517404471,
+              "a": 0.16
+            }
+          },
+          "scopes": [],
+          "description": "Referenced pink/27 pigment at 16% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/pink-27-16",
+          "css": "--sloy-v2-palette-alpha-pink-27-16"
+        },
+        {
+          "name": "alpha/pink-26-7",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 0.6330183642,
               "g": 0,
               "b": 0.4872106172,
-              "a": 0.27
+              "a": 0.07
             }
           },
           "scopes": [],
-          "description": "Referenced pink/26 pigment at 27% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/pink-26-27",
-          "css": "--sloy-v2-palette-alpha-pink-26-27"
+          "description": "Referenced pink/26 pigment at 7% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/pink-26-7",
+          "css": "--sloy-v2-palette-alpha-pink-26-7"
         },
         {
-          "name": "alpha/pink-28-13",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.5432484406,
-              "g": 3e-10,
-              "b": 0.4164651136,
-              "a": 0.13
-            }
-          },
-          "scopes": [],
-          "description": "Referenced pink/28 pigment at 13% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/pink-28-13",
-          "css": "--sloy-v2-palette-alpha-pink-28-13"
-        },
-        {
-          "name": "alpha/pink-39-67",
+          "name": "alpha/pink-39-63",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 0.0872452948,
               "g": 0,
               "b": 0.0571000734,
-              "a": 0.67
+              "a": 0.63
             }
           },
           "scopes": [],
-          "description": "Referenced pink/39 pigment at 67% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/pink-39-67",
-          "css": "--sloy-v2-palette-alpha-pink-39-67"
+          "description": "Referenced pink/39 pigment at 63% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/pink-39-63",
+          "css": "--sloy-v2-palette-alpha-pink-39-63"
         },
         {
-          "name": "alpha/purple-26-21",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.5054509259,
-              "g": 4e-10,
-              "b": 0.7745767324,
-              "a": 0.21
-            }
-          },
-          "scopes": [],
-          "description": "Referenced purple/26 pigment at 21% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/purple-26-21",
-          "css": "--sloy-v2-palette-alpha-purple-26-21"
-        },
-        {
-          "name": "alpha/purple-31-7",
-          "type": "COLOR",
-          "values": {
-            "Value": {
-              "r": 0.3246109719,
-              "g": 0,
-              "b": 0.5068983127,
-              "a": 0.07
-            }
-          },
-          "scopes": [],
-          "description": "Referenced purple/31 pigment at 7% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/purple-31-7",
-          "css": "--sloy-v2-palette-alpha-purple-31-7"
-        },
-        {
-          "name": "alpha/purple-27-26",
+          "name": "alpha/purple-27-11",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 0.4687875168,
               "g": 1e-10,
               "b": 0.7203077328,
-              "a": 0.26
+              "a": 0.11
             }
           },
           "scopes": [],
-          "description": "Referenced purple/27 pigment at 26% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/purple-27-26",
-          "css": "--sloy-v2-palette-alpha-purple-27-26"
+          "description": "Referenced purple/27 pigment at 11% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/purple-27-11",
+          "css": "--sloy-v2-palette-alpha-purple-27-11"
         },
         {
-          "name": "alpha/purple-32-12",
+          "name": "alpha/purple-27-3",
           "type": "COLOR",
           "values": {
             "Value": {
-              "r": 0.2894348069,
+              "r": 0.4687875168,
               "g": 1e-10,
-              "b": 0.4548307246,
-              "a": 0.12
+              "b": 0.7203077328,
+              "a": 0.03
             }
           },
           "scopes": [],
-          "description": "Referenced purple/32 pigment at 12% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/purple-32-12",
-          "css": "--sloy-v2-palette-alpha-purple-32-12"
+          "description": "Referenced purple/27 pigment at 3% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/purple-27-3",
+          "css": "--sloy-v2-palette-alpha-purple-27-3"
         },
         {
-          "name": "alpha/purple-39-67",
+          "name": "alpha/purple-30-15",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.3601878288,
+              "g": 1e-10,
+              "b": 0.5595590032,
+              "a": 0.15
+            }
+          },
+          "scopes": [],
+          "description": "Referenced purple/30 pigment at 15% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/purple-30-15",
+          "css": "--sloy-v2-palette-alpha-purple-30-15"
+        },
+        {
+          "name": "alpha/purple-31-6",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.3246109719,
+              "g": 0,
+              "b": 0.5068983127,
+              "a": 0.06
+            }
+          },
+          "scopes": [],
+          "description": "Referenced purple/31 pigment at 6% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/purple-31-6",
+          "css": "--sloy-v2-palette-alpha-purple-31-6"
+        },
+        {
+          "name": "alpha/purple-39-63",
           "type": "COLOR",
           "values": {
             "Value": {
               "r": 0.0608711909,
               "g": 0,
               "b": 0.1165119727,
-              "a": 0.67
+              "a": 0.63
             }
           },
           "scopes": [],
-          "description": "Referenced purple/39 pigment at 67% opacity. Regenerate from the canonical source.",
-          "figmaName": "alpha/purple-39-67",
-          "css": "--sloy-v2-palette-alpha-purple-39-67"
+          "description": "Referenced purple/39 pigment at 63% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/purple-39-63",
+          "css": "--sloy-v2-palette-alpha-purple-39-63"
         }
       ]
     },
@@ -3603,10 +3555,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/blue-23-30"
+              "alias": "palette/alpha/blue-23-15"
             },
             "Dark": {
-              "alias": "palette/alpha/blue-15-25"
+              "alias": "palette/alpha/blue-15-15"
             }
           },
           "scopes": [],
@@ -3619,10 +3571,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/blue-17-42"
+              "alias": "palette/alpha/blue-17-21"
             },
             "Dark": {
-              "alias": "palette/alpha/blue-15-25"
+              "alias": "palette/alpha/blue-15-15"
             }
           },
           "scopes": [],
@@ -3635,10 +3587,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/blue-15-25"
+              "alias": "palette/alpha/blue-15-15"
             },
             "Dark": {
-              "alias": "palette/alpha/blue-17-42"
+              "alias": "palette/alpha/blue-17-21"
             }
           },
           "scopes": [],
@@ -3651,10 +3603,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/blue-24-36"
+              "alias": "palette/alpha/blue-25-20"
             },
             "Dark": {
-              "alias": "palette/alpha/blue-14-28"
+              "alias": "palette/alpha/blue-13-18"
             }
           },
           "scopes": [],
@@ -3667,10 +3619,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/blue-17-53"
+              "alias": "palette/alpha/blue-18-28"
             },
             "Dark": {
-              "alias": "palette/alpha/blue-14-28"
+              "alias": "palette/alpha/blue-13-18"
             }
           },
           "scopes": [],
@@ -3683,10 +3635,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/blue-14-28"
+              "alias": "palette/alpha/blue-13-18"
             },
             "Dark": {
-              "alias": "palette/alpha/blue-17-53"
+              "alias": "palette/alpha/blue-18-28"
             }
           },
           "scopes": [],
@@ -3699,10 +3651,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/green-23-32"
+              "alias": "palette/alpha/green-23-15"
             },
             "Dark": {
-              "alias": "palette/alpha/green-15-24"
+              "alias": "palette/alpha/green-15-14"
             }
           },
           "scopes": [],
@@ -3715,10 +3667,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/green-22-31"
+              "alias": "palette/alpha/green-22-15"
             },
             "Dark": {
-              "alias": "palette/alpha/green-15-24"
+              "alias": "palette/alpha/green-15-14"
             }
           },
           "scopes": [],
@@ -3731,10 +3683,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/green-15-24"
+              "alias": "palette/alpha/green-15-14"
             },
             "Dark": {
-              "alias": "palette/alpha/green-22-31"
+              "alias": "palette/alpha/green-22-15"
             }
           },
           "scopes": [],
@@ -3747,10 +3699,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/green-24-38"
+              "alias": "palette/alpha/green-25-20"
             },
             "Dark": {
-              "alias": "palette/alpha/green-14-27"
+              "alias": "palette/alpha/green-12-18"
             }
           },
           "scopes": [],
@@ -3763,10 +3715,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/green-23-37"
+              "alias": "palette/alpha/green-24-20"
             },
             "Dark": {
-              "alias": "palette/alpha/green-14-27"
+              "alias": "palette/alpha/green-12-18"
             }
           },
           "scopes": [],
@@ -3779,10 +3731,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/green-14-27"
+              "alias": "palette/alpha/green-12-18"
             },
             "Dark": {
-              "alias": "palette/alpha/green-23-37"
+              "alias": "palette/alpha/green-24-20"
             }
           },
           "scopes": [],
@@ -3795,10 +3747,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/red-22-23"
+              "alias": "palette/alpha/red-23-12"
             },
             "Dark": {
-              "alias": "palette/alpha/red-14-25"
+              "alias": "palette/alpha/red-14-15"
             }
           },
           "scopes": [],
@@ -3811,10 +3763,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/red-16-40"
+              "alias": "palette/alpha/red-16-21"
             },
             "Dark": {
-              "alias": "palette/alpha/red-14-25"
+              "alias": "palette/alpha/red-14-15"
             }
           },
           "scopes": [],
@@ -3827,10 +3779,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/red-14-25"
+              "alias": "palette/alpha/red-14-15"
             },
             "Dark": {
-              "alias": "palette/alpha/red-16-40"
+              "alias": "palette/alpha/red-16-21"
             }
           },
           "scopes": [],
@@ -3843,10 +3795,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/red-24-28"
+              "alias": "palette/alpha/red-26-16"
             },
             "Dark": {
-              "alias": "palette/alpha/red-13-28"
+              "alias": "palette/alpha/red-12-19"
             }
           },
           "scopes": [],
@@ -3859,10 +3811,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/red-17-46"
+              "alias": "palette/alpha/red-16-31"
             },
             "Dark": {
-              "alias": "palette/alpha/red-13-28"
+              "alias": "palette/alpha/red-12-19"
             }
           },
           "scopes": [],
@@ -3875,10 +3827,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/red-13-28"
+              "alias": "palette/alpha/red-12-19"
             },
             "Dark": {
-              "alias": "palette/alpha/red-17-46"
+              "alias": "palette/alpha/red-16-31"
             }
           },
           "scopes": [],
@@ -3891,10 +3843,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-20-35"
+              "alias": "palette/alpha/orange-20-18"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-13-23"
+              "alias": "palette/alpha/orange-14-13"
             }
           },
           "scopes": [],
@@ -3907,10 +3859,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-19-34"
+              "alias": "palette/alpha/orange-19-17"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-13-23"
+              "alias": "palette/alpha/orange-14-13"
             }
           },
           "scopes": [],
@@ -3923,10 +3875,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-13-23"
+              "alias": "palette/alpha/orange-14-13"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-19-34"
+              "alias": "palette/alpha/orange-19-17"
             }
           },
           "scopes": [],
@@ -3939,10 +3891,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-21-42"
+              "alias": "palette/alpha/orange-23-23"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-12-26"
+              "alias": "palette/alpha/orange-12-17"
             }
           },
           "scopes": [],
@@ -3955,10 +3907,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-20-41"
+              "alias": "palette/alpha/orange-22-22"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-12-26"
+              "alias": "palette/alpha/orange-12-17"
             }
           },
           "scopes": [],
@@ -3971,10 +3923,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-12-26"
+              "alias": "palette/alpha/orange-12-17"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-20-41"
+              "alias": "palette/alpha/orange-22-22"
             }
           },
           "scopes": [],
@@ -3987,10 +3939,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/purple-28-21"
+              "alias": "palette/alpha/purple-28-11"
             },
             "Dark": {
-              "alias": "palette/alpha/purple-14-21"
+              "alias": "palette/alpha/purple-14-13"
             }
           },
           "scopes": [],
@@ -4003,10 +3955,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/purple-26-21"
+              "alias": "palette/alpha/purple-27-11"
             },
             "Dark": {
-              "alias": "palette/alpha/purple-14-21"
+              "alias": "palette/alpha/purple-14-13"
             }
           },
           "scopes": [],
@@ -4019,10 +3971,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/purple-14-21"
+              "alias": "palette/alpha/purple-14-13"
             },
             "Dark": {
-              "alias": "palette/alpha/purple-26-21"
+              "alias": "palette/alpha/purple-27-11"
             }
           },
           "scopes": [],
@@ -4035,10 +3987,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/purple-29-26"
+              "alias": "palette/alpha/purple-31-15"
             },
             "Dark": {
-              "alias": "palette/alpha/purple-13-24"
+              "alias": "palette/alpha/purple-12-16"
             }
           },
           "scopes": [],
@@ -4051,10 +4003,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/purple-27-26"
+              "alias": "palette/alpha/purple-30-15"
             },
             "Dark": {
-              "alias": "palette/alpha/purple-13-24"
+              "alias": "palette/alpha/purple-12-16"
             }
           },
           "scopes": [],
@@ -4067,10 +4019,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/purple-13-24"
+              "alias": "palette/alpha/purple-12-16"
             },
             "Dark": {
-              "alias": "palette/alpha/purple-27-26"
+              "alias": "palette/alpha/purple-30-15"
             }
           },
           "scopes": [],
@@ -4083,10 +4035,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/pink-26-22"
+              "alias": "palette/alpha/pink-26-11"
             },
             "Dark": {
-              "alias": "palette/alpha/pink-12-22"
+              "alias": "palette/alpha/pink-13-12"
             }
           },
           "scopes": [],
@@ -4099,10 +4051,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/pink-24-22"
+              "alias": "palette/alpha/pink-24-11"
             },
             "Dark": {
-              "alias": "palette/alpha/pink-12-22"
+              "alias": "palette/alpha/pink-13-12"
             }
           },
           "scopes": [],
@@ -4115,10 +4067,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/pink-12-22"
+              "alias": "palette/alpha/pink-13-12"
             },
             "Dark": {
-              "alias": "palette/alpha/pink-24-22"
+              "alias": "palette/alpha/pink-24-11"
             }
           },
           "scopes": [],
@@ -4131,10 +4083,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/pink-27-27"
+              "alias": "palette/alpha/pink-29-16"
             },
             "Dark": {
-              "alias": "palette/alpha/pink-12-27"
+              "alias": "palette/alpha/pink-11-16"
             }
           },
           "scopes": [],
@@ -4147,10 +4099,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/pink-26-27"
+              "alias": "palette/alpha/pink-27-16"
             },
             "Dark": {
-              "alias": "palette/alpha/pink-12-27"
+              "alias": "palette/alpha/pink-11-16"
             }
           },
           "scopes": [],
@@ -4163,10 +4115,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/pink-12-27"
+              "alias": "palette/alpha/pink-11-16"
             },
             "Dark": {
-              "alias": "palette/alpha/pink-26-27"
+              "alias": "palette/alpha/pink-27-16"
             }
           },
           "scopes": [],
@@ -4243,26 +4195,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/blue-25-10"
+              "alias": "palette/alpha/blue-20-5"
             },
             "Dark": {
-              "alias": "palette/alpha/blue-15-11"
-            }
-          },
-          "scopes": [],
-          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
-        },
-        {
-          "name": "standard/content/surface/accent/blue/tertiary/normal",
-          "figmaName": "surface/tertiary/blue-normal-standard-content",
-          "css": "--sloy-v2-theme-standard-content-surface-accent-blue-tertiary-normal",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "palette/alpha/blue-23-10"
-            },
-            "Dark": {
-              "alias": "palette/alpha/blue-15-11"
+              "alias": "palette/alpha/blue-18-6"
             }
           },
           "scopes": [],
@@ -4275,10 +4211,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/blue-15-11"
+              "alias": "palette/alpha/blue-18-6"
             },
             "Dark": {
-              "alias": "palette/alpha/blue-23-10"
+              "alias": "palette/alpha/blue-20-5"
             }
           },
           "scopes": [],
@@ -4291,10 +4227,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/blue-29-15"
+              "alias": "palette/alpha/blue-27-8"
             },
             "Dark": {
-              "alias": "palette/alpha/blue-12-14"
+              "alias": "palette/alpha/blue-13-10"
             }
           },
           "scopes": [],
@@ -4307,10 +4243,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/blue-28-15"
+              "alias": "palette/alpha/blue-26-8"
             },
             "Dark": {
-              "alias": "palette/alpha/blue-12-14"
+              "alias": "palette/alpha/blue-13-10"
             }
           },
           "scopes": [],
@@ -4323,10 +4259,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/blue-12-14"
+              "alias": "palette/alpha/blue-13-10"
             },
             "Dark": {
-              "alias": "palette/alpha/blue-28-15"
+              "alias": "palette/alpha/blue-26-8"
             }
           },
           "scopes": [],
@@ -4339,42 +4275,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/green-22-12"
+              "alias": "palette/alpha/green-19-6"
             },
             "Dark": {
-              "alias": "palette/alpha/green-15-10"
-            }
-          },
-          "scopes": [],
-          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
-        },
-        {
-          "name": "standard/content/surface/accent/green/tertiary/normal",
-          "figmaName": "surface/tertiary/green-normal-standard-content",
-          "css": "--sloy-v2-theme-standard-content-surface-accent-green-tertiary-normal",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "palette/alpha/green-22-11"
-            },
-            "Dark": {
-              "alias": "palette/alpha/green-15-10"
-            }
-          },
-          "scopes": [],
-          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
-        },
-        {
-          "name": "standard/invert/surface/accent/green/tertiary/normal",
-          "figmaName": "surface/tertiary/green-normal-standard-invert",
-          "css": "--sloy-v2-theme-standard-invert-surface-accent-green-tertiary-normal",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "palette/alpha/green-15-10"
-            },
-            "Dark": {
-              "alias": "palette/alpha/green-22-11"
+              "alias": "palette/alpha/green-18-6"
             }
           },
           "scopes": [],
@@ -4387,10 +4291,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/green-26-17"
+              "alias": "palette/alpha/green-25-9"
             },
             "Dark": {
-              "alias": "palette/alpha/green-12-13"
+              "alias": "palette/alpha/green-12-9"
             }
           },
           "scopes": [],
@@ -4403,10 +4307,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/green-25-17"
+              "alias": "palette/alpha/green-24-9"
             },
             "Dark": {
-              "alias": "palette/alpha/green-12-13"
+              "alias": "palette/alpha/green-12-9"
             }
           },
           "scopes": [],
@@ -4419,10 +4323,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/green-12-13"
+              "alias": "palette/alpha/green-12-9"
             },
             "Dark": {
-              "alias": "palette/alpha/green-25-17"
+              "alias": "palette/alpha/green-24-9"
             }
           },
           "scopes": [],
@@ -4435,10 +4339,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/red-23-8"
+              "alias": "palette/alpha/red-22-5"
             },
             "Dark": {
-              "alias": "palette/alpha/red-14-11"
+              "alias": "palette/alpha/red-17-6"
             }
           },
           "scopes": [],
@@ -4451,10 +4355,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/red-14-20"
+              "alias": "palette/alpha/red-11-15"
             },
             "Dark": {
-              "alias": "palette/alpha/red-14-11"
+              "alias": "palette/alpha/red-17-6"
             }
           },
           "scopes": [],
@@ -4467,10 +4371,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/red-14-11"
+              "alias": "palette/alpha/red-17-6"
             },
             "Dark": {
-              "alias": "palette/alpha/red-14-20"
+              "alias": "palette/alpha/red-11-15"
             }
           },
           "scopes": [],
@@ -4483,10 +4387,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/red-28-13"
+              "alias": "palette/alpha/red-27-8"
             },
             "Dark": {
-              "alias": "palette/alpha/red-12-14"
+              "alias": "palette/alpha/red-13-10"
             }
           },
           "scopes": [],
@@ -4499,10 +4403,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/red-14-32"
+              "alias": "palette/alpha/red-14-20"
             },
             "Dark": {
-              "alias": "palette/alpha/red-12-14"
+              "alias": "palette/alpha/red-13-10"
             }
           },
           "scopes": [],
@@ -4515,10 +4419,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/red-12-14"
+              "alias": "palette/alpha/red-13-10"
             },
             "Dark": {
-              "alias": "palette/alpha/red-14-32"
+              "alias": "palette/alpha/red-14-20"
             }
           },
           "scopes": [],
@@ -4531,10 +4435,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-21-12"
+              "alias": "palette/alpha/orange-18-6"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-13-10"
+              "alias": "palette/alpha/orange-19-6"
             }
           },
           "scopes": [],
@@ -4547,10 +4451,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-21-11"
+              "alias": "palette/alpha/orange-17-6"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-13-10"
+              "alias": "palette/alpha/orange-19-6"
             }
           },
           "scopes": [],
@@ -4563,10 +4467,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-13-10"
+              "alias": "palette/alpha/orange-19-6"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-21-11"
+              "alias": "palette/alpha/orange-17-6"
             }
           },
           "scopes": [],
@@ -4579,10 +4483,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-26-17"
+              "alias": "palette/alpha/orange-23-10"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-11-13"
+              "alias": "palette/alpha/orange-12-9"
             }
           },
           "scopes": [],
@@ -4595,10 +4499,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-24-17"
+              "alias": "palette/alpha/orange-22-10"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-11-13"
+              "alias": "palette/alpha/orange-12-9"
             }
           },
           "scopes": [],
@@ -4611,10 +4515,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-11-13"
+              "alias": "palette/alpha/orange-12-9"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-24-17"
+              "alias": "palette/alpha/orange-22-10"
             }
           },
           "scopes": [],
@@ -4627,10 +4531,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/purple-33-7"
+              "alias": "palette/alpha/purple-31-3"
             },
             "Dark": {
-              "alias": "palette/alpha/purple-13-10"
+              "alias": "palette/alpha/purple-17-5"
             }
           },
           "scopes": [],
@@ -4643,10 +4547,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/purple-31-7"
+              "alias": "palette/alpha/purple-27-3"
             },
             "Dark": {
-              "alias": "palette/alpha/purple-13-10"
+              "alias": "palette/alpha/purple-17-5"
             }
           },
           "scopes": [],
@@ -4659,10 +4563,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/purple-13-10"
+              "alias": "palette/alpha/purple-17-5"
             },
             "Dark": {
-              "alias": "palette/alpha/purple-31-7"
+              "alias": "palette/alpha/purple-27-3"
             }
           },
           "scopes": [],
@@ -4675,10 +4579,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/purple-34-12"
+              "alias": "palette/alpha/purple-33-6"
             },
             "Dark": {
-              "alias": "palette/alpha/purple-11-13"
+              "alias": "palette/alpha/purple-12-9"
             }
           },
           "scopes": [],
@@ -4691,10 +4595,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/purple-32-12"
+              "alias": "palette/alpha/purple-31-6"
             },
             "Dark": {
-              "alias": "palette/alpha/purple-11-13"
+              "alias": "palette/alpha/purple-12-9"
             }
           },
           "scopes": [],
@@ -4707,10 +4611,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/purple-11-13"
+              "alias": "palette/alpha/purple-12-9"
             },
             "Dark": {
-              "alias": "palette/alpha/purple-32-12"
+              "alias": "palette/alpha/purple-31-6"
             }
           },
           "scopes": [],
@@ -4723,10 +4627,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/pink-25-8"
+              "alias": "palette/alpha/pink-20-4"
             },
             "Dark": {
-              "alias": "palette/alpha/pink-12-10"
+              "alias": "palette/alpha/pink-15-5"
             }
           },
           "scopes": [],
@@ -4739,10 +4643,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/pink-23-8"
+              "alias": "palette/alpha/pink-16-6"
             },
             "Dark": {
-              "alias": "palette/alpha/pink-12-10"
+              "alias": "palette/alpha/pink-15-5"
             }
           },
           "scopes": [],
@@ -4755,10 +4659,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/pink-12-10"
+              "alias": "palette/alpha/pink-15-5"
             },
             "Dark": {
-              "alias": "palette/alpha/pink-23-8"
+              "alias": "palette/alpha/pink-16-6"
             }
           },
           "scopes": [],
@@ -4771,10 +4675,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/pink-30-13"
+              "alias": "palette/alpha/pink-28-7"
             },
             "Dark": {
-              "alias": "palette/alpha/pink-10-13"
+              "alias": "palette/alpha/pink-11-9"
             }
           },
           "scopes": [],
@@ -4787,10 +4691,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/pink-28-13"
+              "alias": "palette/alpha/pink-26-7"
             },
             "Dark": {
-              "alias": "palette/alpha/pink-10-13"
+              "alias": "palette/alpha/pink-11-9"
             }
           },
           "scopes": [],
@@ -4803,10 +4707,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/pink-10-13"
+              "alias": "palette/alpha/pink-11-9"
             },
             "Dark": {
-              "alias": "palette/alpha/pink-28-13"
+              "alias": "palette/alpha/pink-26-7"
             }
           },
           "scopes": [],
@@ -4851,26 +4755,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/blue/32"
-            },
-            "Dark": {
-              "alias": "palette/blue/01"
-            }
-          },
-          "scopes": [],
-          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
-        },
-        {
-          "name": "standard/content/content/accent/blue/primary",
-          "figmaName": "content/primary/blue-standard-content",
-          "css": "--sloy-v2-theme-standard-content-content-accent-blue-primary",
-          "type": "COLOR",
-          "values": {
-            "Light": {
               "alias": "palette/blue/31"
             },
             "Dark": {
-              "alias": "palette/blue/01"
+              "alias": "palette/blue/05"
             }
           },
           "scopes": [],
@@ -4883,7 +4771,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/blue/01"
+              "alias": "palette/blue/05"
             },
             "Dark": {
               "alias": "palette/blue/31"
@@ -4899,26 +4787,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/green/32"
-            },
-            "Dark": {
-              "alias": "palette/green/03"
-            }
-          },
-          "scopes": [],
-          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
-        },
-        {
-          "name": "standard/content/content/accent/green/primary",
-          "figmaName": "content/primary/green-standard-content",
-          "css": "--sloy-v2-theme-standard-content-content-accent-green-primary",
-          "type": "COLOR",
-          "values": {
-            "Light": {
               "alias": "palette/green/31"
             },
             "Dark": {
-              "alias": "palette/green/03"
+              "alias": "palette/green/05"
             }
           },
           "scopes": [],
@@ -4931,7 +4803,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/green/03"
+              "alias": "palette/green/05"
             },
             "Dark": {
               "alias": "palette/green/31"
@@ -4947,26 +4819,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/red/32"
-            },
-            "Dark": {
-              "alias": "palette/red/01"
-            }
-          },
-          "scopes": [],
-          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
-        },
-        {
-          "name": "standard/content/content/accent/red/primary",
-          "figmaName": "content/primary/red-standard-content",
-          "css": "--sloy-v2-theme-standard-content-content-accent-red-primary",
-          "type": "COLOR",
-          "values": {
-            "Light": {
               "alias": "palette/red/31"
             },
             "Dark": {
-              "alias": "palette/red/01"
+              "alias": "palette/red/05"
             }
           },
           "scopes": [],
@@ -4979,7 +4835,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/red/01"
+              "alias": "palette/red/05"
             },
             "Dark": {
               "alias": "palette/red/31"
@@ -4998,7 +4854,7 @@
               "alias": "palette/orange/31"
             },
             "Dark": {
-              "alias": "palette/orange/01"
+              "alias": "palette/orange/05"
             }
           },
           "scopes": [],
@@ -5011,7 +4867,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/orange/01"
+              "alias": "palette/orange/05"
             },
             "Dark": {
               "alias": "palette/orange/31"
@@ -5027,26 +4883,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/purple/32"
-            },
-            "Dark": {
-              "alias": "palette/purple/03"
-            }
-          },
-          "scopes": [],
-          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
-        },
-        {
-          "name": "standard/content/content/accent/purple/primary",
-          "figmaName": "content/primary/purple-standard-content",
-          "css": "--sloy-v2-theme-standard-content-content-accent-purple-primary",
-          "type": "COLOR",
-          "values": {
-            "Light": {
               "alias": "palette/purple/31"
             },
             "Dark": {
-              "alias": "palette/purple/03"
+              "alias": "palette/purple/05"
             }
           },
           "scopes": [],
@@ -5059,7 +4899,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/purple/03"
+              "alias": "palette/purple/05"
             },
             "Dark": {
               "alias": "palette/purple/31"
@@ -5075,26 +4915,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/pink/32"
-            },
-            "Dark": {
-              "alias": "palette/pink/01"
-            }
-          },
-          "scopes": [],
-          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
-        },
-        {
-          "name": "standard/content/content/accent/pink/primary",
-          "figmaName": "content/primary/pink-standard-content",
-          "css": "--sloy-v2-theme-standard-content-content-accent-pink-primary",
-          "type": "COLOR",
-          "values": {
-            "Light": {
               "alias": "palette/pink/31"
             },
             "Dark": {
-              "alias": "palette/pink/01"
+              "alias": "palette/pink/05"
             }
           },
           "scopes": [],
@@ -5107,7 +4931,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/pink/01"
+              "alias": "palette/pink/05"
             },
             "Dark": {
               "alias": "palette/pink/31"
@@ -5155,10 +4979,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/blue-39-70"
+              "alias": "palette/alpha/blue-39-65"
             },
             "Dark": {
-              "alias": "palette/alpha/white-92"
+              "alias": "palette/alpha/blue-02-88"
             }
           },
           "scopes": [],
@@ -5171,10 +4995,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/blue-39-65"
+              "alias": "palette/alpha/blue-39-62"
             },
             "Dark": {
-              "alias": "palette/alpha/white-92"
+              "alias": "palette/alpha/blue-02-88"
             }
           },
           "scopes": [],
@@ -5187,10 +5011,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/white-92"
+              "alias": "palette/alpha/blue-02-88"
             },
             "Dark": {
-              "alias": "palette/alpha/blue-39-65"
+              "alias": "palette/alpha/blue-39-62"
             }
           },
           "scopes": [],
@@ -5203,10 +5027,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/green-39-70"
+              "alias": "palette/alpha/green-39-66"
             },
             "Dark": {
-              "alias": "palette/alpha/white-92"
+              "alias": "palette/alpha/green-02-90"
             }
           },
           "scopes": [],
@@ -5219,10 +5043,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/green-39-67"
+              "alias": "palette/alpha/green-39-63"
             },
             "Dark": {
-              "alias": "palette/alpha/white-92"
+              "alias": "palette/alpha/green-02-90"
             }
           },
           "scopes": [],
@@ -5235,10 +5059,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/white-92"
+              "alias": "palette/alpha/green-02-90"
             },
             "Dark": {
-              "alias": "palette/alpha/green-39-67"
+              "alias": "palette/alpha/green-39-63"
             }
           },
           "scopes": [],
@@ -5251,10 +5075,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/red-39-70"
+              "alias": "palette/alpha/red-39-66"
             },
             "Dark": {
-              "alias": "palette/alpha/white-92"
+              "alias": "palette/alpha/red-02-89"
             }
           },
           "scopes": [],
@@ -5267,10 +5091,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/red-39-65"
+              "alias": "palette/alpha/red-39-62"
             },
             "Dark": {
-              "alias": "palette/alpha/white-92"
+              "alias": "palette/alpha/red-02-89"
             }
           },
           "scopes": [],
@@ -5283,10 +5107,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/white-92"
+              "alias": "palette/alpha/red-02-89"
             },
             "Dark": {
-              "alias": "palette/alpha/red-39-65"
+              "alias": "palette/alpha/red-39-62"
             }
           },
           "scopes": [],
@@ -5299,10 +5123,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-40-67"
+              "alias": "palette/alpha/orange-39-65"
             },
             "Dark": {
-              "alias": "palette/alpha/white-93"
+              "alias": "palette/alpha/orange-02-87"
             }
           },
           "scopes": [],
@@ -5315,10 +5139,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/orange-39-66"
+              "alias": "palette/alpha/orange-39-63"
             },
             "Dark": {
-              "alias": "palette/alpha/white-93"
+              "alias": "palette/alpha/orange-02-87"
             }
           },
           "scopes": [],
@@ -5331,10 +5155,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/white-93"
+              "alias": "palette/alpha/orange-02-87"
             },
             "Dark": {
-              "alias": "palette/alpha/orange-39-66"
+              "alias": "palette/alpha/orange-39-63"
             }
           },
           "scopes": [],
@@ -5347,10 +5171,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/purple-39-71"
+              "alias": "palette/alpha/purple-39-66"
             },
             "Dark": {
-              "alias": "palette/alpha/white-89"
+              "alias": "palette/alpha/purple-02-87"
             }
           },
           "scopes": [],
@@ -5363,10 +5187,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/purple-39-67"
+              "alias": "palette/alpha/purple-39-63"
             },
             "Dark": {
-              "alias": "palette/alpha/white-89"
+              "alias": "palette/alpha/purple-02-87"
             }
           },
           "scopes": [],
@@ -5379,10 +5203,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/white-89"
+              "alias": "palette/alpha/purple-02-87"
             },
             "Dark": {
-              "alias": "palette/alpha/purple-39-67"
+              "alias": "palette/alpha/purple-39-63"
             }
           },
           "scopes": [],
@@ -5395,10 +5219,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/pink-39-70"
+              "alias": "palette/alpha/pink-39-66"
             },
             "Dark": {
-              "alias": "palette/alpha/white-93"
+              "alias": "palette/alpha/pink-02-87"
             }
           },
           "scopes": [],
@@ -5411,10 +5235,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/pink-39-67"
+              "alias": "palette/alpha/pink-39-63"
             },
             "Dark": {
-              "alias": "palette/alpha/white-93"
+              "alias": "palette/alpha/pink-02-87"
             }
           },
           "scopes": [],
@@ -5427,10 +5251,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/alpha/white-93"
+              "alias": "palette/alpha/pink-02-87"
             },
             "Dark": {
-              "alias": "palette/alpha/pink-39-67"
+              "alias": "palette/alpha/pink-39-63"
             }
           },
           "scopes": [],
@@ -6195,7 +6019,7 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/gray/625"
+              "alias": "palette/gray/550"
             },
             "Dark": {
               "alias": "palette/gray/350"
@@ -6211,10 +6035,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/gray/600"
+              "alias": "palette/gray/525"
             },
             "Dark": {
-              "alias": "palette/gray/300"
+              "alias": "palette/gray/350"
             }
           },
           "scopes": [],
@@ -6227,10 +6051,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/gray/600"
+              "alias": "palette/gray/525"
             },
             "Dark": {
-              "alias": "palette/gray/375"
+              "alias": "palette/gray/400"
             }
           },
           "scopes": [],
@@ -6243,10 +6067,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/gray/575"
+              "alias": "palette/gray/500"
             },
             "Dark": {
-              "alias": "palette/gray/350"
+              "alias": "palette/gray/400"
             }
           },
           "scopes": [],
@@ -6259,10 +6083,10 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/gray/575"
+              "alias": "palette/gray/500"
             },
             "Dark": {
-              "alias": "palette/gray/375"
+              "alias": "palette/gray/425"
             }
           },
           "scopes": [],
@@ -6275,10 +6099,26 @@
           "type": "COLOR",
           "values": {
             "Light": {
-              "alias": "palette/gray/575"
+              "alias": "palette/gray/500"
             },
             "Dark": {
               "alias": "palette/gray/275"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "dimmed/overlay/border/focus",
+          "figmaName": "border/focus-dimmed-overlay",
+          "css": "--sloy-v2-theme-dimmed-overlay-border-focus",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/gray/500"
+            },
+            "Dark": {
+              "alias": "palette/gray/325"
             }
           },
           "scopes": [],
@@ -6294,7 +6134,7 @@
               "alias": "palette/gray/425"
             },
             "Dark": {
-              "alias": "palette/gray/575"
+              "alias": "palette/gray/500"
             }
           },
           "scopes": [],
@@ -6744,22 +6584,6 @@
           "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
         },
         {
-          "name": "workspace/surface/accent/blue/tertiary/normal",
-          "figmaName": "surface/tertiary/blue-normal-workspace",
-          "css": "--sloy-v2-scheme-workspace-surface-accent-blue-tertiary-normal",
-          "type": "COLOR",
-          "values": {
-            "Standard": {
-              "alias": "theme/standard/shell/surface/accent/blue/tertiary/normal"
-            },
-            "Dimmed": {
-              "alias": "theme/standard/content/surface/accent/blue/tertiary/normal"
-            }
-          },
-          "scopes": [],
-          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
-        },
-        {
           "name": "workspace/surface/accent/blue/tertiary/active",
           "figmaName": "surface/tertiary/blue-active-workspace",
           "css": "--sloy-v2-scheme-workspace-surface-accent-blue-tertiary-active",
@@ -6785,7 +6609,7 @@
               "alias": "theme/standard/shell/surface/accent/green/tertiary/normal"
             },
             "Dimmed": {
-              "alias": "theme/standard/content/surface/accent/green/tertiary/normal"
+              "alias": "palette/alpha/green-18-6"
             }
           },
           "scopes": [],
@@ -6930,86 +6754,6 @@
             },
             "Dimmed": {
               "alias": "theme/standard/content/surface/accent/pink/tertiary/active"
-            }
-          },
-          "scopes": [],
-          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
-        },
-        {
-          "name": "workspace/content/accent/blue/primary",
-          "figmaName": "content/primary/blue-workspace",
-          "css": "--sloy-v2-scheme-workspace-content-accent-blue-primary",
-          "type": "COLOR",
-          "values": {
-            "Standard": {
-              "alias": "theme/standard/shell/content/accent/blue/primary"
-            },
-            "Dimmed": {
-              "alias": "theme/standard/content/content/accent/blue/primary"
-            }
-          },
-          "scopes": [],
-          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
-        },
-        {
-          "name": "workspace/content/accent/green/primary",
-          "figmaName": "content/primary/green-workspace",
-          "css": "--sloy-v2-scheme-workspace-content-accent-green-primary",
-          "type": "COLOR",
-          "values": {
-            "Standard": {
-              "alias": "theme/standard/shell/content/accent/green/primary"
-            },
-            "Dimmed": {
-              "alias": "theme/standard/content/content/accent/green/primary"
-            }
-          },
-          "scopes": [],
-          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
-        },
-        {
-          "name": "workspace/content/accent/red/primary",
-          "figmaName": "content/primary/red-workspace",
-          "css": "--sloy-v2-scheme-workspace-content-accent-red-primary",
-          "type": "COLOR",
-          "values": {
-            "Standard": {
-              "alias": "theme/standard/shell/content/accent/red/primary"
-            },
-            "Dimmed": {
-              "alias": "theme/standard/content/content/accent/red/primary"
-            }
-          },
-          "scopes": [],
-          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
-        },
-        {
-          "name": "workspace/content/accent/purple/primary",
-          "figmaName": "content/primary/purple-workspace",
-          "css": "--sloy-v2-scheme-workspace-content-accent-purple-primary",
-          "type": "COLOR",
-          "values": {
-            "Standard": {
-              "alias": "theme/standard/shell/content/accent/purple/primary"
-            },
-            "Dimmed": {
-              "alias": "theme/standard/content/content/accent/purple/primary"
-            }
-          },
-          "scopes": [],
-          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
-        },
-        {
-          "name": "workspace/content/accent/pink/primary",
-          "figmaName": "content/primary/pink-workspace",
-          "css": "--sloy-v2-scheme-workspace-content-accent-pink-primary",
-          "type": "COLOR",
-          "values": {
-            "Standard": {
-              "alias": "theme/standard/shell/content/accent/pink/primary"
-            },
-            "Dimmed": {
-              "alias": "theme/standard/content/content/accent/pink/primary"
             }
           },
           "scopes": [],
@@ -7394,6 +7138,22 @@
             },
             "Dimmed": {
               "alias": "theme/dimmed/content/border/focus"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "overlay/border/focus",
+          "figmaName": "border/focus-overlay",
+          "css": "--sloy-v2-scheme-overlay-border-focus",
+          "type": "COLOR",
+          "values": {
+            "Standard": {
+              "alias": "theme/standard/overlay/border/focus"
+            },
+            "Dimmed": {
+              "alias": "theme/dimmed/overlay/border/focus"
             }
           },
           "scopes": [],
@@ -8322,13 +8082,13 @@
               "alias": "theme/standard/shell/surface/accent/blue/tertiary/normal"
             },
             "Workspace": {
-              "alias": "scheme/workspace/surface/accent/blue/tertiary/normal"
+              "alias": "theme/standard/shell/surface/accent/blue/tertiary/normal"
             },
             "Content": {
-              "alias": "theme/standard/content/surface/accent/blue/tertiary/normal"
+              "alias": "theme/standard/shell/surface/accent/blue/tertiary/normal"
             },
             "Overlay": {
-              "alias": "theme/standard/content/surface/accent/blue/tertiary/normal"
+              "alias": "theme/standard/shell/surface/accent/blue/tertiary/normal"
             },
             "Invert": {
               "alias": "theme/standard/invert/surface/accent/blue/tertiary/normal"
@@ -8381,13 +8141,13 @@
               "alias": "scheme/workspace/surface/accent/green/tertiary/normal"
             },
             "Content": {
-              "alias": "theme/standard/content/surface/accent/green/tertiary/normal"
+              "alias": "palette/alpha/green-18-6"
             },
             "Overlay": {
-              "alias": "theme/standard/content/surface/accent/green/tertiary/normal"
+              "alias": "palette/alpha/green-18-6"
             },
             "Invert": {
-              "alias": "theme/standard/invert/surface/accent/green/tertiary/normal"
+              "alias": "palette/alpha/green-18-6"
             }
           },
           "scopes": [
@@ -8687,13 +8447,13 @@
               "alias": "theme/standard/shell/content/accent/blue/primary"
             },
             "Workspace": {
-              "alias": "scheme/workspace/content/accent/blue/primary"
+              "alias": "theme/standard/shell/content/accent/blue/primary"
             },
             "Content": {
-              "alias": "theme/standard/content/content/accent/blue/primary"
+              "alias": "theme/standard/shell/content/accent/blue/primary"
             },
             "Overlay": {
-              "alias": "theme/standard/content/content/accent/blue/primary"
+              "alias": "theme/standard/shell/content/accent/blue/primary"
             },
             "Invert": {
               "alias": "theme/standard/invert/content/accent/blue/primary"
@@ -8716,13 +8476,13 @@
               "alias": "theme/standard/shell/content/accent/green/primary"
             },
             "Workspace": {
-              "alias": "scheme/workspace/content/accent/green/primary"
+              "alias": "theme/standard/shell/content/accent/green/primary"
             },
             "Content": {
-              "alias": "theme/standard/content/content/accent/green/primary"
+              "alias": "theme/standard/shell/content/accent/green/primary"
             },
             "Overlay": {
-              "alias": "theme/standard/content/content/accent/green/primary"
+              "alias": "theme/standard/shell/content/accent/green/primary"
             },
             "Invert": {
               "alias": "theme/standard/invert/content/accent/green/primary"
@@ -8745,13 +8505,13 @@
               "alias": "theme/standard/shell/content/accent/red/primary"
             },
             "Workspace": {
-              "alias": "scheme/workspace/content/accent/red/primary"
+              "alias": "theme/standard/shell/content/accent/red/primary"
             },
             "Content": {
-              "alias": "theme/standard/content/content/accent/red/primary"
+              "alias": "theme/standard/shell/content/accent/red/primary"
             },
             "Overlay": {
-              "alias": "theme/standard/content/content/accent/red/primary"
+              "alias": "theme/standard/shell/content/accent/red/primary"
             },
             "Invert": {
               "alias": "theme/standard/invert/content/accent/red/primary"
@@ -8803,13 +8563,13 @@
               "alias": "theme/standard/shell/content/accent/purple/primary"
             },
             "Workspace": {
-              "alias": "scheme/workspace/content/accent/purple/primary"
+              "alias": "theme/standard/shell/content/accent/purple/primary"
             },
             "Content": {
-              "alias": "theme/standard/content/content/accent/purple/primary"
+              "alias": "theme/standard/shell/content/accent/purple/primary"
             },
             "Overlay": {
-              "alias": "theme/standard/content/content/accent/purple/primary"
+              "alias": "theme/standard/shell/content/accent/purple/primary"
             },
             "Invert": {
               "alias": "theme/standard/invert/content/accent/purple/primary"
@@ -8832,13 +8592,13 @@
               "alias": "theme/standard/shell/content/accent/pink/primary"
             },
             "Workspace": {
-              "alias": "scheme/workspace/content/accent/pink/primary"
+              "alias": "theme/standard/shell/content/accent/pink/primary"
             },
             "Content": {
-              "alias": "theme/standard/content/content/accent/pink/primary"
+              "alias": "theme/standard/shell/content/accent/pink/primary"
             },
             "Overlay": {
-              "alias": "theme/standard/content/content/accent/pink/primary"
+              "alias": "theme/standard/shell/content/accent/pink/primary"
             },
             "Invert": {
               "alias": "theme/standard/invert/content/accent/pink/primary"
@@ -9761,7 +9521,7 @@
               "alias": "scheme/content/border/focus"
             },
             "Overlay": {
-              "alias": "theme/standard/overlay/border/focus"
+              "alias": "scheme/overlay/border/focus"
             },
             "Invert": {
               "alias": "theme/standard/invert/border/focus"
@@ -11926,22 +11686,22 @@
             "scheme",
             "theme"
           ],
-          "theme": 220,
-          "scheme": 59,
-          "routingVariables": 279
+          "theme": 213,
+          "scheme": 54,
+          "routingVariables": 267
         },
         {
           "axisOrder": [
             "theme",
             "scheme"
           ],
-          "theme": 241,
-          "scheme": 66,
-          "routingVariables": 307
+          "theme": 227,
+          "scheme": 59,
+          "routingVariables": 286
         }
       ],
-      "beforeRoutingVariables": 279,
-      "afterRoutingVariables": 279,
+      "beforeRoutingVariables": 267,
+      "afterRoutingVariables": 267,
       "exactPublicContextComparisons": 1720
     }
   }

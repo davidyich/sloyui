@@ -131,7 +131,7 @@
     "name": "--cap-border-emphasis",
     "original": "border/emphasis",
     "group": "border",
-    "light": "#5C5C5C",
+    "light": "#6B6B6B",
     "dark": "#989898",
     "runtime": true
   },
@@ -179,7 +179,7 @@
     "name": "--cap-focus-ring",
     "original": "focus/ring",
     "group": "focus",
-    "light": "#5C5C5C",
+    "light": "#6B6B6B",
     "dark": "#989898",
     "runtime": true
   },
@@ -283,7 +283,7 @@
     "name": "--cap-feedback-danger-normal",
     "original": "feedback/danger/normal",
     "group": "feedback",
-    "light": "#E20022",
+    "light": "#D60020",
     "dark": "#FF8A81",
     "runtime": true
   },
@@ -291,16 +291,16 @@
     "name": "--cap-feedback-danger-hover",
     "original": "feedback/danger/hover",
     "group": "feedback",
-    "light": "#C9001D",
-    "dark": "#FF968D",
+    "light": "#B00018",
+    "dark": "#FFA198",
     "runtime": true
   },
   {
     "name": "--cap-feedback-danger-pressed",
     "original": "feedback/danger/pressed",
     "group": "feedback",
-    "light": "#C9001D",
-    "dark": "#FF968D",
+    "light": "#B00018",
+    "dark": "#FFA198",
     "runtime": true
   },
   {
@@ -315,8 +315,8 @@
     "name": "--cap-feedback-danger-text",
     "original": "feedback/danger/text",
     "group": "feedback",
-    "light": "#670009",
-    "dark": "#FFFBFA",
+    "light": "#73000C",
+    "dark": "#FFE2DE",
     "runtime": true
   },
   {
@@ -331,16 +331,16 @@
     "name": "--cap-feedback-success-hover",
     "original": "feedback/success/hover",
     "group": "feedback",
-    "light": "#00804B",
-    "dark": "#63C98F",
+    "light": "#007746",
+    "dark": "#7ED4A0",
     "runtime": true
   },
   {
     "name": "--cap-feedback-success-pressed",
     "original": "feedback/success/pressed",
     "group": "feedback",
-    "light": "#00804B",
-    "dark": "#63C98F",
+    "light": "#007746",
+    "dark": "#7ED4A0",
     "runtime": true
   },
   {
@@ -355,8 +355,8 @@
     "name": "--cap-feedback-success-text",
     "original": "feedback/success/text",
     "group": "feedback",
-    "light": "#003F22",
-    "dark": "#E5FAEC",
+    "light": "#004727",
+    "dark": "#D1F4DD",
     "runtime": true
   },
   {
@@ -364,14 +364,14 @@
     "original": "feedback/warning/normal",
     "group": "feedback",
     "light": "#D06400",
-    "dark": "#FF9B5C",
+    "dark": "#FD914A",
     "runtime": true
   },
   {
     "name": "--cap-feedback-warning-hover",
     "original": "feedback/warning/hover",
     "group": "feedback",
-    "light": "#C65F00",
+    "light": "#B15400",
     "dark": "#FFA66F",
     "runtime": true
   },
@@ -379,7 +379,7 @@
     "name": "--cap-feedback-warning-pressed",
     "original": "feedback/warning/pressed",
     "group": "feedback",
-    "light": "#C65F00",
+    "light": "#B15400",
     "dark": "#FFA66F",
     "runtime": true
   },
@@ -396,7 +396,7 @@
     "original": "feedback/warning/text",
     "group": "feedback",
     "light": "#5E2900",
-    "dark": "#FFFBF8",
+    "dark": "#FFE3D4",
     "runtime": true
   },
   {
@@ -411,16 +411,16 @@
     "name": "--cap-feedback-info-hover",
     "original": "feedback/info/hover",
     "group": "feedback",
-    "light": "#0069CA",
-    "dark": "#78B4FF",
+    "light": "#0062BE",
+    "dark": "#85BBFF",
     "runtime": true
   },
   {
     "name": "--cap-feedback-info-pressed",
     "original": "feedback/info/pressed",
     "group": "feedback",
-    "light": "#0069CA",
-    "dark": "#78B4FF",
+    "light": "#0062BE",
+    "dark": "#85BBFF",
     "runtime": true
   },
   {
@@ -435,8 +435,8 @@
     "name": "--cap-feedback-info-text",
     "original": "feedback/info/text",
     "group": "feedback",
-    "light": "#003367",
-    "dark": "#FAFCFF",
+    "light": "#003973",
+    "dark": "#DCEBFF",
     "runtime": true
   },
   {

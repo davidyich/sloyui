@@ -1,7 +1,7 @@
 {
   "$extensions": {
     "com.sloyui.export": {
-      "version": "0.18.0",
+      "version": "0.18.1",
       "collection": "Sloy UI · Palette",
       "mode": "Value"
     }

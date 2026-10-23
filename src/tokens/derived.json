@@ -146,9 +146,9 @@
   "derived/v4/light/base/border/emphasis": {
     "colorSpace": "srgb",
     "components": [
-      0.3601047577,
-      0.3601047577,
-      0.3601047577
+      0.4192676192,
+      0.4192676192,
+      0.4192676192
     ],
     "alpha": 1
   },
@@ -200,9 +200,9 @@
   "derived/v4/light/base/focus/ring": {
     "colorSpace": "srgb",
     "components": [
-      0.3601047577,
-      0.3601047577,
-      0.3601047577
+      0.4192676192,
+      0.4192676192,
+      0.4192676192
     ],
     "alpha": 1
   },
@@ -474,25 +474,25 @@
       0.4382018359,
       0.8419993445
     ],
-    "alpha": 0.3
+    "alpha": 0.15
   },
   "derived/v4/light/base/element/blue/hover": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4110024815,
-      0.7925311526
+      2e-10,
+      0.3838601889,
+      0.7431667405
     ],
-    "alpha": 0.36
+    "alpha": 0.2
   },
   "derived/v4/light/base/element/blue/pressed": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4110024815,
-      0.7925311526
+      2e-10,
+      0.3838601889,
+      0.7431667405
     ],
-    "alpha": 0.36
+    "alpha": 0.2
   },
   "derived/v4/light/base/element/blue/disabled": {
     "colorSpace": "srgb",
@@ -506,9 +506,9 @@
   "derived/v4/light/base/element/blue/text": {
     "colorSpace": "srgb",
     "components": [
-      0,
-      0.1980814543,
-      0.4052859966
+      2e-10,
+      0.2239279564,
+      0.4522937199
     ],
     "alpha": 1
   },
@@ -627,25 +627,25 @@
       0.5332417992,
       0.3148852303
     ],
-    "alpha": 0.32
+    "alpha": 0.15
   },
   "derived/v4/light/base/element/green/hover": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.5008011309,
-      0.294486605
+      0,
+      0.4684285202,
+      0.2741307741
     ],
-    "alpha": 0.38
+    "alpha": 0.2
   },
   "derived/v4/light/base/element/green/pressed": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.5008011309,
-      0.294486605
+      0,
+      0.4684285202,
+      0.2741307741
     ],
-    "alpha": 0.38
+    "alpha": 0.2
   },
   "derived/v4/light/base/element/green/disabled": {
     "colorSpace": "srgb",
@@ -659,9 +659,9 @@
   "derived/v4/light/base/element/green/text": {
     "colorSpace": "srgb",
     "components": [
-      0,
-      0.2468502349,
-      0.1348028052
+      1e-10,
+      0.2776773564,
+      0.1541868356
     ],
     "alpha": 1
   },
@@ -780,25 +780,25 @@
       0.3920605341,
       6e-10
     ],
-    "alpha": 0.35
+    "alpha": 0.18
   },
   "derived/v4/light/base/element/orange/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.775372804,
-      0.370908524,
-      2e-10
+      0.692806698,
+      0.3285593428,
+      1e-10
     ],
-    "alpha": 0.42
+    "alpha": 0.23
   },
   "derived/v4/light/base/element/orange/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.775372804,
-      0.370908524,
-      2e-10
+      0.692806698,
+      0.3285593428,
+      1e-10
     ],
-    "alpha": 0.42
+    "alpha": 0.23
   },
   "derived/v4/light/base/element/orange/disabled": {
     "colorSpace": "srgb",
@@ -929,29 +929,29 @@
   "derived/v4/light/base/element/red/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8875528899,
-      6e-10,
-      0.1337178693
+      0.8382408014,
+      4e-10,
+      0.1238446065
     ],
-    "alpha": 0.23
+    "alpha": 0.12
   },
   "derived/v4/light/base/element/red/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.6908212405,
+      0,
+      0.094328273
     ],
-    "alpha": 0.28
+    "alpha": 0.16
   },
   "derived/v4/light/base/element/red/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.6908212405,
+      0,
+      0.094328273
     ],
-    "alpha": 0.28
+    "alpha": 0.16
   },
   "derived/v4/light/base/element/red/disabled": {
     "colorSpace": "srgb",
@@ -965,9 +965,9 @@
   "derived/v4/light/base/element/red/text": {
     "colorSpace": "srgb",
     "components": [
-      0.4033573389,
+      0.4501680938,
       0,
-      0.0368098606
+      0.046144718
     ],
     "alpha": 1
   },
@@ -1086,25 +1086,25 @@
       0,
       0.4872106172
     ],
-    "alpha": 0.22
+    "alpha": 0.11
   },
   "derived/v4/light/base/element/pink/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.5880097869,
-      3e-10,
-      0.4517404471
+      0.4987893891,
+      2e-10,
+      0.3814280114
     ],
-    "alpha": 0.27
+    "alpha": 0.16
   },
   "derived/v4/light/base/element/pink/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.5880097869,
-      3e-10,
-      0.4517404471
+      0.4987893891,
+      2e-10,
+      0.3814280114
     ],
-    "alpha": 0.27
+    "alpha": 0.16
   },
   "derived/v4/light/base/element/pink/disabled": {
     "colorSpace": "srgb",
@@ -1118,9 +1118,9 @@
   "derived/v4/light/base/element/pink/text": {
     "colorSpace": "srgb",
     "components": [
-      0.3678335818,
+      0.4110163946,
       1e-10,
-      0.2782249098
+      0.3122562393
     ],
     "alpha": 1
   },
@@ -1239,25 +1239,25 @@
       3e-10,
       0.6663368311
     ],
-    "alpha": 0.21
+    "alpha": 0.11
   },
   "derived/v4/light/base/element/purple/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.3961097263,
-      1e-10,
-      0.612730421
+      0.3246109719,
+      0,
+      0.5068983127
     ],
-    "alpha": 0.26
+    "alpha": 0.15
   },
   "derived/v4/light/base/element/purple/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.3961097263,
-      1e-10,
-      0.612730421
+      0.3246109719,
+      0,
+      0.5068983127
     ],
-    "alpha": 0.26
+    "alpha": 0.15
   },
   "derived/v4/light/base/element/purple/disabled": {
     "colorSpace": "srgb",
@@ -1271,9 +1271,9 @@
   "derived/v4/light/base/element/purple/text": {
     "colorSpace": "srgb",
     "components": [
-      0.2894348069,
-      1e-10,
-      0.4548307246
+      0.3246109719,
+      0,
+      0.5068983127
     ],
     "alpha": 1
   },
@@ -1388,29 +1388,29 @@
   "derived/v4/light/base/feedback/danger/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8875528899,
-      6e-10,
-      0.1337178693
+      0.8382408014,
+      4e-10,
+      0.1238446065
     ],
-    "alpha": 0.23
+    "alpha": 0.12
   },
   "derived/v4/light/base/feedback/danger/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.6908212405,
+      0,
+      0.094328273
     ],
-    "alpha": 0.28
+    "alpha": 0.16
   },
   "derived/v4/light/base/feedback/danger/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.6908212405,
+      0,
+      0.094328273
     ],
-    "alpha": 0.28
+    "alpha": 0.16
   },
   "derived/v4/light/base/feedback/danger/disabled": {
     "colorSpace": "srgb",
@@ -1424,9 +1424,9 @@
   "derived/v4/light/base/feedback/danger/text": {
     "colorSpace": "srgb",
     "components": [
-      0.4033573389,
+      0.4501680938,
       0,
-      0.0368098606
+      0.046144718
     ],
     "alpha": 1
   },
@@ -1437,25 +1437,25 @@
       0.5332417992,
       0.3148852303
     ],
-    "alpha": 0.32
+    "alpha": 0.15
   },
   "derived/v4/light/base/feedback/success/hover": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.5008011309,
-      0.294486605
+      0,
+      0.4684285202,
+      0.2741307741
     ],
-    "alpha": 0.38
+    "alpha": 0.2
   },
   "derived/v4/light/base/feedback/success/pressed": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.5008011309,
-      0.294486605
+      0,
+      0.4684285202,
+      0.2741307741
     ],
-    "alpha": 0.38
+    "alpha": 0.2
   },
   "derived/v4/light/base/feedback/success/disabled": {
     "colorSpace": "srgb",
@@ -1469,9 +1469,9 @@
   "derived/v4/light/base/feedback/success/text": {
     "colorSpace": "srgb",
     "components": [
-      0,
-      0.2468502349,
-      0.1348028052
+      1e-10,
+      0.2776773564,
+      0.1541868356
     ],
     "alpha": 1
   },
@@ -1482,25 +1482,25 @@
       0.3920605341,
       6e-10
     ],
-    "alpha": 0.35
+    "alpha": 0.18
   },
   "derived/v4/light/base/feedback/warning/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.775372804,
-      0.370908524,
-      2e-10
+      0.692806698,
+      0.3285593428,
+      1e-10
     ],
-    "alpha": 0.42
+    "alpha": 0.23
   },
   "derived/v4/light/base/feedback/warning/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.775372804,
-      0.370908524,
-      2e-10
+      0.692806698,
+      0.3285593428,
+      1e-10
     ],
-    "alpha": 0.42
+    "alpha": 0.23
   },
   "derived/v4/light/base/feedback/warning/disabled": {
     "colorSpace": "srgb",
@@ -1527,25 +1527,25 @@
       0.4382018359,
       0.8419993445
     ],
-    "alpha": 0.3
+    "alpha": 0.15
   },
   "derived/v4/light/base/feedback/info/hover": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4110024815,
-      0.7925311526
+      2e-10,
+      0.3838601889,
+      0.7431667405
     ],
-    "alpha": 0.36
+    "alpha": 0.2
   },
   "derived/v4/light/base/feedback/info/pressed": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4110024815,
-      0.7925311526
+      2e-10,
+      0.3838601889,
+      0.7431667405
     ],
-    "alpha": 0.36
+    "alpha": 0.2
   },
   "derived/v4/light/base/feedback/info/disabled": {
     "colorSpace": "srgb",
@@ -1559,9 +1559,9 @@
   "derived/v4/light/base/feedback/info/text": {
     "colorSpace": "srgb",
     "components": [
-      0,
-      0.1980814543,
-      0.4052859966
+      2e-10,
+      0.2239279564,
+      0.4522937199
     ],
     "alpha": 1
   },
@@ -2040,25 +2040,25 @@
       0.6769125792,
       1
     ],
-    "alpha": 0.25
+    "alpha": 0.15
   },
   "derived/v4/dark/base/element/blue/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.4696400289,
-      0.7052058217,
+      0.5201609984,
+      0.7326073079,
       0.9999999999
     ],
-    "alpha": 0.28
+    "alpha": 0.18
   },
   "derived/v4/dark/base/element/blue/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.4696400289,
-      0.7052058217,
+      0.5201609984,
+      0.7326073079,
       0.9999999999
     ],
-    "alpha": 0.28
+    "alpha": 0.18
   },
   "derived/v4/dark/base/element/blue/disabled": {
     "colorSpace": "srgb",
@@ -2072,8 +2072,8 @@
   "derived/v4/dark/base/element/blue/text": {
     "colorSpace": "srgb",
     "components": [
-      0.9787851811,
-      0.9880473367,
+      0.8618303012,
+      0.9223445468,
       1
     ],
     "alpha": 1
@@ -2193,25 +2193,25 @@
       0.7650112948,
       0.525569882
     ],
-    "alpha": 0.24
+    "alpha": 0.14
   },
   "derived/v4/dark/base/element/green/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.3881285185,
-      0.7881719016,
-      0.5597005685
+      0.4922700149,
+      0.8320745192,
+      0.6285094072
     ],
-    "alpha": 0.27
+    "alpha": 0.18
   },
   "derived/v4/dark/base/element/green/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.3881285185,
-      0.7881719016,
-      0.5597005685
+      0.4922700149,
+      0.8320745192,
+      0.6285094072
     ],
-    "alpha": 0.27
+    "alpha": 0.18
   },
   "derived/v4/dark/base/element/green/disabled": {
     "colorSpace": "srgb",
@@ -2225,9 +2225,9 @@
   "derived/v4/dark/base/element/green/text": {
     "colorSpace": "srgb",
     "components": [
-      0.89930591,
-      0.981006346,
-      0.9261127246
+      0.8177937281,
+      0.9564226794,
+      0.8649054294
     ],
     "alpha": 1
   },
@@ -2342,11 +2342,11 @@
   "derived/v4/dark/base/element/orange/normal": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      0.6069977915,
-      0.3607898982
+      0.9909293445,
+      0.5676319445,
+      0.291842178
     ],
-    "alpha": 0.23
+    "alpha": 0.13
   },
   "derived/v4/dark/base/element/orange/hover": {
     "colorSpace": "srgb",
@@ -2355,7 +2355,7 @@
       0.649408992,
       0.4367601616
     ],
-    "alpha": 0.26
+    "alpha": 0.17
   },
   "derived/v4/dark/base/element/orange/pressed": {
     "colorSpace": "srgb",
@@ -2364,7 +2364,7 @@
       0.649408992,
       0.4367601616
     ],
-    "alpha": 0.26
+    "alpha": 0.17
   },
   "derived/v4/dark/base/element/orange/disabled": {
     "colorSpace": "srgb",
@@ -2379,8 +2379,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9834247999,
-      0.9742449957
+      0.8912345622,
+      0.8300153709
     ],
     "alpha": 1
   },
@@ -2499,25 +2499,25 @@
       0.5399467119,
       0.5047639459
     ],
-    "alpha": 0.25
+    "alpha": 0.15
   },
   "derived/v4/dark/base/element/red/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.9999999999,
-      0.5873578209,
-      0.5523053479
+      1,
+      0.6317526273,
+      0.5979637392
     ],
-    "alpha": 0.28
+    "alpha": 0.19
   },
   "derived/v4/dark/base/element/red/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.9999999999,
-      0.5873578209,
-      0.5523053479
+      1,
+      0.6317526273,
+      0.5979637392
     ],
-    "alpha": 0.28
+    "alpha": 0.19
   },
   "derived/v4/dark/base/element/red/disabled": {
     "colorSpace": "srgb",
@@ -2532,8 +2532,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9825395737,
-      0.9804641259
+      0.8854927411,
+      0.8723364373
     ],
     "alpha": 1
   },
@@ -2649,28 +2649,28 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.5855806744,
-      0.8520484416
+      0.5324194576,
+      0.8385097517
     ],
-    "alpha": 0.22
+    "alpha": 0.12
   },
   "derived/v4/dark/base/element/pink/hover": {
     "colorSpace": "srgb",
     "components": [
       1,
-      0.5855806744,
-      0.8520484416
+      0.6347337373,
+      0.8657636943
     ],
-    "alpha": 0.27
+    "alpha": 0.16
   },
   "derived/v4/dark/base/element/pink/pressed": {
     "colorSpace": "srgb",
     "components": [
       1,
-      0.5855806744,
-      0.8520484416
+      0.6347337373,
+      0.8657636943
     ],
-    "alpha": 0.27
+    "alpha": 0.16
   },
   "derived/v4/dark/base/element/pink/disabled": {
     "colorSpace": "srgb",
@@ -2685,8 +2685,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9809128644,
-      0.9917372231
+      0.8741442317,
+      0.9478452285
     ],
     "alpha": 1
   },
@@ -2805,25 +2805,25 @@
       0.5801694593,
       1
     ],
-    "alpha": 0.21
+    "alpha": 0.13
   },
   "derived/v4/dark/base/element/purple/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.8102966224,
-      0.6205658941,
+      0.8274757565,
+      0.6592686116,
       1
     ],
-    "alpha": 0.24
+    "alpha": 0.16
   },
   "derived/v4/dark/base/element/purple/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.8102966224,
-      0.6205658941,
+      0.8274757565,
+      0.6592686116,
       1
     ],
-    "alpha": 0.24
+    "alpha": 0.16
   },
   "derived/v4/dark/base/element/purple/disabled": {
     "colorSpace": "srgb",
@@ -2837,8 +2837,8 @@
   "derived/v4/dark/base/element/purple/text": {
     "colorSpace": "srgb",
     "components": [
-      0.9694736826,
-      0.9440196961,
+      0.9414788021,
+      0.8914223274,
       1
     ],
     "alpha": 1
@@ -2958,25 +2958,25 @@
       0.5399467119,
       0.5047639459
     ],
-    "alpha": 0.25
+    "alpha": 0.15
   },
   "derived/v4/dark/base/feedback/danger/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.9999999999,
-      0.5873578209,
-      0.5523053479
+      1,
+      0.6317526273,
+      0.5979637392
     ],
-    "alpha": 0.28
+    "alpha": 0.19
   },
   "derived/v4/dark/base/feedback/danger/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.9999999999,
-      0.5873578209,
-      0.5523053479
+      1,
+      0.6317526273,
+      0.5979637392
     ],
-    "alpha": 0.28
+    "alpha": 0.19
   },
   "derived/v4/dark/base/feedback/danger/disabled": {
     "colorSpace": "srgb",
@@ -2991,8 +2991,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9825395737,
-      0.9804641259
+      0.8854927411,
+      0.8723364373
     ],
     "alpha": 1
   },
@@ -3003,25 +3003,25 @@
       0.7650112948,
       0.525569882
     ],
-    "alpha": 0.24
+    "alpha": 0.14
   },
   "derived/v4/dark/base/feedback/success/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.3881285185,
-      0.7881719016,
-      0.5597005685
+      0.4922700149,
+      0.8320745192,
+      0.6285094072
     ],
-    "alpha": 0.27
+    "alpha": 0.18
   },
   "derived/v4/dark/base/feedback/success/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.3881285185,
-      0.7881719016,
-      0.5597005685
+      0.4922700149,
+      0.8320745192,
+      0.6285094072
     ],
-    "alpha": 0.27
+    "alpha": 0.18
   },
   "derived/v4/dark/base/feedback/success/disabled": {
     "colorSpace": "srgb",
@@ -3035,20 +3035,20 @@
   "derived/v4/dark/base/feedback/success/text": {
     "colorSpace": "srgb",
     "components": [
-      0.89930591,
-      0.981006346,
-      0.9261127246
+      0.8177937281,
+      0.9564226794,
+      0.8649054294
     ],
     "alpha": 1
   },
   "derived/v4/dark/base/feedback/warning/normal": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      0.6069977915,
-      0.3607898982
+      0.9909293445,
+      0.5676319445,
+      0.291842178
     ],
-    "alpha": 0.23
+    "alpha": 0.13
   },
   "derived/v4/dark/base/feedback/warning/hover": {
     "colorSpace": "srgb",
@@ -3057,7 +3057,7 @@
       0.649408992,
       0.4367601616
     ],
-    "alpha": 0.26
+    "alpha": 0.17
   },
   "derived/v4/dark/base/feedback/warning/pressed": {
     "colorSpace": "srgb",
@@ -3066,7 +3066,7 @@
       0.649408992,
       0.4367601616
     ],
-    "alpha": 0.26
+    "alpha": 0.17
   },
   "derived/v4/dark/base/feedback/warning/disabled": {
     "colorSpace": "srgb",
@@ -3081,8 +3081,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9834247999,
-      0.9742449957
+      0.8912345622,
+      0.8300153709
     ],
     "alpha": 1
   },
@@ -3093,25 +3093,25 @@
       0.6769125792,
       1
     ],
-    "alpha": 0.25
+    "alpha": 0.15
   },
   "derived/v4/dark/base/feedback/info/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.4696400289,
-      0.7052058217,
+      0.5201609984,
+      0.7326073079,
       0.9999999999
     ],
-    "alpha": 0.28
+    "alpha": 0.18
   },
   "derived/v4/dark/base/feedback/info/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.4696400289,
-      0.7052058217,
+      0.5201609984,
+      0.7326073079,
       0.9999999999
     ],
-    "alpha": 0.28
+    "alpha": 0.18
   },
   "derived/v4/dark/base/feedback/info/disabled": {
     "colorSpace": "srgb",
@@ -3125,8 +3125,8 @@
   "derived/v4/dark/base/feedback/info/text": {
     "colorSpace": "srgb",
     "components": [
-      0.9787851811,
-      0.9880473367,
+      0.8618303012,
+      0.9223445468,
       1
     ],
     "alpha": 1
@@ -3278,9 +3278,9 @@
   "derived/v4/light/canvas/border/emphasis": {
     "colorSpace": "srgb",
     "components": [
-      0.3795567932,
-      0.3795567932,
-      0.3795567932
+      0.4396054941,
+      0.4396054941,
+      0.4396054941
     ],
     "alpha": 1
   },
@@ -3332,9 +3332,9 @@
   "derived/v4/light/canvas/focus/ring": {
     "colorSpace": "srgb",
     "components": [
-      0.3795567932,
-      0.3795567932,
-      0.3795567932
+      0.4396054941,
+      0.4396054941,
+      0.4396054941
     ],
     "alpha": 1
   },
@@ -3606,25 +3606,25 @@
       0.4382018359,
       0.8419993445
     ],
-    "alpha": 0.3
+    "alpha": 0.15
   },
   "derived/v4/light/canvas/element/blue/hover": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4110024815,
-      0.7925311526
+      2e-10,
+      0.3838601889,
+      0.7431667405
     ],
-    "alpha": 0.36
+    "alpha": 0.2
   },
   "derived/v4/light/canvas/element/blue/pressed": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4110024815,
-      0.7925311526
+      2e-10,
+      0.3838601889,
+      0.7431667405
     ],
-    "alpha": 0.36
+    "alpha": 0.2
   },
   "derived/v4/light/canvas/element/blue/disabled": {
     "colorSpace": "srgb",
@@ -3638,9 +3638,9 @@
   "derived/v4/light/canvas/element/blue/text": {
     "colorSpace": "srgb",
     "components": [
-      0,
-      0.1980814543,
-      0.4052859966
+      2e-10,
+      0.2239279564,
+      0.4522937199
     ],
     "alpha": 1
   },
@@ -3759,25 +3759,25 @@
       0.5332417992,
       0.3148852303
     ],
-    "alpha": 0.32
+    "alpha": 0.15
   },
   "derived/v4/light/canvas/element/green/hover": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.5008011309,
-      0.294486605
+      0,
+      0.4684285202,
+      0.2741307741
     ],
-    "alpha": 0.38
+    "alpha": 0.2
   },
   "derived/v4/light/canvas/element/green/pressed": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.5008011309,
-      0.294486605
+      0,
+      0.4684285202,
+      0.2741307741
     ],
-    "alpha": 0.38
+    "alpha": 0.2
   },
   "derived/v4/light/canvas/element/green/disabled": {
     "colorSpace": "srgb",
@@ -3791,9 +3791,9 @@
   "derived/v4/light/canvas/element/green/text": {
     "colorSpace": "srgb",
     "components": [
-      0,
-      0.2468502349,
-      0.1348028052
+      1e-10,
+      0.2776773564,
+      0.1541868356
     ],
     "alpha": 1
   },
@@ -3912,25 +3912,25 @@
       0.3920605341,
       6e-10
     ],
-    "alpha": 0.35
+    "alpha": 0.18
   },
   "derived/v4/light/canvas/element/orange/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.775372804,
-      0.370908524,
-      2e-10
+      0.692806698,
+      0.3285593428,
+      1e-10
     ],
-    "alpha": 0.42
+    "alpha": 0.23
   },
   "derived/v4/light/canvas/element/orange/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.775372804,
-      0.370908524,
-      2e-10
+      0.692806698,
+      0.3285593428,
+      1e-10
     ],
-    "alpha": 0.42
+    "alpha": 0.23
   },
   "derived/v4/light/canvas/element/orange/disabled": {
     "colorSpace": "srgb",
@@ -4061,29 +4061,29 @@
   "derived/v4/light/canvas/element/red/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8875528899,
-      6e-10,
-      0.1337178693
+      0.8382408014,
+      4e-10,
+      0.1238446065
     ],
-    "alpha": 0.23
+    "alpha": 0.12
   },
   "derived/v4/light/canvas/element/red/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.6908212405,
+      0,
+      0.094328273
     ],
-    "alpha": 0.28
+    "alpha": 0.16
   },
   "derived/v4/light/canvas/element/red/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.6908212405,
+      0,
+      0.094328273
     ],
-    "alpha": 0.28
+    "alpha": 0.16
   },
   "derived/v4/light/canvas/element/red/disabled": {
     "colorSpace": "srgb",
@@ -4097,9 +4097,9 @@
   "derived/v4/light/canvas/element/red/text": {
     "colorSpace": "srgb",
     "components": [
-      0.4033573389,
+      0.4501680938,
       0,
-      0.0368098606
+      0.046144718
     ],
     "alpha": 1
   },
@@ -4218,25 +4218,25 @@
       0,
       0.4872106172
     ],
-    "alpha": 0.22
+    "alpha": 0.11
   },
   "derived/v4/light/canvas/element/pink/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.5880097869,
-      3e-10,
-      0.4517404471
+      0.4987893891,
+      2e-10,
+      0.3814280114
     ],
-    "alpha": 0.27
+    "alpha": 0.16
   },
   "derived/v4/light/canvas/element/pink/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.5880097869,
-      3e-10,
-      0.4517404471
+      0.4987893891,
+      2e-10,
+      0.3814280114
     ],
-    "alpha": 0.27
+    "alpha": 0.16
   },
   "derived/v4/light/canvas/element/pink/disabled": {
     "colorSpace": "srgb",
@@ -4250,9 +4250,9 @@
   "derived/v4/light/canvas/element/pink/text": {
     "colorSpace": "srgb",
     "components": [
-      0.3678335818,
+      0.4110163946,
       1e-10,
-      0.2782249098
+      0.3122562393
     ],
     "alpha": 1
   },
@@ -4371,25 +4371,25 @@
       3e-10,
       0.6663368311
     ],
-    "alpha": 0.21
+    "alpha": 0.11
   },
   "derived/v4/light/canvas/element/purple/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.3961097263,
-      1e-10,
-      0.612730421
+      0.3246109719,
+      0,
+      0.5068983127
     ],
-    "alpha": 0.26
+    "alpha": 0.15
   },
   "derived/v4/light/canvas/element/purple/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.3961097263,
-      1e-10,
-      0.612730421
+      0.3246109719,
+      0,
+      0.5068983127
     ],
-    "alpha": 0.26
+    "alpha": 0.15
   },
   "derived/v4/light/canvas/element/purple/disabled": {
     "colorSpace": "srgb",
@@ -4403,9 +4403,9 @@
   "derived/v4/light/canvas/element/purple/text": {
     "colorSpace": "srgb",
     "components": [
-      0.2894348069,
-      1e-10,
-      0.4548307246
+      0.3246109719,
+      0,
+      0.5068983127
     ],
     "alpha": 1
   },
@@ -4520,29 +4520,29 @@
   "derived/v4/light/canvas/feedback/danger/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.8875528899,
-      6e-10,
-      0.1337178693
+      0.8382408014,
+      4e-10,
+      0.1238446065
     ],
-    "alpha": 0.23
+    "alpha": 0.12
   },
   "derived/v4/light/canvas/feedback/danger/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.6908212405,
+      0,
+      0.094328273
     ],
-    "alpha": 0.28
+    "alpha": 0.16
   },
   "derived/v4/light/canvas/feedback/danger/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.7889798876,
-      4e-10,
-      0.1139815901
+      0.6908212405,
+      0,
+      0.094328273
     ],
-    "alpha": 0.28
+    "alpha": 0.16
   },
   "derived/v4/light/canvas/feedback/danger/disabled": {
     "colorSpace": "srgb",
@@ -4556,9 +4556,9 @@
   "derived/v4/light/canvas/feedback/danger/text": {
     "colorSpace": "srgb",
     "components": [
-      0.4033573389,
+      0.4501680938,
       0,
-      0.0368098606
+      0.046144718
     ],
     "alpha": 1
   },
@@ -4569,25 +4569,25 @@
       0.5332417992,
       0.3148852303
     ],
-    "alpha": 0.32
+    "alpha": 0.15
   },
   "derived/v4/light/canvas/feedback/success/hover": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.5008011309,
-      0.294486605
+      0,
+      0.4684285202,
+      0.2741307741
     ],
-    "alpha": 0.38
+    "alpha": 0.2
   },
   "derived/v4/light/canvas/feedback/success/pressed": {
     "colorSpace": "srgb",
     "components": [
-      2e-10,
-      0.5008011309,
-      0.294486605
+      0,
+      0.4684285202,
+      0.2741307741
     ],
-    "alpha": 0.38
+    "alpha": 0.2
   },
   "derived/v4/light/canvas/feedback/success/disabled": {
     "colorSpace": "srgb",
@@ -4601,9 +4601,9 @@
   "derived/v4/light/canvas/feedback/success/text": {
     "colorSpace": "srgb",
     "components": [
-      0,
-      0.2468502349,
-      0.1348028052
+      1e-10,
+      0.2776773564,
+      0.1541868356
     ],
     "alpha": 1
   },
@@ -4614,25 +4614,25 @@
       0.3920605341,
       6e-10
     ],
-    "alpha": 0.35
+    "alpha": 0.18
   },
   "derived/v4/light/canvas/feedback/warning/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.775372804,
-      0.370908524,
-      2e-10
+      0.692806698,
+      0.3285593428,
+      1e-10
     ],
-    "alpha": 0.42
+    "alpha": 0.23
   },
   "derived/v4/light/canvas/feedback/warning/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.775372804,
-      0.370908524,
-      2e-10
+      0.692806698,
+      0.3285593428,
+      1e-10
     ],
-    "alpha": 0.42
+    "alpha": 0.23
   },
   "derived/v4/light/canvas/feedback/warning/disabled": {
     "colorSpace": "srgb",
@@ -4659,25 +4659,25 @@
       0.4382018359,
       0.8419993445
     ],
-    "alpha": 0.3
+    "alpha": 0.15
   },
   "derived/v4/light/canvas/feedback/info/hover": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4110024815,
-      0.7925311526
+      2e-10,
+      0.3838601889,
+      0.7431667405
     ],
-    "alpha": 0.36
+    "alpha": 0.2
   },
   "derived/v4/light/canvas/feedback/info/pressed": {
     "colorSpace": "srgb",
     "components": [
-      3e-10,
-      0.4110024815,
-      0.7925311526
+      2e-10,
+      0.3838601889,
+      0.7431667405
     ],
-    "alpha": 0.36
+    "alpha": 0.2
   },
   "derived/v4/light/canvas/feedback/info/disabled": {
     "colorSpace": "srgb",
@@ -4691,9 +4691,9 @@
   "derived/v4/light/canvas/feedback/info/text": {
     "colorSpace": "srgb",
     "components": [
-      0,
-      0.1980814543,
-      0.4052859966
+      2e-10,
+      0.2239279564,
+      0.4522937199
     ],
     "alpha": 1
   },
@@ -4844,9 +4844,9 @@
   "derived/v4/dark/canvas/border/emphasis": {
     "colorSpace": "srgb",
     "components": [
-      0.5705433443,
-      0.5705433443,
-      0.5705433443
+      0.5475015781,
+      0.5475015781,
+      0.5475015781
     ],
     "alpha": 1
   },
@@ -4898,9 +4898,9 @@
   "derived/v4/dark/canvas/focus/ring": {
     "colorSpace": "srgb",
     "components": [
-      0.5705433443,
-      0.5705433443,
-      0.5705433443
+      0.5475015781,
+      0.5475015781,
+      0.5475015781
     ],
     "alpha": 1
   },
@@ -5172,25 +5172,25 @@
       0.6769125792,
       1
     ],
-    "alpha": 0.25
+    "alpha": 0.15
   },
   "derived/v4/dark/canvas/element/blue/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.4696400289,
-      0.7052058217,
+      0.5201609984,
+      0.7326073079,
       0.9999999999
     ],
-    "alpha": 0.28
+    "alpha": 0.18
   },
   "derived/v4/dark/canvas/element/blue/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.4696400289,
-      0.7052058217,
+      0.5201609984,
+      0.7326073079,
       0.9999999999
     ],
-    "alpha": 0.28
+    "alpha": 0.18
   },
   "derived/v4/dark/canvas/element/blue/disabled": {
     "colorSpace": "srgb",
@@ -5204,8 +5204,8 @@
   "derived/v4/dark/canvas/element/blue/text": {
     "colorSpace": "srgb",
     "components": [
-      0.9787851811,
-      0.9880473367,
+      0.8618303012,
+      0.9223445468,
       1
     ],
     "alpha": 1
@@ -5325,25 +5325,25 @@
       0.7650112948,
       0.525569882
     ],
-    "alpha": 0.24
+    "alpha": 0.14
   },
   "derived/v4/dark/canvas/element/green/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.3881285185,
-      0.7881719016,
-      0.5597005685
+      0.4922700149,
+      0.8320745192,
+      0.6285094072
     ],
-    "alpha": 0.27
+    "alpha": 0.18
   },
   "derived/v4/dark/canvas/element/green/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.3881285185,
-      0.7881719016,
-      0.5597005685
+      0.4922700149,
+      0.8320745192,
+      0.6285094072
     ],
-    "alpha": 0.27
+    "alpha": 0.18
   },
   "derived/v4/dark/canvas/element/green/disabled": {
     "colorSpace": "srgb",
@@ -5357,9 +5357,9 @@
   "derived/v4/dark/canvas/element/green/text": {
     "colorSpace": "srgb",
     "components": [
-      0.89930591,
-      0.981006346,
-      0.9261127246
+      0.8177937281,
+      0.9564226794,
+      0.8649054294
     ],
     "alpha": 1
   },
@@ -5474,11 +5474,11 @@
   "derived/v4/dark/canvas/element/orange/normal": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      0.6069977915,
-      0.3607898982
+      0.9909293445,
+      0.5676319445,
+      0.291842178
     ],
-    "alpha": 0.23
+    "alpha": 0.13
   },
   "derived/v4/dark/canvas/element/orange/hover": {
     "colorSpace": "srgb",
@@ -5487,7 +5487,7 @@
       0.649408992,
       0.4367601616
     ],
-    "alpha": 0.26
+    "alpha": 0.17
   },
   "derived/v4/dark/canvas/element/orange/pressed": {
     "colorSpace": "srgb",
@@ -5496,7 +5496,7 @@
       0.649408992,
       0.4367601616
     ],
-    "alpha": 0.26
+    "alpha": 0.17
   },
   "derived/v4/dark/canvas/element/orange/disabled": {
     "colorSpace": "srgb",
@@ -5511,8 +5511,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9834247999,
-      0.9742449957
+      0.8912345622,
+      0.8300153709
     ],
     "alpha": 1
   },
@@ -5631,25 +5631,25 @@
       0.5399467119,
       0.5047639459
     ],
-    "alpha": 0.25
+    "alpha": 0.15
   },
   "derived/v4/dark/canvas/element/red/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.9999999999,
-      0.5873578209,
-      0.5523053479
+      1,
+      0.6317526273,
+      0.5979637392
     ],
-    "alpha": 0.28
+    "alpha": 0.19
   },
   "derived/v4/dark/canvas/element/red/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.9999999999,
-      0.5873578209,
-      0.5523053479
+      1,
+      0.6317526273,
+      0.5979637392
     ],
-    "alpha": 0.28
+    "alpha": 0.19
   },
   "derived/v4/dark/canvas/element/red/disabled": {
     "colorSpace": "srgb",
@@ -5664,8 +5664,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9825395737,
-      0.9804641259
+      0.8854927411,
+      0.8723364373
     ],
     "alpha": 1
   },
@@ -5781,28 +5781,28 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.5855806744,
-      0.8520484416
+      0.5324194576,
+      0.8385097517
     ],
-    "alpha": 0.22
+    "alpha": 0.12
   },
   "derived/v4/dark/canvas/element/pink/hover": {
     "colorSpace": "srgb",
     "components": [
       1,
-      0.5855806744,
-      0.8520484416
+      0.6347337373,
+      0.8657636943
     ],
-    "alpha": 0.27
+    "alpha": 0.16
   },
   "derived/v4/dark/canvas/element/pink/pressed": {
     "colorSpace": "srgb",
     "components": [
       1,
-      0.5855806744,
-      0.8520484416
+      0.6347337373,
+      0.8657636943
     ],
-    "alpha": 0.27
+    "alpha": 0.16
   },
   "derived/v4/dark/canvas/element/pink/disabled": {
     "colorSpace": "srgb",
@@ -5817,8 +5817,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9809128644,
-      0.9917372231
+      0.8741442317,
+      0.9478452285
     ],
     "alpha": 1
   },
@@ -5937,25 +5937,25 @@
       0.5801694593,
       1
     ],
-    "alpha": 0.21
+    "alpha": 0.13
   },
   "derived/v4/dark/canvas/element/purple/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.8102966224,
-      0.6205658941,
+      0.8274757565,
+      0.6592686116,
       1
     ],
-    "alpha": 0.24
+    "alpha": 0.16
   },
   "derived/v4/dark/canvas/element/purple/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.8102966224,
-      0.6205658941,
+      0.8274757565,
+      0.6592686116,
       1
     ],
-    "alpha": 0.24
+    "alpha": 0.16
   },
   "derived/v4/dark/canvas/element/purple/disabled": {
     "colorSpace": "srgb",
@@ -5969,8 +5969,8 @@
   "derived/v4/dark/canvas/element/purple/text": {
     "colorSpace": "srgb",
     "components": [
-      0.9694736826,
-      0.9440196961,
+      0.9414788021,
+      0.8914223274,
       1
     ],
     "alpha": 1
@@ -6090,25 +6090,25 @@
       0.5399467119,
       0.5047639459
     ],
-    "alpha": 0.25
+    "alpha": 0.15
   },
   "derived/v4/dark/canvas/feedback/danger/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.9999999999,
-      0.5873578209,
-      0.5523053479
+      1,
+      0.6317526273,
+      0.5979637392
     ],
-    "alpha": 0.28
+    "alpha": 0.19
   },
   "derived/v4/dark/canvas/feedback/danger/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.9999999999,
-      0.5873578209,
-      0.5523053479
+      1,
+      0.6317526273,
+      0.5979637392
     ],
-    "alpha": 0.28
+    "alpha": 0.19
   },
   "derived/v4/dark/canvas/feedback/danger/disabled": {
     "colorSpace": "srgb",
@@ -6123,8 +6123,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9825395737,
-      0.9804641259
+      0.8854927411,
+      0.8723364373
     ],
     "alpha": 1
   },
@@ -6135,25 +6135,25 @@
       0.7650112948,
       0.525569882
     ],
-    "alpha": 0.24
+    "alpha": 0.14
   },
   "derived/v4/dark/canvas/feedback/success/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.3881285185,
-      0.7881719016,
-      0.5597005685
+      0.4922700149,
+      0.8320745192,
+      0.6285094072
     ],
-    "alpha": 0.27
+    "alpha": 0.18
   },
   "derived/v4/dark/canvas/feedback/success/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.3881285185,
-      0.7881719016,
-      0.5597005685
+      0.4922700149,
+      0.8320745192,
+      0.6285094072
     ],
-    "alpha": 0.27
+    "alpha": 0.18
   },
   "derived/v4/dark/canvas/feedback/success/disabled": {
     "colorSpace": "srgb",
@@ -6167,20 +6167,20 @@
   "derived/v4/dark/canvas/feedback/success/text": {
     "colorSpace": "srgb",
     "components": [
-      0.89930591,
-      0.981006346,
-      0.9261127246
+      0.8177937281,
+      0.9564226794,
+      0.8649054294
     ],
     "alpha": 1
   },
   "derived/v4/dark/canvas/feedback/warning/normal": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      0.6069977915,
-      0.3607898982
+      0.9909293445,
+      0.5676319445,
+      0.291842178
     ],
-    "alpha": 0.23
+    "alpha": 0.13
   },
   "derived/v4/dark/canvas/feedback/warning/hover": {
     "colorSpace": "srgb",
@@ -6189,7 +6189,7 @@
       0.649408992,
       0.4367601616
     ],
-    "alpha": 0.26
+    "alpha": 0.17
   },
   "derived/v4/dark/canvas/feedback/warning/pressed": {
     "colorSpace": "srgb",
@@ -6198,7 +6198,7 @@
       0.649408992,
       0.4367601616
     ],
-    "alpha": 0.26
+    "alpha": 0.17
   },
   "derived/v4/dark/canvas/feedback/warning/disabled": {
     "colorSpace": "srgb",
@@ -6213,8 +6213,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9834247999,
-      0.9742449957
+      0.8912345622,
+      0.8300153709
     ],
     "alpha": 1
   },
@@ -6225,25 +6225,25 @@
       0.6769125792,
       1
     ],
-    "alpha": 0.25
+    "alpha": 0.15
   },
   "derived/v4/dark/canvas/feedback/info/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.4696400289,
-      0.7052058217,
+      0.5201609984,
+      0.7326073079,
       0.9999999999
     ],
-    "alpha": 0.28
+    "alpha": 0.18
   },
   "derived/v4/dark/canvas/feedback/info/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.4696400289,
-      0.7052058217,
+      0.5201609984,
+      0.7326073079,
       0.9999999999
     ],
-    "alpha": 0.28
+    "alpha": 0.18
   },
   "derived/v4/dark/canvas/feedback/info/disabled": {
     "colorSpace": "srgb",
@@ -6257,8 +6257,8 @@
   "derived/v4/dark/canvas/feedback/info/text": {
     "colorSpace": "srgb",
     "components": [
-      0.9787851811,
-      0.9880473367,
+      0.8618303012,
+      0.9223445468,
       1
     ],
     "alpha": 1
@@ -6410,9 +6410,9 @@
   "derived/v4/light/raised/border/emphasis": {
     "colorSpace": "srgb",
     "components": [
-      0.3992640547,
-      0.3992640547,
-      0.3992640547
+      0.4603133193,
+      0.4603133193,
+      0.4603133193
     ],
     "alpha": 1
   },
@@ -6464,9 +6464,9 @@
   "derived/v4/light/raised/focus/ring": {
     "colorSpace": "srgb",
     "components": [
-      0.3992640547,
-      0.3992640547,
-      0.3992640547
+      0.4603133193,
+      0.4603133193,
+      0.4603133193
     ],
     "alpha": 1
   },
@@ -6738,25 +6738,25 @@
       0.6173211063,
       0.9999999999
     ],
-    "alpha": 0.42
+    "alpha": 0.21
   },
   "derived/v4/light/raised/element/blue/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.2989986071,
-      0.6173211063,
-      0.9999999999
+      0.2294055269,
+      0.5857835938,
+      1
     ],
-    "alpha": 0.53
+    "alpha": 0.28
   },
   "derived/v4/light/raised/element/blue/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.2989986071,
-      0.6173211063,
-      0.9999999999
+      0.2294055269,
+      0.5857835938,
+      1
     ],
-    "alpha": 0.53
+    "alpha": 0.28
   },
   "derived/v4/light/raised/element/blue/disabled": {
     "colorSpace": "srgb",
@@ -6891,25 +6891,25 @@
       0.5657161685,
       0.3353050467
     ],
-    "alpha": 0.31
+    "alpha": 0.15
   },
   "derived/v4/light/raised/element/green/hover": {
     "colorSpace": "srgb",
     "components": [
-      5e-10,
-      0.5332417992,
-      0.3148852303
+      2e-10,
+      0.5008011309,
+      0.294486605
     ],
-    "alpha": 0.37
+    "alpha": 0.2
   },
   "derived/v4/light/raised/element/green/pressed": {
     "colorSpace": "srgb",
     "components": [
-      5e-10,
-      0.5332417992,
-      0.3148852303
+      2e-10,
+      0.5008011309,
+      0.294486605
     ],
-    "alpha": 0.37
+    "alpha": 0.2
   },
   "derived/v4/light/raised/element/green/disabled": {
     "colorSpace": "srgb",
@@ -7044,25 +7044,25 @@
       0.4131676048,
       5e-10
     ],
-    "alpha": 0.34
+    "alpha": 0.17
   },
   "derived/v4/light/raised/element/orange/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.8166118327,
-      0.3920605341,
-      6e-10
+      0.734089978,
+      0.3497340499,
+      2e-10
     ],
-    "alpha": 0.41
+    "alpha": 0.22
   },
   "derived/v4/light/raised/element/orange/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.8166118327,
-      0.3920605341,
-      6e-10
+      0.734089978,
+      0.3497340499,
+      2e-10
     ],
-    "alpha": 0.41
+    "alpha": 0.22
   },
   "derived/v4/light/raised/element/orange/disabled": {
     "colorSpace": "srgb",
@@ -7197,25 +7197,25 @@
       0.4321800981,
       0.4026988442
     ],
-    "alpha": 0.4
+    "alpha": 0.21
   },
   "derived/v4/light/raised/element/red/hover": {
     "colorSpace": "srgb",
     "components": [
       1,
-      0.3679060227,
-      0.3468899043
+      0.4321800981,
+      0.4026988442
     ],
-    "alpha": 0.46
+    "alpha": 0.31
   },
   "derived/v4/light/raised/element/red/pressed": {
     "colorSpace": "srgb",
     "components": [
       1,
-      0.3679060227,
-      0.3468899043
+      0.4321800981,
+      0.4026988442
     ],
-    "alpha": 0.46
+    "alpha": 0.31
   },
   "derived/v4/light/raised/element/red/disabled": {
     "colorSpace": "srgb",
@@ -7350,25 +7350,25 @@
       3e-10,
       0.5585717662
     ],
-    "alpha": 0.22
+    "alpha": 0.11
   },
   "derived/v4/light/raised/element/pink/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.6330183642,
-      0,
-      0.4872106172
+      0.5880097869,
+      3e-10,
+      0.4517404471
     ],
-    "alpha": 0.27
+    "alpha": 0.16
   },
   "derived/v4/light/raised/element/pink/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.6330183642,
-      0,
-      0.4872106172
+      0.5880097869,
+      3e-10,
+      0.4517404471
     ],
-    "alpha": 0.27
+    "alpha": 0.16
   },
   "derived/v4/light/raised/element/pink/disabled": {
     "colorSpace": "srgb",
@@ -7499,29 +7499,29 @@
   "derived/v4/light/raised/element/purple/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.5054509259,
-      4e-10,
-      0.7745767324
+      0.4687875168,
+      1e-10,
+      0.7203077328
     ],
-    "alpha": 0.21
+    "alpha": 0.11
   },
   "derived/v4/light/raised/element/purple/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.4687875168,
+      0.3601878288,
       1e-10,
-      0.7203077328
+      0.5595590032
     ],
-    "alpha": 0.26
+    "alpha": 0.15
   },
   "derived/v4/light/raised/element/purple/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.4687875168,
+      0.3601878288,
       1e-10,
-      0.7203077328
+      0.5595590032
     ],
-    "alpha": 0.26
+    "alpha": 0.15
   },
   "derived/v4/light/raised/element/purple/disabled": {
     "colorSpace": "srgb",
@@ -7656,25 +7656,25 @@
       0.4321800981,
       0.4026988442
     ],
-    "alpha": 0.4
+    "alpha": 0.21
   },
   "derived/v4/light/raised/feedback/danger/hover": {
     "colorSpace": "srgb",
     "components": [
       1,
-      0.3679060227,
-      0.3468899043
+      0.4321800981,
+      0.4026988442
     ],
-    "alpha": 0.46
+    "alpha": 0.31
   },
   "derived/v4/light/raised/feedback/danger/pressed": {
     "colorSpace": "srgb",
     "components": [
       1,
-      0.3679060227,
-      0.3468899043
+      0.4321800981,
+      0.4026988442
     ],
-    "alpha": 0.46
+    "alpha": 0.31
   },
   "derived/v4/light/raised/feedback/danger/disabled": {
     "colorSpace": "srgb",
@@ -7701,25 +7701,25 @@
       0.5657161685,
       0.3353050467
     ],
-    "alpha": 0.31
+    "alpha": 0.15
   },
   "derived/v4/light/raised/feedback/success/hover": {
     "colorSpace": "srgb",
     "components": [
-      5e-10,
-      0.5332417992,
-      0.3148852303
+      2e-10,
+      0.5008011309,
+      0.294486605
     ],
-    "alpha": 0.37
+    "alpha": 0.2
   },
   "derived/v4/light/raised/feedback/success/pressed": {
     "colorSpace": "srgb",
     "components": [
-      5e-10,
-      0.5332417992,
-      0.3148852303
+      2e-10,
+      0.5008011309,
+      0.294486605
     ],
-    "alpha": 0.37
+    "alpha": 0.2
   },
   "derived/v4/light/raised/feedback/success/disabled": {
     "colorSpace": "srgb",
@@ -7746,25 +7746,25 @@
       0.4131676048,
       5e-10
     ],
-    "alpha": 0.34
+    "alpha": 0.17
   },
   "derived/v4/light/raised/feedback/warning/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.8166118327,
-      0.3920605341,
-      6e-10
+      0.734089978,
+      0.3497340499,
+      2e-10
     ],
-    "alpha": 0.41
+    "alpha": 0.22
   },
   "derived/v4/light/raised/feedback/warning/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.8166118327,
-      0.3920605341,
-      6e-10
+      0.734089978,
+      0.3497340499,
+      2e-10
     ],
-    "alpha": 0.41
+    "alpha": 0.22
   },
   "derived/v4/light/raised/feedback/warning/disabled": {
     "colorSpace": "srgb",
@@ -7791,25 +7791,25 @@
       0.6173211063,
       0.9999999999
     ],
-    "alpha": 0.42
+    "alpha": 0.21
   },
   "derived/v4/light/raised/feedback/info/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.2989986071,
-      0.6173211063,
-      0.9999999999
+      0.2294055269,
+      0.5857835938,
+      1
     ],
-    "alpha": 0.53
+    "alpha": 0.28
   },
   "derived/v4/light/raised/feedback/info/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.2989986071,
-      0.6173211063,
-      0.9999999999
+      0.2294055269,
+      0.5857835938,
+      1
     ],
-    "alpha": 0.53
+    "alpha": 0.28
   },
   "derived/v4/light/raised/feedback/info/disabled": {
     "colorSpace": "srgb",
@@ -7976,9 +7976,9 @@
   "derived/v4/dark/raised/border/emphasis": {
     "colorSpace": "srgb",
     "components": [
-      0.5941430661,
-      0.5941430661,
-      0.5941430661
+      0.5475015781,
+      0.5475015781,
+      0.5475015781
     ],
     "alpha": 1
   },
@@ -8030,9 +8030,9 @@
   "derived/v4/dark/raised/focus/ring": {
     "colorSpace": "srgb",
     "components": [
-      0.5941430661,
-      0.5941430661,
-      0.5941430661
+      0.5475015781,
+      0.5475015781,
+      0.5475015781
     ],
     "alpha": 1
   },
@@ -8304,25 +8304,25 @@
       0.6769125792,
       1
     ],
-    "alpha": 0.25
+    "alpha": 0.15
   },
   "derived/v4/dark/raised/element/blue/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.4696400289,
-      0.7052058217,
+      0.5201609984,
+      0.7326073079,
       0.9999999999
     ],
-    "alpha": 0.28
+    "alpha": 0.18
   },
   "derived/v4/dark/raised/element/blue/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.4696400289,
-      0.7052058217,
+      0.5201609984,
+      0.7326073079,
       0.9999999999
     ],
-    "alpha": 0.28
+    "alpha": 0.18
   },
   "derived/v4/dark/raised/element/blue/disabled": {
     "colorSpace": "srgb",
@@ -8336,8 +8336,8 @@
   "derived/v4/dark/raised/element/blue/text": {
     "colorSpace": "srgb",
     "components": [
-      0.9787851811,
-      0.9880473367,
+      0.8618303012,
+      0.9223445468,
       1
     ],
     "alpha": 1
@@ -8457,25 +8457,25 @@
       0.7650112948,
       0.525569882
     ],
-    "alpha": 0.24
+    "alpha": 0.14
   },
   "derived/v4/dark/raised/element/green/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.3881285185,
-      0.7881719016,
-      0.5597005685
+      0.4922700149,
+      0.8320745192,
+      0.6285094072
     ],
-    "alpha": 0.27
+    "alpha": 0.18
   },
   "derived/v4/dark/raised/element/green/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.3881285185,
-      0.7881719016,
-      0.5597005685
+      0.4922700149,
+      0.8320745192,
+      0.6285094072
     ],
-    "alpha": 0.27
+    "alpha": 0.18
   },
   "derived/v4/dark/raised/element/green/disabled": {
     "colorSpace": "srgb",
@@ -8489,9 +8489,9 @@
   "derived/v4/dark/raised/element/green/text": {
     "colorSpace": "srgb",
     "components": [
-      0.89930591,
-      0.981006346,
-      0.9261127246
+      0.8177937281,
+      0.9564226794,
+      0.8649054294
     ],
     "alpha": 1
   },
@@ -8606,11 +8606,11 @@
   "derived/v4/dark/raised/element/orange/normal": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      0.6069977915,
-      0.3607898982
+      0.9909293445,
+      0.5676319445,
+      0.291842178
     ],
-    "alpha": 0.23
+    "alpha": 0.13
   },
   "derived/v4/dark/raised/element/orange/hover": {
     "colorSpace": "srgb",
@@ -8619,7 +8619,7 @@
       0.649408992,
       0.4367601616
     ],
-    "alpha": 0.26
+    "alpha": 0.17
   },
   "derived/v4/dark/raised/element/orange/pressed": {
     "colorSpace": "srgb",
@@ -8628,7 +8628,7 @@
       0.649408992,
       0.4367601616
     ],
-    "alpha": 0.26
+    "alpha": 0.17
   },
   "derived/v4/dark/raised/element/orange/disabled": {
     "colorSpace": "srgb",
@@ -8643,8 +8643,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9834247999,
-      0.9742449957
+      0.8912345622,
+      0.8300153709
     ],
     "alpha": 1
   },
@@ -8763,25 +8763,25 @@
       0.5399467119,
       0.5047639459
     ],
-    "alpha": 0.25
+    "alpha": 0.15
   },
   "derived/v4/dark/raised/element/red/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.9999999999,
-      0.5873578209,
-      0.5523053479
+      1,
+      0.6317526273,
+      0.5979637392
     ],
-    "alpha": 0.28
+    "alpha": 0.19
   },
   "derived/v4/dark/raised/element/red/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.9999999999,
-      0.5873578209,
-      0.5523053479
+      1,
+      0.6317526273,
+      0.5979637392
     ],
-    "alpha": 0.28
+    "alpha": 0.19
   },
   "derived/v4/dark/raised/element/red/disabled": {
     "colorSpace": "srgb",
@@ -8796,8 +8796,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9825395737,
-      0.9804641259
+      0.8854927411,
+      0.8723364373
     ],
     "alpha": 1
   },
@@ -8913,28 +8913,28 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.5855806744,
-      0.8520484416
+      0.5324194576,
+      0.8385097517
     ],
-    "alpha": 0.22
+    "alpha": 0.12
   },
   "derived/v4/dark/raised/element/pink/hover": {
     "colorSpace": "srgb",
     "components": [
       1,
-      0.5855806744,
-      0.8520484416
+      0.6347337373,
+      0.8657636943
     ],
-    "alpha": 0.27
+    "alpha": 0.16
   },
   "derived/v4/dark/raised/element/pink/pressed": {
     "colorSpace": "srgb",
     "components": [
       1,
-      0.5855806744,
-      0.8520484416
+      0.6347337373,
+      0.8657636943
     ],
-    "alpha": 0.27
+    "alpha": 0.16
   },
   "derived/v4/dark/raised/element/pink/disabled": {
     "colorSpace": "srgb",
@@ -8949,8 +8949,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9809128644,
-      0.9917372231
+      0.8741442317,
+      0.9478452285
     ],
     "alpha": 1
   },
@@ -9069,25 +9069,25 @@
       0.5801694593,
       1
     ],
-    "alpha": 0.21
+    "alpha": 0.13
   },
   "derived/v4/dark/raised/element/purple/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.8102966224,
-      0.6205658941,
+      0.8274757565,
+      0.6592686116,
       1
     ],
-    "alpha": 0.24
+    "alpha": 0.16
   },
   "derived/v4/dark/raised/element/purple/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.8102966224,
-      0.6205658941,
+      0.8274757565,
+      0.6592686116,
       1
     ],
-    "alpha": 0.24
+    "alpha": 0.16
   },
   "derived/v4/dark/raised/element/purple/disabled": {
     "colorSpace": "srgb",
@@ -9101,8 +9101,8 @@
   "derived/v4/dark/raised/element/purple/text": {
     "colorSpace": "srgb",
     "components": [
-      0.9694736826,
-      0.9440196961,
+      0.9414788021,
+      0.8914223274,
       1
     ],
     "alpha": 1
@@ -9222,25 +9222,25 @@
       0.5399467119,
       0.5047639459
     ],
-    "alpha": 0.25
+    "alpha": 0.15
   },
   "derived/v4/dark/raised/feedback/danger/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.9999999999,
-      0.5873578209,
-      0.5523053479
+      1,
+      0.6317526273,
+      0.5979637392
     ],
-    "alpha": 0.28
+    "alpha": 0.19
   },
   "derived/v4/dark/raised/feedback/danger/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.9999999999,
-      0.5873578209,
-      0.5523053479
+      1,
+      0.6317526273,
+      0.5979637392
     ],
-    "alpha": 0.28
+    "alpha": 0.19
   },
   "derived/v4/dark/raised/feedback/danger/disabled": {
     "colorSpace": "srgb",
@@ -9255,8 +9255,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9825395737,
-      0.9804641259
+      0.8854927411,
+      0.8723364373
     ],
     "alpha": 1
   },
@@ -9267,25 +9267,25 @@
       0.7650112948,
       0.525569882
     ],
-    "alpha": 0.24
+    "alpha": 0.14
   },
   "derived/v4/dark/raised/feedback/success/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.3881285185,
-      0.7881719016,
-      0.5597005685
+      0.4922700149,
+      0.8320745192,
+      0.6285094072
     ],
-    "alpha": 0.27
+    "alpha": 0.18
   },
   "derived/v4/dark/raised/feedback/success/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.3881285185,
-      0.7881719016,
-      0.5597005685
+      0.4922700149,
+      0.8320745192,
+      0.6285094072
     ],
-    "alpha": 0.27
+    "alpha": 0.18
   },
   "derived/v4/dark/raised/feedback/success/disabled": {
     "colorSpace": "srgb",
@@ -9299,20 +9299,20 @@
   "derived/v4/dark/raised/feedback/success/text": {
     "colorSpace": "srgb",
     "components": [
-      0.89930591,
-      0.981006346,
-      0.9261127246
+      0.8177937281,
+      0.9564226794,
+      0.8649054294
     ],
     "alpha": 1
   },
   "derived/v4/dark/raised/feedback/warning/normal": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      0.6069977915,
-      0.3607898982
+      0.9909293445,
+      0.5676319445,
+      0.291842178
     ],
-    "alpha": 0.23
+    "alpha": 0.13
   },
   "derived/v4/dark/raised/feedback/warning/hover": {
     "colorSpace": "srgb",
@@ -9321,7 +9321,7 @@
       0.649408992,
       0.4367601616
     ],
-    "alpha": 0.26
+    "alpha": 0.17
   },
   "derived/v4/dark/raised/feedback/warning/pressed": {
     "colorSpace": "srgb",
@@ -9330,7 +9330,7 @@
       0.649408992,
       0.4367601616
     ],
-    "alpha": 0.26
+    "alpha": 0.17
   },
   "derived/v4/dark/raised/feedback/warning/disabled": {
     "colorSpace": "srgb",
@@ -9345,8 +9345,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9834247999,
-      0.9742449957
+      0.8912345622,
+      0.8300153709
     ],
     "alpha": 1
   },
@@ -9357,25 +9357,25 @@
       0.6769125792,
       1
     ],
-    "alpha": 0.25
+    "alpha": 0.15
   },
   "derived/v4/dark/raised/feedback/info/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.4696400289,
-      0.7052058217,
+      0.5201609984,
+      0.7326073079,
       0.9999999999
     ],
-    "alpha": 0.28
+    "alpha": 0.18
   },
   "derived/v4/dark/raised/feedback/info/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.4696400289,
-      0.7052058217,
+      0.5201609984,
+      0.7326073079,
       0.9999999999
     ],
-    "alpha": 0.28
+    "alpha": 0.18
   },
   "derived/v4/dark/raised/feedback/info/disabled": {
     "colorSpace": "srgb",
@@ -9389,8 +9389,8 @@
   "derived/v4/dark/raised/feedback/info/text": {
     "colorSpace": "srgb",
     "components": [
-      0.9787851811,
-      0.9880473367,
+      0.8618303012,
+      0.9223445468,
       1
     ],
     "alpha": 1
@@ -9542,9 +9542,9 @@
   "derived/v4/light/floating/border/emphasis": {
     "colorSpace": "srgb",
     "components": [
-      0.3992640547,
-      0.3992640547,
-      0.3992640547
+      0.4603133193,
+      0.4603133193,
+      0.4603133193
     ],
     "alpha": 1
   },
@@ -9596,9 +9596,9 @@
   "derived/v4/light/floating/focus/ring": {
     "colorSpace": "srgb",
     "components": [
-      0.3992640547,
-      0.3992640547,
-      0.3992640547
+      0.4603133193,
+      0.4603133193,
+      0.4603133193
     ],
     "alpha": 1
   },
@@ -9870,25 +9870,25 @@
       0.6173211063,
       0.9999999999
     ],
-    "alpha": 0.42
+    "alpha": 0.21
   },
   "derived/v4/light/floating/element/blue/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.2989986071,
-      0.6173211063,
-      0.9999999999
+      0.2294055269,
+      0.5857835938,
+      1
     ],
-    "alpha": 0.53
+    "alpha": 0.28
   },
   "derived/v4/light/floating/element/blue/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.2989986071,
-      0.6173211063,
-      0.9999999999
+      0.2294055269,
+      0.5857835938,
+      1
     ],
-    "alpha": 0.53
+    "alpha": 0.28
   },
   "derived/v4/light/floating/element/blue/disabled": {
     "colorSpace": "srgb",
@@ -10023,25 +10023,25 @@
       0.5657161685,
       0.3353050467
     ],
-    "alpha": 0.31
+    "alpha": 0.15
   },
   "derived/v4/light/floating/element/green/hover": {
     "colorSpace": "srgb",
     "components": [
-      5e-10,
-      0.5332417992,
-      0.3148852303
+      2e-10,
+      0.5008011309,
+      0.294486605
     ],
-    "alpha": 0.37
+    "alpha": 0.2
   },
   "derived/v4/light/floating/element/green/pressed": {
     "colorSpace": "srgb",
     "components": [
-      5e-10,
-      0.5332417992,
-      0.3148852303
+      2e-10,
+      0.5008011309,
+      0.294486605
     ],
-    "alpha": 0.37
+    "alpha": 0.2
   },
   "derived/v4/light/floating/element/green/disabled": {
     "colorSpace": "srgb",
@@ -10176,25 +10176,25 @@
       0.4131676048,
       5e-10
     ],
-    "alpha": 0.34
+    "alpha": 0.17
   },
   "derived/v4/light/floating/element/orange/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.8166118327,
-      0.3920605341,
-      6e-10
+      0.734089978,
+      0.3497340499,
+      2e-10
     ],
-    "alpha": 0.41
+    "alpha": 0.22
   },
   "derived/v4/light/floating/element/orange/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.8166118327,
-      0.3920605341,
-      6e-10
+      0.734089978,
+      0.3497340499,
+      2e-10
     ],
-    "alpha": 0.41
+    "alpha": 0.22
   },
   "derived/v4/light/floating/element/orange/disabled": {
     "colorSpace": "srgb",
@@ -10329,25 +10329,25 @@
       0.4321800981,
       0.4026988442
     ],
-    "alpha": 0.4
+    "alpha": 0.21
   },
   "derived/v4/light/floating/element/red/hover": {
     "colorSpace": "srgb",
     "components": [
       1,
-      0.3679060227,
-      0.3468899043
+      0.4321800981,
+      0.4026988442
     ],
-    "alpha": 0.46
+    "alpha": 0.31
   },
   "derived/v4/light/floating/element/red/pressed": {
     "colorSpace": "srgb",
     "components": [
       1,
-      0.3679060227,
-      0.3468899043
+      0.4321800981,
+      0.4026988442
     ],
-    "alpha": 0.46
+    "alpha": 0.31
   },
   "derived/v4/light/floating/element/red/disabled": {
     "colorSpace": "srgb",
@@ -10482,25 +10482,25 @@
       3e-10,
       0.5585717662
     ],
-    "alpha": 0.22
+    "alpha": 0.11
   },
   "derived/v4/light/floating/element/pink/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.6330183642,
-      0,
-      0.4872106172
+      0.5880097869,
+      3e-10,
+      0.4517404471
     ],
-    "alpha": 0.27
+    "alpha": 0.16
   },
   "derived/v4/light/floating/element/pink/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.6330183642,
-      0,
-      0.4872106172
+      0.5880097869,
+      3e-10,
+      0.4517404471
     ],
-    "alpha": 0.27
+    "alpha": 0.16
   },
   "derived/v4/light/floating/element/pink/disabled": {
     "colorSpace": "srgb",
@@ -10631,29 +10631,29 @@
   "derived/v4/light/floating/element/purple/normal": {
     "colorSpace": "srgb",
     "components": [
-      0.5054509259,
-      4e-10,
-      0.7745767324
+      0.4687875168,
+      1e-10,
+      0.7203077328
     ],
-    "alpha": 0.21
+    "alpha": 0.11
   },
   "derived/v4/light/floating/element/purple/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.4687875168,
+      0.3601878288,
       1e-10,
-      0.7203077328
+      0.5595590032
     ],
-    "alpha": 0.26
+    "alpha": 0.15
   },
   "derived/v4/light/floating/element/purple/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.4687875168,
+      0.3601878288,
       1e-10,
-      0.7203077328
+      0.5595590032
     ],
-    "alpha": 0.26
+    "alpha": 0.15
   },
   "derived/v4/light/floating/element/purple/disabled": {
     "colorSpace": "srgb",
@@ -10788,25 +10788,25 @@
       0.4321800981,
       0.4026988442
     ],
-    "alpha": 0.4
+    "alpha": 0.21
   },
   "derived/v4/light/floating/feedback/danger/hover": {
     "colorSpace": "srgb",
     "components": [
       1,
-      0.3679060227,
-      0.3468899043
+      0.4321800981,
+      0.4026988442
     ],
-    "alpha": 0.46
+    "alpha": 0.31
   },
   "derived/v4/light/floating/feedback/danger/pressed": {
     "colorSpace": "srgb",
     "components": [
       1,
-      0.3679060227,
-      0.3468899043
+      0.4321800981,
+      0.4026988442
     ],
-    "alpha": 0.46
+    "alpha": 0.31
   },
   "derived/v4/light/floating/feedback/danger/disabled": {
     "colorSpace": "srgb",
@@ -10833,25 +10833,25 @@
       0.5657161685,
       0.3353050467
     ],
-    "alpha": 0.31
+    "alpha": 0.15
   },
   "derived/v4/light/floating/feedback/success/hover": {
     "colorSpace": "srgb",
     "components": [
-      5e-10,
-      0.5332417992,
-      0.3148852303
+      2e-10,
+      0.5008011309,
+      0.294486605
     ],
-    "alpha": 0.37
+    "alpha": 0.2
   },
   "derived/v4/light/floating/feedback/success/pressed": {
     "colorSpace": "srgb",
     "components": [
-      5e-10,
-      0.5332417992,
-      0.3148852303
+      2e-10,
+      0.5008011309,
+      0.294486605
     ],
-    "alpha": 0.37
+    "alpha": 0.2
   },
   "derived/v4/light/floating/feedback/success/disabled": {
     "colorSpace": "srgb",
@@ -10878,25 +10878,25 @@
       0.4131676048,
       5e-10
     ],
-    "alpha": 0.34
+    "alpha": 0.17
   },
   "derived/v4/light/floating/feedback/warning/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.8166118327,
-      0.3920605341,
-      6e-10
+      0.734089978,
+      0.3497340499,
+      2e-10
     ],
-    "alpha": 0.41
+    "alpha": 0.22
   },
   "derived/v4/light/floating/feedback/warning/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.8166118327,
-      0.3920605341,
-      6e-10
+      0.734089978,
+      0.3497340499,
+      2e-10
     ],
-    "alpha": 0.41
+    "alpha": 0.22
   },
   "derived/v4/light/floating/feedback/warning/disabled": {
     "colorSpace": "srgb",
@@ -10923,25 +10923,25 @@
       0.6173211063,
       0.9999999999
     ],
-    "alpha": 0.42
+    "alpha": 0.21
   },
   "derived/v4/light/floating/feedback/info/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.2989986071,
-      0.6173211063,
-      0.9999999999
+      0.2294055269,
+      0.5857835938,
+      1
     ],
-    "alpha": 0.53
+    "alpha": 0.28
   },
   "derived/v4/light/floating/feedback/info/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.2989986071,
-      0.6173211063,
-      0.9999999999
+      0.2294055269,
+      0.5857835938,
+      1
     ],
-    "alpha": 0.53
+    "alpha": 0.28
   },
   "derived/v4/light/floating/feedback/info/disabled": {
     "colorSpace": "srgb",
@@ -11436,25 +11436,25 @@
       0.6769125792,
       1
     ],
-    "alpha": 0.25
+    "alpha": 0.15
   },
   "derived/v4/dark/floating/element/blue/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.4696400289,
-      0.7052058217,
+      0.5201609984,
+      0.7326073079,
       0.9999999999
     ],
-    "alpha": 0.28
+    "alpha": 0.18
   },
   "derived/v4/dark/floating/element/blue/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.4696400289,
-      0.7052058217,
+      0.5201609984,
+      0.7326073079,
       0.9999999999
     ],
-    "alpha": 0.28
+    "alpha": 0.18
   },
   "derived/v4/dark/floating/element/blue/disabled": {
     "colorSpace": "srgb",
@@ -11468,8 +11468,8 @@
   "derived/v4/dark/floating/element/blue/text": {
     "colorSpace": "srgb",
     "components": [
-      0.9787851811,
-      0.9880473367,
+      0.8618303012,
+      0.9223445468,
       1
     ],
     "alpha": 1
@@ -11589,25 +11589,25 @@
       0.7650112948,
       0.525569882
     ],
-    "alpha": 0.24
+    "alpha": 0.14
   },
   "derived/v4/dark/floating/element/green/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.3881285185,
-      0.7881719016,
-      0.5597005685
+      0.4922700149,
+      0.8320745192,
+      0.6285094072
     ],
-    "alpha": 0.27
+    "alpha": 0.18
   },
   "derived/v4/dark/floating/element/green/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.3881285185,
-      0.7881719016,
-      0.5597005685
+      0.4922700149,
+      0.8320745192,
+      0.6285094072
     ],
-    "alpha": 0.27
+    "alpha": 0.18
   },
   "derived/v4/dark/floating/element/green/disabled": {
     "colorSpace": "srgb",
@@ -11621,9 +11621,9 @@
   "derived/v4/dark/floating/element/green/text": {
     "colorSpace": "srgb",
     "components": [
-      0.89930591,
-      0.981006346,
-      0.9261127246
+      0.8177937281,
+      0.9564226794,
+      0.8649054294
     ],
     "alpha": 1
   },
@@ -11738,11 +11738,11 @@
   "derived/v4/dark/floating/element/orange/normal": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      0.6069977915,
-      0.3607898982
+      0.9909293445,
+      0.5676319445,
+      0.291842178
     ],
-    "alpha": 0.23
+    "alpha": 0.13
   },
   "derived/v4/dark/floating/element/orange/hover": {
     "colorSpace": "srgb",
@@ -11751,7 +11751,7 @@
       0.649408992,
       0.4367601616
     ],
-    "alpha": 0.26
+    "alpha": 0.17
   },
   "derived/v4/dark/floating/element/orange/pressed": {
     "colorSpace": "srgb",
@@ -11760,7 +11760,7 @@
       0.649408992,
       0.4367601616
     ],
-    "alpha": 0.26
+    "alpha": 0.17
   },
   "derived/v4/dark/floating/element/orange/disabled": {
     "colorSpace": "srgb",
@@ -11775,8 +11775,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9834247999,
-      0.9742449957
+      0.8912345622,
+      0.8300153709
     ],
     "alpha": 1
   },
@@ -11895,25 +11895,25 @@
       0.5399467119,
       0.5047639459
     ],
-    "alpha": 0.25
+    "alpha": 0.15
   },
   "derived/v4/dark/floating/element/red/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.9999999999,
-      0.5873578209,
-      0.5523053479
+      1,
+      0.6317526273,
+      0.5979637392
     ],
-    "alpha": 0.28
+    "alpha": 0.19
   },
   "derived/v4/dark/floating/element/red/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.9999999999,
-      0.5873578209,
-      0.5523053479
+      1,
+      0.6317526273,
+      0.5979637392
     ],
-    "alpha": 0.28
+    "alpha": 0.19
   },
   "derived/v4/dark/floating/element/red/disabled": {
     "colorSpace": "srgb",
@@ -11928,8 +11928,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9825395737,
-      0.9804641259
+      0.8854927411,
+      0.8723364373
     ],
     "alpha": 1
   },
@@ -12045,28 +12045,28 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.5855806744,
-      0.8520484416
+      0.5324194576,
+      0.8385097517
     ],
-    "alpha": 0.22
+    "alpha": 0.12
   },
   "derived/v4/dark/floating/element/pink/hover": {
     "colorSpace": "srgb",
     "components": [
       1,
-      0.5855806744,
-      0.8520484416
+      0.6347337373,
+      0.8657636943
     ],
-    "alpha": 0.27
+    "alpha": 0.16
   },
   "derived/v4/dark/floating/element/pink/pressed": {
     "colorSpace": "srgb",
     "components": [
       1,
-      0.5855806744,
-      0.8520484416
+      0.6347337373,
+      0.8657636943
     ],
-    "alpha": 0.27
+    "alpha": 0.16
   },
   "derived/v4/dark/floating/element/pink/disabled": {
     "colorSpace": "srgb",
@@ -12081,8 +12081,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9809128644,
-      0.9917372231
+      0.8741442317,
+      0.9478452285
     ],
     "alpha": 1
   },
@@ -12201,25 +12201,25 @@
       0.5801694593,
       1
     ],
-    "alpha": 0.21
+    "alpha": 0.13
   },
   "derived/v4/dark/floating/element/purple/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.8102966224,
-      0.6205658941,
+      0.8274757565,
+      0.6592686116,
       1
     ],
-    "alpha": 0.24
+    "alpha": 0.16
   },
   "derived/v4/dark/floating/element/purple/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.8102966224,
-      0.6205658941,
+      0.8274757565,
+      0.6592686116,
       1
     ],
-    "alpha": 0.24
+    "alpha": 0.16
   },
   "derived/v4/dark/floating/element/purple/disabled": {
     "colorSpace": "srgb",
@@ -12233,8 +12233,8 @@
   "derived/v4/dark/floating/element/purple/text": {
     "colorSpace": "srgb",
     "components": [
-      0.9694736826,
-      0.9440196961,
+      0.9414788021,
+      0.8914223274,
       1
     ],
     "alpha": 1
@@ -12354,25 +12354,25 @@
       0.5399467119,
       0.5047639459
     ],
-    "alpha": 0.25
+    "alpha": 0.15
   },
   "derived/v4/dark/floating/feedback/danger/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.9999999999,
-      0.5873578209,
-      0.5523053479
+      1,
+      0.6317526273,
+      0.5979637392
     ],
-    "alpha": 0.28
+    "alpha": 0.19
   },
   "derived/v4/dark/floating/feedback/danger/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.9999999999,
-      0.5873578209,
-      0.5523053479
+      1,
+      0.6317526273,
+      0.5979637392
     ],
-    "alpha": 0.28
+    "alpha": 0.19
   },
   "derived/v4/dark/floating/feedback/danger/disabled": {
     "colorSpace": "srgb",
@@ -12387,8 +12387,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9825395737,
-      0.9804641259
+      0.8854927411,
+      0.8723364373
     ],
     "alpha": 1
   },
@@ -12399,25 +12399,25 @@
       0.7650112948,
       0.525569882
     ],
-    "alpha": 0.24
+    "alpha": 0.14
   },
   "derived/v4/dark/floating/feedback/success/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.3881285185,
-      0.7881719016,
-      0.5597005685
+      0.4922700149,
+      0.8320745192,
+      0.6285094072
     ],
-    "alpha": 0.27
+    "alpha": 0.18
   },
   "derived/v4/dark/floating/feedback/success/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.3881285185,
-      0.7881719016,
-      0.5597005685
+      0.4922700149,
+      0.8320745192,
+      0.6285094072
     ],
-    "alpha": 0.27
+    "alpha": 0.18
   },
   "derived/v4/dark/floating/feedback/success/disabled": {
     "colorSpace": "srgb",
@@ -12431,20 +12431,20 @@
   "derived/v4/dark/floating/feedback/success/text": {
     "colorSpace": "srgb",
     "components": [
-      0.89930591,
-      0.981006346,
-      0.9261127246
+      0.8177937281,
+      0.9564226794,
+      0.8649054294
     ],
     "alpha": 1
   },
   "derived/v4/dark/floating/feedback/warning/normal": {
     "colorSpace": "srgb",
     "components": [
-      1,
-      0.6069977915,
-      0.3607898982
+      0.9909293445,
+      0.5676319445,
+      0.291842178
     ],
-    "alpha": 0.23
+    "alpha": 0.13
   },
   "derived/v4/dark/floating/feedback/warning/hover": {
     "colorSpace": "srgb",
@@ -12453,7 +12453,7 @@
       0.649408992,
       0.4367601616
     ],
-    "alpha": 0.26
+    "alpha": 0.17
   },
   "derived/v4/dark/floating/feedback/warning/pressed": {
     "colorSpace": "srgb",
@@ -12462,7 +12462,7 @@
       0.649408992,
       0.4367601616
     ],
-    "alpha": 0.26
+    "alpha": 0.17
   },
   "derived/v4/dark/floating/feedback/warning/disabled": {
     "colorSpace": "srgb",
@@ -12477,8 +12477,8 @@
     "colorSpace": "srgb",
     "components": [
       1,
-      0.9834247999,
-      0.9742449957
+      0.8912345622,
+      0.8300153709
     ],
     "alpha": 1
   },
@@ -12489,25 +12489,25 @@
       0.6769125792,
       1
     ],
-    "alpha": 0.25
+    "alpha": 0.15
   },
   "derived/v4/dark/floating/feedback/info/hover": {
     "colorSpace": "srgb",
     "components": [
-      0.4696400289,
-      0.7052058217,
+      0.5201609984,
+      0.7326073079,
       0.9999999999
     ],
-    "alpha": 0.28
+    "alpha": 0.18
   },
   "derived/v4/dark/floating/feedback/info/pressed": {
     "colorSpace": "srgb",
     "components": [
-      0.4696400289,
-      0.7052058217,
+      0.5201609984,
+      0.7326073079,
       0.9999999999
     ],
-    "alpha": 0.28
+    "alpha": 0.18
   },
   "derived/v4/dark/floating/feedback/info/disabled": {
     "colorSpace": "srgb",
@@ -12521,8 +12521,8 @@
   "derived/v4/dark/floating/feedback/info/text": {
     "colorSpace": "srgb",
     "components": [
-      0.9787851811,
-      0.9880473367,
+      0.8618303012,
+      0.9223445468,
       1
     ],
     "alpha": 1

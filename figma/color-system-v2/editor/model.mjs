@@ -1,7 +1,7 @@
 import {BLACK,WHITE,clamp,color,chroma,composite,contrast,css,fromHex,luminance,toHex,toOklch} from '../color-engine.mjs';
 import {paletteScaleIds,palettePosition,paletteIndex,validatePaletteEdits,projectedAnchors,interpolateColor,toHsl,fromHsl,toOklab,labDistance,colorDifference} from './palette-math.mjs';
 import {createNeutralSettings,validateNeutralSettings,resolveNeutralSurface} from './neutral-system.mjs';
-import {solveRecommendedFills,fillVisibilityPolicy} from './recommended-fills.mjs';
+import {solveRecommendedFills,fillVisibilityPolicy,resolveFillAppearanceBounds} from './recommended-fills.mjs';
 import {solveAlphaRecipe,alphaRecipeFamily,neutralFillVisibilityPolicy} from './alpha-recipes.mjs';
 export const schema='sloy-palette-lab/v5';
 export const surfaces=['Shell','Workspace','Content','Overlay','Invert','Glass','Custom'];
@@ -255,16 +255,16 @@ export function generateContext(accent,theme,scheme,surface,source,resolved,cust
   if(!rules.balanceSecondary&&!sharedRecipe)continue;
   const addAppearance=(role,metric,value,min,max=Infinity)=>appearanceChecks.push({layer:name,extreme,role,metric,value,min,max,pass:value>=min-1e-7&&value<=max+1e-7});
   for(const [i,role] of softRoles.entries()){
-   const family=role.split('/')[0];
-   addAppearance(role,'surfaceContrast',ratios[i],appearancePolicy[family+'Contrast']);
-   addAppearance(role,'surfaceDelta',colorDifference(painted[i],base),appearancePolicy[family+'Delta']);
+   const family=role.split('/')[0],bounds=accent.id==='neutral'?{minimumContrast:appearancePolicy[family+'Contrast'],minimumDelta:appearancePolicy[family+'Delta'],maximumContrast:Infinity}:resolveFillAppearanceBounds(role,clamp((accent.opacityScale??1.2)/1.2,.1,2));
+   addAppearance(role,'surfaceContrast',ratios[i],bounds.minimumContrast,bounds.maximumContrast);
+   addAppearance(role,'surfaceDelta',colorDifference(painted[i],base),bounds.minimumDelta);
   }
   for(const [i,family] of [[0,'tertiary'],[2,'secondary']]){
    addAppearance(family,'stateContrast',contrast(painted[i],painted[i+1]),appearancePolicy.stateContrast);
    addAppearance(family,'stateDelta',colorDifference(painted[i],painted[i+1]),appearancePolicy.stateDelta,appearancePolicy.stateMaximumDelta);
   }
  }
- const appearanceIssues=[...new Set(appearanceChecks.filter(c=>!c.pass).map(c=>`${c.role} / ${c.layer}: ${c.metric.startsWith('state')?(c.value>c.max?'переход Normal → Active слишком резкий':'Normal и Active недостаточно различаются'):'заливка слишком близка к фону'}`))];
+ const appearanceIssues=[...new Set(appearanceChecks.filter(c=>!c.pass).map(c=>`${c.role} / ${c.layer}: ${c.metric.startsWith('state')?(c.value>c.max?'переход Normal → Active слишком резкий':'Normal и Active недостаточно различаются'):(c.value>c.max?'заливка слишком контрастная для своей роли':'заливка слишком близка к фону')}`))];
  const balanceIssues=Object.entries(balanceDiagnostics).filter(([,d])=>d.limited).map(([layer,d])=>d.issues.some(issue=>issue.includes('text contrast'))?`${layer}: порог текста ${rules.minimumContrast}:1 ограничивает различимость заливок на этой подложке.`:`${layer}: доступные ступени и прозрачность не позволяют выполнить все условия рекомендации.`);
  const textSeparation=backings.flatMap(({base})=>[base,...softRoles.map(role=>composite(fills[role],base))]).every(bg=>colorDifference(composite(ink.value,bg),composite(muted.value,bg))>.01);
  return {accent:accent.name,theme,effectiveTheme,scheme,surface,bg,neutral,fills,content,border,primary,references,checks,appearanceChecks,layerFills,layerReferences,balanceDiagnostics,neutralContext,issues:[...checks.filter(c=>!c.pass).map(c=>`${c.label}: ${c.value.toFixed(2)}:1`),...hierarchyIssues,...appearanceIssues,...(!textSeparation?['Content: уровни слишком близки']:[]),...(!solution.quiet?['Content secondary: контраст выше primary']:[]),...(!rules.balanceSecondary&&!solution.visible?['Secondary: заливка слишком близка к фону']:[]),...balanceIssues],minimumText:Math.min(...checks.filter(c=>c.label.startsWith('Primary')||c.label.startsWith('Content')||c.label.startsWith('Neutral content')).map(c=>c.value)),neutralText:contrast(BLACK,bg)>contrast(WHITE,bg)?BLACK:WHITE};

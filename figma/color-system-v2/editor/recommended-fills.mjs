@@ -6,13 +6,19 @@ export const recommendedFillTargets={
  Light:{'tertiary/normal':.92,'tertiary/active':.90,'secondary/normal':.85,'secondary/active':.82},
  Dark:{'tertiary/normal':.03,'tertiary/active':.035,'secondary/normal':.055,'secondary/active':.062}
 };
-export const fillVisibilityPolicy={tertiaryContrast:1.10,secondaryContrast:1.30,tertiaryDelta:.025,secondaryDelta:.06,stateContrast:1.06,stateDelta:.015,stateMaximumDelta:.05};
+export const fillVisibilityPolicy={tertiaryContrast:1.035,secondaryContrast:1.12,tertiaryDelta:.012,secondaryDelta:.035,stateContrast:1.06,stateDelta:.015,stateMaximumDelta:.05};
 export const recommendedFillPolicy={
- 'tertiary/normal':{contrast:1.15,lightness:.025},
- 'tertiary/active':{contrast:1.28,lightness:.05},
- 'secondary/normal':{contrast:1.5,lightness:.06},
- 'secondary/active':{contrast:1.68,lightness:.085}
+ 'tertiary/normal':{contrast:1.06,lightness:.012,minimumContrast:1.035,maximumContrast:1.16,minimumDelta:.012},
+ 'tertiary/active':{contrast:1.13,lightness:.027,minimumContrast:1.10,maximumContrast:1.25,minimumDelta:.012},
+ 'secondary/normal':{contrast:1.22,lightness:.04,minimumContrast:1.12,maximumContrast:1.35,minimumDelta:.035},
+ 'secondary/active':{contrast:1.34,lightness:.06,minimumContrast:1.20,maximumContrast:1.50,minimumDelta:.035}
 };
+/** Manual strength scales distance from the backing; it does not disable the
+ * control or keep the default prominence floors after a deliberate edit. */
+export function resolveFillAppearanceBounds(role,strength=1){
+ const policy=recommendedFillPolicy[role];
+ return{minimumContrast:1+(policy.minimumContrast-1)*strength,maximumContrast:1+(policy.maximumContrast-1)*strength,minimumDelta:policy.minimumDelta*strength};
+}
 const channels=['r','g','b'],roles=Object.keys(recommendedFillPolicy);
 export const opacityResolution=.01;
 const opaqueTargetTolerance=.003;

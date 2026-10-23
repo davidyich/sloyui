@@ -26,7 +26,7 @@ Generated JSON or local mock checks do not confirm live Figma. Record native col
 
 The rebuilt V2 now contains the controls and editable guide pages:
 
-- [Start · 0.17.1](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=164-498)
+- [Start](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=164-498)
 - [Colors and Invert](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=161-4037)
 - [Controls showcase](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=162-468)
 - [Composition components](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=163-2)
@@ -46,6 +46,10 @@ These links record created assets. The actual acceptance/deployment scope remain
 
 Native Focus uses a fill/handle change with no additional outline. Boundaries use literal 0.5 px; `.Border` is an empty shape whose opacity alone follows the integer Borders 0/100 percent switch. This does not attenuate content or add fractional primitives. The native Slider follows Palette Lab ParameterSlider: filled row, inline label/value and slim midpoint handle by default.
 
-Native graph now contains 974 variables across the same nine collections (Palette 328, Theme 333, Scheme 113, Surface 86). Public variable IDs remain stable. Light Secondary chroma is 0.06; 36 stale internal values were removed after alias/style/all-page binding checks. See verification for actual measured scope.
+The 0.17.1 migration contained 974 variables and used a dense Light Secondary chroma target. Those counts and appearance targets are historical: shared alpha fitting and the quieter Secondary policy supersede them. See [verification](../docs/verification.md) for the current native inventory and actual live scope.
 
 [Borders On / Off guide](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=200-7) shows inherited 0.5 px boundaries in Light, Dark and Light+Invert. Native Borders defaults to On; set the containing frame mode and leave children on Auto. `border/opacity` uses integer percentages 100/0; it never changes content opacity.
+
+## Secondary prominence
+
+[Alpha recipes and emphasis hierarchy](https://www.figma.com/design/E6Qw912qUU0h9JDplYzQsp?node-id=215-4146) compare all six accents through Primary, Secondary and Tertiary, then show shared Secondary paints on ordinary and Invert surfaces. Secondary is a quiet tint, bounded above as well as below after composition. Its old dense lightness/chroma anchor is no longer a target. Text contrast and Normal/Active distinction remain independently verified.

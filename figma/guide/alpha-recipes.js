@@ -1,11 +1,31 @@
 // Concatenate common.js. All examples use public roles and inherit their modes.
 const page=await figma.getNodeByIdAsync('155:3');await figma.setCurrentPageAsync(page);
 const host=await figma.getNodeByIdAsync('161:4037');
-if(host.children.some(n=>n.name==='Alpha · Shared recipes'))throw Error('Alpha guide already exists; update the existing section.');
-const section=await gsection(host,'Alpha · Shared recipes','Одна семантическая краска адаптируется при смешивании с подложкой. Текст и состояния проверяются на всей группе допустимых фонов.');
+const existing=host.children.find(n=>n.name==='Alpha · Shared recipes');
+const removedNodeIds=existing?existing.findAll(()=>true).map(n=>n.id):[];
+if(existing){
+ for(const node of existing.findAllWithCriteria({types:['TEXT']}))
+  for(const segment of node.getStyledTextSegments(['fontName']))await figma.loadFontAsync(segment.fontName);
+ for(const child of [...existing.children])child.remove();
+}
+const section=existing??await gsection(host,'Alpha · Shared recipes','');
+if(existing)await gtext(section,'Alpha · Shared recipes',1264,'label');
+await gtext(section,'Primary — главный акцент. Secondary — мягкая цветная подложка. Tertiary — самый тихий уровень. Цвет оценивается после смешивания с фоном.',1264,'body','content/secondary/neutral');
 host.insertChild(Math.min(4,host.children.length-1),section);
 await gtext(section,'Результат = alpha × пигмент + (1 − alpha) × фон',1264,'label');
 await glabel(section,'Прозрачность находится в COLOR. Opacity фрейма, текста и компонента — 100%. Normal и Active заменяют друг друга; не накладывайте Active поверх Normal.');
+const hierarchy=await gsection(section,'Primary / Secondary / Tertiary','Шесть акцентов на одной поверхности. Active усиливает Secondary небольшим шагом; текст сохраняет читаемость.');
+for(const theme of ['Light','Dark']){
+ const row=gframe(hierarchy,theme+' · Emphasis hierarchy','HORIZONTAL',1264);row.itemSpacing=8;
+ for(const hue of ['blue','green','orange','red','pink','purple']){
+  const panel=gcard(row,theme+' / '+hue,204,'Content');gmode(panel,'Theme',theme);
+  await gtext(panel,theme+' / '+hue,156,'label');
+  await gsample(panel,'Primary','surface/primary/'+hue+'-normal','content/on-primary-'+hue,156);
+  await gsample(panel,'Secondary','surface/secondary/'+hue+'-normal','content/primary/'+hue,156);
+  await gsample(panel,'Secondary · Active','surface/secondary/'+hue+'-active','content/primary/'+hue,156);
+  await gsample(panel,'Tertiary','surface/tertiary/'+hue+'-normal','content/primary/'+hue,156);
+ }
+}
 for(const theme of ['Light','Dark']){
  const row=gframe(section,theme+' · Shared paint across surfaces','HORIZONTAL',1264);row.itemSpacing=16;
  for(const surface of ['Shell','Workspace','Content','Overlay','Invert']){
@@ -26,4 +46,4 @@ await gtext(section,'Пользовательский фон',1264,'label');
 await gtext(section,'Укажите точный HEX в Palette Lab и пересчитайте проект. Экспорт содержит согласованные заливки, текст и состояния. При смене HEX пересчитайте весь scope: ручная заливка фрейма в Figma не запускает генератор.',1264);
 await glabel(section,'Область создаёт непрозрачную основу. Проверенный рецепт охватывает локальные нейтральные слои; произвольные стопки цветных заливок и изображения требуют нового расчёта. Для изображения используйте защищённый Glass в runtime или определённый фон Overlay.');
 const nodes=[section,...section.findAll(()=>true)];
-return {createdNodeIds:nodes.map(n=>n.id),mutatedNodeIds:[host.id],sectionId:section.id,width:section.width,height:section.height,examples:10};
+return {createdNodeIds:nodes.filter(n=>n!==existing).map(n=>n.id),mutatedNodeIds:[host.id,...(existing?[existing.id]:[])],removedNodeIds,sectionId:section.id,hierarchyId:hierarchy.id,width:section.width,height:section.height,surfaceExamples:10,hierarchyExamples:12};

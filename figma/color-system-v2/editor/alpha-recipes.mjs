@@ -1,5 +1,5 @@
 import {BLACK,WHITE,clamp,composite,contrast,luminance,toOklch} from '../color-engine.mjs';
-import {fillVisibilityPolicy,resolveRecommendedFillTargets,solveRecommendedFills} from './recommended-fills.mjs';
+import {fillVisibilityPolicy,resolveRecommendedFillTargets,solveRecommendedFills,resolveFillAppearanceBounds} from './recommended-fills.mjs';
 
 const roles=['tertiary/normal','tertiary/active','secondary/normal','secondary/active'];
 // Neutral blocks intentionally remain quieter than chromatic labels. State and
@@ -8,7 +8,21 @@ export const neutralFillVisibilityPolicy={...fillVisibilityPolicy,tertiaryContra
 const rgb=['r','g','b'];
 const angle=(a,b)=>Math.abs((a-b+540)%360-180);
 const referenceCache=new Map();
-function lightReferenceChroma(accent,steps,minimumContrast,referenceBase){const key=JSON.stringify([accent,steps.map(s=>[s.name,s.value]),minimumContrast,referenceBase]);if(referenceCache.has(key))return referenceCache.get(key);const reference=solveRecommendedFills(accent,steps,{base:referenceBase,dark:false,minimumContrast}),result=Object.fromEntries(roles.map(role=>[role,toOklch(composite(reference.fills[role],referenceBase)).c]));result.colors=Object.fromEntries(roles.map(role=>[role,toOklch(composite(reference.fills[role],referenceBase))]));for(const family of ['tertiary','secondary']){const normal=result.colors[family+'/normal'],active=result.colors[family+'/active'];active.h=normal.h;active.c=Math.max(active.c,normal.c*1.10);result[family+'/active']=active.c;}if(referenceCache.size>=32)referenceCache.delete(referenceCache.keys().next().value);referenceCache.set(key,result);return result;}
+function lightReferenceChroma(accent,steps,minimumContrast,referenceBase){
+ const key=JSON.stringify([accent,steps.map(s=>[s.name,s.value]),minimumContrast,referenceBase]);
+ if(referenceCache.has(key))return referenceCache.get(key);
+ // Preserve hue identity from the former white-reference fit, not its strength.
+ // New prominence targets independently set C and L below.
+ const oldPolicy={'tertiary/normal':[1.15,.025],'tertiary/active':[1.28,.05],'secondary/normal':[1.5,.06],'secondary/active':[1.68,.085]},strength=clamp((accent.opacityScale??1.2)/1.2,.1,2),y=luminance(referenceBase),l=Math.cbrt(y),inkY=Math.min(...steps.map(s=>luminance(s.value))),boundary=(inkY+.05)*(minimumContrast+.1)-.05;
+ const hueTargets=Object.fromEntries(roles.map(role=>{const[ratio,lightness]=oldPolicy[role];return[role,[clamp(Math.max(Math.min((y+.05)/(1+(ratio-1)*strength)-.05,Math.max(0,l-lightness*strength)**3),boundary),.0001,.9999)]];}));
+ const reference=solveRecommendedFills(accent,steps,{base:referenceBase,dark:false,minimumContrast,targets:hueTargets}),result=Object.fromEntries(roles.map(role=>[role,toOklch(composite(reference.fills[role],referenceBase)).c]));
+ result.colors=Object.fromEntries(roles.map(role=>[role,toOklch(composite(reference.fills[role],referenceBase))]));
+ for(const family of ['tertiary','secondary']){const normal=result.colors[family+'/normal'],active=result.colors[family+'/active'];active.h=normal.h;active.c=Math.max(active.c,normal.c*1.10);result[family+'/active']=active.c;}
+ const targets=resolveRecommendedFillTargets([referenceBase],{dark:false,strength});
+ for(const role of roles){result[role]*=role.startsWith('secondary/')?.5:.65;result.colors[role].c=result[role];result.colors[role].l=Math.cbrt(targets[role][0]);}
+ if(referenceCache.size>=32)referenceCache.delete(referenceCache.keys().next().value);referenceCache.set(key,result);return result;
+}
+
 const lab=value=>{const {l,c,h}=toOklch(value),angle=h*Math.PI/180;return[l,c*Math.cos(angle),c*Math.sin(angle)];};
 const delta=(a,b)=>Math.hypot(...a.map((v,i)=>v-b[i]));
 const unique=values=>values.filter((v,i)=>!values.slice(0,i).some(b=>rgb.every(k=>Math.abs(v[k]-b[k])<1e-10)));
@@ -59,16 +73,17 @@ export function solveAlphaRecipe(accent,steps,{backings,dark=false,minimumContra
   candidate.maxChroma=Math.max(...expression);
   candidate.meanChroma=expression.reduce((sum,c)=>sum+c,0)/expression.length;
   candidate.onWhite=toOklch(composite(paint,referenceBase));
-  candidate.roles=Object.fromEntries(roles.map(role=>{const family=role.split('/')[0],goal=neutral?0:(referenceChroma?.[role]??(family==='secondary'?(dark?.04:.06):.018)*chromaScale),cap=Math.max((family==='secondary'?.08:.05)*chromaScale,referenceChroma?Math.min(.095,referenceChroma[role]+.025):0);
-   const floorContrast=(neutral?neutralFillVisibilityPolicy:fillVisibilityPolicy)[family+'Contrast'],floorDelta=(neutral?neutralFillVisibilityPolicy:fillVisibilityPolicy)[family+'Delta'];
+  candidate.roles=Object.fromEntries(roles.map(role=>{const family=role.split('/')[0],goal=neutral?0:(referenceChroma?.[role]??(family==='secondary'?(dark?.025:.032):.014)*chromaScale),cap=Math.max((family==='secondary'?.08:.05)*chromaScale,referenceChroma?Math.min(.095,referenceChroma[role]+.025):0);
+   const bounds=neutral?{minimumContrast:neutralFillVisibilityPolicy[family+'Contrast'],minimumDelta:neutralFillVisibilityPolicy[family+'Delta'],maximumContrast:Infinity}:resolveFillAppearanceBounds(role,strength),floorContrast=bounds.minimumContrast,floorDelta=bounds.minimumDelta;
    const visibility=Math.max(0,floorContrast-candidate.surfaceContrast)*3+Math.max(0,floorDelta-candidate.surfaceDelta)*10;
+   const maximumContrast=Math.max(...rendered.map((v,i)=>contrast(v,bases[i]))),prominence=maximumContrast<=bounds.maximumContrast+1e-7;
    const error=Math.max(...values.map((y,i)=>Math.abs(y-targets[role][i]))),soft=neutral||candidate.maxChroma<=cap+1e-7;
    const anchor=referenceChroma?.colors[role],hueError=anchor?angle(candidate.onWhite.h,anchor.h):0,lightnessError=anchor?Math.abs(candidate.onWhite.l-anchor.l):0;
    const expressive=neutral||candidate.meanChroma>=goal-.002;
    const anchored=!anchor||(hueError<=3&&lightnessError<=.025);
-   const valid=candidate.readable&&candidate.ordered&&visibility<1e-6&&soft&&expressive&&anchored;
-   const score=error*.5+Math.abs(candidate.meanChroma-goal)*(role.endsWith('/normal')?8:3)+visibility+Math.max(0,candidate.maxChroma-cap)*4+lightnessError*8+hueError/180*.3;
-   return[role,{valid,score,error,soft,hueError,lightnessError,gates:{text:candidate.readable,direction:candidate.ordered,visibility:visibility<1e-6,chroma:soft,expression:expressive,hue:!anchor||hueError<=3,lightness:!anchor||lightnessError<=.025}}];}));
+   const valid=candidate.readable&&candidate.ordered&&visibility<1e-6&&soft&&expressive&&anchored&&prominence;
+   const score=error*.5+Math.abs(candidate.meanChroma-goal)*(role.endsWith('/normal')?8:3)+visibility+Math.max(0,candidate.maxChroma-cap)*4+lightnessError*8+hueError/180*.3+Math.max(0,maximumContrast-bounds.maximumContrast)*3;
+   return[role,{valid,score,error,soft,hueError,lightnessError,maximumContrast,bounds,gates:{text:candidate.readable,direction:candidate.ordered,visibility:visibility<1e-6,prominence,chroma:soft,expression:expressive,hue:!anchor||hueError<=3,lightness:!anchor||lightnessError<=.025}}];}));
   candidates.push(candidate);
  }
  // Text and direction are hard priorities; appearance impossibility remains
@@ -99,7 +114,7 @@ export function solveAlphaRecipe(accent,steps,{backings,dark=false,minimumContra
  if(!selected?.valid||selected.score>.025)for(const tertiary of familyPairs.tertiary.slice(0,64))for(const secondary of familyPairs.secondary.slice(0,64))joint(tertiary,secondary);
  const fills={},references={},roleDiagnostics={},issues=[];
  for(const family of ['tertiary','secondary'])for(const state of ['normal','active']){const c=selected[family][state],role=family+'/'+state;fills[role]=c.paint;references[role]=c.step.name;
-  roleDiagnostics[role]={step:c.step.name,alpha:c.paint.a,chroma:c.meanChroma,actualY:c.ys[0],actualYs:c.ys,minY:Math.min(...c.ys),maxY:Math.max(...c.ys),targetYs:targets[role],targetY:targets[role][0],minimumContrast:c.surfaceContrast,minimumDelta:c.surfaceDelta,error:c.roles[role].error,gates:c.roles[role].gates,hueError:c.roles[role].hueError,anchorLightnessError:c.roles[role].lightnessError,renderedMaxChroma:c.renderedChroma,pigment:c.step.name,alphaPercent:c.percent,textContrast:c.textContrast,surfaceContrast:c.surfaceContrast,surfaceDelta:c.surfaceDelta,maxChroma:c.maxChroma,targetError:c.roles[role].error,visible:c.roles[role].valid};
+  roleDiagnostics[role]={maximumContrast:c.roles[role].maximumContrast,prominenceBounds:c.roles[role].bounds,step:c.step.name,alpha:c.paint.a,chroma:c.meanChroma,actualY:c.ys[0],actualYs:c.ys,minY:Math.min(...c.ys),maxY:Math.max(...c.ys),targetYs:targets[role],targetY:targets[role][0],minimumContrast:c.surfaceContrast,minimumDelta:c.surfaceDelta,error:c.roles[role].error,gates:c.roles[role].gates,hueError:c.roles[role].hueError,anchorLightnessError:c.roles[role].lightnessError,renderedMaxChroma:c.renderedChroma,pigment:c.step.name,alphaPercent:c.percent,textContrast:c.textContrast,surfaceContrast:c.surfaceContrast,surfaceDelta:c.surfaceDelta,maxChroma:c.maxChroma,targetError:c.roles[role].error,visible:c.roles[role].valid};
   if(!c.readable)issues.push(role+': text contrast unattainable on declared backing family');
   if(!c.ordered)issues.push(role+': fill direction unattainable on declared backing family');
   if(!c.roles[role].valid)issues.push(role+': '+Object.entries(c.roles[role].gates).filter(([,pass])=>!pass).map(([gate])=>gate).join(', ')+' unattainable on declared backing family');
