@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.18.3 · 2026-10-23
+
+- Default Primary content is white in Light local polarity and black in Dark. Normal/Active fills adapt together; Invert follows its local polarity.
+- Orange uses a warmer, more saturated authored seed within the white-text constraint. The same shared ramp supplies every role.
+- Joint contrast-based black/white selection remains an explicit generator policy; manual foreground modes and per-hue semantic routes are preserved.
+
 ## 0.18.2 · 2026-10-23
 
 - Automatic Primary text chooses exact black or white per hue from both actual Normal/Active fills, preserving the requested lightness whenever possible.

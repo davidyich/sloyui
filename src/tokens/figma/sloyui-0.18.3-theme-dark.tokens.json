@@ -1,7 +1,7 @@
 {
   "$extensions": {
     "com.sloyui.export": {
-      "version": "0.18.2",
+      "version": "0.18.3",
       "collection": "Sloy UI · Theme",
       "mode": "Dark"
     }
@@ -587,25 +587,6 @@
                   }
                 }
               }
-            },
-            "content": {
-              "$type": "color",
-              "$value": {
-                "colorSpace": "srgb",
-                "components": [
-                  0,
-                  0,
-                  0
-                ],
-                "alpha": 1
-              },
-              "$extensions": {
-                "com.sloyui.variable": {
-                  "scopes": [],
-                  "visibility": "internal",
-                  "codeSyntax": {}
-                }
-              }
             }
           }
         },
@@ -743,11 +724,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.9909293445,
-                    0.5676319445,
-                    0.291842178
+                    1,
+                    0.5559615385,
+                    0.353645307
                   ],
-                  "alpha": 0.13
+                  "alpha": 0.14
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -763,10 +744,10 @@
                   "colorSpace": "srgb",
                   "components": [
                     1,
-                    0.649408992,
-                    0.4367601616
+                    0.6445577144,
+                    0.4885890937
                   ],
-                  "alpha": 0.17
+                  "alpha": 0.18
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -783,8 +764,8 @@
                 "colorSpace": "srgb",
                 "components": [
                   1,
-                  0.8912345622,
-                  0.8300153709
+                  0.8895342455,
+                  0.8428822263
                 ],
                 "alpha": 1
               },
@@ -802,9 +783,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.9388163869,
-                    0.4558117611,
-                    0.0082833655
+                    0.9791170763,
+                    0.4130961094,
+                    0.0694084233
                   ],
                   "alpha": 1
                 },
@@ -825,9 +806,9 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.9909293445,
-                    0.5676319445,
-                    0.291842178
+                    1,
+                    0.5559615385,
+                    0.353645307
                   ],
                   "alpha": 1
                 },
@@ -845,8 +826,8 @@
                   "colorSpace": "srgb",
                   "components": [
                     1,
-                    0.649408992,
-                    0.4367601616
+                    0.6445577144,
+                    0.4885890937
                   ],
                   "alpha": 1
                 },
@@ -1893,11 +1874,11 @@
                 "$value": {
                   "colorSpace": "srgb",
                   "components": [
-                    0.9909293445,
-                    0.5676319445,
-                    0.291842178
+                    1,
+                    0.5559615385,
+                    0.353645307
                   ],
-                  "alpha": 0.13
+                  "alpha": 0.14
                 },
                 "$extensions": {
                   "com.sloyui.variable": {
@@ -1913,10 +1894,10 @@
                   "colorSpace": "srgb",
                   "components": [
                     1,
-                    0.649408992,
-                    0.4367601616
+                    0.6445577144,
+                    0.4885890937
                   ],
-                  "alpha": 0.17
+                  "alpha": 0.18
                 },
                 "$extensions": {
                   "com.sloyui.variable": {

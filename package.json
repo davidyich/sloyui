@@ -1,6 +1,6 @@
 {
   "name": "sloyui",
-  "version": "0.18.2",
+  "version": "0.18.3",
   "description": "An agent-friendly React UI library with themes, semantic tokens and accessible components.",
   "type": "module",
   "sideEffects": [

@@ -24,9 +24,9 @@ describe('Shared finite alpha recipes',()=>{
   }
  },30000);
  it('keeps Light Secondary quiet and its hue recognizable on actual nested backings',()=>{
-  // Only hue identity remains a legacy reference; old chroma/L are deliberately
-  // superseded by the reviewed quieter Secondary appearance bounds.
-  const hues:Record<string,number>={blue:254.0142,green:168.3133,orange:64.7236,red:24.1066,pink:334.1205,purple:313.9222};
+  // Hue identity follows the authored palette. Orange was deliberately moved
+  // to seed #F56918; the reviewed quiet appearance bounds stay unchanged.
+  const hues:Record<string,number>={blue:254.0142,green:168.3133,orange:56.1810,red:24.1066,pink:334.1205,purple:313.9222};
   const bases=['#FFFFFF'].map(fromHex),neutral=solveNeutralAlphaRecipe({backings:bases,dark:false});
   const backings=bases.flatMap(base=>[base,...[base,composite(neutral.roles['surface/block'],base)].flatMap(bg=>Object.values(neutral.roles).map(paint=>composite(paint,bg)))]);
   for(const preset of presets){const a=createAccent(preset.name,preset.hex),r=solveAlphaRecipe(a,generatePalette(a)[0].steps,{backings,dark:false}),actual=toOklch(composite(r.fills['secondary/normal'],WHITE)),expectedHue=hues[preset.name];expect(r.diagnostics.limited,preset.name).toBe(false);expect(Math.abs((actual.h-expectedHue+540)%360-180),preset.name).toBeLessThanOrEqual(3);for(const base of backings){for(const role of soft)expect(checkFillAppearance(composite(r.fills[role],base),base,role).pass,`${preset.name}/${role}`).toBe(true);expect(contrast(composite(r.fills['secondary/normal'],base),base)).toBeGreaterThan(contrast(composite(r.fills['tertiary/active'],base),base));}}

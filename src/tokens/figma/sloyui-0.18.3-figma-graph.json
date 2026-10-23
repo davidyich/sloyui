@@ -1,5 +1,5 @@
 {
-  "version": "0.18.2",
+  "version": "0.18.3",
   "modes": [
     "neutral",
     "blue",
@@ -796,8 +796,8 @@
             "colorSpace": "srgb",
             "components": [
               1,
-              0.9834247999,
-              0.9742449957
+              0.9831573892,
+              0.9761300852
             ],
             "alpha": 1
           },
@@ -805,8 +805,8 @@
             "colorSpace": "srgb",
             "components": [
               1,
-              0.9666107685,
-              0.9480658731
+              0.9660748483,
+              0.9518877428
             ],
             "alpha": 1
           },
@@ -814,8 +814,8 @@
             "colorSpace": "srgb",
             "components": [
               1,
-              0.9441454727,
-              0.9130027785
+              0.9432554643,
+              0.9194543229
             ],
             "alpha": 1
           },
@@ -823,8 +823,8 @@
             "colorSpace": "srgb",
             "components": [
               1,
-              0.9187856761,
-              0.8733011478
+              0.9175029184,
+              0.8827852538
             ],
             "alpha": 1
           },
@@ -832,8 +832,8 @@
             "colorSpace": "srgb",
             "components": [
               1,
-              0.8912345622,
-              0.8300153709
+              0.8895342455,
+              0.8428822263
             ],
             "alpha": 1
           },
@@ -841,8 +841,8 @@
             "colorSpace": "srgb",
             "components": [
               1,
-              0.8618162608,
-              0.7836037598
+              0.8596815171,
+              0.8002018937
             ],
             "alpha": 1
           },
@@ -850,8 +850,8 @@
             "colorSpace": "srgb",
             "components": [
               1,
-              0.8306921486,
-              0.7342557759
+              0.8281117119,
+              0.7549642271
             ],
             "alpha": 1
           },
@@ -859,8 +859,8 @@
             "colorSpace": "srgb",
             "components": [
               1,
-              0.7979282371,
-              0.6819826208
+              0.7948952382,
+              0.7072447183
             ],
             "alpha": 1
           },
@@ -868,8 +868,8 @@
             "colorSpace": "srgb",
             "components": [
               1,
-              0.763520234,
-              0.6266309713
+              0.760031417,
+              0.6570018289
             ],
             "alpha": 1
           },
@@ -877,8 +877,8 @@
             "colorSpace": "srgb",
             "components": [
               1,
-              0.7274007279,
-              0.5678457151
+              0.7234557599,
+              0.6040709183
             ],
             "alpha": 1
           },
@@ -886,8 +886,8 @@
             "colorSpace": "srgb",
             "components": [
               1,
-              0.689435396,
-              0.5049635464
+              0.6850360202,
+              0.5481259245
             ],
             "alpha": 1
           },
@@ -895,8 +895,8 @@
             "colorSpace": "srgb",
             "components": [
               1,
-              0.649408992,
-              0.4367601616
+              0.6445577144,
+              0.4885890937
             ],
             "alpha": 1
           },
@@ -904,88 +904,88 @@
             "colorSpace": "srgb",
             "components": [
               1,
-              0.6069977915,
-              0.3607898982
+              0.6016955777,
+              0.4244277256
             ],
             "alpha": 1
           },
           "orange/14": {
             "colorSpace": "srgb",
             "components": [
-              0.9909293445,
-              0.5676319445,
-              0.291842178
+              1,
+              0.5559615385,
+              0.353645307
             ],
             "alpha": 1
           },
           "orange/15": {
             "colorSpace": "srgb",
             "components": [
-              0.9754096874,
-              0.530639105,
-              0.2261030617
+              0.9999999999,
+              0.5066074025,
+              0.2716899869
             ],
             "alpha": 1
           },
           "orange/16": {
             "colorSpace": "srgb",
             "components": [
-              0.9580362365,
-              0.4933514548,
-              0.1477026734
+              0.9977055064,
+              0.4544950456,
+              0.1704840389
             ],
             "alpha": 1
           },
           "orange/17": {
             "colorSpace": "srgb",
             "components": [
-              0.9388163869,
-              0.4558117611,
-              0.0082833655
+              0.9791170763,
+              0.4130961094,
+              0.0694084233
             ],
             "alpha": 1
           },
           "orange/18": {
             "colorSpace": "srgb",
             "components": [
-              0.8987822969,
-              0.4342067856,
-              3e-10
+              0.9447076313,
+              0.3857282663,
+              4e-10
             ],
             "alpha": 1
           },
           "orange/19": {
             "colorSpace": "srgb",
             "components": [
-              0.8577632456,
-              0.4131676048,
-              5e-10
+              0.9017134818,
+              0.3667739877,
+              4e-10
             ],
             "alpha": 1
           },
           "orange/20": {
             "colorSpace": "srgb",
             "components": [
-              0.8166118327,
-              0.3920605341,
-              6e-10
+              0.8585805976,
+              0.3477585468,
+              1e-10
             ],
             "alpha": 1
           },
           "orange/21": {
             "colorSpace": "srgb",
             "components": [
-              0.775372804,
-              0.370908524,
-              2e-10
+              0.8153558785,
+              0.32870262,
+              4e-10
             ],
             "alpha": 1
           },
           "orange/22": {
             "colorSpace": "srgb",
             "components": [
-              0.734089978,
-              0.3497340499,
+              0.7720852535,
+              0.3096264552,
               2e-10
             ],
             "alpha": 1
@@ -993,98 +993,98 @@
           "orange/23": {
             "colorSpace": "srgb",
             "components": [
-              0.692806698,
-              0.3285593428,
-              1e-10
+              0.7288141525,
+              0.2905500806,
+              4e-10
             ],
             "alpha": 1
           },
           "orange/24": {
             "colorSpace": "srgb",
             "components": [
-              0.6515662608,
-              0.3074066104,
-              1e-10
+              0.6855879572,
+              0.2714935029,
+              3e-10
             ],
             "alpha": 1
           },
           "orange/25": {
             "colorSpace": "srgb",
             "components": [
-              0.6104123421,
-              0.2862982544,
-              2e-10
+              0.6424524465,
+              0.2524769041,
+              1e-10
             ],
             "alpha": 1
           },
           "orange/26": {
             "colorSpace": "srgb",
             "components": [
-              0.5693894348,
-              0.2652570958,
-              1e-10
+              0.5994542553,
+              0.2335208438,
+              3e-10
             ],
             "alpha": 1
           },
           "orange/27": {
             "colorSpace": "srgb",
             "components": [
-              0.5285433157,
-              0.244306614,
-              2e-10
+              0.5566413649,
+              0.2146464746,
+              3e-10
             ],
             "alpha": 1
           },
           "orange/28": {
             "colorSpace": "srgb",
             "components": [
-              0.4879215631,
-              0.2234712126,
-              2e-10
+              0.5140636444,
+              0.1958757816,
+              1e-10
             ],
             "alpha": 1
           },
           "orange/29": {
             "colorSpace": "srgb",
             "components": [
-              0.4475741488,
-              0.2027765227,
-              2e-10
+              0.4717734717,
+              0.1772318563,
+              1e-10
             ],
             "alpha": 1
           },
           "orange/30": {
             "colorSpace": "srgb",
             "components": [
-              0.4075541359,
-              0.1822497611,
-              2e-10
+              0.4298264652,
+              0.1587392181,
+              1e-10
             ],
             "alpha": 1
           },
           "orange/31": {
             "colorSpace": "srgb",
             "components": [
-              0.3679185272,
-              0.1619201651,
-              2e-10
+              0.3882823722,
+              0.1404242072,
+              0
             ],
             "alpha": 1
           },
           "orange/32": {
             "colorSpace": "srgb",
             "components": [
-              0.3287293231,
-              0.1418195356,
-              0
+              0.3472061784,
+              0.1223154732,
+              1e-10
             ],
             "alpha": 1
           },
           "orange/33": {
             "colorSpace": "srgb",
             "components": [
-              0.2900548798,
-              0.1219829333,
+              0.3066695316,
+              0.1044446022,
               0
             ],
             "alpha": 1
@@ -1092,8 +1092,8 @@
           "orange/34": {
             "colorSpace": "srgb",
             "components": [
-              0.2519717015,
-              0.1024495982,
+              0.2667526196,
+              0.0868469458,
               0
             ],
             "alpha": 1
@@ -1101,8 +1101,8 @@
           "orange/35": {
             "colorSpace": "srgb",
             "components": [
-              0.2145668791,
-              0.0832642002,
+              0.2275467269,
+              0.0695627473,
               0
             ],
             "alpha": 1
@@ -1110,8 +1110,8 @@
           "orange/36": {
             "colorSpace": "srgb",
             "components": [
-              0.177941522,
-              0.0644785997,
+              0.1891578314,
+              0.0526387279,
               0
             ],
             "alpha": 1
@@ -1119,8 +1119,8 @@
           "orange/37": {
             "colorSpace": "srgb",
             "components": [
-              0.1422157857,
-              0.0461544258,
+              0.151711874,
+              0.0361950002,
               0
             ],
             "alpha": 1
@@ -1128,8 +1128,8 @@
           "orange/38": {
             "colorSpace": "srgb",
             "components": [
-              0.1075365943,
-              0.0292309614,
+              0.1153628534,
+              0.0227547118,
               0
             ],
             "alpha": 1
@@ -1137,8 +1137,8 @@
           "orange/39": {
             "colorSpace": "srgb",
             "components": [
-              0.0740902451,
-              0.0168152972,
+              0.0803060374,
+              0.0130897932,
               0
             ],
             "alpha": 1
@@ -1146,8 +1146,8 @@
           "orange/40": {
             "colorSpace": "srgb",
             "components": [
-              0.0421246805,
-              0.0084947651,
+              0.0468013068,
+              0.0066127121,
               0
             ],
             "alpha": 1
@@ -1155,8 +1155,8 @@
           "orange/41": {
             "colorSpace": "srgb",
             "components": [
-              0.0172955587,
-              0.0034836805,
+              0.0193620615,
+              0.0027118555,
               0
             ],
             "alpha": 1
@@ -3251,27 +3251,18 @@
           "context/page/color/blue/solid/background/normal": {
             "colorSpace": "srgb",
             "components": [
-              3e-10,
-              0.5198551828,
-              0.9905044662
+              1e-10,
+              0.4382018359,
+              0.8419993445
             ],
             "alpha": 1
           },
           "context/page/color/blue/solid/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              1e-10,
-              0.4654294464,
-              0.8915189265
-            ],
-            "alpha": 1
-          },
-          "context/page/color/blue/solid/content": {
-            "colorSpace": "srgb",
-            "components": [
-              0,
-              0,
-              0
+              2e-10,
+              0.3838601889,
+              0.7431667405
             ],
             "alpha": 1
           },
@@ -3332,90 +3323,90 @@
           "context/page/color/green/solid/background/normal": {
             "colorSpace": "srgb",
             "components": [
-              3e-10,
-              0.5981901807,
-              0.3557246386
+              2e-10,
+              0.5008011309,
+              0.294486605
             ],
             "alpha": 1
           },
           "context/page/color/green/solid/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              5e-10,
-              0.5332417992,
-              0.3148852303
+              3e-10,
+              0.4361589659,
+              0.2538397449
             ],
             "alpha": 1
           },
           "context/page/color/orange/secondary/background/normal": {
             "colorSpace": "srgb",
             "components": [
-              0.8166118327,
-              0.3920605341,
-              6e-10
+              0.7720852535,
+              0.3096264552,
+              2e-10
             ],
-            "alpha": 0.18
+            "alpha": 0.16
           },
           "context/panel/color/orange/secondary/background/normal": {
             "colorSpace": "srgb",
             "components": [
-              0.8577632456,
-              0.4131676048,
-              5e-10
+              0.7720852535,
+              0.3096264552,
+              2e-10
             ],
-            "alpha": 0.17
+            "alpha": 0.15
           },
           "context/page/color/orange/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.692806698,
-              0.3285593428,
-              1e-10
+              0.6855879572,
+              0.2714935029,
+              3e-10
             ],
-            "alpha": 0.23
+            "alpha": 0.21
           },
           "context/panel/color/orange/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.734089978,
-              0.3497340499,
-              2e-10
+              0.6855879572,
+              0.2714935029,
+              3e-10
             ],
-            "alpha": 0.22
+            "alpha": 0.2
           },
           "context/page/color/orange/secondary/content": {
             "colorSpace": "srgb",
             "components": [
-              0.3679185272,
-              0.1619201651,
-              2e-10
+              0.3882823722,
+              0.1404242072,
+              0
             ],
             "alpha": 1
           },
           "context/page/color/orange/secondary/border/normal": {
             "colorSpace": "srgb",
             "components": [
-              0.6104123421,
-              0.2862982544,
-              2e-10
+              0.6424524465,
+              0.2524769041,
+              1e-10
             ],
             "alpha": 1
           },
           "context/page/color/orange/solid/background/normal": {
             "colorSpace": "srgb",
             "components": [
-              0.9388163869,
-              0.4558117611,
-              0.0082833655
+              0.7720852535,
+              0.3096264552,
+              2e-10
             ],
             "alpha": 1
           },
           "context/page/color/orange/solid/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.8577632456,
-              0.4131676048,
-              5e-10
+              0.6855879572,
+              0.2714935029,
+              3e-10
             ],
             "alpha": 1
           },
@@ -3476,18 +3467,18 @@
           "context/page/color/red/solid/background/normal": {
             "colorSpace": "srgb",
             "components": [
-              0.9766299504,
-              0.2362831009,
-              0.2462664741
+              0.8875528899,
+              6e-10,
+              0.1337178693
             ],
             "alpha": 1
           },
           "context/page/color/red/solid/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.924821199,
-              0.0893841701,
-              0.1633423521
+              0.7889798876,
+              4e-10,
+              0.1139815901
             ],
             "alpha": 1
           },
@@ -3548,18 +3539,18 @@
           "context/page/color/pink/solid/background/normal": {
             "colorSpace": "srgb",
             "components": [
-              0.9289893978,
-              0.149671416,
-              0.7261560286
+              0.8145028544,
+              5e-10,
+              0.6302341506
             ],
             "alpha": 1
           },
           "context/page/color/pink/solid/background/hover": {
             "colorSpace": "srgb",
             "components": [
-              0.8599926413,
-              7e-10,
-              0.6660835504
+              0.7235694884,
+              3e-10,
+              0.5585717662
             ],
             "alpha": 1
           },
@@ -4429,15 +4420,6 @@
             ],
             "alpha": 1
           },
-          "context/page/color/blue/solid/content": {
-            "colorSpace": "srgb",
-            "components": [
-              0,
-              0,
-              0
-            ],
-            "alpha": 1
-          },
           "context/page/color/green/secondary/background/normal": {
             "colorSpace": "srgb",
             "components": [
@@ -4513,63 +4495,63 @@
           "context/page/color/orange/secondary/background/normal": {
             "colorSpace": "srgb",
             "components": [
-              0.9909293445,
-              0.5676319445,
-              0.291842178
+              1,
+              0.5559615385,
+              0.353645307
             ],
-            "alpha": 0.13
+            "alpha": 0.14
           },
           "context/panel/color/orange/secondary/background/normal": {
             "colorSpace": "srgb",
             "components": [
-              0.9909293445,
-              0.5676319445,
-              0.291842178
+              1,
+              0.5559615385,
+              0.353645307
             ],
-            "alpha": 0.13
+            "alpha": 0.14
           },
           "context/page/color/orange/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
               1,
-              0.649408992,
-              0.4367601616
+              0.6445577144,
+              0.4885890937
             ],
-            "alpha": 0.17
+            "alpha": 0.18
           },
           "context/panel/color/orange/secondary/background/hover": {
             "colorSpace": "srgb",
             "components": [
               1,
-              0.649408992,
-              0.4367601616
+              0.6445577144,
+              0.4885890937
             ],
-            "alpha": 0.17
+            "alpha": 0.18
           },
           "context/page/color/orange/secondary/content": {
             "colorSpace": "srgb",
             "components": [
               1,
-              0.8912345622,
-              0.8300153709
+              0.8895342455,
+              0.8428822263
             ],
             "alpha": 1
           },
           "context/page/color/orange/secondary/border/normal": {
             "colorSpace": "srgb",
             "components": [
-              0.9388163869,
-              0.4558117611,
-              0.0082833655
+              0.9791170763,
+              0.4130961094,
+              0.0694084233
             ],
             "alpha": 1
           },
           "context/page/color/orange/solid/background/normal": {
             "colorSpace": "srgb",
             "components": [
-              0.9909293445,
-              0.5676319445,
-              0.291842178
+              1,
+              0.5559615385,
+              0.353645307
             ],
             "alpha": 1
           },
@@ -4577,8 +4559,8 @@
             "colorSpace": "srgb",
             "components": [
               1,
-              0.649408992,
-              0.4367601616
+              0.6445577144,
+              0.4885890937
             ],
             "alpha": 1
           },
@@ -6695,7 +6677,7 @@
             "alias": "Theme/context/page/color/blue/solid/background/hover"
           },
           "color/blue/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/blue/vivid/background/normal": {
             "alias": "Theme/context/page/color/blue/solid/background/normal"
@@ -6707,7 +6689,7 @@
             "alias": "Theme/context/page/color/blue/solid/background/hover"
           },
           "color/blue/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/green/secondary/background/normal": {
             "alias": "Theme/context/page/color/green/secondary/background/normal"
@@ -6740,7 +6722,7 @@
             "alias": "Theme/context/page/color/green/solid/background/hover"
           },
           "color/green/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/green/vivid/background/normal": {
             "alias": "Theme/context/page/color/green/solid/background/normal"
@@ -6752,7 +6734,7 @@
             "alias": "Theme/context/page/color/green/solid/background/hover"
           },
           "color/green/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/orange/secondary/background/normal": {
             "alias": "Theme/context/page/color/orange/secondary/background/normal"
@@ -6785,7 +6767,7 @@
             "alias": "Theme/context/page/color/orange/solid/background/hover"
           },
           "color/orange/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/orange/vivid/background/normal": {
             "alias": "Theme/context/page/color/orange/solid/background/normal"
@@ -6797,7 +6779,7 @@
             "alias": "Theme/context/page/color/orange/solid/background/hover"
           },
           "color/orange/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/red/secondary/background/normal": {
             "alias": "Theme/context/page/color/red/secondary/background/normal"
@@ -6830,7 +6812,7 @@
             "alias": "Theme/context/page/color/red/solid/background/hover"
           },
           "color/red/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/red/vivid/background/normal": {
             "alias": "Theme/context/page/color/red/solid/background/normal"
@@ -6842,7 +6824,7 @@
             "alias": "Theme/context/page/color/red/solid/background/hover"
           },
           "color/red/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/pink/secondary/background/normal": {
             "alias": "Theme/context/page/color/pink/secondary/background/normal"
@@ -6875,7 +6857,7 @@
             "alias": "Theme/context/page/color/pink/solid/background/hover"
           },
           "color/pink/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/pink/vivid/background/normal": {
             "alias": "Theme/context/page/color/pink/solid/background/normal"
@@ -6887,7 +6869,7 @@
             "alias": "Theme/context/page/color/pink/solid/background/hover"
           },
           "color/pink/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/purple/secondary/background/normal": {
             "alias": "Theme/context/page/color/purple/secondary/background/normal"
@@ -7714,7 +7696,7 @@
             "alias": "Theme/context/page/color/blue/solid/background/hover"
           },
           "color/blue/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/blue/vivid/background/normal": {
             "alias": "Theme/context/page/color/blue/solid/background/normal"
@@ -7726,7 +7708,7 @@
             "alias": "Theme/context/page/color/blue/solid/background/hover"
           },
           "color/blue/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/green/secondary/background/normal": {
             "alias": "SurfaceScheme/context/inset/color/green/secondary/background/normal"
@@ -7759,7 +7741,7 @@
             "alias": "Theme/context/page/color/green/solid/background/hover"
           },
           "color/green/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/green/vivid/background/normal": {
             "alias": "Theme/context/page/color/green/solid/background/normal"
@@ -7771,7 +7753,7 @@
             "alias": "Theme/context/page/color/green/solid/background/hover"
           },
           "color/green/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/orange/secondary/background/normal": {
             "alias": "SurfaceScheme/context/inset/color/orange/secondary/background/normal"
@@ -7804,7 +7786,7 @@
             "alias": "Theme/context/page/color/orange/solid/background/hover"
           },
           "color/orange/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/orange/vivid/background/normal": {
             "alias": "Theme/context/page/color/orange/solid/background/normal"
@@ -7816,7 +7798,7 @@
             "alias": "Theme/context/page/color/orange/solid/background/hover"
           },
           "color/orange/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/red/secondary/background/normal": {
             "alias": "SurfaceScheme/context/inset/color/red/secondary/background/normal"
@@ -7849,7 +7831,7 @@
             "alias": "Theme/context/page/color/red/solid/background/hover"
           },
           "color/red/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/red/vivid/background/normal": {
             "alias": "Theme/context/page/color/red/solid/background/normal"
@@ -7861,7 +7843,7 @@
             "alias": "Theme/context/page/color/red/solid/background/hover"
           },
           "color/red/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/pink/secondary/background/normal": {
             "alias": "SurfaceScheme/context/inset/color/pink/secondary/background/normal"
@@ -7894,7 +7876,7 @@
             "alias": "Theme/context/page/color/pink/solid/background/hover"
           },
           "color/pink/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/pink/vivid/background/normal": {
             "alias": "Theme/context/page/color/pink/solid/background/normal"
@@ -7906,7 +7888,7 @@
             "alias": "Theme/context/page/color/pink/solid/background/hover"
           },
           "color/pink/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/purple/secondary/background/normal": {
             "alias": "SurfaceScheme/context/inset/color/purple/secondary/background/normal"
@@ -8733,7 +8715,7 @@
             "alias": "Theme/context/page/color/blue/solid/background/hover"
           },
           "color/blue/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/blue/vivid/background/normal": {
             "alias": "Theme/context/page/color/blue/solid/background/normal"
@@ -8745,7 +8727,7 @@
             "alias": "Theme/context/page/color/blue/solid/background/hover"
           },
           "color/blue/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/green/secondary/background/normal": {
             "alias": "Theme/context/panel/color/green/secondary/background/normal"
@@ -8778,7 +8760,7 @@
             "alias": "Theme/context/page/color/green/solid/background/hover"
           },
           "color/green/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/green/vivid/background/normal": {
             "alias": "Theme/context/page/color/green/solid/background/normal"
@@ -8790,7 +8772,7 @@
             "alias": "Theme/context/page/color/green/solid/background/hover"
           },
           "color/green/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/orange/secondary/background/normal": {
             "alias": "Theme/context/panel/color/orange/secondary/background/normal"
@@ -8823,7 +8805,7 @@
             "alias": "Theme/context/page/color/orange/solid/background/hover"
           },
           "color/orange/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/orange/vivid/background/normal": {
             "alias": "Theme/context/page/color/orange/solid/background/normal"
@@ -8835,7 +8817,7 @@
             "alias": "Theme/context/page/color/orange/solid/background/hover"
           },
           "color/orange/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/red/secondary/background/normal": {
             "alias": "Theme/context/panel/color/red/secondary/background/normal"
@@ -8868,7 +8850,7 @@
             "alias": "Theme/context/page/color/red/solid/background/hover"
           },
           "color/red/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/red/vivid/background/normal": {
             "alias": "Theme/context/page/color/red/solid/background/normal"
@@ -8880,7 +8862,7 @@
             "alias": "Theme/context/page/color/red/solid/background/hover"
           },
           "color/red/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/pink/secondary/background/normal": {
             "alias": "Theme/context/panel/color/pink/secondary/background/normal"
@@ -8913,7 +8895,7 @@
             "alias": "Theme/context/page/color/pink/solid/background/hover"
           },
           "color/pink/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/pink/vivid/background/normal": {
             "alias": "Theme/context/page/color/pink/solid/background/normal"
@@ -8925,7 +8907,7 @@
             "alias": "Theme/context/page/color/pink/solid/background/hover"
           },
           "color/pink/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/purple/secondary/background/normal": {
             "alias": "Theme/context/panel/color/purple/secondary/background/normal"
@@ -9752,7 +9734,7 @@
             "alias": "Theme/context/page/color/blue/solid/background/hover"
           },
           "color/blue/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/blue/vivid/background/normal": {
             "alias": "Theme/context/page/color/blue/solid/background/normal"
@@ -9764,7 +9746,7 @@
             "alias": "Theme/context/page/color/blue/solid/background/hover"
           },
           "color/blue/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/green/secondary/background/normal": {
             "alias": "Theme/context/panel/color/green/secondary/background/normal"
@@ -9797,7 +9779,7 @@
             "alias": "Theme/context/page/color/green/solid/background/hover"
           },
           "color/green/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/green/vivid/background/normal": {
             "alias": "Theme/context/page/color/green/solid/background/normal"
@@ -9809,7 +9791,7 @@
             "alias": "Theme/context/page/color/green/solid/background/hover"
           },
           "color/green/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/orange/secondary/background/normal": {
             "alias": "Theme/context/panel/color/orange/secondary/background/normal"
@@ -9842,7 +9824,7 @@
             "alias": "Theme/context/page/color/orange/solid/background/hover"
           },
           "color/orange/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/orange/vivid/background/normal": {
             "alias": "Theme/context/page/color/orange/solid/background/normal"
@@ -9854,7 +9836,7 @@
             "alias": "Theme/context/page/color/orange/solid/background/hover"
           },
           "color/orange/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/red/secondary/background/normal": {
             "alias": "Theme/context/panel/color/red/secondary/background/normal"
@@ -9887,7 +9869,7 @@
             "alias": "Theme/context/page/color/red/solid/background/hover"
           },
           "color/red/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/red/vivid/background/normal": {
             "alias": "Theme/context/page/color/red/solid/background/normal"
@@ -9899,7 +9881,7 @@
             "alias": "Theme/context/page/color/red/solid/background/hover"
           },
           "color/red/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/pink/secondary/background/normal": {
             "alias": "Theme/context/panel/color/pink/secondary/background/normal"
@@ -9932,7 +9914,7 @@
             "alias": "Theme/context/page/color/pink/solid/background/hover"
           },
           "color/pink/solid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/pink/vivid/background/normal": {
             "alias": "Theme/context/page/color/pink/solid/background/normal"
@@ -9944,7 +9926,7 @@
             "alias": "Theme/context/page/color/pink/solid/background/hover"
           },
           "color/pink/vivid/content": {
-            "alias": "Theme/context/page/color/blue/solid/content"
+            "alias": "Theme/context/page/primary/content"
           },
           "color/purple/secondary/background/normal": {
             "alias": "Theme/context/panel/color/purple/secondary/background/normal"
@@ -16696,11 +16678,6 @@
       "scopes": [],
       "visibility": "internal"
     },
-    "Theme/context/page/color/blue/solid/content": {
-      "type": "COLOR",
-      "scopes": [],
-      "visibility": "internal"
-    },
     "Theme/context/page/color/green/secondary/background/normal": {
       "type": "COLOR",
       "scopes": [],
@@ -20117,10 +20094,10 @@
     "Theme/context/canvas/action/blue/pressed": "Theme/context/page/color/blue/solid/background/hover",
     "Theme/context/raised/action/blue/pressed": "Theme/context/page/color/blue/solid/background/hover",
     "Theme/context/floating/action/blue/pressed": "Theme/context/page/color/blue/solid/background/hover",
-    "Theme/context/base/action/blue/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/canvas/action/blue/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/raised/action/blue/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/floating/action/blue/text": "Theme/context/page/color/blue/solid/content",
+    "Theme/context/base/action/blue/text": "Theme/context/page/primary/content",
+    "Theme/context/canvas/action/blue/text": "Theme/context/page/primary/content",
+    "Theme/context/raised/action/blue/text": "Theme/context/page/primary/content",
+    "Theme/context/floating/action/blue/text": "Theme/context/page/primary/content",
     "Theme/context/base/action-vivid/blue/normal": "Theme/context/page/color/blue/solid/background/normal",
     "Theme/context/canvas/action-vivid/blue/normal": "Theme/context/page/color/blue/solid/background/normal",
     "Theme/context/raised/action-vivid/blue/normal": "Theme/context/page/color/blue/solid/background/normal",
@@ -20133,10 +20110,10 @@
     "Theme/context/canvas/action-vivid/blue/pressed": "Theme/context/page/color/blue/solid/background/hover",
     "Theme/context/raised/action-vivid/blue/pressed": "Theme/context/page/color/blue/solid/background/hover",
     "Theme/context/floating/action-vivid/blue/pressed": "Theme/context/page/color/blue/solid/background/hover",
-    "Theme/context/base/action-vivid/blue/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/canvas/action-vivid/blue/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/raised/action-vivid/blue/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/floating/action-vivid/blue/text": "Theme/context/page/color/blue/solid/content",
+    "Theme/context/base/action-vivid/blue/text": "Theme/context/page/primary/content",
+    "Theme/context/canvas/action-vivid/blue/text": "Theme/context/page/primary/content",
+    "Theme/context/raised/action-vivid/blue/text": "Theme/context/page/primary/content",
+    "Theme/context/floating/action-vivid/blue/text": "Theme/context/page/primary/content",
     "Theme/context/base/element/green/normal": "Theme/context/page/color/green/secondary/background/normal",
     "Theme/context/canvas/element/green/normal": "Theme/context/page/color/green/secondary/background/normal",
     "Theme/context/raised/element/green/normal": "Theme/context/panel/color/green/secondary/background/normal",
@@ -20185,10 +20162,10 @@
     "Theme/context/canvas/action/green/pressed": "Theme/context/page/color/green/solid/background/hover",
     "Theme/context/raised/action/green/pressed": "Theme/context/page/color/green/solid/background/hover",
     "Theme/context/floating/action/green/pressed": "Theme/context/page/color/green/solid/background/hover",
-    "Theme/context/base/action/green/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/canvas/action/green/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/raised/action/green/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/floating/action/green/text": "Theme/context/page/color/blue/solid/content",
+    "Theme/context/base/action/green/text": "Theme/context/page/primary/content",
+    "Theme/context/canvas/action/green/text": "Theme/context/page/primary/content",
+    "Theme/context/raised/action/green/text": "Theme/context/page/primary/content",
+    "Theme/context/floating/action/green/text": "Theme/context/page/primary/content",
     "Theme/context/base/action-vivid/green/normal": "Theme/context/page/color/green/solid/background/normal",
     "Theme/context/canvas/action-vivid/green/normal": "Theme/context/page/color/green/solid/background/normal",
     "Theme/context/raised/action-vivid/green/normal": "Theme/context/page/color/green/solid/background/normal",
@@ -20201,10 +20178,10 @@
     "Theme/context/canvas/action-vivid/green/pressed": "Theme/context/page/color/green/solid/background/hover",
     "Theme/context/raised/action-vivid/green/pressed": "Theme/context/page/color/green/solid/background/hover",
     "Theme/context/floating/action-vivid/green/pressed": "Theme/context/page/color/green/solid/background/hover",
-    "Theme/context/base/action-vivid/green/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/canvas/action-vivid/green/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/raised/action-vivid/green/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/floating/action-vivid/green/text": "Theme/context/page/color/blue/solid/content",
+    "Theme/context/base/action-vivid/green/text": "Theme/context/page/primary/content",
+    "Theme/context/canvas/action-vivid/green/text": "Theme/context/page/primary/content",
+    "Theme/context/raised/action-vivid/green/text": "Theme/context/page/primary/content",
+    "Theme/context/floating/action-vivid/green/text": "Theme/context/page/primary/content",
     "Theme/context/base/element/orange/normal": "Theme/context/page/color/orange/secondary/background/normal",
     "Theme/context/canvas/element/orange/normal": "Theme/context/page/color/orange/secondary/background/normal",
     "Theme/context/raised/element/orange/normal": "Theme/context/panel/color/orange/secondary/background/normal",
@@ -20253,10 +20230,10 @@
     "Theme/context/canvas/action/orange/pressed": "Theme/context/page/color/orange/solid/background/hover",
     "Theme/context/raised/action/orange/pressed": "Theme/context/page/color/orange/solid/background/hover",
     "Theme/context/floating/action/orange/pressed": "Theme/context/page/color/orange/solid/background/hover",
-    "Theme/context/base/action/orange/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/canvas/action/orange/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/raised/action/orange/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/floating/action/orange/text": "Theme/context/page/color/blue/solid/content",
+    "Theme/context/base/action/orange/text": "Theme/context/page/primary/content",
+    "Theme/context/canvas/action/orange/text": "Theme/context/page/primary/content",
+    "Theme/context/raised/action/orange/text": "Theme/context/page/primary/content",
+    "Theme/context/floating/action/orange/text": "Theme/context/page/primary/content",
     "Theme/context/base/action-vivid/orange/normal": "Theme/context/page/color/orange/solid/background/normal",
     "Theme/context/canvas/action-vivid/orange/normal": "Theme/context/page/color/orange/solid/background/normal",
     "Theme/context/raised/action-vivid/orange/normal": "Theme/context/page/color/orange/solid/background/normal",
@@ -20269,10 +20246,10 @@
     "Theme/context/canvas/action-vivid/orange/pressed": "Theme/context/page/color/orange/solid/background/hover",
     "Theme/context/raised/action-vivid/orange/pressed": "Theme/context/page/color/orange/solid/background/hover",
     "Theme/context/floating/action-vivid/orange/pressed": "Theme/context/page/color/orange/solid/background/hover",
-    "Theme/context/base/action-vivid/orange/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/canvas/action-vivid/orange/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/raised/action-vivid/orange/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/floating/action-vivid/orange/text": "Theme/context/page/color/blue/solid/content",
+    "Theme/context/base/action-vivid/orange/text": "Theme/context/page/primary/content",
+    "Theme/context/canvas/action-vivid/orange/text": "Theme/context/page/primary/content",
+    "Theme/context/raised/action-vivid/orange/text": "Theme/context/page/primary/content",
+    "Theme/context/floating/action-vivid/orange/text": "Theme/context/page/primary/content",
     "Theme/context/base/element/red/normal": "Theme/context/page/color/red/secondary/background/normal",
     "Theme/context/canvas/element/red/normal": "Theme/context/page/color/red/secondary/background/normal",
     "Theme/context/raised/element/red/normal": "Theme/context/panel/color/red/secondary/background/normal",
@@ -20321,10 +20298,10 @@
     "Theme/context/canvas/action/red/pressed": "Theme/context/page/color/red/solid/background/hover",
     "Theme/context/raised/action/red/pressed": "Theme/context/page/color/red/solid/background/hover",
     "Theme/context/floating/action/red/pressed": "Theme/context/page/color/red/solid/background/hover",
-    "Theme/context/base/action/red/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/canvas/action/red/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/raised/action/red/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/floating/action/red/text": "Theme/context/page/color/blue/solid/content",
+    "Theme/context/base/action/red/text": "Theme/context/page/primary/content",
+    "Theme/context/canvas/action/red/text": "Theme/context/page/primary/content",
+    "Theme/context/raised/action/red/text": "Theme/context/page/primary/content",
+    "Theme/context/floating/action/red/text": "Theme/context/page/primary/content",
     "Theme/context/base/action-vivid/red/normal": "Theme/context/page/color/red/solid/background/normal",
     "Theme/context/canvas/action-vivid/red/normal": "Theme/context/page/color/red/solid/background/normal",
     "Theme/context/raised/action-vivid/red/normal": "Theme/context/page/color/red/solid/background/normal",
@@ -20337,10 +20314,10 @@
     "Theme/context/canvas/action-vivid/red/pressed": "Theme/context/page/color/red/solid/background/hover",
     "Theme/context/raised/action-vivid/red/pressed": "Theme/context/page/color/red/solid/background/hover",
     "Theme/context/floating/action-vivid/red/pressed": "Theme/context/page/color/red/solid/background/hover",
-    "Theme/context/base/action-vivid/red/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/canvas/action-vivid/red/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/raised/action-vivid/red/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/floating/action-vivid/red/text": "Theme/context/page/color/blue/solid/content",
+    "Theme/context/base/action-vivid/red/text": "Theme/context/page/primary/content",
+    "Theme/context/canvas/action-vivid/red/text": "Theme/context/page/primary/content",
+    "Theme/context/raised/action-vivid/red/text": "Theme/context/page/primary/content",
+    "Theme/context/floating/action-vivid/red/text": "Theme/context/page/primary/content",
     "Theme/context/base/element/pink/normal": "Theme/context/page/color/pink/secondary/background/normal",
     "Theme/context/canvas/element/pink/normal": "Theme/context/page/color/pink/secondary/background/normal",
     "Theme/context/raised/element/pink/normal": "Theme/context/panel/color/pink/secondary/background/normal",
@@ -20389,10 +20366,10 @@
     "Theme/context/canvas/action/pink/pressed": "Theme/context/page/color/pink/solid/background/hover",
     "Theme/context/raised/action/pink/pressed": "Theme/context/page/color/pink/solid/background/hover",
     "Theme/context/floating/action/pink/pressed": "Theme/context/page/color/pink/solid/background/hover",
-    "Theme/context/base/action/pink/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/canvas/action/pink/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/raised/action/pink/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/floating/action/pink/text": "Theme/context/page/color/blue/solid/content",
+    "Theme/context/base/action/pink/text": "Theme/context/page/primary/content",
+    "Theme/context/canvas/action/pink/text": "Theme/context/page/primary/content",
+    "Theme/context/raised/action/pink/text": "Theme/context/page/primary/content",
+    "Theme/context/floating/action/pink/text": "Theme/context/page/primary/content",
     "Theme/context/base/action-vivid/pink/normal": "Theme/context/page/color/pink/solid/background/normal",
     "Theme/context/canvas/action-vivid/pink/normal": "Theme/context/page/color/pink/solid/background/normal",
     "Theme/context/raised/action-vivid/pink/normal": "Theme/context/page/color/pink/solid/background/normal",
@@ -20405,10 +20382,10 @@
     "Theme/context/canvas/action-vivid/pink/pressed": "Theme/context/page/color/pink/solid/background/hover",
     "Theme/context/raised/action-vivid/pink/pressed": "Theme/context/page/color/pink/solid/background/hover",
     "Theme/context/floating/action-vivid/pink/pressed": "Theme/context/page/color/pink/solid/background/hover",
-    "Theme/context/base/action-vivid/pink/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/canvas/action-vivid/pink/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/raised/action-vivid/pink/text": "Theme/context/page/color/blue/solid/content",
-    "Theme/context/floating/action-vivid/pink/text": "Theme/context/page/color/blue/solid/content",
+    "Theme/context/base/action-vivid/pink/text": "Theme/context/page/primary/content",
+    "Theme/context/canvas/action-vivid/pink/text": "Theme/context/page/primary/content",
+    "Theme/context/raised/action-vivid/pink/text": "Theme/context/page/primary/content",
+    "Theme/context/floating/action-vivid/pink/text": "Theme/context/page/primary/content",
     "Theme/context/base/element/purple/normal": "Theme/context/page/color/purple/secondary/background/normal",
     "Theme/context/canvas/element/purple/normal": "Theme/context/page/color/purple/secondary/background/normal",
     "Theme/context/raised/element/purple/normal": "Theme/context/panel/color/purple/secondary/background/normal",
@@ -20857,8 +20834,8 @@
   "runtimeSource": {
     "schemaVersion": 4,
     "source": "figma/token-system-v4/graph.json",
-    "sourceHash": "211e379e90b4651ab21f28abbaac839611809a3ebecde142abb1ff078d17ffe3",
-    "graphHash": "fd11189df7f385817e10a0a0685fdd5ee8dc3c41ef1acafa6d74eb7a35a0fbda",
+    "sourceHash": "f7f034ce919a11e540fd84956778c8d3020f60044b4fc0fae3e3ad1cfb7e7196",
+    "graphHash": "373e74337e41893a1c755cb3ad64de51ac135d210a6d85efb4ba6a037c27b992",
     "kind": "resolved-legacy-compatibility-graph",
     "canonicalExport": "runtime-v4.json"
   },

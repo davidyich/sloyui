@@ -5,9 +5,9 @@ import {solveRecommendedFills,fillVisibilityPolicy,resolveFillAppearanceBounds} 
 import {solveAlphaRecipe,alphaRecipeFamily,neutralFillVisibilityPolicy} from './alpha-recipes.mjs';
 export const schema='sloy-palette-lab/v5';
 export const surfaces=['Shell','Workspace','Content','Overlay','Invert','Glass','Custom'];
-export const defaultRules={minimumContrast:4.5,vividness:1.2,adaptPrimary:true,sharedAlpha:true};
+export const defaultRules={minimumContrast:4.5,vividness:1.2,adaptPrimary:true,sharedAlpha:true,primaryForegroundPolicy:'theme'};
 export const presets=[
- ['blue','#087BE9'],['green','#00995B'],['orange','#F07818'],['red','#E53E3E'],['pink','#DA2DAB'],['purple','#9B3FE0']
+ ['blue','#087BE9'],['green','#00995B'],['orange','#F56918'],['red','#E53E3E'],['pink','#DA2DAB'],['purple','#9B3FE0']
 ].map(([name,hex])=>({name,hex}));
 export const bounds={hue:[0,360],primaryChroma:[.005,.35],lightnessLight:[.25,.92],lightnessDark:[.5,.95],stateDelta:[.015,.09],softChroma:[.3,2],opacityScale:[.5,1.8],textChroma:[.3,1.8],foregroundTint:[0,1],vividness:[.5,1.5],darkChromaMultiplier:[.5,1.2]};
 export function createAccent(name='purple',hex='#9B3FE0'){const c=toOklch(fromHex(hex));return {id:globalThis.crypto?.randomUUID?.()??String(Date.now()),name,hex:hex.toUpperCase(),seedHex:hex.toUpperCase(),hue:c.h,primaryChroma:Math.max(.005,c.c),lightnessLight:clamp(c.l,.25,.92),lightnessDark:.76,stateDelta:.04,softChroma:1.4,opacityScale:1.2,textChroma:1,paletteSteps:41,darkChromaMultiplier:.9,foregroundMode:'auto',foregroundTint:0,foregroundLight:'#FFFFFF',foregroundDark:'#14201D'};}
@@ -32,7 +32,7 @@ export function validateProject(input){
  const names=new Set(['neutral']),occupied=new Set(input.accents.map(a=>a.name));
  const accents=input.accents.map((a,i)=>{if(input.schema!==schema&&a.name==='neutral'){let name='neutral-accent',suffix=2;while(occupied.has(name)||names.has(name))name=`neutral-accent-${suffix++}`;occupied.add(name);a={...a,name};}return validateAccent(a,i,names);});
  const backgrounds={Light:input.backgrounds?.Light??'#F1EEF8',Dark:input.backgrounds?.Dark??'#221D2C'};Object.values(backgrounds).forEach(fromHex);const {alphaRecipe:discardedRuntimeRecipe,...savedRules}=input.rules??{};const rules={...defaultRules,...savedRules,balanceSecondary:true,sharedAlpha:true};
- if(!Number.isFinite(rules.minimumContrast)||rules.minimumContrast<4.5||rules.minimumContrast>7||!Number.isFinite(rules.vividness)||rules.vividness<.5||rules.vividness>1.5||typeof rules.adaptPrimary!=='boolean')throw new Error('Некорректные общие правила.');
+ if(!Number.isFinite(rules.minimumContrast)||rules.minimumContrast<4.5||rules.minimumContrast>7||!Number.isFinite(rules.vividness)||rules.vividness<.5||rules.vividness>1.5||typeof rules.adaptPrimary!=='boolean'||!['theme','contrast'].includes(rules.primaryForegroundPolicy))throw new Error('Некорректные общие правила.');
  const neutral=input.neutral?{accent:{...validateAccent({...input.neutral.accent,name:'neutral'},0,new Set(),true),name:'neutral'},settings:validateNeutralSettings(input.neutral.settings)}:createNeutralSystem();
  return {schema,accents,backgrounds,rules,neutral};
 }
@@ -90,12 +90,15 @@ export function primaryPair(accent,theme,rules=defaultRules,palette=generatePale
  const score=(values,ink)=>Math.min(...values.map(s=>renderedContrast(ink,s.value)));
  let values=pair(requested),foregroundRequest,foregroundStep;
  if((accent.foregroundMode??'auto')==='auto'&&(accent.foregroundTint??0)===0){
-  // One exact endpoint must read on both states. Preserve the requested pair
-  // before considering any fill adaptation; OKLCH lightness is not contrast.
-  const candidates=neutralSteps.map(ink=>({ink,values,contrast:score(values,ink.value)})).sort((a,b)=>b.contrast-a.contrast);
+  // The default constrains ink to the local theme's exact endpoint. Contrast
+  // policy may choose either endpoint before adapting either authored fill.
+  // generateContext passes effectiveTheme, so Invert keeps its own polarity.
+  const policy=rules.primaryForegroundPolicy??defaultRules.primaryForegroundPolicy;
+  const inks=policy==='contrast'?neutralSteps:neutralSteps.filter(ink=>ink.name===(theme==='Dark'?'black':'white'));
+  const candidates=inks.map(ink=>({ink,values,contrast:score(values,ink.value)})).sort((a,b)=>b.contrast-a.contrast);
   let choice=candidates[0];
   if(rules.adaptPrimary&&choice.contrast<minimum){
-   const passing=steps.flatMap(normal=>{const values=pair(normal);return values[0]===values[1]?[]:neutralSteps.map(ink=>({ink,values,contrast:score(values,ink.value)}));})
+   const passing=steps.flatMap(normal=>{const values=pair(normal);return values[0]===values[1]?[]:inks.map(ink=>({ink,values,contrast:score(values,ink.value)}));})
     .filter(candidate=>candidate.contrast>=minimum)
     .sort((a,b)=>Math.abs(a.values[0].l-target)-Math.abs(b.values[0].l-target)||b.contrast-a.contrast);
    if(passing.length)choice=passing[0];

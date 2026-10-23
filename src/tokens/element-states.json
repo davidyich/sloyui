@@ -162,10 +162,10 @@
     "state": "normal",
     "background": "derived/v4/light/base/element/orange/normal",
     "text": "derived/v4/light/base/element/orange/text",
-    "contrast": 8.20425714524528,
-    "reactionContrast": 7.413328335151973,
-    "backgroundY": 0.686424118844173,
-    "surfaceContrast": 1.2244761501936694,
+    "contrast": 8.238199963433578,
+    "reactionContrast": 7.512408010489519,
+    "backgroundY": 0.6834878694984959,
+    "surfaceContrast": 1.229377890828128,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -175,10 +175,10 @@
     "state": "hover",
     "background": "derived/v4/light/base/element/orange/hover",
     "text": "derived/v4/light/base/element/orange/text",
-    "contrast": 7.413328335151973,
-    "reactionContrast": 7.413328335151973,
-    "backgroundY": 0.6154293850456359,
-    "surfaceContrast": 1.355115644449991,
+    "contrast": 7.512408010489519,
+    "reactionContrast": 7.512408010489519,
+    "backgroundY": 0.6188670062483874,
+    "surfaceContrast": 1.34815106968696,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -188,10 +188,10 @@
     "state": "pressed",
     "background": "derived/v4/light/base/element/orange/pressed",
     "text": "derived/v4/light/base/element/orange/text",
-    "contrast": 7.413328335151973,
-    "reactionContrast": 7.413328335151973,
-    "backgroundY": 0.6154293850456359,
-    "surfaceContrast": 1.355115644449991,
+    "contrast": 7.512408010489519,
+    "reactionContrast": 7.512408010489519,
+    "backgroundY": 0.6188670062483874,
+    "surfaceContrast": 1.34815106968696,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -526,10 +526,10 @@
     "state": "normal",
     "background": "derived/v4/dark/base/element/orange/normal",
     "text": "derived/v4/dark/base/element/orange/text",
-    "contrast": 13.21270775763411,
-    "reactionContrast": 11.773040659825432,
-    "backgroundY": 0.015148768079708205,
-    "surfaceContrast": 1.2074821549985635,
+    "contrast": 12.964010425440591,
+    "reactionContrast": 11.491148358870332,
+    "backgroundY": 0.016344319985463568,
+    "surfaceContrast": 1.2296407872202488,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -539,10 +539,10 @@
     "state": "hover",
     "background": "derived/v4/dark/base/element/orange/hover",
     "text": "derived/v4/dark/base/element/orange/text",
-    "contrast": 11.773040659825432,
-    "reactionContrast": 11.773040659825432,
-    "backgroundY": 0.023115489725984657,
-    "surfaceContrast": 1.3551391944985296,
+    "contrast": 11.491148358870332,
+    "reactionContrast": 11.491148358870332,
+    "backgroundY": 0.0248479115489263,
+    "surfaceContrast": 1.3872482964476678,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -552,10 +552,10 @@
     "state": "pressed",
     "background": "derived/v4/dark/base/element/orange/pressed",
     "text": "derived/v4/dark/base/element/orange/text",
-    "contrast": 11.773040659825432,
-    "reactionContrast": 11.773040659825432,
-    "backgroundY": 0.023115489725984657,
-    "surfaceContrast": 1.3551391944985296,
+    "contrast": 11.491148358870332,
+    "reactionContrast": 11.491148358870332,
+    "backgroundY": 0.0248479115489263,
+    "surfaceContrast": 1.3872482964476678,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -890,10 +890,10 @@
     "state": "normal",
     "background": "derived/v4/light/canvas/element/orange/normal",
     "text": "derived/v4/light/canvas/element/orange/text",
-    "contrast": 8.776566276349579,
-    "reactionContrast": 7.917206620311526,
-    "backgroundY": 0.7377952838525995,
-    "surfaceContrast": 1.2351520973702153,
+    "contrast": 8.828238879621953,
+    "reactionContrast": 8.035599928705995,
+    "backgroundY": 0.7360219654754323,
+    "surfaceContrast": 1.237938683507841,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -903,10 +903,10 @@
     "state": "hover",
     "background": "derived/v4/light/canvas/element/orange/hover",
     "text": "derived/v4/light/canvas/element/orange/text",
-    "contrast": 7.917206620311526,
-    "reactionContrast": 7.917206620311526,
-    "backgroundY": 0.6606581139340749,
-    "surfaceContrast": 1.3692195699593015,
+    "contrast": 8.035599928705995,
+    "reactionContrast": 8.035599928705995,
+    "backgroundY": 0.6654493819050582,
+    "surfaceContrast": 1.360050091255831,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -916,10 +916,10 @@
     "state": "pressed",
     "background": "derived/v4/light/canvas/element/orange/pressed",
     "text": "derived/v4/light/canvas/element/orange/text",
-    "contrast": 7.917206620311526,
-    "reactionContrast": 7.917206620311526,
-    "backgroundY": 0.6606581139340749,
-    "surfaceContrast": 1.3692195699593015,
+    "contrast": 8.035599928705995,
+    "reactionContrast": 8.035599928705995,
+    "backgroundY": 0.6654493819050582,
+    "surfaceContrast": 1.360050091255831,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -1254,10 +1254,10 @@
     "state": "normal",
     "background": "derived/v4/dark/canvas/element/orange/normal",
     "text": "derived/v4/dark/canvas/element/orange/text",
-    "contrast": 11.903069576595398,
-    "reactionContrast": 10.537800059883745,
-    "backgroundY": 0.022316777438620664,
-    "surfaceContrast": 1.242104387723505,
+    "contrast": 11.669293440397295,
+    "reactionContrast": 10.282599332032106,
+    "backgroundY": 0.023705272761658618,
+    "surfaceContrast": 1.2659530186244436,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -1267,10 +1267,10 @@
     "state": "hover",
     "background": "derived/v4/dark/canvas/element/orange/hover",
     "text": "derived/v4/dark/canvas/element/orange/text",
-    "contrast": 10.537800059883745,
-    "reactionContrast": 10.537800059883745,
-    "backgroundY": 0.03168608519002043,
-    "surfaceContrast": 1.4030305058407433,
+    "contrast": 10.282599332032106,
+    "reactionContrast": 10.282599332032106,
+    "backgroundY": 0.03364504228818772,
+    "surfaceContrast": 1.4366773204967325,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -1280,10 +1280,10 @@
     "state": "pressed",
     "background": "derived/v4/dark/canvas/element/orange/pressed",
     "text": "derived/v4/dark/canvas/element/orange/text",
-    "contrast": 10.537800059883745,
-    "reactionContrast": 10.537800059883745,
-    "backgroundY": 0.03168608519002043,
-    "surfaceContrast": 1.4030305058407433,
+    "contrast": 10.282599332032106,
+    "reactionContrast": 10.282599332032106,
+    "backgroundY": 0.03364504228818772,
+    "surfaceContrast": 1.4366773204967325,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -1618,10 +1618,10 @@
     "state": "normal",
     "background": "derived/v4/light/raised/element/orange/normal",
     "text": "derived/v4/light/raised/element/orange/text",
-    "contrast": 9.602650075971098,
-    "reactionContrast": 8.697693048302273,
-    "backgroundY": 0.811945572350113,
-    "surfaceContrast": 1.2181743646958503,
+    "contrast": 9.597850551746308,
+    "reactionContrast": 8.734469308827583,
+    "backgroundY": 0.8045443160172114,
+    "surfaceContrast": 1.2287250413106157,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -1631,10 +1631,10 @@
     "state": "hover",
     "background": "derived/v4/light/raised/element/orange/hover",
     "text": "derived/v4/light/raised/element/orange/text",
-    "contrast": 8.697693048302273,
-    "reactionContrast": 8.697693048302273,
-    "backgroundY": 0.7307155267902804,
-    "surfaceContrast": 1.3449200944123865,
+    "contrast": 8.734469308827583,
+    "reactionContrast": 8.734469308827583,
+    "backgroundY": 0.7276731947474776,
+    "surfaceContrast": 1.350181550671746,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -1644,10 +1644,10 @@
     "state": "pressed",
     "background": "derived/v4/light/raised/element/orange/pressed",
     "text": "derived/v4/light/raised/element/orange/text",
-    "contrast": 8.697693048302273,
-    "reactionContrast": 8.697693048302273,
-    "backgroundY": 0.7307155267902804,
-    "surfaceContrast": 1.3449200944123865,
+    "contrast": 8.734469308827583,
+    "reactionContrast": 8.734469308827583,
+    "backgroundY": 0.7276731947474776,
+    "surfaceContrast": 1.350181550671746,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -1982,10 +1982,10 @@
     "state": "normal",
     "background": "derived/v4/dark/raised/element/orange/normal",
     "text": "derived/v4/dark/raised/element/orange/text",
-    "contrast": 10.892167572070262,
-    "reactionContrast": 9.623651541591137,
-    "backgroundY": 0.02902849710229497,
-    "surfaceContrast": 1.2579033435244693,
+    "contrast": 10.677568031565878,
+    "reactionContrast": 9.393291240225203,
+    "backgroundY": 0.030550969417160748,
+    "surfaceContrast": 1.282136665497101,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -1995,10 +1995,10 @@
     "state": "hover",
     "background": "derived/v4/dark/raised/element/orange/hover",
     "text": "derived/v4/dark/raised/element/orange/text",
-    "contrast": 9.623651541591137,
-    "reactionContrast": 9.623651541591137,
-    "backgroundY": 0.03944542824383541,
-    "surfaceContrast": 1.4237105269161343,
+    "contrast": 9.393291240225203,
+    "reactionContrast": 9.393291240225203,
+    "backgroundY": 0.041564121026837854,
+    "surfaceContrast": 1.4574339410434485,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -2008,10 +2008,10 @@
     "state": "pressed",
     "background": "derived/v4/dark/raised/element/orange/pressed",
     "text": "derived/v4/dark/raised/element/orange/text",
-    "contrast": 9.623651541591137,
-    "reactionContrast": 9.623651541591137,
-    "backgroundY": 0.03944542824383541,
-    "surfaceContrast": 1.4237105269161343,
+    "contrast": 9.393291240225203,
+    "reactionContrast": 9.393291240225203,
+    "backgroundY": 0.041564121026837854,
+    "surfaceContrast": 1.4574339410434485,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -2346,10 +2346,10 @@
     "state": "normal",
     "background": "derived/v4/light/floating/element/orange/normal",
     "text": "derived/v4/light/floating/element/orange/text",
-    "contrast": 9.602650075971098,
-    "reactionContrast": 8.697693048302273,
-    "backgroundY": 0.811945572350113,
-    "surfaceContrast": 1.2181743646958503,
+    "contrast": 9.597850551746308,
+    "reactionContrast": 8.734469308827583,
+    "backgroundY": 0.8045443160172114,
+    "surfaceContrast": 1.2287250413106157,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -2359,10 +2359,10 @@
     "state": "hover",
     "background": "derived/v4/light/floating/element/orange/hover",
     "text": "derived/v4/light/floating/element/orange/text",
-    "contrast": 8.697693048302273,
-    "reactionContrast": 8.697693048302273,
-    "backgroundY": 0.7307155267902804,
-    "surfaceContrast": 1.3449200944123865,
+    "contrast": 8.734469308827583,
+    "reactionContrast": 8.734469308827583,
+    "backgroundY": 0.7276731947474776,
+    "surfaceContrast": 1.350181550671746,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -2372,10 +2372,10 @@
     "state": "pressed",
     "background": "derived/v4/light/floating/element/orange/pressed",
     "text": "derived/v4/light/floating/element/orange/text",
-    "contrast": 8.697693048302273,
-    "reactionContrast": 8.697693048302273,
-    "backgroundY": 0.7307155267902804,
-    "surfaceContrast": 1.3449200944123865,
+    "contrast": 8.734469308827583,
+    "reactionContrast": 8.734469308827583,
+    "backgroundY": 0.7276731947474776,
+    "surfaceContrast": 1.350181550671746,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -2710,10 +2710,10 @@
     "state": "normal",
     "background": "derived/v4/dark/floating/element/orange/normal",
     "text": "derived/v4/dark/floating/element/orange/text",
-    "contrast": 10.046099954917583,
-    "reactionContrast": 8.876784551403354,
-    "backgroundY": 0.03568415975054151,
-    "surfaceContrast": 1.2638880523502727,
+    "contrast": 9.851010391767266,
+    "reactionContrast": 8.668917114720022,
+    "backgroundY": 0.03730966893295673,
+    "surfaceContrast": 1.2878651986585468,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -2723,10 +2723,10 @@
     "state": "hover",
     "background": "derived/v4/dark/floating/element/orange/hover",
     "text": "derived/v4/dark/floating/element/orange/text",
-    "contrast": 8.876784551403354,
-    "reactionContrast": 8.876784551403354,
-    "backgroundY": 0.04697110799776944,
-    "surfaceContrast": 1.4303766901416597,
+    "contrast": 8.668917114720022,
+    "reactionContrast": 8.668917114720022,
+    "backgroundY": 0.049215212762833575,
+    "surfaceContrast": 1.4634784584153333,
     "source": "figma/token-system-v4/graph.json"
   },
   {
@@ -2736,10 +2736,10 @@
     "state": "pressed",
     "background": "derived/v4/dark/floating/element/orange/pressed",
     "text": "derived/v4/dark/floating/element/orange/text",
-    "contrast": 8.876784551403354,
-    "reactionContrast": 8.876784551403354,
-    "backgroundY": 0.04697110799776944,
-    "surfaceContrast": 1.4303766901416597,
+    "contrast": 8.668917114720022,
+    "reactionContrast": 8.668917114720022,
+    "backgroundY": 0.049215212762833575,
+    "surfaceContrast": 1.4634784584153333,
     "source": "figma/token-system-v4/graph.json"
   },
   {

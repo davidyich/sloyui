@@ -12,6 +12,7 @@ const runtime=load('src/tokens/runtime-v4.json');
 const native=load('figma/color-system-v2/native-graph.json');
 const hues=['blue','green','orange','red','pink','purple'];
 const black:Color={r:0,g:0,b:0,a:1},white:Color={r:1,g:1,b:1,a:1};
+const contrastRules={...defaultRules,primaryForegroundPolicy:'contrast' as const};
 function reader(graph:Graph){
  const tokens=new Map(graph.collections.flatMap(c=>c.variables.map(v=>[c.key+'/'+v.name,{...v,collection:c}])));
  const read=(path:string,selection:Record<string,string>,seen:string[]=[]):Value=>{
@@ -37,6 +38,7 @@ describe('Primary foreground integration',()=>{
    const selection={Theme:theme,SurfaceScheme:scheme,Surface:surface},nativeSelection={theme,scheme,surface,accent:hue[0].toUpperCase()+hue.slice(1)},label=[theme,scheme,surface,hue].join('/');
    const ink=c.read('Theme/content/on-primary/'+hue,selection);
    expect(isEndpoint(ink),label+' exact opaque black or white').toBe(true);
+   expect(ink,label+' local theme policy').toEqual((surface==='Invert'?theme==='Dark':theme==='Light')?white:black);
    expect(r.read('Theme/content/on-primary/'+hue,selection),label+' runtime').toEqual(ink);
    expect(n.read('surface/content/accent/'+hue+'/on-primary',nativeSelection),label+' native').toEqual(ink);
    expect(n.read('accent/on-primary',nativeSelection),label+' Accent').toEqual(ink);
@@ -69,28 +71,28 @@ describe('Primary foreground integration',()=>{
  });
 
  it('keeps the authored orange pair when exact black already meets contrast in both states',()=>{
-  const accent=createAccent('orange','#F07818'),palette=generatePalette(accent),requested=primaryPair(accent,'Light',{...defaultRules,adaptPrimary:false},palette),actual=primaryPair(accent,'Light',defaultRules,palette);
+  const accent=createAccent('orange','#F07818'),palette=generatePalette(accent),requested=primaryPair(accent,'Light',{...contrastRules,adaptPrimary:false},palette),actual=primaryPair(accent,'Light',contrastRules,palette);
   expect(contrast(black,requested.normal)).toBeGreaterThan(4.5);
   expect(contrast(black,requested.active)).toBeGreaterThan(4.5);
   expect(actual.foreground).toEqual(black);
   expect(actual.normal).toEqual(requested.normal);
   expect(actual.active).toEqual(requested.active);
   expect(actual.adjusted).toBe(false);
-  expect(primaryPair(createAccent('purple','#9B3FE0'),'Light').foreground).toEqual(white);
+  expect(primaryPair(createAccent('purple','#9B3FE0'),'Light',contrastRules).foreground).toEqual(white);
  });
 
  it('chooses the foreground from the actual requested colors rather than the hue name',()=>{
-  expect(primaryPair(createAccent('purple','#F07818'),'Light').foreground).toEqual(black);
-  expect(primaryPair(createAccent('orange','#9B3FE0'),'Light').foreground).toEqual(white);
+  expect(primaryPair(createAccent('purple','#F07818'),'Light',contrastRules).foreground).toEqual(black);
+  expect(primaryPair(createAccent('orange','#9B3FE0'),'Light',contrastRules).foreground).toEqual(white);
  });
 
  it('never adapts farther from authored lightness than an already accessible exact-ink alternative',()=>{
   for(const preset of presets)for(const theme of ['Light','Dark']){
    const accent=createAccent(preset.name,preset.hex),palette=generatePalette(accent),steps=palette[0].steps,target=theme==='Light'?accent.lightnessLight:accent.lightnessDark;
    const error=(pair:ReturnType<typeof primaryPair>)=>Math.abs(steps.find(step=>step.name===pair.normalStep)!.l-target);
-   const automatic=primaryPair(accent,theme,defaultRules,palette);
+   const automatic=primaryPair(accent,theme,contrastRules,palette);
    for(const foregroundMode of ['light','dark']){
-    const alternative=primaryPair({...accent,foregroundMode},theme,defaultRules,palette);
+    const alternative=primaryPair({...accent,foregroundMode},theme,contrastRules,palette);
     if([alternative.normal,alternative.active].every(fill=>contrast(alternative.foreground,fill)>=4.6-1e-7))expect(error(automatic),`${preset.name}/${theme}/${foregroundMode}`).toBeLessThanOrEqual(error(alternative)+1e-10);
    }
   }

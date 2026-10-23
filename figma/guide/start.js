@@ -1,6 +1,6 @@
-const {page: startPage, root: startRoot} = await ginit('00 · Start', 'Sloy UI · 0.18.2 · Start');
+const {page: startPage, root: startRoot} = await ginit('00 · Start', 'Sloy UI · 0.18.3 · Start');
 await gtext(startRoot, 'Sloy UI', 1264, 'title');
-await gtext(startRoot, '0.18.2 · Tokens, components and workspace layouts', 1264, 'label', 'content/secondary/neutral');
+await gtext(startRoot, '0.18.3 · Tokens, components and workspace layouts', 1264, 'label', 'content/secondary/neutral');
 const intro = await gcard(startRoot, 'Start with context', 1264);
 await gtext(intro, 'Start with the frame. Let instances inherit.', 1216, 'title');
 await gtext(intro, 'Choose Theme, Scheme, Surface and Accent on the containing frame. Keep child modes on Auto. Density, Radius and Borders stay independent.', 1040);

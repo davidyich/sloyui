@@ -1,9 +1,9 @@
 {
   "$extensions": {
     "com.sloyui.export": {
-      "version": "0.18.2",
+      "version": "0.18.3",
       "collection": "Sloy UI · Density",
-      "mode": "Compact"
+      "mode": "Default"
     }
   },
   "space": {
@@ -29,7 +29,7 @@
     },
     "1": {
       "$type": "number",
-      "$value": 3,
+      "$value": 4,
       "$extensions": {
         "com.sloyui.variable": {
           "scopes": [
@@ -42,14 +42,14 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Primitives",
-          "targetVariableName": "dimension/3"
+          "targetVariableName": "dimension/4"
         }
       },
       "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
     },
     "2": {
       "$type": "number",
-      "$value": 6,
+      "$value": 8,
       "$extensions": {
         "com.sloyui.variable": {
           "scopes": [
@@ -62,14 +62,14 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Primitives",
-          "targetVariableName": "dimension/6"
+          "targetVariableName": "dimension/8"
         }
       },
       "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
     },
     "3": {
       "$type": "number",
-      "$value": 9,
+      "$value": 12,
       "$extensions": {
         "com.sloyui.variable": {
           "scopes": [
@@ -82,14 +82,14 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Primitives",
-          "targetVariableName": "dimension/9"
+          "targetVariableName": "dimension/12"
         }
       },
       "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
     },
     "4": {
       "$type": "number",
-      "$value": 12,
+      "$value": 16,
       "$extensions": {
         "com.sloyui.variable": {
           "scopes": [
@@ -102,14 +102,14 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Primitives",
-          "targetVariableName": "dimension/12"
+          "targetVariableName": "dimension/16"
         }
       },
       "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
     },
     "5": {
       "$type": "number",
-      "$value": 15,
+      "$value": 20,
       "$extensions": {
         "com.sloyui.variable": {
           "scopes": [
@@ -122,14 +122,14 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Primitives",
-          "targetVariableName": "dimension/15"
+          "targetVariableName": "dimension/20"
         }
       },
       "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
     },
     "6": {
       "$type": "number",
-      "$value": 18,
+      "$value": 24,
       "$extensions": {
         "com.sloyui.variable": {
           "scopes": [
@@ -142,14 +142,14 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Primitives",
-          "targetVariableName": "dimension/18"
+          "targetVariableName": "dimension/24"
         }
       },
       "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
     },
     "8": {
       "$type": "number",
-      "$value": 24,
+      "$value": 32,
       "$extensions": {
         "com.sloyui.variable": {
           "scopes": [
@@ -162,14 +162,14 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Primitives",
-          "targetVariableName": "dimension/24"
+          "targetVariableName": "dimension/32"
         }
       },
       "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
     },
     "10": {
       "$type": "number",
-      "$value": 30,
+      "$value": 40,
       "$extensions": {
         "com.sloyui.variable": {
           "scopes": [
@@ -182,14 +182,14 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Primitives",
-          "targetVariableName": "dimension/30"
+          "targetVariableName": "dimension/40"
         }
       },
       "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
     },
     "12": {
       "$type": "number",
-      "$value": 36,
+      "$value": 48,
       "$extensions": {
         "com.sloyui.variable": {
           "scopes": [
@@ -202,14 +202,14 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Primitives",
-          "targetVariableName": "dimension/36"
+          "targetVariableName": "dimension/48"
         }
       },
       "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
     },
     "16": {
       "$type": "number",
-      "$value": 48,
+      "$value": 64,
       "$extensions": {
         "com.sloyui.variable": {
           "scopes": [
@@ -222,7 +222,7 @@
         },
         "com.figma.aliasData": {
           "targetVariableSetName": "Sloy UI · Primitives",
-          "targetVariableName": "dimension/48"
+          "targetVariableName": "dimension/64"
         }
       },
       "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
@@ -270,7 +270,7 @@
       },
       "3": {
         "$type": "number",
-        "$value": 2,
+        "$value": 3,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -283,14 +283,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/2"
+            "targetVariableName": "dimension/3"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "5": {
         "$type": "number",
-        "$value": 4,
+        "$value": 5,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -303,14 +303,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/4"
+            "targetVariableName": "dimension/5"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "6": {
         "$type": "number",
-        "$value": 5,
+        "$value": 6,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -323,14 +323,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/5"
+            "targetVariableName": "dimension/6"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "7": {
         "$type": "number",
-        "$value": 5,
+        "$value": 7,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -343,14 +343,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/5"
+            "targetVariableName": "dimension/7"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "9": {
         "$type": "number",
-        "$value": 7,
+        "$value": 9,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -363,14 +363,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/7"
+            "targetVariableName": "dimension/9"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "10": {
         "$type": "number",
-        "$value": 8,
+        "$value": 10,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -383,14 +383,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/8"
+            "targetVariableName": "dimension/10"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "14": {
         "$type": "number",
-        "$value": 11,
+        "$value": 14,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -403,14 +403,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/11"
+            "targetVariableName": "dimension/14"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "18": {
         "$type": "number",
-        "$value": 14,
+        "$value": 18,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -423,14 +423,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/14"
+            "targetVariableName": "dimension/18"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "22": {
         "$type": "number",
-        "$value": 17,
+        "$value": 22,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -443,14 +443,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/17"
+            "targetVariableName": "dimension/22"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "23": {
         "$type": "number",
-        "$value": 17,
+        "$value": 23,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -463,14 +463,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/17"
+            "targetVariableName": "dimension/23"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "25": {
         "$type": "number",
-        "$value": 19,
+        "$value": 25,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -483,14 +483,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/19"
+            "targetVariableName": "dimension/25"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "26": {
         "$type": "number",
-        "$value": 20,
+        "$value": 26,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -503,14 +503,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/20"
+            "targetVariableName": "dimension/26"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "28": {
         "$type": "number",
-        "$value": 21,
+        "$value": 28,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -523,14 +523,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/21"
+            "targetVariableName": "dimension/28"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "29": {
         "$type": "number",
-        "$value": 22,
+        "$value": 29,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -543,14 +543,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/22"
+            "targetVariableName": "dimension/29"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "30": {
         "$type": "number",
-        "$value": 23,
+        "$value": 30,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -563,14 +563,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/23"
+            "targetVariableName": "dimension/30"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "34": {
         "$type": "number",
-        "$value": 26,
+        "$value": 34,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -583,14 +583,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/26"
+            "targetVariableName": "dimension/34"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "36": {
         "$type": "number",
-        "$value": 27,
+        "$value": 36,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -603,14 +603,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/27"
+            "targetVariableName": "dimension/36"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "38": {
         "$type": "number",
-        "$value": 29,
+        "$value": 38,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -623,14 +623,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/29"
+            "targetVariableName": "dimension/38"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "42": {
         "$type": "number",
-        "$value": 32,
+        "$value": 42,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -643,14 +643,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/32"
+            "targetVariableName": "dimension/42"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "44": {
         "$type": "number",
-        "$value": 33,
+        "$value": 44,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -663,14 +663,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/33"
+            "targetVariableName": "dimension/44"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "58": {
         "$type": "number",
-        "$value": 44,
+        "$value": 58,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -683,14 +683,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/44"
+            "targetVariableName": "dimension/58"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "72": {
         "$type": "number",
-        "$value": 54,
+        "$value": 72,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -703,14 +703,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/54"
+            "targetVariableName": "dimension/72"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "76": {
         "$type": "number",
-        "$value": 57,
+        "$value": 76,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -723,14 +723,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/57"
+            "targetVariableName": "dimension/76"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "116": {
         "$type": "number",
-        "$value": 87,
+        "$value": 116,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -743,14 +743,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/87"
+            "targetVariableName": "dimension/116"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "128": {
         "$type": "number",
-        "$value": 96,
+        "$value": 128,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -763,14 +763,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/96"
+            "targetVariableName": "dimension/128"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "144": {
         "$type": "number",
-        "$value": 108,
+        "$value": 144,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -783,7 +783,7 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/108"
+            "targetVariableName": "dimension/144"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
@@ -793,7 +793,7 @@
       "inset-x": {
         "sm": {
           "$type": "number",
-          "$value": 6,
+          "$value": 8,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -806,14 +806,14 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/6"
+              "targetVariableName": "dimension/8"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
         },
         "md": {
           "$type": "number",
-          "$value": 9,
+          "$value": 12,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -826,14 +826,14 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/9"
+              "targetVariableName": "dimension/12"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
         },
         "lg": {
           "$type": "number",
-          "$value": 12,
+          "$value": 16,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -846,14 +846,14 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/12"
+              "targetVariableName": "dimension/16"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
         },
         "xl": {
           "$type": "number",
-          "$value": 15,
+          "$value": 20,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -866,7 +866,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/15"
+              "targetVariableName": "dimension/20"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
@@ -878,7 +878,7 @@
     "control": {
       "xs": {
         "$type": "number",
-        "$value": 20,
+        "$value": 22,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -891,14 +891,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/20"
+            "targetVariableName": "dimension/22"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "sm": {
         "$type": "number",
-        "$value": 22,
+        "$value": 24,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -911,14 +911,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/22"
+            "targetVariableName": "dimension/24"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "md": {
         "$type": "number",
-        "$value": 30,
+        "$value": 32,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -931,14 +931,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/30"
+            "targetVariableName": "dimension/32"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "lg": {
         "$type": "number",
-        "$value": 32,
+        "$value": 36,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -951,14 +951,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/32"
+            "targetVariableName": "dimension/36"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "xl": {
         "$type": "number",
-        "$value": 38,
+        "$value": 44,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -971,7 +971,7 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/38"
+            "targetVariableName": "dimension/44"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
@@ -1286,7 +1286,7 @@
     "inside": {
       "xs": {
         "$type": "number",
-        "$value": 40,
+        "$value": 42,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -1299,14 +1299,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/40"
+            "targetVariableName": "dimension/42"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "sm": {
         "$type": "number",
-        "$value": 42,
+        "$value": 44,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -1319,14 +1319,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/42"
+            "targetVariableName": "dimension/44"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "md": {
         "$type": "number",
-        "$value": 50,
+        "$value": 52,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -1339,14 +1339,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/50"
+            "targetVariableName": "dimension/52"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "lg": {
         "$type": "number",
-        "$value": 52,
+        "$value": 56,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -1359,14 +1359,14 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/52"
+            "targetVariableName": "dimension/56"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
       },
       "xl": {
         "$type": "number",
-        "$value": 58,
+        "$value": 64,
         "$extensions": {
           "com.sloyui.variable": {
             "scopes": [
@@ -1379,7 +1379,7 @@
           },
           "com.figma.aliasData": {
             "targetVariableSetName": "Sloy UI · Primitives",
-            "targetVariableName": "dimension/58"
+            "targetVariableName": "dimension/64"
           }
         },
         "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
@@ -1389,7 +1389,7 @@
       "size": {
         "xs": {
           "$type": "number",
-          "$value": 20,
+          "$value": 22,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1402,14 +1402,14 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/20"
+              "targetVariableName": "dimension/22"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
         },
         "sm": {
           "$type": "number",
-          "$value": 26,
+          "$value": 28,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1422,14 +1422,14 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/26"
+              "targetVariableName": "dimension/28"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
         },
         "md": {
           "$type": "number",
-          "$value": 28,
+          "$value": 32,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1442,14 +1442,14 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/28"
+              "targetVariableName": "dimension/32"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
         },
         "lg": {
           "$type": "number",
-          "$value": 34,
+          "$value": 40,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1462,14 +1462,14 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/34"
+              "targetVariableName": "dimension/40"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
         },
         "xl": {
           "$type": "number",
-          "$value": 40,
+          "$value": 48,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1482,7 +1482,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/40"
+              "targetVariableName": "dimension/48"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
@@ -1513,7 +1513,7 @@
         },
         "sm": {
           "$type": "number",
-          "$value": 22,
+          "$value": 24,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1526,14 +1526,14 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/22"
+              "targetVariableName": "dimension/24"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
         },
         "md": {
           "$type": "number",
-          "$value": 28,
+          "$value": 32,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1546,14 +1546,14 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/28"
+              "targetVariableName": "dimension/32"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
         },
         "lg": {
           "$type": "number",
-          "$value": 40,
+          "$value": 48,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1566,14 +1566,14 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/40"
+              "targetVariableName": "dimension/48"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
         },
         "xl": {
           "$type": "number",
-          "$value": 52,
+          "$value": 64,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1586,7 +1586,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/52"
+              "targetVariableName": "dimension/64"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
@@ -1637,7 +1637,7 @@
         },
         "md": {
           "$type": "number",
-          "$value": 22,
+          "$value": 24,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1650,14 +1650,14 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/22"
+              "targetVariableName": "dimension/24"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
         },
         "lg": {
           "$type": "number",
-          "$value": 26,
+          "$value": 28,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1670,14 +1670,14 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/26"
+              "targetVariableName": "dimension/28"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
         },
         "xl": {
           "$type": "number",
-          "$value": 28,
+          "$value": 32,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1690,7 +1690,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/28"
+              "targetVariableName": "dimension/32"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
@@ -1699,7 +1699,7 @@
       "width": {
         "xs": {
           "$type": "number",
-          "$value": 26,
+          "$value": 28,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1712,14 +1712,14 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/26"
+              "targetVariableName": "dimension/28"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
         },
         "sm": {
           "$type": "number",
-          "$value": 30,
+          "$value": 34,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1732,14 +1732,14 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/30"
+              "targetVariableName": "dimension/34"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
         },
         "md": {
           "$type": "number",
-          "$value": 36,
+          "$value": 42,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1752,14 +1752,14 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/36"
+              "targetVariableName": "dimension/42"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
         },
         "lg": {
           "$type": "number",
-          "$value": 42,
+          "$value": 50,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1772,14 +1772,14 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/42"
+              "targetVariableName": "dimension/50"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
         },
         "xl": {
           "$type": "number",
-          "$value": 46,
+          "$value": 56,
           "$extensions": {
             "com.sloyui.variable": {
               "scopes": [
@@ -1792,7 +1792,7 @@
             },
             "com.figma.aliasData": {
               "targetVariableSetName": "Sloy UI · Primitives",
-              "targetVariableName": "dimension/46"
+              "targetVariableName": "dimension/56"
             }
           },
           "$description": "Shared geometry selected by Default/Compact, independent of color and radius."
