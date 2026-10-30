@@ -16,11 +16,11 @@
 .cap-markdown-v2-menu[role="menu"] > button { justify-content: flex-start; }
 .cap-markdown-v2-table-picker { width: 182px; display: grid; gap: var(--cap-space-2); }
 .cap-markdown-v2-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: var(--cap-space-detail-3); }
-.cap-markdown-v2-grid button { width: 18px; height: 18px; padding: 0; background: var(--cap-control-bg); border: 1px solid var(--cap-content-muted); border-radius: 2px; cursor: pointer; }
+.cap-markdown-v2-grid button { width: 18px; height: 18px; padding: 0; background: var(--cap-control-bg); border: 1px solid var(--cap-content-muted); border-radius: calc(2px * var(--cap-radius-enabled)); cursor: pointer; }
 .cap-markdown-v2-grid button[data-active] { background: var(--cap-accent-normal); border-color: var(--cap-accent-text); }
 .cap-markdown-v2-link { display: grid; gap: var(--cap-space-2); width: 280px; }
 .cap-markdown-v2 [data-cap-color] { color: var(--cap-accent-text); }
-.cap-markdown-v2 [data-cap-highlight] { background: var(--cap-accent-normal); border-radius: 2px; }
+.cap-markdown-v2 [data-cap-highlight] { background: var(--cap-accent-normal); border-radius: calc(2px * var(--cap-radius-enabled)); }
 .cap-markdown-v2 a { color: var(--cap-accent-text); text-decoration: underline; }
 .cap-markdown-v2-rule { border: 0; border-top: 1px solid var(--cap-content-muted); margin-block: 12px; }
 .cap-markdown-v2-table-scroll { overflow-x: auto; max-width: 100%; }

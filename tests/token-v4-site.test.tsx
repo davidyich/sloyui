@@ -21,30 +21,29 @@ describe('v4 foundation graph', () => {
       for (const collection of tokenGraph.collections) for (const variable of collection.variables) expect(() => resolveTokenChain(`${collection.key}/${variable.name}`, { ...defaultTokenModes, Theme: theme, Surface: surface, SurfaceScheme: scheme })).not.toThrow();
     }
   });
-  it('lets readers search roles, select a chain node and copy its actual source path', async () => {
-    const user = userEvent.setup();
-    const copy = vi.fn();
-    const { container } = render(<TokenGraphInspector copy={copy}/>);
-    await user.type(screen.getByRole('searchbox', { name: 'Найти токен' }), 'surface/bg');
-    await user.click(within(screen.getByLabelText('Токены выбранной коллекции')).getByRole('button', { name: 'surface/bg' }));
-    let chain = screen.getByRole('list', { name: 'Цепочка алиасов' });
-    expect(within(chain).getAllByRole('button')).toHaveLength(4);
-    await user.click(within(chain).getAllByRole('button').at(-1)!);
-    expect(container.querySelector('[data-token-node]')?.getAttribute('data-token-node')).toMatch(/^Palette\//);
-    await user.click(screen.getByRole('button', { name: 'Копировать имя' }));
-    expect(copy).toHaveBeenCalledWith(resolveTokenChain('Theme/surface/bg').at(-1)!.path);
-    await act(async () => { document.documentElement.setAttribute('data-theme', 'dark'); });
-    chain = screen.getByRole('list', { name: 'Цепочка алиасов' });
-    expect(within(chain).getAllByRole('button')).toHaveLength(4);
-    await user.clear(screen.getByRole('searchbox', { name: 'Найти токен' }));
-    await user.type(screen.getByRole('searchbox', { name: 'Найти токен' }), 'no-such-token');
-    expect(screen.getByText('Нет токенов с таким именем.')).toBeInTheDocument();
+  it('searches a token, copies its semantic name and follows theme changes', async () => {
+    const user=userEvent.setup(),copy=vi.fn();
+    const {container}=render(<TokenGraphInspector copy={copy}/>);
+    const picker=screen.getByRole('combobox',{name:'Токен'});
+    await user.type(picker,'surface/bg');
+    await user.click(screen.getByRole('option',{name:/^surface\/bg$/}));
+    expect(container.querySelector('[data-token-node]')).toHaveAttribute('data-token-node','Theme/surface/bg');
+    await user.click(screen.getByRole('button',{name:'Копировать имя'}));
+    expect(copy).toHaveBeenCalledWith('Theme/surface/bg');
+    await user.click(screen.getByText('Режимы и источник'));
+    expect(screen.getByRole('list',{name:'Цепочка алиасов'})).toHaveTextContent('Palette');
+    await act(async()=>document.documentElement.setAttribute('data-theme','dark'));
+    expect(container.querySelector('.cap-v4-context-line')).toHaveTextContent('Dark');
+    await user.type(picker,'no-such-token');
+    expect(screen.getByText('Ничего не найдено')).toBeInTheDocument();
+    expect(container.querySelector('[data-token-node]')).toHaveAttribute('data-token-node','Theme/surface/bg');
   });
   it('opens the chosen collection from the graph overview', async () => {
     const user = userEvent.setup();
     const { container } = render(<TokenSystemV4 copy={() => {}}/>);
     await user.click(container.querySelector<HTMLButtonElement>('[data-collection="Density"]')!);
     expect(container.querySelector('[data-token-node]')).toHaveAttribute('data-token-node', 'Density/adaptive/padding/xs');
+    await user.click(screen.getByText('Режимы и источник'));
     expect(screen.getByRole('list', { name: 'Цепочка алиасов' })).toHaveTextContent('Primitives');
   });
   it('keeps fixed touch geometry unchanged and separates Radius from Density', () => {

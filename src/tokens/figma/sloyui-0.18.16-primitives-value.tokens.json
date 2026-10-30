@@ -1,0 +1,1204 @@
+{
+  "$extensions": {
+    "com.sloyui.export": {
+      "version": "0.18.16",
+      "collection": "Sloy UI · Primitives",
+      "mode": "Value"
+    }
+  },
+  "dimension": {
+    "0": {
+      "$type": "number",
+      "$value": 0,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-0)"
+          }
+        }
+      }
+    },
+    "1": {
+      "$type": "number",
+      "$value": 1,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-1)"
+          }
+        }
+      }
+    },
+    "2": {
+      "$type": "number",
+      "$value": 2,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-2)"
+          }
+        }
+      }
+    },
+    "3": {
+      "$type": "number",
+      "$value": 3,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-3)"
+          }
+        }
+      }
+    },
+    "4": {
+      "$type": "number",
+      "$value": 4,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-4)"
+          }
+        }
+      }
+    },
+    "5": {
+      "$type": "number",
+      "$value": 5,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-5)"
+          }
+        }
+      }
+    },
+    "6": {
+      "$type": "number",
+      "$value": 6,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-6)"
+          }
+        }
+      }
+    },
+    "7": {
+      "$type": "number",
+      "$value": 7,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-7)"
+          }
+        }
+      }
+    },
+    "8": {
+      "$type": "number",
+      "$value": 8,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-8)"
+          }
+        }
+      }
+    },
+    "9": {
+      "$type": "number",
+      "$value": 9,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-9)"
+          }
+        }
+      }
+    },
+    "10": {
+      "$type": "number",
+      "$value": 10,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-10)"
+          }
+        }
+      }
+    },
+    "11": {
+      "$type": "number",
+      "$value": 11,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-11)"
+          }
+        }
+      }
+    },
+    "12": {
+      "$type": "number",
+      "$value": 12,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-12)"
+          }
+        }
+      }
+    },
+    "13": {
+      "$type": "number",
+      "$value": 13,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-13)"
+          }
+        }
+      }
+    },
+    "14": {
+      "$type": "number",
+      "$value": 14,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-14)"
+          }
+        }
+      }
+    },
+    "15": {
+      "$type": "number",
+      "$value": 15,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-15)"
+          }
+        }
+      }
+    },
+    "16": {
+      "$type": "number",
+      "$value": 16,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-16)"
+          }
+        }
+      }
+    },
+    "17": {
+      "$type": "number",
+      "$value": 17,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-17)"
+          }
+        }
+      }
+    },
+    "18": {
+      "$type": "number",
+      "$value": 18,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-18)"
+          }
+        }
+      }
+    },
+    "19": {
+      "$type": "number",
+      "$value": 19,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-19)"
+          }
+        }
+      }
+    },
+    "20": {
+      "$type": "number",
+      "$value": 20,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-20)"
+          }
+        }
+      }
+    },
+    "21": {
+      "$type": "number",
+      "$value": 21,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-21)"
+          }
+        }
+      }
+    },
+    "22": {
+      "$type": "number",
+      "$value": 22,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-22)"
+          }
+        }
+      }
+    },
+    "23": {
+      "$type": "number",
+      "$value": 23,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-23)"
+          }
+        }
+      }
+    },
+    "24": {
+      "$type": "number",
+      "$value": 24,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-24)"
+          }
+        }
+      }
+    },
+    "25": {
+      "$type": "number",
+      "$value": 25,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-25)"
+          }
+        }
+      }
+    },
+    "26": {
+      "$type": "number",
+      "$value": 26,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-26)"
+          }
+        }
+      }
+    },
+    "27": {
+      "$type": "number",
+      "$value": 27,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-27)"
+          }
+        }
+      }
+    },
+    "28": {
+      "$type": "number",
+      "$value": 28,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-28)"
+          }
+        }
+      }
+    },
+    "29": {
+      "$type": "number",
+      "$value": 29,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-29)"
+          }
+        }
+      }
+    },
+    "30": {
+      "$type": "number",
+      "$value": 30,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-30)"
+          }
+        }
+      }
+    },
+    "32": {
+      "$type": "number",
+      "$value": 32,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-32)"
+          }
+        }
+      }
+    },
+    "33": {
+      "$type": "number",
+      "$value": 33,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-33)"
+          }
+        }
+      }
+    },
+    "34": {
+      "$type": "number",
+      "$value": 34,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-34)"
+          }
+        }
+      }
+    },
+    "36": {
+      "$type": "number",
+      "$value": 36,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-36)"
+          }
+        }
+      }
+    },
+    "38": {
+      "$type": "number",
+      "$value": 38,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-38)"
+          }
+        }
+      }
+    },
+    "40": {
+      "$type": "number",
+      "$value": 40,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-40)"
+          }
+        }
+      }
+    },
+    "42": {
+      "$type": "number",
+      "$value": 42,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-42)"
+          }
+        }
+      }
+    },
+    "44": {
+      "$type": "number",
+      "$value": 44,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-44)"
+          }
+        }
+      }
+    },
+    "46": {
+      "$type": "number",
+      "$value": 46,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-46)"
+          }
+        }
+      }
+    },
+    "48": {
+      "$type": "number",
+      "$value": 48,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-48)"
+          }
+        }
+      }
+    },
+    "50": {
+      "$type": "number",
+      "$value": 50,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-50)"
+          }
+        }
+      }
+    },
+    "52": {
+      "$type": "number",
+      "$value": 52,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-52)"
+          }
+        }
+      }
+    },
+    "54": {
+      "$type": "number",
+      "$value": 54,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-54)"
+          }
+        }
+      }
+    },
+    "56": {
+      "$type": "number",
+      "$value": 56,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-56)"
+          }
+        }
+      }
+    },
+    "57": {
+      "$type": "number",
+      "$value": 57,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-57)"
+          }
+        }
+      }
+    },
+    "58": {
+      "$type": "number",
+      "$value": 58,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-58)"
+          }
+        }
+      }
+    },
+    "64": {
+      "$type": "number",
+      "$value": 64,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-64)"
+          }
+        }
+      }
+    },
+    "72": {
+      "$type": "number",
+      "$value": 72,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-72)"
+          }
+        }
+      }
+    },
+    "76": {
+      "$type": "number",
+      "$value": 76,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-76)"
+          }
+        }
+      }
+    },
+    "80": {
+      "$type": "number",
+      "$value": 80,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-80)"
+          }
+        }
+      }
+    },
+    "87": {
+      "$type": "number",
+      "$value": 87,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-87)"
+          }
+        }
+      }
+    },
+    "96": {
+      "$type": "number",
+      "$value": 96,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-96)"
+          }
+        }
+      }
+    },
+    "108": {
+      "$type": "number",
+      "$value": 108,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-108)"
+          }
+        }
+      }
+    },
+    "116": {
+      "$type": "number",
+      "$value": 116,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-116)"
+          }
+        }
+      }
+    },
+    "128": {
+      "$type": "number",
+      "$value": 128,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-128)"
+          }
+        }
+      }
+    },
+    "144": {
+      "$type": "number",
+      "$value": 144,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-144)"
+          }
+        }
+      }
+    },
+    "9999": {
+      "$type": "number",
+      "$value": 9999,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-9999)"
+          }
+        }
+      }
+    },
+    "0_5": {
+      "$type": "number",
+      "$value": 0.5,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension-0_5)"
+          }
+        }
+      }
+    },
+    "-2": {
+      "$type": "number",
+      "$value": -2,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension--2)"
+          }
+        }
+      }
+    },
+    "-8": {
+      "$type": "number",
+      "$value": -8,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension--8)"
+          }
+        }
+      }
+    },
+    "-3": {
+      "$type": "number",
+      "$value": -3,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension--3)"
+          }
+        }
+      }
+    },
+    "-10": {
+      "$type": "number",
+      "$value": -10,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension--10)"
+          }
+        }
+      }
+    },
+    "-4": {
+      "$type": "number",
+      "$value": -4,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension--4)"
+          }
+        }
+      }
+    },
+    "-12": {
+      "$type": "number",
+      "$value": -12,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-dimension--12)"
+          }
+        }
+      }
+    }
+  },
+  "weight": {
+    "400": {
+      "$type": "number",
+      "$value": 400,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-weight-400)"
+          }
+        }
+      }
+    },
+    "500": {
+      "$type": "number",
+      "$value": 500,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-weight-500)"
+          }
+        }
+      }
+    },
+    "600": {
+      "$type": "number",
+      "$value": 600,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-weight-600)"
+          }
+        }
+      }
+    },
+    "700": {
+      "$type": "number",
+      "$value": 700,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-weight-700)"
+          }
+        }
+      }
+    }
+  },
+  "ratio": {
+    "0": {
+      "$type": "number",
+      "$value": 0,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-ratio-0)"
+          }
+        }
+      }
+    },
+    "1": {
+      "$type": "number",
+      "$value": 1,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-ratio-1)"
+          }
+        }
+      }
+    },
+    "2": {
+      "$type": "number",
+      "$value": 2,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-ratio-2)"
+          }
+        }
+      }
+    },
+    "0_5": {
+      "$type": "number",
+      "$value": 0.5,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-ratio-0_5)"
+          }
+        }
+      }
+    }
+  },
+  "duration": {
+    "120": {
+      "$type": "number",
+      "$value": 120,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-duration-120)"
+          }
+        }
+      }
+    },
+    "180": {
+      "$type": "number",
+      "$value": 180,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-duration-180)"
+          }
+        }
+      }
+    },
+    "260": {
+      "$type": "number",
+      "$value": 260,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-duration-260)"
+          }
+        }
+      }
+    }
+  },
+  "font-family": {
+    "medeo-sans": {
+      "$type": "string",
+      "$value": "Medeo Sans",
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-font-family-medeo-sans)"
+          }
+        }
+      }
+    },
+    "medeo-mono": {
+      "$type": "string",
+      "$value": "Medeo Mono",
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-font-family-medeo-mono)"
+          }
+        }
+      }
+    }
+  },
+  "opacity": {
+    "10": {
+      "$type": "number",
+      "$value": 10,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-opacity-10)"
+          }
+        }
+      }
+    },
+    "12": {
+      "$type": "number",
+      "$value": 12,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-opacity-12)"
+          }
+        }
+      }
+    },
+    "16": {
+      "$type": "number",
+      "$value": 16,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-opacity-16)"
+          }
+        }
+      }
+    },
+    "24": {
+      "$type": "number",
+      "$value": 24,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-opacity-24)"
+          }
+        }
+      }
+    },
+    "32": {
+      "$type": "number",
+      "$value": 32,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-opacity-32)"
+          }
+        }
+      }
+    },
+    "48": {
+      "$type": "number",
+      "$value": 48,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-opacity-48)"
+          }
+        }
+      }
+    },
+    "64": {
+      "$type": "number",
+      "$value": 64,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-opacity-64)"
+          }
+        }
+      }
+    },
+    "100": {
+      "$type": "number",
+      "$value": 100,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-opacity-100)"
+          }
+        }
+      }
+    },
+    "00": {
+      "$type": "number",
+      "$value": 0,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-opacity-00)"
+          }
+        }
+      }
+    },
+    "02": {
+      "$type": "number",
+      "$value": 2,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-opacity-02)"
+          }
+        }
+      }
+    },
+    "04": {
+      "$type": "number",
+      "$value": 4,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-opacity-04)"
+          }
+        }
+      }
+    },
+    "06": {
+      "$type": "number",
+      "$value": 6,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-opacity-06)"
+          }
+        }
+      }
+    },
+    "08": {
+      "$type": "number",
+      "$value": 8,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-primitive-opacity-08)"
+          }
+        }
+      }
+    }
+  }
+}

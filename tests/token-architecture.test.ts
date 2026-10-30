@@ -45,7 +45,7 @@ describe('Token architecture v2: public contract and implementation boundaries',
   expect(graph.collections.map(collection => collection.name)).toEqual(['Palette', 'Primitives', 'Theme', 'SurfaceScheme', 'Density', 'Semantic', 'Components', 'Borders']);
   expect(graph.surfaceModes).toEqual({ base: 'Page', canvas: 'Inset', raised: 'Panel', floating: 'Overlay' });
   const paletteCollection = graph.collections.find(collection => collection.name === 'Palette')!;
-  expect(Object.keys(paletteCollection.modes.Value)).toHaveLength(289);
+  expect(Object.keys(paletteCollection.modes.Value)).toHaveLength(330);
   expect(Object.keys(paletteCollection.modes.Value).sort()).toEqual(Object.keys(palette).map(path=>path.slice('palette/'.length)).sort());
   for (const [name, value] of Object.entries(paletteCollection.modes.Value)) {
    expect(name).not.toMatch(/^palette\//);
@@ -99,7 +99,7 @@ describe('Token architecture v2: unchanged rendered colors', () => {
  });
 
  it('preserves all canonical fill/text pairs and their nested reactions exactly', () => {
-  expect(model.audit).toHaveLength(224);
+  expect(model.audit).toHaveLength(256);
   for (const row of model.audit) {
    const context = `${row.theme}/${row.surface}/${row.hue}/${row.state}`;
    const background = resolve(`Semantic/element/${row.hue}/${row.state}`, row.theme, row.surface) as Color;

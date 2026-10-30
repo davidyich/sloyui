@@ -105,7 +105,7 @@ export function MovingHighlight({ root, selected, hover = false, target: selecto
       element.removeAttribute('data-moving');
       if (frozen) { paint(frozen); geometry = frozen; }
       element.toggleAttribute('data-hide-immediately', immediate);
-      element.style.opacity = '0'; element.removeAttribute('data-visible'); visible = false;
+      element.removeAttribute('data-visible'); visible = false;
       clearTimeout(fadeTimer);
       const release = () => parent?.removeAttribute('data-shared-hover-active');
       if (immediate || globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches) release();
@@ -124,7 +124,7 @@ export function MovingHighlight({ root, selected, hover = false, target: selecto
       const to: Geometry = { x: (bounds.left - metrics.box.left) / metrics.scaleX + parent.scrollLeft - metrics.borderX,
         y: (bounds.top - metrics.box.top) / metrics.scaleY + parent.scrollTop - metrics.borderY, width: bounds.width / metrics.scaleX, height: bounds.height / metrics.scaleY,
         radius: node.matches('label.cap-segment') ? 'inherit' : paintedStyle.borderRadius };
-      if (visible && sameBox(geometry, to)) { syncAccent(node); return; }
+      if (visible && sameBox(geometry, to)) { element.setAttribute('data-visible', 'true'); syncAccent(node); return; }
       const reduced = globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
       const fading = !visible && geometry && Number.parseFloat(getComputedStyle(element).opacity) > 0;
       const from = visible || fading ? visualBox(metrics) : null;
@@ -132,7 +132,7 @@ export function MovingHighlight({ root, selected, hover = false, target: selecto
       const moving = !!(animate && !reduced && from);
       element.toggleAttribute('data-moving', moving);
       clearTimeout(fadeTimer); element.removeAttribute('data-hide-immediately');
-      paint(to); element.style.opacity = '1'; element.setAttribute('data-visible', 'true');
+      paint(to); element.setAttribute('data-visible', 'true');
       if (hover) parent.setAttribute('data-shared-hover-active', 'true');
       if (!hover && selectedTarget !== node) { if (selectedTarget) observer?.unobserve(selectedTarget); selectedTarget = node; observer?.observe(node); }
       // Keep declared secondary accents, while inherited axes stay inherited.
@@ -210,7 +210,7 @@ export function MovingHighlight({ root, selected, hover = false, target: selecto
       if (typeof MutationObserver !== 'undefined') {
         contextObserver = new MutationObserver(() => measure(false));
         for (let ancestor: HTMLElement | null = parent; ancestor; ancestor = ancestor.parentElement)
-          contextObserver.observe(ancestor, { attributes: true, attributeFilter: ['data-radius','data-density'] });
+          contextObserver.observe(ancestor, { attributes: true, attributeFilter: ['data-radius','data-density','data-corner-shape','inert','aria-disabled'] });
       }
       const selectedNode = selection.current ? parent.querySelector<HTMLElement>(selection.current) : null;
       if (selectedNode) observer?.observe(selectedNode);
@@ -238,5 +238,5 @@ export function MovingHighlight({ root, selected, hover = false, target: selecto
   // Controlled checked/selected properties may change without DOM attribute mutations.
   // Refresh on consumer commits, never on a pointer-frame timer.
   useLayoutEffect(() => { refresh.current?.(); });
-  return <span ref={layer} aria-hidden="true" className="cap-moving-highlight" data-kind={hover ? 'hover' : 'selection'} data-native-motion={typeof Element !== 'undefined' && typeof Element.prototype.animate === 'function' || undefined} style={{ opacity: 0 }}/>;
+  return <span ref={layer} aria-hidden="true" className="cap-moving-highlight" data-kind={hover ? 'hover' : 'selection'} data-native-motion={typeof Element !== 'undefined' && typeof Element.prototype.animate === 'function' || undefined} />;
 }

@@ -7,10 +7,10 @@ export const schema='sloy-palette-lab/v5';
 export const surfaces=['Shell','Workspace','Content','Overlay','Invert','Glass','Custom'];
 export const defaultRules={minimumContrast:4.5,vividness:1.2,adaptPrimary:true,sharedAlpha:true,primaryForegroundPolicy:'theme'};
 export const presets=[
- ['blue','#087BE9'],['green','#00995B'],['orange','#F56918'],['red','#E53E3E'],['pink','#DA2DAB'],['purple','#9B3FE0']
+ ['blue','#087BE9'],['green','#00995B'],['yellow','#FFE500'],['orange','#F56918'],['red','#E53E3E'],['pink','#DA2DAB'],['purple','#9B3FE0']
 ].map(([name,hex])=>({name,hex}));
 export const bounds={hue:[0,360],primaryChroma:[.005,.35],lightnessLight:[.25,.92],lightnessDark:[.5,.95],stateDelta:[.015,.09],softChroma:[.3,2],opacityScale:[.5,1.8],textChroma:[.3,1.8],foregroundTint:[0,1],vividness:[.5,1.5],darkChromaMultiplier:[.5,1.2]};
-export function createAccent(name='purple',hex='#9B3FE0'){const c=toOklch(fromHex(hex));return {id:globalThis.crypto?.randomUUID?.()??String(Date.now()),name,hex:hex.toUpperCase(),seedHex:hex.toUpperCase(),hue:c.h,primaryChroma:Math.max(.005,c.c),lightnessLight:clamp(c.l,.25,.92),lightnessDark:.76,stateDelta:.04,softChroma:1.4,opacityScale:1.2,textChroma:1,paletteSteps:41,darkChromaMultiplier:.9,foregroundMode:'auto',foregroundTint:0,foregroundLight:'#FFFFFF',foregroundDark:'#14201D'};}
+export function createAccent(name='purple',hex='#9B3FE0'){const c=toOklch(fromHex(hex));return {id:globalThis.crypto?.randomUUID?.()??String(Date.now()),name,hex:hex.toUpperCase(),seedHex:hex.toUpperCase(),hue:c.h,primaryChroma:name==='yellow'&&hex.toUpperCase()==='#FFE500'?.35:Math.max(.005,c.c),lightnessLight:clamp(c.l,.25,.92),lightnessDark:name==='yellow'&&hex.toUpperCase()==='#FFE500'?.9:.76,stateDelta:.04,softChroma:name==='yellow'&&hex.toUpperCase()==='#FFE500'?2:1.4,opacityScale:1.2,textChroma:1,paletteSteps:41,darkChromaMultiplier:.9,foregroundMode:'auto',foregroundTint:0,foregroundLight:'#FFFFFF',foregroundDark:'#14201D'};}
 export function updateSeed(accent,hex){const c=toOklch(fromHex(hex));return {...accent,hex:hex.toUpperCase(),seedHex:hex.toUpperCase(),hue:c.h,primaryChroma:clamp(c.c,.005,.35),lightnessLight:clamp(c.l,.25,.92)};}
 export function createNeutralSystem(){return {accent:{...createAccent('neutral','#777777'),id:'neutral',primaryChroma:0,vividness:1},settings:createNeutralSettings()};}
 export function resetAccentRecommendations(accent){
@@ -235,7 +235,7 @@ export function generateContext(accent,theme,scheme,surface,source,resolved,cust
  const backdrop=resolveContextBackings(theme,scheme,surface,source,resolved,custom,rules,neutralSystem);
  let {effectiveTheme,dark,neutralContext}=backdrop;const {isCustom,glass,bg,neutral,backings,bases}=backdrop;
  palette??=generatePalette(accent,rules,effectiveTheme);
- const sharedRecipe=rules.alphaRecipe??(rules.sharedAlpha?(isCustom?customAlphaRecipe(accent,palette,backings,dark,rules):projectAlphaRecipes(accent,source,resolved,custom,rules,palette,neutralSystem)[alphaRecipeFamily(effectiveTheme,surface,bg)]):null);
+ const sharedRecipe=rules.alphaRecipe??(rules.sharedAlpha?(isCustom?customAlphaRecipe(accent,palette,backings,dark,rules):projectAlphaRecipes(accent,source,resolved,custom,rules,palette,neutralSystem,alphaRecipeFamily(effectiveTheme,surface,bg))[alphaRecipeFamily(effectiveTheme,surface,bg)]):null);
  // Choose one exact soft primitive and numeric opacity by measuring the
  // actual rendered layers. Perceptual reaction distance is bounded independently
  // of the surface's black/white polarity or the alpha curve's nonlinearity.
@@ -302,11 +302,11 @@ function customAlphaRecipe(accent,palette,backings,dark,rules){
 const projectRecipeCache=new WeakMap();
 /** Shared family is content-addressed and bounded per resolved project input.
  * Ready canonical recipes bypass this cache via rules.alphaRecipe. */
-export function projectAlphaRecipes(accent,source,resolved,custom={Light:'#F1EEF8',Dark:'#221D2C'},rules=defaultRules,palette=generatePalette(accent,rules),neutralSystem){
+export function projectAlphaRecipes(accent,source,resolved,custom={Light:'#F1EEF8',Dark:'#221D2C'},rules=defaultRules,palette=generatePalette(accent,rules),neutralSystem,requestedFamily){
  let cache=projectRecipeCache.get(resolved);if(!cache){cache=new Map();projectRecipeCache.set(resolved,cache);}
  const {alphaRecipe,...recipeRules}=rules,{id,...accentSettings}=accent;
  const key=JSON.stringify([accentSettings,source.themes,source.schemes,custom,recipeRules,neutralSystem,palette[0].steps.map(s=>[s.name,s.value])]);
- if(cache.has(key))return cache.get(key);
+ const cached=cache.get(key);if(cached&&(!requestedFamily?Object.keys(cached).length===5:cached[requestedFamily]))return cached;
  const families={Light:[],'Light/Neutral':[],Dark:[],'Glass/Light':[],'Glass/Dark':[]},referenceBases={};
  for(const theme of source.themes)for(const scheme of source.schemes)for(const surface of surfaces.filter(s=>s!=='Custom')){
   // Partial legacy inputs are legal for canonical callers with ready recipes.
@@ -314,7 +314,7 @@ export function projectAlphaRecipes(accent,source,resolved,custom={Light:'#F1EEF
   const ctx=resolveContextBackings(theme,scheme,surface,source,resolved,custom,rules,neutralSystem);
   const family=alphaRecipeFamily(ctx.effectiveTheme,surface,ctx.bases[0]);families[family].push(...ctx.backings);for(const base of ctx.bases)if(!referenceBases[family]||(family.endsWith('Dark')?luminance(base)>luminance(referenceBases[family]):luminance(base)<luminance(referenceBases[family])))referenceBases[family]=base;
  }
- const recipes={};for(const family of Object.keys(families))if(families[family].length)recipes[family]=solveAlphaRecipe(accent,palette[0].steps,{backings:families[family],dark:family.endsWith('Dark'),minimumContrast:rules.minimumContrast,neutral:accent.id==='neutral',referenceBase:referenceBases[family]});
+ const recipes=cached??{};for(const family of Object.keys(families))if((!requestedFamily||requestedFamily===family)&&!recipes[family]&&families[family].length)recipes[family]=solveAlphaRecipe(accent,palette[0].steps,{backings:families[family],dark:family.endsWith('Dark'),minimumContrast:rules.minimumContrast,neutral:accent.id==='neutral',referenceBase:referenceBases[family]});
  if(cache.size>=32)cache.delete(cache.keys().next().value);cache.set(key,recipes);return recipes;
 }
 const contextCache=new WeakMap();

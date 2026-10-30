@@ -17,6 +17,6 @@ const legacyBorderAliases: Record<string,string> = {
 export const focusColorChoices = canonicalFocusRingColorTokens;
 export function FocusColorControl({label,value,onValueChange}:{label:string;value:string;onValueChange:(value:string)=>void}) {
   return <div className="playground-focus-token" style={{'--playground-focus-color':`var(${value})`} as CSSProperties}>
-    <PopupSelect searchable searchPlacement="separate" label={label} showLabel size="sm" value={legacyBorderAliases[value]??value} popupWidth={360} triggerContent={<span className="playground-focus-dot" aria-hidden="true"/>} options={canonicalFocusRingColorTokens.map(token=>({value:token,label:roleNames.get(token)??token,leading:<span className="playground-focus-dot" style={{background:`var(${token})`}}/>,aliases:[token,...Object.keys(legacyBorderAliases).filter(alias=>legacyBorderAliases[alias]===token)]}))} onValueChange={onValueChange}/>
+    <PopupSelect searchable searchPlacement="separate" label={label} showLabel size="md" value={legacyBorderAliases[value]??value} popupWidth={360} triggerContent={<span className="playground-focus-dot" aria-hidden="true"/>} options={canonicalFocusRingColorTokens.map(token=>({value:token,label:roleNames.get(token)??token,leading:<span className="playground-focus-dot" style={{background:`var(${token})`}}/>,aliases:[token,...Object.keys(legacyBorderAliases).filter(alias=>legacyBorderAliases[alias]===token)]}))} onValueChange={onValueChange}/>
   </div>;
 }

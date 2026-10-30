@@ -5,7 +5,7 @@ Reviewed 2026-10-08. This inventory records the licenses and credits shipped wit
 ## Licensed material
 
 - Lucide: complete installed license includes ISC and Feather-derived MIT icons with Cole Bemis attribution. Preserve both grants. [Official license](https://github.com/lucide-icons/lucide/blob/main/LICENSE).
-- Inter and Overpass Mono: bundled WOFF2 files retain OFL 1.1 and adjacent font notices. Fonts may be bundled with software but not sold alone. [Inter license](https://github.com/rsms/inter/blob/master/LICENSE.txt), [Overpass license](https://github.com/RedHatOfficial/Overpass/blob/master/OFL.txt).
+- Medeo Sans, Mono and Pixel: bundled fonts retain their OFL 1.1 license and copyright notices. Medeo derives from Geist and Inter. [Source and license](https://github.com/DNFDEVS/medeo-font).
 - Arc Library: adaptations are mapped below. Revision `439ed0ddc86d39babcfe97738f633fb361a892a5` has MIT copyright 2026 Elia Kuratli, verified against its [revision license](https://github.com/kuratlielia/arc-library/blob/439ed0ddc86d39babcfe97738f633fb361a892a5/LICENSE).
 - React / React DOM: MIT peers external to the library bundle, bundled by the catalogue. Preserve their notices with the compiled catalogue. [Official license](https://github.com/facebook/react/blob/main/LICENSE).
 

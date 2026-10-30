@@ -96,6 +96,14 @@ describe('Custom overlay contracts', () => {
     rerender(<div data-accent="blue" data-theme="light"><div data-color="teal"><Menu label="Scoped menu" items={items} /></div></div>);
     await waitFor(() => expect(screen.getByRole('menu')).toHaveAttribute('data-color', 'teal')); expect(screen.getByRole('menu')).toHaveAttribute('data-theme', 'light');
   });
+  it('updates inherited focus mode for an already open portal', async () => {
+    const items=[{id:'copy',label:'Copy'}];
+    const {rerender}=render(<div data-focus-ring="off"><Menu label="Focus menu" items={items}/></div>);
+    await userEvent.click(screen.getByRole('button',{name:'Focus menu'}));
+    expect(screen.getByRole('menu')).toHaveAttribute('data-focus-ring','off');
+    rerender(<div data-focus-ring="on"><Menu label="Focus menu" items={items}/></div>);
+    await waitFor(()=>expect(screen.getByRole('menu')).toHaveAttribute('data-focus-ring','on'));
+  });
   it('keeps the deepest modal active when nested modals mount already open', () => {
     render(<Dialog open onOpenChange={() => {}} title="Initially open parent"><Drawer open onOpenChange={() => {}} title="Initially open child"><Input aria-label="Child field" /></Drawer></Dialog>);
     expect(screen.getByRole('dialog', { name: 'Initially open child' })).toBeInTheDocument(); expect(screen.getByRole('textbox', { name: 'Child field' })).toHaveFocus();

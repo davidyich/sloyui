@@ -12,7 +12,7 @@
 .cap-tab-list[data-variant='workspace'] > button[aria-selected='true'] { background:var(--cap-control-active); color:var(--cap-content-primary); }
 .cap-tab-list[data-variant='workspace'] > button[aria-selected='true']::after { content:''; position:absolute; inset-inline-start:50%; inset-block-end:calc(-1 * var(--cap-space-2)); transform:translateX(-50%); width:min(28px,45%); height:3px; border-radius:var(--cap-radius-full) var(--cap-radius-full) 0 0; background:currentColor; }
 .cap-tab-list[data-variant='workspace'] > .cap-moving-highlight { border-radius:var(--cap-radius-base); }
-.cap-kanban-column[data-variant='framed'] { padding:var(--cap-space-3); box-sizing:border-box; background:var(--cap-surface-current); border-radius:var(--cap-radius-xl); }
+.cap-kanban-column[data-variant='framed'] { padding:calc(var(--cap-space-3) + var(--cap-radius-inset)); box-sizing:border-box; background:var(--cap-surface-current); border-radius:var(--cap-radius-xl); }
 .cap-kanban-column[data-variant='framed'] .cap-kanban-column-header { margin-bottom:var(--cap-space-3); }
 .cap-kanban-column[data-variant='framed'] .cap-kanban-column-title { background:transparent; color:var(--cap-content-primary); padding:0; }
 .cap-kanban-column[data-variant='framed'] .cap-kanban-column-title > span:first-child { display:inline-flex; align-items:center; gap:var(--cap-space-2); }

@@ -2,7 +2,7 @@
   "$extensions": {
     "com.sloyui.export": {
       "schemaVersion": 2,
-      "version": "0.18.3",
+      "version": "0.18.16",
       "kind": "resolved-legacy-semantic-snapshot",
       "source": "figma-modes.json",
       "modes": {
@@ -1472,6 +1472,295 @@
     "$extensions": {
       "com.sloyui.token": {
         "path": "Semantic/color/green/vivid/content"
+      }
+    }
+  },
+  "element/yellow/normal": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.8969334328,
+        0.8049335314,
+        0
+      ],
+      "alpha": 0.11
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/color/yellow/secondary/background/normal"
+      }
+    }
+  },
+  "element/yellow/hover": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.9641978442,
+        0.8803853886,
+        0.2906137311
+      ],
+      "alpha": 0.15
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/color/yellow/secondary/background/hover"
+      }
+    }
+  },
+  "element/yellow/pressed": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.9641978442,
+        0.8803853886,
+        0.2906137311
+      ],
+      "alpha": 0.15
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/color/yellow/secondary/background/pressed"
+      }
+    }
+  },
+  "element/yellow/disabled": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        1,
+        1,
+        1
+      ],
+      "alpha": 0.03
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/disabled/background"
+      }
+    }
+  },
+  "element/yellow/text": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.9885482782,
+        0.9473069418,
+        0.6591925486
+      ],
+      "alpha": 1
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/color/yellow/secondary/content"
+      }
+    }
+  },
+  "element/yellow/disabled-text": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.7215451819,
+        0.7215451819,
+        0.7215451819
+      ],
+      "alpha": 1
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/disabled/content"
+      }
+    }
+  },
+  "element/yellow/border": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.6899263852,
+        0.617932744,
+        6e-10
+      ],
+      "alpha": 1
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/color/yellow/secondary/border/normal"
+      }
+    }
+  },
+  "element/yellow/border-hover": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.6899263852,
+        0.617932744,
+        6e-10
+      ],
+      "alpha": 1
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/color/yellow/secondary/border/hover"
+      }
+    }
+  },
+  "element/yellow/border-pressed": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.6899263852,
+        0.617932744,
+        6e-10
+      ],
+      "alpha": 1
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/color/yellow/secondary/border/pressed"
+      }
+    }
+  },
+  "action/yellow/normal": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.9641978442,
+        0.8803853886,
+        0.2906137311
+      ],
+      "alpha": 1
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/color/yellow/solid/background/normal"
+      }
+    }
+  },
+  "action/yellow/hover": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.9814347397,
+        0.9269062878,
+        0.5551599182
+      ],
+      "alpha": 1
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/color/yellow/solid/background/hover"
+      }
+    }
+  },
+  "action/yellow/pressed": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.9814347397,
+        0.9269062878,
+        0.5551599182
+      ],
+      "alpha": 1
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/color/yellow/solid/background/pressed"
+      }
+    }
+  },
+  "action/yellow/text": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0,
+        0,
+        0
+      ],
+      "alpha": 1
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/color/yellow/solid/content"
+      }
+    }
+  },
+  "action-vivid/yellow/normal": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.9641978442,
+        0.8803853886,
+        0.2906137311
+      ],
+      "alpha": 1
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/color/yellow/vivid/background/normal"
+      }
+    }
+  },
+  "action-vivid/yellow/hover": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.9814347397,
+        0.9269062878,
+        0.5551599182
+      ],
+      "alpha": 1
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/color/yellow/vivid/background/hover"
+      }
+    }
+  },
+  "action-vivid/yellow/pressed": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.9814347397,
+        0.9269062878,
+        0.5551599182
+      ],
+      "alpha": 1
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/color/yellow/vivid/background/pressed"
+      }
+    }
+  },
+  "action-vivid/yellow/text": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0,
+        0,
+        0
+      ],
+      "alpha": 1
+    },
+    "$extensions": {
+      "com.sloyui.token": {
+        "path": "Semantic/color/yellow/vivid/content"
       }
     }
   },

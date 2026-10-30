@@ -7,7 +7,7 @@ export function ParameterSliderStory() {
   const t = useCatalogText(), [value,setValue] = useState(64);
   return <StorySection title="Настройка параметров"><div style={{width:320,maxWidth:'100%',display:'grid',gap:'var(--cap-space-3)'}}>
     <ParameterSlider label={t('Насыщенность')} value={value} onValueChange={setValue} suffix="%" showHandle icon={<Icon name="sun"/>}/>
-    <ParameterSlider label={t('Скругление')} defaultValue={16} max={32} suffix="px"/>
+    <ParameterSlider label={t('Скругление')} defaultValue={16} max={32} step={4} showTicks showHandle suffix="px"/>
     <ParameterSlider label={t('Без индикатора')} defaultValue={40} showValue={false}/>
     <ParameterSlider label={t('Недоступно')} value={50} disabled suffix="%"/>
     <Select appearance="parameter" label={t('Интерфейс')} defaultValue="light" options={[{value:'light',label:t('Светлая')},{value:'dark',label:t('Тёмная')}]}/>

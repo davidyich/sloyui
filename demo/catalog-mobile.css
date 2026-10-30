@@ -1,7 +1,7 @@
 /* Mobile chrome occupies one row in the layout, outside the scrolling document. */
 .catalog-mobile-bar { display:none; }
 .catalog-appearance-fields { display:grid; gap:var(--cap-space-2); min-width:0; }
-.catalog-appearance-borders { min-height:var(--cap-touch-target); flex-direction:row-reverse; justify-content:space-between; padding-inline:var(--cap-space-3); }
+.catalog-appearance-borders,.catalog-appearance-focus { min-height:var(--cap-touch-target); flex-direction:row-reverse; justify-content:space-between; padding-inline:var(--cap-space-3); }
 .catalog-appearance-sheet .cap-dialog-body { min-height:0; overflow:auto; overscroll-behavior:contain; padding-block-end:calc(var(--cap-space-4) + env(safe-area-inset-bottom)); }
 .cap-modal-layer>.catalog-appearance-sheet[data-side=bottom] { border-start-start-radius:var(--cap-radius-2xl); border-start-end-radius:var(--cap-radius-2xl); }
 .cap-modal-layer>.catalog-history-sheet[data-side=bottom] { height:88dvh; max-height:calc(100dvh - var(--cap-space-4)); border-start-start-radius:var(--cap-radius-2xl); border-start-end-radius:var(--cap-radius-2xl); }

@@ -12,6 +12,8 @@
 .cap-parameter-content output { display:inline-flex; align-items:baseline; justify-content:flex-end; gap:3px; flex:0 1 auto; min-width:0; max-width:50%; overflow:hidden; font-variant-numeric:tabular-nums; white-space:nowrap; }
 .cap-parameter-content output > span:first-child { min-width:0; overflow:hidden; text-overflow:ellipsis; }
 .cap-parameter-unit { flex:none; color:var(--cap-content-secondary); }
+.cap-parameter-ticks { position:absolute; inset:0; z-index:0; pointer-events:none; }
+.cap-parameter-ticks > span { position:absolute; left:clamp(1px,var(--cap-tick-position),calc(100% - 1px)); bottom:2px; width:1px; height:3px; background:var(--cap-content-secondary); opacity:.45; transform:translateX(-50%); }
 .cap-parameter-handle-layer { position:absolute; z-index:0; inset:0; pointer-events:none; }
 .cap-parameter-handle-slot { position:absolute; left:var(--cap-parameter-progress); top:50%; display:grid; place-items:center; width:20px; height:100%; transform:translate(-50%,-50%); pointer-events:none; }
 .cap-parameter-handle { width:2px; height:calc(clamp(16px,calc(var(--cap-parameter-height) - 10px),28px) / 1.5); border-radius:calc(2px * var(--cap-radius-enabled)); background:var(--cap-content-secondary); opacity:.35; pointer-events:none; transition:opacity var(--cap-duration-fast) var(--cap-ease-standard); }

@@ -1,5 +1,77 @@
 # Changelog
 
+## 0.18.16 — 2026-10-30
+
+- Colors and themes is the single entry for color roles, palettes and a simplified token browser; legacy token links remain valid. Catalogue previews default to Content.
+- The default Yellow ramp and soft fills are cleaner. Saved custom palettes retain their exact authored values.
+- Palette Lab calculates visible contexts progressively in a Worker and caches semantic results. Neutral belongs to Colors, remains editable and cannot be removed. Its global settings use a compact revealable dock.
+- English and Russian foundation/editor interface text follows the chosen locale. Original owner-authored guidance remains available in its source language.
+- Resizable panels and ContentLayout reuse one boundary handle with no layout gutter; catalogue inspectors and Palette Lab use the same affordance.
+
+## 0.18.15 · 2026-10-30
+
+- Complete optical clearance for comments, file previews, BottomSheet, SidebarPanel, framed Kanban and editor menus.
+- Preserve nested CodeBlock insets inside the editor and full-bleed CardStack corner inheritance.
+- Derive legacy comment-action and compact CommandPalette geometry from their actual visible controls and shell insets.
+
+## 0.18.14 · 2026-10-30
+
+- Keep one consistent gap before the collapsed dock toggle; reveal spacing and height remain stable, including Square mode.
+
+## 0.18.13 · 2026-10-30
+
+- Keep the expanding appearance dock at one height with equal compact clearance on every side.
+- Increase optical content clearance around large rounded corners, including playground headings, card families, code and overlays.
+- Align announcement shell/tag/action capsules and fill gaps in smooth-corner inheritance across current components.
+
+## 0.18.12 · 2026-10-30
+
+- Restore moving selection highlights when a modal releases inert content, without requiring the selected value to change.
+- Use one visibility marker for shared selection and hover layers, including unchanged geometry.
+
+## 0.18.11 · 2026-10-30
+
+- Add Yellow as an independent accent across runtime, native exports, Palette Lab and editor swatches; preserve Orange.
+- Keep nested segmented, tab and action corners concentric and add optional native smooth corners with live portal inheritance.
+- Fix selected SegmentedControl and Tabs paint on local Invert surfaces.
+- Use a compact expanding appearance toolbar, two main radius choices and secondary focus settings; keep mobile appearance in its sheet.
+- Contain icon-parameter hover and keep compact playground fields centered at sensible widths.
+
+## 0.18.10 · 2026-10-27
+
+- Playground parameters share the same row height in desktop and mobile layouts. Multiline values open in a nearby editor.
+
+## 0.18.9 · 2026-10-27
+
+- Softened secondary accent outlines while preserving border and focus controls.
+- Added an independent, inherited focus-outline toggle, enabled by default and preserved by floating overlays.
+- Fixed the playground color parameter and centered compact field previews.
+
+## 0.18.8 · 2026-10-27
+
+- Playground numeric fields support Figma-style label and Alt-drag scrubbing, variable drag speed, Shift + arrow keys and Escape cancellation.
+- Removed arbitrary inspector limits for sizing and range boundaries; numerical preview values use their configured limits.
+
+## 0.18.7 · 2026-10-27
+
+- Playground numeric parameters use compact exact fields with label scrubbing. NumberField preserves incomplete edits until blur.
+- ParameterSlider supports optional step marks for ranges with up to 21 positions.
+
+## 0.18.6 · 2026-10-27
+
+- Align component playground settings with Palette Lab using filled numeric sliders, compact parameter rows and switches.
+- Reduce excessive unselected Checkbox and Radio outline contrast with a surface-aware accessible role.
+
+## 0.18.5 · 2026-10-27
+
+- Use Medeo Sans for headings and group duplicate font roles into two family specimens.
+- Soften enabled decorative web borders while preserving structural edges and keyboard focus.
+
+## 0.18.4 · 2026-10-27
+
+- Use Medeo Sans for the interface and Medeo Mono for monospace and code roles.
+- Bundle optional self-hosted variable fonts with upright and italic styles; keep Medeo Pixel as an archived display face.
+
 ## 0.18.3 · 2026-10-23
 
 - Default Primary content is white in Light local polarity and black in Dark. Normal/Active fills adapt together; Invert follows its local polarity.

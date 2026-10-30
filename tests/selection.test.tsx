@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import userEvent from '@testing-library/user-event';
 import { act, fireEvent, render, screen, within } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { ComboBox, ColorPicker, MultiSelect, NumberField, RadioGroup, TagInput } from '../src/components/selection.js';
@@ -127,6 +129,21 @@ describe('selection controls', () => {
     openColorPicker('Accent');
     const colorInput = screen.getByRole('textbox',{name:'Accent, формат HEX'}); fireEvent.change(colorInput,{target:{value:'#112233'}}); fireEvent.blur(colorInput); expect(colorChange).toHaveBeenCalledWith('#112233');
     fireEvent.click(screen.getByRole('button',{name:'Увеличить: Zoom'})); expect(numberChange).toHaveBeenCalledWith(100); expect(screen.getByRole('button',{name:'Увеличить: Zoom'})).toBeDisabled();
+  });
+  it('preserves partial controlled numeric input until it is valid or blurred', async () => {
+    const user=userEvent.setup(), changes=vi.fn();
+    function Form() { const [value,setValue]=useState(80); return <NumberField label="Scale" value={value} min={50} max={200} onValueChange={next=>{changes(next);setValue(next);}}/>; }
+    render(<Form/>); const input=screen.getByRole('spinbutton',{name:'Scale'});
+    await user.clear(input); await user.type(input,'120'); expect(input).toHaveValue(120); expect(changes).toHaveBeenLastCalledWith(120);
+    await user.clear(input); await user.type(input,'3'); expect(input).toHaveValue(3); expect(changes).toHaveBeenLastCalledWith(120);
+    await user.tab(); expect(input).toHaveValue(50); expect(changes).toHaveBeenLastCalledWith(50);
+    await user.clear(input); await user.tab(); expect(input).toHaveValue(50);
+  });
+  it('replaces an incomplete draft when a controlled value changes externally', async () => {
+    const user=userEvent.setup();
+    function Form() { const [value,setValue]=useState(80); return <><NumberField label="Scale" value={value} min={50} max={200} onValueChange={setValue}/><button onClick={()=>setValue(150)}>Reset</button></>; }
+    render(<Form/>); const input=screen.getByRole('spinbutton',{name:'Scale'});
+    await user.clear(input); await user.type(input,'3'); fireEvent.click(screen.getByRole('button',{name:'Reset'})); expect(input).toHaveValue(150);
   });
   it('supports NumberField prefix, PageUp/PageDown and large steps', () => {
     const onValueChange=vi.fn();

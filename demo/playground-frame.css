@@ -2,12 +2,11 @@
 .playground-frame .playground-layout.cap-resizable-group { display:flex; align-items:stretch; gap:0; }
 .playground-frame .cap-resizable-panel { min-width:0; overflow:visible; }
 .playground-frame .playground-preview,.playground-frame .playground-settings { height:100%; box-sizing:border-box; }
-.playground-frame .playground-settings-resizer { flex-basis:12px; }
-.playground-frame .playground-controls { grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr)); }
+
 .playground-frame .playground-controls > * { min-width:0; }
-.playground-frame .playground-control-pair { grid-column:1/-1; display:flex; flex-wrap:wrap; align-items:end; gap:var(--cap-space-2); min-width:0; }
-.playground-frame .playground-control-pair > * { flex:1 1 96px; min-width:96px; max-width:100%; }
-.playground-frame .playground-control-pair > .playground-focus-token { flex:0 1 90px; min-width:64px; }
+.playground-frame .playground-control-pair { grid-column:1/-1; display:grid; grid-template-columns:minmax(0,1fr); gap:var(--cap-space-1); min-width:0; }
+.playground-frame .playground-control-pair > * { min-width:0; max-width:100%; }
+.playground-frame .playground-control-pair > .playground-focus-token { min-width:0; }
 .playground-frame[data-stacked] .playground-layout.cap-resizable-group { display:block; }
 .playground-frame[data-stacked] .playground-settings-resizer { display:none; }
 .playground-frame[data-stacked] .playground-settings-pane { margin-top:var(--cap-space-2); }
@@ -15,3 +14,121 @@
 
 /* Date labels include the formatted value and need the full settings row. */
 .playground-frame .playground-control-wide { grid-column:1/-1; min-width:0; }
+
+/* Compact inspector rows share the Palette Lab control rhythm. */
+.playground-frame .playground-controls { grid-template-columns:minmax(0,1fr); gap:var(--cap-space-1); align-content:start; }
+.playground-parameter-switch { min-height:var(--cap-size-control-md); flex-direction:row-reverse; justify-content:space-between; gap:var(--cap-space-2); padding-inline:var(--cap-space-3); border-radius:var(--cap-radius-base); color:var(--cap-content-secondary); }
+.playground-parameter-switch:hover { background:var(--cap-control-hover); }
+.playground-parameter-text.cap-field,.playground-parameter-icon.cap-field { display:flex; align-items:center; gap:var(--cap-space-2); min-width:0; min-height:var(--cap-size-control-md); padding-inline:var(--cap-space-3) 0; border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-radius-base); background:var(--cap-control-bg); }
+.playground-parameter-icon.cap-field:has(input:not(:disabled)):is(:hover,:focus-within) { background:var(--cap-control-hover); }
+.playground-parameter-text.cap-field:focus-within,.playground-parameter-icon.cap-field:focus-within { outline:var(--cap-focus-width) solid var(--cap-focus-ring); outline-offset:var(--cap-focus-offset); }
+.playground-parameter-text.cap-field > label,.playground-parameter-icon.cap-field > label { flex:1 1 50%; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--cap-content-secondary); font-size:var(--cap-font-size-sm); font-weight:400; }
+.playground-parameter-text.cap-field > .cap-input { flex:1 1 50%; width:0; min-width:60px; border:0; background:transparent; text-align:end; text-overflow:ellipsis; }
+.playground-parameter-text.cap-field > .cap-input:focus-visible { outline:0; }
+@media(max-width:720px) { .playground-parameter-switch,.playground-parameter-text.cap-field,.playground-parameter-icon.cap-field { min-height:var(--cap-touch-target); } }
+
+.playground-parameter-icon .cap-icon-combobox { flex:1 1 55%; width:0; min-width:0; }
+.playground-parameter-icon .cap-labeled-control { background:transparent; border:0; }
+.playground-parameter-icon .cap-input { min-width:0; background:transparent; border:0; }
+.playground-parameter-icon :is(.cap-input,.cap-labeled-control):focus-within { outline:0; }
+.playground-parameter-icon .cap-labeled-control .cap-input:is(:hover,:focus,:focus-visible) { background:transparent; border-color:transparent; outline:0; }
+
+
+
+/* Keep the inspector and reset action reachable on short desktop screens. */
+.playground-frame:not([data-stacked]) .playground-settings { display:flex; flex-direction:column; max-height:max(280px,min(520px,65vh)); overflow:hidden; }
+.playground-frame:not([data-stacked]) .playground-controls { flex:1 1 auto; min-height:0; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; }
+.playground-settings > header,.playground-settings > footer { flex:none; }
+.playground-settings > footer { padding:var(--cap-space-2) calc(var(--cap-space-4) + var(--cap-radius-inset)) calc(var(--cap-space-4) + var(--cap-radius-inset)); }
+/* Only the last section meets the lower outer curve. */
+.playground-settings > .playground-controls:last-child { padding-bottom:calc(var(--cap-space-4) + var(--cap-radius-inset)); }
+.playground-settings > footer > .cap-button { width:100%; }
+@media(max-width:720px) { .playground-settings > footer > .cap-button { min-height:var(--cap-touch-target); } }
+
+.playground-parameter-number .cap-selection-field { gap:0; max-width:none; }
+.playground-parameter-number .cap-selection-label { position:absolute; clip-path:inset(50%); width:1px; height:1px; overflow:hidden; }
+.playground-parameter-number .cap-number-field { width:100%; min-width:0; height:var(--cap-size-control-md); padding-inline:var(--cap-space-3); gap:var(--cap-space-2); border-radius:var(--cap-radius-base); }
+.playground-parameter-number .cap-number-field > button { display:none; }
+.playground-parameter-number .cap-number-prefix { flex:1 1 60%; min-width:0; padding:0; }
+.playground-number-label { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--cap-content-secondary); cursor:ew-resize; user-select:none; touch-action:none; }
+.playground-parameter-number .cap-number-field input { flex:1 1 40%; width:0; min-width:0; height:100%; padding:0; text-align:end; font-variant-numeric:tabular-nums; }
+@media(max-width:720px) { .playground-parameter-number .cap-number-field { min-height:var(--cap-touch-target); } }
+
+.playground-parameter-number[data-alt] .cap-number-field input { cursor:ew-resize; }
+
+.playground-parameter-color .cap-color-picker { max-width:none; display:flex; flex-direction:row; align-items:center; min-width:0; gap:var(--cap-space-2); border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-radius-base); padding-inline-start:var(--cap-space-3); background:var(--cap-control-bg); }
+.playground-parameter-color .cap-selection-label { flex:1 1 50%; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--cap-content-secondary); font-size:var(--cap-font-size-sm); font-weight:400; }
+.playground-parameter-color .cap-color-trigger { flex:1 1 50%; width:0; min-width:0; border:0; background:transparent; }
+.playground-parameter-color .cap-color-trigger-value { overflow:hidden; text-overflow:ellipsis; text-align:end; white-space:nowrap; }
+@media(max-width:720px) { .playground-parameter-color .cap-color-trigger { min-height:var(--cap-touch-target); } }
+
+@scope ([data-focus-ring="off"]) to ([data-focus-ring="on"]) {
+ .playground-parameter-text.cap-field:focus-within,.playground-parameter-icon.cap-field:focus-within { outline:none; }
+}
+.playground-field-preview > :is(.cap-selection-field,.cap-value-scrubber,.cap-slider-field) { margin-inline:auto; }
+.playground-preview > :is(.cap-input,.cap-textarea,.cap-select-root,.cap-labeled-field,.cap-field,.cap-icon-picker,.cap-icon-combobox,.cap-tree,.cap-segmented[data-full-width]) { max-width:360px; }
+
+/* One row height for every single-line playground parameter. */
+.playground-controls { --playground-parameter-height:var(--cap-size-control-md); }
+.playground-parameter-text.cap-field,
+.playground-parameter-icon.cap-field,
+.playground-parameter-color .cap-color-picker,
+.playground-focus-token .cap-popup-select {
+  box-sizing:border-box;
+  height:var(--playground-parameter-height);
+  min-height:var(--playground-parameter-height);
+}
+.playground-parameter-text.cap-field > .cap-input,
+.playground-parameter-icon :is(.cap-icon-combobox,.cap-labeled-field,.cap-labeled-control,.cap-input),
+.playground-parameter-color .cap-color-trigger {
+  box-sizing:border-box;
+  height:100%;
+  min-height:0;
+}
+.playground-focus-token .cap-popup-select {
+  flex-direction:row;
+  align-items:center;
+  gap:var(--cap-space-2);
+  padding-inline-start:var(--cap-space-3);
+  border:var(--cap-border-width) solid var(--cap-control-border);
+  border-radius:var(--cap-radius-base);
+  background:var(--cap-control-bg);
+}
+.playground-focus-token .cap-selection-label {
+  flex:1 1 auto;
+  min-width:0;
+  overflow:hidden;
+  color:var(--cap-content-secondary);
+  font-size:var(--cap-font-size-sm);
+  font-weight:400;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.playground-focus-token .cap-popup-select-trigger {
+  height:100%;
+  min-height:0;
+  flex:none;
+  border:0;
+  background:transparent;
+}
+.playground-control-wide .cap-popover-root > .cap-button {
+  height:var(--playground-parameter-height);
+  min-height:var(--playground-parameter-height);
+}
+@media (max-width:720px) {
+  .playground-controls { --playground-parameter-height:var(--cap-touch-target); }
+}
+.playground-parameter-switch { height:var(--playground-parameter-height); min-width:0; }
+.playground-parameter-switch > span { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.playground-parameter-switch > .cap-switch { flex:none; }
+.playground-parameter-text.cap-field,.playground-parameter-icon.cap-field,.playground-parameter-switch { transition:background-color var(--cap-duration-fast) var(--cap-ease-standard); }
+@media(prefers-reduced-motion:reduce) { .playground-parameter-text.cap-field,.playground-parameter-icon.cap-field,.playground-parameter-switch { transition:none; } }
+
+.playground-parameter-multiline .cap-popover-root { display:flex; width:100%; height:var(--playground-parameter-height); }
+.playground-parameter-multiline .cap-popover-root > .cap-button { width:100%; height:100%; min-height:0; justify-content:space-between; font-weight:400; }
+.playground-multiline-label,.playground-multiline-value { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.playground-multiline-label { flex:1 1 50%; color:var(--cap-content-secondary); text-align:start; }
+.playground-multiline-value { flex:1 1 50%; text-align:end; }
+
+/* Consumer-authored preview surfaces follow the selected corner shape too. */
+.playground-rounded-sample { corner-shape:var(--cap-corner-shape,round); }

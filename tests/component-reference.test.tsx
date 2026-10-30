@@ -30,7 +30,8 @@ describe('Generated reference contract',()=>{
  });
  it('prioritizes size and groups focus geometry at the end',()=>{
   render(<ControlList controls={[{key:'focusWidth'},{key:'label'},{key:'size'},{key:'focusOffset'},{key:'variant'}]} render={control=><span key={control.key}>{control.key}</span>}/>);
-  expect([...document.querySelectorAll('span')].map(node=>node.textContent)).toEqual(['size','label','variant','focusWidth','focusOffset']);
-  expect(screen.getByRole('group',{name:'Фокус'}).textContent).toBe('ФокусfocusWidthfocusOffset');
+  expect([...document.querySelectorAll('span')].filter(node=>!node.classList.contains('cap-accordion-title')).map(node=>node.textContent)).toEqual(['size','label','variant','focusWidth','focusOffset']);
+  expect(screen.queryByRole('group',{name:'Фокус'})).not.toBeInTheDocument();
+  expect(screen.getByRole('group',{name:'Фокус',hidden:true}).textContent).toBe('focusWidthfocusOffset');
  });
 });

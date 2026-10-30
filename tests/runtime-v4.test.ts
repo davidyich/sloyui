@@ -77,8 +77,8 @@ describe('Authoritative v4 runtime',()=>{
  it('keeps one opaque 41-step ramp per hue and routes every semantic value across collection boundaries',()=>{
   const palette=graph.collections.find(collection=>collection.key==='Palette')!;
   expect(palette.modes).toEqual(['Value']);
-  expect(graph.conventions.accents).toEqual(['blue','green','orange','red','pink','purple']);
-  expect(palette.variables).toHaveLength(289);
+  expect(graph.conventions.accents).toEqual(['blue','green','yellow','orange','red','pink','purple']);
+  expect(palette.variables).toHaveLength(330);
   expect(new Set(palette.variables.map(token=>token.name)).size).toBe(palette.variables.length);
   const expectedNames=[...graph.conventions.accents.flatMap(hue=>Array.from({length:41},(_,index)=>`${hue}/${String(index+1).padStart(2,'0')}`)),...Array.from({length:41},(_,index)=>`gray/${index*25}`),'black','white'];
   expect(palette.variables.map(token=>token.name).sort()).toEqual(expectedNames.sort());
@@ -199,6 +199,15 @@ describe('Authoritative v4 runtime',()=>{
   }
  });
 
+ it('softens only enabled decorative borders and keeps focus and structure independent',()=>{
+  const on=node({'data-borders':'on'}), off=node({'data-borders':'off'});
+  expect(on.get('--cap-outline-opacity')).toBe('55%');
+  expect(off.get('--cap-outline-opacity')).toBe('0%');
+  for(const key of ['--cap-focus-width','--cap-border-width','--cap-border-subtle']) expect(on.get(key)).toBe(off.get(key));
+  expect(on.get('--cap-accent-outline')).toContain('25%');
+  expect(off.get('--cap-accent-outline')).toContain('0%');
+ });
+
  it('uses density formulas, exact control heights and fixed type/icon/touch dimensions',()=>{
   for(const Density of ['Default','Compact']) {
    const current=node({'data-density':Density.toLowerCase()});
@@ -212,8 +221,10 @@ describe('Authoritative v4 runtime',()=>{
    expect(current.get('--cap-touch-target')).toBe('44px');
    expect(current.get('--cap-font-size-base')).toBe('14px');
    expect(current.get('--cap-line-height-base')).toBe('20px');
-   expect(current.get('--cap-font-heading')).toBe('"Georgia"');
-   expect(current.get('--cap-font-pair')).toBe('"Courier New"');
+   expect(current.get('--cap-font-heading')).toBe('"Medeo Sans"');
+   expect(current.get('--cap-font-sans')).toBe('"Medeo Sans"');
+   expect(current.get('--cap-font-code')).toBe('"Medeo Mono"');
+   expect(current.get('--cap-font-pair')).toBe('"Medeo Mono"');
   }
   for(const [Radius,base]of Object.entries({None:0,Compact:4,Default:8,Rounded:16}))for(const Density of ['Default','Compact']) {
    const current=node({'data-radius':Radius.toLowerCase(),'data-density':Density.toLowerCase()});

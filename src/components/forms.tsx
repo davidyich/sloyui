@@ -32,7 +32,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   size?: Size; leading?: ReactNode; trailing?: ReactNode; focusRing?: FocusRing;
 }
 export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement>, FieldLabelProps { size?: Size; focusRing?: FocusRing }
-const fieldContextAxes = ['data-theme','data-accent','data-color','data-surface','data-surface-scheme','data-borders','data-radius','data-shadow','data-density'] as const;
+const fieldContextAxes = ['data-theme','data-accent','data-color','data-surface','data-surface-scheme','data-borders','data-corner-shape','data-radius','data-shadow','data-density'] as const;
 type FieldContext = Partial<Record<typeof fieldContextAxes[number], string>>;
 /** Labels and sibling affordances share a context supplied directly to a field. */
 export function fieldContext(props: object): FieldContext {

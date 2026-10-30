@@ -1,0 +1,20 @@
+/* Focus indication is on by default and independent from decorative borders.
+   Scope limits let an inner on mode override an outer off mode. */
+@scope ([data-focus-ring="off"]) to ([data-focus-ring="on"]) {
+  :where(button,a,input,textarea,select,summary,[tabindex],[contenteditable]):where([class^="cap-"],[class*=" cap-"],[class^="cap-"] *,[class*=" cap-"] *):focus-visible,
+  :where(.cap-floating-input):focus,
+  :where(.cap-scroll-area:has(> .cap-scroll-viewport:focus-visible),
+    .cap-slider-control:has(.cap-slider:focus-visible) .cap-slider-thumb,
+    .cap-icon-option:has(:focus-visible) > span,
+    .cap-segment input:focus-visible + span,
+    .cap-parameter-slider:has(.cap-parameter-input:focus-visible),
+    .cap-slider-2d-pad:has(input:focus-visible),
+    .cap-multiselect-box:has(.cap-multiselect-search:focus-visible),
+    .cap-tag-input-box:has(.cap-tag-input:focus-visible),
+    .cap-number-field:has(input:focus-visible),
+    .cap-combobox-input-wrap:has(.cap-combobox-input:focus-visible),
+    .cap-color-custom:has(> input:focus-visible),
+    .cap-popup-select-options:focus-visible .cap-popup-select-option[data-active=true]) { outline:none !important; }
+  :where(.cap-resizable-handle:focus-visible > .cap-resizable-handle-grip) { box-shadow:none !important; }
+  :where(.cap-input,.cap-floating-input):focus:not([aria-invalid="true"]) { border-color:var(--cap-control-border) !important; }
+}

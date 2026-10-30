@@ -80,11 +80,11 @@ describe('Calendar range and schedules', () => {
   });
   it('keeps a range picker open after its start and nested search, closes after its end, and restores focus', async () => {
     const user=userEvent.setup();
-    function Example(){const [range,setRange]=useState<CalendarRange>();return <div data-theme="dark" data-borders="on" data-accent="purple" data-radius="rounded" data-shadow="compact"><DatePicker label="Project period" mode="range" range={range} onRangeChange={setRange} today="2026-10-07" events={sampleEvents}/></div>;}
+    function Example(){const [range,setRange]=useState<CalendarRange>();return <div data-theme="dark" data-borders="on" data-accent="purple" data-radius="rounded" data-shadow="compact" data-focus-ring="off"><DatePicker label="Project period" mode="range" range={range} onRangeChange={setRange} today="2026-10-07" events={sampleEvents}/></div>;}
     render(<Example/>);
     const trigger=screen.getByRole('button',{name:'Project period'});await user.click(trigger);
     const dialog=screen.getByRole('dialog');
-    for(const [name,value] of Object.entries({'data-theme':'dark','data-borders':'on','data-accent':'purple','data-radius':'rounded','data-shadow':'compact','data-surface':'floating'}))expect(dialog).toHaveAttribute(name,value);
+    for(const [name,value] of Object.entries({'data-theme':'dark','data-borders':'on','data-accent':'purple','data-radius':'rounded','data-shadow':'compact','data-focus-ring':'off','data-surface':'floating'}))expect(dialog).toHaveAttribute(name,value);
     await user.click(day('2026-10-28')); expect(screen.getByRole('dialog')).toBeInTheDocument();
     await user.click(screen.getByRole('combobox',{name:'Год'}));
     await user.type(screen.getByRole('combobox',{name:'Год'}),'2026');

@@ -13,7 +13,7 @@ const BLACK={r:0,g:0,b:0,a:1},WHITE={r:1,g:1,b:1,a:1};
 const hash=value=>createHash('sha256').update(value).digest('hex');
 equal(graph.sourceHash,hash(sourceText),'Source freshness');equal(graph.schemaVersion,4,'Compatible schema');
 equal(graph.axes.Surface.values,['Shell','Workspace','Content','Overlay','Invert','Glass'],'Six explicit surfaces');
-equal(graph.conventions.accents,['blue','green','orange','red','pink','purple'],'Six named accents');check(!graph.axes.Accent,'No accent modes');
+equal(graph.conventions.accents,['blue','green','yellow','orange','red','pink','purple'],'Seven named accents');check(!graph.axes.Accent,'No accent modes');
 let composed=0;
 for(const owner of graph.collections)for(const token of owner.variables){
  equal(Object.keys(token.values),owner.modes,'Complete modes '+owner.key+'/'+token.name);

@@ -69,3 +69,16 @@ describe('component instructions',()=>{
   await waitFor(()=>expect(screen.queryByText('Старая кнопка')).toBeNull());
  });
 });
+
+it('shows actionable English guidance while retaining the owner-authored Russian source',async()=>{
+ const {LocaleProvider}=await import('../src');
+ vi.stubGlobal('fetch',vi.fn().mockResolvedValue(response('## Делать\n- Сохранённая владельцем инструкция\n\n```tsx\n<Button>Русский пример</Button>\n```')));
+ render(<LocaleProvider locale="en"><ComponentUsage componentId="cp-001" componentName="Button"/></LocaleProvider>);
+ await screen.findByRole('heading',{name:'Recommended usage'});
+ expect(screen.getByRole('heading',{name:'Interaction contract'})).toBeInTheDocument();
+ expect(screen.getByText('Original instruction (Russian)')).toBeInTheDocument();
+ expect(screen.getByText('Сохранённая владельцем инструкция')).not.toBeVisible();
+ screen.getByText('Original instruction (Russian)').click();
+ expect(screen.getByText('Сохранённая владельцем инструкция')).toBeVisible();
+ expect(screen.getByText(/Русский пример/)).toBeInTheDocument();
+});

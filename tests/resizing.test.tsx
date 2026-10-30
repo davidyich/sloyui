@@ -23,9 +23,9 @@ describe('resizing surfaces', () => {
     dimensions(() => 650);
     render(<ContentLayout collapseAt={0} minContentSize={220} left={{ label: 'Outline', content: 'Links', defaultWidth:180 }} right={{ label: 'Details', content: 'Properties', defaultWidth:180 }}>Main</ContentLayout>);
     const left = screen.getByRole('separator', { name:'Ширина: Outline' });
-    expect(left).toHaveAttribute('aria-valuemax','226');
-    fireEvent.keyDown(left, { key:'End' }); expect(left).toHaveAttribute('aria-valuenow','226');
-    fireEvent.keyDown(left, { key:'ArrowRight' }); expect(left).toHaveAttribute('aria-valuenow','226');
+    expect(left).toHaveAttribute('aria-valuemax','250');
+    fireEvent.keyDown(left, { key:'End' }); expect(left).toHaveAttribute('aria-valuenow','250');
+    fireEvent.keyDown(left, { key:'ArrowRight' }); expect(left).toHaveAttribute('aria-valuenow','250');
     expect(screen.getByRole('region',{name:'Контент'})).toBeInTheDocument();
   });
   it('responds to observed parent width without discarding independent dimensions', () => {

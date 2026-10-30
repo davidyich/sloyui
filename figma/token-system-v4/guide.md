@@ -33,7 +33,7 @@
 
 ## 3. Соберите secondary-объект
 
-Выберите оттенок: `neutral` или один из шести акцентов: blue, green, orange, red, pink, purple. Используйте один оттенок для всей пары.
+Выберите оттенок: `neutral` или один из семи акцентов: blue, green, yellow, orange, red, pink, purple. Используйте один оттенок для всей пары.
 
 1. Для заливки выберите `Theme/surface/secondary/<hue>-normal`.
 2. Для текста и иконки выберите `Theme/content/<hue>`.
@@ -83,10 +83,10 @@ Stable полезен для графики, которой нужен пост�
 
 | Токен Primitives | Значение |
 | --- | --- |
-| font/family/base | Inter |
-| font/family/code | Overpass Mono |
-| font/family/heading | Georgia |
-| font/family/pair | Courier New |
+| font/family/base | Medeo Sans |
+| font/family/code | Medeo Mono |
+| font/family/heading | Medeo Sans |
+| font/family/pair | Medeo Mono |
 
 Выберите family, размер, высоту строки, начертание и межбуквенный интервал из `Primitives/font`.
 При замене гарнитуры измените значение роли. Сохраните имя роли.

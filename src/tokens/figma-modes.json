@@ -1,9 +1,10 @@
 {
-  "version": "0.18.3",
+  "version": "0.18.16",
   "modes": [
     "neutral",
     "blue",
     "green",
+    "yellow",
     "orange",
     "red",
     "pink",
@@ -789,6 +790,375 @@
               0,
               0.0097224176,
               0.0031930148
+            ],
+            "alpha": 1
+          },
+          "yellow/01": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              0.9909646869,
+              0.9186246147
+            ],
+            "alpha": 1
+          },
+          "yellow/02": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9988700912,
+              0.9806483636,
+              0.8421448004
+            ],
+            "alpha": 1
+          },
+          "yellow/03": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9944634571,
+              0.9654062844,
+              0.7546333138
+            ],
+            "alpha": 1
+          },
+          "yellow/04": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9885482782,
+              0.9473069418,
+              0.6591925486
+            ],
+            "alpha": 1
+          },
+          "yellow/05": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9814347397,
+              0.9269062878,
+              0.5551599182
+            ],
+            "alpha": 1
+          },
+          "yellow/06": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9732893616,
+              0.9045248743,
+              0.4377293277
+            ],
+            "alpha": 1
+          },
+          "yellow/07": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9641978442,
+              0.8803853886,
+              0.2906137311
+            ],
+            "alpha": 1
+          },
+          "yellow/08": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9522439636,
+              0.8548985588,
+              8e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/09": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9248917531,
+              0.8301898112,
+              8e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/10": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8969334328,
+              0.8049335314,
+              0
+            ],
+            "alpha": 1
+          },
+          "yellow/11": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8684514094,
+              0.7792041619,
+              3e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/12": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8395154251,
+              0.7530647049,
+              1e-9
+            ],
+            "alpha": 1
+          },
+          "yellow/13": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8101859018,
+              0.7265697425,
+              9e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/14": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7805162336,
+              0.6997675085,
+              1.1e-9
+            ],
+            "alpha": 1
+          },
+          "yellow/15": {
+            "colorSpace": "srgb",
+            "components": [
+              0.750554423,
+              0.6727013664,
+              8e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/16": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7203442887,
+              0.6454108998,
+              5e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/17": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6899263852,
+              0.617932744,
+              6e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/18": {
+            "colorSpace": "srgb",
+            "components": [
+              0.659338724,
+              0.5903012369,
+              8e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/19": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6286173562,
+              0.5625489451,
+              9e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/20": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5977968557,
+              0.5347071015,
+              1.3e-9
+            ],
+            "alpha": 1
+          },
+          "yellow/21": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5669107349,
+              0.5068059794,
+              1.3e-9
+            ],
+            "alpha": 1
+          },
+          "yellow/22": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5359918121,
+              0.4788752255,
+              4e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/23": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5050725493,
+              0.4509441643,
+              6e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/24": {
+            "colorSpace": "srgb",
+            "components": [
+              0.4741853736,
+              0.4230420893,
+              4e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/25": {
+            "colorSpace": "srgb",
+            "components": [
+              0.4433629964,
+              0.3951985503,
+              1e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/26": {
+            "colorSpace": "srgb",
+            "components": [
+              0.4126387406,
+              0.3674436497,
+              6e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/27": {
+            "colorSpace": "srgb",
+            "components": [
+              0.382046891,
+              0.3398083589,
+              1e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/28": {
+            "colorSpace": "srgb",
+            "components": [
+              0.3516230815,
+              0.3123248679,
+              2e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/29": {
+            "colorSpace": "srgb",
+            "components": [
+              0.3214047386,
+              0.2850269861,
+              0
+            ],
+            "alpha": 1
+          },
+          "yellow/30": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2914316043,
+              0.2579506146,
+              5e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/31": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2617463708,
+              0.2311343197,
+              3e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/32": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2323954737,
+              0.2046200492,
+              3e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/33": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2034301085,
+              0.1784540507,
+              2e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/34": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1749075735,
+              0.1526880849,
+              2e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/35": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1468930956,
+              0.1273810748,
+              1e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/36": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1194624011,
+              0.1026014283,
+              1e-10
+            ],
+            "alpha": 1
+          },
+          "yellow/37": {
+            "colorSpace": "srgb",
+            "components": [
+              0.0927054808,
+              0.0784304389,
+              0
+            ],
+            "alpha": 1
+          },
+          "yellow/38": {
+            "colorSpace": "srgb",
+            "components": [
+              0.0667323741,
+              0.0549675111,
+              0
+            ],
+            "alpha": 1
+          },
+          "yellow/39": {
+            "colorSpace": "srgb",
+            "components": [
+              0.0416826091,
+              0.03268531,
+              0
+            ],
+            "alpha": 1
+          },
+          "yellow/40": {
+            "colorSpace": "srgb",
+            "components": [
+              0.0210736375,
+              0.0165119907,
+              0
+            ],
+            "alpha": 1
+          },
+          "yellow/41": {
+            "colorSpace": "srgb",
+            "components": [
+              0.0086422424,
+              0.0067715232,
+              0
             ],
             "alpha": 1
           },
@@ -2704,10 +3074,8 @@
           "duration/120": 120,
           "duration/180": 180,
           "duration/260": 260,
-          "font-family/inter": "Inter",
-          "font-family/georgia": "Georgia",
-          "font-family/courier-new": "Courier New",
-          "font-family/overpass-mono": "Overpass Mono",
+          "font-family/medeo-sans": "Medeo Sans",
+          "font-family/medeo-mono": "Medeo Mono",
           "dimension/-2": -2,
           "dimension/-8": -8,
           "dimension/-3": -3,
@@ -3335,6 +3703,78 @@
               3e-10,
               0.4361589659,
               0.2538397449
+            ],
+            "alpha": 1
+          },
+          "context/page/color/yellow/secondary/background/normal": {
+            "colorSpace": "srgb",
+            "components": [
+              0.659338724,
+              0.5903012369,
+              8e-10
+            ],
+            "alpha": 0.22
+          },
+          "context/panel/color/yellow/secondary/background/normal": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6899263852,
+              0.617932744,
+              6e-10
+            ],
+            "alpha": 0.21
+          },
+          "context/page/color/yellow/secondary/background/hover": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5669107349,
+              0.5068059794,
+              1.3e-9
+            ],
+            "alpha": 0.27
+          },
+          "context/panel/color/yellow/secondary/background/hover": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5977968557,
+              0.5347071015,
+              1.3e-9
+            ],
+            "alpha": 0.26
+          },
+          "context/page/color/yellow/secondary/content": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2617463708,
+              0.2311343197,
+              3e-10
+            ],
+            "alpha": 1
+          },
+          "context/page/color/yellow/secondary/border/normal": {
+            "colorSpace": "srgb",
+            "components": [
+              0.4433629964,
+              0.3951985503,
+              1e-10
+            ],
+            "alpha": 1
+          },
+          "context/page/color/yellow/solid/background/normal": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5050725493,
+              0.4509441643,
+              6e-10
+            ],
+            "alpha": 1
+          },
+          "context/page/color/yellow/solid/background/hover": {
+            "colorSpace": "srgb",
+            "components": [
+              0.4433629964,
+              0.3951985503,
+              1e-10
             ],
             "alpha": 1
           },
@@ -4492,6 +4932,78 @@
             ],
             "alpha": 1
           },
+          "context/page/color/yellow/secondary/background/normal": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8969334328,
+              0.8049335314,
+              0
+            ],
+            "alpha": 0.11
+          },
+          "context/panel/color/yellow/secondary/background/normal": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8969334328,
+              0.8049335314,
+              0
+            ],
+            "alpha": 0.11
+          },
+          "context/page/color/yellow/secondary/background/hover": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9641978442,
+              0.8803853886,
+              0.2906137311
+            ],
+            "alpha": 0.15
+          },
+          "context/panel/color/yellow/secondary/background/hover": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9641978442,
+              0.8803853886,
+              0.2906137311
+            ],
+            "alpha": 0.15
+          },
+          "context/page/color/yellow/secondary/content": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9885482782,
+              0.9473069418,
+              0.6591925486
+            ],
+            "alpha": 1
+          },
+          "context/page/color/yellow/secondary/border/normal": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6899263852,
+              0.617932744,
+              6e-10
+            ],
+            "alpha": 1
+          },
+          "context/page/color/yellow/solid/background/normal": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9641978442,
+              0.8803853886,
+              0.2906137311
+            ],
+            "alpha": 1
+          },
+          "context/page/color/yellow/solid/background/hover": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9814347397,
+              0.9269062878,
+              0.5551599182
+            ],
+            "alpha": 1
+          },
           "context/page/color/orange/secondary/background/normal": {
             "colorSpace": "srgb",
             "components": [
@@ -5168,6 +5680,12 @@
           "context/inset/color/green/secondary/background/hover": {
             "alias": "Theme/context/page/color/green/secondary/background/hover"
           },
+          "context/inset/color/yellow/secondary/background/normal": {
+            "alias": "Theme/context/page/color/yellow/secondary/background/normal"
+          },
+          "context/inset/color/yellow/secondary/background/hover": {
+            "alias": "Theme/context/page/color/yellow/secondary/background/hover"
+          },
           "context/inset/color/orange/secondary/background/normal": {
             "alias": "Theme/context/page/color/orange/secondary/background/normal"
           },
@@ -5287,6 +5805,12 @@
           "context/inset/color/green/secondary/background/hover": {
             "alias": "Theme/context/panel/color/green/secondary/background/hover"
           },
+          "context/inset/color/yellow/secondary/background/normal": {
+            "alias": "Theme/context/panel/color/yellow/secondary/background/normal"
+          },
+          "context/inset/color/yellow/secondary/background/hover": {
+            "alias": "Theme/context/panel/color/yellow/secondary/background/hover"
+          },
           "context/inset/color/orange/secondary/background/normal": {
             "alias": "Theme/context/panel/color/orange/secondary/background/normal"
           },
@@ -5405,6 +5929,12 @@
           },
           "context/inset/color/green/secondary/background/hover": {
             "alias": "Theme/context/panel/color/green/secondary/background/hover"
+          },
+          "context/inset/color/yellow/secondary/background/normal": {
+            "alias": "Theme/context/panel/color/yellow/secondary/background/normal"
+          },
+          "context/inset/color/yellow/secondary/background/hover": {
+            "alias": "Theme/context/panel/color/yellow/secondary/background/hover"
           },
           "context/inset/color/orange/secondary/background/normal": {
             "alias": "Theme/context/panel/color/orange/secondary/background/normal"
@@ -6236,16 +6766,16 @@
             "alias": "Primitives/dimension/44"
           },
           "typography/family/sans": {
-            "alias": "Primitives/font-family/inter"
+            "alias": "Primitives/font-family/medeo-sans"
           },
           "typography/family/serif": {
-            "alias": "Primitives/font-family/georgia"
+            "alias": "Primitives/font-family/medeo-sans"
           },
           "typography/family/mono": {
-            "alias": "Primitives/font-family/courier-new"
+            "alias": "Primitives/font-family/medeo-mono"
           },
           "typography/family/code": {
-            "alias": "Primitives/font-family/overpass-mono"
+            "alias": "Primitives/font-family/medeo-mono"
           },
           "opacity/00": {
             "alias": "Primitives/opacity/00"
@@ -6734,6 +7264,51 @@
             "alias": "Theme/context/page/color/green/solid/background/hover"
           },
           "color/green/vivid/content": {
+            "alias": "Theme/context/page/primary/content"
+          },
+          "color/yellow/secondary/background/normal": {
+            "alias": "Theme/context/page/color/yellow/secondary/background/normal"
+          },
+          "color/yellow/secondary/background/hover": {
+            "alias": "Theme/context/page/color/yellow/secondary/background/hover"
+          },
+          "color/yellow/secondary/background/pressed": {
+            "alias": "Theme/context/page/color/yellow/secondary/background/hover"
+          },
+          "color/yellow/secondary/content": {
+            "alias": "Theme/context/page/color/yellow/secondary/content"
+          },
+          "color/yellow/secondary/border/normal": {
+            "alias": "Theme/context/page/color/yellow/secondary/border/normal"
+          },
+          "color/yellow/secondary/border/hover": {
+            "alias": "Theme/context/page/color/yellow/secondary/border/normal"
+          },
+          "color/yellow/secondary/border/pressed": {
+            "alias": "Theme/context/page/color/yellow/secondary/border/normal"
+          },
+          "color/yellow/solid/background/normal": {
+            "alias": "Theme/context/page/color/yellow/solid/background/normal"
+          },
+          "color/yellow/solid/background/hover": {
+            "alias": "Theme/context/page/color/yellow/solid/background/hover"
+          },
+          "color/yellow/solid/background/pressed": {
+            "alias": "Theme/context/page/color/yellow/solid/background/hover"
+          },
+          "color/yellow/solid/content": {
+            "alias": "Theme/context/page/primary/content"
+          },
+          "color/yellow/vivid/background/normal": {
+            "alias": "Theme/context/page/color/yellow/solid/background/normal"
+          },
+          "color/yellow/vivid/background/hover": {
+            "alias": "Theme/context/page/color/yellow/solid/background/hover"
+          },
+          "color/yellow/vivid/background/pressed": {
+            "alias": "Theme/context/page/color/yellow/solid/background/hover"
+          },
+          "color/yellow/vivid/content": {
             "alias": "Theme/context/page/primary/content"
           },
           "color/orange/secondary/background/normal": {
@@ -7255,16 +7830,16 @@
             "alias": "Primitives/dimension/44"
           },
           "typography/family/sans": {
-            "alias": "Primitives/font-family/inter"
+            "alias": "Primitives/font-family/medeo-sans"
           },
           "typography/family/serif": {
-            "alias": "Primitives/font-family/georgia"
+            "alias": "Primitives/font-family/medeo-sans"
           },
           "typography/family/mono": {
-            "alias": "Primitives/font-family/courier-new"
+            "alias": "Primitives/font-family/medeo-mono"
           },
           "typography/family/code": {
-            "alias": "Primitives/font-family/overpass-mono"
+            "alias": "Primitives/font-family/medeo-mono"
           },
           "opacity/00": {
             "alias": "Primitives/opacity/00"
@@ -7753,6 +8328,51 @@
             "alias": "Theme/context/page/color/green/solid/background/hover"
           },
           "color/green/vivid/content": {
+            "alias": "Theme/context/page/primary/content"
+          },
+          "color/yellow/secondary/background/normal": {
+            "alias": "SurfaceScheme/context/inset/color/yellow/secondary/background/normal"
+          },
+          "color/yellow/secondary/background/hover": {
+            "alias": "SurfaceScheme/context/inset/color/yellow/secondary/background/hover"
+          },
+          "color/yellow/secondary/background/pressed": {
+            "alias": "SurfaceScheme/context/inset/color/yellow/secondary/background/hover"
+          },
+          "color/yellow/secondary/content": {
+            "alias": "Theme/context/page/color/yellow/secondary/content"
+          },
+          "color/yellow/secondary/border/normal": {
+            "alias": "Theme/context/page/color/yellow/secondary/border/normal"
+          },
+          "color/yellow/secondary/border/hover": {
+            "alias": "Theme/context/page/color/yellow/secondary/border/normal"
+          },
+          "color/yellow/secondary/border/pressed": {
+            "alias": "Theme/context/page/color/yellow/secondary/border/normal"
+          },
+          "color/yellow/solid/background/normal": {
+            "alias": "Theme/context/page/color/yellow/solid/background/normal"
+          },
+          "color/yellow/solid/background/hover": {
+            "alias": "Theme/context/page/color/yellow/solid/background/hover"
+          },
+          "color/yellow/solid/background/pressed": {
+            "alias": "Theme/context/page/color/yellow/solid/background/hover"
+          },
+          "color/yellow/solid/content": {
+            "alias": "Theme/context/page/primary/content"
+          },
+          "color/yellow/vivid/background/normal": {
+            "alias": "Theme/context/page/color/yellow/solid/background/normal"
+          },
+          "color/yellow/vivid/background/hover": {
+            "alias": "Theme/context/page/color/yellow/solid/background/hover"
+          },
+          "color/yellow/vivid/background/pressed": {
+            "alias": "Theme/context/page/color/yellow/solid/background/hover"
+          },
+          "color/yellow/vivid/content": {
             "alias": "Theme/context/page/primary/content"
           },
           "color/orange/secondary/background/normal": {
@@ -8274,16 +8894,16 @@
             "alias": "Primitives/dimension/44"
           },
           "typography/family/sans": {
-            "alias": "Primitives/font-family/inter"
+            "alias": "Primitives/font-family/medeo-sans"
           },
           "typography/family/serif": {
-            "alias": "Primitives/font-family/georgia"
+            "alias": "Primitives/font-family/medeo-sans"
           },
           "typography/family/mono": {
-            "alias": "Primitives/font-family/courier-new"
+            "alias": "Primitives/font-family/medeo-mono"
           },
           "typography/family/code": {
-            "alias": "Primitives/font-family/overpass-mono"
+            "alias": "Primitives/font-family/medeo-mono"
           },
           "opacity/00": {
             "alias": "Primitives/opacity/00"
@@ -8772,6 +9392,51 @@
             "alias": "Theme/context/page/color/green/solid/background/hover"
           },
           "color/green/vivid/content": {
+            "alias": "Theme/context/page/primary/content"
+          },
+          "color/yellow/secondary/background/normal": {
+            "alias": "Theme/context/panel/color/yellow/secondary/background/normal"
+          },
+          "color/yellow/secondary/background/hover": {
+            "alias": "Theme/context/panel/color/yellow/secondary/background/hover"
+          },
+          "color/yellow/secondary/background/pressed": {
+            "alias": "Theme/context/panel/color/yellow/secondary/background/hover"
+          },
+          "color/yellow/secondary/content": {
+            "alias": "Theme/context/page/color/yellow/secondary/content"
+          },
+          "color/yellow/secondary/border/normal": {
+            "alias": "Theme/context/page/color/yellow/secondary/border/normal"
+          },
+          "color/yellow/secondary/border/hover": {
+            "alias": "Theme/context/page/color/yellow/secondary/border/normal"
+          },
+          "color/yellow/secondary/border/pressed": {
+            "alias": "Theme/context/page/color/yellow/secondary/border/normal"
+          },
+          "color/yellow/solid/background/normal": {
+            "alias": "Theme/context/page/color/yellow/solid/background/normal"
+          },
+          "color/yellow/solid/background/hover": {
+            "alias": "Theme/context/page/color/yellow/solid/background/hover"
+          },
+          "color/yellow/solid/background/pressed": {
+            "alias": "Theme/context/page/color/yellow/solid/background/hover"
+          },
+          "color/yellow/solid/content": {
+            "alias": "Theme/context/page/primary/content"
+          },
+          "color/yellow/vivid/background/normal": {
+            "alias": "Theme/context/page/color/yellow/solid/background/normal"
+          },
+          "color/yellow/vivid/background/hover": {
+            "alias": "Theme/context/page/color/yellow/solid/background/hover"
+          },
+          "color/yellow/vivid/background/pressed": {
+            "alias": "Theme/context/page/color/yellow/solid/background/hover"
+          },
+          "color/yellow/vivid/content": {
             "alias": "Theme/context/page/primary/content"
           },
           "color/orange/secondary/background/normal": {
@@ -9293,16 +9958,16 @@
             "alias": "Primitives/dimension/44"
           },
           "typography/family/sans": {
-            "alias": "Primitives/font-family/inter"
+            "alias": "Primitives/font-family/medeo-sans"
           },
           "typography/family/serif": {
-            "alias": "Primitives/font-family/georgia"
+            "alias": "Primitives/font-family/medeo-sans"
           },
           "typography/family/mono": {
-            "alias": "Primitives/font-family/courier-new"
+            "alias": "Primitives/font-family/medeo-mono"
           },
           "typography/family/code": {
-            "alias": "Primitives/font-family/overpass-mono"
+            "alias": "Primitives/font-family/medeo-mono"
           },
           "opacity/00": {
             "alias": "Primitives/opacity/00"
@@ -9791,6 +10456,51 @@
             "alias": "Theme/context/page/color/green/solid/background/hover"
           },
           "color/green/vivid/content": {
+            "alias": "Theme/context/page/primary/content"
+          },
+          "color/yellow/secondary/background/normal": {
+            "alias": "Theme/context/panel/color/yellow/secondary/background/normal"
+          },
+          "color/yellow/secondary/background/hover": {
+            "alias": "Theme/context/panel/color/yellow/secondary/background/hover"
+          },
+          "color/yellow/secondary/background/pressed": {
+            "alias": "Theme/context/panel/color/yellow/secondary/background/hover"
+          },
+          "color/yellow/secondary/content": {
+            "alias": "Theme/context/page/color/yellow/secondary/content"
+          },
+          "color/yellow/secondary/border/normal": {
+            "alias": "Theme/context/page/color/yellow/secondary/border/normal"
+          },
+          "color/yellow/secondary/border/hover": {
+            "alias": "Theme/context/page/color/yellow/secondary/border/normal"
+          },
+          "color/yellow/secondary/border/pressed": {
+            "alias": "Theme/context/page/color/yellow/secondary/border/normal"
+          },
+          "color/yellow/solid/background/normal": {
+            "alias": "Theme/context/page/color/yellow/solid/background/normal"
+          },
+          "color/yellow/solid/background/hover": {
+            "alias": "Theme/context/page/color/yellow/solid/background/hover"
+          },
+          "color/yellow/solid/background/pressed": {
+            "alias": "Theme/context/page/color/yellow/solid/background/hover"
+          },
+          "color/yellow/solid/content": {
+            "alias": "Theme/context/page/primary/content"
+          },
+          "color/yellow/vivid/background/normal": {
+            "alias": "Theme/context/page/color/yellow/solid/background/normal"
+          },
+          "color/yellow/vivid/background/hover": {
+            "alias": "Theme/context/page/color/yellow/solid/background/hover"
+          },
+          "color/yellow/vivid/background/pressed": {
+            "alias": "Theme/context/page/color/yellow/solid/background/hover"
+          },
+          "color/yellow/vivid/content": {
             "alias": "Theme/context/page/primary/content"
           },
           "color/orange/secondary/background/normal": {
@@ -10550,6 +11260,39 @@
           "button/accent-secondary/green/content": {
             "alias": "Semantic/color/green/secondary/content"
           },
+          "tag/yellow/background/normal": {
+            "alias": "Semantic/color/yellow/secondary/background/normal"
+          },
+          "button/accent-secondary/yellow/background/normal": {
+            "alias": "Semantic/color/yellow/secondary/background/normal"
+          },
+          "tag/yellow/border/normal": {
+            "alias": "Semantic/color/yellow/secondary/border/normal"
+          },
+          "tag/yellow/background/hover": {
+            "alias": "Semantic/color/yellow/secondary/background/hover"
+          },
+          "button/accent-secondary/yellow/background/hover": {
+            "alias": "Semantic/color/yellow/secondary/background/hover"
+          },
+          "tag/yellow/border/hover": {
+            "alias": "Semantic/color/yellow/secondary/border/hover"
+          },
+          "tag/yellow/background/pressed": {
+            "alias": "Semantic/color/yellow/secondary/background/pressed"
+          },
+          "button/accent-secondary/yellow/background/pressed": {
+            "alias": "Semantic/color/yellow/secondary/background/pressed"
+          },
+          "tag/yellow/border/pressed": {
+            "alias": "Semantic/color/yellow/secondary/border/pressed"
+          },
+          "tag/yellow/content": {
+            "alias": "Semantic/color/yellow/secondary/content"
+          },
+          "button/accent-secondary/yellow/content": {
+            "alias": "Semantic/color/yellow/secondary/content"
+          },
           "tag/orange/background/normal": {
             "alias": "Semantic/color/orange/secondary/background/normal"
           },
@@ -11192,6 +11935,252 @@
       "type": "COLOR",
       "scopes": [],
       "css": "--cap-palette-green-41",
+      "visibility": "internal"
+    },
+    "Palette/yellow/01": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-01",
+      "visibility": "internal"
+    },
+    "Palette/yellow/02": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-02",
+      "visibility": "internal"
+    },
+    "Palette/yellow/03": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-03",
+      "visibility": "internal"
+    },
+    "Palette/yellow/04": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-04",
+      "visibility": "internal"
+    },
+    "Palette/yellow/05": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-05",
+      "visibility": "internal"
+    },
+    "Palette/yellow/06": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-06",
+      "visibility": "internal"
+    },
+    "Palette/yellow/07": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-07",
+      "visibility": "internal"
+    },
+    "Palette/yellow/08": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-08",
+      "visibility": "internal"
+    },
+    "Palette/yellow/09": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-09",
+      "visibility": "internal"
+    },
+    "Palette/yellow/10": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-10",
+      "visibility": "internal"
+    },
+    "Palette/yellow/11": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-11",
+      "visibility": "internal"
+    },
+    "Palette/yellow/12": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-12",
+      "visibility": "internal"
+    },
+    "Palette/yellow/13": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-13",
+      "visibility": "internal"
+    },
+    "Palette/yellow/14": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-14",
+      "visibility": "internal"
+    },
+    "Palette/yellow/15": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-15",
+      "visibility": "internal"
+    },
+    "Palette/yellow/16": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-16",
+      "visibility": "internal"
+    },
+    "Palette/yellow/17": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-17",
+      "visibility": "internal"
+    },
+    "Palette/yellow/18": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-18",
+      "visibility": "internal"
+    },
+    "Palette/yellow/19": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-19",
+      "visibility": "internal"
+    },
+    "Palette/yellow/20": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-20",
+      "visibility": "internal"
+    },
+    "Palette/yellow/21": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-21",
+      "visibility": "internal"
+    },
+    "Palette/yellow/22": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-22",
+      "visibility": "internal"
+    },
+    "Palette/yellow/23": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-23",
+      "visibility": "internal"
+    },
+    "Palette/yellow/24": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-24",
+      "visibility": "internal"
+    },
+    "Palette/yellow/25": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-25",
+      "visibility": "internal"
+    },
+    "Palette/yellow/26": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-26",
+      "visibility": "internal"
+    },
+    "Palette/yellow/27": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-27",
+      "visibility": "internal"
+    },
+    "Palette/yellow/28": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-28",
+      "visibility": "internal"
+    },
+    "Palette/yellow/29": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-29",
+      "visibility": "internal"
+    },
+    "Palette/yellow/30": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-30",
+      "visibility": "internal"
+    },
+    "Palette/yellow/31": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-31",
+      "visibility": "internal"
+    },
+    "Palette/yellow/32": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-32",
+      "visibility": "internal"
+    },
+    "Palette/yellow/33": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-33",
+      "visibility": "internal"
+    },
+    "Palette/yellow/34": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-34",
+      "visibility": "internal"
+    },
+    "Palette/yellow/35": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-35",
+      "visibility": "internal"
+    },
+    "Palette/yellow/36": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-36",
+      "visibility": "internal"
+    },
+    "Palette/yellow/37": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-37",
+      "visibility": "internal"
+    },
+    "Palette/yellow/38": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-38",
+      "visibility": "internal"
+    },
+    "Palette/yellow/39": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-39",
+      "visibility": "internal"
+    },
+    "Palette/yellow/40": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-40",
+      "visibility": "internal"
+    },
+    "Palette/yellow/41": {
+      "type": "COLOR",
+      "scopes": [],
+      "css": "--cap-palette-yellow-41",
       "visibility": "internal"
     },
     "Palette/orange/01": {
@@ -13566,10 +14555,10 @@
       "css": "--cap-number-touch-target",
       "visibility": "internal"
     },
-    "Primitives/font-family/inter": {
+    "Primitives/font-family/medeo-sans": {
       "type": "STRING",
       "scopes": [],
-      "css": "--cap-primitive-font-family-inter",
+      "css": "--cap-primitive-font-family-medeo-sans",
       "visibility": "internal"
     },
     "Semantic/typography/family/sans": {
@@ -13580,12 +14569,6 @@
       "css": "--cap-font-family-sans",
       "visibility": "internal"
     },
-    "Primitives/font-family/georgia": {
-      "type": "STRING",
-      "scopes": [],
-      "css": "--cap-primitive-font-family-georgia",
-      "visibility": "internal"
-    },
     "Semantic/typography/family/serif": {
       "type": "STRING",
       "scopes": [
@@ -13594,10 +14577,10 @@
       "css": "--cap-font-family-serif",
       "visibility": "internal"
     },
-    "Primitives/font-family/courier-new": {
+    "Primitives/font-family/medeo-mono": {
       "type": "STRING",
       "scopes": [],
-      "css": "--cap-primitive-font-family-courier-new",
+      "css": "--cap-primitive-font-family-medeo-mono",
       "visibility": "internal"
     },
     "Semantic/typography/family/mono": {
@@ -13606,12 +14589,6 @@
         "FONT_FAMILY"
       ],
       "css": "--cap-font-family-mono",
-      "visibility": "internal"
-    },
-    "Primitives/font-family/overpass-mono": {
-      "type": "STRING",
-      "scopes": [],
-      "css": "--cap-primitive-font-family-overpass-mono",
       "visibility": "internal"
     },
     "Semantic/typography/family/code": {
@@ -16718,6 +17695,46 @@
       "scopes": [],
       "visibility": "internal"
     },
+    "Theme/context/page/color/yellow/secondary/background/normal": {
+      "type": "COLOR",
+      "scopes": [],
+      "visibility": "internal"
+    },
+    "Theme/context/panel/color/yellow/secondary/background/normal": {
+      "type": "COLOR",
+      "scopes": [],
+      "visibility": "internal"
+    },
+    "Theme/context/page/color/yellow/secondary/background/hover": {
+      "type": "COLOR",
+      "scopes": [],
+      "visibility": "internal"
+    },
+    "Theme/context/panel/color/yellow/secondary/background/hover": {
+      "type": "COLOR",
+      "scopes": [],
+      "visibility": "internal"
+    },
+    "Theme/context/page/color/yellow/secondary/content": {
+      "type": "COLOR",
+      "scopes": [],
+      "visibility": "internal"
+    },
+    "Theme/context/page/color/yellow/secondary/border/normal": {
+      "type": "COLOR",
+      "scopes": [],
+      "visibility": "internal"
+    },
+    "Theme/context/page/color/yellow/solid/background/normal": {
+      "type": "COLOR",
+      "scopes": [],
+      "visibility": "internal"
+    },
+    "Theme/context/page/color/yellow/solid/background/hover": {
+      "type": "COLOR",
+      "scopes": [],
+      "visibility": "internal"
+    },
     "Theme/context/page/color/orange/secondary/background/normal": {
       "type": "COLOR",
       "scopes": [],
@@ -17889,6 +18906,123 @@
       "visibility": "internal",
       "description": "Внутренняя роль компонента; наследует тему и поверхность."
     },
+    "SurfaceScheme/context/inset/color/yellow/secondary/background/normal": {
+      "type": "COLOR",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+    },
+    "Semantic/color/yellow/secondary/background/normal": {
+      "type": "COLOR",
+      "css": "--cap-color-yellow-secondary-background-normal",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Внутренняя роль компонента; наследует тему и поверхность."
+    },
+    "SurfaceScheme/context/inset/color/yellow/secondary/background/hover": {
+      "type": "COLOR",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Standard / Dimmed по каноническому графу v4. Inverted — совместимое имя Dimmed."
+    },
+    "Semantic/color/yellow/secondary/background/hover": {
+      "type": "COLOR",
+      "css": "--cap-color-yellow-secondary-background-hover",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Внутренняя роль компонента; наследует тему и поверхность."
+    },
+    "Semantic/color/yellow/secondary/background/pressed": {
+      "type": "COLOR",
+      "css": "--cap-color-yellow-secondary-background-pressed",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Внутренняя роль компонента; наследует тему и поверхность."
+    },
+    "Semantic/color/yellow/secondary/content": {
+      "type": "COLOR",
+      "css": "--cap-color-yellow-secondary-content",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Внутренняя роль компонента; наследует тему и поверхность."
+    },
+    "Semantic/color/yellow/secondary/border/normal": {
+      "type": "COLOR",
+      "css": "--cap-color-yellow-secondary-border-normal",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Внутренняя роль компонента; наследует тему и поверхность."
+    },
+    "Semantic/color/yellow/secondary/border/hover": {
+      "type": "COLOR",
+      "css": "--cap-color-yellow-secondary-border-hover",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Внутренняя роль компонента; наследует тему и поверхность."
+    },
+    "Semantic/color/yellow/secondary/border/pressed": {
+      "type": "COLOR",
+      "css": "--cap-color-yellow-secondary-border-pressed",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Внутренняя роль компонента; наследует тему и поверхность."
+    },
+    "Semantic/color/yellow/solid/background/normal": {
+      "type": "COLOR",
+      "css": "--cap-color-yellow-solid-background-normal",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Внутренняя роль компонента; наследует тему и поверхность."
+    },
+    "Semantic/color/yellow/solid/background/hover": {
+      "type": "COLOR",
+      "css": "--cap-color-yellow-solid-background-hover",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Внутренняя роль компонента; наследует тему и поверхность."
+    },
+    "Semantic/color/yellow/solid/background/pressed": {
+      "type": "COLOR",
+      "css": "--cap-color-yellow-solid-background-pressed",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Внутренняя роль компонента; наследует тему и поверхность."
+    },
+    "Semantic/color/yellow/solid/content": {
+      "type": "COLOR",
+      "css": "--cap-color-yellow-solid-content",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Внутренняя роль компонента; наследует тему и поверхность."
+    },
+    "Semantic/color/yellow/vivid/background/normal": {
+      "type": "COLOR",
+      "css": "--cap-color-yellow-vivid-background-normal",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Внутренняя роль компонента; наследует тему и поверхность."
+    },
+    "Semantic/color/yellow/vivid/background/hover": {
+      "type": "COLOR",
+      "css": "--cap-color-yellow-vivid-background-hover",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Внутренняя роль компонента; наследует тему и поверхность."
+    },
+    "Semantic/color/yellow/vivid/background/pressed": {
+      "type": "COLOR",
+      "css": "--cap-color-yellow-vivid-background-pressed",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Внутренняя роль компонента; наследует тему и поверхность."
+    },
+    "Semantic/color/yellow/vivid/content": {
+      "type": "COLOR",
+      "css": "--cap-color-yellow-vivid-content",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Внутренняя роль компонента; наследует тему и поверхность."
+    },
     "SurfaceScheme/context/inset/color/orange/secondary/background/normal": {
       "type": "COLOR",
       "scopes": [],
@@ -19011,6 +20145,83 @@
       "visibility": "internal",
       "description": "Компонентная роль button/accent-secondary/green/content."
     },
+    "Components/tag/yellow/background/normal": {
+      "type": "COLOR",
+      "css": "--cap-component-tag-yellow-background-normal",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Компонентная роль tag/yellow/background/normal."
+    },
+    "Components/button/accent-secondary/yellow/background/normal": {
+      "type": "COLOR",
+      "css": "--cap-component-button-accent-secondary-yellow-background-normal",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Компонентная роль button/accent-secondary/yellow/background/normal."
+    },
+    "Components/tag/yellow/border/normal": {
+      "type": "COLOR",
+      "css": "--cap-component-tag-yellow-border-normal",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Компонентная роль tag/yellow/border/normal."
+    },
+    "Components/tag/yellow/background/hover": {
+      "type": "COLOR",
+      "css": "--cap-component-tag-yellow-background-hover",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Компонентная роль tag/yellow/background/hover."
+    },
+    "Components/button/accent-secondary/yellow/background/hover": {
+      "type": "COLOR",
+      "css": "--cap-component-button-accent-secondary-yellow-background-hover",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Компонентная роль button/accent-secondary/yellow/background/hover."
+    },
+    "Components/tag/yellow/border/hover": {
+      "type": "COLOR",
+      "css": "--cap-component-tag-yellow-border-hover",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Компонентная роль tag/yellow/border/hover."
+    },
+    "Components/tag/yellow/background/pressed": {
+      "type": "COLOR",
+      "css": "--cap-component-tag-yellow-background-pressed",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Компонентная роль tag/yellow/background/pressed."
+    },
+    "Components/button/accent-secondary/yellow/background/pressed": {
+      "type": "COLOR",
+      "css": "--cap-component-button-accent-secondary-yellow-background-pressed",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Компонентная роль button/accent-secondary/yellow/background/pressed."
+    },
+    "Components/tag/yellow/border/pressed": {
+      "type": "COLOR",
+      "css": "--cap-component-tag-yellow-border-pressed",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Компонентная роль tag/yellow/border/pressed."
+    },
+    "Components/tag/yellow/content": {
+      "type": "COLOR",
+      "css": "--cap-component-tag-yellow-content",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Компонентная роль tag/yellow/content."
+    },
+    "Components/button/accent-secondary/yellow/content": {
+      "type": "COLOR",
+      "css": "--cap-component-button-accent-secondary-yellow-content",
+      "scopes": [],
+      "visibility": "internal",
+      "description": "Компонентная роль button/accent-secondary/yellow/content."
+    },
     "Components/tag/orange/background/normal": {
       "type": "COLOR",
       "css": "--cap-component-tag-orange-background-normal",
@@ -19493,6 +20704,47 @@
     "Primitives/palette/green/39": "Palette/green/39",
     "Primitives/palette/green/40": "Palette/green/40",
     "Primitives/palette/green/41": "Palette/green/41",
+    "Primitives/palette/yellow/01": "Palette/yellow/01",
+    "Primitives/palette/yellow/02": "Palette/yellow/02",
+    "Primitives/palette/yellow/03": "Palette/yellow/03",
+    "Primitives/palette/yellow/04": "Palette/yellow/04",
+    "Primitives/palette/yellow/05": "Palette/yellow/05",
+    "Primitives/palette/yellow/06": "Palette/yellow/06",
+    "Primitives/palette/yellow/07": "Palette/yellow/07",
+    "Primitives/palette/yellow/08": "Palette/yellow/08",
+    "Primitives/palette/yellow/09": "Palette/yellow/09",
+    "Primitives/palette/yellow/10": "Palette/yellow/10",
+    "Primitives/palette/yellow/11": "Palette/yellow/11",
+    "Primitives/palette/yellow/12": "Palette/yellow/12",
+    "Primitives/palette/yellow/13": "Palette/yellow/13",
+    "Primitives/palette/yellow/14": "Palette/yellow/14",
+    "Primitives/palette/yellow/15": "Palette/yellow/15",
+    "Primitives/palette/yellow/16": "Palette/yellow/16",
+    "Primitives/palette/yellow/17": "Palette/yellow/17",
+    "Primitives/palette/yellow/18": "Palette/yellow/18",
+    "Primitives/palette/yellow/19": "Palette/yellow/19",
+    "Primitives/palette/yellow/20": "Palette/yellow/20",
+    "Primitives/palette/yellow/21": "Palette/yellow/21",
+    "Primitives/palette/yellow/22": "Palette/yellow/22",
+    "Primitives/palette/yellow/23": "Palette/yellow/23",
+    "Primitives/palette/yellow/24": "Palette/yellow/24",
+    "Primitives/palette/yellow/25": "Palette/yellow/25",
+    "Primitives/palette/yellow/26": "Palette/yellow/26",
+    "Primitives/palette/yellow/27": "Palette/yellow/27",
+    "Primitives/palette/yellow/28": "Palette/yellow/28",
+    "Primitives/palette/yellow/29": "Palette/yellow/29",
+    "Primitives/palette/yellow/30": "Palette/yellow/30",
+    "Primitives/palette/yellow/31": "Palette/yellow/31",
+    "Primitives/palette/yellow/32": "Palette/yellow/32",
+    "Primitives/palette/yellow/33": "Palette/yellow/33",
+    "Primitives/palette/yellow/34": "Palette/yellow/34",
+    "Primitives/palette/yellow/35": "Palette/yellow/35",
+    "Primitives/palette/yellow/36": "Palette/yellow/36",
+    "Primitives/palette/yellow/37": "Palette/yellow/37",
+    "Primitives/palette/yellow/38": "Palette/yellow/38",
+    "Primitives/palette/yellow/39": "Palette/yellow/39",
+    "Primitives/palette/yellow/40": "Palette/yellow/40",
+    "Primitives/palette/yellow/41": "Palette/yellow/41",
     "Primitives/palette/orange/01": "Palette/orange/01",
     "Primitives/palette/orange/02": "Palette/orange/02",
     "Primitives/palette/orange/03": "Palette/orange/03",
@@ -20182,6 +21434,74 @@
     "Theme/context/canvas/action-vivid/green/text": "Theme/context/page/primary/content",
     "Theme/context/raised/action-vivid/green/text": "Theme/context/page/primary/content",
     "Theme/context/floating/action-vivid/green/text": "Theme/context/page/primary/content",
+    "Theme/context/base/element/yellow/normal": "Theme/context/page/color/yellow/secondary/background/normal",
+    "Theme/context/canvas/element/yellow/normal": "Theme/context/page/color/yellow/secondary/background/normal",
+    "Theme/context/raised/element/yellow/normal": "Theme/context/panel/color/yellow/secondary/background/normal",
+    "Theme/context/floating/element/yellow/normal": "Theme/context/panel/color/yellow/secondary/background/normal",
+    "Theme/context/base/element/yellow/hover": "Theme/context/page/color/yellow/secondary/background/hover",
+    "Theme/context/canvas/element/yellow/hover": "Theme/context/page/color/yellow/secondary/background/hover",
+    "Theme/context/raised/element/yellow/hover": "Theme/context/panel/color/yellow/secondary/background/hover",
+    "Theme/context/floating/element/yellow/hover": "Theme/context/panel/color/yellow/secondary/background/hover",
+    "Theme/context/base/element/yellow/pressed": "Theme/context/page/color/yellow/secondary/background/hover",
+    "Theme/context/canvas/element/yellow/pressed": "Theme/context/page/color/yellow/secondary/background/hover",
+    "Theme/context/raised/element/yellow/pressed": "Theme/context/panel/color/yellow/secondary/background/hover",
+    "Theme/context/floating/element/yellow/pressed": "Theme/context/panel/color/yellow/secondary/background/hover",
+    "Theme/context/base/element/yellow/disabled": "Theme/context/page/disabled/background",
+    "Theme/context/canvas/element/yellow/disabled": "Theme/context/page/disabled/background",
+    "Theme/context/raised/element/yellow/disabled": "Theme/context/page/disabled/background",
+    "Theme/context/floating/element/yellow/disabled": "Theme/context/page/disabled/background",
+    "Theme/context/base/element/yellow/text": "Theme/context/page/color/yellow/secondary/content",
+    "Theme/context/canvas/element/yellow/text": "Theme/context/page/color/yellow/secondary/content",
+    "Theme/context/raised/element/yellow/text": "Theme/context/page/color/yellow/secondary/content",
+    "Theme/context/floating/element/yellow/text": "Theme/context/page/color/yellow/secondary/content",
+    "Theme/context/base/element/yellow/disabled-text": "Theme/context/page/disabled/content",
+    "Theme/context/canvas/element/yellow/disabled-text": "Theme/context/inset/disabled/content",
+    "Theme/context/raised/element/yellow/disabled-text": "Theme/context/panel/disabled/content",
+    "Theme/context/floating/element/yellow/disabled-text": "Theme/context/overlay/disabled/content",
+    "Theme/context/base/element/yellow/border": "Theme/context/page/color/yellow/secondary/border/normal",
+    "Theme/context/canvas/element/yellow/border": "Theme/context/page/color/yellow/secondary/border/normal",
+    "Theme/context/raised/element/yellow/border": "Theme/context/page/color/yellow/secondary/border/normal",
+    "Theme/context/floating/element/yellow/border": "Theme/context/page/color/yellow/secondary/border/normal",
+    "Theme/context/base/element/yellow/border-hover": "Theme/context/page/color/yellow/secondary/border/normal",
+    "Theme/context/canvas/element/yellow/border-hover": "Theme/context/page/color/yellow/secondary/border/normal",
+    "Theme/context/raised/element/yellow/border-hover": "Theme/context/page/color/yellow/secondary/border/normal",
+    "Theme/context/floating/element/yellow/border-hover": "Theme/context/page/color/yellow/secondary/border/normal",
+    "Theme/context/base/element/yellow/border-pressed": "Theme/context/page/color/yellow/secondary/border/normal",
+    "Theme/context/canvas/element/yellow/border-pressed": "Theme/context/page/color/yellow/secondary/border/normal",
+    "Theme/context/raised/element/yellow/border-pressed": "Theme/context/page/color/yellow/secondary/border/normal",
+    "Theme/context/floating/element/yellow/border-pressed": "Theme/context/page/color/yellow/secondary/border/normal",
+    "Theme/context/base/action/yellow/normal": "Theme/context/page/color/yellow/solid/background/normal",
+    "Theme/context/canvas/action/yellow/normal": "Theme/context/page/color/yellow/solid/background/normal",
+    "Theme/context/raised/action/yellow/normal": "Theme/context/page/color/yellow/solid/background/normal",
+    "Theme/context/floating/action/yellow/normal": "Theme/context/page/color/yellow/solid/background/normal",
+    "Theme/context/base/action/yellow/hover": "Theme/context/page/color/yellow/solid/background/hover",
+    "Theme/context/canvas/action/yellow/hover": "Theme/context/page/color/yellow/solid/background/hover",
+    "Theme/context/raised/action/yellow/hover": "Theme/context/page/color/yellow/solid/background/hover",
+    "Theme/context/floating/action/yellow/hover": "Theme/context/page/color/yellow/solid/background/hover",
+    "Theme/context/base/action/yellow/pressed": "Theme/context/page/color/yellow/solid/background/hover",
+    "Theme/context/canvas/action/yellow/pressed": "Theme/context/page/color/yellow/solid/background/hover",
+    "Theme/context/raised/action/yellow/pressed": "Theme/context/page/color/yellow/solid/background/hover",
+    "Theme/context/floating/action/yellow/pressed": "Theme/context/page/color/yellow/solid/background/hover",
+    "Theme/context/base/action/yellow/text": "Theme/context/page/primary/content",
+    "Theme/context/canvas/action/yellow/text": "Theme/context/page/primary/content",
+    "Theme/context/raised/action/yellow/text": "Theme/context/page/primary/content",
+    "Theme/context/floating/action/yellow/text": "Theme/context/page/primary/content",
+    "Theme/context/base/action-vivid/yellow/normal": "Theme/context/page/color/yellow/solid/background/normal",
+    "Theme/context/canvas/action-vivid/yellow/normal": "Theme/context/page/color/yellow/solid/background/normal",
+    "Theme/context/raised/action-vivid/yellow/normal": "Theme/context/page/color/yellow/solid/background/normal",
+    "Theme/context/floating/action-vivid/yellow/normal": "Theme/context/page/color/yellow/solid/background/normal",
+    "Theme/context/base/action-vivid/yellow/hover": "Theme/context/page/color/yellow/solid/background/hover",
+    "Theme/context/canvas/action-vivid/yellow/hover": "Theme/context/page/color/yellow/solid/background/hover",
+    "Theme/context/raised/action-vivid/yellow/hover": "Theme/context/page/color/yellow/solid/background/hover",
+    "Theme/context/floating/action-vivid/yellow/hover": "Theme/context/page/color/yellow/solid/background/hover",
+    "Theme/context/base/action-vivid/yellow/pressed": "Theme/context/page/color/yellow/solid/background/hover",
+    "Theme/context/canvas/action-vivid/yellow/pressed": "Theme/context/page/color/yellow/solid/background/hover",
+    "Theme/context/raised/action-vivid/yellow/pressed": "Theme/context/page/color/yellow/solid/background/hover",
+    "Theme/context/floating/action-vivid/yellow/pressed": "Theme/context/page/color/yellow/solid/background/hover",
+    "Theme/context/base/action-vivid/yellow/text": "Theme/context/page/primary/content",
+    "Theme/context/canvas/action-vivid/yellow/text": "Theme/context/page/primary/content",
+    "Theme/context/raised/action-vivid/yellow/text": "Theme/context/page/primary/content",
+    "Theme/context/floating/action-vivid/yellow/text": "Theme/context/page/primary/content",
     "Theme/context/base/element/orange/normal": "Theme/context/page/color/orange/secondary/background/normal",
     "Theme/context/canvas/element/orange/normal": "Theme/context/page/color/orange/secondary/background/normal",
     "Theme/context/raised/element/orange/normal": "Theme/context/panel/color/orange/secondary/background/normal",
@@ -20650,6 +21970,23 @@
     "Semantic/action-vivid/green/hover": "Semantic/color/green/vivid/background/hover",
     "Semantic/action-vivid/green/pressed": "Semantic/color/green/vivid/background/pressed",
     "Semantic/action-vivid/green/text": "Semantic/color/green/vivid/content",
+    "Semantic/element/yellow/normal": "Semantic/color/yellow/secondary/background/normal",
+    "Semantic/element/yellow/hover": "Semantic/color/yellow/secondary/background/hover",
+    "Semantic/element/yellow/pressed": "Semantic/color/yellow/secondary/background/pressed",
+    "Semantic/element/yellow/disabled": "Semantic/disabled/background",
+    "Semantic/element/yellow/text": "Semantic/color/yellow/secondary/content",
+    "Semantic/element/yellow/disabled-text": "Semantic/disabled/content",
+    "Semantic/element/yellow/border": "Semantic/color/yellow/secondary/border/normal",
+    "Semantic/element/yellow/border-hover": "Semantic/color/yellow/secondary/border/hover",
+    "Semantic/element/yellow/border-pressed": "Semantic/color/yellow/secondary/border/pressed",
+    "Semantic/action/yellow/normal": "Semantic/color/yellow/solid/background/normal",
+    "Semantic/action/yellow/hover": "Semantic/color/yellow/solid/background/hover",
+    "Semantic/action/yellow/pressed": "Semantic/color/yellow/solid/background/pressed",
+    "Semantic/action/yellow/text": "Semantic/color/yellow/solid/content",
+    "Semantic/action-vivid/yellow/normal": "Semantic/color/yellow/vivid/background/normal",
+    "Semantic/action-vivid/yellow/hover": "Semantic/color/yellow/vivid/background/hover",
+    "Semantic/action-vivid/yellow/pressed": "Semantic/color/yellow/vivid/background/pressed",
+    "Semantic/action-vivid/yellow/text": "Semantic/color/yellow/vivid/content",
     "Semantic/element/orange/normal": "Semantic/color/orange/secondary/background/normal",
     "Semantic/element/orange/hover": "Semantic/color/orange/secondary/background/hover",
     "Semantic/element/orange/pressed": "Semantic/color/orange/secondary/background/pressed",
@@ -20834,8 +22171,8 @@
   "runtimeSource": {
     "schemaVersion": 4,
     "source": "figma/token-system-v4/graph.json",
-    "sourceHash": "f7f034ce919a11e540fd84956778c8d3020f60044b4fc0fae3e3ad1cfb7e7196",
-    "graphHash": "373e74337e41893a1c755cb3ad64de51ac135d210a6d85efb4ba6a037c27b992",
+    "sourceHash": "ffa430e165b9324889f96eb275a998f9b3992923e433e4d56619ea6d661e5ed6",
+    "graphHash": "ea9fd3e158957b7fc1f33bc979f5bdcf8a689b0eeb101e2637a4b633a74c84db",
     "kind": "resolved-legacy-compatibility-graph",
     "canonicalExport": "runtime-v4.json"
   }

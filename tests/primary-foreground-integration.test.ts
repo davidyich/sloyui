@@ -10,7 +10,7 @@ const load=(file:string)=>JSON.parse(readFileSync(file,'utf8')) as Graph;
 const canonical=load('figma/token-system-v4/graph.json');
 const runtime=load('src/tokens/runtime-v4.json');
 const native=load('figma/color-system-v2/native-graph.json');
-const hues=['blue','green','orange','red','pink','purple'];
+const hues=['blue','green','yellow','orange','red','pink','purple'];
 const black:Color={r:0,g:0,b:0,a:1},white:Color={r:1,g:1,b:1,a:1};
 const contrastRules={...defaultRules,primaryForegroundPolicy:'contrast' as const};
 function reader(graph:Graph){
@@ -51,10 +51,10 @@ describe('Primary foreground integration',()=>{
     expect(contrast(ink,fill),label+'/'+state).toBeGreaterThanOrEqual(4.5-1e-7);pairs++;
    }
   }
-  expect(pairs).toBe(240);
+  expect(pairs).toBe(hues.length * 40);
  });
 
- it('keeps the six semantic foreground choices selectable even when some current colors match',()=>{
+ it('keeps the seven semantic foreground choices selectable even when some current colors match',()=>{
   for(const hue of hues){
    const token=n.tokens.get('surface/content/accent/'+hue+'/on-primary')!;
    expect(token.figmaName).toBe('content/on-primary-'+hue);

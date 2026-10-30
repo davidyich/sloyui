@@ -1,0 +1,6955 @@
+{
+  "$extensions": {
+    "com.sloyui.export": {
+      "version": "0.18.16",
+      "collection": "Sloy UI · Palette",
+      "mode": "Value"
+    }
+  },
+  "blue": {
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6603814049,
+          0.8099076427,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-10)"
+          }
+        }
+      }
+    },
+    "11": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6153195821,
+          0.7849317428,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-11)"
+          }
+        }
+      }
+    },
+    "12": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.568630663,
+          0.7591709242,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-12)"
+          }
+        }
+      }
+    },
+    "13": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5201609984,
+          0.7326073079,
+          0.9999999999
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-13)"
+          }
+        }
+      }
+    },
+    "14": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4696400289,
+          0.7052058217,
+          0.9999999999
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-14)"
+          }
+        }
+      }
+    },
+    "15": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4166053382,
+          0.6769125792,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-15)"
+          }
+        }
+      }
+    },
+    "16": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3602428243,
+          0.6476518376,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-16)"
+          }
+        }
+      }
+    },
+    "17": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2989986071,
+          0.6173211063,
+          0.9999999999
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-17)"
+          }
+        }
+      }
+    },
+    "18": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2294055269,
+          0.5857835938,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-18)"
+          }
+        }
+      }
+    },
+    "19": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1406164733,
+          0.5528565249,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-19)"
+          }
+        }
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          3e-10,
+          0.5198551828,
+          0.9905044662
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-20)"
+          }
+        }
+      }
+    },
+    "21": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          3e-10,
+          0.4926567574,
+          0.9410379638
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-21)"
+          }
+        }
+      }
+    },
+    "22": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1e-10,
+          0.4654294464,
+          0.8915189265
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-22)"
+          }
+        }
+      }
+    },
+    "23": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1e-10,
+          0.4382018359,
+          0.8419993445
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-23)"
+          }
+        }
+      }
+    },
+    "24": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          3e-10,
+          0.4110024815,
+          0.7925311526
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-24)"
+          }
+        }
+      }
+    },
+    "25": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          2e-10,
+          0.3838601889,
+          0.7431667405
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-25)"
+          }
+        }
+      }
+    },
+    "26": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          3e-10,
+          0.3568043023,
+          0.6939594773
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-26)"
+          }
+        }
+      }
+    },
+    "27": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          2e-10,
+          0.3298650131,
+          0.6449642729
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-27)"
+          }
+        }
+      }
+    },
+    "28": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1e-10,
+          0.3030737006,
+          0.5962381977
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-28)"
+          }
+        }
+      }
+    },
+    "29": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          2e-10,
+          0.2764633227,
+          0.547841193
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-29)"
+          }
+        }
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.2500688763,
+          0.4998369088
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-30)"
+          }
+        }
+      }
+    },
+    "31": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          2e-10,
+          0.2239279564,
+          0.4522937199
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-31)"
+          }
+        }
+      }
+    },
+    "32": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.1980814543,
+          0.4052859966
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-32)"
+          }
+        }
+      }
+    },
+    "33": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1e-10,
+          0.1725744529,
+          0.3588957324
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-33)"
+          }
+        }
+      }
+    },
+    "34": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1e-10,
+          0.1474574093,
+          0.3132146947
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-34)"
+          }
+        }
+      }
+    },
+    "35": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.1227877625,
+          0.2683473496
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-35)"
+          }
+        }
+      }
+    },
+    "36": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.0986321975,
+          0.2244149787
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-36)"
+          }
+        }
+      }
+    },
+    "37": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.0750699604,
+          0.181561709
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-37)"
+          }
+        }
+      }
+    },
+    "38": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.0521979522,
+          0.1399637772
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-38)"
+          }
+        }
+      }
+    },
+    "39": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.0307443724,
+          0.0998446484
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-39)"
+          }
+        }
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.0155314663,
+          0.0615017309
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-40)"
+          }
+        }
+      }
+    },
+    "41": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.0063694128,
+          0.0267633982
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-41)"
+          }
+        }
+      }
+    },
+    "01": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9787851811,
+          0.9880473367,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-01)"
+          }
+        }
+      }
+    },
+    "02": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9573162936,
+          0.9759629121,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-02)"
+          }
+        }
+      }
+    },
+    "03": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9287202459,
+          0.9598838154,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-03)"
+          }
+        }
+      }
+    },
+    "04": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8965741297,
+          0.9418308681,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-04)"
+          }
+        }
+      }
+    },
+    "05": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8618303012,
+          0.9223445468,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-05)"
+          }
+        }
+      }
+    },
+    "06": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8249633886,
+          0.901695687,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-06)"
+          }
+        }
+      }
+    },
+    "07": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7862503732,
+          0.8800442502,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-07)"
+          }
+        }
+      }
+    },
+    "08": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7458602764,
+          0.8574910136,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-08)"
+          }
+        }
+      }
+    },
+    "09": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7038904604,
+          0.8340996661,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-blue-09)"
+          }
+        }
+      }
+    }
+  },
+  "green": {
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5905737819,
+          0.872557013,
+          0.6974799217
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-10)"
+          }
+        }
+      }
+    },
+    "11": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5420034437,
+          0.8527595898,
+          0.6630201783
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-11)"
+          }
+        }
+      }
+    },
+    "12": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4922700149,
+          0.8320745192,
+          0.6285094072
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-12)"
+          }
+        }
+      }
+    },
+    "13": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4411272769,
+          0.8105354006,
+          0.5940407354
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-13)"
+          }
+        }
+      }
+    },
+    "14": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3881285185,
+          0.7881719016,
+          0.5597005685
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-14)"
+          }
+        }
+      }
+    },
+    "15": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3324559089,
+          0.7650112948,
+          0.525569882
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-15)"
+          }
+        }
+      }
+    },
+    "16": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2724992735,
+          0.7410796216,
+          0.4917250757
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-16)"
+          }
+        }
+      }
+    },
+    "17": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2045387097,
+          0.7164025953,
+          0.4582385322
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-17)"
+          }
+        }
+      }
+    },
+    "18": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1160444227,
+          0.6910063151,
+          0.4251789631
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-18)"
+          }
+        }
+      }
+    },
+    "19": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          2e-10,
+          0.6630003806,
+          0.3964771587
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-19)"
+          }
+        }
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          3e-10,
+          0.630629741,
+          0.3761225672
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-20)"
+          }
+        }
+      }
+    },
+    "21": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          3e-10,
+          0.5981901807,
+          0.3557246386
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-21)"
+          }
+        }
+      }
+    },
+    "22": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1e-10,
+          0.5657161685,
+          0.3353050467
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-22)"
+          }
+        }
+      }
+    },
+    "23": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          5e-10,
+          0.5332417992,
+          0.3148852303
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-23)"
+          }
+        }
+      }
+    },
+    "24": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          2e-10,
+          0.5008011309,
+          0.294486605
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-24)"
+          }
+        }
+      }
+    },
+    "25": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.4684285202,
+          0.2741307741
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-25)"
+          }
+        }
+      }
+    },
+    "26": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          3e-10,
+          0.4361589659,
+          0.2538397449
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-26)"
+          }
+        }
+      }
+    },
+    "27": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1e-10,
+          0.4040284773,
+          0.2336361599
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-27)"
+          }
+        }
+      }
+    },
+    "28": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          2e-10,
+          0.3720744805,
+          0.2135435527
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-28)"
+          }
+        }
+      }
+    },
+    "29": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          2e-10,
+          0.3403362845,
+          0.1935866404
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-29)"
+          }
+        }
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1e-10,
+          0.3088556299,
+          0.1737916697
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-30)"
+          }
+        }
+      }
+    },
+    "31": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1e-10,
+          0.2776773564,
+          0.1541868356
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-31)"
+          }
+        }
+      }
+    },
+    "32": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.2468502349,
+          0.1348028052
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-32)"
+          }
+        }
+      }
+    },
+    "33": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1e-10,
+          0.2164280359,
+          0.1156733893
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-33)"
+          }
+        }
+      }
+    },
+    "34": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1e-10,
+          0.1864709396,
+          0.0968364289
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-34)"
+          }
+        }
+      }
+    },
+    "35": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1e-10,
+          0.1570474534,
+          0.0783350014
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-35)"
+          }
+        }
+      }
+    },
+    "36": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.1282371125,
+          0.0602191185
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-36)"
+          }
+        }
+      }
+    },
+    "37": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.1001344337,
+          0.042548212
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-37)"
+          }
+        }
+      }
+    },
+    "38": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.072854991,
+          0.026792036
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-38)"
+          }
+        }
+      }
+    },
+    "39": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.0465453301,
+          0.0154122898
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-39)"
+          }
+        }
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.0237075858,
+          0.0077859927
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-40)"
+          }
+        }
+      }
+    },
+    "41": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.0097224176,
+          0.0031930148
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-41)"
+          }
+        }
+      }
+    },
+    "01": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9656051975,
+          0.9965554818,
+          0.9754741763
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-01)"
+          }
+        }
+      }
+    },
+    "02": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9362086771,
+          0.9903955155,
+          0.9537097898
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-02)"
+          }
+        }
+      }
+    },
+    "03": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.89930591,
+          0.981006346,
+          0.9261127246
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-03)"
+          }
+        }
+      }
+    },
+    "04": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.859508971,
+          0.9695363671,
+          0.8962298607
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-04)"
+          }
+        }
+      }
+    },
+    "05": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8177937281,
+          0.9564226794,
+          0.8649054294
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-05)"
+          }
+        }
+      }
+    },
+    "06": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7745984301,
+          0.9419160491,
+          0.8325625668
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-06)"
+          }
+        }
+      }
+    },
+    "07": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7301669594,
+          0.9261783211,
+          0.7994710508
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-07)"
+          }
+        }
+      }
+    },
+    "08": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6846436734,
+          0.9093215274,
+          0.7658272968
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-08)"
+          }
+        }
+      }
+    },
+    "09": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6381060806,
+          0.8914271751,
+          0.73178682
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-green-09)"
+          }
+        }
+      }
+    }
+  },
+  "yellow": {
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8969334328,
+          0.8049335314,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-10)"
+          }
+        }
+      }
+    },
+    "11": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8684514094,
+          0.7792041619,
+          3e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-11)"
+          }
+        }
+      }
+    },
+    "12": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8395154251,
+          0.7530647049,
+          1e-9
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-12)"
+          }
+        }
+      }
+    },
+    "13": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8101859018,
+          0.7265697425,
+          9e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-13)"
+          }
+        }
+      }
+    },
+    "14": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7805162336,
+          0.6997675085,
+          1.1e-9
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-14)"
+          }
+        }
+      }
+    },
+    "15": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.750554423,
+          0.6727013664,
+          8e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-15)"
+          }
+        }
+      }
+    },
+    "16": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7203442887,
+          0.6454108998,
+          5e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-16)"
+          }
+        }
+      }
+    },
+    "17": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6899263852,
+          0.617932744,
+          6e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-17)"
+          }
+        }
+      }
+    },
+    "18": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.659338724,
+          0.5903012369,
+          8e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-18)"
+          }
+        }
+      }
+    },
+    "19": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6286173562,
+          0.5625489451,
+          9e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-19)"
+          }
+        }
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5977968557,
+          0.5347071015,
+          1.3e-9
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-20)"
+          }
+        }
+      }
+    },
+    "21": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5669107349,
+          0.5068059794,
+          1.3e-9
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-21)"
+          }
+        }
+      }
+    },
+    "22": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5359918121,
+          0.4788752255,
+          4e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-22)"
+          }
+        }
+      }
+    },
+    "23": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5050725493,
+          0.4509441643,
+          6e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-23)"
+          }
+        }
+      }
+    },
+    "24": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4741853736,
+          0.4230420893,
+          4e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-24)"
+          }
+        }
+      }
+    },
+    "25": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4433629964,
+          0.3951985503,
+          1e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-25)"
+          }
+        }
+      }
+    },
+    "26": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4126387406,
+          0.3674436497,
+          6e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-26)"
+          }
+        }
+      }
+    },
+    "27": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.382046891,
+          0.3398083589,
+          1e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-27)"
+          }
+        }
+      }
+    },
+    "28": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3516230815,
+          0.3123248679,
+          2e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-28)"
+          }
+        }
+      }
+    },
+    "29": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3214047386,
+          0.2850269861,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-29)"
+          }
+        }
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2914316043,
+          0.2579506146,
+          5e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-30)"
+          }
+        }
+      }
+    },
+    "31": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2617463708,
+          0.2311343197,
+          3e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-31)"
+          }
+        }
+      }
+    },
+    "32": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2323954737,
+          0.2046200492,
+          3e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-32)"
+          }
+        }
+      }
+    },
+    "33": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2034301085,
+          0.1784540507,
+          2e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-33)"
+          }
+        }
+      }
+    },
+    "34": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1749075735,
+          0.1526880849,
+          2e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-34)"
+          }
+        }
+      }
+    },
+    "35": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1468930956,
+          0.1273810748,
+          1e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-35)"
+          }
+        }
+      }
+    },
+    "36": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1194624011,
+          0.1026014283,
+          1e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-36)"
+          }
+        }
+      }
+    },
+    "37": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0927054808,
+          0.0784304389,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-37)"
+          }
+        }
+      }
+    },
+    "38": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0667323741,
+          0.0549675111,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-38)"
+          }
+        }
+      }
+    },
+    "39": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0416826091,
+          0.03268531,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-39)"
+          }
+        }
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0210736375,
+          0.0165119907,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-40)"
+          }
+        }
+      }
+    },
+    "41": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0086422424,
+          0.0067715232,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-41)"
+          }
+        }
+      }
+    },
+    "01": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9909646869,
+          0.9186246147
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-01)"
+          }
+        }
+      }
+    },
+    "02": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9988700912,
+          0.9806483636,
+          0.8421448004
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-02)"
+          }
+        }
+      }
+    },
+    "03": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9944634571,
+          0.9654062844,
+          0.7546333138
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-03)"
+          }
+        }
+      }
+    },
+    "04": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9885482782,
+          0.9473069418,
+          0.6591925486
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-04)"
+          }
+        }
+      }
+    },
+    "05": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9814347397,
+          0.9269062878,
+          0.5551599182
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-05)"
+          }
+        }
+      }
+    },
+    "06": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9732893616,
+          0.9045248743,
+          0.4377293277
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-06)"
+          }
+        }
+      }
+    },
+    "07": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9641978442,
+          0.8803853886,
+          0.2906137311
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-07)"
+          }
+        }
+      }
+    },
+    "08": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9522439636,
+          0.8548985588,
+          8e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-08)"
+          }
+        }
+      }
+    },
+    "09": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9248917531,
+          0.8301898112,
+          8e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-yellow-09)"
+          }
+        }
+      }
+    }
+  },
+  "orange": {
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.7234557599,
+          0.6040709183
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-10)"
+          }
+        }
+      }
+    },
+    "11": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.6850360202,
+          0.5481259245
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-11)"
+          }
+        }
+      }
+    },
+    "12": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.6445577144,
+          0.4885890937
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-12)"
+          }
+        }
+      }
+    },
+    "13": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.6016955777,
+          0.4244277256
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-13)"
+          }
+        }
+      }
+    },
+    "14": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.5559615385,
+          0.353645307
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-14)"
+          }
+        }
+      }
+    },
+    "15": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9999999999,
+          0.5066074025,
+          0.2716899869
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-15)"
+          }
+        }
+      }
+    },
+    "16": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9977055064,
+          0.4544950456,
+          0.1704840389
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-16)"
+          }
+        }
+      }
+    },
+    "17": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9791170763,
+          0.4130961094,
+          0.0694084233
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-17)"
+          }
+        }
+      }
+    },
+    "18": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9447076313,
+          0.3857282663,
+          4e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-18)"
+          }
+        }
+      }
+    },
+    "19": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9017134818,
+          0.3667739877,
+          4e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-19)"
+          }
+        }
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8585805976,
+          0.3477585468,
+          1e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-20)"
+          }
+        }
+      }
+    },
+    "21": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8153558785,
+          0.32870262,
+          4e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-21)"
+          }
+        }
+      }
+    },
+    "22": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7720852535,
+          0.3096264552,
+          2e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-22)"
+          }
+        }
+      }
+    },
+    "23": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7288141525,
+          0.2905500806,
+          4e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-23)"
+          }
+        }
+      }
+    },
+    "24": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6855879572,
+          0.2714935029,
+          3e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-24)"
+          }
+        }
+      }
+    },
+    "25": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6424524465,
+          0.2524769041,
+          1e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-25)"
+          }
+        }
+      }
+    },
+    "26": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5994542553,
+          0.2335208438,
+          3e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-26)"
+          }
+        }
+      }
+    },
+    "27": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5566413649,
+          0.2146464746,
+          3e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-27)"
+          }
+        }
+      }
+    },
+    "28": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5140636444,
+          0.1958757816,
+          1e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-28)"
+          }
+        }
+      }
+    },
+    "29": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4717734717,
+          0.1772318563,
+          1e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-29)"
+          }
+        }
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4298264652,
+          0.1587392181,
+          1e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-30)"
+          }
+        }
+      }
+    },
+    "31": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3882823722,
+          0.1404242072,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-31)"
+          }
+        }
+      }
+    },
+    "32": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3472061784,
+          0.1223154732,
+          1e-10
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-32)"
+          }
+        }
+      }
+    },
+    "33": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3066695316,
+          0.1044446022,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-33)"
+          }
+        }
+      }
+    },
+    "34": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2667526196,
+          0.0868469458,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-34)"
+          }
+        }
+      }
+    },
+    "35": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2275467269,
+          0.0695627473,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-35)"
+          }
+        }
+      }
+    },
+    "36": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1891578314,
+          0.0526387279,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-36)"
+          }
+        }
+      }
+    },
+    "37": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.151711874,
+          0.0361950002,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-37)"
+          }
+        }
+      }
+    },
+    "38": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1153628534,
+          0.0227547118,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-38)"
+          }
+        }
+      }
+    },
+    "39": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0803060374,
+          0.0130897932,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-39)"
+          }
+        }
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0468013068,
+          0.0066127121,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-40)"
+          }
+        }
+      }
+    },
+    "41": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0193620615,
+          0.0027118555,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-41)"
+          }
+        }
+      }
+    },
+    "01": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9831573892,
+          0.9761300852
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-01)"
+          }
+        }
+      }
+    },
+    "02": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9660748483,
+          0.9518877428
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-02)"
+          }
+        }
+      }
+    },
+    "03": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9432554643,
+          0.9194543229
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-03)"
+          }
+        }
+      }
+    },
+    "04": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9175029184,
+          0.8827852538
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-04)"
+          }
+        }
+      }
+    },
+    "05": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.8895342455,
+          0.8428822263
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-05)"
+          }
+        }
+      }
+    },
+    "06": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.8596815171,
+          0.8002018937
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-06)"
+          }
+        }
+      }
+    },
+    "07": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.8281117119,
+          0.7549642271
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-07)"
+          }
+        }
+      }
+    },
+    "08": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.7948952382,
+          0.7072447183
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-08)"
+          }
+        }
+      }
+    },
+    "09": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.760031417,
+          0.6570018289
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-orange-09)"
+          }
+        }
+      }
+    }
+  },
+  "red": {
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.7134458303,
+          0.6842716031
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-10)"
+          }
+        }
+      }
+    },
+    "11": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.6736652696,
+          0.6419171924
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-11)"
+          }
+        }
+      }
+    },
+    "12": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.6317526273,
+          0.5979637392
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-12)"
+          }
+        }
+      }
+    },
+    "13": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9999999999,
+          0.5873578209,
+          0.5523053479
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-13)"
+          }
+        }
+      }
+    },
+    "14": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.5399467119,
+          0.5047639459
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-14)"
+          }
+        }
+      }
+    },
+    "15": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9999999999,
+          0.4886828589,
+          0.455052085
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-15)"
+          }
+        }
+      }
+    },
+    "16": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.4321800981,
+          0.4026988442
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-16)"
+          }
+        }
+      }
+    },
+    "17": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.3679060227,
+          0.3468899043
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-17)"
+          }
+        }
+      }
+    },
+    "18": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9992811245,
+          0.2915211324,
+          0.2868577969
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-18)"
+          }
+        }
+      }
+    },
+    "19": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9766299504,
+          0.2362831009,
+          0.2462664741
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-19)"
+          }
+        }
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9517987416,
+          0.1733095308,
+          0.2053264314
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-20)"
+          }
+        }
+      }
+    },
+    "21": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.924821199,
+          0.0893841701,
+          0.1633423521
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-21)"
+          }
+        }
+      }
+    },
+    "22": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8875528899,
+          6e-10,
+          0.1337178693
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-22)"
+          }
+        }
+      }
+    },
+    "23": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8382408014,
+          4e-10,
+          0.1238446065
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-23)"
+          }
+        }
+      }
+    },
+    "24": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7889798876,
+          4e-10,
+          0.1139815901
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-24)"
+          }
+        }
+      }
+    },
+    "25": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7398223188,
+          1e-10,
+          0.1041392653
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-25)"
+          }
+        }
+      }
+    },
+    "26": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6908212405,
+          0,
+          0.094328273
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-26)"
+          }
+        }
+      }
+    },
+    "27": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6420313322,
+          2e-10,
+          0.0845595613
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-27)"
+          }
+        }
+      }
+    },
+    "28": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5935094255,
+          3e-10,
+          0.0748445088
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-28)"
+          }
+        }
+      }
+    },
+    "29": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5453152106,
+          3e-10,
+          0.0651950667
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-29)"
+          }
+        }
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4975120705,
+          1e-10,
+          0.0556239255
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-30)"
+          }
+        }
+      }
+    },
+    "31": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4501680938,
+          0,
+          0.046144718
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-31)"
+          }
+        }
+      }
+    },
+    "32": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4033573389,
+          0,
+          0.0368098606
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-32)"
+          }
+        }
+      }
+    },
+    "33": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3571614558,
+          0,
+          0.0285256677
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-33)"
+          }
+        }
+      }
+    },
+    "34": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3116718276,
+          0,
+          0.0215446886
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-34)"
+          }
+        }
+      }
+    },
+    "35": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2669924824,
+          1e-10,
+          0.0157726213
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-35)"
+          }
+        }
+      }
+    },
+    "36": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2232441938,
+          0,
+          0.0111095581
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-36)"
+          }
+        }
+      }
+    },
+    "37": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1805704849,
+          0,
+          0.0074501364
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-37)"
+          }
+        }
+      }
+    },
+    "38": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1391468539,
+          0,
+          0.0046836774
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-38)"
+          }
+        }
+      }
+    },
+    "39": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0991958293,
+          0,
+          0.0026943153
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-39)"
+          }
+        }
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0610135737,
+          0,
+          0.0013611164
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-40)"
+          }
+        }
+      }
+    },
+    "41": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0264950462,
+          0,
+          0.0005581902
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-41)"
+          }
+        }
+      }
+    },
+    "01": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9825395737,
+          0.9804641259
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-01)"
+          }
+        }
+      }
+    },
+    "02": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9648307207,
+          0.9606709334
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-02)"
+          }
+        }
+      }
+    },
+    "03": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9411755054,
+          0.9342692022
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-03)"
+          }
+        }
+      }
+    },
+    "04": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9144813461,
+          0.9045367441
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-04)"
+          }
+        }
+      }
+    },
+    "05": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.8854927411,
+          0.8723364373
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-05)"
+          }
+        }
+      }
+    },
+    "06": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.8545553285,
+          0.8380925402
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-06)"
+          }
+        }
+      }
+    },
+    "07": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.8218437393,
+          0.8020485345
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-07)"
+          }
+        }
+      }
+    },
+    "08": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.787432472,
+          0.7643501547
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-08)"
+          }
+        }
+      }
+    },
+    "09": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.7513220126,
+          0.7250797634
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-red-09)"
+          }
+        }
+      }
+    }
+  },
+  "pink": {
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9999999999,
+          0.6806723582,
+          0.8795943287
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-10)"
+          }
+        }
+      }
+    },
+    "11": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.6347337373,
+          0.8657636943
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-11)"
+          }
+        }
+      }
+    },
+    "12": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.5855806744,
+          0.8520484416
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-12)"
+          }
+        }
+      }
+    },
+    "13": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.5324194576,
+          0.8385097517
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-13)"
+          }
+        }
+      }
+    },
+    "14": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.4739392329,
+          0.8252050624
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-14)"
+          }
+        }
+      }
+    },
+    "15": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.4077864711,
+          0.8121888937
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-15)"
+          }
+        }
+      }
+    },
+    "16": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.99320351,
+          0.3407893665,
+          0.796072232
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-16)"
+          }
+        }
+      }
+    },
+    "17": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9738086128,
+          0.2852394668,
+          0.7737322615
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-17)"
+          }
+        }
+      }
+    },
+    "18": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9523942564,
+          0.2237899515,
+          0.7504241377
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-18)"
+          }
+        }
+      }
+    },
+    "19": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9289893978,
+          0.149671416,
+          0.7261560286
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-19)"
+          }
+        }
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9036270012,
+          0.019874814,
+          0.7009382689
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-20)"
+          }
+        }
+      }
+    },
+    "21": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8599926413,
+          7e-10,
+          0.6660835504
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-21)"
+          }
+        }
+      }
+    },
+    "22": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8145028544,
+          5e-10,
+          0.6302341506
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-22)"
+          }
+        }
+      }
+    },
+    "23": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7690125671,
+          5e-10,
+          0.5943843564
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-23)"
+          }
+        }
+      }
+    },
+    "24": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7235694884,
+          3e-10,
+          0.5585717662
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-24)"
+          }
+        }
+      }
+    },
+    "25": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6782217452,
+          3e-10,
+          0.5228343075
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-25)"
+          }
+        }
+      }
+    },
+    "26": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6330183642,
+          0,
+          0.4872106172
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-26)"
+          }
+        }
+      }
+    },
+    "27": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5880097869,
+          3e-10,
+          0.4517404471
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-27)"
+          }
+        }
+      }
+    },
+    "28": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5432484406,
+          3e-10,
+          0.4164651136
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-28)"
+          }
+        }
+      }
+    },
+    "29": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4987893891,
+          2e-10,
+          0.3814280114
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-29)"
+          }
+        }
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4546911033,
+          2e-10,
+          0.3466752199
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-30)"
+          }
+        }
+      }
+    },
+    "31": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4110163946,
+          1e-10,
+          0.3122562393
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-31)"
+          }
+        }
+      }
+    },
+    "32": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3678335818,
+          1e-10,
+          0.2782249098
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-32)"
+          }
+        }
+      }
+    },
+    "33": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3252179869,
+          0,
+          0.2446405911
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-33)"
+          }
+        }
+      }
+    },
+    "34": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2832539104,
+          0,
+          0.2115697183
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-34)"
+          }
+        }
+      }
+    },
+    "35": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2420373181,
+          0,
+          0.1790879197
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-35)"
+          }
+        }
+      }
+    },
+    "36": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2016796233,
+          1e-10,
+          0.1472829974
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-36)"
+          }
+        }
+      }
+    },
+    "37": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1623132258,
+          0,
+          0.1162592926
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-37)"
+          }
+        }
+      }
+    },
+    "38": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1241000223,
+          0,
+          0.0861443919
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-38)"
+          }
+        }
+      }
+    },
+    "39": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0872452948,
+          0,
+          0.0571000734
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-39)"
+          }
+        }
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0520222526,
+          0,
+          0.0300578276
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-40)"
+          }
+        }
+      }
+    },
+    "41": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0218313885,
+          0,
+          0.0123266348
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-41)"
+          }
+        }
+      }
+    },
+    "01": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9809128644,
+          0.9917372231
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-01)"
+          }
+        }
+      }
+    },
+    "02": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9615194724,
+          0.9834668374
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-02)"
+          }
+        }
+      }
+    },
+    "03": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.9355558543,
+          0.9725967626
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-03)"
+          }
+        }
+      }
+    },
+    "04": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.906170165,
+          0.9605813271
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-04)"
+          }
+        }
+      }
+    },
+    "05": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.8741442317,
+          0.9478452285
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-05)"
+          }
+        }
+      }
+    },
+    "06": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.8398185815,
+          0.9346246943
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-06)"
+          }
+        }
+      }
+    },
+    "07": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.8033379601,
+          0.9210795224
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-07)"
+          }
+        }
+      }
+    },
+    "08": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.7647241135,
+          0.9073301934
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-08)"
+          }
+        }
+      }
+    },
+    "09": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.7238972722,
+          0.8934741763
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-pink-09)"
+          }
+        }
+      }
+    }
+  },
+  "purple": {
+    "10": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8614398273,
+          0.7322783243,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-10)"
+          }
+        }
+      }
+    },
+    "11": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8445376217,
+          0.6964659491,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-11)"
+          }
+        }
+      }
+    },
+    "12": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8274757565,
+          0.6592686116,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-12)"
+          }
+        }
+      }
+    },
+    "13": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8102966224,
+          0.6205658941,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-13)"
+          }
+        }
+      }
+    },
+    "14": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.793037872,
+          0.5801694593,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-14)"
+          }
+        }
+      }
+    },
+    "15": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7757334918,
+          0.5377950835,
+          0.9999999999
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-15)"
+          }
+        }
+      }
+    },
+    "16": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7584146164,
+          0.4930128716,
+          0.9999999999
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-16)"
+          }
+        }
+      }
+    },
+    "17": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7411101774,
+          0.4451538423,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-17)"
+          }
+        }
+      }
+    },
+    "18": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7238474448,
+          0.3931183608,
+          0.9999999999
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-18)"
+          }
+        }
+      }
+    },
+    "19": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7066525038,
+          0.3349266121,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-19)"
+          }
+        }
+      }
+    },
+    "20": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6895506939,
+          0.2664113442,
+          0.9999999999
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-20)"
+          }
+        }
+      }
+    },
+    "21": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6646886312,
+          0.2123916136,
+          0.9784956973
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-21)"
+          }
+        }
+      }
+    },
+    "22": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6384188039,
+          0.1529476029,
+          0.9530606435
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-22)"
+          }
+        }
+      }
+    },
+    "23": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6113003758,
+          0.0729500495,
+          0.9252028455
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-23)"
+          }
+        }
+      }
+    },
+    "24": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5792127092,
+          3e-10,
+          0.883758565
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-24)"
+          }
+        }
+      }
+    },
+    "25": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5422730198,
+          2e-10,
+          0.8290806166
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-25)"
+          }
+        }
+      }
+    },
+    "26": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5054509259,
+          4e-10,
+          0.7745767324
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-26)"
+          }
+        }
+      }
+    },
+    "27": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4687875168,
+          1e-10,
+          0.7203077328
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-27)"
+          }
+        }
+      }
+    },
+    "28": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4323254987,
+          3e-10,
+          0.6663368311
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-28)"
+          }
+        }
+      }
+    },
+    "29": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3961097263,
+          1e-10,
+          0.612730421
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-29)"
+          }
+        }
+      }
+    },
+    "30": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3601878288,
+          1e-10,
+          0.5595590032
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-30)"
+          }
+        }
+      }
+    },
+    "31": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3246109719,
+          0,
+          0.5068983127
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-31)"
+          }
+        }
+      }
+    },
+    "32": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2894348069,
+          1e-10,
+          0.4548307246
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-32)"
+          }
+        }
+      }
+    },
+    "33": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2547206904,
+          1e-10,
+          0.4034470584
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-33)"
+          }
+        }
+      }
+    },
+    "34": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2205372925,
+          0,
+          0.3528489592
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-34)"
+          }
+        }
+      }
+    },
+    "35": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1869627856,
+          0,
+          0.3031521375
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-35)"
+          }
+        }
+      }
+    },
+    "36": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1540879256,
+          0,
+          0.2544909298
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-36)"
+          }
+        }
+      }
+    },
+    "37": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1220205637,
+          0,
+          0.2070249767
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-37)"
+          }
+        }
+      }
+    },
+    "38": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0908925787,
+          0,
+          0.1609494848
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-38)"
+          }
+        }
+      }
+    },
+    "39": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0608711909,
+          0,
+          0.1165119727
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-39)"
+          }
+        }
+      }
+    },
+    "40": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0325420244,
+          0,
+          0.0740418617
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-40)"
+          }
+        }
+      }
+    },
+    "41": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0133453972,
+          0,
+          0.0342055861
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-41)"
+          }
+        }
+      }
+    },
+    "01": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9908420781,
+          0.9833438662,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-01)"
+          }
+        }
+      }
+    },
+    "02": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9816365094,
+          0.9664842803,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-02)"
+          }
+        }
+      }
+    },
+    "03": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9694736826,
+          0.9440196961,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-03)"
+          }
+        }
+      }
+    },
+    "04": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9559387417,
+          0.9187523404,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-04)"
+          }
+        }
+      }
+    },
+    "05": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9414788021,
+          0.8914223274,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-05)"
+          }
+        }
+      }
+    },
+    "06": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9263333517,
+          0.8623931407,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-06)"
+          }
+        }
+      }
+    },
+    "07": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9106574753,
+          0.8318714439,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-07)"
+          }
+        }
+      }
+    },
+    "08": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8945624961,
+          0.7999775286,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-08)"
+          }
+        }
+      }
+    },
+    "09": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8781337687,
+          0.7667740587,
+          0.9999999999
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-purple-09)"
+          }
+        }
+      }
+    }
+  },
+  "gray": {
+    "0": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-0)"
+          }
+        }
+      }
+    },
+    "25": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9653810442,
+          0.9653810442,
+          0.9653810442
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-25)"
+          }
+        }
+      }
+    },
+    "50": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9317619717,
+          0.9317619717,
+          0.9317619717
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-50)"
+          }
+        }
+      }
+    },
+    "75": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8991073255,
+          0.8991073255,
+          0.8991073255
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-75)"
+          }
+        }
+      }
+    },
+    "100": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8673824811,
+          0.8673824811,
+          0.8673824811
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-100)"
+          }
+        }
+      }
+    },
+    "125": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.836553596,
+          0.836553596,
+          0.836553596
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-125)"
+          }
+        }
+      }
+    },
+    "150": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8065875574,
+          0.8065875574,
+          0.8065875574
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-150)"
+          }
+        }
+      }
+    },
+    "175": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7774519281,
+          0.7774519281,
+          0.7774519281
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-175)"
+          }
+        }
+      }
+    },
+    "200": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7491148896,
+          0.7491148896,
+          0.7491148896
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-200)"
+          }
+        }
+      }
+    },
+    "225": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7215451819,
+          0.7215451819,
+          0.7215451819
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-225)"
+          }
+        }
+      }
+    },
+    "250": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6947120397,
+          0.6947120397,
+          0.6947120397
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-250)"
+          }
+        }
+      }
+    },
+    "275": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6685851228,
+          0.6685851228,
+          0.6685851228
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-275)"
+          }
+        }
+      }
+    },
+    "300": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6431344413,
+          0.6431344413,
+          0.6431344413
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-300)"
+          }
+        }
+      }
+    },
+    "325": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.618330272,
+          0.618330272,
+          0.618330272
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-325)"
+          }
+        }
+      }
+    },
+    "350": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5941430661,
+          0.5941430661,
+          0.5941430661
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-350)"
+          }
+        }
+      }
+    },
+    "375": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5705433443,
+          0.5705433443,
+          0.5705433443
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-375)"
+          }
+        }
+      }
+    },
+    "400": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5475015781,
+          0.5475015781,
+          0.5475015781
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-400)"
+          }
+        }
+      }
+    },
+    "425": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.524988051,
+          0.524988051,
+          0.524988051
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-425)"
+          }
+        }
+      }
+    },
+    "450": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5029726976,
+          0.5029726976,
+          0.5029726976
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-450)"
+          }
+        }
+      }
+    },
+    "475": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4814249122,
+          0.4814249122,
+          0.4814249122
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-475)"
+          }
+        }
+      }
+    },
+    "500": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4603133193,
+          0.4603133193,
+          0.4603133193
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-500)"
+          }
+        }
+      }
+    },
+    "525": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4396054941,
+          0.4396054941,
+          0.4396054941
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-525)"
+          }
+        }
+      }
+    },
+    "550": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.4192676192,
+          0.4192676192,
+          0.4192676192
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-550)"
+          }
+        }
+      }
+    },
+    "575": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3992640547,
+          0.3992640547,
+          0.3992640547
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-575)"
+          }
+        }
+      }
+    },
+    "600": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3795567932,
+          0.3795567932,
+          0.3795567932
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-600)"
+          }
+        }
+      }
+    },
+    "625": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3601047577,
+          0.3601047577,
+          0.3601047577
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-625)"
+          }
+        }
+      }
+    },
+    "650": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3408628816,
+          0.3408628816,
+          0.3408628816
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-650)"
+          }
+        }
+      }
+    },
+    "675": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3217808795,
+          0.3217808795,
+          0.3217808795
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-675)"
+          }
+        }
+      }
+    },
+    "700": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.3028015713,
+          0.3028015713,
+          0.3028015713
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-700)"
+          }
+        }
+      }
+    },
+    "725": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2838585422,
+          0.2838585422,
+          0.2838585422
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-725)"
+          }
+        }
+      }
+    },
+    "750": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.264872785,
+          0.264872785,
+          0.264872785
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-750)"
+          }
+        }
+      }
+    },
+    "775": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2457477303,
+          0.2457477303,
+          0.2457477303
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-775)"
+          }
+        }
+      }
+    },
+    "800": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2263616092,
+          0.2263616092,
+          0.2263616092
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-800)"
+          }
+        }
+      }
+    },
+    "825": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2065551762,
+          0.2065551762,
+          0.2065551762
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-825)"
+          }
+        }
+      }
+    },
+    "850": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1861108446,
+          0.1861108446,
+          0.1861108446
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-850)"
+          }
+        }
+      }
+    },
+    "875": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1647146074,
+          0.1647146074,
+          0.1647146074
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-875)"
+          }
+        }
+      }
+    },
+    "900": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1418796635,
+          0.1418796635,
+          0.1418796635
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-900)"
+          }
+        }
+      }
+    },
+    "925": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1167714979,
+          0.1167714979,
+          0.1167714979
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-925)"
+          }
+        }
+      }
+    },
+    "950": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0877167424,
+          0.0877167424,
+          0.0877167424
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-950)"
+          }
+        }
+      }
+    },
+    "975": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0502030166,
+          0.0502030166,
+          0.0502030166
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-975)"
+          }
+        }
+      }
+    },
+    "1000": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {
+            "WEB": "var(--cap-palette-gray-1000)"
+          }
+        }
+      }
+    }
+  },
+  "black": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0,
+        0,
+        0
+      ],
+      "alpha": 1
+    },
+    "$extensions": {
+      "com.sloyui.variable": {
+        "scopes": [],
+        "visibility": "internal",
+        "codeSyntax": {
+          "WEB": "var(--cap-palette-black)"
+        }
+      }
+    }
+  },
+  "white": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        1,
+        1,
+        1
+      ],
+      "alpha": 1
+    },
+    "$extensions": {
+      "com.sloyui.variable": {
+        "scopes": [],
+        "visibility": "internal",
+        "codeSyntax": {
+          "WEB": "var(--cap-palette-white)"
+        }
+      }
+    }
+  }
+}

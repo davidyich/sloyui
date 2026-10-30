@@ -71,8 +71,9 @@
 .cap-accordion > summary > .cap-accordion-chevron { flex:none; transform:none; transition:none; }
 .cap-accordion[open] > summary > .cap-accordion-chevron { transform:none; }
 .cap-accordion[data-variant='bouncy'] { margin-block:4px; border:1px solid var(--cap-panel-border); background:var(--cap-control-bg); border-radius:round(down, calc(var(--cap-radius-base) + 6px * var(--cap-radius-enabled)), 1px); }
-.cap-accordion[data-variant='bouncy'] > summary { padding:var(--cap-space-3) var(--cap-space-detail-14); }
-.cap-accordion[data-variant='bouncy'] .cap-accordion-content { padding:var(--cap-space-3) var(--cap-space-detail-14) var(--cap-space-detail-14); }
+.cap-accordion[data-variant='bouncy'] > summary { padding:calc(var(--cap-space-3) + var(--cap-radius-inset)) calc(var(--cap-space-detail-14) + var(--cap-radius-inset)) var(--cap-space-3); }
+.cap-accordion[data-variant='bouncy']:not([data-expanded='true']) > summary { padding-bottom:calc(var(--cap-space-3) + var(--cap-radius-inset)); }
+.cap-accordion[data-variant='bouncy'] .cap-accordion-content { padding:var(--cap-space-3) calc(var(--cap-space-detail-14) + var(--cap-radius-inset)) calc(var(--cap-space-detail-14) + var(--cap-radius-inset)); }
 .cap-accordion[data-variant='bouncy'][data-fallback] .cap-accordion-body { transition:height 360ms cubic-bezier(.18,1,.3,1),opacity 180ms ease-out; }
 .cap-accordion[data-variant='bouncy'][data-expanded='true'] .cap-accordion-content { animation:cap-accordion-settle 380ms both; }
 @keyframes cap-accordion-settle { 0% { opacity:0; transform:translateY(-5px); } 65% { opacity:1; transform:translateY(1px); } 100% { opacity:1; transform:translateY(0); } }
@@ -82,7 +83,7 @@
 }
 .cap-accordion[data-variant='bouncy'] > summary > .cap-accordion-chevron,
 .cap-accordion[data-chevron-position='end'] > summary > .cap-accordion-chevron { order:3; }
-.cap-accordion[data-variant='bouncy']:not(:has(.cap-accordion-icon)) .cap-accordion-content { padding-inline-start:var(--cap-space-detail-14); }
+.cap-accordion[data-variant='bouncy']:not(:has(.cap-accordion-icon)) .cap-accordion-content { padding-inline-start:calc(var(--cap-space-detail-14) + var(--cap-radius-inset)); }
 
 /* Point morph owns direction; old dropdown transforms must not rotate its box. */
 :is(.cap-select-trigger[aria-expanded],.cap-popup-select-trigger[aria-expanded]) > .cap-disclosure-chevron,

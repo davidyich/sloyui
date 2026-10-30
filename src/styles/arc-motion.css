@@ -1,6 +1,7 @@
 /* Arc-inspired physical timing, ~1.75× faster. Local highlights only; no continuous layout work. */
 :root { --cap-motion-snap:140ms; --cap-motion-morph:220ms; --cap-motion-enter:140ms; --cap-ease-organic:cubic-bezier(.16,1,.3,1); }
-.cap-moving-highlight { position:absolute; left:0; top:0; pointer-events:none; z-index:0; transform-origin:top left; border-radius:var(--cap-radius-base); background:var(--cap-control-hover); transition:opacity 100ms ease-out; }
+.cap-moving-highlight { opacity:0; position:absolute; left:0; top:0; pointer-events:none; z-index:0; transform-origin:top left; border-radius:var(--cap-radius-base); background:var(--cap-control-hover); transition:opacity 100ms ease-out; }
+.cap-moving-highlight[data-visible] { opacity:1; }
 .cap-moving-highlight[data-moving] { will-change:transform; }
 .cap-moving-highlight[data-hide-immediately] { transition:none; }
 .cap-moving-highlight[data-moving]:not([data-native-motion]) { transition:transform var(--cap-motion-morph) var(--cap-ease-organic),opacity 100ms ease-out; }
@@ -22,7 +23,7 @@
 .cap-segmented .cap-segment > span { min-height:var(--cap-segment-height); justify-content:center; width:100%; padding:0 calc(var(--cap-space-detail-10) + var(--cap-radius-inset)); border-radius:var(--cap-segment-radius); font-size:var(--cap-font-size-sm); white-space:nowrap; }
 .cap-segmented .cap-segment input:checked + span { background:transparent; box-shadow:none; }
 .cap-segmented .cap-segment:has(input:disabled):hover > span { background:transparent; }
-.cap-segmented > .cap-moving-highlight { border-radius:var(--cap-segment-radius); background:var(--cap-surface-raised); box-shadow:none; }
+.cap-segmented > .cap-moving-highlight { border-radius:var(--cap-segment-radius); background:var(--cap-surface-block); box-shadow:none; }
 .cap-segmented[data-variant='outline'] { background:transparent; border-color:var(--cap-control-border); }
 .cap-segmented[data-variant='accent'] > .cap-moving-highlight[data-kind='selection'] { background:var(--cap-accent-normal); }
 .cap-segmented[data-variant='accent'] .cap-segment input:checked + span { color:var(--cap-accent-text); }
@@ -32,7 +33,8 @@
 .cap-tab-list[data-size='sm'] button { min-height:var(--cap-size-control-sm); }
 .cap-tab-list[data-size='lg'] button { min-height:var(--cap-size-control-lg); }
 .cap-tab-list[data-variant='outline'] { background:transparent; border-color:var(--cap-control-border); }
-.cap-tab-list > .cap-moving-highlight[data-kind='selection'] { background:var(--cap-surface-raised); }
+/* Selected neutral content stays in the local Surface polarity, including Invert. */
+.cap-tab-list > .cap-moving-highlight[data-kind='selection'] { background:var(--cap-surface-block); }
 .cap-tab-list[data-variant='accent'] > .cap-moving-highlight[data-kind='selection'] { background:var(--cap-accent-normal); }
 .cap-tab-list[data-variant='accent'] button[aria-selected='true'] { color:var(--cap-accent-text); }
 .cap-separator { border:0; height:1px; width:100%; flex-shrink:0; background:var(--cap-divider-default); }

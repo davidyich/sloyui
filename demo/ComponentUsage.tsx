@@ -1,3 +1,5 @@
+import manifest from '../agent-manifest.json';
+import {useCatalogText} from './catalog-locale';
 import {useEffect,useId,useState} from 'react';
 import * as UI from '../src';
 import {catalogAPI} from './catalog-channel';
@@ -45,7 +47,7 @@ export function ComponentInstruction({content}:{content:string}){
 }
 
 export function ComponentUsage({componentId,componentName,onEdit}:{componentId:string;componentName:string;onEdit?:()=>void}){
- const t=UI.useTranslate(),{admin}=useCatalogAdmin(),headingId=useId();
+ const t=UI.useTranslate(),locale=UI.useLocale(),c=useCatalogText(),{admin}=useCatalogAdmin(),headingId=useId();
  const [document,setDocument]=useState<{id:string;content:string;fallback:boolean}>(),[loading,setLoading]=useState(true),[error,setError]=useState(''),[revision,setRevision]=useState(0);
  useEffect(()=>{const saved=(event:Event)=>{if((event as CustomEvent<string>).detail===componentId)setRevision(value=>value+1);};window.addEventListener(COMPONENT_INSTRUCTION_SAVED,saved);return()=>window.removeEventListener(COMPONENT_INSTRUCTION_SAVED,saved);},[componentId]);
  useEffect(()=>{
@@ -65,11 +67,13 @@ export function ComponentUsage({componentId,componentName,onEdit}:{componentId:s
   })();return()=>controller.abort();
  },[componentId,revision,t]);
  const content=document?.id===componentId?document.content:'';
+ const record=manifest.components[componentName as keyof typeof manifest.components];
+ const englishGuide=locale==='en'&&/[А-Яа-яЁё]/.test(content.replace(/```[\s\S]*?```|~~~[\s\S]*?~~~/g,''))&&record;
  return <section className="catalog-component-usage" aria-labelledby={headingId} aria-busy={loading||undefined}>
   <header className="catalog-usage-heading"><h2 id={headingId}>{t('Применение ','Usage ')}{componentName}</h2>{admin&&onEdit&&<UI.Button size="sm" variant="ghost" onClick={onEdit}>{t('Редактировать инструкцию','Edit instruction')}</UI.Button>}</header>
   {loading?<p role="status" className="catalog-muted">{t('Загрузка инструкции…','Loading instruction…')}</p>:error?<UI.Callout title={error}><UI.Button size="sm" variant="ghost" onClick={()=>setRevision(value=>value+1)}>{t('Повторить','Retry')}</UI.Button></UI.Callout>:<>
    {document?.fallback&&<p className="catalog-muted">{t('Показана инструкция из сборки. Сохранённая на сайте версия временно недоступна.','Showing the bundled instruction. The saved site version is temporarily unavailable.')}</p>}
-   {content.trim()?<ComponentInstruction content={content}/>:<p className="catalog-muted">{t('Отдельная инструкция пока не добавлена.','No component instruction has been added yet.')}</p>}
+   {content.trim()?(englishGuide?<><div className="catalog-usage-sections"><section className="catalog-usage-section"><h3>Purpose</h3><p>{record.purpose}</p></section><section className="catalog-usage-section"><h3>Recommended usage</h3><p>{c(record.usage)}</p></section><section className="catalog-usage-section"><h3>Interaction contract</h3><p>{'behavior' in record?record.behavior:record.agentNotes}</p></section><UI.CodeBlock language="tsx" label={`${componentName}.tsx`}>{record.example}</UI.CodeBlock></div><details className="catalog-usage-source"><summary>Original instruction (Russian)</summary><ComponentInstruction content={content}/></details></>:<ComponentInstruction content={content}/>):<p className="catalog-muted">{t('Отдельная инструкция пока не добавлена.','No component instruction has been added yet.')}</p>}
   </>}
  </section>;
 }

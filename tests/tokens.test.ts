@@ -105,7 +105,7 @@ describe('Canonical full palette graph',()=>{
    expect(token.values).toEqual({Standard:{alias:`Surface/${role}-${theme.toLowerCase()}`},Dimmed:{alias:`Surface/${role}-${theme.toLowerCase()}-dimmed`},Inverted:{alias:`Surface/${role}-${theme.toLowerCase()}-dimmed`}});
   }
  });
- it('keeps every canonical secondary and action pair readable, including disabled',()=>{expect(audit).toHaveLength(224);for(const row of audit){expect(row.reactionContrast,JSON.stringify(row)).toBeGreaterThanOrEqual(4.5);const mode=row.theme+' · '+row.surface[0].toUpperCase()+row.surface.slice(1);expect(textRatio(resolve('Primitives/'+row.text,mode) as RGB,paint(resolve('Primitives/'+row.background,mode) as RGB,mode)),JSON.stringify(row)).toBeGreaterThanOrEqual(4.5);}
+ it('keeps every canonical secondary and action pair readable, including disabled',()=>{expect(audit).toHaveLength(256);for(const row of audit){expect(row.reactionContrast,JSON.stringify(row)).toBeGreaterThanOrEqual(4.5);const mode=row.theme+' · '+row.surface[0].toUpperCase()+row.surface.slice(1);expect(textRatio(resolve('Primitives/'+row.text,mode) as RGB,paint(resolve('Primitives/'+row.background,mode) as RGB,mode)),JSON.stringify(row)).toBeGreaterThanOrEqual(4.5);}
  for(const mode of Object.keys(graph.contexts))for(const h of graph.modes)for(const s of ['normal','hover','pressed'])expect(textRatio(resolve(`Semantic/action/${h}/text`,mode) as RGB,resolve(`Semantic/action/${h}/${s}`,mode) as RGB)).toBeGreaterThanOrEqual(4.5);
  });
  it('uses the exact authored v4 secondary hues and states in both themes',()=>{

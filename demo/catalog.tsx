@@ -124,7 +124,6 @@ export function filterComponents({status='all',group='all',query=''}:{status?:Co
   });
 }
 export const foundationPages = [
-  {id:'tokens',label:'Система токенов'},
   {id:'colors',label:'Цвета и темы'},
   {id:'typography',label:'Типографика'},
   {id:'geometry',label:'Размеры и форма'},
@@ -136,7 +135,7 @@ export const overviewPages = [{id:"overview",label:"Обзор компонен�
 export type OverviewRoute = typeof overviewPages[number]["id"];
 export type CatalogRoute = ComponentName | FoundationRoute | OverviewRoute | 'admin';
 export function isComponentRoute(route: CatalogRoute): route is ComponentName { return Object.hasOwn(componentCatalog,route); }
-const aliases: Record<string,CatalogRoute> = {Badge:'Tag',TypeLabel:'Tag',badge:'Tag','type-label':'Tag',typelabel:'Tag',buttons:'Button',forms:'Input',content:'ContentCard',feedback:'Alert',overlays:'Dialog',workbench:'ActionBar','content-blocks':'Calendar',patterns:'KanbanBoard',rules:'behavior'};
+const aliases: Record<string,CatalogRoute> = {tokens:'colors',Badge:'Tag',TypeLabel:'Tag',badge:'Tag','type-label':'Tag',typelabel:'Tag',buttons:'Button',forms:'Input',content:'ContentCard',feedback:'Alert',overlays:'Dialog',workbench:'ActionBar','content-blocks':'Calendar',patterns:'KanbanBoard',rules:'behavior'};
 export function resolveRoute(hash: string): CatalogRoute {
   let value=hash.replace(/^#/,'').split('?')[0]; try { value=decodeURIComponent(value); } catch { return 'Button'; }
   if(!value)return 'overview';

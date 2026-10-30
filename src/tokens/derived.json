@@ -773,6 +773,159 @@
     ],
     "alpha": 1
   },
+  "derived/v4/light/base/element/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.659338724,
+      0.5903012369,
+      8e-10
+    ],
+    "alpha": 0.22
+  },
+  "derived/v4/light/base/element/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5669107349,
+      0.5068059794,
+      1.3e-9
+    ],
+    "alpha": 0.27
+  },
+  "derived/v4/light/base/element/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5669107349,
+      0.5068059794,
+      1.3e-9
+    ],
+    "alpha": 0.27
+  },
+  "derived/v4/light/base/element/yellow/disabled": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0,
+      0
+    ],
+    "alpha": 0.03
+  },
+  "derived/v4/light/base/element/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2617463708,
+      0.2311343197,
+      3e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/base/element/yellow/disabled-text": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3217808795,
+      0.3217808795,
+      0.3217808795
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/base/element/yellow/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/base/element/yellow/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/base/element/yellow/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/base/action/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5050725493,
+      0.4509441643,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/base/action/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/base/action/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/base/action/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      1,
+      1
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/base/action-vivid/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5050725493,
+      0.4509441643,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/base/action-vivid/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/base/action-vivid/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/base/action-vivid/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      1,
+      1
+    ],
+    "alpha": 1
+  },
   "derived/v4/light/base/element/orange/normal": {
     "colorSpace": "srgb",
     "components": [
@@ -2331,6 +2484,159 @@
     "alpha": 1
   },
   "derived/v4/dark/base/action-vivid/green/text": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0,
+      0
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/base/element/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8969334328,
+      0.8049335314,
+      0
+    ],
+    "alpha": 0.11
+  },
+  "derived/v4/dark/base/element/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9641978442,
+      0.8803853886,
+      0.2906137311
+    ],
+    "alpha": 0.15
+  },
+  "derived/v4/dark/base/element/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9641978442,
+      0.8803853886,
+      0.2906137311
+    ],
+    "alpha": 0.15
+  },
+  "derived/v4/dark/base/element/yellow/disabled": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      1,
+      1
+    ],
+    "alpha": 0.03
+  },
+  "derived/v4/dark/base/element/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9885482782,
+      0.9473069418,
+      0.6591925486
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/base/element/yellow/disabled-text": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7215451819,
+      0.7215451819,
+      0.7215451819
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/base/element/yellow/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6899263852,
+      0.617932744,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/base/element/yellow/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6899263852,
+      0.617932744,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/base/element/yellow/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6899263852,
+      0.617932744,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/base/action/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9641978442,
+      0.8803853886,
+      0.2906137311
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/base/action/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9814347397,
+      0.9269062878,
+      0.5551599182
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/base/action/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9814347397,
+      0.9269062878,
+      0.5551599182
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/base/action/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0,
+      0
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/base/action-vivid/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9641978442,
+      0.8803853886,
+      0.2906137311
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/base/action-vivid/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9814347397,
+      0.9269062878,
+      0.5551599182
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/base/action-vivid/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9814347397,
+      0.9269062878,
+      0.5551599182
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/base/action-vivid/yellow/text": {
     "colorSpace": "srgb",
     "components": [
       0,
@@ -3905,6 +4211,159 @@
     ],
     "alpha": 1
   },
+  "derived/v4/light/canvas/element/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.659338724,
+      0.5903012369,
+      8e-10
+    ],
+    "alpha": 0.22
+  },
+  "derived/v4/light/canvas/element/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5669107349,
+      0.5068059794,
+      1.3e-9
+    ],
+    "alpha": 0.27
+  },
+  "derived/v4/light/canvas/element/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5669107349,
+      0.5068059794,
+      1.3e-9
+    ],
+    "alpha": 0.27
+  },
+  "derived/v4/light/canvas/element/yellow/disabled": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0,
+      0
+    ],
+    "alpha": 0.03
+  },
+  "derived/v4/light/canvas/element/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2617463708,
+      0.2311343197,
+      3e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/canvas/element/yellow/disabled-text": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3408628816,
+      0.3408628816,
+      0.3408628816
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/canvas/element/yellow/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/canvas/element/yellow/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/canvas/element/yellow/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/canvas/action/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5050725493,
+      0.4509441643,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/canvas/action/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/canvas/action/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/canvas/action/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      1,
+      1
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/canvas/action-vivid/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5050725493,
+      0.4509441643,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/canvas/action-vivid/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/canvas/action-vivid/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/canvas/action-vivid/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      1,
+      1
+    ],
+    "alpha": 1
+  },
   "derived/v4/light/canvas/element/orange/normal": {
     "colorSpace": "srgb",
     "components": [
@@ -5463,6 +5922,159 @@
     "alpha": 1
   },
   "derived/v4/dark/canvas/action-vivid/green/text": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0,
+      0
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/canvas/element/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8969334328,
+      0.8049335314,
+      0
+    ],
+    "alpha": 0.11
+  },
+  "derived/v4/dark/canvas/element/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9641978442,
+      0.8803853886,
+      0.2906137311
+    ],
+    "alpha": 0.15
+  },
+  "derived/v4/dark/canvas/element/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9641978442,
+      0.8803853886,
+      0.2906137311
+    ],
+    "alpha": 0.15
+  },
+  "derived/v4/dark/canvas/element/yellow/disabled": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      1,
+      1
+    ],
+    "alpha": 0.03
+  },
+  "derived/v4/dark/canvas/element/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9885482782,
+      0.9473069418,
+      0.6591925486
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/canvas/element/yellow/disabled-text": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7215451819,
+      0.7215451819,
+      0.7215451819
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/canvas/element/yellow/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6899263852,
+      0.617932744,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/canvas/element/yellow/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6899263852,
+      0.617932744,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/canvas/element/yellow/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6899263852,
+      0.617932744,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/canvas/action/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9641978442,
+      0.8803853886,
+      0.2906137311
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/canvas/action/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9814347397,
+      0.9269062878,
+      0.5551599182
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/canvas/action/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9814347397,
+      0.9269062878,
+      0.5551599182
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/canvas/action/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0,
+      0
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/canvas/action-vivid/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9641978442,
+      0.8803853886,
+      0.2906137311
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/canvas/action-vivid/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9814347397,
+      0.9269062878,
+      0.5551599182
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/canvas/action-vivid/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9814347397,
+      0.9269062878,
+      0.5551599182
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/canvas/action-vivid/yellow/text": {
     "colorSpace": "srgb",
     "components": [
       0,
@@ -7037,6 +7649,159 @@
     ],
     "alpha": 1
   },
+  "derived/v4/light/raised/element/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6899263852,
+      0.617932744,
+      6e-10
+    ],
+    "alpha": 0.21
+  },
+  "derived/v4/light/raised/element/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5977968557,
+      0.5347071015,
+      1.3e-9
+    ],
+    "alpha": 0.26
+  },
+  "derived/v4/light/raised/element/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5977968557,
+      0.5347071015,
+      1.3e-9
+    ],
+    "alpha": 0.26
+  },
+  "derived/v4/light/raised/element/yellow/disabled": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0,
+      0
+    ],
+    "alpha": 0.03
+  },
+  "derived/v4/light/raised/element/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2617463708,
+      0.2311343197,
+      3e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/raised/element/yellow/disabled-text": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3601047577,
+      0.3601047577,
+      0.3601047577
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/raised/element/yellow/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/raised/element/yellow/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/raised/element/yellow/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/raised/action/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5050725493,
+      0.4509441643,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/raised/action/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/raised/action/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/raised/action/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      1,
+      1
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/raised/action-vivid/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5050725493,
+      0.4509441643,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/raised/action-vivid/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/raised/action-vivid/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/raised/action-vivid/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      1,
+      1
+    ],
+    "alpha": 1
+  },
   "derived/v4/light/raised/element/orange/normal": {
     "colorSpace": "srgb",
     "components": [
@@ -8595,6 +9360,159 @@
     "alpha": 1
   },
   "derived/v4/dark/raised/action-vivid/green/text": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0,
+      0
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/raised/element/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8969334328,
+      0.8049335314,
+      0
+    ],
+    "alpha": 0.11
+  },
+  "derived/v4/dark/raised/element/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9641978442,
+      0.8803853886,
+      0.2906137311
+    ],
+    "alpha": 0.15
+  },
+  "derived/v4/dark/raised/element/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9641978442,
+      0.8803853886,
+      0.2906137311
+    ],
+    "alpha": 0.15
+  },
+  "derived/v4/dark/raised/element/yellow/disabled": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      1,
+      1
+    ],
+    "alpha": 0.03
+  },
+  "derived/v4/dark/raised/element/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9885482782,
+      0.9473069418,
+      0.6591925486
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/raised/element/yellow/disabled-text": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7215451819,
+      0.7215451819,
+      0.7215451819
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/raised/element/yellow/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6899263852,
+      0.617932744,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/raised/element/yellow/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6899263852,
+      0.617932744,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/raised/element/yellow/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6899263852,
+      0.617932744,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/raised/action/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9641978442,
+      0.8803853886,
+      0.2906137311
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/raised/action/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9814347397,
+      0.9269062878,
+      0.5551599182
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/raised/action/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9814347397,
+      0.9269062878,
+      0.5551599182
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/raised/action/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0,
+      0
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/raised/action-vivid/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9641978442,
+      0.8803853886,
+      0.2906137311
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/raised/action-vivid/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9814347397,
+      0.9269062878,
+      0.5551599182
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/raised/action-vivid/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9814347397,
+      0.9269062878,
+      0.5551599182
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/raised/action-vivid/yellow/text": {
     "colorSpace": "srgb",
     "components": [
       0,
@@ -10169,6 +11087,159 @@
     ],
     "alpha": 1
   },
+  "derived/v4/light/floating/element/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6899263852,
+      0.617932744,
+      6e-10
+    ],
+    "alpha": 0.21
+  },
+  "derived/v4/light/floating/element/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5977968557,
+      0.5347071015,
+      1.3e-9
+    ],
+    "alpha": 0.26
+  },
+  "derived/v4/light/floating/element/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5977968557,
+      0.5347071015,
+      1.3e-9
+    ],
+    "alpha": 0.26
+  },
+  "derived/v4/light/floating/element/yellow/disabled": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0,
+      0
+    ],
+    "alpha": 0.03
+  },
+  "derived/v4/light/floating/element/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      0.2617463708,
+      0.2311343197,
+      3e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/floating/element/yellow/disabled-text": {
+    "colorSpace": "srgb",
+    "components": [
+      0.3601047577,
+      0.3601047577,
+      0.3601047577
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/floating/element/yellow/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/floating/element/yellow/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/floating/element/yellow/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/floating/action/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5050725493,
+      0.4509441643,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/floating/action/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/floating/action/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/floating/action/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      1,
+      1
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/floating/action-vivid/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.5050725493,
+      0.4509441643,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/floating/action-vivid/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/floating/action-vivid/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.4433629964,
+      0.3951985503,
+      1e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/light/floating/action-vivid/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      1,
+      1
+    ],
+    "alpha": 1
+  },
   "derived/v4/light/floating/element/orange/normal": {
     "colorSpace": "srgb",
     "components": [
@@ -11727,6 +12798,159 @@
     "alpha": 1
   },
   "derived/v4/dark/floating/action-vivid/green/text": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0,
+      0
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/floating/element/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.8969334328,
+      0.8049335314,
+      0
+    ],
+    "alpha": 0.11
+  },
+  "derived/v4/dark/floating/element/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9641978442,
+      0.8803853886,
+      0.2906137311
+    ],
+    "alpha": 0.15
+  },
+  "derived/v4/dark/floating/element/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9641978442,
+      0.8803853886,
+      0.2906137311
+    ],
+    "alpha": 0.15
+  },
+  "derived/v4/dark/floating/element/yellow/disabled": {
+    "colorSpace": "srgb",
+    "components": [
+      1,
+      1,
+      1
+    ],
+    "alpha": 0.03
+  },
+  "derived/v4/dark/floating/element/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9885482782,
+      0.9473069418,
+      0.6591925486
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/floating/element/yellow/disabled-text": {
+    "colorSpace": "srgb",
+    "components": [
+      0.7491148896,
+      0.7491148896,
+      0.7491148896
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/floating/element/yellow/border": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6899263852,
+      0.617932744,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/floating/element/yellow/border-hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6899263852,
+      0.617932744,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/floating/element/yellow/border-pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.6899263852,
+      0.617932744,
+      6e-10
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/floating/action/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9641978442,
+      0.8803853886,
+      0.2906137311
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/floating/action/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9814347397,
+      0.9269062878,
+      0.5551599182
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/floating/action/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9814347397,
+      0.9269062878,
+      0.5551599182
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/floating/action/yellow/text": {
+    "colorSpace": "srgb",
+    "components": [
+      0,
+      0,
+      0
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/floating/action-vivid/yellow/normal": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9641978442,
+      0.8803853886,
+      0.2906137311
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/floating/action-vivid/yellow/hover": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9814347397,
+      0.9269062878,
+      0.5551599182
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/floating/action-vivid/yellow/pressed": {
+    "colorSpace": "srgb",
+    "components": [
+      0.9814347397,
+      0.9269062878,
+      0.5551599182
+    ],
+    "alpha": 1
+  },
+  "derived/v4/dark/floating/action-vivid/yellow/text": {
     "colorSpace": "srgb",
     "components": [
       0,
