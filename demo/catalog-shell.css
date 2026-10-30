@@ -69,6 +69,7 @@ body:has(.catalog-app) .cap-modal-layer:has(.cap-command) .cap-modal-backdrop{ba
 .catalog-auth-card form{display:grid;gap:var(--cap-space-4);}
 .catalog-auth-error{color:var(--cap-status-error-content);}
 .catalog-admin-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--cap-space-6);align-items:start;max-width:960px;}
+.catalog-admin-release-actions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--cap-space-3);}
 .catalog-admin-exit{display:flex;flex-direction:column;align-items:flex-start;gap:var(--cap-space-2);}
 .catalog-announcement-editor-header{display:flex;align-items:center;justify-content:space-between;gap:var(--cap-space-4);flex-wrap:wrap;}
 .catalog-announcement-visibility{display:flex;align-items:center;justify-content:space-between;gap:var(--cap-space-3);flex-wrap:wrap;}

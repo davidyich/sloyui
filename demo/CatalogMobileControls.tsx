@@ -1,6 +1,6 @@
 import {useEffect,useState} from 'react';
 import * as UI from '../src';
-import {AppearanceAdvanced} from './CatalogAppearanceControls';
+import {AppearanceSchemeButton} from './CatalogAppearanceControls';
 
 export interface CatalogAppearanceProps {
  theme:'light'|'dark';onTheme:(value:'light'|'dark')=>void;
@@ -8,7 +8,6 @@ export interface CatalogAppearanceProps {
  accent:UI.Color;onAccent:(value:UI.Color)=>void;
  density:'default'|'compact';onDensity:(value:'default'|'compact')=>void;
  radius:string;onRadius:(value:string)=>void;
- cornerShape:'round'|'squircle';onCornerShape:(value:'round'|'squircle')=>void;
  borders:boolean;onBorders:(value:boolean)=>void;
  focusRing:boolean;onFocusRing:(value:boolean)=>void;
  surfaceScheme:'standard'|'dimmed';onSurfaceScheme:(value:'standard'|'dimmed')=>void;
@@ -35,9 +34,9 @@ export function CatalogMobileControls({onMenu,onSearch,...appearance}:CatalogApp
     <UI.Select appearance="parameter" label={t('Поверхность','Surface')} value={surface} onValueChange={value=>onSurface(value as typeof surface)} options={['shell','workspace','content','overlay','invert','glass'].map(value=>({value,label:value[0].toUpperCase()+value.slice(1)}))}/>
     <UI.Select appearance="parameter" label={t('Акцент','Accent')} value={accent} onValueChange={value=>onAccent(value as UI.Color)} options={UI.colors.map(color=>({value:color,label:color,leading:<span className="catalog-popup-color-dot" data-color={color}/>}))}/>
     <UI.Switch label={t('Компактные отступы','Compact spacing')} checked={appearance.density==='compact'} onChange={event=>appearance.onDensity(event.target.checked?'compact':'default')}/>
-    <UI.Switch label={t('Максимальное скругление','Maximum corner radius')} checked={appearance.radius==='rounded'} disabled={appearance.radius==='none'} onChange={event=>appearance.onRadius(event.target.checked?'rounded':'default')}/>
+    <UI.Switch label={t('Максимальное скругление','Maximum corner radius')} checked={appearance.radius==='rounded'} onChange={event=>appearance.onRadius(event.target.checked?'rounded':'default')}/>
     <UI.Switch label={t('Обводки','Borders')} checked={appearance.borders} onChange={event=>appearance.onBorders(event.target.checked)}/>
-    <UI.Accordion className="catalog-appearance-advanced" title={t('Дополнительные настройки','Advanced settings')}><AppearanceAdvanced appearance={appearance}/></UI.Accordion>
+    <div className="catalog-appearance-modes"><AppearanceSchemeButton appearance={appearance}/><UI.Switch label={t('Контур фокуса','Focus outline')} checked={appearance.focusRing} onChange={event=>appearance.onFocusRing(event.target.checked)}/></div>
    </div>
   </UI.Drawer>
  </>;

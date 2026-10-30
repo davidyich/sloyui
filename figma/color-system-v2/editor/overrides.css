@@ -19,7 +19,7 @@
 .cap-pl-app .cap-pl-overrides-title > span { color:var(--cap-content-secondary); font-size:var(--cap-font-size-xs); }
 .cap-pl-app .cap-pl-overrides-comparison { display:flex; flex-wrap:wrap; gap:var(--cap-space-4); min-width:0; }
 .cap-pl-app .cap-pl-overrides-comparison > div { display:flex; align-items:center; gap:var(--cap-space-2); min-width:0; }
-.cap-pl-app .cap-pl-overrides-comparison i { width:40px; height:40px; flex:none; border-radius:var(--cap-radius-small); box-shadow:inset 0 0 0 1px var(--cap-border-subtle); }
+.cap-pl-app .cap-pl-overrides-comparison i { width:40px; height:40px; flex:none; border-radius:var(--cap-radius-small); box-shadow:inset 0 0 0 1px var(--cap-panel-border); }
 .cap-pl-app .cap-pl-overrides-comparison span { display:grid; gap:4px; color:var(--cap-content-secondary); font-size:var(--cap-font-size-xs); }
 .cap-pl-app .cap-pl-overrides-comparison code { color:var(--cap-content-primary); font-size:var(--cap-font-size-xs); }
 .cap-pl-app .cap-pl-overrides-form { display:grid; gap:var(--cap-space-3); min-width:0; }

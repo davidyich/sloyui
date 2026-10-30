@@ -1,12 +1,12 @@
 import React,{useEffect,useId,useLayoutEffect,useRef,useState} from 'react';
 import {Button,ColorPicker,Drawer,FloatingActionBar,Icon,PopupSelect,Select,Switch,Tooltip} from '../../../src/index';
-import {Contrast,ChevronLeft,Ellipsis,Minimize2,SquareRoundCorner,Square} from 'lucide-react';
+import {Contrast,ChevronLeft,Ellipsis,Minimize2} from 'lucide-react';
 import {surfaces} from './model.mjs';
 import {t,usePaletteLocale} from './Locale';
 type Props={
  onEditNeutrals:()=>void;
  surface:string;onSurface:(value:string)=>void;themes:string;onThemes:(value:string)=>void;
- scheme:string;onScheme:(value:string)=>void;radius:string;onRadius:(value:string)=>void;
+ scheme:string;onScheme:(value:string)=>void;
  density:string;onDensity:(value:string)=>void;borders:string;onBorders:(value:string)=>void;
  backgroundErrors?:Partial<Record<'Light'|'Dark',string>>;
  backgrounds:{Light:string;Dark:string};onBackground:(theme:'Light'|'Dark',value:string)=>void;
@@ -34,10 +34,8 @@ export function EnvironmentControls(p:Props){
    <PopupSelect label={t('Поверхность')} value={p.surface} onValueChange={changeSurface} options={surfaceOptions} side="top" align="center"/>
    <div className="cap-pl-dock-reveal" data-expanded={expanded&&!compact} aria-hidden={!expanded||compact} inert={!expanded||compact} id={id}><div className="cap-pl-dock-secondary">
     <Tooltip content={t('Плотность интерфейса')}><Button className="cap-pl-dock-icon" variant="ghost" aria-label={t('Плотность интерфейса')} aria-pressed={p.density==='compact'} onClick={()=>p.onDensity(p.density==='compact'?'default':'compact')}><Icon name={Minimize2} size={18}/></Button></Tooltip>
-    <Tooltip content={t('Скругление')}><Button className="cap-pl-dock-icon" variant="ghost" aria-label={t('Скругление')} aria-pressed={p.radius==='rounded'} disabled={p.radius==='none'} onClick={()=>p.onRadius(p.radius==='rounded'?'default':'rounded')}><Icon name={SquareRoundCorner} size={18}/></Button></Tooltip>
     <Tooltip content={t(p.borders==='on'?'Выключить обводки':'Включить обводки')}><Button className="cap-pl-dock-icon" variant="ghost" aria-label={t('Границы элементов')} aria-pressed={p.borders==='on'} onClick={()=>p.onBorders(p.borders==='on'?'off':'on')}><Icon name="border" size={18}/></Button></Tooltip>
     <Tooltip content={`${t('Схема')}: ${p.scheme}`}><Button className="cap-pl-dock-icon" variant="ghost" aria-label={t('Схема поверхностей')} aria-pressed={p.scheme==='Dimmed'} onClick={()=>p.onScheme(p.scheme==='Standard'?'Dimmed':'Standard')}><Icon name={Contrast} size={18}/></Button></Tooltip>
-    <Tooltip content={t('Прямые углы')}><Button className="cap-pl-dock-icon" variant="ghost" aria-label={t('Прямые углы')} aria-pressed={p.radius==='none'} onClick={()=>p.onRadius(p.radius==='none'?'default':'none')}><Icon name={Square} size={18}/></Button></Tooltip>
     {!compact&&p.surface==='Custom'&&(['Light','Dark'] as const).map(theme=><div className="cap-pl-dock-custom" key={theme}><Icon name={theme==='Light'?'sun':'moon'} size={14}/><ColorPicker label={`${t('Фон')} ${theme}`} value={p.backgrounds[theme]} format="hex" size="sm" error={p.backgroundErrors?.[theme]} onValueChange={value=>p.onBackground(theme,value)}/></div>)}
    </div></div>
    <Tooltip content={expandLabel}><Button ref={toggle} className="cap-pl-dock-icon" variant="ghost" aria-label={expandLabel} aria-expanded={compact?open:expanded} aria-controls={compact?undefined:id} onClick={()=>compact?setOpen(true):setExpanded(value=>!value)}><Icon name={expanded&&!compact?ChevronLeft:Ellipsis} size={18}/></Button></Tooltip>
@@ -50,7 +48,6 @@ export function EnvironmentControls(p:Props){
   {p.surface==='Custom'&&(['Light','Dark'] as const).map(theme=><ColorPicker key={theme} label={`${t('Фон')} ${theme}`} value={p.backgrounds[theme]} format="hex" size="md" error={p.backgroundErrors?.[theme]} onValueChange={value=>p.onBackground(theme,value)}/>)}
   <Select label={t('Схема')} appearance="parameter" value={p.scheme} onValueChange={p.onScheme} options={['Standard','Dimmed'].map(value=>({value,label:value}))}/>
   <Select label={t('Плотность')} appearance="parameter" value={p.density} onValueChange={p.onDensity} options={[{value:'default',label:t('Обычно')},{value:'compact',label:t('Плотно')}]}/>
-  <Select label={t('Скругление')} appearance="parameter" value={p.radius} onValueChange={p.onRadius} options={[{value:'none',label:'0 px'},{value:'default',label:'8 px'},{value:'rounded',label:'16 px'}]}/>
   <Switch label={t('Границы элементов')} checked={p.borders==='on'} onChange={e=>p.onBorders(e.target.checked?'on':'off')}/>
  </div></Drawer>}
  </>;

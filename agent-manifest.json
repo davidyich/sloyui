@@ -13,7 +13,7 @@
     "developIconFile": "sloyui-develop-icon.svg"
   },
   "package": "sloyui",
-  "version": "0.19.7",
+  "version": "0.19.11",
   "framework": "React >=19",
   "module": "ESM",
   "componentCount": 93,

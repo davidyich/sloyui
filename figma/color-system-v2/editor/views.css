@@ -1,6 +1,6 @@
 /* Stable shells and local theme scopes keep paired previews independent of app chrome. */
 .cap-pl-app .cap-pl-color-card {
-  border:1px solid color-mix(in srgb,var(--cap-border-subtle) 50%,transparent);
+  border:1px solid var(--cap-panel-border);
   border-radius:var(--pl-card-radius);
   overflow:clip;
   background:var(--cap-surface-block);
@@ -8,7 +8,7 @@
 .cap-pl-app .cap-pl-color-card-title { min-height:44px; padding:8px 12px; border-radius:max(0px,calc(var(--pl-card-radius) - 1px)) max(0px,calc(var(--pl-card-radius) - 1px)) 0 0; }
 .cap-pl-app .cap-pl-color-card-title:focus-visible { outline:none; box-shadow:inset 0 0 0 var(--cap-focus-width,1px) var(--cap-focus-ring); }
 .cap-pl-app .cap-pl-color-card-title strong { flex:1; }
-.cap-pl-app .cap-pl-card-themes { gap:1px; background:var(--cap-border-subtle); }
+.cap-pl-app .cap-pl-card-themes { gap:1px; background:var(--cap-panel-border); }
 .cap-pl-app .cap-pl-color-specimen { min-width:0; padding:12px; }
 .cap-pl-app .cap-pl-color-sample-row { gap:8px; margin-block:10px 0; }
 .cap-pl-app .cap-pl-color-sample-row > .cap-tooltip-wrap { min-width:0; display:flex; }
@@ -28,7 +28,7 @@
 .cap-pl-annotation-panel header{display:grid;gap:3px;margin-bottom:10px;line-height:1.5}
 .cap-pl-annotation-panel header span{color:var(--cap-content-secondary);font-size:12px}
 .cap-pl-annotation-panel ul{display:grid;gap:10px;margin:0;padding:0;list-style:none;font-size:12px;line-height:1.6;overflow-wrap:anywhere}
-.cap-pl-annotation-panel li+li{padding-top:10px;border-top:1px solid var(--cap-border-subtle)}
+.cap-pl-annotation-panel li+li{padding-top:10px;border-top:1px solid var(--cap-panel-border)}
 .cap-pl-specimen-status,.cap-pl-matrix-meta{display:inline-flex;align-items:center;gap:8px}
 .cap-pl-preview-heading>code{margin-inline-start:auto}
 .cap-pl-matrix-samples>div{display:grid;gap:6px;min-width:0}

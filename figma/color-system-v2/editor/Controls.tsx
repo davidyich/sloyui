@@ -40,10 +40,10 @@ export function Workspace({left,right,children,widths,onWidths}:{left:ReactNode;
  const rightPx=Math.max(248,Math.min(widths.right,Math.min(460,available-leftPx-360)));
  const layout=desktop?[percent(leftPx),percent(available-leftPx-rightPx),percent(rightPx)]:tablet?[percent(leftPx),percent(available-leftPx)]:[100];
  return <ResizablePanelGroup className="cap-pl-layout" label={t("Рабочие области")} layout={layout} onLayoutChange={values=>onWidths({left:tablet?values[0]*available/100:widths.left,right:desktop?values[2]*available/100:widths.right})}>
-  {tablet&&<ResizablePanel className="cap-pl-navigation-pane" surface="shell" minSize={percent(184)} maxSize={percent(380)} label={t("Навигация")}><aside className="cap-pl-sidebar">{left}</aside></ResizablePanel>}
+  {tablet&&<ResizablePanel className="cap-pl-navigation-pane" surface="workspace" minSize={percent(184)} maxSize={percent(380)} label={t("Навигация")}><aside className="cap-pl-sidebar">{left}</aside></ResizablePanel>}
   {tablet&&<ResizableHandle appearance="line" label={t("Ширина меню")}/>}
   <ResizablePanel surface="content" minSize={tablet?percent(360):100} label={t("Холст")}>{children}</ResizablePanel>
   {desktop&&<ResizableHandle appearance="line" label={t("Ширина параметров")}/>}
-  {desktop&&<ResizablePanel className="cap-pl-inspector-pane" surface="shell" minSize={percent(248)} maxSize={percent(460)} label={t("Параметры цвета")}><aside className="cap-pl-properties">{right}</aside></ResizablePanel>}
+  {desktop&&<ResizablePanel className="cap-pl-inspector-pane" surface="workspace" minSize={percent(248)} maxSize={percent(460)} label={t("Параметры цвета")}><aside className="cap-pl-properties">{right}</aside></ResizablePanel>}
  </ResizablePanelGroup>;
 }
