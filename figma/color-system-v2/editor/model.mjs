@@ -129,6 +129,7 @@ export function effectiveContextTheme(theme,surface,custom={Light:'#F1EEF8',Dark
  if(surface==='Custom'){const bg=fromHex(custom[theme]);return contrast(BLACK,bg)>=contrast(WHITE,bg)?'Light':'Dark';}
  return theme;
 }
+const sharedContentPairCache=new WeakMap();
 function selectContentPair(palette,backgrounds,target,minimumContrast,textChroma=1){
  const minimum=minimumContrast+.08,steps=palette[0].steps;
  const passes=step=>backgrounds.every(bg=>renderedContrast(step.value,bg)>=minimum);
@@ -245,7 +246,9 @@ export function generateContext(accent,theme,scheme,surface,source,resolved,cust
  if(sharedRecipe){
   for(const name of [...new Set(backings.map(b=>b.name))]){layerFills[name]=sharedRecipe.fills;layerReferences[name]=sharedRecipe.references;balanceDiagnostics[name]=sharedRecipe.diagnostics;}
   const painted=sharedRecipe.contentBackings;
-  const {ink,muted}=selectContentPair([{steps:[...palette[0].steps,...neutralSteps]}],painted,dark?.86:.35,rules.minimumContrast,accent.textChroma);
+  const pairKey=JSON.stringify([dark,rules.minimumContrast,accent.textChroma]),cachedPairs=sharedContentPairCache.get(sharedRecipe)??new Map();
+  if(!cachedPairs.has(pairKey))cachedPairs.set(pairKey,selectContentPair([{steps:[...palette[0].steps,...neutralSteps]}],painted,dark?.86:.35,rules.minimumContrast,accent.textChroma));
+  sharedContentPairCache.set(sharedRecipe,cachedPairs);const {ink,muted}=cachedPairs.get(pairKey);
   solution={fills:{...sharedRecipe.fills},ink,muted,quiet:painted.every(bg=>renderedContrast(muted.value,bg)<=renderedContrast(ink.value,bg)+1e-7),visible:!sharedRecipe.diagnostics.limited};
  }else if(rules.balanceSecondary){
   for(const name of [...new Set(backings.map(b=>b.name))]){
@@ -324,7 +327,7 @@ export function generateAll(accent,source,resolved,custom={Light:'#F1EEF8',Dark:
  const shared=generatePalette(accent,rules),contexts=source.themes.flatMap(theme=>source.schemes.flatMap(scheme=>surfaces.map(surface=>generateContext(accent,theme,scheme,surface,source,resolved,custom,rules,shared,surface,neutralSystem))));
  contextCache.set(accent,{key,source,resolved,contexts});return contexts;
 }
-export function exportGraph(accents,source,resolved,custom={Light:'#F1EEF8',Dark:'#221D2C'},rules=defaultRules,neutralSystem){
+export function exportGraph(accents,source,resolved,custom={Light:'#F1EEF8',Dark:'#221D2C'},rules=defaultRules,neutralSystem,contextResolver){
  if(neutralSystem&&accents.some(a=>a.name==='neutral'&&a.id!=='neutral'))throw new Error('Имя neutral зарезервировано для нейтральной палитры.');
  const collections=[['palette','Palette',['Value']],['primitives','Primitives',['Value']],['opacity','Opacity',['Value']],['theme','Theme',source.themes],['scheme','Scheme',source.schemes],['surface','Surface',surfaces]].map(([key,name,modes])=>({key,name:'Palette Lab · '+name,modes,variables:[]}));const cols=Object.fromEntries(collections.map(c=>[c.key,c])),byKey=new Map();
  const add=(key,name,type,values,scopes=[])=>{const id=key+'/'+name;if(byKey.has(id))return {alias:id};const v={name,type,values,scopes};cols[key].variables.push(v);byKey.set(id,v);return {alias:id};};
@@ -335,7 +338,7 @@ export function exportGraph(accents,source,resolved,custom={Light:'#F1EEF8',Dark
  const samePaint=(a,b)=>a&&b&&['r','g','b','a'].every(channel=>a[channel]===b[channel]);
  for(const accent of accents){
   for(const scale of generatePalette(accent,rules))for(const s of scale.steps){add('palette',s.name,'COLOR',{Value:s.value});Object.assign(byKey.get('palette/'+s.name),{position:s.position,modified:s.modified,authored:s.authored,interpolated:s.interpolated,original:s.original});}
-  const contexts=generateAll(accent,source,resolved,custom,rules,neutralSystem),layerOverrides=new Set();
+  const contexts=contextResolver?source.themes.flatMap(theme=>source.schemes.flatMap(scheme=>surfaces.map(surface=>contextResolver(accent,theme,scheme,surface)))):generateAll(accent,source,resolved,custom,rules,neutralSystem),layerOverrides=new Set();
   // A public layer role is needed only if at least one context actually changes
   // the paint. Keep every Surface mode when a legacy/per-layer override exists.
   if(rules.balanceSecondary)for(const c of contexts)for(const [layer,paints] of Object.entries(c.layerFills).filter(([layer])=>layer!=='bg'))for(const [key,value] of Object.entries(paints))if(!samePaint(value,c.fills[key]))layerOverrides.add(`on-layer/${layer}/${key}`);
@@ -344,16 +347,16 @@ export function exportGraph(accents,source,resolved,custom={Light:'#F1EEF8',Dark
    if(rules.balanceSecondary)for(const [layer,paints] of Object.entries(c.layerFills).filter(([layer])=>layer!=='bg'))for(const [key,value] of Object.entries(paints)){const referenceKey=`on-layer/${layer}/${key}`;if(layerOverrides.has(referenceKey))values.push({key:referenceKey,reference:c.layerReferences[layer][key],role:`on-layer/${layer}/surface/${key.split('/')[0]}/${accent.name}-${key.split('/')[1]}`,value});}
    if(neutralSystem){
     const neutralValues=c.neutralContext?[{key:'surface/bg',value:c.bg},...Object.entries(c.neutral).map(([role,value])=>({key:'surface/'+role,value})),...Object.entries(c.neutralContext.content).map(([role,value])=>({key:'content/'+role,value})),{key:'border',value:c.neutralContext.border}]:[{key:'surface/bg',value:c.bg}];
-    for(const {key,value} of neutralValues){const refKey='neutral/'+key;c.references[refKey]=c.neutralContext.references[key];values.push({key:refKey,role:key==='border'?'border/neutral':key,value});}
+    for(const {key,value} of neutralValues){const refKey='neutral/'+key;values.push({key:refKey,role:key==='border'?'border/neutral':key,value,reference:c.neutralContext.references[key]});}
    }
    for(const {key,role,value,reference} of values){const name=`${c.scheme.toLowerCase()}/${c.surface.toLowerCase()}/${role}`;add('theme',name,'COLOR',{});byKey.get('theme/'+name).values[c.theme]=ref(reference??c.references[key],value);add('scheme',`${c.surface.toLowerCase()}/${role}`,'COLOR',{});byKey.get('scheme/'+c.surface.toLowerCase()+'/'+role).values[c.scheme]={alias:'theme/'+name};add('surface',role,'COLOR',{},role.startsWith('content/')?['TEXT_FILL','SHAPE_FILL','STROKE_COLOR']:role.startsWith('border/')?['STROKE_COLOR']:['FRAME_FILL','SHAPE_FILL']);byKey.get('surface/'+role).values[c.surface]={alias:`scheme/${c.surface.toLowerCase()}/${role}`};}
   }
  }
  return {name:'Palette Lab',schema:'sloy-palette-graph/v3',sourceVersion:source.version,accents:accents.map(a=>a.name),paletteSettings:accents.map(({id,...a})=>({...a,vividness:a.vividness??rules.vividness})),customBackgrounds:custom,neutralSystem,rules,collections};
 }
-export function exportCSS(accents,source,resolved,custom={Light:'#F1EEF8',Dark:'#221D2C'},rules=defaultRules,neutralSystem){
+export function exportCSS(accents,source,resolved,custom={Light:'#F1EEF8',Dark:'#221D2C'},rules=defaultRules,neutralSystem,contextResolver){
  if(neutralSystem&&accents.some(a=>a.name==='neutral'&&a.id!=='neutral'))throw new Error('Имя neutral зарезервировано для нейтральной палитры.');
- const contextMap=new Map(accents.flatMap(a=>generateAll(a,source,resolved,custom,rules,neutralSystem).map(c=>[`${a.id}/${c.theme}/${c.scheme}/${c.surface}`,c])));
+ const contextMap=new Map(accents.flatMap(a=>(contextResolver?source.themes.flatMap(theme=>source.schemes.flatMap(scheme=>surfaces.map(surface=>contextResolver(a,theme,scheme,surface)))):generateAll(a,source,resolved,custom,rules,neutralSystem)).map(c=>[`${a.id}/${c.theme}/${c.scheme}/${c.surface}`,c])));
  const lines=['/* Palette Lab · opaque hue ramps → semantic roles + numeric opacity. */',':root {'];
  const variable=name=>'--pl-palette-'+name.replaceAll('/','-');
  for(const s of [...neutralSteps,...(neutralSystem?generatePalette(neutralSystem.accent,rules)[0].steps:[]),...(neutralSystem?source.themes.map(theme=>({name:'custom/'+theme.toLowerCase(),value:fromHex(custom[theme])})):[]),...accents.flatMap(a=>generatePalette(a,rules).flatMap(scale=>scale.steps))])lines.push(`  ${variable(s.name)}-rgb: ${['r','g','b'].map(k=>Number((s.value[k]*255).toFixed(6))).join(' ')};`,`  ${variable(s.name)}: rgb(var(${variable(s.name)}-rgb));`);lines.push('}');

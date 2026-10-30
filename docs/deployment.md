@@ -18,6 +18,8 @@ Authenticated owners see Publish in the Develop settings dock. The confirmation 
 
 Releases include site/, server/, source seeds and private release.json metadata. Uploads are kept in ignored artifacts/deployment/. Deploys validate the JavaScript module graph, archives and Caddy, back up the selected channel data/configuration, import seeds while preserving owner edits and switch its pointer atomically. Both deploys and publication use /srv/sloyui/.release.lock.
 
+While holding that shared lock, a Develop deployment runs the archived `scripts/verify-release-version.mjs` against `/srv/sloyui/develop/release.json` immediately after extraction. The incoming package version must be strictly newer by SemVer precedence; equal versions, older versions, invalid versions, malformed metadata and metadata read failures are rejected before credentials, data, services or the active pointer are changed. A missing metadata file (`ENOENT`) permits the first deployment. Build metadata does not make an otherwise equal version newer. Rejection leaves only the unused uploaded/extracted release; reconcile the checkout with the deployed Develop work, bump its version above the deployed version, rebuild and retry. The explicit bootstrap infrastructure path and owner-confirmed publication remain separate from this Develop gate.
+
 ## Identity and persistent source
 
 Sloy UI uses the existing Devos Auth OIDC provider at `https://auth.devos.run/api/auth`. Devos Auth owns the preserved Refletica password and second factor. Sloy UI does not copy its identity database or encryption key. The registered confidential client `sloyui-admin` requires PKCE and has one callback: `https://sloyui.com/api/admin/auth/callback`.

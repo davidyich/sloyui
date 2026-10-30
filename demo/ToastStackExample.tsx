@@ -11,7 +11,7 @@ export function ToastStackExample() {
   const [scope, setScope] = useState<'container' | 'viewport'>('container');
   const createItems = (): ToastStackItem[] => [
     { id: 'saved', title: t('Изменения сохранены', 'Changes saved'), description: t('Все правки уже в проекте.', 'Your latest edits are in the project.'), tone: 'success', duration: Infinity },
-    { id: 'ready', title: t('Сборка готова', 'Build ready'), description: t('Можно открыть предпросмотр.', 'The preview is ready to open.'), tone: 'info', duration: Infinity },
+    { id: 'ready', title: t('Сборка готова', 'Build ready'), description: t('Можно открыть предпросмотр.', 'The preview is ready to open.'), tone: 'info', duration: Infinity, action: { label: t('Готово', 'Done'), onAction: () => setItems(current => current.filter(item => item.id !== 'ready')) } },
     { id: 'deploy', title: t('Публикуем проект…', 'Deploying to production…'), description: t('Собираем 24 страницы и прогреваем кеш.', 'Building 24 routes and warming the cache.'), tone: 'neutral', loading: true },
   ];
   const [items, setItems] = useState<ToastStackItem[]>(createItems);
@@ -25,8 +25,8 @@ export function ToastStackExample() {
       <Button size="sm" onClick={() => setItems(createItems())}>{t('Показать уведомления', 'Show notifications')}</Button>
       {scope === 'viewport' && <Button size="sm" variant="ghost" onClick={() => setItems([])}>{t('Скрыть все', 'Dismiss all')}</Button>}
     </div>
-    <div data-surface="canvas" className="cap-surface-boundary" style={{ position: 'relative', minHeight: 380, background: 'var(--cap-surface-current)', borderRadius: 'var(--cap-radius-xl)' }}>
-      <ToastStack label={t('Обновления проекта', 'Project updates')} items={shown} onDismiss={id => setItems(current => current.filter(item => item.id !== id))} position={position} scope={scope}/>
+    <div data-surface="canvas" className="cap-surface-boundary" style={{ position: 'relative', minHeight: 440, background: 'var(--cap-surface-current)', borderRadius: 'var(--cap-radius-xl)' }}>
+      <ToastStack label={t('Обновления проекта', 'Project updates')} items={shown} onDismiss={id => setItems(current => current.filter(item => item.id !== id))} position={position} scope={scope} peek={6} gap={8} showExpandHint={false}/>
     </div>
   </div>;
 }

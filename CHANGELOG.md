@@ -1,5 +1,60 @@
 # Changelog
 
+## 0.19.7 — 2026-10-31
+
+- Complete the final Palette Lab integration: invalidate all-color exports when project membership changes, restore up to twelve completed views within the existing context budget, and show loading status only before the first result.
+
+## 0.19.6 — 2026-10-31
+
+- Consolidate the latest 0.18.17–0.19.5 development changes into one release, with aligned package, catalogue history and generated exports.
+- Palette Lab keeps samples visible during edits, applies ordered worker results live, restores cached views and reuses exact calculations for export.
+- Include OTPInput for verification codes and the ToastStack anchoring, spacing, focus and timer fixes with their typed playgrounds and consumer guidance.
+- Preserve quiet neutral/accent borders, compact collapsed navigation, radius-aware inspection frames and independent keyboard focus.
+- Guard Develop deployments against older or equal versions while preserving the reviewed production publication flow.
+
+## 0.19.5 — 2026-10-31
+
+- Keep Palette Lab samples mounted during parameter edits, paint ordered intermediate worker results live, and restore completed views without a blank loading frame.
+
+## 0.19.4 — 2026-10-31
+
+- Palette Lab Roles and Specimens share a quiet 1 px inset hover frame that follows each sample radius without tinting static sample paint or shifting layout.
+- Consolidate inspection rules and retain a distinct 2 px keyboard focus frame. Tracked in [#62](https://github.com/davidyich/sloyui/issues/62).
+
+## 0.19.3 — 2026-10-31
+
+- Restore quiet decorative border rendering: neutral 55%, soft accents 25%, including final v4 alias rebinding and nested Borders overrides.
+- Compact adjacent collapsed catalogue groups while retaining section spacing after expanded content.
+- Preserve the combined Palette Lab, ToastStack and OTPInput delivery. Tracked in [#61](https://github.com/davidyich/sloyui/issues/61).
+
+## 0.19.2 — 2026-10-31
+
+- Develop deployments reject older or equal versions under the release lock before changing active code, data or services.
+- Combine Palette Lab calculation and inline settings improvements with the delivered ToastStack and OTPInput updates, preserving both parallel Develop releases.
+
+## 0.19.1 · 2026-10-31
+
+- Repair ToastStack edge anchoring, hover across gaps, natural-height updates and pending-to-complete timers. Escape collapses the stack with keyboard focus preserved.
+- Add independent `peek`, `gap` and optional `corner` controls with typed Playground examples; reuse the stack for catalogue feedback without dropping queued notices.
+- Toast actions sit beside the message and wrap on small screens; `icon={false}` removes the empty icon track and rounded shells reserve optical clearance. Tracked in [#55](https://github.com/davidyich/sloyui/issues/55).
+
+## 0.19.0 · 2026-10-30
+
+- Add OTPInput for numeric verification codes: a controlled string, one semantic native input and responsive digit slots.
+- Preserve leading zeroes, paste/autofill, native selection/editing, form submission, refs and accessible labels/errors without runtime dependencies.
+- Add the canonical catalogue page, playground and component instructions; tracked in [#42](https://github.com/davidyich/sloyui/issues/42).
+
+## 0.18.18 — 2026-10-31
+
+- Palette Lab avoids invisible context solving, reuses export calculations and sends worker deltas; exact solver optimizations preserve generated colors and export bytes.
+- Temporarily hide unfinished Edits and recover saved tab preferences without changing authored anchors or project data.
+- Desktop environment settings expand in the existing dock, including Custom backgrounds; narrow canvases use a bottom sheet instead of a desktop settings sidebar.
+
+## 0.18.17 — 2026-10-31
+
+- Palette Lab side panels establish Shell while the canvas establishes Content; shared-edge boundaries follow Borders without adding a resize gutter.
+- The language action replaces the routine Saved footer label. Color hover uses a quiet rounded frame, while selection and keyboard focus retain their own indicators and exact sample paint.
+
 ## 0.18.16 — 2026-10-30
 
 - Colors and themes is the single entry for color roles, palettes and a simplified token browser; legacy token links remain valid. Catalogue previews default to Content.

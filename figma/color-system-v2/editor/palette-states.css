@@ -1,57 +1,44 @@
-/* Exact palette values stay unchanged while interaction is shown above the paint.
-   A short marker means hover, a retained frame/check means selection, and the
-   semantic ring plus contrasting keyline means keyboard focus. */
-.cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step,.cap-pl-swatch) {
+/* Inspect exact color paint with one frame whose corners inherit the sample.
+   Hover is quiet, selection persists, and keyboard focus stays distinct. */
+.cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step) {
   position:relative;
   isolation:isolate;
 }
 .cap-pl-app button.cap-pl-edit-step:is(:hover,[aria-pressed=true])::before { opacity:0; }
-.cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step,.cap-pl-swatch)::after {
+.cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step)::after {
   content:'';
   position:absolute;
-  inset:auto 6px 4px;
-  height:2px;
+  inset:0;
+  height:auto;
   border:0;
-  border-radius:var(--cap-radius-full);
-  background:currentColor;
-  box-shadow:none;
+  border-radius:inherit;
+  background:none;
+  box-shadow:inset 0 0 0 1px currentColor;
   opacity:0;
   pointer-events:none;
   z-index:1;
   transition:opacity var(--cap-duration-fast) var(--cap-ease-standard);
 }
-.cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step,.cap-pl-swatch):not(:disabled):hover::after { opacity:.4; }
-.cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step,.cap-pl-swatch):not(:disabled):active::after { background:currentColor; box-shadow:none; opacity:.7; }
-.cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step,.cap-pl-swatch)[aria-pressed=true]::after {
-  inset:2px;
-  height:auto;
-  border-radius:max(0px,calc(var(--pl-cell-radius,var(--cap-radius-small)) - 2px));
-  background:none;
+.cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step):not(:disabled):hover::after { opacity:.22; }
+.cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step):not(:disabled):active::after { opacity:.36; }
+.cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step)[aria-pressed=true]::after {
   box-shadow:inset 0 0 0 2px currentColor;
-  opacity:.8;
+  opacity:.75;
 }
-.cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step,.cap-pl-swatch):focus-visible {
+.cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step):focus-visible {
   outline:none;
   box-shadow:none;
 }
-.cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step,.cap-pl-swatch):focus-visible::after {
-  inset:2px;
-  height:auto;
-  border-radius:max(0px,calc(var(--pl-cell-radius,var(--cap-radius-small)) - 2px));
-  background:none;
-  box-shadow:inset 0 0 0 2px var(--cap-focus-ring),inset 0 0 0 3px currentColor;
+.cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step):focus-visible::after {
+  box-shadow:inset 0 0 0 2px currentColor;
   opacity:1;
 }
-.cap-pl-app button.cap-pl-interactive-fill:focus-visible {
-  outline:none;
-  background:var(--pl-fill-active);
-  box-shadow:inset 0 0 0 2px var(--cap-focus-ring),inset 0 0 0 3px currentColor;
-}
+.cap-pl-app button.cap-pl-interactive-fill:focus-visible { background:var(--pl-fill-active); }
 @scope ([data-focus-ring="off"]) to ([data-focus-ring="on"]) {
-  .cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step,.cap-pl-swatch):focus-visible:not([aria-pressed=true])::after { opacity:0; }
-  .cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step,.cap-pl-swatch)[aria-pressed=true]:focus-visible::after { box-shadow:inset 0 0 0 2px currentColor; }
-  .cap-pl-app button.cap-pl-interactive-fill:focus-visible { box-shadow:none; }
+  .cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step):focus-visible:not([aria-pressed=true])::after { box-shadow:inset 0 0 0 1px currentColor; opacity:0; }
+  .cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step):focus-visible:not([aria-pressed=true]):not(:disabled):hover::after { opacity:.22; }
+  .cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step)[aria-pressed=true]:focus-visible::after { box-shadow:inset 0 0 0 2px currentColor; opacity:.75; }
 }
 @media(prefers-reduced-motion:reduce) {
-  .cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step,.cap-pl-swatch)::after { transition:none; }
+  .cap-pl-app button:is(.cap-pl-color-cell,.cap-pl-overrides-step)::after { transition:none; }
 }

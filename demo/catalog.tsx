@@ -42,6 +42,7 @@ export const componentCatalog = {
   ActionBar: entry('Кнопки и действия','Панель инструментов с навигацией по действиям стрелками.',Controls.ActionBarStory),
   FloatingActionBar: entry('Кнопки и действия','Плавающие действия с небольшим отступом от края контейнера.',Controls.FloatingActionBarStory),
   Kbd: entry('Кнопки и действия','Обозначение клавиши или сочетания клавиш.',Controls.KbdStory),
+  OTPInput: entry('Поля и выбор','Цифровой код подтверждения с обычным редактированием и вставкой.',Controls.OTPInputStory),
   Input: entry('Поля и выбор','Однострочное поле с вариантами размера и стандартным поведением ввода.',Controls.InputStory),
   Textarea: entry('Поля и выбор','Многострочное поле с изменяемой высотой.',Controls.TextareaStory),
   PopupSelect: entry('Поля и выбор','Компактный выбор с поиском внутри отдельного всплывающего окна.',PopupSelectStory),

@@ -1122,6 +1122,15 @@
       ],
       "primaryGroup": "fields",
       "introduced": "0.14.0"
+    },
+    "OTPInput": {
+      "id": "cp-107",
+      "status": "needs-review",
+      "groups": [
+        "fields"
+      ],
+      "primaryGroup": "fields",
+      "introduced": "0.19.0"
     }
   }
 }

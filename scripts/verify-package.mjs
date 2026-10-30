@@ -32,7 +32,7 @@ try {
   const activeInstructions = Object.values(packedManifest.components).filter(record => record.status !== 'archived');
   for (const record of activeInstructions) {
     const instruction = await readFile(join(target, record.instruction), 'utf8');
-    if (!instruction.includes('## Делать') || !instruction.includes('## Не делать')) throw new Error('Missing component usage guidance: ' + record.id);
+    if (!/## (?:Делать|Do)\n/.test(instruction) || !/## (?:Не делать|Don't)\n/.test(instruction)) throw new Error('Missing component usage guidance: ' + record.id);
   }
   for (const entry of ['types', 'import']) {
     const path = packedPackage.exports?.['.']?.[entry];
@@ -42,10 +42,10 @@ try {
   await writeFile(join(temp, 'consumer.tsx'), String.raw`
 import {
   Alert, AnnouncementBar, BottomSheet, Button, ButtonGroup, CardStack, Chip, ColorPicker,
-  ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, Dialog, Field, FileCard, FloatingField, FileTree, Input, KanbanBoard, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
+  ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, Dialog, Field, FileCard, FloatingField, FileTree, Input, OTPInput, KanbanBoard, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
   Popover, PopupSelect, PreviewRail, MarkdownEditorV2, Tabs, RichTextEditor, Slider, StatusBar, Toast, ToastStack,
   markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit,
-  type Surface, type MarkdownEditorV2Props, type TabsProps, type ButtonGroupProps, type KanbanBoardProps, type KanbanColumnProps, type DataTableProps, type DataTableColumn,
+  type OTPInputProps, type Surface, type MarkdownEditorV2Props, type TabsProps, type ButtonGroupProps, type KanbanBoardProps, type KanbanColumnProps, type DataTableProps, type DataTableColumn,
   type BottomSheetProps, type ChipProps, type Color, type ContentLayoutProps,
   type FeedbackStyleProps, type FileTreeNode, type PreviewRailItem, type Size,
   type SliderProps, type ToastStackItem, type Locale, type ScrollAreaProps, type ScrollFadeDirection, type ScrollFadeSize,
@@ -56,6 +56,8 @@ import 'sloyui/styles.css';
 
 const color: Color = 'teal'; const size: Size = 'xl';
 const surfaces: Surface[] = ['shell', 'workspace', 'content', 'overlay', 'page', 'inset', 'panel', 'base', 'canvas', 'raised', 'floating']; void surfaces;
+const otp = { label: 'Verification code', name: 'code', value: '012345', length: 6, size: 'lg', onValueChange: (value: string) => { void value; } } satisfies OTPInputProps;
+export const verificationCode = <OTPInput {...otp} ref={element => { const input: HTMLInputElement | null = element; void input; }} />;
 const canonicalFocus = { label: 'v4 focus', focusRing: { colorToken: '--cap-v4-theme-border-orange-normal' } } satisfies Parameters<typeof Input>[0];
 const popup = { label: 'Archive choice', name: 'choice', defaultValue: 'a', popupWidth: 360, triggerContent: option => <span>{option?.meta}</span>, options: [{ value: 'a', label: 'Alpha', aliases: ['first'], leading: <span>A</span>, description: 'First entry', meta: '4 px' }], onValueChange: (value: string) => { void value; } } satisfies PopupSelectProps;
 const feedback = { tone: 'success', color, appearance: 'soft', contrast: true, surface: 'raised' } satisfies FeedbackStyleProps;
@@ -103,7 +105,7 @@ export const components = <>
   <StatusBar {...feedback} variant="surface" busy={false}>Ready</StatusBar><Toast {...feedback} title="Saved" onDismiss={() => {}}/>
   <FloatingField label="Legacy field"/>
   <FileCard name="report.pdf" sizeLabel="248 KB" onOpen={() => {}} onRemove={() => {}}/>
-  <ToastStack scope="container" shape="pill" items={notifications} position="inline" expandDirection="left" expanded onExpandedChange={expanded => { void expanded; }} onDismiss={id => { void id; }}/>
+  <ToastStack peek={6} gap={8} corner={17} scope="container" shape="pill" items={notifications} position="inline" expandDirection="left" expanded onExpandedChange={expanded => { void expanded; }} onDismiss={id => { void id; }}/>
   <AnnouncementBar surface="canvas" messages={[{id:'news',message:'News',action:{label:'Read',href:'#news'}}]} id="archive-news" autoPlay={false} controls onAction={message => { void message.id; }}/>
   <CardStack items={rows} getKey={row => row.id} renderCard={row => <ContentCard title={row.title}/>} expandDirection="right" expanded review onDecide={(row,decision) => { const value: 'left' | 'right' = decision; void row.id; void value; }} onReset={() => {}}/>
   <LocaleProvider locale={locale}>
@@ -131,7 +133,7 @@ import { resolve, sep } from 'node:path';
 import {
   Alert, AnnouncementBar, BarChart, BottomSheet, Button, ButtonGroup, CardStack, Chip, ColorPicker,
   ComboBox, PopupSelect, ContentCard, ContentLayout, ResizableCard, ResizablePanelGroup, ResizablePanel, ResizableHandle, DataTable, DailyHeader, FileCard, FloatingField, FileTree, HoverPanel, KanbanColumn, LocaleProvider, ScrollArea, useLocale, useTranslate,
-  LineChart, MultiSelect, NavigationMenu, NumberField, PreviewRail, RadioGroup,
+  LineChart, MultiSelect, NavigationMenu, NumberField, OTPInput, PreviewRail, RadioGroup,
   MarkdownEditorV2, Tabs, RichTextEditor, Slider, StatusBar, TagInput, Toast, ToastStack, TreeView, ValueScrubber,
   markdownToRichText, richTextToMarkdown, preserveMarkdownSourceEdit,
 } from 'sloyui';
@@ -139,6 +141,8 @@ const packageEntry = fileURLToPath(import.meta.resolve('sloyui'));
 const archiveDist = resolve(fileURLToPath(new URL('./node_modules/sloyui/dist/', import.meta.url))) + sep;
 if (!packageEntry.startsWith(archiveDist)) throw Error('SSR did not resolve the extracted archive dist: ' + packageEntry);
 const node = React.createElement, noop = () => {}, rows = [{id:'a',name:'Task',value:2}];
+const otpHtml = renderToString(node(OTPInput,{label:'Verification code',name:'code',value:'012345',onValueChange:noop}));
+if ((otpHtml.match(/<input /g) ?? []).length !== 1 || !otpHtml.includes('value="012345"') || !otpHtml.includes('autoComplete="one-time-code"')) throw Error('Archive OTPInput lost its single native input or leading zeroes');
 const columns = [{id:'name',header:'Name',value:row=>row.name},{id:'value',header:'Value',value:row=>row.value}];
 const markdown = '# Archive\n\n**Exact** source.\n\n~~~ts\nconst answer = 42;\n~~~\n';
 const document = markdownToRichText(markdown);

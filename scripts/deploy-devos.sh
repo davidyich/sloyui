@@ -16,7 +16,7 @@ release="$(date -u +%Y%m%dT%H%M%SZ)-${digest}"
 metadata="artifacts/deployment/release.json"
 node -e 'require("fs").writeFileSync(process.argv[1],JSON.stringify({version:process.argv[2],release:process.argv[3]})+"\n")' "$metadata" "$version" "$release"
 archive="artifacts/deployment/${release}.tar.gz"
-COPYFILE_DISABLE=1 tar --no-xattrs --exclude=node_modules --exclude='.env*' -czf "$archive" site server scripts/develop-admin-link.js scripts/verify-site-module-graph.mjs source/component-registry.json source/catalog-settings.json source/component-history.json
+COPYFILE_DISABLE=1 tar --no-xattrs --exclude=node_modules --exclude='.env*' -czf "$archive" site server scripts/develop-admin-link.js scripts/verify-site-module-graph.mjs scripts/verify-release-version.mjs source/component-registry.json source/catalog-settings.json source/component-history.json
 # Metadata is supplied separately so the public root never contains server state.
 ssh_options=(-o UseKeychain=yes -o BatchMode=yes)
 scp "${ssh_options[@]}" "$archive" "$target:/tmp/sloyui-${release}.tar.gz"
@@ -31,18 +31,23 @@ export PATH="$(dirname "$node"):$PATH"
 sudo -n install -d -o "$(id -un)" -g "$(id -gn)" -m 755 "$base" "$base/releases" "$base/backups"
 exec 9>"$base/.release.lock"
 flock -w 60 9
-install -d -m 700 "$base/private" "$base/data" "$base/publication"
 if [ "$channel" = develop ]; then
  test -L "$base/current" || { echo 'Install bootstrap first' >&2; exit 1; }
  pointer=develop; data="$base/data/develop-source"; service=sloyui-develop; port=4319
 else
  pointer=current; data="$base/data/source"; service=sloyui-admin; port=4318
 fi
+
+mkdir "$base/releases/$release"
+tar -xzf "/tmp/sloyui-${release}.tar.gz" -C "$base/releases/$release"
+# The shared lock covers both the comparison and every later active mutation.
+if [ "$channel" = develop ]; then
+ "$node" "$base/releases/$release/scripts/verify-release-version.mjs" "$version" "$base/develop/release.json"
+fi
+install -d -m 700 "$base/private" "$base/data" "$base/publication"
 if [ ! -f "$base/private/oidc-client.json" ]; then
  sudo -n install -o "$(id -un)" -g "$(id -gn)" -m 600 /home/devos/projects/devos-auth/state/sloy-client.json "$base/private/oidc-client.json"
 fi
-mkdir "$base/releases/$release"
-tar -xzf "/tmp/sloyui-${release}.tar.gz" -C "$base/releases/$release"
 node -e 'require("fs").writeFileSync(process.argv[1],JSON.stringify({version:process.argv[2],release:process.argv[3]})+"\n")' "$base/releases/$release/release.json" "$version" "$release"
 find "$base/releases/$release/site" -type d -exec chmod 755 {} +
 find "$base/releases/$release/site" -type f -exec chmod 644 {} +

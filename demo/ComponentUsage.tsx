@@ -23,7 +23,7 @@ export function parseComponentUsage(content:string){
  if(current.content.trim())sections.push({...current,content:current.content.trim()});
  // Hide only the standard component heading/ID, leaving arbitrary owner introductions intact.
  if(sections[0]?.title===''){
-  sections[0].content=sections[0].content.replace(/^# [^\n]+\n+cp-\d+ · Индивидуальная инструкция\s*/,'').trim();
+  sections[0].content=sections[0].content.replace(/^# [^\n]+\n+cp-\d+ · (?:Индивидуальная инструкция|Component instructions)\s*/,'').trim();
   if(!sections[0].content)sections.shift();
  }
  return sections;

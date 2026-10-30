@@ -88,3 +88,6 @@ export type { FileCardProps, FileKind } from './components/file-card.js';
 
 export { ParameterSlider, Slider2D } from './components/parameter-controls.js';
 export type { ParameterSliderProps, Slider2DProps, Slider2DAxis, Slider2DValue } from './components/parameter-controls.js';
+
+export { OTPInput } from './components/otp-input.js';
+export type { OTPInputProps } from './components/otp-input.js';

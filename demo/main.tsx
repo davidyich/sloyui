@@ -96,7 +96,7 @@ function App({locale,onLocale}:{locale:UI.Locale;onLocale:(locale:UI.Locale)=>vo
   const component=isComponentRoute(route)?componentCatalog[route]:undefined;
   const title=c(isComponentRoute(route)?route:[...overviewPages,...foundationPages].find(page=>page.id===route)?.label??route);
   const noticeId=useRef(0);
-  const notify=useCallback((message:string)=>setNotices(current=>[...current.slice(-3),{id:`notice-${++noticeId.current}`,title:message,duration:4500,contrast:true}]),[]);
+  const notify=useCallback((message:string)=>setNotices(current=>[...current,{id:`notice-${++noticeId.current}`,title:message,duration:4500,tone:'success'}]),[]);
   const dismissNotice=useCallback((id:string)=>setNotices(current=>current.filter(item=>item.id!==id)),[]);
   const openSearch=useCallback(()=>setCommand(true),[]);
   const navigate=useCallback((next:CatalogRoute)=>{setRoute(next);setHistoryFor(null);setMobile(false);location.hash=next;main.current?.scrollTo({top:0});},[]);
@@ -132,7 +132,7 @@ function App({locale,onLocale}:{locale:UI.Locale;onLocale:(locale:UI.Locale)=>vo
     </div>
     </div><UI.BottomSheet open={mobile} onOpenChange={setMobile} title={c("Компоненты")} variant="edge" snapPoints={[.55,.88]} defaultSnap={1} className="catalog-mobile-drawer"><Navigation route={route} onNavigate={navigate} onSearch={()=>{setMobile(false);setCommand(true);}}/><CatalogFooter locale={locale} onLocale={onLocale} onNavigate={navigate}/></UI.BottomSheet>
     <UI.CommandPalette showTitle={false} open={command} onOpenChange={setCommand} items={commands} placeholder={c("Найти компонент…")}/>
-    <UI.ToastStack className="catalog-notifications" items={notices} onDismiss={dismissNotice} position="top-center" limit={4} showExpandHint={false}/>
+    <UI.ToastStack className="catalog-notifications" items={notices} onDismiss={dismissNotice} position="top-center" limit={4} peek={6} gap={8} showExpandHint={false}/>
   </div></CatalogAdminProvider>;
 }
 function FoundationPage({route,accent,copy,surface}:{route:FoundationRoute;surface:Surface;accent:UI.Color;radius:string;density:Density;copy:(value:string)=>void}){
