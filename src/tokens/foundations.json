@@ -2,7 +2,7 @@
   "$extensions": {
     "com.sloyui.export": {
       "schemaVersion": 2,
-      "version": "0.18.3",
+      "version": "0.18.16",
       "kind": "raw-primitives",
       "source": "figma-modes.json",
       "collection": "Primitives",
@@ -490,39 +490,21 @@
       }
     }
   },
-  "font-family/inter": {
+  "font-family/medeo-sans": {
     "$type": "fontFamily",
-    "$value": "Inter",
+    "$value": "Medeo Sans",
     "$extensions": {
       "com.sloyui.token": {
-        "path": "Primitives/font-family/inter"
+        "path": "Primitives/font-family/medeo-sans"
       }
     }
   },
-  "font-family/georgia": {
+  "font-family/medeo-mono": {
     "$type": "fontFamily",
-    "$value": "Georgia",
+    "$value": "Medeo Mono",
     "$extensions": {
       "com.sloyui.token": {
-        "path": "Primitives/font-family/georgia"
-      }
-    }
-  },
-  "font-family/courier-new": {
-    "$type": "fontFamily",
-    "$value": "Courier New",
-    "$extensions": {
-      "com.sloyui.token": {
-        "path": "Primitives/font-family/courier-new"
-      }
-    }
-  },
-  "font-family/overpass-mono": {
-    "$type": "fontFamily",
-    "$value": "Overpass Mono",
-    "$extensions": {
-      "com.sloyui.token": {
-        "path": "Primitives/font-family/overpass-mono"
+        "path": "Primitives/font-family/medeo-mono"
       }
     }
   },

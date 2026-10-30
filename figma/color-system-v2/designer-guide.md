@@ -37,7 +37,7 @@
 
 ## Выберите роль
 
-Поддерживаются neutral и шесть акцентов: `blue`, `green`, `orange`, `red`, `pink`, `purple`. В семантической группе они лежат плоским списком; оттенок и состояние находятся в имени, например `surface/secondary/blue-normal` и `surface/secondary/blue-active`.
+Поддерживаются neutral и семь акцентов: `blue`, `green`, `orange`, `red`, `pink`, `purple`. В семантической группе они лежат плоским списком; оттенок и состояние находятся в имени, например `surface/secondary/blue-normal` и `surface/secondary/blue-active`.
 
 | Задача | Точный путь в V2 · Surface |
 | --- | --- |

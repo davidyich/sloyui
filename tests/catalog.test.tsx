@@ -18,3 +18,9 @@ describe('Isolated component catalogue', () => {
     for (const [hash, route] of Object.entries({ '#workbench': 'ActionBar', '#forms': 'Input', '#content-blocks': 'Calendar', '#overlays': 'Dialog', '#floating-field': 'Input', '#button': 'Button', '#%E0%A4%A': 'Button', '#constructor': 'Button', '#toString': 'Button', '#__proto__': 'Button', '#missing': 'Button' })) expect(resolveRoute(hash)).toBe(route);
   });
 });
+
+it('keeps legacy token links on the unified colors page',()=>{
+ expect(resolveRoute('#tokens')).toBe('colors');
+ expect(resolveRoute('#tokens?source=bookmark')).toBe('colors');
+ expect(resolveRoute('#layers')).toBe('layers');
+});

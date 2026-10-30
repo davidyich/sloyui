@@ -19,7 +19,7 @@ describe('Markdown source bridge', () => {
     expect(richTextToMarkdown(markdownToRichText(source))).toBe(source);
   });
 
-  it.each(['pink', 'purple', 'teal', 'rose'])('keeps %s text and highlight marks editable through Markdown', color => {
+  it.each(['pink', 'purple', 'yellow', 'orange', 'teal', 'rose'])('keeps %s text and highlight marks editable through Markdown', color => {
     for (const attribute of ['color', 'highlight'] as const) {
       const source = `<span data-cap-${attribute}="${color}">Original</span>\n`;
       const document = markdownToRichText(source, { extensions: true });

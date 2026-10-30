@@ -43,3 +43,17 @@ it('adapts the floating primary action to an accessible icon in vertical orienta
  rerender(<FloatingActionBar label="Tools" action={{label:'Done',icon:'check',onClick:()=>{}}}/>);
  expect(screen.getByRole('button',{name:'Done'})).toHaveTextContent('Done');
 });
+
+it('restores selection after an initially inert preview becomes interactive, without a value change', async () => {
+ const {container}=render(<div inert><SegmentedControl label="Preview" value="a" onValueChange={()=>{}} options={[{value:'a',label:'Cards'},{value:'b',label:'List'}]}/></div>);
+ const selection=container.querySelector<HTMLElement>('[data-kind=selection]')!;
+ expect(selection).not.toHaveAttribute('data-visible');
+ expect(selection.style.opacity).toBe('');
+ container.firstElementChild!.removeAttribute('inert');
+ await new Promise(resolve=>setTimeout(resolve,0));
+ expect(selection).toHaveAttribute('data-visible','true');
+ expect(screen.getByRole('radio',{name:'Cards'})).toBeChecked();
+ fireEvent.pointerOver(screen.getByText('List'));
+ fireEvent.pointerLeave(container.querySelector('.cap-segmented')!);
+ expect(selection).toHaveAttribute('data-visible','true');
+});

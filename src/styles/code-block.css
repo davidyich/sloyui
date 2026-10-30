@@ -66,11 +66,11 @@
 
 /* Density owns geometry independently from header and frame appearance. */
 .cap-code[data-density=comfortable]{--cap-code-header-inset:8px;--cap-code-control-inset:8px;--cap-code-body-inset:16px;--cap-code-body-block:16px;--cap-code-line-height:1.75}
-.cap-code>figcaption,.cap-code-tabs>.cap-tab-bar{min-height:0;box-sizing:border-box;padding:var(--cap-code-header-inset);gap:var(--cap-space-detail-6);align-items:center}
+.cap-code>figcaption,.cap-code-tabs>.cap-tab-bar{min-height:0;box-sizing:border-box;padding:calc(var(--cap-code-header-inset) + var(--cap-radius-inset)) calc(var(--cap-code-header-inset) + var(--cap-radius-inset)) var(--cap-code-header-inset);gap:var(--cap-space-detail-6);align-items:center}
 .cap-code .cap-code-language-select{min-height:28px;height:28px;padding-inline:var(--cap-code-control-inset)}
 .cap-code-label{padding-inline:var(--cap-code-control-inset)}
 .cap-code-heading{gap:var(--cap-space-detail-6)}
-.cap-code pre,.cap-markdown .cap-code>pre,.cap-code-editor{padding:var(--cap-code-body-block) var(--cap-code-body-inset);line-height:var(--cap-code-line-height)}
+.cap-code pre,.cap-markdown .cap-code>pre,.cap-code-editor{padding:var(--cap-code-body-block) calc(var(--cap-code-body-inset) + var(--cap-radius-inset)) calc(var(--cap-code-body-block) + var(--cap-radius-inset));line-height:var(--cap-code-line-height)}
 .cap-code-editor [contenteditable]{line-height:var(--cap-code-line-height)}
 .cap-code-source-line,.cap-code-line-number{min-height:calc(var(--cap-code-line-height) * 1em)}
 .cap-code-tabs .cap-tab-list>button{min-height:28px;height:28px;padding:var(--cap-space-1) var(--cap-code-control-inset);border:0;line-height:20px}
@@ -81,3 +81,5 @@
 .cap-code-tabs .cap-tab-list:has(>.cap-moving-highlight[data-kind=hover][data-visible])>button:not([aria-selected=true]):is(:hover,:focus-visible){background:transparent}
 .cap-code :is(figcaption,.cap-tab-bar) :is(.cap-button[data-variant=ghost],.cap-select-trigger):not(:disabled):is(:hover,:focus-visible,:active,[aria-expanded=true],[data-state=hover],[data-state=pressed]),.cap-code-tabs .cap-tab-list>button:not(:disabled):hover{color:var(--cap-accent-text)}
 @media(pointer:coarse){.cap-code-tabs .cap-tab-list>button{min-height:var(--cap-touch-target);height:auto}}
+
+.cap-code > :is(pre,.cap-code-editor):first-child { padding-top:calc(var(--cap-code-body-block) + var(--cap-radius-inset)); }

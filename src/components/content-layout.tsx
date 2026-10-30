@@ -2,6 +2,7 @@ import type { Surface } from './surface.js';
 import { useTranslate } from './locale.js';
 import { useEffect, useId, useRef, useState, type CSSProperties, type HTMLAttributes, type ReactNode } from 'react';
 import { IconButton, cx } from './primitives.js';
+import { ResizeSeparator } from './resize-separator.js';
 import { clampResize, resizeBounds, useFrameResize, useResizeSpace } from './resize-utils.js';
 export interface ContentPane {
   content: ReactNode; label: string; open?: boolean; onOpenChange?: (open: boolean) => void;
@@ -18,7 +19,7 @@ export interface ContentLayoutProps extends HTMLAttributes<HTMLDivElement> {
   minContentSize?: number;
 }
 type Side = 'left' | 'right';
-const sides: Side[] = ['left', 'right'], handleSize = 12;
+const sides: Side[] = ['left', 'right'];
 /** Independent width/height state; container fitting takes precedence over pane minimums. */
 export function ContentLayout({ left, right, contentWidth = '100%', label: suppliedLabel, orientation = 'horizontal', divider = 'hover', stretch = true, collapseAt = 760, minContentSize, children, className, style, ...props }: ContentLayoutProps) {
   const t = useTranslate();
@@ -36,7 +37,7 @@ export function ContentLayout({ left, right, contentWidth = '100%', label: suppl
   const configuredSize = (side: Side) => { const pane = paneFor(side); if (!pane) return 0; const limit = bounds(pane); return clampResize(vertical ? pane.height ?? heights[side] : pane.width ?? widths[side], limit.min, limit.max); };
   const visible = sides.filter(side => paneFor(side) && paneFor(side)?.open !== false);
   const axisSpace = vertical ? space.height : space.width;
-  const budget = axisSpace === null || collapsed ? Infinity : Math.max(0, axisSpace - mainMin - visible.length * handleSize);
+  const budget = axisSpace === null || collapsed ? Infinity : Math.max(0, axisSpace - mainMin);
   const sizes = { left: configuredSize('left'), right: configuredSize('right') };
   const total = visible.reduce((sum, side) => sum + sizes[side], 0);
   if (total > budget) {
@@ -62,7 +63,7 @@ export function ContentLayout({ left, right, contentWidth = '100%', label: suppl
   const renderPane = (side: Side) => {
     const pane = paneFor(side); if (!pane || pane.open === false) return null;
     const size = sizes[side], limit = boundsFor(side), resizable = vertical ? pane.height === undefined || !!pane.onHeightChange : pane.width === undefined || !!pane.onWidthChange;
-    const handle = resizable ? <div role="separator" tabIndex={0} aria-orientation={vertical ? 'horizontal' : 'vertical'} aria-label={`${vertical ? t("Высота", "Height") : t("Ширина", "Width")}: ${pane.label}`} aria-describedby={`${id}-resize-help`} aria-controls={`${id}-${side}`} aria-valuemin={Math.round(limit.min)} aria-valuemax={Math.round(limit.max)} aria-valuenow={size} aria-valuetext={`${size} px`} className="cap-content-resizer" data-resizing={resizing === side || undefined} onPointerDown={event => {
+    const handle = resizable ? <ResizeSeparator orientation={orientation} appearance={divider==='always'?'grip':'line'} role="separator" tabIndex={0} aria-orientation={vertical ? 'horizontal' : 'vertical'} aria-label={`${vertical ? t("Высота", "Height") : t("Ширина", "Width")}: ${pane.label}`} aria-describedby={`${id}-resize-help`} aria-controls={`${id}-${side}`} aria-valuemin={Math.round(limit.min)} aria-valuemax={Math.round(limit.max)} aria-valuenow={size} aria-valuetext={`${size} px`} className="cap-content-resizer" data-resizing={resizing === side || undefined} onPointerDown={event => {
       if (event.button !== 0 || drag.current) return; event.preventDefault(); event.currentTarget.focus({ preventScroll: true });
       drag.current = { side, start: vertical ? event.clientY : event.clientX, size, pointerId: event.pointerId, handle: event.currentTarget }; setResizing(side); event.currentTarget.setPointerCapture?.(event.pointerId);
     }} onPointerMove={event => { const active = drag.current; if (active?.side === side && active.pointerId === event.pointerId) scheduled.queue({ side, size: active.size + ((vertical ? event.clientY : event.clientX) - active.start) * (side === 'left' ? 1 : -1) }); }} onPointerUp={event => { if (drag.current?.pointerId === event.pointerId) finish(); }} onPointerCancel={event => { if (drag.current?.pointerId === event.pointerId) finish(true); }} onLostPointerCapture={event => { if (drag.current?.pointerId === event.pointerId) finish(true); }} onKeyDown={event => {
@@ -70,7 +71,7 @@ export function ContentLayout({ left, right, contentWidth = '100%', label: suppl
       const increase = vertical ? 'ArrowDown' : 'ArrowRight', decrease = vertical ? 'ArrowUp' : 'ArrowLeft';
       if (![increase, decrease, 'Home', 'End'].includes(event.key)) return; event.preventDefault();
       resize(side, event.key === 'Home' ? limit.min : event.key === 'End' ? limit.max : size + (event.key === increase ? 1 : -1) * (side === 'left' ? 1 : -1) * (event.shiftKey ? 40 : 10));
-    }}><span aria-hidden="true" /></div> : <div className="cap-content-divider" aria-hidden="true" />;
+    }}/> : <div className="cap-content-divider" aria-hidden="true" />;
     const panel = <section id={`${id}-${side}`} role="region" aria-label={pane.label} className="cap-content-pane cap-surface-boundary" data-surface={pane.surface ?? 'raised'} style={{ '--cap-pane-size': `${size}px` } as CSSProperties}><header><strong>{pane.label}</strong>{pane.onOpenChange && <IconButton icon="close" size="sm" variant="ghost" label={`${t("Закрыть: ", "Close: ")}${pane.label}`} onClick={() => pane.onOpenChange?.(false)} />}</header><div className="cap-content-pane-scroll" tabIndex={0} role="group" aria-label={pane.label}><div className="cap-content-pane-inner" style={{ maxWidth: pane.contentWidth }}>{pane.content}</div></div></section>;
     return <>{side === 'right' && handle}{panel}{side === 'left' && handle}</>;
   };

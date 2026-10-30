@@ -15,7 +15,7 @@ const canonicalVariables=new Map(canonicalGraph.collections.flatMap(c=>c.variabl
 const canonicalPalette=canonicalCollections.get('Palette');
 if(!canonicalPalette)throw new Error('Build the canonical v4 graph before the v2 bridge.');
 const accents=[...new Set(canonicalPalette.variables.filter(v=>/^[a-z]+\/01$/.test(v.name)).map(v=>v.name.split('/')[0]))];
-if(JSON.stringify(accents.slice().sort())!==JSON.stringify(canonicalSource.accentSystem.accents.slice().sort())||canonicalPalette.variables.length!==289)throw new Error('V2 requires six canonical shared hue ramps, neutral and black/white.');
+if(JSON.stringify(accents.slice().sort())!==JSON.stringify(canonicalSource.accentSystem.accents.slice().sort())||canonicalPalette.variables.length!==canonicalSource.paletteSelection.opaqueCount)throw new Error('V2 requires canonical shared hue ramps, neutral and black/white.');
 // source.json remains the historical v2 specimen. Its public exports use the
 // shared accent inventory while retaining existing axis names and their order.
 export const source={...historicalSource,accents,alphaSteps:[...new Set([...canonicalSource.alphaSteps,...historicalSource.alphaSteps])].sort((a,b)=>a-b),surfaces:[...new Set([...historicalSource.surfaces,'Invert'])]};

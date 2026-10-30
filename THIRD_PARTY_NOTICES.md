@@ -4,9 +4,8 @@ Sloy UI is an independent React UI library. [MIT](LICENSE) applies to its origin
 
 | Material | Authors / rights holders | Use | Full license |
 | --- | --- | --- | --- |
+| Medeo Sans, Mono and Pixel | DNF and the Geist and Inter project authors | Optional bundled variable fonts via medeo-font | [OFL 1.1](licenses/medeo-OFL-1.1.txt), also `dist/fonts/medeo-LICENSE.txt` |
 | Lucide and Feather-derived icons | Lucide Icons and Contributors; Cole Bemis | Bundled library icons and catalogue gallery | [ISC and MIT](licenses/lucide-ISC-MIT.txt), also `dist/lucide-LICENSE.txt` |
-| Inter variable fonts | The Inter Project Authors | Optional bundled WOFF2 files via Fontsource | [OFL 1.1](licenses/inter-OFL-1.1.txt), also `dist/fonts/inter-LICENSE.txt` |
-| Overpass Mono variable fonts | The Overpass Project Authors | Optional bundled WOFF2 files via Fontsource | [OFL 1.1](licenses/overpass-mono-OFL-1.1.txt), also `dist/fonts/overpass-mono-LICENSE.txt` |
 | Arc Library | Elia Kuratli | Adapted component and interaction references | [MIT](licenses/arc-library-MIT.txt); mapping in [source inventory](docs/third-party.md#arc-adaptations) |
 | React / React DOM | Meta Platforms, Inc. and affiliates | Library peer dependencies; compiled catalogue runtime | [React MIT](licenses/react-MIT.txt), [React DOM MIT](licenses/react-dom-MIT.txt) |
 

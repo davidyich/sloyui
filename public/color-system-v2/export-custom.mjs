@@ -9,7 +9,7 @@ import { BLACK, WHITE, fromHex, composite, contrast } from './color-engine.mjs';
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const source = JSON.parse(fs.readFileSync(path.join(dir, 'source.json')));
 const resolved = JSON.parse(fs.readFileSync(path.join(dir, '../token-system-v4/palette-contexts.json')));
-const hues = ['blue', 'green', 'orange', 'red', 'pink', 'purple'];
+const hues = ['blue', 'green', 'yellow', 'orange', 'red', 'pink', 'purple'];
 const clone = value => structuredClone(value);
 const css = value => `rgb(${[value.r, value.g, value.b].map(n => Number((n * 255).toFixed(8))).join(' ')} / ${value.a})`;
 

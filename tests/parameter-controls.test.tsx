@@ -73,6 +73,17 @@ describe('ParameterSlider',()=>{
     expect(row).toHaveAttribute('data-handle-position','end');expect(screen.getByRole('slider')).toBeDisabled();
     expect(container.querySelector('.cap-parameter-label-ink')).toHaveTextContent('A very long parameter label');
   });
+  it('renders optional bounded step marks at actual positions without affecting range semantics',()=>{
+    const {container,rerender}=render(<ParameterSlider label="Steps" min={10} max={95} step={20} value={50} showTicks/>);
+    const marks=container.querySelectorAll<HTMLElement>('.cap-parameter-ticks > span');
+    expect(marks).toHaveLength(5); expect(marks[1].style.getPropertyValue('--cap-tick-position')).toBe(`${20/85*100}%`);
+    expect(container.querySelector('.cap-parameter-ticks')).toHaveAttribute('aria-hidden','true');
+    expect(screen.getByRole('slider',{name:'Steps'})).toHaveValue('50');
+    rerender(<ParameterSlider label="Steps" min={0} max={100} step={1} showTicks/>);
+    expect(container.querySelector('.cap-parameter-ticks')).toBeNull();
+    rerender(<ParameterSlider label="Steps" min={0} max={100} step={10}/>);
+    expect(container.querySelector('.cap-parameter-ticks')).toBeNull();
+  });
   it('rolls back cancelled gestures and commits only final pointer/key values',()=>{
     vi.stubGlobal('PointerEvent',TestPointerEvent);const commit=vi.fn();
     render(<ParameterSlider label="Opacity" defaultValue={50} onValueCommit={commit}/>);const slider=screen.getByRole('slider',{name:'Opacity'});

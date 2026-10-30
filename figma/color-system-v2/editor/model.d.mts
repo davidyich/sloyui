@@ -47,5 +47,5 @@ export function effectiveContextTheme(theme:string,surface:string,custom?:{Light
 export function colorDifference(a:Color,b:Color):number;
 export const scaleLabels:Record<PaletteScaleId,string>;
 
-export function projectAlphaRecipes(accent:Accent,source:any,resolved:any,custom?:{Light:string;Dark:string},rules?:Rules,palette?:PaletteScale[],neutralSystem?:NeutralSystem):Record<string,import('./alpha-recipes.mjs').AlphaRecipe>;
+export function projectAlphaRecipes(accent:Accent,source:any,resolved:any,custom?:{Light:string;Dark:string},rules?:Rules,palette?:PaletteScale[],neutralSystem?:NeutralSystem,requestedFamily?:string):Record<string,import('./alpha-recipes.mjs').AlphaRecipe>;
 export function resolveContextBackings(theme:string,scheme:string,surface:string,source:any,resolved:any,custom?:{Light:string;Dark:string},rules?:Rules,neutralSystem?:NeutralSystem):{isCustom:boolean;glass:boolean;effectiveTheme:string;dark:boolean;bg:Color;neutral:Record<string,Color>;neutralContext:any;backings:{name:string;base:Color;extreme:number}[];bases:Color[]};

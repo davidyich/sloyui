@@ -2,6 +2,71 @@
   "schemaVersion": 1,
   "kit": [
     {
+      "version": "0.18.16",
+      "date": "2026-10-30",
+      "summary": "Unify color foundations and localization, improve the default Yellow, move Palette Lab calculations off the UI thread, and reuse a boundary resize affordance without gutters."
+    },
+    {
+      "version": "0.18.15",
+      "date": "2026-10-30",
+      "summary": "Complete optical header/content clearance in remaining containers, preserve editor CodeBlock and CardStack geometry, and align raw comment/compact command corner calculations."
+    },
+    {
+      "version": "0.18.14",
+      "date": "2026-10-30",
+      "summary": "The collapsed appearance reveal reserves one inter-control gap, and expanded/square dock spacing remains consistent."
+    },
+    {
+      "version": "0.18.13",
+      "date": "2026-10-30",
+      "summary": "The expanding dock has equal compact clearance, large rounded content shells provide optical heading/content insets, and announcement/nested corner shapes stay coherent."
+    },
+    {
+      "version": "0.18.12",
+      "date": "2026-10-30",
+      "summary": "Moving selection highlights recover when modal inert state is removed, and their visibility no longer has competing React and imperative opacity owners."
+    },
+    {
+      "version": "0.18.11",
+      "date": "2026-10-30",
+      "summary": "Yellow joins the accent palette. Nested control corners remain concentric, optional smooth corners inherit through portals, and catalogue settings expand compactly with secondary focus options."
+    },
+    {
+      "version": "0.18.10",
+      "date": "2026-10-27",
+      "summary": "Playground parameters share one row height across control types, density and mobile layouts; multiline values open in an adjacent editor."
+    },
+    {
+      "version": "0.18.9",
+      "date": "2026-10-27",
+      "summary": "Accent secondary outlines are quieter. Focus outlines can be switched independently, the playground color parameter uses ColorPicker, and compact previews stay centered."
+    },
+    {
+      "version": "0.18.8",
+      "date": "2026-10-27",
+      "summary": "Playground numeric parameters follow Figma-style label and Alt-drag scrubbing with variable speed, larger keyboard steps and meaningful bounds."
+    },
+    {
+      "version": "0.18.7",
+      "date": "2026-10-27",
+      "summary": "Playground numeric parameters use exact editable fields with label scrubbing. NumberField retains partial input and ParameterSlider can show step marks."
+    },
+    {
+      "version": "0.18.6",
+      "date": "2026-10-27",
+      "summary": "Playground settings use filled numeric sliders and compact parameter rows shared with Palette Lab. Unselected Checkbox and Radio borders use a quieter, accessible local contrast."
+    },
+    {
+      "version": "0.18.5",
+      "date": "2026-10-27",
+      "summary": "Medeo Sans also serves headings; the typography catalogue groups shared font roles into two families. Decorative web borders are softened while structural edges and focus remain independent."
+    },
+    {
+      "version": "0.18.4",
+      "date": "2026-10-27",
+      "summary": "Medeo Sans and Medeo Mono replace the default interface and monospace families throughout the kit. The optional self-hosted font bundle includes italic styles and archived Medeo Pixel."
+    },
+    {
       "version": "0.18.3",
       "date": "2026-10-23",
       "summary": "Default Primary content is white in Light and black in Dark local polarity. Fills adapt to both states, with a warmer authored Orange palette and matching Figma guidance."
@@ -190,8 +255,20 @@
   "components": {
     "cp-001": {
       "name": "Button",
-      "version": "0.12.3",
+      "version": "0.12.5",
       "entries": [
+        {
+          "version": "0.12.5",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Optional native smooth corners follow the nearest context and preserve explicit circular geometry."
+        },
+        {
+          "version": "0.12.4",
+          "kitVersion": "0.18.9",
+          "date": "2026-10-27",
+          "summary": "Soft accent outlines use a quieter toggleable boundary; focus outline visibility follows the independent focus context."
+        },
         {
           "version": "0.12.3",
           "kitVersion": "0.15.6",
@@ -232,8 +309,20 @@
     },
     "cp-002": {
       "name": "IconButton",
-      "version": "0.12.2",
+      "version": "0.12.4",
       "entries": [
+        {
+          "version": "0.12.4",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Optional native smooth corners follow the nearest context and preserve explicit circular geometry."
+        },
+        {
+          "version": "0.12.3",
+          "kitVersion": "0.18.9",
+          "date": "2026-10-27",
+          "summary": "Soft accent outlines use a quieter toggleable boundary; focus outline visibility follows the independent focus context."
+        },
         {
           "version": "0.12.2",
           "kitVersion": "0.15.4",
@@ -278,8 +367,26 @@
     },
     "cp-005": {
       "name": "Tag",
-      "version": "0.12.4",
+      "version": "0.12.7",
       "entries": [
+        {
+          "version": "0.12.7",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
+        {
+          "version": "0.12.6",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Yellow is available as an independent accent alongside Orange."
+        },
+        {
+          "version": "0.12.5",
+          "kitVersion": "0.18.9",
+          "date": "2026-10-27",
+          "summary": "Soft accent outlines use a quieter toggleable boundary; focus outline visibility follows the independent focus context."
+        },
         {
           "version": "0.12.4",
           "kitVersion": "0.17.0",
@@ -326,8 +433,14 @@
     },
     "cp-006": {
       "name": "Counter",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -344,8 +457,14 @@
     },
     "cp-007": {
       "name": "TextAction",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -362,8 +481,20 @@
     },
     "cp-008": {
       "name": "ContentLayout",
-      "version": "0.12.2",
+      "version": "0.12.4",
       "entries": [
+        {
+          "version": "0.12.4",
+          "kitVersion": "0.18.16",
+          "date": "2026-10-30",
+          "summary": "Pixel panes reuse the shared boundary separator without an extra gutter; available content sizing and keyboard limits use the full container."
+        },
+        {
+          "version": "0.12.3",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.2",
           "kitVersion": "0.15.1",
@@ -386,8 +517,14 @@
     },
     "cp-009": {
       "name": "IconPicker",
-      "version": "0.12.1",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Painted corner shapes follow the nearest smoothing context; nested or menu content preserves the applicable inset geometry."
+        },
         {
           "version": "0.12.1",
           "kitVersion": "0.13.0",
@@ -416,8 +553,26 @@
     },
     "cp-010": {
       "name": "IconBox",
-      "version": "0.12.2",
+      "version": "0.12.5",
       "entries": [
+        {
+          "version": "0.12.5",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
+        {
+          "version": "0.12.4",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Yellow is available as an independent accent alongside Orange."
+        },
+        {
+          "version": "0.12.3",
+          "kitVersion": "0.18.9",
+          "date": "2026-10-27",
+          "summary": "Soft accent outlines use a quieter toggleable boundary; focus outline visibility follows the independent focus context."
+        },
         {
           "version": "0.12.2",
           "kitVersion": "0.13.3",
@@ -458,8 +613,14 @@
     },
     "cp-012": {
       "name": "Kbd",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Painted corner shapes follow the nearest smoothing context; nested or menu content preserves the applicable inset geometry."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -481,8 +642,14 @@
     },
     "cp-014": {
       "name": "Skeleton",
-      "version": "0.11.4",
+      "version": "0.11.5",
       "entries": [
+        {
+          "version": "0.11.5",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Painted corner shapes follow the nearest smoothing context; nested or menu content preserves the applicable inset geometry."
+        },
         {
           "version": "0.11.4",
           "kitVersion": "0.11.4",
@@ -505,8 +672,20 @@
     },
     "cp-016": {
       "name": "Input",
-      "version": "0.12.2",
+      "version": "0.12.4",
       "entries": [
+        {
+          "version": "0.12.4",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
+        {
+          "version": "0.12.3",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Optional native smooth corners follow the nearest context and preserve explicit circular geometry."
+        },
         {
           "version": "0.12.2",
           "kitVersion": "0.13.1",
@@ -541,8 +720,20 @@
     },
     "cp-017": {
       "name": "Textarea",
-      "version": "0.12.2",
+      "version": "0.12.4",
       "entries": [
+        {
+          "version": "0.12.4",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
+        {
+          "version": "0.12.3",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Optional native smooth corners follow the nearest context and preserve explicit circular geometry."
+        },
         {
           "version": "0.12.2",
           "kitVersion": "0.13.1",
@@ -577,8 +768,26 @@
     },
     "cp-018": {
       "name": "Select",
-      "version": "0.13.5",
+      "version": "0.13.8",
       "entries": [
+        {
+          "version": "0.13.8",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Painted corner shapes follow the nearest smoothing context; nested or menu content preserves the applicable inset geometry."
+        },
+        {
+          "version": "0.13.7",
+          "kitVersion": "0.18.12",
+          "date": "2026-10-30",
+          "summary": "Shared moving selection/hover layers recover after modal inert state is removed and keep visibility when geometry is unchanged."
+        },
+        {
+          "version": "0.13.6",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Nested shells add their actual inset and structural border to the inner radius; optional smooth corners inherit through portals."
+        },
         {
           "version": "0.13.5",
           "kitVersion": "0.15.6",
@@ -655,8 +864,14 @@
     },
     "cp-019": {
       "name": "Field",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Optional native smooth corners follow the nearest context and preserve explicit circular geometry."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -673,8 +888,20 @@
     },
     "cp-020": {
       "name": "Checkbox",
-      "version": "0.12.1",
+      "version": "0.12.3",
       "entries": [
+        {
+          "version": "0.12.3",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Optional native smooth corners follow the nearest context and preserve explicit circular geometry."
+        },
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.6",
+          "date": "2026-10-27",
+          "summary": "Unselected control outlines use the locally contrasted focus color, reducing excessive brightness while remaining visible on the current surface."
+        },
         {
           "version": "0.12.1",
           "kitVersion": "0.13.1",
@@ -697,8 +924,14 @@
     },
     "cp-021": {
       "name": "Radio",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.6",
+          "date": "2026-10-27",
+          "summary": "Unselected control outlines use the locally contrasted focus color, reducing excessive brightness while remaining visible on the current surface."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -751,8 +984,20 @@
     },
     "cp-024": {
       "name": "SegmentedControl",
-      "version": "0.12.5",
+      "version": "0.12.7",
       "entries": [
+        {
+          "version": "0.12.7",
+          "kitVersion": "0.18.12",
+          "date": "2026-10-30",
+          "summary": "Shared moving selection/hover layers recover after modal inert state is removed and keep visibility when geometry is unchanged."
+        },
+        {
+          "version": "0.12.6",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Preserve the selected inner radius, derive the shell from real padding/border and paint neutral selection from the local surface, including Invert. Optional smooth corners inherit independently."
+        },
         {
           "version": "0.12.5",
           "kitVersion": "0.15.5",
@@ -805,8 +1050,20 @@
     },
     "cp-025": {
       "name": "Card",
-      "version": "0.12.1",
+      "version": "0.12.3",
       "entries": [
+        {
+          "version": "0.12.3",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Outer content edges add the local optical radius inset once; headers, content and actions stay clear of large rounded corners."
+        },
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Optional native smooth corners follow the nearest context and preserve explicit circular geometry."
+        },
         {
           "version": "0.12.1",
           "kitVersion": "0.13.0",
@@ -829,8 +1086,14 @@
     },
     "cp-026": {
       "name": "ObjectCard",
-      "version": "0.12.1",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Outer content edges add the local optical radius inset once; headers, content and actions stay clear of large rounded corners."
+        },
         {
           "version": "0.12.1",
           "kitVersion": "0.13.0",
@@ -853,8 +1116,14 @@
     },
     "cp-027": {
       "name": "CollectionRow",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -871,8 +1140,14 @@
     },
     "cp-028": {
       "name": "SidebarItem",
-      "version": "0.12.1",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.1",
           "kitVersion": "0.13.1",
@@ -895,8 +1170,14 @@
     },
     "cp-029": {
       "name": "PropertyRow",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -913,8 +1194,14 @@
     },
     "cp-030": {
       "name": "Breadcrumbs",
-      "version": "0.12.1",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.1",
           "kitVersion": "0.13.1",
@@ -937,8 +1224,14 @@
     },
     "cp-031": {
       "name": "Callout",
-      "version": "0.12.1",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.1",
           "kitVersion": "0.13.3",
@@ -961,8 +1254,14 @@
     },
     "cp-032": {
       "name": "EmptyState",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -979,8 +1278,14 @@
     },
     "cp-033": {
       "name": "Accordion",
-      "version": "0.12.2",
+      "version": "0.12.3",
       "entries": [
+        {
+          "version": "0.12.3",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Outer content edges add the local optical radius inset once; headers, content and actions stay clear of large rounded corners."
+        },
         {
           "version": "0.12.2",
           "kitVersion": "0.16.4",
@@ -1009,8 +1314,26 @@
     },
     "cp-034": {
       "name": "Tabs",
-      "version": "0.12.6",
+      "version": "0.12.9",
       "entries": [
+        {
+          "version": "0.12.9",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
+        {
+          "version": "0.12.8",
+          "kitVersion": "0.18.12",
+          "date": "2026-10-30",
+          "summary": "Shared moving selection/hover layers recover after modal inert state is removed and keep visibility when geometry is unchanged."
+        },
+        {
+          "version": "0.12.7",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Preserve the selected inner radius, derive the shell from real padding/border and paint neutral selection from the local surface, including Invert. Optional smooth corners inherit independently."
+        },
         {
           "version": "0.12.6",
           "kitVersion": "0.17.0",
@@ -1069,8 +1392,14 @@
     },
     "cp-035": {
       "name": "Table",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -1087,8 +1416,20 @@
     },
     "cp-036": {
       "name": "CodeBlock",
-      "version": "0.12.0",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Code and caption content stay clear of rounded corners; header actions retain their own visible-size geometry."
+        },
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.9",
+          "date": "2026-10-27",
+          "summary": "Soft accent outlines use a quieter toggleable boundary; focus outline visibility follows the independent focus context."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -1123,8 +1464,20 @@
     },
     "cp-037": {
       "name": "Dialog",
-      "version": "0.12.0",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Outer content edges add the local optical radius inset once; headers, content and actions stay clear of large rounded corners."
+        },
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Optional native smooth corners follow the nearest context and preserve explicit circular geometry."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -1147,8 +1500,20 @@
     },
     "cp-038": {
       "name": "Drawer",
-      "version": "0.12.0",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Outer content edges add the local optical radius inset once; headers, content and actions stay clear of large rounded corners."
+        },
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Optional native smooth corners follow the nearest context and preserve explicit circular geometry."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -1171,8 +1536,14 @@
     },
     "cp-039": {
       "name": "Tooltip",
-      "version": "0.12.3",
+      "version": "0.12.4",
       "entries": [
+        {
+          "version": "0.12.4",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.3",
           "kitVersion": "0.15.6",
@@ -1213,8 +1584,26 @@
     },
     "cp-040": {
       "name": "Menu",
-      "version": "0.12.4",
+      "version": "0.12.7",
       "entries": [
+        {
+          "version": "0.12.7",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Painted corner shapes follow the nearest smoothing context; nested or menu content preserves the applicable inset geometry."
+        },
+        {
+          "version": "0.12.6",
+          "kitVersion": "0.18.12",
+          "date": "2026-10-30",
+          "summary": "Shared moving selection/hover layers recover after modal inert state is removed and keep visibility when geometry is unchanged."
+        },
+        {
+          "version": "0.12.5",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Nested shells add their actual inset and structural border to the inner radius; optional smooth corners inherit through portals."
+        },
         {
           "version": "0.12.4",
           "kitVersion": "0.15.5",
@@ -1261,8 +1650,20 @@
     },
     "cp-041": {
       "name": "Popover",
-      "version": "0.12.0",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Outer content edges add the local optical radius inset once; headers, content and actions stay clear of large rounded corners."
+        },
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Optional native smooth corners follow the nearest context and preserve explicit circular geometry."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -1285,8 +1686,26 @@
     },
     "cp-042": {
       "name": "CommandPalette",
-      "version": "0.12.2",
+      "version": "0.12.5",
       "entries": [
+        {
+          "version": "0.12.5",
+          "kitVersion": "0.18.15",
+          "date": "2026-10-30",
+          "summary": "Titled header retains optical insets; compact search/close/results retain chosen inner corners while the shell grows from actual inset and border."
+        },
+        {
+          "version": "0.12.4",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Outer content edges add the local optical radius inset once; headers, content and actions stay clear of large rounded corners."
+        },
+        {
+          "version": "0.12.3",
+          "kitVersion": "0.18.12",
+          "date": "2026-10-30",
+          "summary": "Shared moving selection/hover layers recover after modal inert state is removed and keep visibility when geometry is unchanged."
+        },
         {
           "version": "0.12.2",
           "kitVersion": "0.15.3",
@@ -1327,8 +1746,14 @@
     },
     "cp-043": {
       "name": "Toast",
-      "version": "0.12.3",
+      "version": "0.12.4",
       "entries": [
+        {
+          "version": "0.12.4",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.3",
           "kitVersion": "0.17.0",
@@ -1369,8 +1794,14 @@
     },
     "cp-044": {
       "name": "ScrollArea",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Painted corner shapes follow the nearest smoothing context; nested or menu content preserves the applicable inset geometry."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -1393,8 +1824,26 @@
     },
     "cp-045": {
       "name": "ButtonGroup",
-      "version": "0.12.5",
+      "version": "0.12.8",
       "entries": [
+        {
+          "version": "0.12.8",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Painted corner shapes follow the nearest smoothing context; nested or menu content preserves the applicable inset geometry."
+        },
+        {
+          "version": "0.12.7",
+          "kitVersion": "0.18.12",
+          "date": "2026-10-30",
+          "summary": "Shared moving selection/hover layers recover after modal inert state is removed and keep visibility when geometry is unchanged."
+        },
+        {
+          "version": "0.12.6",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Nested shells add their actual inset and structural border to the inner radius; optional smooth corners inherit through portals."
+        },
         {
           "version": "0.12.5",
           "kitVersion": "0.15.5",
@@ -1441,8 +1890,20 @@
     },
     "cp-046": {
       "name": "SplitButton",
-      "version": "0.12.1",
+      "version": "0.12.3",
       "entries": [
+        {
+          "version": "0.12.3",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Painted corner shapes follow the nearest smoothing context; nested or menu content preserves the applicable inset geometry."
+        },
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Nested shells add their actual inset and structural border to the inner radius; optional smooth corners inherit through portals."
+        },
         {
           "version": "0.12.1",
           "kitVersion": "0.13.1",
@@ -1495,8 +1956,20 @@
     },
     "cp-048": {
       "name": "FloatingActionBar",
-      "version": "0.12.5",
+      "version": "0.12.7",
       "entries": [
+        {
+          "version": "0.12.7",
+          "kitVersion": "0.18.12",
+          "date": "2026-10-30",
+          "summary": "Shared moving selection/hover layers recover after modal inert state is removed and keep visibility when geometry is unchanged."
+        },
+        {
+          "version": "0.12.6",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Nested shells add their actual inset and structural border to the inner radius; optional smooth corners inherit through portals."
+        },
         {
           "version": "0.12.5",
           "kitVersion": "0.15.5",
@@ -1561,8 +2034,14 @@
     },
     "cp-050": {
       "name": "StatusBar",
-      "version": "0.12.3",
+      "version": "0.12.4",
       "entries": [
+        {
+          "version": "0.12.4",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.3",
           "kitVersion": "0.17.0",
@@ -1597,8 +2076,14 @@
     },
     "cp-051": {
       "name": "Alert",
-      "version": "0.12.4",
+      "version": "0.12.5",
       "entries": [
+        {
+          "version": "0.12.5",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.4",
           "kitVersion": "0.17.0",
@@ -1639,8 +2124,20 @@
     },
     "cp-052": {
       "name": "SidebarPanel",
-      "version": "0.12.3",
+      "version": "0.12.5",
       "entries": [
+        {
+          "version": "0.12.5",
+          "kitVersion": "0.18.15",
+          "date": "2026-10-30",
+          "summary": "Heading, content and outer action edges retain optical clearance as the radius grows; existing nested section gaps remain unchanged."
+        },
+        {
+          "version": "0.12.4",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.3",
           "kitVersion": "0.15.5",
@@ -1675,8 +2172,14 @@
     },
     "cp-053": {
       "name": "Calendar",
-      "version": "0.12.1",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.1",
           "kitVersion": "0.15.3",
@@ -1699,8 +2202,14 @@
     },
     "cp-054": {
       "name": "DatePicker",
-      "version": "0.12.1",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Outer content edges add the local optical radius inset once; headers, content and actions stay clear of large rounded corners."
+        },
         {
           "version": "0.12.1",
           "kitVersion": "0.13.0",
@@ -1723,8 +2232,14 @@
     },
     "cp-055": {
       "name": "MarkdownPreview",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -1753,8 +2268,14 @@
     },
     "cp-057": {
       "name": "ReorderableList",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -1771,8 +2292,14 @@
     },
     "cp-058": {
       "name": "ContentCard",
-      "version": "0.12.1",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Outer content edges add the local optical radius inset once; headers, content and actions stay clear of large rounded corners."
+        },
         {
           "version": "0.12.1",
           "kitVersion": "0.13.0",
@@ -1795,8 +2322,14 @@
     },
     "cp-059": {
       "name": "TaskCard",
-      "version": "0.12.2",
+      "version": "0.12.3",
       "entries": [
+        {
+          "version": "0.12.3",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.2",
           "kitVersion": "0.17.0",
@@ -1825,8 +2358,20 @@
     },
     "cp-060": {
       "name": "KanbanColumn",
-      "version": "0.12.0",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.15",
+          "date": "2026-10-30",
+          "summary": "Heading, content and outer action edges retain optical clearance as the radius grows; existing nested section gaps remain unchanged."
+        },
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -1843,8 +2388,14 @@
     },
     "cp-061": {
       "name": "KanbanBoard",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -1879,8 +2430,20 @@
     },
     "cp-063": {
       "name": "TreeView",
-      "version": "0.12.4",
+      "version": "0.12.6",
       "entries": [
+        {
+          "version": "0.12.6",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
+        {
+          "version": "0.12.5",
+          "kitVersion": "0.18.12",
+          "date": "2026-10-30",
+          "summary": "Shared moving selection/hover layers recover after modal inert state is removed and keep visibility when geometry is unchanged."
+        },
         {
           "version": "0.12.4",
           "kitVersion": "0.15.6",
@@ -1933,8 +2496,20 @@
     },
     "cp-064": {
       "name": "NavigationMenu",
-      "version": "0.12.3",
+      "version": "0.12.5",
       "entries": [
+        {
+          "version": "0.12.5",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
+        {
+          "version": "0.12.4",
+          "kitVersion": "0.18.12",
+          "date": "2026-10-30",
+          "summary": "Shared moving selection/hover layers recover after modal inert state is removed and keep visibility when geometry is unchanged."
+        },
         {
           "version": "0.12.3",
           "kitVersion": "0.15.6",
@@ -1975,8 +2550,14 @@
     },
     "cp-065": {
       "name": "HoverPanel",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Painted corner shapes follow the nearest smoothing context; nested or menu content preserves the applicable inset geometry."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -1999,8 +2580,26 @@
     },
     "cp-066": {
       "name": "ComboBox",
-      "version": "0.12.7",
+      "version": "0.12.10",
       "entries": [
+        {
+          "version": "0.12.10",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
+        {
+          "version": "0.12.9",
+          "kitVersion": "0.18.12",
+          "date": "2026-10-30",
+          "summary": "Shared moving selection/hover layers recover after modal inert state is removed and keep visibility when geometry is unchanged."
+        },
+        {
+          "version": "0.12.8",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Nested shells add their actual inset and structural border to the inner radius; optional smooth corners inherit through portals."
+        },
         {
           "version": "0.12.7",
           "kitVersion": "0.15.6",
@@ -2065,8 +2664,26 @@
     },
     "cp-067": {
       "name": "MultiSelect",
-      "version": "0.12.7",
+      "version": "0.12.10",
       "entries": [
+        {
+          "version": "0.12.10",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
+        {
+          "version": "0.12.9",
+          "kitVersion": "0.18.12",
+          "date": "2026-10-30",
+          "summary": "Shared moving selection/hover layers recover after modal inert state is removed and keep visibility when geometry is unchanged."
+        },
+        {
+          "version": "0.12.8",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Nested shells add their actual inset and structural border to the inner radius; optional smooth corners inherit through portals."
+        },
         {
           "version": "0.12.7",
           "kitVersion": "0.15.6",
@@ -2131,8 +2748,14 @@
     },
     "cp-068": {
       "name": "TagInput",
-      "version": "0.12.2",
+      "version": "0.12.3",
       "entries": [
+        {
+          "version": "0.12.3",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.2",
           "kitVersion": "0.13.1",
@@ -2167,8 +2790,26 @@
     },
     "cp-069": {
       "name": "RadioGroup",
-      "version": "0.12.3",
+      "version": "0.12.6",
       "entries": [
+        {
+          "version": "0.12.6",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
+        {
+          "version": "0.12.5",
+          "kitVersion": "0.18.12",
+          "date": "2026-10-30",
+          "summary": "Shared moving selection/hover layers recover after modal inert state is removed and keep visibility when geometry is unchanged."
+        },
+        {
+          "version": "0.12.4",
+          "kitVersion": "0.18.6",
+          "date": "2026-10-27",
+          "summary": "Unselected control outlines use the locally contrasted focus color, reducing excessive brightness while remaining visible on the current surface."
+        },
         {
           "version": "0.12.3",
           "kitVersion": "0.15.3",
@@ -2209,8 +2850,14 @@
     },
     "cp-070": {
       "name": "ColorPicker",
-      "version": "0.12.3",
+      "version": "0.12.4",
       "entries": [
+        {
+          "version": "0.12.4",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.3",
           "kitVersion": "0.15.4",
@@ -2251,8 +2898,20 @@
     },
     "cp-071": {
       "name": "NumberField",
-      "version": "0.12.3",
+      "version": "0.12.5",
       "entries": [
+        {
+          "version": "0.12.5",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
+        {
+          "version": "0.12.4",
+          "kitVersion": "0.18.7",
+          "date": "2026-10-27",
+          "summary": "Preserves partial numeric input until valid or blurred, while controlled values and bounds remain synchronized."
+        },
         {
           "version": "0.12.3",
           "kitVersion": "0.15.4",
@@ -2293,8 +2952,14 @@
     },
     "cp-072": {
       "name": "ValueScrubber",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Painted corner shapes follow the nearest smoothing context; nested or menu content preserves the applicable inset geometry."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -2311,8 +2976,26 @@
     },
     "cp-073": {
       "name": "RichTextEditor",
-      "version": "0.12.3",
+      "version": "0.12.6",
       "entries": [
+        {
+          "version": "0.12.6",
+          "kitVersion": "0.18.15",
+          "date": "2026-10-30",
+          "summary": "Editor menus reserve optical clearance and preserve the shared CodeBlock body insets instead of overriding them."
+        },
+        {
+          "version": "0.12.5",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
+        {
+          "version": "0.12.4",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Add Yellow text/highlight swatches with editable Markdown roundtrip."
+        },
         {
           "version": "0.12.3",
           "kitVersion": "0.17.0",
@@ -2353,8 +3036,14 @@
     },
     "cp-074": {
       "name": "DataTable",
-      "version": "0.12.1",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.1",
           "kitVersion": "0.13.0",
@@ -2377,8 +3066,14 @@
     },
     "cp-075": {
       "name": "FilterToolbar",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Painted corner shapes follow the nearest smoothing context; nested or menu content preserves the applicable inset geometry."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -2395,8 +3090,14 @@
     },
     "cp-076": {
       "name": "JsonViewer",
-      "version": "0.12.1",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.1",
           "kitVersion": "0.15.6",
@@ -2419,8 +3120,14 @@
     },
     "cp-077": {
       "name": "ToastStack",
-      "version": "0.12.2",
+      "version": "0.12.3",
       "entries": [
+        {
+          "version": "0.12.3",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.2",
           "kitVersion": "0.13.1",
@@ -2455,8 +3162,14 @@
     },
     "cp-078": {
       "name": "AnnouncementBar",
-      "version": "0.12.1",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Catalogue announcement shell, version/highlight tags and actions use coherent capsule geometry with square compatibility."
+        },
         {
           "version": "0.12.1",
           "kitVersion": "0.13.0",
@@ -2479,8 +3192,14 @@
     },
     "cp-079": {
       "name": "CardStack",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -2502,8 +3221,20 @@
     },
     "cp-081": {
       "name": "CommentThread",
-      "version": "0.12.0",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.15",
+          "date": "2026-10-30",
+          "summary": "Optical shell insets protect header and content; raw action radii use actual line-box geometry and popup shells account for their real inset."
+        },
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -2520,8 +3251,20 @@
     },
     "cp-082": {
       "name": "InlineComments",
-      "version": "0.12.0",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.15",
+          "date": "2026-10-30",
+          "summary": "Optical shell insets protect header and content; raw action radii use actual line-box geometry and popup shells account for their real inset."
+        },
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -2741,8 +3484,14 @@
     },
     "cp-096": {
       "name": "Chip",
-      "version": "0.12.1",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.1",
           "kitVersion": "0.13.1",
@@ -2765,8 +3514,14 @@
     },
     "cp-097": {
       "name": "BottomSheet",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.15",
+          "date": "2026-10-30",
+          "summary": "Heading, content and outer action edges retain optical clearance as the radius grows; existing nested section gaps remain unchanged."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -2783,8 +3538,20 @@
     },
     "cp-098": {
       "name": "FileTree",
-      "version": "0.12.1",
+      "version": "0.12.3",
       "entries": [
+        {
+          "version": "0.12.3",
+          "kitVersion": "0.18.15",
+          "date": "2026-10-30",
+          "summary": "Heading, content and outer action edges retain optical clearance as the radius grows; existing nested section gaps remain unchanged."
+        },
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.1",
           "kitVersion": "0.13.1",
@@ -2807,8 +3574,14 @@
     },
     "cp-099": {
       "name": "PreviewRail",
-      "version": "0.12.0",
+      "version": "0.12.1",
       "entries": [
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -2825,8 +3598,14 @@
     },
     "cp-100": {
       "name": "ResizableCard",
-      "version": "0.12.2",
+      "version": "0.12.3",
       "entries": [
+        {
+          "version": "0.12.3",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.12.2",
           "kitVersion": "0.15.1",
@@ -2855,8 +3634,20 @@
     },
     "cp-101": {
       "name": "ResizablePanelGroup",
-      "version": "0.13.2",
+      "version": "0.13.4",
       "entries": [
+        {
+          "version": "0.13.4",
+          "kitVersion": "0.18.16",
+          "date": "2026-10-30",
+          "summary": "Panel separators share the actual panel boundary without reserving a gutter; hover, keyboard focus and dragging reveal the same accessible grip in Palette Lab and the catalogue."
+        },
+        {
+          "version": "0.13.3",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
         {
           "version": "0.13.2",
           "kitVersion": "0.15.6",
@@ -2897,8 +3688,20 @@
     },
     "cp-102": {
       "name": "MarkdownEditorV2",
-      "version": "0.12.0",
+      "version": "0.12.2",
       "entries": [
+        {
+          "version": "0.12.2",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Actual painted corners inherit optional smoothing consistently, with explicit circular and pill geometry preserved."
+        },
+        {
+          "version": "0.12.1",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Yellow is available as an independent accent alongside Orange."
+        },
         {
           "version": "0.12.0",
           "kitVersion": "0.12.0",
@@ -2915,8 +3718,14 @@
     },
     "cp-103": {
       "name": "FileCard",
-      "version": "0.12.2",
+      "version": "0.12.3",
       "entries": [
+        {
+          "version": "0.12.3",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Content padding grows with the radius context; nested media corners derive from the actual padding and corner shape."
+        },
         {
           "version": "0.12.2",
           "kitVersion": "0.17.0",
@@ -2945,8 +3754,26 @@
     },
     "cp-104": {
       "name": "PopupSelect",
-      "version": "0.1.5",
+      "version": "0.1.8",
       "entries": [
+        {
+          "version": "0.1.8",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Painted corner shapes follow the nearest smoothing context; nested or menu content preserves the applicable inset geometry."
+        },
+        {
+          "version": "0.1.7",
+          "kitVersion": "0.18.12",
+          "date": "2026-10-30",
+          "summary": "Shared moving selection/hover layers recover after modal inert state is removed and keep visibility when geometry is unchanged."
+        },
+        {
+          "version": "0.1.6",
+          "kitVersion": "0.18.11",
+          "date": "2026-10-30",
+          "summary": "Nested shells add their actual inset and structural border to the inner radius; optional smooth corners inherit through portals."
+        },
         {
           "version": "0.1.5",
           "kitVersion": "0.15.6",
@@ -2987,8 +3814,20 @@
     },
     "cp-105": {
       "name": "ParameterSlider",
-      "version": "1.0.7",
+      "version": "1.0.9",
       "entries": [
+        {
+          "version": "1.0.9",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Painted corner shapes follow the nearest smoothing context; nested or menu content preserves the applicable inset geometry."
+        },
+        {
+          "version": "1.0.8",
+          "kitVersion": "0.18.7",
+          "date": "2026-10-27",
+          "summary": "Adds optional step marks for ranges with at most 21 actual step positions."
+        },
         {
           "version": "1.0.7",
           "kitVersion": "0.16.2",
@@ -3041,8 +3880,14 @@
     },
     "cp-106": {
       "name": "Slider2D",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "entries": [
+        {
+          "version": "1.0.3",
+          "kitVersion": "0.18.13",
+          "date": "2026-10-30",
+          "summary": "Painted corner shapes follow the nearest smoothing context; nested or menu content preserves the applicable inset geometry."
+        },
         {
           "version": "1.0.2",
           "kitVersion": "0.15.6",

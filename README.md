@@ -21,7 +21,7 @@ You can also download the archive and its `SHA256SUMS.txt` from the release and 
 npm install ./sloyui-0.10.0.tgz
 ```
 
-Import the stylesheet once. Fonts are optional, self-hosted Inter and Overpass Mono.
+Import the stylesheet once. Fonts are optional, self-hosted Medeo Sans and Medeo Mono.
 
 ```tsx
 import { Button, Card, Input, LocaleProvider, Tag, SLOY_UI } from 'sloyui';
@@ -53,7 +53,7 @@ Set `data-theme="light"` or `"dark"` on `html`. Layout, application data and per
 | Attribute | Values | Purpose |
 | --- | --- | --- |
 | `data-theme` | `light`, `dark` | Appearance; set on `html` or override locally |
-| `data-accent` | `neutral`, `blue`, `green`, `orange`, `red`, `pink`, `purple` | Local accent inherited by colored controls |
+| `data-accent` | `neutral`, `blue`, `green`, `yellow`, `orange`, `red`, `pink`, `purple` | Local accent inherited by colored controls |
 | `data-surface` | `shell`, `workspace`, `content`, `overlay`, `invert`, `glass` | Region purpose; use bg for the region and block for local content |
 | `data-borders` | `off`, `on` | Decorative outlines; focus and structural separators remain visible |
 | `data-radius` | `none`, `compact`, `default`, `rounded` | Shared corners: 0 / 4 / 8 / 16 px; default 8 px |
@@ -62,7 +62,7 @@ Set `data-theme="light"` or `"dark"` on `html`. Layout, application data and per
 
 Contexts inherit independently. [Density](figma/token-system-v4/guide.md) separates adaptive spacing from fixed dimensions. Compact changes adaptive spacing and controls while preserving typography, icons and touch targets. Square corners keep Borders available. Cards preserve their parent surface and paint block; portals preserve the other axes and establish Overlay. Primary buttons stay neutral; accent buttons and selection controls use the local accent. Semantic status colors keep their meaning.
 
-The shared **v4 token graph** drives the web runtime and compact native Figma export. Runtime Palette contains six 41-step hue ramps, 41 neutral steps and black/white: 289 opaque colors. Native Palette contains 328 referenced opaque/RGBA paints. Runtime Theme exposes surface, content, border and stable roles; native designs pick colors from Surface and inherit Accent independently. Invert switches the complete local polarity while preserving Theme; Glass is a protected runtime material. Density separates adaptive and fixed geometry; Radius and Borders inherit independently. Existing `--cap-*` names and legacy surface spellings remain compatible. See the [source](figma/token-system-v4/source.json), [short guide](figma/token-system-v4/guide.md) and [surface contract](docs/surface-context.md).
+The shared **v4 token graph** drives the web runtime and compact native Figma export. Runtime Palette contains seven 41-step hue ramps, 41 neutral steps and black/white: 330 opaque colors. Native Palette retains only paints referenced by the generated graph. Runtime Theme exposes surface, content, border and stable roles; native designs pick colors from Surface and inherit Accent independently. Invert switches the complete local polarity while preserving Theme; Glass is a protected runtime material. Density separates adaptive and fixed geometry; Radius and Borders inherit independently. Existing `--cap-*` names and legacy surface spellings remain compatible. See the [source](figma/token-system-v4/source.json), [short guide](figma/token-system-v4/guide.md) and [surface contract](docs/surface-context.md).
 
 `SLOY_UI` exposes the shared name, slug, domain, URL, repository, package name and logo path. Its source is [src/brand.json](src/brand.json). Existing `cap-*` CSS names and `cp-*` component IDs are stable compatibility identifiers.
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 4,
   "name": "Sloy UI token system v4",
-  "sourceHash": "f7f034ce919a11e540fd84956778c8d3020f60044b4fc0fae3e3ad1cfb7e7196",
+  "sourceHash": "ffa430e165b9324889f96eb275a998f9b3992923e433e4d56619ea6d661e5ed6",
   "axes": {
     "Theme": {
       "default": "Light",
@@ -1291,6 +1291,621 @@
           },
           "scopes": [],
           "css": "--sloy-palette-green-41",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/01",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.9909646869,
+              "b": 0.9186246147,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-01",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/02",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9988700912,
+              "g": 0.9806483636,
+              "b": 0.8421448004,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-02",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/03",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9944634571,
+              "g": 0.9654062844,
+              "b": 0.7546333138,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-03",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/04",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9885482782,
+              "g": 0.9473069418,
+              "b": 0.6591925486,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-04",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/05",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9814347397,
+              "g": 0.9269062878,
+              "b": 0.5551599182,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-05",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/06",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9732893616,
+              "g": 0.9045248743,
+              "b": 0.4377293277,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-06",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/07",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9641978442,
+              "g": 0.8803853886,
+              "b": 0.2906137311,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-07",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/08",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9522439636,
+              "g": 0.8548985588,
+              "b": 8e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-08",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/09",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9248917531,
+              "g": 0.8301898112,
+              "b": 8e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-09",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/10",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.8969334328,
+              "g": 0.8049335314,
+              "b": 0,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-10",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/11",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.8684514094,
+              "g": 0.7792041619,
+              "b": 3e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-11",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/12",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.8395154251,
+              "g": 0.7530647049,
+              "b": 1e-9,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-12",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/13",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.8101859018,
+              "g": 0.7265697425,
+              "b": 9e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-13",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/14",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.7805162336,
+              "g": 0.6997675085,
+              "b": 1.1e-9,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-14",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/15",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.750554423,
+              "g": 0.6727013664,
+              "b": 8e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-15",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/16",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.7203442887,
+              "g": 0.6454108998,
+              "b": 5e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-16",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/17",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.6899263852,
+              "g": 0.617932744,
+              "b": 6e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-17",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/18",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.659338724,
+              "g": 0.5903012369,
+              "b": 8e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-18",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/19",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.6286173562,
+              "g": 0.5625489451,
+              "b": 9e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-19",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/20",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.5977968557,
+              "g": 0.5347071015,
+              "b": 1.3e-9,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-20",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/21",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.5669107349,
+              "g": 0.5068059794,
+              "b": 1.3e-9,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-21",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/22",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.5359918121,
+              "g": 0.4788752255,
+              "b": 4e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-22",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/23",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.5050725493,
+              "g": 0.4509441643,
+              "b": 6e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-23",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/24",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.4741853736,
+              "g": 0.4230420893,
+              "b": 4e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-24",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/25",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.4433629964,
+              "g": 0.3951985503,
+              "b": 1e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-25",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/26",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.4126387406,
+              "g": 0.3674436497,
+              "b": 6e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-26",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/27",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.382046891,
+              "g": 0.3398083589,
+              "b": 1e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-27",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/28",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.3516230815,
+              "g": 0.3123248679,
+              "b": 2e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-28",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/29",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.3214047386,
+              "g": 0.2850269861,
+              "b": 0,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-29",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/30",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.2914316043,
+              "g": 0.2579506146,
+              "b": 5e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-30",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/31",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.2617463708,
+              "g": 0.2311343197,
+              "b": 3e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-31",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/32",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.2323954737,
+              "g": 0.2046200492,
+              "b": 3e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-32",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/33",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.2034301085,
+              "g": 0.1784540507,
+              "b": 2e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-33",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/34",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.1749075735,
+              "g": 0.1526880849,
+              "b": 2e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-34",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/35",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.1468930956,
+              "g": 0.1273810748,
+              "b": 1e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-35",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/36",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.1194624011,
+              "g": 0.1026014283,
+              "b": 1e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-36",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/37",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.0927054808,
+              "g": 0.0784304389,
+              "b": 0,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-37",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/38",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.0667323741,
+              "g": 0.0549675111,
+              "b": 0,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-38",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/39",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.0416826091,
+              "g": 0.03268531,
+              "b": 0,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-39",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/40",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.0210736375,
+              "g": 0.0165119907,
+              "b": 0,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-40",
+          "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
+        },
+        {
+          "name": "yellow/41",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.0086422424,
+              "g": 0.0067715232,
+              "b": 0,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-palette-yellow-41",
           "description": "Непрозрачный цвет шкалы. Имя не зависит от темы, поверхности или состояния. Прозрачность применяется к алиасу в семантической роли."
         },
         {
@@ -4730,7 +5345,7 @@
           "name": "font/family/base",
           "type": "STRING",
           "values": {
-            "Value": "Inter"
+            "Value": "Medeo Sans"
           },
           "scopes": [
             "FONT_FAMILY"
@@ -4743,7 +5358,7 @@
           "name": "font/family/code",
           "type": "STRING",
           "values": {
-            "Value": "Overpass Mono"
+            "Value": "Medeo Mono"
           },
           "scopes": [
             "FONT_FAMILY"
@@ -4756,7 +5371,7 @@
           "name": "font/family/heading",
           "type": "STRING",
           "values": {
-            "Value": "Georgia"
+            "Value": "Medeo Sans"
           },
           "scopes": [
             "FONT_FAMILY"
@@ -4769,7 +5384,7 @@
           "name": "font/family/pair",
           "type": "STRING",
           "values": {
-            "Value": "Courier New"
+            "Value": "Medeo Mono"
           },
           "scopes": [
             "FONT_FAMILY"
@@ -5671,6 +6286,50 @@
           "unit": "number"
         },
         {
+          "name": "opacity/23",
+          "type": "FLOAT",
+          "values": {
+            "Value": 23
+          },
+          "scopes": [],
+          "css": "--sloy-primitives-opacity-23",
+          "description": "Неизменяемое число. Плотность и скругления его не меняют.",
+          "unit": "number"
+        },
+        {
+          "name": "opacity/27",
+          "type": "FLOAT",
+          "values": {
+            "Value": 27
+          },
+          "scopes": [],
+          "css": "--sloy-primitives-opacity-27",
+          "description": "Неизменяемое число. Плотность и скругления его не меняют.",
+          "unit": "number"
+        },
+        {
+          "name": "opacity/26",
+          "type": "FLOAT",
+          "values": {
+            "Value": 26
+          },
+          "scopes": [],
+          "css": "--sloy-primitives-opacity-26",
+          "description": "Неизменяемое число. Плотность и скругления его не меняют.",
+          "unit": "number"
+        },
+        {
+          "name": "opacity/29",
+          "type": "FLOAT",
+          "values": {
+            "Value": 29
+          },
+          "scopes": [],
+          "css": "--sloy-primitives-opacity-29",
+          "description": "Неизменяемое число. Плотность и скругления его не меняют.",
+          "unit": "number"
+        },
+        {
           "name": "opacity/89",
           "type": "FLOAT",
           "values": {
@@ -5678,6 +6337,28 @@
           },
           "scopes": [],
           "css": "--sloy-primitives-opacity-89",
+          "description": "Неизменяемое число. Плотность и скругления его не меняют.",
+          "unit": "number"
+        },
+        {
+          "name": "opacity/67",
+          "type": "FLOAT",
+          "values": {
+            "Value": 67
+          },
+          "scopes": [],
+          "css": "--sloy-primitives-opacity-67",
+          "description": "Неизменяемое число. Плотность и скругления его не меняют.",
+          "unit": "number"
+        },
+        {
+          "name": "opacity/91",
+          "type": "FLOAT",
+          "values": {
+            "Value": 91
+          },
+          "scopes": [],
+          "css": "--sloy-primitives-opacity-91",
           "description": "Неизменяемое число. Плотность и скругления его не меняют.",
           "unit": "number"
         },
@@ -6303,6 +6984,66 @@
           "unit": "number"
         },
         {
+          "name": "23",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "Primitives/opacity/23"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "css": "--sloy-opacity-23",
+          "description": "Числовая прозрачность цветового алиаса, проценты.",
+          "unit": "number"
+        },
+        {
+          "name": "27",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "Primitives/opacity/27"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "css": "--sloy-opacity-27",
+          "description": "Числовая прозрачность цветового алиаса, проценты.",
+          "unit": "number"
+        },
+        {
+          "name": "26",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "Primitives/opacity/26"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "css": "--sloy-opacity-26",
+          "description": "Числовая прозрачность цветового алиаса, проценты.",
+          "unit": "number"
+        },
+        {
+          "name": "29",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "Primitives/opacity/29"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "css": "--sloy-opacity-29",
+          "description": "Числовая прозрачность цветового алиаса, проценты.",
+          "unit": "number"
+        },
+        {
           "name": "89",
           "type": "FLOAT",
           "values": {
@@ -6314,6 +7055,36 @@
             "COLOR_OPACITY"
           ],
           "css": "--sloy-opacity-89",
+          "description": "Числовая прозрачность цветового алиаса, проценты.",
+          "unit": "number"
+        },
+        {
+          "name": "67",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "Primitives/opacity/67"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "css": "--sloy-opacity-67",
+          "description": "Числовая прозрачность цветового алиаса, проценты.",
+          "unit": "number"
+        },
+        {
+          "name": "91",
+          "type": "FLOAT",
+          "values": {
+            "Value": {
+              "alias": "Primitives/opacity/91"
+            }
+          },
+          "scopes": [
+            "COLOR_OPACITY"
+          ],
+          "css": "--sloy-opacity-91",
           "description": "Числовая прозрачность цветового алиаса, проценты.",
           "unit": "number"
         },
@@ -27795,6 +28566,1635 @@
           "hiddenFromPublishing": true
         },
         {
+          "name": "surface/secondary/yellow-normal-light",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/18"
+              },
+              "opacity": {
+                "alias": "Opacity/22"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/18"
+              },
+              "opacity": {
+                "alias": "Opacity/22"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/17"
+              },
+              "opacity": {
+                "alias": "Opacity/21"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/17"
+              },
+              "opacity": {
+                "alias": "Opacity/21"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/10"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/19"
+              },
+              "opacity": {
+                "alias": "Opacity/23"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-secondary-yellow-normal-light",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/secondary/yellow-normal-light-dimmed",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/18"
+              },
+              "opacity": {
+                "alias": "Opacity/22"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/17"
+              },
+              "opacity": {
+                "alias": "Opacity/21"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/17"
+              },
+              "opacity": {
+                "alias": "Opacity/21"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/17"
+              },
+              "opacity": {
+                "alias": "Opacity/21"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/10"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/19"
+              },
+              "opacity": {
+                "alias": "Opacity/23"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-secondary-yellow-normal-light-dimmed",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/secondary/yellow-normal-dark",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/10"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/10"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/10"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/10"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/17"
+              },
+              "opacity": {
+                "alias": "Opacity/21"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/10"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-secondary-yellow-normal-dark",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/tertiary/yellow-normal-light",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/8"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/8"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/7"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/7"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/9"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/6"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-tertiary-yellow-normal-light",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/tertiary/yellow-normal-light-dimmed",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/8"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/7"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/7"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/7"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/9"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/6"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-tertiary-yellow-normal-light-dimmed",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/tertiary/yellow-normal-dark",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/9"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/9"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/9"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/9"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/7"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/23"
+              },
+              "opacity": {
+                "alias": "Opacity/10"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-tertiary-yellow-normal-dark",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/primary/yellow-normal-light",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "Palette/yellow/23"
+            },
+            "Workspace": {
+              "alias": "Palette/yellow/23"
+            },
+            "Content": {
+              "alias": "Palette/yellow/23"
+            },
+            "Overlay": {
+              "alias": "Palette/yellow/23"
+            },
+            "Invert": {
+              "alias": "Palette/yellow/07"
+            },
+            "Glass": {
+              "alias": "Palette/yellow/23"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-primary-yellow-normal-light",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/primary/yellow-normal-dark",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "Palette/yellow/07"
+            },
+            "Workspace": {
+              "alias": "Palette/yellow/07"
+            },
+            "Content": {
+              "alias": "Palette/yellow/07"
+            },
+            "Overlay": {
+              "alias": "Palette/yellow/07"
+            },
+            "Invert": {
+              "alias": "Palette/yellow/23"
+            },
+            "Glass": {
+              "alias": "Palette/yellow/07"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-primary-yellow-normal-dark",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "border/yellow-normal-light",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "Palette/yellow/25"
+            },
+            "Workspace": {
+              "alias": "Palette/yellow/25"
+            },
+            "Content": {
+              "alias": "Palette/yellow/25"
+            },
+            "Overlay": {
+              "alias": "Palette/yellow/25"
+            },
+            "Invert": {
+              "alias": "Palette/yellow/17"
+            },
+            "Glass": {
+              "alias": "Palette/yellow/25"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-border-yellow-normal-light",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "border/yellow-normal-dark",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "Palette/yellow/17"
+            },
+            "Workspace": {
+              "alias": "Palette/yellow/17"
+            },
+            "Content": {
+              "alias": "Palette/yellow/17"
+            },
+            "Overlay": {
+              "alias": "Palette/yellow/17"
+            },
+            "Invert": {
+              "alias": "Palette/yellow/25"
+            },
+            "Glass": {
+              "alias": "Palette/yellow/17"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-border-yellow-normal-dark",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/secondary/yellow-hover-light",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/27"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/27"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/20"
+              },
+              "opacity": {
+                "alias": "Opacity/26"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/20"
+              },
+              "opacity": {
+                "alias": "Opacity/26"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/07"
+              },
+              "opacity": {
+                "alias": "Opacity/15"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/29"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-secondary-yellow-hover-light",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/secondary/yellow-hover-light-dimmed",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/27"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/20"
+              },
+              "opacity": {
+                "alias": "Opacity/26"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/20"
+              },
+              "opacity": {
+                "alias": "Opacity/26"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/20"
+              },
+              "opacity": {
+                "alias": "Opacity/26"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/07"
+              },
+              "opacity": {
+                "alias": "Opacity/15"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/29"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-secondary-yellow-hover-light-dimmed",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/secondary/yellow-hover-dark",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/07"
+              },
+              "opacity": {
+                "alias": "Opacity/15"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/07"
+              },
+              "opacity": {
+                "alias": "Opacity/15"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/07"
+              },
+              "opacity": {
+                "alias": "Opacity/15"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/07"
+              },
+              "opacity": {
+                "alias": "Opacity/15"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/20"
+              },
+              "opacity": {
+                "alias": "Opacity/26"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/07"
+              },
+              "opacity": {
+                "alias": "Opacity/15"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-secondary-yellow-hover-dark",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/tertiary/yellow-hover-light",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/23"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/23"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/12"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/27"
+              },
+              "opacity": {
+                "alias": "Opacity/9"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-tertiary-yellow-hover-light",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/tertiary/yellow-hover-light-dimmed",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/23"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/12"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/27"
+              },
+              "opacity": {
+                "alias": "Opacity/9"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-tertiary-yellow-hover-light-dimmed",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/tertiary/yellow-hover-dark",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/12"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/12"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/12"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/12"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/14"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-tertiary-yellow-hover-dark",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/primary/yellow-hover-light",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "Palette/yellow/25"
+            },
+            "Workspace": {
+              "alias": "Palette/yellow/25"
+            },
+            "Content": {
+              "alias": "Palette/yellow/25"
+            },
+            "Overlay": {
+              "alias": "Palette/yellow/25"
+            },
+            "Invert": {
+              "alias": "Palette/yellow/05"
+            },
+            "Glass": {
+              "alias": "Palette/yellow/25"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-primary-yellow-hover-light",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/primary/yellow-hover-dark",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "Palette/yellow/05"
+            },
+            "Workspace": {
+              "alias": "Palette/yellow/05"
+            },
+            "Content": {
+              "alias": "Palette/yellow/05"
+            },
+            "Overlay": {
+              "alias": "Palette/yellow/05"
+            },
+            "Invert": {
+              "alias": "Palette/yellow/25"
+            },
+            "Glass": {
+              "alias": "Palette/yellow/05"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-primary-yellow-hover-dark",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "border/yellow-hover-light",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "Palette/yellow/25"
+            },
+            "Workspace": {
+              "alias": "Palette/yellow/25"
+            },
+            "Content": {
+              "alias": "Palette/yellow/25"
+            },
+            "Overlay": {
+              "alias": "Palette/yellow/25"
+            },
+            "Invert": {
+              "alias": "Palette/yellow/17"
+            },
+            "Glass": {
+              "alias": "Palette/yellow/25"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-border-yellow-hover-light",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "border/yellow-hover-dark",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "Palette/yellow/17"
+            },
+            "Workspace": {
+              "alias": "Palette/yellow/17"
+            },
+            "Content": {
+              "alias": "Palette/yellow/17"
+            },
+            "Overlay": {
+              "alias": "Palette/yellow/17"
+            },
+            "Invert": {
+              "alias": "Palette/yellow/25"
+            },
+            "Glass": {
+              "alias": "Palette/yellow/17"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-border-yellow-hover-dark",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/secondary/yellow-pressed-light",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/27"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/27"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/20"
+              },
+              "opacity": {
+                "alias": "Opacity/26"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/20"
+              },
+              "opacity": {
+                "alias": "Opacity/26"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/07"
+              },
+              "opacity": {
+                "alias": "Opacity/15"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/29"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-secondary-yellow-pressed-light",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/secondary/yellow-pressed-light-dimmed",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/27"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/20"
+              },
+              "opacity": {
+                "alias": "Opacity/26"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/20"
+              },
+              "opacity": {
+                "alias": "Opacity/26"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/20"
+              },
+              "opacity": {
+                "alias": "Opacity/26"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/07"
+              },
+              "opacity": {
+                "alias": "Opacity/15"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/29"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-secondary-yellow-pressed-light-dimmed",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/secondary/yellow-pressed-dark",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/07"
+              },
+              "opacity": {
+                "alias": "Opacity/15"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/07"
+              },
+              "opacity": {
+                "alias": "Opacity/15"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/07"
+              },
+              "opacity": {
+                "alias": "Opacity/15"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/07"
+              },
+              "opacity": {
+                "alias": "Opacity/15"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/20"
+              },
+              "opacity": {
+                "alias": "Opacity/26"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/07"
+              },
+              "opacity": {
+                "alias": "Opacity/15"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-secondary-yellow-pressed-dark",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/tertiary/yellow-pressed-light",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/23"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/23"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/12"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/27"
+              },
+              "opacity": {
+                "alias": "Opacity/9"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-tertiary-yellow-pressed-light",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/tertiary/yellow-pressed-light-dimmed",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/23"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/12"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/27"
+              },
+              "opacity": {
+                "alias": "Opacity/9"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-tertiary-yellow-pressed-light-dimmed",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/tertiary/yellow-pressed-dark",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/12"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/12"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/12"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/16"
+              },
+              "opacity": {
+                "alias": "Opacity/12"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/21"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/14"
+              },
+              "opacity": {
+                "alias": "Opacity/11"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-tertiary-yellow-pressed-dark",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/primary/yellow-pressed-light",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "Palette/yellow/25"
+            },
+            "Workspace": {
+              "alias": "Palette/yellow/25"
+            },
+            "Content": {
+              "alias": "Palette/yellow/25"
+            },
+            "Overlay": {
+              "alias": "Palette/yellow/25"
+            },
+            "Invert": {
+              "alias": "Palette/yellow/05"
+            },
+            "Glass": {
+              "alias": "Palette/yellow/25"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-primary-yellow-pressed-light",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "surface/primary/yellow-pressed-dark",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "Palette/yellow/05"
+            },
+            "Workspace": {
+              "alias": "Palette/yellow/05"
+            },
+            "Content": {
+              "alias": "Palette/yellow/05"
+            },
+            "Overlay": {
+              "alias": "Palette/yellow/05"
+            },
+            "Invert": {
+              "alias": "Palette/yellow/25"
+            },
+            "Glass": {
+              "alias": "Palette/yellow/05"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-surface-primary-yellow-pressed-dark",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "border/yellow-pressed-light",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "Palette/yellow/25"
+            },
+            "Workspace": {
+              "alias": "Palette/yellow/25"
+            },
+            "Content": {
+              "alias": "Palette/yellow/25"
+            },
+            "Overlay": {
+              "alias": "Palette/yellow/25"
+            },
+            "Invert": {
+              "alias": "Palette/yellow/17"
+            },
+            "Glass": {
+              "alias": "Palette/yellow/25"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-border-yellow-pressed-light",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "border/yellow-pressed-dark",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "Palette/yellow/17"
+            },
+            "Workspace": {
+              "alias": "Palette/yellow/17"
+            },
+            "Content": {
+              "alias": "Palette/yellow/17"
+            },
+            "Overlay": {
+              "alias": "Palette/yellow/17"
+            },
+            "Invert": {
+              "alias": "Palette/yellow/25"
+            },
+            "Glass": {
+              "alias": "Palette/yellow/17"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-border-yellow-pressed-dark",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "content/yellow-light",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "Palette/yellow/31"
+            },
+            "Workspace": {
+              "alias": "Palette/yellow/31"
+            },
+            "Content": {
+              "alias": "Palette/yellow/31"
+            },
+            "Overlay": {
+              "alias": "Palette/yellow/31"
+            },
+            "Invert": {
+              "alias": "Palette/yellow/04"
+            },
+            "Glass": {
+              "alias": "Palette/yellow/31"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-content-yellow-light",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "content/yellow-dark",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "Palette/yellow/04"
+            },
+            "Workspace": {
+              "alias": "Palette/yellow/04"
+            },
+            "Content": {
+              "alias": "Palette/yellow/04"
+            },
+            "Overlay": {
+              "alias": "Palette/yellow/04"
+            },
+            "Invert": {
+              "alias": "Palette/yellow/31"
+            },
+            "Glass": {
+              "alias": "Palette/yellow/04"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-content-yellow-dark",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "content/secondary/yellow-light",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/39"
+              },
+              "opacity": {
+                "alias": "Opacity/65"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/39"
+              },
+              "opacity": {
+                "alias": "Opacity/65"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/39"
+              },
+              "opacity": {
+                "alias": "Opacity/63"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/39"
+              },
+              "opacity": {
+                "alias": "Opacity/63"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/01"
+              },
+              "opacity": {
+                "alias": "Opacity/89"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/39"
+              },
+              "opacity": {
+                "alias": "Opacity/67"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-content-secondary-yellow-light",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "content/secondary/yellow-light-dimmed",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/39"
+              },
+              "opacity": {
+                "alias": "Opacity/65"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/39"
+              },
+              "opacity": {
+                "alias": "Opacity/63"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/39"
+              },
+              "opacity": {
+                "alias": "Opacity/63"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/39"
+              },
+              "opacity": {
+                "alias": "Opacity/63"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/01"
+              },
+              "opacity": {
+                "alias": "Opacity/89"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/39"
+              },
+              "opacity": {
+                "alias": "Opacity/67"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-content-secondary-yellow-light-dimmed",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "content/secondary/yellow-dark",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "color": {
+                "alias": "Palette/yellow/01"
+              },
+              "opacity": {
+                "alias": "Opacity/89"
+              }
+            },
+            "Workspace": {
+              "color": {
+                "alias": "Palette/yellow/01"
+              },
+              "opacity": {
+                "alias": "Opacity/89"
+              }
+            },
+            "Content": {
+              "color": {
+                "alias": "Palette/yellow/01"
+              },
+              "opacity": {
+                "alias": "Opacity/89"
+              }
+            },
+            "Overlay": {
+              "color": {
+                "alias": "Palette/yellow/01"
+              },
+              "opacity": {
+                "alias": "Opacity/89"
+              }
+            },
+            "Invert": {
+              "color": {
+                "alias": "Palette/yellow/39"
+              },
+              "opacity": {
+                "alias": "Opacity/63"
+              }
+            },
+            "Glass": {
+              "color": {
+                "alias": "Palette/yellow/01"
+              },
+              "opacity": {
+                "alias": "Opacity/91"
+              }
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-content-secondary-yellow-dark",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "content/on-primary/yellow-light",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "Palette/white"
+            },
+            "Workspace": {
+              "alias": "Palette/white"
+            },
+            "Content": {
+              "alias": "Palette/white"
+            },
+            "Overlay": {
+              "alias": "Palette/white"
+            },
+            "Invert": {
+              "alias": "Palette/black"
+            },
+            "Glass": {
+              "alias": "Palette/white"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-content-on-primary-yellow-light",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
+          "name": "content/on-primary/yellow-dark",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "Palette/black"
+            },
+            "Workspace": {
+              "alias": "Palette/black"
+            },
+            "Content": {
+              "alias": "Palette/black"
+            },
+            "Overlay": {
+              "alias": "Palette/black"
+            },
+            "Invert": {
+              "alias": "Palette/white"
+            },
+            "Glass": {
+              "alias": "Palette/black"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surface-content-on-primary-yellow-dark",
+          "description": "Внутренняя пара цветов для выбранной поверхности."
+        },
+        {
           "name": "surface/secondary/orange-normal-light",
           "type": "COLOR",
           "values": {
@@ -31086,1672 +33486,6 @@
           },
           "scopes": [],
           "css": "--sloy-surface-content-on-primary-amber-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/secondary/yellow-normal-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/22"
-              },
-              "opacity": {
-                "alias": "Opacity/16"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/22"
-              },
-              "opacity": {
-                "alias": "Opacity/16"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/22"
-              },
-              "opacity": {
-                "alias": "Opacity/15"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/22"
-              },
-              "opacity": {
-                "alias": "Opacity/15"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/14"
-              },
-              "opacity": {
-                "alias": "Opacity/14"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/21"
-              },
-              "opacity": {
-                "alias": "Opacity/17"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-secondary-yellow-normal-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/secondary/yellow-normal-light-dimmed",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/22"
-              },
-              "opacity": {
-                "alias": "Opacity/16"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/22"
-              },
-              "opacity": {
-                "alias": "Opacity/15"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/22"
-              },
-              "opacity": {
-                "alias": "Opacity/15"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/22"
-              },
-              "opacity": {
-                "alias": "Opacity/15"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/14"
-              },
-              "opacity": {
-                "alias": "Opacity/14"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/21"
-              },
-              "opacity": {
-                "alias": "Opacity/17"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-secondary-yellow-normal-light-dimmed",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/secondary/yellow-normal-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/14"
-              },
-              "opacity": {
-                "alias": "Opacity/14"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/14"
-              },
-              "opacity": {
-                "alias": "Opacity/14"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/14"
-              },
-              "opacity": {
-                "alias": "Opacity/14"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/14"
-              },
-              "opacity": {
-                "alias": "Opacity/14"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/22"
-              },
-              "opacity": {
-                "alias": "Opacity/15"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/14"
-              },
-              "opacity": {
-                "alias": "Opacity/14"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-secondary-yellow-normal-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/tertiary/yellow-normal-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/17"
-              },
-              "opacity": {
-                "alias": "Opacity/6"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/17"
-              },
-              "opacity": {
-                "alias": "Opacity/6"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/19"
-              },
-              "opacity": {
-                "alias": "Opacity/5"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/19"
-              },
-              "opacity": {
-                "alias": "Opacity/5"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/16"
-              },
-              "opacity": {
-                "alias": "Opacity/6"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/19"
-              },
-              "opacity": {
-                "alias": "Opacity/6"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-tertiary-yellow-normal-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/tertiary/yellow-normal-light-dimmed",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/17"
-              },
-              "opacity": {
-                "alias": "Opacity/6"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/19"
-              },
-              "opacity": {
-                "alias": "Opacity/5"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/19"
-              },
-              "opacity": {
-                "alias": "Opacity/5"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/19"
-              },
-              "opacity": {
-                "alias": "Opacity/5"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/16"
-              },
-              "opacity": {
-                "alias": "Opacity/6"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/19"
-              },
-              "opacity": {
-                "alias": "Opacity/6"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-tertiary-yellow-normal-light-dimmed",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/tertiary/yellow-normal-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/16"
-              },
-              "opacity": {
-                "alias": "Opacity/6"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/16"
-              },
-              "opacity": {
-                "alias": "Opacity/6"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/16"
-              },
-              "opacity": {
-                "alias": "Opacity/6"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/16"
-              },
-              "opacity": {
-                "alias": "Opacity/6"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/19"
-              },
-              "opacity": {
-                "alias": "Opacity/5"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/16"
-              },
-              "opacity": {
-                "alias": "Opacity/6"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-tertiary-yellow-normal-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/primary/yellow-normal-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/orange/22"
-            },
-            "Workspace": {
-              "alias": "Palette/orange/22"
-            },
-            "Content": {
-              "alias": "Palette/orange/22"
-            },
-            "Overlay": {
-              "alias": "Palette/orange/22"
-            },
-            "Invert": {
-              "alias": "Palette/orange/14"
-            },
-            "Glass": {
-              "alias": "Palette/orange/22"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-primary-yellow-normal-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/primary/yellow-normal-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/orange/14"
-            },
-            "Workspace": {
-              "alias": "Palette/orange/14"
-            },
-            "Content": {
-              "alias": "Palette/orange/14"
-            },
-            "Overlay": {
-              "alias": "Palette/orange/14"
-            },
-            "Invert": {
-              "alias": "Palette/orange/22"
-            },
-            "Glass": {
-              "alias": "Palette/orange/14"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-primary-yellow-normal-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "border/yellow-normal-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/orange/25"
-            },
-            "Workspace": {
-              "alias": "Palette/orange/25"
-            },
-            "Content": {
-              "alias": "Palette/orange/25"
-            },
-            "Overlay": {
-              "alias": "Palette/orange/25"
-            },
-            "Invert": {
-              "alias": "Palette/orange/17"
-            },
-            "Glass": {
-              "alias": "Palette/orange/25"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-border-yellow-normal-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "border/yellow-normal-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/orange/17"
-            },
-            "Workspace": {
-              "alias": "Palette/orange/17"
-            },
-            "Content": {
-              "alias": "Palette/orange/17"
-            },
-            "Overlay": {
-              "alias": "Palette/orange/17"
-            },
-            "Invert": {
-              "alias": "Palette/orange/25"
-            },
-            "Glass": {
-              "alias": "Palette/orange/17"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-border-yellow-normal-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/secondary/yellow-hover-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/21"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/21"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/20"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/20"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/18"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/22"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-secondary-yellow-hover-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/secondary/yellow-hover-light-dimmed",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/21"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/20"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/20"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/20"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/18"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/22"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-secondary-yellow-hover-light-dimmed",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/secondary/yellow-hover-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/18"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/18"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/18"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/18"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/20"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/18"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-secondary-yellow-hover-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/tertiary/yellow-hover-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/9"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/9"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/26"
-              },
-              "opacity": {
-                "alias": "Opacity/8"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/26"
-              },
-              "opacity": {
-                "alias": "Opacity/8"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/10"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/25"
-              },
-              "opacity": {
-                "alias": "Opacity/9"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-tertiary-yellow-hover-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/tertiary/yellow-hover-light-dimmed",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/9"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/26"
-              },
-              "opacity": {
-                "alias": "Opacity/8"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/26"
-              },
-              "opacity": {
-                "alias": "Opacity/8"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/26"
-              },
-              "opacity": {
-                "alias": "Opacity/8"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/10"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/25"
-              },
-              "opacity": {
-                "alias": "Opacity/9"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-tertiary-yellow-hover-light-dimmed",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/tertiary/yellow-hover-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/10"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/10"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/10"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/10"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/26"
-              },
-              "opacity": {
-                "alias": "Opacity/8"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/10"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-tertiary-yellow-hover-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/primary/yellow-hover-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/orange/24"
-            },
-            "Workspace": {
-              "alias": "Palette/orange/24"
-            },
-            "Content": {
-              "alias": "Palette/orange/24"
-            },
-            "Overlay": {
-              "alias": "Palette/orange/24"
-            },
-            "Invert": {
-              "alias": "Palette/orange/12"
-            },
-            "Glass": {
-              "alias": "Palette/orange/24"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-primary-yellow-hover-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/primary/yellow-hover-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/orange/12"
-            },
-            "Workspace": {
-              "alias": "Palette/orange/12"
-            },
-            "Content": {
-              "alias": "Palette/orange/12"
-            },
-            "Overlay": {
-              "alias": "Palette/orange/12"
-            },
-            "Invert": {
-              "alias": "Palette/orange/24"
-            },
-            "Glass": {
-              "alias": "Palette/orange/12"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-primary-yellow-hover-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "border/yellow-hover-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/orange/25"
-            },
-            "Workspace": {
-              "alias": "Palette/orange/25"
-            },
-            "Content": {
-              "alias": "Palette/orange/25"
-            },
-            "Overlay": {
-              "alias": "Palette/orange/25"
-            },
-            "Invert": {
-              "alias": "Palette/orange/17"
-            },
-            "Glass": {
-              "alias": "Palette/orange/25"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-border-yellow-hover-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "border/yellow-hover-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/orange/17"
-            },
-            "Workspace": {
-              "alias": "Palette/orange/17"
-            },
-            "Content": {
-              "alias": "Palette/orange/17"
-            },
-            "Overlay": {
-              "alias": "Palette/orange/17"
-            },
-            "Invert": {
-              "alias": "Palette/orange/25"
-            },
-            "Glass": {
-              "alias": "Palette/orange/17"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-border-yellow-hover-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/secondary/yellow-pressed-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/21"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/21"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/20"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/20"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/18"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/22"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-secondary-yellow-pressed-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/secondary/yellow-pressed-light-dimmed",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/21"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/20"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/20"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/20"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/18"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/22"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-secondary-yellow-pressed-light-dimmed",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/secondary/yellow-pressed-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/18"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/18"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/18"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/18"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/20"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/18"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-secondary-yellow-pressed-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/tertiary/yellow-pressed-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/9"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/9"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/26"
-              },
-              "opacity": {
-                "alias": "Opacity/8"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/26"
-              },
-              "opacity": {
-                "alias": "Opacity/8"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/10"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/25"
-              },
-              "opacity": {
-                "alias": "Opacity/9"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-tertiary-yellow-pressed-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/tertiary/yellow-pressed-light-dimmed",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/24"
-              },
-              "opacity": {
-                "alias": "Opacity/9"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/26"
-              },
-              "opacity": {
-                "alias": "Opacity/8"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/26"
-              },
-              "opacity": {
-                "alias": "Opacity/8"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/26"
-              },
-              "opacity": {
-                "alias": "Opacity/8"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/10"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/25"
-              },
-              "opacity": {
-                "alias": "Opacity/9"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-tertiary-yellow-pressed-light-dimmed",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/tertiary/yellow-pressed-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/10"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/10"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/10"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/10"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/26"
-              },
-              "opacity": {
-                "alias": "Opacity/8"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/12"
-              },
-              "opacity": {
-                "alias": "Opacity/10"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-tertiary-yellow-pressed-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/primary/yellow-pressed-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/orange/24"
-            },
-            "Workspace": {
-              "alias": "Palette/orange/24"
-            },
-            "Content": {
-              "alias": "Palette/orange/24"
-            },
-            "Overlay": {
-              "alias": "Palette/orange/24"
-            },
-            "Invert": {
-              "alias": "Palette/orange/12"
-            },
-            "Glass": {
-              "alias": "Palette/orange/24"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-primary-yellow-pressed-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/primary/yellow-pressed-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/orange/12"
-            },
-            "Workspace": {
-              "alias": "Palette/orange/12"
-            },
-            "Content": {
-              "alias": "Palette/orange/12"
-            },
-            "Overlay": {
-              "alias": "Palette/orange/12"
-            },
-            "Invert": {
-              "alias": "Palette/orange/24"
-            },
-            "Glass": {
-              "alias": "Palette/orange/12"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-surface-primary-yellow-pressed-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "border/yellow-pressed-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/orange/25"
-            },
-            "Workspace": {
-              "alias": "Palette/orange/25"
-            },
-            "Content": {
-              "alias": "Palette/orange/25"
-            },
-            "Overlay": {
-              "alias": "Palette/orange/25"
-            },
-            "Invert": {
-              "alias": "Palette/orange/17"
-            },
-            "Glass": {
-              "alias": "Palette/orange/25"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-border-yellow-pressed-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "border/yellow-pressed-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/orange/17"
-            },
-            "Workspace": {
-              "alias": "Palette/orange/17"
-            },
-            "Content": {
-              "alias": "Palette/orange/17"
-            },
-            "Overlay": {
-              "alias": "Palette/orange/17"
-            },
-            "Invert": {
-              "alias": "Palette/orange/25"
-            },
-            "Glass": {
-              "alias": "Palette/orange/17"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-border-yellow-pressed-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/yellow-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/orange/31"
-            },
-            "Workspace": {
-              "alias": "Palette/orange/31"
-            },
-            "Content": {
-              "alias": "Palette/orange/31"
-            },
-            "Overlay": {
-              "alias": "Palette/orange/31"
-            },
-            "Invert": {
-              "alias": "Palette/orange/05"
-            },
-            "Glass": {
-              "alias": "Palette/orange/31"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-yellow-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/yellow-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/orange/05"
-            },
-            "Workspace": {
-              "alias": "Palette/orange/05"
-            },
-            "Content": {
-              "alias": "Palette/orange/05"
-            },
-            "Overlay": {
-              "alias": "Palette/orange/05"
-            },
-            "Invert": {
-              "alias": "Palette/orange/31"
-            },
-            "Glass": {
-              "alias": "Palette/orange/04"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-yellow-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/secondary/yellow-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/39"
-              },
-              "opacity": {
-                "alias": "Opacity/65"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/39"
-              },
-              "opacity": {
-                "alias": "Opacity/65"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/39"
-              },
-              "opacity": {
-                "alias": "Opacity/63"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/39"
-              },
-              "opacity": {
-                "alias": "Opacity/63"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/02"
-              },
-              "opacity": {
-                "alias": "Opacity/89"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/39"
-              },
-              "opacity": {
-                "alias": "Opacity/68"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-secondary-yellow-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/secondary/yellow-light-dimmed",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/39"
-              },
-              "opacity": {
-                "alias": "Opacity/65"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/39"
-              },
-              "opacity": {
-                "alias": "Opacity/63"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/39"
-              },
-              "opacity": {
-                "alias": "Opacity/63"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/39"
-              },
-              "opacity": {
-                "alias": "Opacity/63"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/02"
-              },
-              "opacity": {
-                "alias": "Opacity/89"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/39"
-              },
-              "opacity": {
-                "alias": "Opacity/68"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-secondary-yellow-light-dimmed",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/secondary/yellow-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "color": {
-                "alias": "Palette/orange/02"
-              },
-              "opacity": {
-                "alias": "Opacity/89"
-              }
-            },
-            "Workspace": {
-              "color": {
-                "alias": "Palette/orange/02"
-              },
-              "opacity": {
-                "alias": "Opacity/89"
-              }
-            },
-            "Content": {
-              "color": {
-                "alias": "Palette/orange/02"
-              },
-              "opacity": {
-                "alias": "Opacity/89"
-              }
-            },
-            "Overlay": {
-              "color": {
-                "alias": "Palette/orange/02"
-              },
-              "opacity": {
-                "alias": "Opacity/89"
-              }
-            },
-            "Invert": {
-              "color": {
-                "alias": "Palette/orange/39"
-              },
-              "opacity": {
-                "alias": "Opacity/63"
-              }
-            },
-            "Glass": {
-              "color": {
-                "alias": "Palette/orange/01"
-              },
-              "opacity": {
-                "alias": "Opacity/89"
-              }
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-secondary-yellow-dark",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/yellow-light",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/white"
-            },
-            "Workspace": {
-              "alias": "Palette/white"
-            },
-            "Content": {
-              "alias": "Palette/white"
-            },
-            "Overlay": {
-              "alias": "Palette/white"
-            },
-            "Invert": {
-              "alias": "Palette/black"
-            },
-            "Glass": {
-              "alias": "Palette/white"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-yellow-light",
-          "description": "Внутренняя пара цветов для выбранной поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/yellow-dark",
-          "type": "COLOR",
-          "values": {
-            "Shell": {
-              "alias": "Palette/black"
-            },
-            "Workspace": {
-              "alias": "Palette/black"
-            },
-            "Content": {
-              "alias": "Palette/black"
-            },
-            "Overlay": {
-              "alias": "Palette/black"
-            },
-            "Invert": {
-              "alias": "Palette/white"
-            },
-            "Glass": {
-              "alias": "Palette/black"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surface-content-on-primary-yellow-dark",
           "description": "Внутренняя пара цветов для выбранной поверхности.",
           "hiddenFromPublishing": true
         },
@@ -49463,6 +50197,132 @@
           "hiddenFromPublishing": true
         },
         {
+          "name": "surface/secondary/yellow-normal-light",
+          "type": "COLOR",
+          "values": {
+            "Standard": {
+              "alias": "Surface/surface/secondary/yellow-normal-light"
+            },
+            "Dimmed": {
+              "alias": "Surface/surface/secondary/yellow-normal-light-dimmed"
+            },
+            "Inverted": {
+              "alias": "Surface/surface/secondary/yellow-normal-light-dimmed"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surfacescheme-surface-secondary-yellow-normal-light",
+          "description": "Standard / Dimmed: полный контекст области. Inverted — совместимое имя Dimmed."
+        },
+        {
+          "name": "surface/tertiary/yellow-normal-light",
+          "type": "COLOR",
+          "values": {
+            "Standard": {
+              "alias": "Surface/surface/tertiary/yellow-normal-light"
+            },
+            "Dimmed": {
+              "alias": "Surface/surface/tertiary/yellow-normal-light-dimmed"
+            },
+            "Inverted": {
+              "alias": "Surface/surface/tertiary/yellow-normal-light-dimmed"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surfacescheme-surface-tertiary-yellow-normal-light",
+          "description": "Standard / Dimmed: полный контекст области. Inverted — совместимое имя Dimmed."
+        },
+        {
+          "name": "surface/secondary/yellow-hover-light",
+          "type": "COLOR",
+          "values": {
+            "Standard": {
+              "alias": "Surface/surface/secondary/yellow-hover-light"
+            },
+            "Dimmed": {
+              "alias": "Surface/surface/secondary/yellow-hover-light-dimmed"
+            },
+            "Inverted": {
+              "alias": "Surface/surface/secondary/yellow-hover-light-dimmed"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surfacescheme-surface-secondary-yellow-hover-light",
+          "description": "Standard / Dimmed: полный контекст области. Inverted — совместимое имя Dimmed."
+        },
+        {
+          "name": "surface/tertiary/yellow-hover-light",
+          "type": "COLOR",
+          "values": {
+            "Standard": {
+              "alias": "Surface/surface/tertiary/yellow-hover-light"
+            },
+            "Dimmed": {
+              "alias": "Surface/surface/tertiary/yellow-hover-light-dimmed"
+            },
+            "Inverted": {
+              "alias": "Surface/surface/tertiary/yellow-hover-light-dimmed"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surfacescheme-surface-tertiary-yellow-hover-light",
+          "description": "Standard / Dimmed: полный контекст области. Inverted — совместимое имя Dimmed."
+        },
+        {
+          "name": "surface/secondary/yellow-pressed-light",
+          "type": "COLOR",
+          "values": {
+            "Standard": {
+              "alias": "Surface/surface/secondary/yellow-pressed-light"
+            },
+            "Dimmed": {
+              "alias": "Surface/surface/secondary/yellow-pressed-light-dimmed"
+            },
+            "Inverted": {
+              "alias": "Surface/surface/secondary/yellow-pressed-light-dimmed"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surfacescheme-surface-secondary-yellow-pressed-light",
+          "description": "Standard / Dimmed: полный контекст области. Inverted — совместимое имя Dimmed."
+        },
+        {
+          "name": "surface/tertiary/yellow-pressed-light",
+          "type": "COLOR",
+          "values": {
+            "Standard": {
+              "alias": "Surface/surface/tertiary/yellow-pressed-light"
+            },
+            "Dimmed": {
+              "alias": "Surface/surface/tertiary/yellow-pressed-light-dimmed"
+            },
+            "Inverted": {
+              "alias": "Surface/surface/tertiary/yellow-pressed-light-dimmed"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surfacescheme-surface-tertiary-yellow-pressed-light",
+          "description": "Standard / Dimmed: полный контекст области. Inverted — совместимое имя Dimmed."
+        },
+        {
+          "name": "content/secondary/yellow-light",
+          "type": "COLOR",
+          "values": {
+            "Standard": {
+              "alias": "Surface/content/secondary/yellow-light"
+            },
+            "Dimmed": {
+              "alias": "Surface/content/secondary/yellow-light-dimmed"
+            },
+            "Inverted": {
+              "alias": "Surface/content/secondary/yellow-light-dimmed"
+            }
+          },
+          "scopes": [],
+          "css": "--sloy-surfacescheme-content-secondary-yellow-light",
+          "description": "Standard / Dimmed: полный контекст области. Inverted — совместимое имя Dimmed."
+        },
+        {
           "name": "surface/secondary/orange-normal-light",
           "type": "COLOR",
           "values": {
@@ -49718,139 +50578,6 @@
           },
           "scopes": [],
           "css": "--sloy-surfacescheme-content-secondary-amber-light",
-          "description": "Standard / Dimmed: полный контекст области. Inverted — совместимое имя Dimmed.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/secondary/yellow-normal-light",
-          "type": "COLOR",
-          "values": {
-            "Standard": {
-              "alias": "Surface/surface/secondary/yellow-normal-light"
-            },
-            "Dimmed": {
-              "alias": "Surface/surface/secondary/yellow-normal-light-dimmed"
-            },
-            "Inverted": {
-              "alias": "Surface/surface/secondary/yellow-normal-light-dimmed"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surfacescheme-surface-secondary-yellow-normal-light",
-          "description": "Standard / Dimmed: полный контекст области. Inverted — совместимое имя Dimmed.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/tertiary/yellow-normal-light",
-          "type": "COLOR",
-          "values": {
-            "Standard": {
-              "alias": "Surface/surface/tertiary/yellow-normal-light"
-            },
-            "Dimmed": {
-              "alias": "Surface/surface/tertiary/yellow-normal-light-dimmed"
-            },
-            "Inverted": {
-              "alias": "Surface/surface/tertiary/yellow-normal-light-dimmed"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surfacescheme-surface-tertiary-yellow-normal-light",
-          "description": "Standard / Dimmed: полный контекст области. Inverted — совместимое имя Dimmed.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/secondary/yellow-hover-light",
-          "type": "COLOR",
-          "values": {
-            "Standard": {
-              "alias": "Surface/surface/secondary/yellow-hover-light"
-            },
-            "Dimmed": {
-              "alias": "Surface/surface/secondary/yellow-hover-light-dimmed"
-            },
-            "Inverted": {
-              "alias": "Surface/surface/secondary/yellow-hover-light-dimmed"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surfacescheme-surface-secondary-yellow-hover-light",
-          "description": "Standard / Dimmed: полный контекст области. Inverted — совместимое имя Dimmed.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/tertiary/yellow-hover-light",
-          "type": "COLOR",
-          "values": {
-            "Standard": {
-              "alias": "Surface/surface/tertiary/yellow-hover-light"
-            },
-            "Dimmed": {
-              "alias": "Surface/surface/tertiary/yellow-hover-light-dimmed"
-            },
-            "Inverted": {
-              "alias": "Surface/surface/tertiary/yellow-hover-light-dimmed"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surfacescheme-surface-tertiary-yellow-hover-light",
-          "description": "Standard / Dimmed: полный контекст области. Inverted — совместимое имя Dimmed.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/secondary/yellow-pressed-light",
-          "type": "COLOR",
-          "values": {
-            "Standard": {
-              "alias": "Surface/surface/secondary/yellow-pressed-light"
-            },
-            "Dimmed": {
-              "alias": "Surface/surface/secondary/yellow-pressed-light-dimmed"
-            },
-            "Inverted": {
-              "alias": "Surface/surface/secondary/yellow-pressed-light-dimmed"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surfacescheme-surface-secondary-yellow-pressed-light",
-          "description": "Standard / Dimmed: полный контекст области. Inverted — совместимое имя Dimmed.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/tertiary/yellow-pressed-light",
-          "type": "COLOR",
-          "values": {
-            "Standard": {
-              "alias": "Surface/surface/tertiary/yellow-pressed-light"
-            },
-            "Dimmed": {
-              "alias": "Surface/surface/tertiary/yellow-pressed-light-dimmed"
-            },
-            "Inverted": {
-              "alias": "Surface/surface/tertiary/yellow-pressed-light-dimmed"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surfacescheme-surface-tertiary-yellow-pressed-light",
-          "description": "Standard / Dimmed: полный контекст области. Inverted — совместимое имя Dimmed.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/secondary/yellow-light",
-          "type": "COLOR",
-          "values": {
-            "Standard": {
-              "alias": "Surface/content/secondary/yellow-light"
-            },
-            "Dimmed": {
-              "alias": "Surface/content/secondary/yellow-light-dimmed"
-            },
-            "Inverted": {
-              "alias": "Surface/content/secondary/yellow-light-dimmed"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-surfacescheme-content-secondary-yellow-light",
           "description": "Standard / Dimmed: полный контекст области. Inverted — совместимое имя Dimmed.",
           "hiddenFromPublishing": true
         },
@@ -54450,6 +55177,273 @@
           "hiddenFromPublishing": true
         },
         {
+          "name": "surface/secondary/yellow-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "SurfaceScheme/surface/secondary/yellow-normal-light"
+            },
+            "Dark": {
+              "alias": "Surface/surface/secondary/yellow-normal-dark"
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "css": "--sloy-theme-surface-secondary-yellow-normal",
+          "description": "Заливка по назначению. Наследует тему, поверхность и её схему."
+        },
+        {
+          "name": "surface/tertiary/yellow-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "SurfaceScheme/surface/tertiary/yellow-normal-light"
+            },
+            "Dark": {
+              "alias": "Surface/surface/tertiary/yellow-normal-dark"
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "css": "--sloy-theme-surface-tertiary-yellow-normal",
+          "description": "Заливка по назначению. Наследует тему, поверхность и её схему."
+        },
+        {
+          "name": "surface/primary/yellow-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "Surface/surface/primary/yellow-normal-light"
+            },
+            "Dark": {
+              "alias": "Surface/surface/primary/yellow-normal-dark"
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "css": "--sloy-theme-surface-primary-yellow-normal",
+          "description": "Заливка по назначению. Наследует тему, поверхность и её схему."
+        },
+        {
+          "name": "border/yellow-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "Surface/border/yellow-normal-light"
+            },
+            "Dark": {
+              "alias": "Surface/border/yellow-normal-dark"
+            }
+          },
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "css": "--sloy-theme-border-yellow-normal",
+          "description": "Цвет границы на текущей поверхности."
+        },
+        {
+          "name": "surface/secondary/yellow-hover",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "SurfaceScheme/surface/secondary/yellow-hover-light"
+            },
+            "Dark": {
+              "alias": "Surface/surface/secondary/yellow-hover-dark"
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "css": "--sloy-theme-surface-secondary-yellow-hover",
+          "description": "Заливка по назначению. Наследует тему, поверхность и её схему."
+        },
+        {
+          "name": "surface/tertiary/yellow-hover",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "SurfaceScheme/surface/tertiary/yellow-hover-light"
+            },
+            "Dark": {
+              "alias": "Surface/surface/tertiary/yellow-hover-dark"
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "css": "--sloy-theme-surface-tertiary-yellow-hover",
+          "description": "Заливка по назначению. Наследует тему, поверхность и её схему."
+        },
+        {
+          "name": "surface/primary/yellow-hover",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "Surface/surface/primary/yellow-hover-light"
+            },
+            "Dark": {
+              "alias": "Surface/surface/primary/yellow-hover-dark"
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "css": "--sloy-theme-surface-primary-yellow-hover",
+          "description": "Заливка по назначению. Наследует тему, поверхность и её схему."
+        },
+        {
+          "name": "border/yellow-hover",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "Surface/border/yellow-hover-light"
+            },
+            "Dark": {
+              "alias": "Surface/border/yellow-hover-dark"
+            }
+          },
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "css": "--sloy-theme-border-yellow-hover",
+          "description": "Цвет границы на текущей поверхности."
+        },
+        {
+          "name": "surface/secondary/yellow-pressed",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "SurfaceScheme/surface/secondary/yellow-pressed-light"
+            },
+            "Dark": {
+              "alias": "Surface/surface/secondary/yellow-pressed-dark"
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "css": "--sloy-theme-surface-secondary-yellow-pressed",
+          "description": "Заливка по назначению. Наследует тему, поверхность и её схему."
+        },
+        {
+          "name": "surface/tertiary/yellow-pressed",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "SurfaceScheme/surface/tertiary/yellow-pressed-light"
+            },
+            "Dark": {
+              "alias": "Surface/surface/tertiary/yellow-pressed-dark"
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "css": "--sloy-theme-surface-tertiary-yellow-pressed",
+          "description": "Заливка по назначению. Наследует тему, поверхность и её схему."
+        },
+        {
+          "name": "surface/primary/yellow-pressed",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "Surface/surface/primary/yellow-pressed-light"
+            },
+            "Dark": {
+              "alias": "Surface/surface/primary/yellow-pressed-dark"
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "css": "--sloy-theme-surface-primary-yellow-pressed",
+          "description": "Заливка по назначению. Наследует тему, поверхность и её схему."
+        },
+        {
+          "name": "border/yellow-pressed",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "Surface/border/yellow-pressed-light"
+            },
+            "Dark": {
+              "alias": "Surface/border/yellow-pressed-dark"
+            }
+          },
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "css": "--sloy-theme-border-yellow-pressed",
+          "description": "Цвет границы на текущей поверхности."
+        },
+        {
+          "name": "content/yellow",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "Surface/content/yellow-light"
+            },
+            "Dark": {
+              "alias": "Surface/content/yellow-dark"
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "css": "--sloy-theme-content-yellow",
+          "description": "Цвет текста или иконки. Наследует тему и текущую поверхность."
+        },
+        {
+          "name": "content/secondary/yellow",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "SurfaceScheme/content/secondary/yellow-light"
+            },
+            "Dark": {
+              "alias": "Surface/content/secondary/yellow-dark"
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "css": "--sloy-theme-content-secondary-yellow",
+          "description": "Цвет текста или иконки. Наследует тему и текущую поверхность."
+        },
+        {
+          "name": "content/on-primary/yellow",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "Surface/content/on-primary/yellow-light"
+            },
+            "Dark": {
+              "alias": "Surface/content/on-primary/yellow-dark"
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "css": "--sloy-theme-content-on-primary-yellow",
+          "description": "Цвет текста или иконки. Наследует тему и текущую поверхность."
+        },
+        {
           "name": "surface/secondary/orange-normal",
           "type": "COLOR",
           "values": {
@@ -54953,246 +55947,6 @@
           },
           "scopes": [],
           "css": "--sloy-theme-content-on-primary-amber",
-          "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/secondary/yellow-normal",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "SurfaceScheme/surface/secondary/yellow-normal-light"
-            },
-            "Dark": {
-              "alias": "Surface/surface/secondary/yellow-normal-dark"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-theme-surface-secondary-yellow-normal",
-          "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/tertiary/yellow-normal",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "SurfaceScheme/surface/tertiary/yellow-normal-light"
-            },
-            "Dark": {
-              "alias": "Surface/surface/tertiary/yellow-normal-dark"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-theme-surface-tertiary-yellow-normal",
-          "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/primary/yellow-normal",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "Surface/surface/primary/yellow-normal-light"
-            },
-            "Dark": {
-              "alias": "Surface/surface/primary/yellow-normal-dark"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-theme-surface-primary-yellow-normal",
-          "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "border/yellow-normal",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "Surface/border/yellow-normal-light"
-            },
-            "Dark": {
-              "alias": "Surface/border/yellow-normal-dark"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-theme-border-yellow-normal",
-          "description": "Цвет границы на текущей поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/secondary/yellow-hover",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "SurfaceScheme/surface/secondary/yellow-hover-light"
-            },
-            "Dark": {
-              "alias": "Surface/surface/secondary/yellow-hover-dark"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-theme-surface-secondary-yellow-hover",
-          "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/tertiary/yellow-hover",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "SurfaceScheme/surface/tertiary/yellow-hover-light"
-            },
-            "Dark": {
-              "alias": "Surface/surface/tertiary/yellow-hover-dark"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-theme-surface-tertiary-yellow-hover",
-          "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/primary/yellow-hover",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "Surface/surface/primary/yellow-hover-light"
-            },
-            "Dark": {
-              "alias": "Surface/surface/primary/yellow-hover-dark"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-theme-surface-primary-yellow-hover",
-          "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "border/yellow-hover",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "Surface/border/yellow-hover-light"
-            },
-            "Dark": {
-              "alias": "Surface/border/yellow-hover-dark"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-theme-border-yellow-hover",
-          "description": "Цвет границы на текущей поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/secondary/yellow-pressed",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "SurfaceScheme/surface/secondary/yellow-pressed-light"
-            },
-            "Dark": {
-              "alias": "Surface/surface/secondary/yellow-pressed-dark"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-theme-surface-secondary-yellow-pressed",
-          "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/tertiary/yellow-pressed",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "SurfaceScheme/surface/tertiary/yellow-pressed-light"
-            },
-            "Dark": {
-              "alias": "Surface/surface/tertiary/yellow-pressed-dark"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-theme-surface-tertiary-yellow-pressed",
-          "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "surface/primary/yellow-pressed",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "Surface/surface/primary/yellow-pressed-light"
-            },
-            "Dark": {
-              "alias": "Surface/surface/primary/yellow-pressed-dark"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-theme-surface-primary-yellow-pressed",
-          "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "border/yellow-pressed",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "Surface/border/yellow-pressed-light"
-            },
-            "Dark": {
-              "alias": "Surface/border/yellow-pressed-dark"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-theme-border-yellow-pressed",
-          "description": "Цвет границы на текущей поверхности.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/yellow",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "Surface/content/yellow-light"
-            },
-            "Dark": {
-              "alias": "Surface/content/yellow-dark"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-theme-content-yellow",
-          "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/secondary/yellow",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "SurfaceScheme/content/secondary/yellow-light"
-            },
-            "Dark": {
-              "alias": "Surface/content/secondary/yellow-dark"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-theme-content-secondary-yellow",
-          "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "content/on-primary/yellow",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "Surface/content/on-primary/yellow-light"
-            },
-            "Dark": {
-              "alias": "Surface/content/on-primary/yellow-dark"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-theme-content-on-primary-yellow",
           "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
           "hiddenFromPublishing": true
         },
@@ -57636,6 +58390,26 @@
           "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы."
         },
         {
+          "name": "stable/accent/yellow",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "Palette/yellow/21"
+            },
+            "Dark": {
+              "alias": "Palette/yellow/21"
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL",
+            "TEXT_FILL",
+            "STROKE_COLOR"
+          ],
+          "css": "--sloy-theme-stable-accent-yellow",
+          "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы."
+        },
+        {
           "name": "stable/accent/orange",
           "type": "COLOR",
           "values": {
@@ -57968,22 +58742,6 @@
           },
           "scopes": [],
           "css": "--sloy-theme-stable-accent-amber",
-          "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
-          "hiddenFromPublishing": true
-        },
-        {
-          "name": "stable/accent/yellow",
-          "type": "COLOR",
-          "values": {
-            "Light": {
-              "alias": "Palette/orange/21"
-            },
-            "Dark": {
-              "alias": "Palette/orange/21"
-            }
-          },
-          "scopes": [],
-          "css": "--sloy-theme-stable-accent-yellow",
           "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
           "hiddenFromPublishing": true
         },
@@ -61283,6 +62041,7 @@
     "accents": [
       "blue",
       "green",
+      "yellow",
       "orange",
       "red",
       "pink",
@@ -61305,17 +62064,16 @@
       "mint": "green",
       "lime": "green",
       "amber": "orange",
-      "yellow": "orange",
       "vermilion": "orange"
     },
     "rawColorsCollection": "Palette",
     "aliasDirection": "Theme → SurfaceScheme → Surface → Palette, with direct shortcuts for invariant values",
     "crossCollectionAliasesOnly": true,
     "fontRoles": {
-      "base": "Inter",
-      "code": "Overpass Mono",
-      "heading": "Georgia",
-      "pair": "Courier New"
+      "base": "Medeo Sans",
+      "code": "Medeo Mono",
+      "heading": "Medeo Sans",
+      "pair": "Medeo Mono"
     },
     "densityFormula": "Adaptive spacing = round(unit × coefficient). Control height = fixed line-height + 2 × adaptive vertical inset. Fixed spacing, type and 44 px touch targets do not scale.",
     "radiusFormula": "radius = round(base × ratio), base = 0 / 4 / 8 / 16; pill and fixed zero remain constant.",
@@ -61323,7 +62081,7 @@
     "inheritance": "Тема, поверхность, схема, плотность, скругления и границы наследуются независимо.",
     "staticBlock": "surface/block сохраняет контекст родительской поверхности.",
     "paletteNaming": {
-      "opaqueCount": 289,
+      "opaqueCount": 330,
       "alphaCount": 0,
       "naming": "<hue>/<step>; gray/<step>; black; white",
       "strategy": "One opaque ramp per hue, independent of theme, role and surface. All semantic paints select an existing ramp step and optionally compose its alias with Opacity. Never create role-specific, theme-specific or alpha RGB values in Palette.",

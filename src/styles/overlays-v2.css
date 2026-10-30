@@ -5,12 +5,12 @@
 .cap-modal-layer > .cap-dialog { position: relative; z-index: 1; display: flex; flex-direction: column; margin: 0; padding: 0; width: min(32rem, 100%); max-width: 100%; max-height: calc(100dvh - var(--cap-overlay-gutter, 12px) * 2); overflow: hidden; border: var(--cap-border-width) solid var(--cap-overlay-border); border-radius:var(--cap-number-radius-2xl); background: var(--cap-surface-current); color: var(--cap-text-primary); box-shadow: var(--cap-shadow-modal); outline: none; animation: cap-overlay-enter var(--cap-duration-normal, 180ms) var(--cap-ease-out, ease-out); }
 .cap-modal-layer > .cap-dialog[data-size='sm'] { width: min(24rem, 100%); }
 .cap-modal-layer > .cap-dialog[data-size='lg'] { width: min(52rem, 100%); }
-.cap-modal-layer .cap-dialog-header { padding: var(--cap-space-4) var(--cap-space-4) 0; gap: var(--cap-space-3); flex: 0 0 auto; }
+.cap-modal-layer .cap-dialog-header { padding: calc(var(--cap-space-4) + var(--cap-radius-inset)) calc(var(--cap-space-4) + var(--cap-radius-inset)) 0; gap: var(--cap-space-3); flex: 0 0 auto; }
 .cap-modal-layer .cap-dialog-header > div { min-width: 0; }
 .cap-modal-layer .cap-dialog-header h2 { overflow-wrap: anywhere; }
 .cap-modal-layer .cap-dialog-header > .cap-button { flex-shrink: 0; }
-.cap-modal-layer .cap-dialog-body { min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: var(--cap-space-4); scrollbar-width: thin; scrollbar-color: var(--cap-border-front-strong) transparent; }
-.cap-modal-layer .cap-dialog-footer { padding: var(--cap-space-3) var(--cap-space-4); flex-shrink: 0; flex-wrap: wrap; background: transparent; border-top-color: var(--cap-overlay-border); }
+.cap-modal-layer .cap-dialog-body { min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: var(--cap-space-4) calc(var(--cap-space-4) + var(--cap-radius-inset)); scrollbar-width: thin; scrollbar-color: var(--cap-border-front-strong) transparent; }
+.cap-modal-layer .cap-dialog-footer { padding: var(--cap-space-3) calc(var(--cap-space-4) + var(--cap-radius-inset)) calc(var(--cap-space-3) + var(--cap-radius-inset)); flex-shrink: 0; flex-wrap: wrap; background: transparent; border-top-color: var(--cap-overlay-border); }
 .cap-modal-layer[data-side='left'] { justify-items: start; }
 .cap-modal-layer[data-side='right'] { justify-items: end; }
 .cap-modal-layer[data-side='bottom'] { align-items: end; }
@@ -30,7 +30,7 @@
 .cap-menu-v2 .cap-menu-item:disabled { cursor: not-allowed; }
 .cap-menu-separator { width:auto; height:var(--cap-border-width); margin:5px calc(8px + var(--cap-radius-inset,0px)); border:0; background:var(--cap-divider-panel); }
 .cap-menu-v2 .cap-kbd { flex-shrink: 0; }
-.cap-popover-v2 { width: min(22rem, calc(100vw - var(--cap-overlay-gutter, 12px) * 2)); padding: var(--cap-space-3); outline: none; }
+.cap-popover-v2 { width: min(22rem, calc(100vw - var(--cap-overlay-gutter, 12px) * 2)); padding: calc(var(--cap-space-3) + var(--cap-radius-inset)); outline: none; }
 .cap-popover-v2:focus-visible { outline: var(--cap-focus-width) solid var(--cap-ring-state-active); outline-offset: var(--cap-focus-offset); }
 .cap-tooltip-v2 { position: fixed; z-index: 1200; inset: auto; transform: none; opacity: 1; visibility: visible; padding: 0; max-width: min(18rem, calc(100vw - var(--cap-overlay-gutter, 12px) * 2)); border: var(--cap-border-width) solid var(--cap-overlay-border); border-radius:calc(8px * var(--cap-radius-enabled,1)); background: var(--cap-tooltip-background,var(--cap-surface-current)); color:var(--cap-tooltip-foreground,var(--cap-content-primary)); font-family: var(--cap-font-sans); font-size: var(--cap-font-size-xs); font-weight: 500; animation: cap-overlay-fade var(--cap-duration-fast, 120ms) var(--cap-ease-out, ease-out); }
 .cap-tooltip-shortcut { display: flex; gap: var(--cap-space-1); margin-top: 6px; }
@@ -53,7 +53,7 @@
 .cap-select-option[aria-disabled='true'] { cursor: not-allowed; }
 .cap-select-group { padding: var(--cap-space-2) calc(var(--cap-space-detail-9) + var(--cap-radius-inset)) var(--cap-space-1); color: var(--cap-content-caption); font-size: var(--cap-font-size-tiny); line-height: 14px; font-weight: 400; }
 .cap-command .cap-dialog-body { padding: 0 var(--cap-space-2) var(--cap-space-2); }
-.cap-command .cap-dialog-header { padding: var(--cap-space-3) var(--cap-space-4) 0; }
+.cap-command .cap-dialog-header { padding:calc(var(--cap-space-3) + var(--cap-radius-inset)) calc(var(--cap-space-4) + var(--cap-radius-inset)) 0; }
 .cap-command-list { display: flex; flex-direction: column; gap: var(--cap-item-gap); overscroll-behavior: contain; scrollbar-width: thin; }
 .cap-command-item:is(:hover, [aria-selected='true']) { background: var(--cap-control-hover); }
 @keyframes cap-overlay-enter { from { opacity: 0; transform: translateY(5px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
@@ -100,7 +100,7 @@
 @media (pointer:coarse) { .cap-command-compact .cap-dialog-header { --cap-command-control-height:var(--cap-touch-target); } }
 
 /* Search and results share one horizontal edge in both header variants. */
-.cap-command { --cap-command-shell-inset:calc(var(--cap-space-2) * var(--cap-radius-enabled)); --cap-command-row-inset:calc(var(--cap-space-2) * var(--cap-radius-enabled) + var(--cap-space-3) * var(--cap-square)); }
+.cap-command { --cap-command-shell-inset:calc(var(--cap-space-2) * var(--cap-radius-enabled) + var(--cap-radius-inset)); --cap-command-row-inset:calc(var(--cap-space-2) * var(--cap-radius-enabled) + var(--cap-space-3) * var(--cap-square)); }
 .cap-command .cap-dialog-body { padding-inline:var(--cap-command-shell-inset); padding-bottom:var(--cap-command-shell-inset); }
 .cap-command .cap-command-list { padding:var(--cap-command-shell-inset) 0; gap:calc(var(--cap-item-gap) * var(--cap-radius-enabled)); }
 .cap-command .cap-command-item { min-height:var(--cap-size-control-md); padding:var(--cap-space-2) var(--cap-command-row-inset); border-radius:round(down,max(0px,calc(var(--cap-number-radius-2xl) - var(--cap-command-shell-inset))),1px); }
@@ -116,3 +116,7 @@
 /* Rich descriptions keep a readable measure, including unbroken aliases and URLs. */
 .cap-tooltip-body > :is(.cap-tooltip-caption,.cap-tooltip-content,.cap-tooltip-description) { min-width:0; max-width:100%; white-space:normal; overflow-wrap:anywhere; }
 .cap-tooltip-content :where(pre,code) { white-space:pre-wrap; overflow-wrap:anywhere; }
+
+/* Divided overlays reserve optical clearance only at their outer edges. */
+.cap-modal-layer > .cap-dialog:not(.cap-command) > .cap-dialog-body:first-child { padding-top:calc(var(--cap-space-4) + var(--cap-radius-inset)); }
+.cap-modal-layer > .cap-dialog:not(.cap-command) > .cap-dialog-body:last-child { padding-bottom:calc(var(--cap-space-4) + var(--cap-radius-inset)); }

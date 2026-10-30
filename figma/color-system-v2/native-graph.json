@@ -4,6 +4,7 @@
   "accents": [
     "blue",
     "green",
+    "yellow",
     "orange",
     "red",
     "pink",
@@ -29,6 +30,7 @@
       "Neutral",
       "Blue",
       "Green",
+      "Yellow",
       "Orange",
       "Red",
       "Pink",
@@ -51,8 +53,8 @@
   },
   "bridge": {
     "source": "figma/token-system-v4/graph.json",
-    "sourceHash": "f7f034ce919a11e540fd84956778c8d3020f60044b4fc0fae3e3ad1cfb7e7196",
-    "graphSha256": "373e74337e41893a1c755cb3ad64de51ac135d210a6d85efb4ba6a037c27b992",
+    "sourceHash": "ffa430e165b9324889f96eb275a998f9b3992923e433e4d56619ea6d661e5ed6",
+    "graphSha256": "ea9fd3e158957b7fc1f33bc979f5bdcf8a689b0eeb101e2637a4b633a74c84db",
     "palette": "One shared opaque ramp per hue; semantic colors select a step and an Opacity alias.",
     "legacyLogicalKeys": "Preserved outside Palette; Figma names group by role with context in the leaf."
   },
@@ -304,6 +306,118 @@
           "scopes": [],
           "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
           "css": "--sloy-v2-palette-green-31"
+        },
+        {
+          "name": "yellow/04",
+          "figmaName": "yellow/04",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9885482782,
+              "g": 0.9473069418,
+              "b": 0.6591925486,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
+          "css": "--sloy-v2-palette-yellow-04"
+        },
+        {
+          "name": "yellow/05",
+          "figmaName": "yellow/05",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9814347397,
+              "g": 0.9269062878,
+              "b": 0.5551599182,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
+          "css": "--sloy-v2-palette-yellow-05"
+        },
+        {
+          "name": "yellow/07",
+          "figmaName": "yellow/07",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9641978442,
+              "g": 0.8803853886,
+              "b": 0.2906137311,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
+          "css": "--sloy-v2-palette-yellow-07"
+        },
+        {
+          "name": "yellow/17",
+          "figmaName": "yellow/17",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.6899263852,
+              "g": 0.617932744,
+              "b": 6e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
+          "css": "--sloy-v2-palette-yellow-17"
+        },
+        {
+          "name": "yellow/23",
+          "figmaName": "yellow/23",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.5050725493,
+              "g": 0.4509441643,
+              "b": 6e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
+          "css": "--sloy-v2-palette-yellow-23"
+        },
+        {
+          "name": "yellow/25",
+          "figmaName": "yellow/25",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.4433629964,
+              "g": 0.3951985503,
+              "b": 1e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
+          "css": "--sloy-v2-palette-yellow-25"
+        },
+        {
+          "name": "yellow/31",
+          "figmaName": "yellow/31",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.2617463708,
+              "g": 0.2311343197,
+              "b": 3e-10,
+              "a": 1
+            }
+          },
+          "scopes": [],
+          "description": "Shared canonical opaque palette step. Identical in every theme and surface.",
+          "css": "--sloy-v2-palette-yellow-31"
         },
         {
           "name": "orange/05",
@@ -1810,6 +1924,166 @@
           "css": "--sloy-v2-palette-alpha-green-02-90"
         },
         {
+          "name": "alpha/yellow-18-22",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.659338724,
+              "g": 0.5903012369,
+              "b": 8e-10,
+              "a": 0.22
+            }
+          },
+          "scopes": [],
+          "description": "Referenced yellow/18 pigment at 22% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/yellow-18-22",
+          "css": "--sloy-v2-palette-alpha-yellow-18-22"
+        },
+        {
+          "name": "alpha/yellow-10-11",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.8969334328,
+              "g": 0.8049335314,
+              "b": 0,
+              "a": 0.11
+            }
+          },
+          "scopes": [],
+          "description": "Referenced yellow/10 pigment at 11% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/yellow-10-11",
+          "css": "--sloy-v2-palette-alpha-yellow-10-11"
+        },
+        {
+          "name": "alpha/yellow-16-8",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.7203442887,
+              "g": 0.6454108998,
+              "b": 5e-10,
+              "a": 0.08
+            }
+          },
+          "scopes": [],
+          "description": "Referenced yellow/16 pigment at 8% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/yellow-16-8",
+          "css": "--sloy-v2-palette-alpha-yellow-16-8"
+        },
+        {
+          "name": "alpha/yellow-21-9",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.5669107349,
+              "g": 0.5068059794,
+              "b": 1.3e-9,
+              "a": 0.09
+            }
+          },
+          "scopes": [],
+          "description": "Referenced yellow/21 pigment at 9% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/yellow-21-9",
+          "css": "--sloy-v2-palette-alpha-yellow-21-9"
+        },
+        {
+          "name": "alpha/yellow-21-27",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.5669107349,
+              "g": 0.5068059794,
+              "b": 1.3e-9,
+              "a": 0.27
+            }
+          },
+          "scopes": [],
+          "description": "Referenced yellow/21 pigment at 27% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/yellow-21-27",
+          "css": "--sloy-v2-palette-alpha-yellow-21-27"
+        },
+        {
+          "name": "alpha/yellow-07-15",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.9641978442,
+              "g": 0.8803853886,
+              "b": 0.2906137311,
+              "a": 0.15
+            }
+          },
+          "scopes": [],
+          "description": "Referenced yellow/07 pigment at 15% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/yellow-07-15",
+          "css": "--sloy-v2-palette-alpha-yellow-07-15"
+        },
+        {
+          "name": "alpha/yellow-23-11",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.5050725493,
+              "g": 0.4509441643,
+              "b": 6e-10,
+              "a": 0.11
+            }
+          },
+          "scopes": [],
+          "description": "Referenced yellow/23 pigment at 11% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/yellow-23-11",
+          "css": "--sloy-v2-palette-alpha-yellow-23-11"
+        },
+        {
+          "name": "alpha/yellow-16-12",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.7203442887,
+              "g": 0.6454108998,
+              "b": 5e-10,
+              "a": 0.12
+            }
+          },
+          "scopes": [],
+          "description": "Referenced yellow/16 pigment at 12% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/yellow-16-12",
+          "css": "--sloy-v2-palette-alpha-yellow-16-12"
+        },
+        {
+          "name": "alpha/yellow-39-65",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.0416826091,
+              "g": 0.03268531,
+              "b": 0,
+              "a": 0.65
+            }
+          },
+          "scopes": [],
+          "description": "Referenced yellow/39 pigment at 65% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/yellow-39-65",
+          "css": "--sloy-v2-palette-alpha-yellow-39-65"
+        },
+        {
+          "name": "alpha/yellow-01-89",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 1,
+              "g": 0.9909646869,
+              "b": 0.9186246147,
+              "a": 0.89
+            }
+          },
+          "scopes": [],
+          "description": "Referenced yellow/01 pigment at 89% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/yellow-01-89",
+          "css": "--sloy-v2-palette-alpha-yellow-01-89"
+        },
+        {
           "name": "alpha/orange-22-16",
           "type": "COLOR",
           "values": {
@@ -2578,6 +2852,86 @@
           "css": "--sloy-v2-palette-alpha-green-39-63"
         },
         {
+          "name": "alpha/yellow-17-21",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.6899263852,
+              "g": 0.617932744,
+              "b": 6e-10,
+              "a": 0.21
+            }
+          },
+          "scopes": [],
+          "description": "Referenced yellow/17 pigment at 21% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/yellow-17-21",
+          "css": "--sloy-v2-palette-alpha-yellow-17-21"
+        },
+        {
+          "name": "alpha/yellow-16-7",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.7203442887,
+              "g": 0.6454108998,
+              "b": 5e-10,
+              "a": 0.07
+            }
+          },
+          "scopes": [],
+          "description": "Referenced yellow/16 pigment at 7% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/yellow-16-7",
+          "css": "--sloy-v2-palette-alpha-yellow-16-7"
+        },
+        {
+          "name": "alpha/yellow-20-26",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.5977968557,
+              "g": 0.5347071015,
+              "b": 1.3e-9,
+              "a": 0.26
+            }
+          },
+          "scopes": [],
+          "description": "Referenced yellow/20 pigment at 26% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/yellow-20-26",
+          "css": "--sloy-v2-palette-alpha-yellow-20-26"
+        },
+        {
+          "name": "alpha/yellow-21-11",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.5669107349,
+              "g": 0.5068059794,
+              "b": 1.3e-9,
+              "a": 0.11
+            }
+          },
+          "scopes": [],
+          "description": "Referenced yellow/21 pigment at 11% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/yellow-21-11",
+          "css": "--sloy-v2-palette-alpha-yellow-21-11"
+        },
+        {
+          "name": "alpha/yellow-39-63",
+          "type": "COLOR",
+          "values": {
+            "Value": {
+              "r": 0.0416826091,
+              "g": 0.03268531,
+              "b": 0,
+              "a": 0.63
+            }
+          },
+          "scopes": [],
+          "description": "Referenced yellow/39 pigment at 63% opacity. Regenerate from the canonical source.",
+          "figmaName": "alpha/yellow-39-63",
+          "css": "--sloy-v2-palette-alpha-yellow-39-63"
+        },
+        {
           "name": "alpha/orange-22-15",
           "type": "COLOR",
           "values": {
@@ -3293,6 +3647,70 @@
           "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
         },
         {
+          "name": "standard/shell/surface/accent/yellow/primary/normal",
+          "figmaName": "surface/primary/yellow-normal-standard-shell",
+          "css": "--sloy-v2-theme-standard-shell-surface-accent-yellow-primary-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/yellow/23"
+            },
+            "Dark": {
+              "alias": "palette/yellow/07"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/invert/surface/accent/yellow/primary/normal",
+          "figmaName": "surface/primary/yellow-normal-standard-invert",
+          "css": "--sloy-v2-theme-standard-invert-surface-accent-yellow-primary-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/yellow/07"
+            },
+            "Dark": {
+              "alias": "palette/yellow/23"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/shell/surface/accent/yellow/primary/active",
+          "figmaName": "surface/primary/yellow-active-standard-shell",
+          "css": "--sloy-v2-theme-standard-shell-surface-accent-yellow-primary-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/yellow/25"
+            },
+            "Dark": {
+              "alias": "palette/yellow/05"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/invert/surface/accent/yellow/primary/active",
+          "figmaName": "surface/primary/yellow-active-standard-invert",
+          "css": "--sloy-v2-theme-standard-invert-surface-accent-yellow-primary-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/yellow/05"
+            },
+            "Dark": {
+              "alias": "palette/yellow/25"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
           "name": "standard/shell/surface/accent/orange/primary/normal",
           "figmaName": "surface/primary/orange-normal-standard-shell",
           "css": "--sloy-v2-theme-standard-shell-surface-accent-orange-primary-normal",
@@ -3831,6 +4249,102 @@
             },
             "Dark": {
               "alias": "palette/alpha/red-16-31"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/shell/surface/accent/yellow/secondary/normal",
+          "figmaName": "surface/secondary/yellow-normal-standard-shell",
+          "css": "--sloy-v2-theme-standard-shell-surface-accent-yellow-secondary-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/alpha/yellow-18-22"
+            },
+            "Dark": {
+              "alias": "palette/alpha/yellow-10-11"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/content/surface/accent/yellow/secondary/normal",
+          "figmaName": "surface/secondary/yellow-normal-standard-content",
+          "css": "--sloy-v2-theme-standard-content-surface-accent-yellow-secondary-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/alpha/yellow-17-21"
+            },
+            "Dark": {
+              "alias": "palette/alpha/yellow-10-11"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/invert/surface/accent/yellow/secondary/normal",
+          "figmaName": "surface/secondary/yellow-normal-standard-invert",
+          "css": "--sloy-v2-theme-standard-invert-surface-accent-yellow-secondary-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/alpha/yellow-10-11"
+            },
+            "Dark": {
+              "alias": "palette/alpha/yellow-17-21"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/shell/surface/accent/yellow/secondary/active",
+          "figmaName": "surface/secondary/yellow-active-standard-shell",
+          "css": "--sloy-v2-theme-standard-shell-surface-accent-yellow-secondary-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/alpha/yellow-21-27"
+            },
+            "Dark": {
+              "alias": "palette/alpha/yellow-07-15"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/content/surface/accent/yellow/secondary/active",
+          "figmaName": "surface/secondary/yellow-active-standard-content",
+          "css": "--sloy-v2-theme-standard-content-surface-accent-yellow-secondary-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/alpha/yellow-20-26"
+            },
+            "Dark": {
+              "alias": "palette/alpha/yellow-07-15"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/invert/surface/accent/yellow/secondary/active",
+          "figmaName": "surface/secondary/yellow-active-standard-invert",
+          "css": "--sloy-v2-theme-standard-invert-surface-accent-yellow-secondary-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/alpha/yellow-07-15"
+            },
+            "Dark": {
+              "alias": "palette/alpha/yellow-20-26"
             }
           },
           "scopes": [],
@@ -4429,6 +4943,102 @@
           "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
         },
         {
+          "name": "standard/shell/surface/accent/yellow/tertiary/normal",
+          "figmaName": "surface/tertiary/yellow-normal-standard-shell",
+          "css": "--sloy-v2-theme-standard-shell-surface-accent-yellow-tertiary-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/alpha/yellow-16-8"
+            },
+            "Dark": {
+              "alias": "palette/alpha/yellow-21-9"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/content/surface/accent/yellow/tertiary/normal",
+          "figmaName": "surface/tertiary/yellow-normal-standard-content",
+          "css": "--sloy-v2-theme-standard-content-surface-accent-yellow-tertiary-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/alpha/yellow-16-7"
+            },
+            "Dark": {
+              "alias": "palette/alpha/yellow-21-9"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/invert/surface/accent/yellow/tertiary/normal",
+          "figmaName": "surface/tertiary/yellow-normal-standard-invert",
+          "css": "--sloy-v2-theme-standard-invert-surface-accent-yellow-tertiary-normal",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/alpha/yellow-21-9"
+            },
+            "Dark": {
+              "alias": "palette/alpha/yellow-16-7"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/shell/surface/accent/yellow/tertiary/active",
+          "figmaName": "surface/tertiary/yellow-active-standard-shell",
+          "css": "--sloy-v2-theme-standard-shell-surface-accent-yellow-tertiary-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/alpha/yellow-23-11"
+            },
+            "Dark": {
+              "alias": "palette/alpha/yellow-16-12"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/content/surface/accent/yellow/tertiary/active",
+          "figmaName": "surface/tertiary/yellow-active-standard-content",
+          "css": "--sloy-v2-theme-standard-content-surface-accent-yellow-tertiary-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/alpha/yellow-21-11"
+            },
+            "Dark": {
+              "alias": "palette/alpha/yellow-16-12"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/invert/surface/accent/yellow/tertiary/active",
+          "figmaName": "surface/tertiary/yellow-active-standard-invert",
+          "css": "--sloy-v2-theme-standard-invert-surface-accent-yellow-tertiary-active",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/alpha/yellow-16-12"
+            },
+            "Dark": {
+              "alias": "palette/alpha/yellow-21-11"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
           "name": "standard/shell/surface/accent/orange/tertiary/normal",
           "figmaName": "surface/tertiary/orange-normal-standard-shell",
           "css": "--sloy-v2-theme-standard-shell-surface-accent-orange-tertiary-normal",
@@ -4845,6 +5455,38 @@
           "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
         },
         {
+          "name": "standard/shell/content/accent/yellow/primary",
+          "figmaName": "content/primary/yellow-standard-shell",
+          "css": "--sloy-v2-theme-standard-shell-content-accent-yellow-primary",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/yellow/31"
+            },
+            "Dark": {
+              "alias": "palette/yellow/04"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/invert/content/accent/yellow/primary",
+          "figmaName": "content/primary/yellow-standard-invert",
+          "css": "--sloy-v2-theme-standard-invert-content-accent-yellow-primary",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/yellow/04"
+            },
+            "Dark": {
+              "alias": "palette/yellow/31"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
           "name": "standard/shell/content/accent/orange/primary",
           "figmaName": "content/primary/orange-standard-shell",
           "css": "--sloy-v2-theme-standard-shell-content-accent-orange-primary",
@@ -5111,6 +5753,54 @@
             },
             "Dark": {
               "alias": "palette/alpha/red-39-62"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/shell/content/accent/yellow/secondary",
+          "figmaName": "content/secondary/yellow-standard-shell",
+          "css": "--sloy-v2-theme-standard-shell-content-accent-yellow-secondary",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/alpha/yellow-39-65"
+            },
+            "Dark": {
+              "alias": "palette/alpha/yellow-01-89"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/content/content/accent/yellow/secondary",
+          "figmaName": "content/secondary/yellow-standard-content",
+          "css": "--sloy-v2-theme-standard-content-content-accent-yellow-secondary",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/alpha/yellow-39-63"
+            },
+            "Dark": {
+              "alias": "palette/alpha/yellow-01-89"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/invert/content/accent/yellow/secondary",
+          "figmaName": "content/secondary/yellow-standard-invert",
+          "css": "--sloy-v2-theme-standard-invert-content-accent-yellow-secondary",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/alpha/yellow-01-89"
+            },
+            "Dark": {
+              "alias": "palette/alpha/yellow-39-63"
             }
           },
           "scopes": [],
@@ -5559,6 +6249,38 @@
             },
             "Dark": {
               "alias": "palette/red/25"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/shell/border/accent/yellow",
+          "figmaName": "border/yellow-standard-shell",
+          "css": "--sloy-v2-theme-standard-shell-border-accent-yellow",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/yellow/25"
+            },
+            "Dark": {
+              "alias": "palette/yellow/17"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "standard/invert/border/accent/yellow",
+          "figmaName": "border/yellow-standard-invert",
+          "css": "--sloy-v2-theme-standard-invert-border-accent-yellow",
+          "type": "COLOR",
+          "values": {
+            "Light": {
+              "alias": "palette/yellow/17"
+            },
+            "Dark": {
+              "alias": "palette/yellow/25"
             }
           },
           "scopes": [],
@@ -6488,6 +7210,38 @@
           "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
         },
         {
+          "name": "workspace/surface/accent/yellow/secondary/normal",
+          "figmaName": "surface/secondary/yellow-normal-workspace",
+          "css": "--sloy-v2-scheme-workspace-surface-accent-yellow-secondary-normal",
+          "type": "COLOR",
+          "values": {
+            "Standard": {
+              "alias": "theme/standard/shell/surface/accent/yellow/secondary/normal"
+            },
+            "Dimmed": {
+              "alias": "theme/standard/content/surface/accent/yellow/secondary/normal"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "workspace/surface/accent/yellow/secondary/active",
+          "figmaName": "surface/secondary/yellow-active-workspace",
+          "css": "--sloy-v2-scheme-workspace-surface-accent-yellow-secondary-active",
+          "type": "COLOR",
+          "values": {
+            "Standard": {
+              "alias": "theme/standard/shell/surface/accent/yellow/secondary/active"
+            },
+            "Dimmed": {
+              "alias": "theme/standard/content/surface/accent/yellow/secondary/active"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
           "name": "workspace/surface/accent/orange/secondary/normal",
           "figmaName": "surface/secondary/orange-normal-workspace",
           "css": "--sloy-v2-scheme-workspace-surface-accent-orange-secondary-normal",
@@ -6664,6 +7418,38 @@
           "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
         },
         {
+          "name": "workspace/surface/accent/yellow/tertiary/normal",
+          "figmaName": "surface/tertiary/yellow-normal-workspace",
+          "css": "--sloy-v2-scheme-workspace-surface-accent-yellow-tertiary-normal",
+          "type": "COLOR",
+          "values": {
+            "Standard": {
+              "alias": "theme/standard/shell/surface/accent/yellow/tertiary/normal"
+            },
+            "Dimmed": {
+              "alias": "theme/standard/content/surface/accent/yellow/tertiary/normal"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "workspace/surface/accent/yellow/tertiary/active",
+          "figmaName": "surface/tertiary/yellow-active-workspace",
+          "css": "--sloy-v2-scheme-workspace-surface-accent-yellow-tertiary-active",
+          "type": "COLOR",
+          "values": {
+            "Standard": {
+              "alias": "theme/standard/shell/surface/accent/yellow/tertiary/active"
+            },
+            "Dimmed": {
+              "alias": "theme/standard/content/surface/accent/yellow/tertiary/active"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
           "name": "workspace/surface/accent/orange/tertiary/normal",
           "figmaName": "surface/tertiary/orange-normal-workspace",
           "css": "--sloy-v2-scheme-workspace-surface-accent-orange-tertiary-normal",
@@ -6802,6 +7588,22 @@
             },
             "Dimmed": {
               "alias": "theme/standard/content/content/accent/red/secondary"
+            }
+          },
+          "scopes": [],
+          "description": "Internal exact RGBA route; public Surface roles and independent modes remain unchanged."
+        },
+        {
+          "name": "workspace/content/accent/yellow/secondary",
+          "figmaName": "content/secondary/yellow-workspace",
+          "css": "--sloy-v2-scheme-workspace-content-accent-yellow-secondary",
+          "type": "COLOR",
+          "values": {
+            "Standard": {
+              "alias": "theme/standard/shell/content/accent/yellow/secondary"
+            },
+            "Dimmed": {
+              "alias": "theme/standard/content/content/accent/yellow/secondary"
             }
           },
           "scopes": [],
@@ -7458,6 +8260,62 @@
           "css": "--sloy-v2-surface-surface-accent-red-primary-active"
         },
         {
+          "name": "surface/accent/yellow/primary/normal",
+          "figmaName": "surface/primary/yellow-normal",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "theme/standard/shell/surface/accent/yellow/primary/normal"
+            },
+            "Workspace": {
+              "alias": "theme/standard/shell/surface/accent/yellow/primary/normal"
+            },
+            "Content": {
+              "alias": "theme/standard/shell/surface/accent/yellow/primary/normal"
+            },
+            "Overlay": {
+              "alias": "theme/standard/shell/surface/accent/yellow/primary/normal"
+            },
+            "Invert": {
+              "alias": "theme/standard/invert/surface/accent/yellow/primary/normal"
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
+          "css": "--sloy-v2-surface-surface-accent-yellow-primary-normal"
+        },
+        {
+          "name": "surface/accent/yellow/primary/active",
+          "figmaName": "surface/primary/yellow-active",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "theme/standard/shell/surface/accent/yellow/primary/active"
+            },
+            "Workspace": {
+              "alias": "theme/standard/shell/surface/accent/yellow/primary/active"
+            },
+            "Content": {
+              "alias": "theme/standard/shell/surface/accent/yellow/primary/active"
+            },
+            "Overlay": {
+              "alias": "theme/standard/shell/surface/accent/yellow/primary/active"
+            },
+            "Invert": {
+              "alias": "theme/standard/invert/surface/accent/yellow/primary/active"
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
+          "css": "--sloy-v2-surface-surface-accent-yellow-primary-active"
+        },
+        {
           "name": "surface/accent/orange/primary/normal",
           "figmaName": "surface/primary/orange-normal",
           "type": "COLOR",
@@ -7848,6 +8706,62 @@
           ],
           "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
           "css": "--sloy-v2-surface-surface-accent-red-secondary-active"
+        },
+        {
+          "name": "surface/accent/yellow/secondary/normal",
+          "figmaName": "surface/secondary/yellow-normal",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "theme/standard/shell/surface/accent/yellow/secondary/normal"
+            },
+            "Workspace": {
+              "alias": "scheme/workspace/surface/accent/yellow/secondary/normal"
+            },
+            "Content": {
+              "alias": "theme/standard/content/surface/accent/yellow/secondary/normal"
+            },
+            "Overlay": {
+              "alias": "theme/standard/content/surface/accent/yellow/secondary/normal"
+            },
+            "Invert": {
+              "alias": "theme/standard/invert/surface/accent/yellow/secondary/normal"
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
+          "css": "--sloy-v2-surface-surface-accent-yellow-secondary-normal"
+        },
+        {
+          "name": "surface/accent/yellow/secondary/active",
+          "figmaName": "surface/secondary/yellow-active",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "theme/standard/shell/surface/accent/yellow/secondary/active"
+            },
+            "Workspace": {
+              "alias": "scheme/workspace/surface/accent/yellow/secondary/active"
+            },
+            "Content": {
+              "alias": "theme/standard/content/surface/accent/yellow/secondary/active"
+            },
+            "Overlay": {
+              "alias": "theme/standard/content/surface/accent/yellow/secondary/active"
+            },
+            "Invert": {
+              "alias": "theme/standard/invert/surface/accent/yellow/secondary/active"
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
+          "css": "--sloy-v2-surface-surface-accent-yellow-secondary-active"
         },
         {
           "name": "surface/accent/orange/secondary/normal",
@@ -8242,6 +9156,62 @@
           "css": "--sloy-v2-surface-surface-accent-red-tertiary-active"
         },
         {
+          "name": "surface/accent/yellow/tertiary/normal",
+          "figmaName": "surface/tertiary/yellow-normal",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "theme/standard/shell/surface/accent/yellow/tertiary/normal"
+            },
+            "Workspace": {
+              "alias": "scheme/workspace/surface/accent/yellow/tertiary/normal"
+            },
+            "Content": {
+              "alias": "theme/standard/content/surface/accent/yellow/tertiary/normal"
+            },
+            "Overlay": {
+              "alias": "theme/standard/content/surface/accent/yellow/tertiary/normal"
+            },
+            "Invert": {
+              "alias": "theme/standard/invert/surface/accent/yellow/tertiary/normal"
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
+          "css": "--sloy-v2-surface-surface-accent-yellow-tertiary-normal"
+        },
+        {
+          "name": "surface/accent/yellow/tertiary/active",
+          "figmaName": "surface/tertiary/yellow-active",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "theme/standard/shell/surface/accent/yellow/tertiary/active"
+            },
+            "Workspace": {
+              "alias": "scheme/workspace/surface/accent/yellow/tertiary/active"
+            },
+            "Content": {
+              "alias": "theme/standard/content/surface/accent/yellow/tertiary/active"
+            },
+            "Overlay": {
+              "alias": "theme/standard/content/surface/accent/yellow/tertiary/active"
+            },
+            "Invert": {
+              "alias": "theme/standard/invert/surface/accent/yellow/tertiary/active"
+            }
+          },
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
+          "css": "--sloy-v2-surface-surface-accent-yellow-tertiary-active"
+        },
+        {
           "name": "surface/accent/orange/tertiary/normal",
           "figmaName": "surface/tertiary/orange-normal",
           "type": "COLOR",
@@ -8526,6 +9496,35 @@
           "css": "--sloy-v2-surface-content-accent-red-primary"
         },
         {
+          "name": "content/accent/yellow/primary",
+          "figmaName": "content/primary/yellow",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "theme/standard/shell/content/accent/yellow/primary"
+            },
+            "Workspace": {
+              "alias": "theme/standard/shell/content/accent/yellow/primary"
+            },
+            "Content": {
+              "alias": "theme/standard/shell/content/accent/yellow/primary"
+            },
+            "Overlay": {
+              "alias": "theme/standard/shell/content/accent/yellow/primary"
+            },
+            "Invert": {
+              "alias": "theme/standard/invert/content/accent/yellow/primary"
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL",
+            "STROKE_COLOR"
+          ],
+          "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
+          "css": "--sloy-v2-surface-content-accent-yellow-primary"
+        },
+        {
           "name": "content/accent/orange/primary",
           "figmaName": "content/primary/orange",
           "type": "COLOR",
@@ -8727,6 +9726,35 @@
           ],
           "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
           "css": "--sloy-v2-surface-content-accent-red-secondary"
+        },
+        {
+          "name": "content/accent/yellow/secondary",
+          "figmaName": "content/secondary/yellow",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "theme/standard/shell/content/accent/yellow/secondary"
+            },
+            "Workspace": {
+              "alias": "scheme/workspace/content/accent/yellow/secondary"
+            },
+            "Content": {
+              "alias": "theme/standard/content/content/accent/yellow/secondary"
+            },
+            "Overlay": {
+              "alias": "theme/standard/content/content/accent/yellow/secondary"
+            },
+            "Invert": {
+              "alias": "theme/standard/invert/content/accent/yellow/secondary"
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL",
+            "STROKE_COLOR"
+          ],
+          "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
+          "css": "--sloy-v2-surface-content-accent-yellow-secondary"
         },
         {
           "name": "content/accent/orange/secondary",
@@ -8957,6 +9985,34 @@
           ],
           "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
           "css": "--sloy-v2-surface-content-accent-green-on-primary"
+        },
+        {
+          "name": "content/accent/yellow/on-primary",
+          "figmaName": "content/on-primary-yellow",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+            },
+            "Workspace": {
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+            },
+            "Content": {
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+            },
+            "Overlay": {
+              "alias": "theme/standard/shell/content/accent/blue/on-primary"
+            },
+            "Invert": {
+              "alias": "theme/standard/shell/content/on-invert"
+            }
+          },
+          "scopes": [
+            "TEXT_FILL",
+            "SHAPE_FILL"
+          ],
+          "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
+          "css": "--sloy-v2-surface-content-accent-yellow-on-primary"
         },
         {
           "name": "content/accent/orange/on-primary",
@@ -9237,6 +10293,33 @@
           ],
           "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
           "css": "--sloy-v2-surface-border-accent-red"
+        },
+        {
+          "name": "border/accent/yellow",
+          "figmaName": "border/yellow",
+          "type": "COLOR",
+          "values": {
+            "Shell": {
+              "alias": "theme/standard/shell/border/accent/yellow"
+            },
+            "Workspace": {
+              "alias": "theme/standard/shell/border/accent/yellow"
+            },
+            "Content": {
+              "alias": "theme/standard/shell/border/accent/yellow"
+            },
+            "Overlay": {
+              "alias": "theme/standard/shell/border/accent/yellow"
+            },
+            "Invert": {
+              "alias": "theme/standard/invert/border/accent/yellow"
+            }
+          },
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "description": "Contextual color compiled into a sparse RGBA palette; alpha belongs to the paint, not the layer. Theme, Scheme and Surface modes inherit independently.",
+          "css": "--sloy-v2-surface-border-accent-yellow"
         },
         {
           "name": "border/accent/orange",
@@ -9820,7 +10903,7 @@
           "name": "font/family/base",
           "type": "STRING",
           "values": {
-            "Value": "Inter"
+            "Value": "Medeo Sans"
           },
           "scopes": [],
           "css": "--sloy-primitives-font-family-base",
@@ -9832,7 +10915,7 @@
           "name": "font/family/code",
           "type": "STRING",
           "values": {
-            "Value": "Overpass Mono"
+            "Value": "Medeo Mono"
           },
           "scopes": [],
           "css": "--sloy-primitives-font-family-code",
@@ -9844,7 +10927,7 @@
           "name": "font/family/heading",
           "type": "STRING",
           "values": {
-            "Value": "Georgia"
+            "Value": "Medeo Sans"
           },
           "scopes": [],
           "css": "--sloy-primitives-font-family-heading",
@@ -9856,7 +10939,7 @@
           "name": "font/family/pair",
           "type": "STRING",
           "values": {
-            "Value": "Courier New"
+            "Value": "Medeo Mono"
           },
           "scopes": [],
           "css": "--sloy-primitives-font-family-pair",
@@ -11279,6 +12362,7 @@
         "Neutral",
         "Blue",
         "Green",
+        "Yellow",
         "Orange",
         "Red",
         "Pink",
@@ -11298,6 +12382,9 @@
             },
             "Green": {
               "alias": "surface/surface/accent/green/primary/normal"
+            },
+            "Yellow": {
+              "alias": "surface/surface/accent/yellow/primary/normal"
             },
             "Orange": {
               "alias": "surface/surface/accent/orange/primary/normal"
@@ -11333,6 +12420,9 @@
             "Green": {
               "alias": "surface/surface/accent/green/primary/active"
             },
+            "Yellow": {
+              "alias": "surface/surface/accent/yellow/primary/active"
+            },
             "Orange": {
               "alias": "surface/surface/accent/orange/primary/active"
             },
@@ -11366,6 +12456,9 @@
             },
             "Green": {
               "alias": "surface/surface/accent/green/primary/active"
+            },
+            "Yellow": {
+              "alias": "surface/surface/accent/yellow/primary/active"
             },
             "Orange": {
               "alias": "surface/surface/accent/orange/primary/active"
@@ -11401,6 +12494,9 @@
             "Green": {
               "alias": "surface/surface/accent/green/secondary/normal"
             },
+            "Yellow": {
+              "alias": "surface/surface/accent/yellow/secondary/normal"
+            },
             "Orange": {
               "alias": "surface/surface/accent/orange/secondary/normal"
             },
@@ -11434,6 +12530,9 @@
             },
             "Green": {
               "alias": "surface/surface/accent/green/secondary/active"
+            },
+            "Yellow": {
+              "alias": "surface/surface/accent/yellow/secondary/active"
             },
             "Orange": {
               "alias": "surface/surface/accent/orange/secondary/active"
@@ -11469,6 +12568,9 @@
             "Green": {
               "alias": "surface/surface/accent/green/secondary/active"
             },
+            "Yellow": {
+              "alias": "surface/surface/accent/yellow/secondary/active"
+            },
             "Orange": {
               "alias": "surface/surface/accent/orange/secondary/active"
             },
@@ -11502,6 +12604,9 @@
             },
             "Green": {
               "alias": "surface/content/accent/green/primary"
+            },
+            "Yellow": {
+              "alias": "surface/content/accent/yellow/primary"
             },
             "Orange": {
               "alias": "surface/content/accent/orange/primary"
@@ -11537,6 +12642,9 @@
             "Green": {
               "alias": "surface/content/accent/green/on-primary"
             },
+            "Yellow": {
+              "alias": "surface/content/accent/yellow/on-primary"
+            },
             "Orange": {
               "alias": "surface/content/accent/orange/on-primary"
             },
@@ -11571,6 +12679,9 @@
             "Green": {
               "alias": "surface/border/accent/green"
             },
+            "Yellow": {
+              "alias": "surface/border/accent/yellow"
+            },
             "Orange": {
               "alias": "surface/border/accent/orange"
             },
@@ -11603,6 +12714,9 @@
             },
             "Green": {
               "alias": "surface/border/accent/green"
+            },
+            "Yellow": {
+              "alias": "surface/border/accent/yellow"
             },
             "Orange": {
               "alias": "surface/border/accent/orange"
@@ -11637,6 +12751,9 @@
             "Green": {
               "alias": "surface/border/accent/green"
             },
+            "Yellow": {
+              "alias": "surface/border/accent/yellow"
+            },
             "Orange": {
               "alias": "surface/border/accent/orange"
             },
@@ -11663,7 +12780,7 @@
   "native": {
     "schemaVersion": 1,
     "generatedFrom": "figma/token-system-v4/source.json",
-    "sourceHash": "f7f034ce919a11e540fd84956778c8d3020f60044b4fc0fae3e3ad1cfb7e7196",
+    "sourceHash": "ffa430e165b9324889f96eb275a998f9b3992923e433e4d56619ea6d661e5ed6",
     "palette": "Only referenced opaque ramp entries and integer-percent RGBA paints.",
     "publicColorCollection": "surface",
     "cssFile": "native.css",
@@ -11672,7 +12789,7 @@
       "Glass"
     ],
     "noOpacityNumberVariables": true,
-    "publicRoleCount": 86,
+    "publicRoleCount": 96,
     "accentRoleCount": 11,
     "controlRoleMap": {
       "surface/block": "surface/surface/block",
@@ -11698,23 +12815,23 @@
             "scheme",
             "theme"
           ],
-          "theme": 213,
-          "scheme": 54,
-          "routingVariables": 267
+          "theme": 236,
+          "scheme": 59,
+          "routingVariables": 295
         },
         {
           "axisOrder": [
             "theme",
             "scheme"
           ],
-          "theme": 227,
-          "scheme": 59,
-          "routingVariables": 286
+          "theme": 255,
+          "scheme": 64,
+          "routingVariables": 319
         }
       ],
-      "beforeRoutingVariables": 267,
-      "afterRoutingVariables": 267,
-      "exactPublicContextComparisons": 1720
+      "beforeRoutingVariables": 295,
+      "afterRoutingVariables": 295,
+      "exactPublicContextComparisons": 1920
     }
   }
 }

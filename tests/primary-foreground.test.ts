@@ -18,7 +18,7 @@ describe('Primary foreground policy',()=>{
   }
  });
 
- it('defaults to white in local Light and black in local Dark on both states for all six hues',()=>{
+ it('defaults to white in local Light and black in local Dark on both states for all seven hues',()=>{
   for(const preset of presets)for(const theme of ['Light','Dark'])for(const minimumContrast of [4.5,7]){
    const accent=createAccent(preset.name,preset.hex),palette=generatePalette(accent),pair=primaryPair(accent,theme,{...defaultRules,minimumContrast},palette);
    expect(pair.foreground).toEqual(theme==='Light'?WHITE:BLACK);

@@ -1,6 +1,6 @@
 {
   "name": "sloyui",
-  "version": "0.18.3",
+  "version": "0.18.16",
   "description": "An agent-friendly React UI library with themes, semantic tokens and accessible components.",
   "type": "module",
   "sideEffects": [
@@ -73,8 +73,6 @@
     "react-dom": ">=19.0.0"
   },
   "devDependencies": {
-    "@fontsource-variable/inter": "^5.2.0",
-    "@fontsource-variable/overpass-mono": "^5.2.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
@@ -86,6 +84,7 @@
     "esbuild": "^0.25.0",
     "jsdom": "^26.1.0",
     "lucide-react": "^1.52.0",
+    "medeo-font": "^1.0.0-rc.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "typescript": "^5.8.0",

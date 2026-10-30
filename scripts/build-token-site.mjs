@@ -1,10 +1,11 @@
-import { mkdir, copyFile } from 'node:fs/promises';
+import { mkdir, copyFile, cp } from 'node:fs/promises';
 import { resolve } from 'node:path';
 const source = resolve('figma/token-system-v4');
 const destination = resolve('public/token-system-v4');
 await mkdir(destination, { recursive: true });
 const files = ['graph.json', 'source.json', 'tokens.css', 'guide.md', 'explorer.html'];
 await Promise.all(files.map(filename => copyFile(resolve(source, filename), resolve(destination, filename))));
+await cp(resolve('src/styles/fonts'), resolve(destination, 'fonts'), { recursive: true });
 console.log(`Token system v4 site downloads: ${files.length} files copied from authoritative exports.`);
 
 // Native Figma and project-scoped background tools are separate from the

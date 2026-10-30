@@ -74,7 +74,7 @@
 .cap-radio-group .cap-moving-highlight { background:var(--cap-reaction-pressed); }
 .cap-radio-options:has(> .cap-moving-highlight[data-visible]) .cap-radio-option[data-selected=true] { background:transparent; }
 .cap-radio-group[data-variant=cards] .cap-moving-highlight { border-radius:var(--cap-radius-xl); }
-.cap-radio-group .cap-radio { appearance:none; display:inline-grid; width:var(--cap-number-selection-size-md); height:var(--cap-number-selection-size-md); flex:none; place-items:center; border:1px solid var(--cap-content-muted); border-radius:50%; background:var(--cap-control-normal); color:var(--cap-selection-text); }
+.cap-radio-group .cap-radio { appearance:none; display:inline-grid; width:var(--cap-number-selection-size-md); height:var(--cap-number-selection-size-md); flex:none; place-items:center; border:1px solid var(--cap-focus-ring); border-radius:50%; background:var(--cap-control-normal); color:var(--cap-selection-text); }
 .cap-radio-group[data-size=xs] .cap-radio { width:var(--cap-number-selection-size-xs); height:var(--cap-number-selection-size-xs); }
 .cap-radio-group[data-size=sm] .cap-radio { width:var(--cap-number-selection-size-sm); height:var(--cap-number-selection-size-sm); }
 .cap-radio-group[data-size=lg] .cap-radio { width:var(--cap-number-selection-size-lg); height:var(--cap-number-selection-size-lg); }

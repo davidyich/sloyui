@@ -65,12 +65,12 @@
 .cap-segment input:checked + span { background: var(--cap-bg-front); color: var(--cap-text-primary); box-shadow: 0 1px 3px #00000012; }
 .cap-segment input:focus-visible + span { outline: var(--cap-focus-width) solid var(--cap-ring-state-active); outline-offset: var(--cap-focus-offset); }
 .cap-segment input:disabled + span { cursor: not-allowed; }
-.cap-card { border: var(--cap-border-width) solid var(--cap-border-base); border-radius: var(--cap-radius-xl); background: var(--cap-component-card-background); color: var(--cap-text-primary); padding: var(--cap-space-4); min-width: 0; }
+.cap-card { border: var(--cap-border-width) solid var(--cap-border-base); border-radius: var(--cap-radius-xl); background: var(--cap-component-card-background); color: var(--cap-text-primary); padding: calc(var(--cap-space-4) + var(--cap-radius-inset)); min-width: 0; }
 .cap-card[data-variant='subtle'] { background: var(--cap-surface-current); }
 .cap-card[data-variant='elevated'] { background: var(--cap-component-card-background); box-shadow: var(--cap-shadow-lg); }
 .cap-object-card { display: flex; flex-direction: column; padding: 0; text-align: left; overflow: hidden; border: var(--cap-border-width) solid var(--cap-border-base); border-radius: var(--cap-radius-xl); background: var(--cap-surface-block); color: var(--cap-text-primary); cursor: pointer; min-width: 0; transition: background 120ms, border-color 120ms; }
 .cap-object-card:hover { background: var(--cap-bg-base-hover); border-color: var(--cap-border-base-strong); }
-.cap-object-body { display: flex; flex-direction: column; align-items: flex-start; gap: var(--cap-space-3); padding: var(--cap-space-4); }
+.cap-object-body { display: flex; flex-direction: column; align-items: flex-start; gap: var(--cap-space-3); padding: calc(var(--cap-space-4) + var(--cap-radius-inset)); }
 .cap-object-body strong { font-weight: 500; font-size: var(--cap-font-size-base); }
 .cap-object-description { font-size: var(--cap-font-size-sm); line-height: 1.5; color: var(--cap-text-muted); }
 .cap-object-meta { display: flex; flex-wrap: wrap; gap: var(--cap-space-detail-6); margin-top: .25rem; font-size: var(--cap-font-size-xs); color: var(--cap-text-muted); }

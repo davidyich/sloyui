@@ -2,7 +2,7 @@ import { createContext, useContext, useMemo, useEffect, useLayoutEffect, useId, 
 import { createPortal } from 'react-dom';
 
 export const OverlayParents = /* @__PURE__ */ createContext<RefObject<HTMLElement | null>[]>([]);
-type Scope = { 'data-surface-scheme'?: string; 'data-radius'?: string; 'data-density'?: string; 'data-theme'?: string; 'data-accent'?: string; 'data-color'?: string; 'data-borders'?: string; 'data-shadow'?: string; 'data-surface': 'floating' };
+type Scope = { 'data-corner-shape'?: string; 'data-surface-scheme'?: string; 'data-radius'?: string; 'data-density'?: string; 'data-theme'?: string; 'data-accent'?: string; 'data-color'?: string; 'data-borders'?: string; 'data-focus-ring'?: string; 'data-shadow'?: string; 'data-surface': 'floating' };
 export function useOverlayPresence(open: boolean) {
   const [present, setPresent] = useState(open);
   useEffect(() => {
@@ -28,6 +28,8 @@ export function useOverlayScope(anchor: RefObject<HTMLElement | null>, active = 
     let observed: HTMLElement[] = [];
     const read = () => {
       const next: Scope = { 'data-surface': 'floating' };
+      const cornerShape = node.closest('[data-corner-shape]')?.getAttribute('data-corner-shape');
+      if (cornerShape) next['data-corner-shape'] = cornerShape;
       const radius = node.closest('[data-radius]')?.getAttribute('data-radius');
       if (radius) next['data-radius'] = radius;
       const density = node.closest('[data-density]')?.getAttribute('data-density');
@@ -38,6 +40,8 @@ export function useOverlayScope(anchor: RefObject<HTMLElement | null>, active = 
       if (theme) next['data-theme'] = theme;
       const borders = node.closest('[data-borders]')?.getAttribute('data-borders');
       if (borders) next['data-borders'] = borders;
+      const focusRing = node.closest('[data-focus-ring]')?.getAttribute('data-focus-ring');
+      if (focusRing) next['data-focus-ring'] = focusRing;
       const shadow = node.closest('[data-shadow]')?.getAttribute('data-shadow');
       if (shadow) next['data-shadow'] = shadow;
       const accent = node.closest('[data-accent]:not([data-accent="inherit"]),[data-color]:not([data-color="inherit"])');
@@ -50,7 +54,7 @@ export function useOverlayScope(anchor: RefObject<HTMLElement | null>, active = 
       if (ancestors.length !== observed.length || ancestors.some((element, index) => element !== observed[index])) {
         observer.disconnect();
         // A moved/replaced anchor must observe its new inheritance chain too.
-        for (const element of ancestors) observer.observe(element, { attributes: true, childList: true, attributeFilter: ['data-surface-scheme', 'data-theme', 'data-accent', 'data-color', 'data-borders', 'data-shadow', 'data-radius', 'data-density'] });
+        for (const element of ancestors) observer.observe(element, { attributes: true, childList: true, attributeFilter: ['data-corner-shape', 'data-surface-scheme', 'data-theme', 'data-accent', 'data-color', 'data-borders', 'data-focus-ring', 'data-shadow', 'data-radius', 'data-density'] });
         observed = ancestors;
       }
     };

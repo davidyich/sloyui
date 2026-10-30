@@ -51,6 +51,7 @@ export default function Installation() {
     ['data-theme', 'light · dark', t('Тема на html; локально можно переопределить.', 'Set appearance on html; local overrides are supported.')],
     ['data-accent', 'neutral · blue · green · orange · red · pink · purple', t('Локальный акцент для компонентов без явного color.', 'Local accent for components without an explicit color.')],
     ['data-surface', 'shell · workspace · content · overlay · invert · glass', t('Контекст поверхности. Класс cap-surface также задаёт заливку контейнера.', 'Surface context. The cap-surface class also paints the container.')],
+    ['data-focus-ring', 'on · off', t('Контур фокуса; по умолчанию on.', 'Focus outline; on by default.')],
     ['data-borders', 'off · on', t('Декоративные рамки; по умолчанию off.', 'Decorative borders; off by default.')],
     ['data-radius', 'none · compact · default · rounded', t('Скругления страницы или локального контейнера.', 'Corner geometry for the page or a local container.')],
   ];
@@ -71,7 +72,7 @@ export default function Installation() {
     </section>
     <section aria-labelledby="installation-start">
       <h2 id="installation-start">{t('2. Добавьте стили и компоненты', '2. Add styles and components')}</h2>
-      <p>{t('Импортируйте styles.css один раз в точке входа. Он уже содержит runtime-токены. fonts.css по желанию подключает локальные Inter и Overpass Mono.', 'Import styles.css once in your entry point. It already includes runtime tokens. The optional fonts.css adds local Inter and Overpass Mono fonts.')}</p>
+      <p>{t('Импортируйте styles.css один раз в точке входа. Он уже содержит runtime-токены. fonts.css по желанию подключает локальные Medeo Sans и Medeo Mono.', 'Import styles.css once in your entry point. It already includes runtime tokens. The optional fonts.css adds local Medeo Sans and Medeo Mono fonts.')}</p>
       <UI.CodeBlock filename="src/main.tsx" language="tsx" showLanguageSelector={false} showActionsMenu={false}>{entry}</UI.CodeBlock>
       <p>{t('Пример ожидает элемент <div id="root"></div> в HTML вашего приложения. Раскладка и стили body принадлежат приложению:', 'The example expects a <div id="root"></div> element in your application HTML. Your application owns layout and body styles:')}</p>
       <UI.CodeBlock filename="src/app.css" language="css" showLanguageSelector={false} showActionsMenu={false}>{css}</UI.CodeBlock>

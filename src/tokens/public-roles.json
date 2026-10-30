@@ -537,6 +537,153 @@
     ]
   },
   {
+    "name": "surface/secondary/yellow-normal",
+    "css": "--cap-v4-theme-surface-secondary-yellow-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/yellow-normal",
+    "css": "--cap-v4-theme-surface-tertiary-yellow-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/yellow-normal",
+    "css": "--cap-v4-theme-surface-primary-yellow-normal",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/yellow-normal",
+    "css": "--cap-v4-theme-border-yellow-normal",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/secondary/yellow-hover",
+    "css": "--cap-v4-theme-surface-secondary-yellow-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/yellow-hover",
+    "css": "--cap-v4-theme-surface-tertiary-yellow-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/yellow-hover",
+    "css": "--cap-v4-theme-surface-primary-yellow-hover",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/yellow-hover",
+    "css": "--cap-v4-theme-border-yellow-hover",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "surface/secondary/yellow-pressed",
+    "css": "--cap-v4-theme-surface-secondary-yellow-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/tertiary/yellow-pressed",
+    "css": "--cap-v4-theme-surface-tertiary-yellow-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "surface/primary/yellow-pressed",
+    "css": "--cap-v4-theme-surface-primary-yellow-pressed",
+    "group": "surface",
+    "description": "Заливка по назначению. Наследует тему, поверхность и её схему.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "border/yellow-pressed",
+    "css": "--cap-v4-theme-border-yellow-pressed",
+    "group": "border",
+    "description": "Цвет границы на текущей поверхности.",
+    "scopes": [
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "content/yellow",
+    "css": "--cap-v4-theme-content-yellow",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/secondary/yellow",
+    "css": "--cap-v4-theme-content-secondary-yellow",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
+    "name": "content/on-primary/yellow",
+    "css": "--cap-v4-theme-content-on-primary-yellow",
+    "group": "content",
+    "description": "Цвет текста или иконки. Наследует тему и текущую поверхность.",
+    "scopes": [
+      "TEXT_FILL",
+      "SHAPE_FILL"
+    ]
+  },
+  {
     "name": "surface/secondary/orange-normal",
     "css": "--cap-v4-theme-surface-secondary-orange-normal",
     "group": "surface",
@@ -1233,6 +1380,18 @@
   {
     "name": "stable/accent/green",
     "css": "--cap-v4-theme-stable-accent-green",
+    "group": "stable",
+    "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
+    "scopes": [
+      "FRAME_FILL",
+      "SHAPE_FILL",
+      "TEXT_FILL",
+      "STROKE_COLOR"
+    ]
+  },
+  {
+    "name": "stable/accent/yellow",
+    "css": "--cap-v4-theme-stable-accent-yellow",
     "group": "stable",
     "description": "Постоянный цвет. Не меняется от темы, поверхности или схемы.",
     "scopes": [

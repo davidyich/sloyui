@@ -1,0 +1,3193 @@
+{
+  "$extensions": {
+    "com.sloyui.export": {
+      "version": "0.18.16",
+      "collection": "Sloy UI · Theme",
+      "mode": "Light"
+    }
+  },
+  "context": {
+    "page": {
+      "surface": {
+        "background": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9317619717,
+              0.9317619717,
+              0.9317619717
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "block": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.07
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "disabled": {
+        "background": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.03
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "content": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.3217808795,
+              0.3217808795,
+              0.3217808795
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "content": {
+        "primary": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1167714979,
+              0.1167714979,
+              0.1167714979
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "secondary": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2065551762,
+              0.2065551762,
+              0.2065551762
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "tertiary": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.264872785,
+              0.264872785,
+              0.264872785
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "muted": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.3028015713,
+              0.3028015713,
+              0.3028015713
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "caption": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.3217808795,
+              0.3217808795,
+              0.3217808795
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "border": {
+        "subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8991073255,
+              0.8991073255,
+              0.8991073255
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.836553596,
+              0.836553596,
+              0.836553596
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7491148896,
+              0.7491148896,
+              0.7491148896
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "emphasis": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.4192676192,
+              0.4192676192,
+              0.4192676192
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "control": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.836553596,
+              0.836553596,
+              0.836553596
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "control-hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8065875574,
+              0.8065875574,
+              0.8065875574
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "control-pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7491148896,
+              0.7491148896,
+              0.7491148896
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "group": {
+        "hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.06
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "secondary": {
+        "neutral": {
+          "content": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 1
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {}
+              }
+            }
+          }
+        }
+      },
+      "primary": {
+        "background": {
+          "normal": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.1418796635,
+                0.1418796635,
+                0.1418796635
+              ],
+              "alpha": 1
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {}
+              }
+            }
+          },
+          "hover": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.1861108446,
+                0.1861108446,
+                0.1861108446
+              ],
+              "alpha": 1
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {}
+              }
+            }
+          },
+          "pressed": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.2263616092,
+                0.2263616092,
+                0.2263616092
+              ],
+              "alpha": 1
+            },
+            "$extensions": {
+              "com.sloyui.variable": {
+                "scopes": [],
+                "visibility": "internal",
+                "codeSyntax": {}
+              }
+            }
+          }
+        },
+        "content": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "color": {
+        "blue": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    1e-10,
+                    0.4382018359,
+                    0.8419993445
+                  ],
+                  "alpha": 0.15
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    2e-10,
+                    0.3838601889,
+                    0.7431667405
+                  ],
+                  "alpha": 0.2
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            },
+            "content": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  2e-10,
+                  0.2239279564,
+                  0.4522937199
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "border": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    2e-10,
+                    0.3838601889,
+                    0.7431667405
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          },
+          "solid": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    1e-10,
+                    0.4382018359,
+                    0.8419993445
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    2e-10,
+                    0.3838601889,
+                    0.7431667405
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "green": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    5e-10,
+                    0.5332417992,
+                    0.3148852303
+                  ],
+                  "alpha": 0.15
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0,
+                    0.4684285202,
+                    0.2741307741
+                  ],
+                  "alpha": 0.2
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            },
+            "content": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  1e-10,
+                  0.2776773564,
+                  0.1541868356
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "border": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0,
+                    0.4684285202,
+                    0.2741307741
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          },
+          "solid": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    2e-10,
+                    0.5008011309,
+                    0.294486605
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    3e-10,
+                    0.4361589659,
+                    0.2538397449
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "yellow": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.659338724,
+                    0.5903012369,
+                    8e-10
+                  ],
+                  "alpha": 0.22
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.5669107349,
+                    0.5068059794,
+                    1.3e-9
+                  ],
+                  "alpha": 0.27
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            },
+            "content": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.2617463708,
+                  0.2311343197,
+                  3e-10
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "border": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.4433629964,
+                    0.3951985503,
+                    1e-10
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          },
+          "solid": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.5050725493,
+                    0.4509441643,
+                    6e-10
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.4433629964,
+                    0.3951985503,
+                    1e-10
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "orange": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.7720852535,
+                    0.3096264552,
+                    2e-10
+                  ],
+                  "alpha": 0.16
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.6855879572,
+                    0.2714935029,
+                    3e-10
+                  ],
+                  "alpha": 0.21
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            },
+            "content": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.3882823722,
+                  0.1404242072,
+                  0
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "border": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.6424524465,
+                    0.2524769041,
+                    1e-10
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          },
+          "solid": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.7720852535,
+                    0.3096264552,
+                    2e-10
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.6855879572,
+                    0.2714935029,
+                    3e-10
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "red": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.8382408014,
+                    4e-10,
+                    0.1238446065
+                  ],
+                  "alpha": 0.12
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.6908212405,
+                    0,
+                    0.094328273
+                  ],
+                  "alpha": 0.16
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            },
+            "content": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.4501680938,
+                  0,
+                  0.046144718
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "border": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.7398223188,
+                    1e-10,
+                    0.1041392653
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          },
+          "solid": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.8875528899,
+                    6e-10,
+                    0.1337178693
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.7889798876,
+                    4e-10,
+                    0.1139815901
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "pink": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.6330183642,
+                    0,
+                    0.4872106172
+                  ],
+                  "alpha": 0.11
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.4987893891,
+                    2e-10,
+                    0.3814280114
+                  ],
+                  "alpha": 0.16
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            },
+            "content": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.4110163946,
+                  1e-10,
+                  0.3122562393
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "border": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.6782217452,
+                    3e-10,
+                    0.5228343075
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          },
+          "solid": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.8145028544,
+                    5e-10,
+                    0.6302341506
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.7235694884,
+                    3e-10,
+                    0.5585717662
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "purple": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.4323254987,
+                    3e-10,
+                    0.6663368311
+                  ],
+                  "alpha": 0.11
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.3246109719,
+                    0,
+                    0.5068983127
+                  ],
+                  "alpha": 0.15
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            },
+            "content": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.3246109719,
+                  0,
+                  0.5068983127
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "border": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.5422730198,
+                    2e-10,
+                    0.8290806166
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          },
+          "solid": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.6384188039,
+                    0.1529476029,
+                    0.9530606435
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.5792127092,
+                    3e-10,
+                    0.883758565
+                  ],
+                  "alpha": 1
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "divider": {
+        "subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7491148896,
+              0.7491148896,
+              0.7491148896
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/200"
+            }
+          }
+        },
+        "default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6947120397,
+              0.6947120397,
+              0.6947120397
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/250"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5941430661,
+              0.5941430661,
+              0.5941430661
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/350"
+            }
+          }
+        },
+        "panel": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8673824811,
+              0.8673824811,
+              0.8673824811
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/100"
+            }
+          }
+        },
+        "control": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6685851228,
+              0.6685851228,
+              0.6685851228
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/275"
+            }
+          }
+        }
+      }
+    },
+    "inset": {
+      "surface": {
+        "background": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9653810442,
+              0.9653810442,
+              0.9653810442
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "disabled": {
+        "content": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.3408628816,
+              0.3408628816,
+              0.3408628816
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "content": {
+        "caption": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.3408628816,
+              0.3408628816,
+              0.3408628816
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "border": {
+        "subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8991073255,
+              0.8991073255,
+              0.8991073255
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8673824811,
+              0.8673824811,
+              0.8673824811
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7491148896,
+              0.7491148896,
+              0.7491148896
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "emphasis": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.4396054941,
+              0.4396054941,
+              0.4396054941
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "control": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8673824811,
+              0.8673824811,
+              0.8673824811
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "control-hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8065875574,
+              0.8065875574,
+              0.8065875574
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "divider": {
+        "subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7774519281,
+              0.7774519281,
+              0.7774519281
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/175"
+            }
+          }
+        },
+        "default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7215451819,
+              0.7215451819,
+              0.7215451819
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/225"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.618330272,
+              0.618330272,
+              0.618330272
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/325"
+            }
+          }
+        },
+        "panel": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8991073255,
+              0.8991073255,
+              0.8991073255
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/75"
+            }
+          }
+        },
+        "control": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6947120397,
+              0.6947120397,
+              0.6947120397
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/250"
+            }
+          }
+        }
+      }
+    },
+    "panel": {
+      "surface": {
+        "background": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "disabled": {
+        "content": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.3601047577,
+              0.3601047577,
+              0.3601047577
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "border": {
+        "subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9317619717,
+              0.9317619717,
+              0.9317619717
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8991073255,
+              0.8991073255,
+              0.8991073255
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7774519281,
+              0.7774519281,
+              0.7774519281
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "emphasis": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.4603133193,
+              0.4603133193,
+              0.4603133193
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "control-hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.836553596,
+              0.836553596,
+              0.836553596
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "color": {
+        "blue": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.2989986071,
+                    0.6173211063,
+                    0.9999999999
+                  ],
+                  "alpha": 0.21
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.2294055269,
+                    0.5857835938,
+                    1
+                  ],
+                  "alpha": 0.28
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "green": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    1e-10,
+                    0.5657161685,
+                    0.3353050467
+                  ],
+                  "alpha": 0.15
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    2e-10,
+                    0.5008011309,
+                    0.294486605
+                  ],
+                  "alpha": 0.2
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "yellow": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.6899263852,
+                    0.617932744,
+                    6e-10
+                  ],
+                  "alpha": 0.21
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.5977968557,
+                    0.5347071015,
+                    1.3e-9
+                  ],
+                  "alpha": 0.26
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "orange": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.7720852535,
+                    0.3096264552,
+                    2e-10
+                  ],
+                  "alpha": 0.15
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.6855879572,
+                    0.2714935029,
+                    3e-10
+                  ],
+                  "alpha": 0.2
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "red": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    1,
+                    0.4321800981,
+                    0.4026988442
+                  ],
+                  "alpha": 0.21
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    1,
+                    0.4321800981,
+                    0.4026988442
+                  ],
+                  "alpha": 0.31
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "pink": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.7235694884,
+                    3e-10,
+                    0.5585717662
+                  ],
+                  "alpha": 0.11
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.5880097869,
+                    3e-10,
+                    0.4517404471
+                  ],
+                  "alpha": 0.16
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "purple": {
+          "secondary": {
+            "background": {
+              "normal": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.4687875168,
+                    1e-10,
+                    0.7203077328
+                  ],
+                  "alpha": 0.11
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              },
+              "hover": {
+                "$type": "color",
+                "$value": {
+                  "colorSpace": "srgb",
+                  "components": [
+                    0.3601878288,
+                    1e-10,
+                    0.5595590032
+                  ],
+                  "alpha": 0.15
+                },
+                "$extensions": {
+                  "com.sloyui.variable": {
+                    "scopes": [],
+                    "visibility": "internal",
+                    "codeSyntax": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "divider": {
+        "subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8065875574,
+              0.8065875574,
+              0.8065875574
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/150"
+            }
+          }
+        },
+        "default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7491148896,
+              0.7491148896,
+              0.7491148896
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/200"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6431344413,
+              0.6431344413,
+              0.6431344413
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/300"
+            }
+          }
+        },
+        "panel": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9317619717,
+              0.9317619717,
+              0.9317619717
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/50"
+            }
+          }
+        },
+        "control": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7215451819,
+              0.7215451819,
+              0.7215451819
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/225"
+            }
+          }
+        }
+      }
+    },
+    "overlay": {
+      "surface": {
+        "background": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "disabled": {
+        "content": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.3601047577,
+              0.3601047577,
+              0.3601047577
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "border": {
+        "subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9317619717,
+              0.9317619717,
+              0.9317619717
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8991073255,
+              0.8991073255,
+              0.8991073255
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7774519281,
+              0.7774519281,
+              0.7774519281
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "emphasis": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.4603133193,
+              0.4603133193,
+              0.4603133193
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "control": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8673824811,
+              0.8673824811,
+              0.8673824811
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "control-hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.836553596,
+              0.836553596,
+              0.836553596
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        },
+        "control-pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7774519281,
+              0.7774519281,
+              0.7774519281
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            }
+          }
+        }
+      },
+      "divider": {
+        "subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8065875574,
+              0.8065875574,
+              0.8065875574
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/150"
+            }
+          }
+        },
+        "default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7491148896,
+              0.7491148896,
+              0.7491148896
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/200"
+            }
+          }
+        },
+        "strong": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6431344413,
+              0.6431344413,
+              0.6431344413
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/300"
+            }
+          }
+        },
+        "panel": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9317619717,
+              0.9317619717,
+              0.9317619717
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/50"
+            }
+          }
+        },
+        "control": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7215451819,
+              0.7215451819,
+              0.7215451819
+            ],
+            "alpha": 1
+          },
+          "$extensions": {
+            "com.sloyui.variable": {
+              "scopes": [],
+              "visibility": "internal",
+              "codeSyntax": {}
+            },
+            "com.figma.aliasData": {
+              "targetVariableSetName": "Sloy UI · Palette",
+              "targetVariableName": "gray/225"
+            }
+          }
+        }
+      }
+    }
+  },
+  "reaction": {
+    "normal": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {}
+        }
+      }
+    },
+    "normal-opacity": {
+      "$type": "number",
+      "$value": 0,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {}
+        },
+        "com.figma.aliasData": {
+          "targetVariableSetName": "Sloy UI · Primitives",
+          "targetVariableName": "opacity/00"
+        }
+      }
+    },
+    "hover": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0.04
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {}
+        }
+      }
+    },
+    "hover-opacity": {
+      "$type": "number",
+      "$value": 4,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {}
+        },
+        "com.figma.aliasData": {
+          "targetVariableSetName": "Sloy UI · Primitives",
+          "targetVariableName": "opacity/04"
+        }
+      }
+    },
+    "pressed": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0.08
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {}
+        }
+      }
+    },
+    "pressed-opacity": {
+      "$type": "number",
+      "$value": 8,
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {}
+        },
+        "com.figma.aliasData": {
+          "targetVariableSetName": "Sloy UI · Primitives",
+          "targetVariableName": "opacity/08"
+        }
+      }
+    },
+    "base": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {}
+        },
+        "com.figma.aliasData": {
+          "targetVariableSetName": "Sloy UI · Palette",
+          "targetVariableName": "black"
+        }
+      }
+    }
+  },
+  "shadow": {
+    "contact": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0.06
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {}
+        }
+      }
+    },
+    "ambient": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0.1
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {}
+        }
+      }
+    }
+  },
+  "overlay": {
+    "scrim": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0,
+          0
+        ],
+        "alpha": 0.32
+      },
+      "$extensions": {
+        "com.sloyui.variable": {
+          "scopes": [],
+          "visibility": "internal",
+          "codeSyntax": {}
+        }
+      }
+    }
+  },
+  "scheme": {
+    "dimmed": {
+      "context": {
+        "page": {
+          "surface": {
+            "background": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.9653810442,
+                  0.9653810442,
+                  0.9653810442
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            }
+          },
+          "border": {
+            "strong": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.7491148896,
+                  0.7491148896,
+                  0.7491148896
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "emphasis": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.4396054941,
+                  0.4396054941,
+                  0.4396054941
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            }
+          }
+        },
+        "panel": {
+          "surface": {
+            "background": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  1,
+                  1,
+                  1
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            }
+          },
+          "border": {
+            "subtle": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.9317619717,
+                  0.9317619717,
+                  0.9317619717
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "strong": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.7774519281,
+                  0.7774519281,
+                  0.7774519281
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "emphasis": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.4603133193,
+                  0.4603133193,
+                  0.4603133193
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            }
+          }
+        },
+        "overlay": {
+          "surface": {
+            "background": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  1,
+                  1,
+                  1
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            }
+          },
+          "disabled": {
+            "content": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.3601047577,
+                  0.3601047577,
+                  0.3601047577
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            }
+          },
+          "content": {
+            "muted": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.3028015713,
+                  0.3028015713,
+                  0.3028015713
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "caption": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.3408628816,
+                  0.3408628816,
+                  0.3408628816
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            }
+          },
+          "border": {
+            "subtle": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.9317619717,
+                  0.9317619717,
+                  0.9317619717
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "default": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.8991073255,
+                  0.8991073255,
+                  0.8991073255
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "strong": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.7774519281,
+                  0.7774519281,
+                  0.7774519281
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "emphasis": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.4603133193,
+                  0.4603133193,
+                  0.4603133193
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "control": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.8673824811,
+                  0.8673824811,
+                  0.8673824811
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            },
+            "control-hover": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.836553596,
+                  0.836553596,
+                  0.836553596
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            }
+          }
+        },
+        "inset": {
+          "border": {
+            "default": {
+              "$type": "color",
+              "$value": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.8673824811,
+                  0.8673824811,
+                  0.8673824811
+                ],
+                "alpha": 1
+              },
+              "$extensions": {
+                "com.sloyui.variable": {
+                  "scopes": [],
+                  "visibility": "internal",
+                  "codeSyntax": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

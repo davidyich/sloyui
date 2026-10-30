@@ -1,3 +1,48 @@
+/* Concentric shells preserve the chosen inner control and grow outward by their actual
+   inset (padding + structural border). No framework or measured DOM colors required. */
+:root,[data-corner-shape="round"]{--cap-corner-shape:round;--cap-concentric-factor:1;}
+@supports(corner-shape:squircle){
+  [data-corner-shape="squircle"]{--cap-corner-shape:squircle;--cap-concentric-factor:1.84;}
+  /* Every painted rectangular family participates; circles/pills keep their own shape. */
+  :where(.cap-surface,.cap-surface-boundary,.cap-button,.cap-input,.cap-field,.cap-labeled-field,.cap-labeled-control,.cap-selection-field,
+      .cap-combobox-input-wrap,.cap-multiselect-box,.cap-tag-input-box,.cap-number-field,.cap-color-trigger,
+      .cap-color-area,.cap-color-custom > input,.cap-color-editor-head button,
+      .cap-checkbox,.cap-segmented,.cap-segment,.cap-tab-list,.cap-tab-scroll,.cap-button-group,
+      .cap-button-group-items,.cap-button-group-prefix,.cap-floating-action-bar,.cap-floating-input,.cap-split-button,
+      .cap-menu-v2,.cap-popover-v2,.cap-tooltip-v2,.cap-tooltip-body,.cap-select-popup,.cap-selection-popup,
+      .cap-popup-select-panel,.cap-menu-item,.cap-select-option,.cap-selection-option,.cap-popup-select-option,
+      .cap-command,.cap-command-item,.cap-card,.cap-object-card,.cap-content-card,.cap-content-card-cover,.cap-content-main,.cap-empty,.cap-file-card,
+      .cap-file-card-main,.cap-file-card-preview,.cap-file-card-download,.cap-file-card-format,
+      .cap-dialog,.cap-drawer,.cap-popover,.cap-moving-highlight,.cap-scroll-area,.cap-scroll-viewport,
+      .cap-tag,.cap-tag-label,.cap-tag-remove,.cap-chip,.cap-chip-label,.cap-chip-action,.cap-icon-box,
+      .cap-counter[data-shape=rounded],.cap-kbd,.cap-skeleton,.cap-radio-option,.cap-icon-option > span,
+      .cap-sidebar-item,.cap-collection-row,.cap-sidebar-panel,.cap-tree-item,.cap-tree-selection-indicator,
+      .cap-navigation-panel,.cap-hover-panel-content,.cap-navigation-grid a,.cap-navigation-items > a,
+      .cap-preview-rail-item,.cap-preview-rail-preview,.cap-file-tree-preview,
+      .cap-callout,.cap-alert,.cap-alert-toggle,.cap-status-bar,.cap-toast,.cap-announcement-bar,
+      .cap-card-stack-stage,.cap-card-stack-card,.cap-card-stack-stamp,
+      .cap-accordion,.cap-accordion > summary,.cap-calendar-day,.cap-calendar-week > [role=gridcell],
+      .cap-calendar-period,.cap-calendar-months > button,.cap-calendar-date-mark,
+      .cap-table-wrap,.cap-data-table-scroll,.cap-json-viewer,.cap-filter-options button,
+      .cap-reorderable-item,.cap-reorder-handle,.cap-resizable-card-handle,
+      .cap-kanban-column,.cap-kanban-column-title,.cap-kanban-drop-placeholder,.cap-kanban-drag-preview,
+      .cap-code,.cap-code-tabs .cap-tab-list > button,.cap-rich-editor-block,.cap-rich-editor-slash,
+      .cap-rich-editor-option,.cap-rich-editor-option-icon,.cap-markdown-v2-toolbar,.cap-markdown-v2-menu,.cap-markdown-v2-grid button,
+      .cap-markdown-v2 [data-cap-highlight],.cap-markdown :is(code,pre),
+      .cap-comment-thread,.cap-comment,.cap-comment-reaction-picker,.cap-comment-suggestions,
+      .cap-comment-composer textarea,.cap-comment-edit textarea,.cap-comment-thread-header button,
+      .cap-comment-footer button,.cap-comment-edit button,.cap-comment-composer > button,
+      .cap-comment-replying button,.cap-comment-suggestions button,.cap-inline-thread,.cap-inline-close,
+      .cap-inline-toolbar button,.cap-value-scrubber-control,.cap-parameter-slider,.cap-slider-2d-pad){
+    corner-shape:var(--cap-corner-shape,round);
+  }
+  .cap-toast::before,.cap-combobox-input-wrap::after{corner-shape:inherit;}
+  .cap-segment > span,.cap-tab-list > button{corner-shape:var(--cap-corner-shape,round);}
+  :is([data-shape=pill],[data-shape=circle],.cap-radio,.cap-switch,.cap-switch-thumb),.cap-tab-list[data-variant=pills] > :is(button,.cap-moving-highlight),
+  .cap-tag[data-shape=pill] :is(.cap-tag-label,.cap-tag-remove),.cap-chip[data-shape=pill] :is(.cap-chip-label,.cap-chip-action),
+  .cap-toast-stack[data-shape=pill] .cap-toast{corner-shape:round;}
+}
+
 /* Density changes space and control sizes; radius selects how attached surfaces meet. */
 :root,[data-radius],[data-density]{--cap-square:calc(1 - var(--cap-radius-enabled));--cap-overlay-gutter:calc(var(--cap-space-3) * var(--cap-radius-enabled));--cap-overlay-gap:calc(var(--cap-space-3) * var(--cap-radius-enabled));--cap-overlay-padding:calc(var(--cap-space-2) * var(--cap-radius-enabled) + var(--cap-space-3) * var(--cap-square));}
 
@@ -13,14 +58,14 @@
 
 /* With square corners, each menu row paints the whole target; no inset hover islands. */
 .cap-menu-v2,.cap-select-popup,.cap-selection-popup{padding:calc(var(--cap-space-detail-6) * var(--cap-radius-enabled));gap:calc(var(--cap-item-gap) * var(--cap-radius-enabled));}
-.cap-menu-v2 .cap-menu-item,.cap-select-popup .cap-select-option,.cap-selection-popup .cap-selection-option{min-height:var(--cap-size-control-md);border-radius:round(down,max(0px,calc(var(--cap-radius-xl) - var(--cap-space-detail-6) * var(--cap-radius-enabled))),1px);padding-block:calc(var(--cap-space-detail-7) * var(--cap-radius-enabled) + var(--cap-space-3) * var(--cap-square));padding-inline:calc(var(--cap-space-detail-9) * var(--cap-radius-enabled) + var(--cap-space-3) * var(--cap-square));}
+.cap-menu-v2 .cap-menu-item,.cap-select-popup .cap-select-option,.cap-selection-popup .cap-selection-option{min-height:var(--cap-size-control-md);border-radius:round(down,max(0px,calc(var(--cap-radius-xl) - var(--cap-space-detail-6) * var(--cap-radius-enabled))),1px);padding-block:calc(var(--cap-space-detail-7) * var(--cap-radius-enabled) + var(--cap-space-3) * var(--cap-square));padding-inline:calc(var(--cap-space-detail-9) * var(--cap-radius-enabled) + var(--cap-space-3) * var(--cap-square) + var(--cap-radius-inset));}
 .cap-command-list{padding:calc(var(--cap-item-gap-roomy) * var(--cap-radius-enabled));gap:calc(var(--cap-item-gap-roomy) * var(--cap-radius-enabled));}
 .cap-command-item{padding-inline:calc(var(--cap-space-2) * var(--cap-radius-enabled) + var(--cap-space-3) * var(--cap-square));}
 .cap-button-group[data-attached]{--cap-group-inset:calc(var(--cap-item-gap) * var(--cap-radius-enabled));--cap-group-control-height:calc(var(--cap-toolbar-control-height,var(--cap-size-control-md)) + var(--cap-space-2) * var(--cap-square));height:var(--cap-group-control-height);}
 .cap-button-group[data-attached] > .cap-button-group-items{padding:var(--cap-group-inset);gap:var(--cap-group-inset);}
 .cap-button-group[data-attached] :is(.cap-button,.cap-input)[data-size]{--cap-control-height:calc(var(--cap-group-control-height) - 2 * var(--cap-group-inset));height:var(--cap-control-height);border-radius:round(down,max(0px,calc(var(--cap-radius-xl) - var(--cap-group-inset))),1px);}
 .cap-button-group[data-attached] .cap-icon-button[data-size]{width:var(--cap-control-height);}
-.cap-segmented{--cap-segment-inset:calc(var(--cap-space-detail-3) * var(--cap-radius-enabled));gap:calc(var(--cap-item-gap) * var(--cap-radius-enabled));}
+.cap-segmented{--cap-segment-inset:calc(var(--cap-space-detail-3) * var(--cap-radius-enabled));gap:calc((var(--cap-segment-inset) + var(--cap-border-width)) * var(--cap-radius-enabled));}
 .cap-tab-list:is([data-variant=segment],[data-variant=outline],[data-variant=accent]){padding:calc(var(--cap-space-1) * var(--cap-radius-enabled));gap:calc(var(--cap-space-1) * var(--cap-radius-enabled));}
 .cap-tree-item{height:var(--cap-component-tree-row-height);min-height:var(--cap-component-tree-row-height);}
 
@@ -82,15 +127,15 @@
 .cap-chip:not([data-shape=pill]){border-radius:round(nearest,min(calc(var(--cap-chip-height) * .375),calc(var(--cap-chip-height) * .25 * var(--cap-radius-scale))),1px);}
 .cap-icon-box[data-size]{border-radius:round(nearest,min(calc(var(--cap-icon-box-size) * .375),calc(var(--cap-icon-box-size) * .25 * var(--cap-radius-scale))),1px);}
 .cap-checkbox{border-radius:round(nearest,min(calc(var(--cap-choice-size) * .3),calc(var(--cap-choice-size) * .2 * var(--cap-radius-scale))),1px);}
-.cap-segmented[data-size]{--cap-segment-shell-radius:round(nearest,min(calc(var(--cap-segment-height) * .375),calc(var(--cap-segment-height) * .25 * var(--cap-radius-scale))),1px);--cap-segment-radius:round(nearest,max(0px,calc(var(--cap-segment-shell-radius) - var(--cap-segment-inset) - var(--cap-border-width))),1px);border-radius:var(--cap-segment-shell-radius);}
+.cap-segmented[data-size]{--cap-segment-radius:round(nearest,min(calc(var(--cap-segment-height) * .375),calc(var(--cap-segment-height) * .25 * var(--cap-radius-scale))),1px);--cap-segment-shell-radius:round(nearest,calc(var(--cap-segment-radius) + (var(--cap-segment-inset) + var(--cap-border-width)) * var(--cap-concentric-factor) * var(--cap-radius-enabled)),1px);border-radius:var(--cap-segment-shell-radius);}
 /* A nested shell adds its actual inset to the control radius. */
-.cap-button-group[data-attached]{--cap-group-child-height:calc(var(--cap-group-control-height) - 2 * var(--cap-group-inset));--cap-group-child-radius:round(nearest,min(calc(var(--cap-group-child-height) * .375),calc(var(--cap-group-child-height) * .25 * var(--cap-radius-scale))),1px);--cap-group-shell-radius:calc(var(--cap-group-child-radius) + var(--cap-group-inset));border-radius:var(--cap-group-shell-radius);}
+.cap-button-group[data-attached]{--cap-group-child-height:calc(var(--cap-group-control-height) - 2 * var(--cap-group-inset));--cap-group-child-radius:round(nearest,min(calc(var(--cap-group-child-height) * .375),calc(var(--cap-group-child-height) * .25 * var(--cap-radius-scale))),1px);--cap-group-shell-radius:round(nearest,calc(var(--cap-group-child-radius) + (var(--cap-group-inset) + var(--cap-border-width)) * var(--cap-concentric-factor) * var(--cap-radius-enabled)),1px);border-radius:var(--cap-group-shell-radius);}
 .cap-button-group[data-attached] :is(.cap-button,.cap-input)[data-size]{border-radius:var(--cap-group-child-radius);}
-.cap-floating-action-bar[data-size]{--cap-floating-control-radius:round(nearest,min(calc(var(--cap-floating-control-height) * .375),calc(var(--cap-floating-control-height) * .25 * var(--cap-radius-scale))),1px);border-radius:round(nearest,calc((var(--cap-floating-control-radius) + var(--cap-floating-inset) + var(--cap-border-width)) * var(--cap-radius-enabled)),1px);}
+.cap-floating-action-bar[data-size]{--cap-floating-control-radius:round(nearest,min(calc(var(--cap-floating-control-height) * .375),calc(var(--cap-floating-control-height) * .25 * var(--cap-radius-scale))),1px);border-radius:round(nearest,calc((var(--cap-floating-control-radius) + (var(--cap-floating-inset) + var(--cap-border-width)) * var(--cap-concentric-factor)) * var(--cap-radius-enabled)),1px);}
 .cap-floating-action-bar > .cap-floating-items > :is(.cap-button,.cap-input)[data-size],.cap-floating-action-bar > .cap-floating-items > .cap-floating-segment > :is(.cap-button,.cap-input)[data-size]{border-radius:var(--cap-floating-control-radius);}
-.cap-tab-list:is([data-variant=segment],[data-variant=outline],[data-variant=accent]){--cap-tab-inset:calc(var(--cap-space-1) * var(--cap-radius-enabled));}
-.cap-tab-list:is([data-variant=segment],[data-variant=outline],[data-variant=accent]) button{border-radius:round(nearest,max(0px,calc(var(--cap-radius-base) - var(--cap-tab-inset) - var(--cap-border-width))),1px);}
-.cap-menu-v2,.cap-select-popup,.cap-selection-popup,.cap-popup-select-panel{--cap-menu-inset:calc(var(--cap-space-detail-6) * var(--cap-radius-enabled));--cap-menu-row-height:var(--cap-size-control-md);--cap-menu-row-radius:round(nearest,min(calc(var(--cap-menu-row-height) * .375),calc(var(--cap-menu-row-height) * .25 * var(--cap-radius-scale))),1px);border-radius:round(nearest,calc((var(--cap-menu-row-radius) + var(--cap-menu-inset) + var(--cap-border-width)) * var(--cap-radius-enabled)),1px);padding:var(--cap-menu-inset);}
+.cap-tab-list:is([data-variant=segment],[data-variant=outline],[data-variant=accent]){--cap-tab-inset:calc(var(--cap-space-1) * var(--cap-radius-enabled));--cap-tab-radius:round(nearest,min(calc(var(--cap-tab-height,var(--cap-size-control-md)) * .375),calc(var(--cap-tab-height,var(--cap-size-control-md)) * .25 * var(--cap-radius-scale))),1px);border-radius:round(nearest,calc(var(--cap-tab-radius) + (var(--cap-tab-inset) + var(--cap-border-width)) * var(--cap-concentric-factor) * var(--cap-radius-enabled)),1px);}
+.cap-tab-list:is([data-variant=segment],[data-variant=outline],[data-variant=accent]) button{border-radius:var(--cap-tab-radius);}
+.cap-menu-v2,.cap-select-popup,.cap-selection-popup,.cap-popup-select-panel{--cap-menu-inset:calc(var(--cap-space-detail-6) * var(--cap-radius-enabled));--cap-menu-row-height:var(--cap-size-control-md);--cap-menu-row-radius:round(nearest,min(calc(var(--cap-menu-row-height) * .375),calc(var(--cap-menu-row-height) * .25 * var(--cap-radius-scale))),1px);border-radius:round(nearest,calc((var(--cap-menu-row-radius) + (var(--cap-menu-inset) + var(--cap-border-width)) * var(--cap-concentric-factor)) * var(--cap-radius-enabled)),1px);padding:var(--cap-menu-inset);}
 .cap-popup-select-panel{--cap-menu-inset:calc(var(--cap-space-2) * var(--cap-radius-enabled));--cap-menu-row-height:var(--cap-popup-row-height);}
 .cap-menu-v2 .cap-menu-item,.cap-select-popup .cap-select-option,.cap-selection-popup .cap-selection-option,.cap-popup-select-panel .cap-popup-select-option{border-radius:var(--cap-menu-row-radius);}
 
@@ -101,3 +146,60 @@
 :is(.cap-parameter-slider,.cap-slider-2d)[data-size=lg]{--cap-control-height:var(--cap-size-control-lg);--cap-control-inset:var(--cap-component-input-inset-inline-lg);}
 :is(.cap-parameter-slider,.cap-slider-2d)[data-size=xl]{--cap-control-height:var(--cap-size-control-xl);--cap-control-inset:var(--cap-component-input-inset-inline-xl);}
 @media(pointer:coarse){.cap-parameter-slider[data-size]{--cap-parameter-height:max(var(--cap-touch-target),var(--cap-control-height));}}
+
+/* Tabs use the same visible-height rule at each public size. */
+.cap-tab-list[data-size=xs]{--cap-tab-height:var(--cap-size-control-xs);}
+.cap-tab-list[data-size=sm]{--cap-tab-height:var(--cap-size-control-sm);}
+.cap-tab-list[data-size=md]{--cap-tab-height:var(--cap-size-control-md);}
+.cap-tab-list[data-size=lg]{--cap-tab-height:var(--cap-size-control-lg);}
+.cap-tab-list[data-size=xl]{--cap-tab-height:var(--cap-size-control-xl);}
+
+/* Nested painted media/labels subtract the real inset using the selected corner shape. */
+.cap-file-card{--cap-file-inner-radius:round(nearest,max(0px,calc(var(--cap-radius-xl) - var(--cap-file-padding) * var(--cap-concentric-factor))),1px);}
+.cap-tag:not([data-shape=pill]) :is(.cap-tag-label,.cap-tag-remove){border-radius:round(nearest,max(0px,calc(var(--cap-tag-radius) - var(--cap-tag-inset) * var(--cap-concentric-factor))),1px);}
+
+/* Code header actions keep their chosen control geometry; the shell supplies clearance. */
+.cap-code :is(figcaption,.cap-tab-bar) :is(.cap-button[data-variant=ghost],.cap-select-trigger)[data-size]{border-radius:var(--cap-control-radius);}
+.cap-code .cap-code-language-select[data-size]{--cap-control-height:28px;}
+.cap-code-tabs .cap-tab-list > button{border-radius:round(nearest,min(calc(28px * .375),calc(28px * .25 * var(--cap-radius-scale))),1px);}
+
+/* Raw editorial actions follow their actual line box and existing vertical insets,
+   using the same 25% radius and 37.5% ceiling as exported controls. */
+:is(.cap-comment-thread-header button,.cap-comment-footer button,.cap-comment-edit button,.cap-comment-composer > button,.cap-comment-replying button){
+  --cap-comment-action-height:calc(1lh + 2 * var(--cap-space-detail-5));
+  border-radius:round(nearest,min(calc(var(--cap-comment-action-height) * .375),calc(var(--cap-comment-action-height) * .25 * var(--cap-radius-scale))),1px);
+}
+:is(.cap-inline-toolbar button,.cap-inline-close){
+  --cap-inline-action-height:max(30px,calc(1lh + 2 * var(--cap-space-detail-5)));
+  border-radius:round(nearest,min(calc(var(--cap-inline-action-height) * .375),calc(var(--cap-inline-action-height) * .25 * var(--cap-radius-scale))),1px);
+}
+:is(.cap-comment-composer,.cap-comment-edit) textarea{
+  border-radius:round(nearest,min(calc(var(--cap-size-control-md) * .375),calc(var(--cap-size-control-md) * .25 * var(--cap-radius-scale))),1px);
+}
+
+/* Reaction and mention menus preserve the row's own corner, then grow the shell. */
+.cap-comment-reaction-picker{
+  font-size:16px;
+  --cap-comment-reaction-height:calc(1lh + 2 * var(--cap-space-detail-5));
+  --cap-comment-reaction-radius:round(nearest,min(calc(var(--cap-comment-reaction-height) * .375),calc(var(--cap-comment-reaction-height) * .25 * var(--cap-radius-scale))),1px);
+  border-radius:round(nearest,calc(var(--cap-comment-reaction-radius) + (var(--cap-space-1) + var(--cap-border-width)) * var(--cap-concentric-factor) * var(--cap-radius-enabled)),1px);
+}
+.cap-comment-suggestions{
+  --cap-comment-suggestion-height:calc(1lh + 2 * var(--cap-space-detail-7));
+  --cap-comment-suggestion-radius:round(nearest,min(calc(var(--cap-comment-suggestion-height) * .375),calc(var(--cap-comment-suggestion-height) * .25 * var(--cap-radius-scale))),1px);
+  border-radius:round(nearest,calc(var(--cap-comment-suggestion-radius) + (var(--cap-space-1) + var(--cap-border-width)) * var(--cap-concentric-factor) * var(--cap-radius-enabled)),1px);
+}
+.cap-comment-suggestions button{border-radius:var(--cap-comment-suggestion-radius);}
+
+/* Compact CommandPalette starts from the search/close row's chosen geometry.
+   The shell accounts for its actual optical inset rather than shrinking rows. */
+.cap-command-compact{
+  --cap-command-inner-height:var(--cap-size-control-md);
+  --cap-command-inner-radius:round(nearest,min(calc(var(--cap-command-inner-height) * .375),calc(var(--cap-command-inner-height) * .25 * var(--cap-radius-scale))),1px);
+}
+.cap-modal-layer > .cap-dialog.cap-command-compact{
+  border-radius:round(nearest,calc(var(--cap-command-inner-radius) + (var(--cap-command-shell-inset) + var(--cap-border-width)) * var(--cap-concentric-factor) * var(--cap-radius-enabled)),1px);
+}
+.cap-command-compact .cap-dialog-header{--cap-radius-command-control:var(--cap-command-inner-radius);}
+.cap-command-compact .cap-command-item{border-radius:var(--cap-command-inner-radius);}
+@media(pointer:coarse){.cap-command-compact{--cap-command-inner-height:var(--cap-touch-target);}}

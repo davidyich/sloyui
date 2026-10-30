@@ -7,7 +7,7 @@ import { useTranslate } from './locale.js';
 export interface ParameterSliderProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size' | 'value' | 'defaultValue' | 'onChange' | 'prefix'> {
   label: string; value?: number; defaultValue?: number; min?: number; max?: number; step?: number;
   onValueChange?: (value: number) => void; onValueCommit?: (value: number) => void;
-  icon?: ReactNode; /** Show a moving grip at the filled row boundary. */ showHandle?: boolean; showValue?: boolean; suffix?: string;
+  icon?: ReactNode; /** Show a moving grip at the filled row boundary. */ showHandle?: boolean; /** Show marks at each step when there are at most 21. */ showTicks?: boolean; showValue?: boolean; suffix?: string;
   formatValue?: (value: number) => string; size?: Size; focusRing?: FocusRing;
 }
 const clamp = (value: number, min: number, max: number) => Math.max(min, Math.min(max, value));
@@ -15,7 +15,7 @@ const safeNumber = (value: number, fallback: number) => Number.isFinite(value) ?
 const compactNumber = (value: number) => String(Number(value.toFixed(6)));
 
 /** Filled parameter row. The native range owns keyboard, form and assistive semantics. */
-export function ParameterSlider({ label, value, defaultValue = 50, min = 0, max = 100, step = 1, onValueChange, onValueCommit, icon, showHandle = false, showValue = true, suffix = '', formatValue, size = 'md', focusRing, className, style, id: suppliedId, disabled, onPointerDown, onPointerMove, onPointerUp, onPointerCancel, onLostPointerCapture, onKeyDown, onKeyUp, ...props }: ParameterSliderProps) {
+export function ParameterSlider({ label, value, defaultValue = 50, min = 0, max = 100, step = 1, onValueChange, onValueCommit, icon, showHandle = false, showTicks = false, showValue = true, suffix = '', formatValue, size = 'md', focusRing, className, style, id: suppliedId, disabled, onPointerDown, onPointerMove, onPointerUp, onPointerCancel, onLostPointerCapture, onKeyDown, onKeyUp, ...props }: ParameterSliderProps) {
   const generatedId = useId(), id = suppliedId ?? generatedId, input = useRef<HTMLInputElement>(null), handleSlot = useRef<HTMLSpanElement>(null);
   const rangeDrag = useRef<{ pointerId: number; x: number; value: number; width: number } | null>(null);
   const [internal, setInternal] = useState(defaultValue), gesture = useRef<number | null>(null), cancelled = useRef(false);
@@ -36,8 +36,11 @@ export function ParameterSlider({ label, value, defaultValue = 50, min = 0, max 
   }, [value, defaultValue, props.form]);
   // Paint the short grip below the text instead of cutting a text-shaped hole in it.
   const display = formatValue?.(current) ?? compactNumber(current);
+  const tickCount = end > start ? Math.floor((end - start) / rangeStep + 1e-9) + 1 : 0;
+  const ticks = showTicks && tickCount >= 2 && tickCount <= 21 ? Array.from({length: tickCount}, (_, index) => (index * rangeStep / (end - start)) * 100) : [];
   return <div {...fieldContext(props)} className={cx('cap-parameter-slider', className)} data-size={size} data-disabled={blocked || undefined} data-with-handle={showHandle || undefined} data-handle-position={current === start ? 'start' : current === end ? 'end' : undefined} style={{ ...fieldFocusStyle(style, focusRing), '--cap-parameter-progress': `${end > start ? (current - start) / (end - start) * 100 : 0}%` } as CSSProperties}>
     <span className="cap-parameter-fill" aria-hidden="true" />
+    {ticks.length > 0 && <span className="cap-parameter-ticks" aria-hidden="true">{ticks.map((position,index)=><span key={index} style={{'--cap-tick-position':`${position}%`} as CSSProperties}/>)}</span>}
     {showHandle && <span className="cap-parameter-handle-layer" aria-hidden="true"><span ref={handleSlot} className="cap-parameter-handle-slot"><span className="cap-parameter-handle" /></span></span>}
     <div className="cap-parameter-content"><label htmlFor={id}><span className="cap-parameter-label-ink">{icon && <span className="cap-parameter-icon" aria-hidden="true">{icon}</span>}<span className="cap-parameter-label-text">{label}</span></span></label>{showValue && <output htmlFor={id} aria-hidden="true"><span>{display}</span>{suffix && <span className="cap-parameter-unit">{suffix}</span>}</output>}</div>
 

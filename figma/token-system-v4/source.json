@@ -133,10 +133,10 @@
   },
   "fonts": {
     "family": {
-      "base": "Inter",
-      "code": "Overpass Mono",
-      "heading": "Georgia",
-      "pair": "Courier New"
+      "base": "Medeo Sans",
+      "code": "Medeo Mono",
+      "heading": "Medeo Sans",
+      "pair": "Medeo Mono"
     },
     "size": {
       "caption": 12,
@@ -170,7 +170,7 @@
     "scheme": "Standard uses composition-oriented Shell → Workspace → Content and independent Overlay. Inverted swaps complete Workspace/Content pairs only in Dark."
   },
   "paletteSelection": {
-    "opaqueCount": 289,
+    "opaqueCount": 330,
     "alphaCount": 0,
     "naming": "<hue>/<step>; gray/<step>; black; white",
     "strategy": "One opaque ramp per hue, independent of theme, role and surface. All semantic paints select an existing ramp step and optionally compose its alias with Opacity. Never create role-specific, theme-specific or alpha RGB values in Palette.",
@@ -191,7 +191,13 @@
       "sharedAlpha": true,
       "primaryForegroundPolicy": "theme"
     },
-    "overrides": {},
+    "overrides": {
+      "yellow": {
+        "primaryChroma": 0.35,
+        "lightnessDark": 0.9,
+        "softChroma": 2
+      }
+    },
     "legacyAliases": {
       "rose": "red",
       "cherry": "red",
@@ -209,7 +215,6 @@
       "mint": "green",
       "lime": "green",
       "amber": "orange",
-      "yellow": "orange",
       "vermilion": "orange"
     },
     "states": {
@@ -221,6 +226,7 @@
     "accents": [
       "blue",
       "green",
+      "yellow",
       "orange",
       "red",
       "pink",

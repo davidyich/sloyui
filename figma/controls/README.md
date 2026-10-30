@@ -20,7 +20,7 @@ Preserve editable labels, values, icons and optional label/hint/icon properties.
 
 ## Modes and web mapping
 
-Set **V2 · Accent** on a containing frame: Neutral (default), Blue, Green, Orange, Red, Pink and Purple. Leave nested instances on Auto. Accent remains independent of Theme, Scheme, Surface, Density, Radius and Borders.
+Set **V2 · Accent** on a containing frame: Neutral (default), Blue, Green, Yellow, Orange, Red, Pink and Purple. Leave nested instances on Auto. Accent remains independent of Theme, Scheme, Surface, Density, Radius and Borders.
 
 The native Accent adapter binds primary normal/hover/pressed, secondary normal/hover/pressed, border normal/hover/pressed, content and on-primary to Surface. Use the shared black/white on-primary policy; do not restore obsolete hue-specific foreground routes from the original scripts. Error and Danger remain Red independently of the selected Accent.
 
@@ -29,9 +29,9 @@ The Figma appearance and selected Accent together determine the web variant:
 | Figma appearance | Accent mode | Web Button / IconButton variant |
 | --- | --- | --- |
 | Primary | Neutral | `primary` |
-| Primary | Any of the six colors | `accent` with matching `data-accent` |
+| Primary | Any of the seven colors | `accent` with matching `data-accent` |
 | Secondary | Neutral | `secondary` |
-| Secondary | Any of the six colors | `accent-secondary` with matching `data-accent` |
+| Secondary | Any of the seven colors | `accent-secondary` with matching `data-accent` |
 | Outline | Any | `outline`; neutral paint independent of Accent |
 | Ghost | Any | `ghost`; neutral paint independent of Accent |
 | Danger | Any | `danger`; fixed Red status pair |

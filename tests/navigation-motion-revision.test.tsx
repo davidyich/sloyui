@@ -161,7 +161,7 @@ describe('local shared hover motion', () => {
       fireEvent.pointerOver(screen.getByRole('button', {name:'Ghost B'}));
       expect(layer).toHaveAttribute('data-visible');
       fireEvent.pointerLeave(scope);
-      expect(layer.style.opacity).toBe('0');
+      expect(layer).not.toHaveAttribute('data-visible');
       expect(scope).toHaveAttribute('data-shared-hover-active');
       act(() => vi.advanceTimersByTime(110));
       expect(scope).not.toHaveAttribute('data-shared-hover-active');

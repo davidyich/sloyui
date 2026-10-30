@@ -1,0 +1,3 @@
+import type {Accent,Context,Project} from './model.mjs';
+export type ComputeRequest={project:Project;accent:Accent;page:string;isDetail:boolean;theme:string;scheme:string;surface:string;exportScope:string;format:string;paletteView:string};
+export function createPaletteComputer(source:any,resolved:any):{context:(accent:Accent,project:Project,theme:string,scheme:string,surface:string)=>Context;export:(project:Project,accents:Accent[],format:string)=>string;tasks:(request:ComputeRequest)=>{accent:Accent;theme:string;scheme:string;surface:string}[]};

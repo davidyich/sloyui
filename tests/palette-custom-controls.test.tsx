@@ -18,7 +18,7 @@ it('edits exact Custom HEX values through kit pickers and retains both themes af
     })}/>;
   }
   const first = render(<ProjectControls/>);
-  await user.click(screen.getByRole('button', { name: 'Настройки среды' }));
+  await user.click(screen.getByRole('button', { name: 'Развернуть параметры' }));
   for (const [theme, hex] of [['Light', '#E53E3E'], ['Dark', '#7955F6']]) {
     await user.click(screen.getByRole('button', { name: `Фон ${theme}` }));
     const picker = screen.getByRole('dialog', { name: `Фон ${theme}: цвет` });
@@ -34,7 +34,7 @@ it('edits exact Custom HEX values through kit pickers and retains both themes af
   expect(editNeutrals).not.toHaveBeenCalled();
   first.unmount();
   render(<ProjectControls/>);
-  await user.click(screen.getByRole('button', { name: 'Настройки среды' }));
+  await user.click(screen.getByRole('button', { name: 'Развернуть параметры' }));
   expect(screen.getByRole('button', { name: 'Фон Light' })).toHaveTextContent('#E53E3E');
   expect(screen.getByRole('button', { name: 'Фон Dark' })).toHaveTextContent('#7955F6');
 });

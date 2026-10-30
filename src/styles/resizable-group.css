@@ -1,18 +1,21 @@
 .cap-resizable-group { display:flex; width:100%; height:100%; min-width:0; min-height:0; max-width:100%; }
 .cap-resizable-group[data-orientation=vertical] { flex-direction:column; }
 .cap-resizable-panel { flex:var(--cap-resizable-panel-size,1) 1 0px; min-width:0; min-height:0; overflow:auto; background:var(--cap-surface-current); color:var(--cap-content-primary); }
-.cap-resizable-handle { position:relative; flex:0 0 var(--cap-space-3); min-width:0; min-height:0; touch-action:none; cursor:col-resize; outline-offset:-2px; }
-/* Borders never add a full-length resize divider; only the grip marks interaction. */
-.cap-resizable-handle::before { content:none; }
-.cap-resizable-handle:focus-visible { outline:none; }
-.cap-resizable-handle[aria-disabled=true] { cursor:default; }
-.cap-resizable-handle-grip { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:2px; height:24px; border-radius:999px; background:var(--cap-content-muted); pointer-events:none; opacity:0; transition:opacity 120ms ease; }
-.cap-resizable-handle:not([aria-disabled=true]):is(:hover,:focus-visible,[data-resizing]) > .cap-resizable-handle-grip { opacity:1; }
-.cap-resizable-handle:focus-visible > .cap-resizable-handle-grip { box-shadow:0 0 0 var(--cap-focus-width) var(--cap-focus-ring); }
+/* The separator occupies the shared boundary, never an extra layout gutter. */
+.cap-resize-separator { position:relative; z-index:3; flex:0 0 12px; margin-inline:-6px; min-width:0; min-height:0; touch-action:none; cursor:col-resize; outline:none; }
+.cap-resize-separator::before { content:none; }
+.cap-resize-separator::after { content:''; position:absolute; inset-block:0; left:50%; width:12px; transform:translateX(-50%); }
+.cap-resize-separator[aria-disabled=true] { pointer-events:none; cursor:default; }
+.cap-resize-separator[aria-disabled=true]::after { pointer-events:none; }
+.cap-resize-separator-grip { position:absolute; z-index:1; left:50%; top:50%; transform:translate(-50%,-50%); width:3px; height:32px; border-radius:999px; background:var(--cap-content-muted); pointer-events:none; opacity:0; transition:opacity var(--cap-motion-duration-fast,120ms) ease,background-color var(--cap-motion-duration-fast,120ms) ease; }
+.cap-resize-separator:not([aria-disabled=true]):is(:hover,:focus-visible,[data-resizing],[data-appearance=grip]) > .cap-resize-separator-grip { opacity:1; }
+.cap-resize-separator:is(:hover,[data-resizing]) > .cap-resize-separator-grip { background:var(--cap-content-primary); }
+.cap-resize-separator:focus-visible > .cap-resize-separator-grip { box-shadow:0 0 0 var(--cap-focus-width) var(--cap-focus-ring); }
+.cap-resize-separator[data-orientation=vertical] { cursor:row-resize; margin-inline:0; margin-block:-6px; }
+.cap-resize-separator[data-orientation=vertical]::after { inset-inline:0; inset-block:auto; width:auto; height:12px; top:50%; transform:translateY(-50%); }
+.cap-resize-separator[data-orientation=vertical] > .cap-resize-separator-grip { width:32px; height:3px; }
 .cap-resizable-group[data-resizing] { user-select:none; cursor:col-resize; }
-.cap-resizable-group[data-orientation=vertical] > .cap-resizable-handle,.cap-resizable-group[data-orientation=vertical][data-resizing] { cursor:row-resize; }
-.cap-resizable-group[data-orientation=vertical] > .cap-resizable-handle::before { inset-inline:0; inset-block-start:calc(50% - .5px); inset-block-end:auto; width:auto; height:1px; }
-.cap-resizable-group[data-orientation=vertical] > .cap-resizable-handle > .cap-resizable-handle-grip { width:24px; height:2px; }
-@media (pointer:coarse) { .cap-resizable-handle::after { content:''; position:absolute; inset-block:0; width:44px; left:50%; transform:translateX(-50%); } .cap-resizable-group[data-orientation=vertical] > .cap-resizable-handle::after { inset-inline:0; inset-block:auto; width:auto; height:44px; top:50%; transform:translateY(-50%); } }
-@media (prefers-reduced-motion:reduce) { .cap-resizable-handle-grip { transition:none; } }
-@media (forced-colors:active) { .cap-resizable-handle::before { background:CanvasText; } .cap-resizable-handle-grip { background:CanvasText; } }
+.cap-resizable-group[data-orientation=vertical][data-resizing] { cursor:row-resize; }
+@media (pointer:coarse) { .cap-resize-separator::after { width:44px; } .cap-resize-separator[data-orientation=vertical]::after { width:auto; height:44px; } .cap-resize-separator:not([aria-disabled=true]) > .cap-resize-separator-grip { opacity:1; } }
+@media (prefers-reduced-motion:reduce) { .cap-resize-separator-grip { transition:none; } }
+@media (forced-colors:active) { .cap-resize-separator-grip { background:CanvasText; } }

@@ -9,7 +9,7 @@ import { figmaName } from './figma-names.mjs';
 // Native designer library: preserve meaningful contexts, compile numeric alpha
 // into sparse RGBA colors, and keep only graph nodes reachable from public roles.
 const dir = path.dirname(fileURLToPath(import.meta.url));
-const selectedAccents = ['blue', 'green', 'orange', 'red', 'pink', 'purple'];
+const selectedAccents = ['blue', 'green', 'yellow', 'orange', 'red', 'pink', 'purple'];
 const surfaces = ['Shell', 'Workspace', 'Content', 'Overlay', 'Invert'];
 const stable = value => JSON.stringify(value, (_, item) => typeof item === 'number' ? Number(item.toFixed(10)) : item);
 const ref = alias => ({ alias });
@@ -116,12 +116,12 @@ export function buildNativeGraph({ optimizeRouting = true } = {}) {
   const graph = clone(bridge);
   graph.name = 'Sloy UI V2 · Native'; graph.version = '1.0.0';
   graph.accents = selectedAccents;
-  graph.axes = { theme: ['Light', 'Dark'], scheme: ['Standard', 'Dimmed'], surface: surfaces, accent: ['Neutral', 'Blue', 'Green', 'Orange', 'Red', 'Pink', 'Purple'], density: ['Default', 'Compact'], radius: ['Default', 'None', 'Compact', 'Rounded'], borders: ['On', 'Off'] };
+  graph.axes = { theme: ['Light', 'Dark'], scheme: ['Standard', 'Dimmed'], surface: surfaces, accent: ['Neutral', ...selectedAccents.map(hue => hue[0].toUpperCase() + hue.slice(1))], density: ['Default', 'Compact'], radius: ['Default', 'None', 'Compact', 'Rounded'], borders: ['On', 'Off'] };
   const cols = new Map(graph.collections.map(c => [c.key, c]));
   const surface = cols.get('surface'), theme = cols.get('theme'), scheme = cols.get('scheme'), palette = cols.get('palette');
   surface.modes = surfaces;
   surface.variables = surface.variables.filter(v => isPublic(v.name));
-  assert.equal(surface.variables.length, 80, 'Six-hue public role inventory');
+  assert.equal(surface.variables.length, 20 + selectedAccents.length * 10, 'Canonical hue public role inventory');
   for (const variable of surface.variables) variable.values = Object.fromEntries(surfaces.map(mode => [mode, variable.values[mode]]));
   for (const [name, canonicalRole] of Object.entries(extraRoles)) {
     for (const preset of scheme.modes) for (const region of surfaces) {
