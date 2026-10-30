@@ -2,6 +2,26 @@
   "schemaVersion": 1,
   "kit": [
     {
+      "version": "0.19.11",
+      "date": "2026-10-31",
+      "summary": "Uses Workspace for Palette Lab navigation and inspector panels and consolidates the latest loading, environment and catalogue appearance changes."
+    },
+    {
+      "version": "0.19.10",
+      "date": "2026-10-31",
+      "summary": "Simplifies catalogue appearance to direct scheme and focus controls, removes the advanced menu and moves owner publication to site administration."
+    },
+    {
+      "version": "0.19.9",
+      "date": "2026-10-31",
+      "summary": "Remove Palette Lab radius settings, reset legacy preview radius and make decorative editor boundaries follow Borders; retain the consolidated release and stable loading geometry."
+    },
+    {
+      "version": "0.19.8",
+      "date": "2026-10-31",
+      "summary": "Palette Lab overview loading placeholders match actual metadata and sample heights, completing stable live tone and tab updates."
+    },
+    {
       "version": "0.19.7",
       "date": "2026-10-31",
       "summary": "Final Palette Lab integration: invalidate full exports when project color membership changes, restore more completed views and show loading status only for an empty result."

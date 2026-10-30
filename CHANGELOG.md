@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.19.11 — 2026-10-31
+
+- Use Workspace for Palette Lab navigation and inspector panels while the central canvas keeps Content; preserve semantic controls, scheme and border behavior.
+- Consolidate the latest Palette Lab loading/environment fixes and catalogue appearance simplification into the main release.
+
+## 0.19.10 — 2026-10-31
+
+- Replace the additional appearance menu with direct scheme and focus controls; remove Square/Smooth options and move owner publication to site administration.
+
+## 0.19.9 — 2026-10-31
+
+- Remove radius settings from Palette Lab desktop and mobile environment controls; use the standard radius even for older saved preferences.
+- Make decorative cards, sample wrappers and swatch boundaries follow the global Borders setting in both themes while preserving inspection, selection and keyboard focus.
+- Include the complete 0.19.7 integration and 0.19.8 loading-placeholder geometry. Tracked in [#65](https://github.com/davidyich/sloyui/issues/65).
+
+## 0.19.8 — 2026-10-31
+
+- Match Palette Lab loading placeholders to actual sample geometry so overview rows remain stationary while colors arrive.
+
 ## 0.19.7 — 2026-10-31
 
 - Complete the final Palette Lab integration: invalidate all-color exports when project membership changes, restore up to twelve completed views within the existing context budget, and show loading status only before the first result.

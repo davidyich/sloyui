@@ -11,7 +11,7 @@ it('edits exact Custom HEX values through kit pickers and retains both themes af
   let saved = JSON.stringify({ schema, accents: [createAccent('blue', '#087BE9')], backgrounds: { Light: '#F1EEF8', Dark: '#221D2C' }, rules: defaultRules, neutral });
   function ProjectControls() {
     const [project, setProject] = useState(() => validateProject(JSON.parse(saved)));
-    return <EnvironmentControls surface="Custom" onSurface={() => {}} themes="Light" onThemes={() => {}} scheme="Standard" onScheme={() => {}} density="default" onDensity={() => {}} radius="default" onRadius={() => {}} borders="off" onBorders={() => {}} onEditNeutrals={editNeutrals} backgrounds={project.backgrounds} onBackground={(theme, value) => setProject(previous => {
+    return <EnvironmentControls surface="Custom" onSurface={() => {}} themes="Light" onThemes={() => {}} scheme="Standard" onScheme={() => {}} density="default" onDensity={() => {}} borders="off" onBorders={() => {}} onEditNeutrals={editNeutrals} backgrounds={project.backgrounds} onBackground={(theme, value) => setProject(previous => {
       const next = { ...previous, backgrounds: { ...previous.backgrounds, [theme]: value } };
       saved = JSON.stringify(next);
       return next;
