@@ -5,9 +5,14 @@
 .cap-feedback-icon{display:inline-flex;align-items:center;justify-content:center;flex:none;width:20px;height:20px;color:var(--cap-accent-text);border-radius:50%}
 .cap-feedback-icon[data-contrast]{background:var(--cap-accent-solid-normal);color:var(--cap-accent-solid-text);width:24px;height:24px}
 .cap-feedback[data-feedback-appearance=solid]>.cap-feedback-icon,.cap-feedback[data-feedback-appearance=soft][data-contrast]>.cap-feedback-icon,.cap-alert[data-feedback-appearance=solid] .cap-alert-icon,.cap-alert[data-feedback-appearance=soft][data-contrast] .cap-alert-icon,.cap-status-bar[data-feedback-appearance=solid] .cap-status-indicator,.cap-status-bar[data-feedback-appearance=soft][data-contrast] .cap-status-indicator{color:var(--cap-accent-solid-text)}
-.cap-toast{min-width:0;max-width:100%;box-sizing:border-box;grid-template-columns:24px minmax(0,1fr) auto;background:var(--cap-feedback-fill);color:var(--cap-feedback-ink)}
+.cap-toast{min-width:0;max-width:100%;box-sizing:border-box;grid-template-columns:24px minmax(0,1fr) auto;align-items:center;padding:calc(var(--cap-space-detail-14) + var(--cap-radius-inset,0px));background:var(--cap-feedback-fill);color:var(--cap-feedback-ink)}
+.cap-toast[data-without-icon]{grid-template-columns:minmax(0,1fr) auto}
+.cap-toast-content{display:flex;align-items:center;flex-wrap:wrap;gap:var(--cap-space-2) var(--cap-space-3)}
+.cap-toast-copy{min-width:0;flex:1 1 140px;overflow-wrap:anywhere}
 .cap-toast p{color:inherit;opacity:.8}
-.cap-toast-action{display:flex;flex-wrap:wrap;gap:var(--cap-space-detail-6);margin-top:8px}
+.cap-toast-action{display:flex;flex:0 1 auto;max-width:100%;flex-wrap:wrap;gap:var(--cap-space-detail-6)}
+.cap-toast-action .cap-button{max-width:100%;height:auto;min-height:var(--cap-size-control-sm);white-space:normal;overflow-wrap:anywhere}
+@media(pointer:coarse){.cap-toast>.cap-button,.cap-toast-action .cap-button{min-width:44px;min-height:44px}}
 .cap-toast[data-feedback-appearance=neutral][data-contrast]{--cap-feedback-fill:var(--cap-action-normal);--cap-feedback-ink:var(--cap-action-text)}
 .cap-toast[data-feedback-appearance=neutral][data-contrast] .cap-button{--cap-state-text:var(--cap-action-text);--cap-state-hover:var(--cap-action-hover);--cap-state-pressed:var(--cap-action-pressed);color:inherit}
 .cap-feedback[data-feedback-appearance=solid] .cap-button,.cap-feedback[data-feedback-appearance=soft][data-contrast] .cap-button{color:inherit}

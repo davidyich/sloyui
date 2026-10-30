@@ -2,6 +2,56 @@
   "schemaVersion": 1,
   "kit": [
     {
+      "version": "0.19.7",
+      "date": "2026-10-31",
+      "summary": "Final Palette Lab integration: invalidate full exports when project color membership changes, restore more completed views and show loading status only for an empty result."
+    },
+    {
+      "version": "0.19.6",
+      "date": "2026-10-31",
+      "summary": "Consolidated release of Palette Lab live worker results and export optimizations, OTPInput, ToastStack fixes, quiet borders and compact navigation; package and generated exports share one verified version."
+    },
+    {
+      "version": "0.19.5",
+      "date": "2026-10-31",
+      "summary": "Palette Lab retains visible samples during edits, paints ordered intermediate worker results and restores completed views without layout-shifting loading content."
+    },
+    {
+      "version": "0.19.4",
+      "date": "2026-10-31",
+      "summary": "Palette Lab Roles and Specimens share quiet inset hover frames with exact inherited corners and a distinct keyboard focus frame."
+    },
+    {
+      "version": "0.19.3",
+      "date": "2026-10-31",
+      "summary": "Compacts collapsed catalogue groups and verifies quiet decorative border opacity through nested contexts; preserves the combined Palette Lab, ToastStack and OTPInput delivery."
+    },
+    {
+      "version": "0.19.2",
+      "date": "2026-10-31",
+      "summary": "Combines exact Palette Lab calculation and inline settings improvements with the delivered ToastStack and OTPInput updates; preserves both parallel Develop deliveries."
+    },
+    {
+      "version": "0.19.1",
+      "date": "2026-10-31",
+      "summary": "Repairs toast stack anchoring, hover continuity, pending completion timers and responsive actions; adds peek, gap and corner controls and applies the shared stack throughout the catalogue."
+    },
+    {
+      "version": "0.19.0",
+      "date": "2026-10-30",
+      "summary": "Adds OTPInput: controlled numeric verification codes with one native input, digit slots and accessible form behavior."
+    },
+    {
+      "version": "0.18.18",
+      "date": "2026-10-31",
+      "summary": "Optimize exact Palette Lab solving, worker delivery and export reuse; temporarily disable Edits and keep desktop environment settings inside the expandable dock."
+    },
+    {
+      "version": "0.18.17",
+      "date": "2026-10-31",
+      "summary": "Palette Lab paints Shell side panels and a Content canvas with toggleable shared-edge borders, places language switching in the project footer, and uses rounded frames for color hover."
+    },
+    {
       "version": "0.18.16",
       "date": "2026-10-30",
       "summary": "Unify color foundations and localization, improve the default Yellow, move Palette Lab calculations off the UI thread, and reuse a boundary resize affordance without gutters."
@@ -1746,8 +1796,14 @@
     },
     "cp-043": {
       "name": "Toast",
-      "version": "0.12.4",
+      "version": "0.12.5",
       "entries": [
+        {
+          "version": "0.12.5",
+          "kitVersion": "0.19.2",
+          "date": "2026-10-31",
+          "summary": "Reconciles the delivered feedback interaction update with current kit geometry and context rules."
+        },
         {
           "version": "0.12.4",
           "kitVersion": "0.18.13",
@@ -3120,8 +3176,20 @@
     },
     "cp-077": {
       "name": "ToastStack",
-      "version": "0.12.3",
+      "version": "0.13.1",
       "entries": [
+        {
+          "version": "0.13.1",
+          "kitVersion": "0.19.2",
+          "date": "2026-10-31",
+          "summary": "Reconciles the delivered feedback interaction update with current kit geometry and context rules."
+        },
+        {
+          "version": "0.13.0",
+          "kitVersion": "0.19.1",
+          "date": "2026-10-31",
+          "summary": "Adds independent peek, gap and optional corner settings. Anchors front notices at their physical edge, keeps hover across gaps, observes natural content heights, resets timers on pending completion, supports Escape and leaves empty viewports unmounted."
+        },
         {
           "version": "0.12.3",
           "kitVersion": "0.18.13",
@@ -3907,6 +3975,18 @@
           "summary": "Настройка двух независимых осей с диапазонами, шагом, обратным направлением, подписями, сеткой и точными полями. Перетаскивание обновляется раз в кадр, Escape восстанавливает начальное значение."
         }
       ]
+    },
+    "cp-107": {
+      "entries": [
+        {
+          "version": "1.0.0",
+          "kitVersion": "0.19.0",
+          "date": "2026-10-30",
+          "summary": "Introduces a six-digit controlled OTP input with paste/autofill, native selection and form semantics, labels, errors and responsive slots that fit narrow grid containers across all sizes."
+        }
+      ],
+      "name": "OTPInput",
+      "version": "1.0.0"
     }
   }
 }

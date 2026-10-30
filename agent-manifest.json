@@ -13,11 +13,11 @@
     "developIconFile": "sloyui-develop-icon.svg"
   },
   "package": "sloyui",
-  "version": "0.18.16",
+  "version": "0.19.7",
   "framework": "React >=19",
   "module": "ESM",
-  "componentCount": 92,
-  "exportedComponentCount": 106,
+  "componentCount": 93,
+  "exportedComponentCount": 107,
   "compatibilityAliases": {
     "Badge": "Tag",
     "TypeLabel": "Tag with icon=page",
@@ -205,7 +205,8 @@
           "PopupSelect",
           "ValueScrubber",
           "ParameterSlider",
-          "Slider2D"
+          "Slider2D",
+          "OTPInput"
         ]
       },
       {
@@ -435,7 +436,8 @@
           "ValueScrubber",
           "Chip",
           "ParameterSlider",
-          "Slider2D"
+          "Slider2D",
+          "OTPInput"
         ]
       },
       {
@@ -3268,6 +3270,119 @@
         "NumberField",
         "Select",
         "Field"
+      ]
+    },
+    "OTPInput": {
+      "id": "cp-107",
+      "status": "needs-review",
+      "groups": [
+        "fields"
+      ],
+      "primaryGroup": "fields",
+      "introduced": "0.19.0",
+      "version": "1.0.0",
+      "changelogSource": "source/component-history.json",
+      "purpose": "Numeric verification code with native text editing and visual digit slots",
+      "props": "value:string; onValueChange:(value:string)=>void; length?:number (6, bounded 1–32); size?:Size; label?,hint?,error?; native text-input props except type/defaultValue/inputMode/length constraints; ref:HTMLInputElement",
+      "example": "<OTPInput label=\"Verification code\" name=\"code\" value={code} onValueChange={setCode} required />",
+      "catalogueRoute": "#OTPInput",
+      "catalogueGroup": "Поля",
+      "behavior": "One native text input owns focus, selection, paste, autofill and form semantics; slots are aria-hidden. Controlled ASCII digits preserve leading zeroes. No per-digit focus trap or automatic submit. Native pattern validates complete length. Consumer clears/resets value and handles server errors. Physical-device autofill needs separate validation.",
+      "source": "src/components/otp-input.tsx",
+      "instruction": "docs/components/cp-107.md",
+      "api": [
+        {
+          "name": "size",
+          "type": "Size",
+          "required": false,
+          "default": "'md'",
+          "description": "Размер элемента по общей шкале."
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "description": "Keep the code as a string so leading zeroes survive."
+        },
+        {
+          "name": "onValueChange",
+          "type": "(value: string) => void",
+          "required": true,
+          "default": null,
+          "description": "Вызывается при изменении значения."
+        },
+        {
+          "name": "length",
+          "type": "number",
+          "required": false,
+          "default": "6",
+          "description": "Positive whole-number code length; defaults to six digits."
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Видимая или доступная подпись."
+        },
+        {
+          "name": "hint",
+          "type": "ReactNode",
+          "required": false,
+          "default": null,
+          "description": "Подсказка к полю."
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Сообщение об ошибке и состояние поля."
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Дополнительный класс корневого элемента."
+        },
+        {
+          "name": "id",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Идентификатор элемента."
+        },
+        {
+          "name": "style",
+          "type": "CSSProperties",
+          "required": false,
+          "default": null,
+          "description": "Настройка style; допустимые значения указаны в типе."
+        },
+        {
+          "name": "aria-label",
+          "type": "string",
+          "required": false,
+          "default": null,
+          "description": "Настройка aria-label; допустимые значения указаны в типе."
+        },
+        {
+          "name": "…props",
+          "type": "Native element attributes",
+          "required": false,
+          "default": null,
+          "description": "Стандартные HTML/ARIA-атрибуты и обработчики базового элемента. Исключения заданы публичным TypeScript-типом."
+        }
+      ],
+      "usage": "Используйте одну подпись, hint для пояснения и error для ошибки. Храните введённое значение в форме; размер задавайте до настройки внешнего вида.",
+      "agentNotes": "One native text input owns focus, selection, paste, autofill and form semantics; slots are aria-hidden. Controlled ASCII digits preserve leading zeroes. No per-digit focus trap or automatic submit. Native pattern validates complete length. Consumer clears/resets value and handles server errors. Physical-device autofill needs separate validation.",
+      "related": [
+        "Checkbox",
+        "ColorPicker",
+        "ComboBox",
+        "DatePicker"
       ]
     },
     "Textarea": {
@@ -6676,7 +6791,7 @@
         "date": "2026-10-07",
         "record": "docs/revision-2026-10-07.md"
       },
-      "version": "0.12.4",
+      "version": "0.12.5",
       "changelogSource": "source/component-history.json",
       "purpose": "Status announcement (lifetime owned by consumer)",
       "props": "title: string; description?: string; onDismiss?: ()=>void; icon?, action?: ReactNode; tone?: neutral|info|success|warning|danger; color?: Color|inherit; appearance?: neutral|soft|solid (neutral); contrast?: boolean (false); surface?: inherit|Surface (shell|workspace|content|overlay|invert|glass; legacy aliases accepted) (surface floating); div props",
@@ -11398,14 +11513,14 @@
         "date": "2026-10-07",
         "record": "docs/revision-2026-10-07.md"
       },
-      "version": "0.12.3",
+      "version": "0.13.1",
       "changelogSource": "source/component-history.json",
       "purpose": "Positioned stack of actionable notices",
-      "props": "items: ToastStackItem[] {id,title,description?,duration?,action?,icon?:ReactNode|false,loading?:boolean,tone?: neutral|info|success|warning|danger; color?: Color|inherit; appearance?: neutral|soft|solid (neutral); contrast?: boolean (false); surface?: inherit|Surface (shell|workspace|content|overlay; legacy aliases accepted)}; onDismiss: (id:string)=>void; shape?:rounded|pill (rounded); scope?:viewport|container (viewport); position?:top-left|top-center|top-right|bottom-left|bottom-center|bottom-right|inline; expandDirection?:up|down|left|right; expanded?:boolean; onExpandedChange?: (expanded:boolean)=>void; showExpandHint?:boolean (true); label?,limit?,className?",
+      "props": "items: ToastStackItem[] {id,title,description?,duration?,action?,icon?:ReactNode|false,loading?:boolean,tone?: neutral|info|success|warning|danger; color?: Color|inherit; appearance?: neutral|soft|solid (neutral); contrast?: boolean (false); surface?: inherit|Surface (shell|workspace|content|overlay; legacy aliases accepted)}; onDismiss: (id:string)=>void; shape?:rounded|pill (rounded); peek?:number (8 CSS px); gap?:number (8 CSS px); corner?:number (inherits radius); scope?:viewport|container (viewport); position?:top-left|top-center|top-right|bottom-left|bottom-center|bottom-right|inline; expandDirection?:up|down|left|right; expanded?:boolean; onExpandedChange?: (expanded:boolean)=>void; showExpandHint?:boolean (true); label?,limit?,className?",
       "example": "<ToastStack items={toasts} onDismiss={dismissToast} />",
       "catalogueRoute": "#ToastStack",
       "catalogueGroup": "Обратная связь",
-      "behavior": "Optional showExpandHint displays a concise count for visible notices. false hides the count visually while retaining a keyboard toggle; pointer hover and touching the front toast reveal the stack. Native scrolling remains available, but scrollbar indicators are always hidden. Consumer owns position and dismissal; pending or actionable rear notices pause expiry.",
+      "behavior": "Independent peek/gap control collapsed/expanded spacing; optional corner overrides the inherited radius. Natural heights update under stable IDs, pending completion resets the lifetime, Escape collapses with focus restoration and the front notice stays anchored at its edge. Optional showExpandHint displays a concise count for visible notices. false hides the count visually while retaining a keyboard toggle; pointer hover and touching the front toast reveal the stack. Native scrolling remains available, but scrollbar indicators are always hidden. Consumer owns position and dismissal; pending or actionable rear notices pause expiry.",
       "source": "src/components/messages.tsx",
       "instruction": "docs/components/cp-077.md",
       "api": [
@@ -11443,6 +11558,27 @@
           "required": false,
           "default": "'rounded'",
           "description": "Форма элемента."
+        },
+        {
+          "name": "peek",
+          "type": "number",
+          "required": false,
+          "default": "8",
+          "description": "Настройка peek; допустимые значения указаны в типе."
+        },
+        {
+          "name": "gap",
+          "type": "number",
+          "required": false,
+          "default": "8",
+          "description": "Настройка gap; допустимые значения указаны в типе."
+        },
+        {
+          "name": "corner",
+          "type": "number",
+          "required": false,
+          "default": null,
+          "description": "Настройка corner; допустимые значения указаны в типе."
         },
         {
           "name": "expandDirection",
@@ -11495,7 +11631,7 @@
         }
       ],
       "usage": "Для стопки по центру выберите top-center или bottom-center. scope=container размещает её в родителе с position:relative и заданной высотой, viewport — на экране. Загрузка, действия и скрытые сообщения не закрываются по таймеру. Удаляйте элементы в onDismiss.",
-      "agentNotes": "Optional showExpandHint displays a concise count for visible notices. false hides the count visually while retaining a keyboard toggle; pointer hover and touching the front toast reveal the stack. Native scrolling remains available, but scrollbar indicators are always hidden. Consumer owns position and dismissal; pending or actionable rear notices pause expiry.",
+      "agentNotes": "Independent peek/gap control collapsed/expanded spacing; optional corner overrides the inherited radius. Natural heights update under stable IDs, pending completion resets the lifetime, Escape collapses with focus restoration and the front notice stays anchored at its edge. Optional showExpandHint displays a concise count for visible notices. false hides the count visually while retaining a keyboard toggle; pointer hover and touching the front toast reveal the stack. Native scrolling remains available, but scrollbar indicators are always hidden. Consumer owns position and dismissal; pending or actionable rear notices pause expiry.",
       "related": [
         "Toast",
         "Alert",
@@ -13185,7 +13321,7 @@
         },
         {
           "name": "weekStart",
-          "type": "0 | 1 | 2 | 3 | 4 | 5 | 6",
+          "type": "0 | 6 | 1 | 2 | 3 | 4 | 5",
           "required": false,
           "default": "1",
           "description": "Настройка weekStart; допустимые значения указаны в типе."

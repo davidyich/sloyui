@@ -61,6 +61,32 @@ const colors=graph.collections.find(collection=>collection.key==='Theme')!.varia
 const contexts=['Light','Dark'].flatMap(Theme=>graph.axes.Surface.values.flatMap(Surface=>graph.axes.SurfaceScheme.values.map(SurfaceScheme=>({Theme,Surface,SurfaceScheme}))));
 
 describe('Authoritative v4 runtime',()=>{
+ it('keeps decorative boundaries quiet through nested context and Borders overrides without fading focus or pigments',()=>{
+  const paint=(scope:Node,role:string)=>{
+   const expanded=scope.get('--cap-'+role)!;
+   const mixed=/^color-mix\(in srgb,\s*(rgb\(.+\))\s+([\d.]+)%,\s*transparent\)$/.exec(expanded);
+   if(!mixed)return cssColor(scope,'--cap-'+role);
+   const pigment=cssColor({get:()=>mixed[1]},'paint');
+   return {...pigment,a:pigment.a*Number(mixed[2])/100};
+  };
+  for(const Theme of ['Light','Dark'])for(const Surface of ['Content','Invert','Glass'])for(const accent of graph.conventions.accents){
+   const selection={Theme,Surface,SurfaceScheme:'Standard'};
+   const parent=node({'data-borders':'on'});
+   const local=node({...attributes(selection),'data-accent':accent},parent);
+   const off=node({'data-borders':'off'},local),on=node({'data-borders':'on'},off);
+   for(const [scope,enabled]of [[local,true],[off,false],[on,true]] as const){
+    for(const state of ['normal','hover','pressed']){
+     const suffix=state==='normal'?'':'-'+state;
+     const pigment=cssColor(scope,'--cap-accent-border'+suffix);
+     sameColor(pigment,resolve('Theme/border/'+accent+'-'+state,selection) as Color,'raw pigment');
+     sameColor(paint(scope,'accent-outline'+suffix),{...pigment,a:enabled?.25:0},'decorative accent');
+    }
+    expect(paint(scope,'control-border').a).toBe(enabled?.55:0);
+    sameColor(cssColor(scope,'--cap-focus-ring'),resolve('Theme/border/focus',selection) as Color,'focus independent of Borders');
+   }
+  }
+ });
+
  it('ships the unchanged canonical graph and clearly labels the compatibility export',()=>{
   expect(shipped).toEqual(graph);
   expect(graph.collections).toHaveLength(9);

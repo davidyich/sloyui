@@ -99,3 +99,8 @@ export function DatePickerStory() {
  const [date,setDate]=useState<string>(),[range,setRange]=useState<UI.CalendarRange|undefined>();
  return <StorySection><div className="catalog-row"><UI.DatePicker label={ct("Выбрать дату")} value={date} onValueChange={setDate} today="2026-10-07" defaultMonth="2026-10" events={localizeCatalogueFixture(scheduleEvents,ct)} showAgenda/><UI.DatePicker label={ct("Выбрать период")} mode="range" range={range} onRangeChange={setRange} today="2026-10-07" defaultMonth="2026-10" events={localizeCatalogueFixture(scheduleEvents,ct)}/></div></StorySection>;
 }
+
+export function OTPInputStory({ notify }: StoryProps) {
+ const [code,setCode]=useState(''), ct=useCatalogText();
+ return <StorySection><form className="catalog-stack" onSubmit={event=>{event.preventDefault();notify(ct('Код отправлен'));}}><UI.OTPInput label={ct('Код подтверждения')} name="code" value={code} onValueChange={setCode} required/><div className="catalog-row"><UI.Button type="submit" variant="primary">{ct('Подтвердить')}</UI.Button><UI.Button type="button" variant="ghost" onClick={()=>setCode('')}>{ct('Очистить')}</UI.Button></div></form></StorySection>;
+}

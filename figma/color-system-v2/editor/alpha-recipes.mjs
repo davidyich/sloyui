@@ -24,7 +24,7 @@ function lightReferenceChroma(accent,steps,minimumContrast,referenceBase){
 }
 
 const lab=value=>{const {l,c,h}=toOklch(value),angle=h*Math.PI/180;return[l,c*Math.cos(angle),c*Math.sin(angle)];};
-const delta=(a,b)=>Math.hypot(...a.map((v,i)=>v-b[i]));
+const delta=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1],a[2]-b[2]);
 const unique=values=>values.filter((v,i)=>!values.slice(0,i).some(b=>rgb.every(k=>Math.abs(v[k]-b[k])<1e-10)));
 /** A light neutral backing needs a bounded recipe family: a pastel paint
  * calibrated on white cannot also darken nested gray without hue/L loss. */
@@ -60,25 +60,30 @@ export function solveAlphaRecipe(accent,steps,{backings,dark=false,minimumContra
  const pole=ink??(dark?WHITE:BLACK),poleY=luminance(pole),ys=bases.map(luminance),labs=bases.map(lab);
  const targets=neutral?Object.fromEntries(roles.map((role,index)=>[role,ys.map(y=>{const ratio=[1.07,1.14,1.18,1.26][index],target=dark?(y+.05)*ratio-.05:(y+.05)/ratio-.05,boundary=dark?1.05/(minimumContrast+.1)-.05:.05*(minimumContrast+.1)-.05;return clamp(dark?Math.min(target,boundary):Math.max(target,boundary),0,1);})])):resolveRecommendedFillTargets(bases,{dark,strength,minimumContrast,availableInks:((dark&&pole===WHITE)||(!dark&&pole===BLACK))?[pole]:[]});
  const referenceChroma=ink===undefined&&!dark&&!neutral?lightReferenceChroma(accent,steps,minimumContrast,referenceBase):null;
+ const roleSettings=Object.fromEntries(roles.map(role=>{
+  const family=role.split('/')[0],goal=neutral?0:(referenceChroma?.[role]??(family==='secondary'?(dark?.025:.032):.014)*chromaScale),cap=Math.max((family==='secondary'?.08:.05)*chromaScale,referenceChroma?Math.min(.095,referenceChroma[role]+.025):0);
+  const bounds=neutral?{minimumContrast:neutralFillVisibilityPolicy[family+'Contrast'],minimumDelta:neutralFillVisibilityPolicy[family+'Delta'],maximumContrast:Infinity}:resolveFillAppearanceBounds(role,strength);
+  return[role,{goal,cap,bounds,anchor:referenceChroma?.colors[role]}];
+ }));
  const candidates=[];
  for(const [stepIndex,step]of steps.entries())for(let percent=1;percent<=Math.floor(maxAlpha*100+1e-9);percent++){
-  const paint={...step.value,a:percent/100},rendered=bases.map(bg=>composite(paint,bg)),values=rendered.map(luminance),colors=rendered.map(toOklch),candidate={step,stepIndex,percent,paint,ys:values,labs:rendered.map(lab)};
+  const paint={...step.value,a:percent/100},rendered=bases.map(bg=>composite(paint,bg)),values=rendered.map(luminance),colors=rendered.map(toOklch),candidate={step,stepIndex,percent,paint,ys:values,labs:colors.map(({l,c,h})=>{const angle=h*Math.PI/180;return[l,c*Math.cos(angle),c*Math.sin(angle)];})};
   candidate.textContrast=Math.min(...values.map(y=>(Math.max(y,poleY)+.05)/(Math.min(y,poleY)+.05)));
   candidate.readable=candidate.textContrast>=minimumContrast+(neutral?.12:contentReserve)-1e-7;
   candidate.ordered=values.every((y,i)=>dark?y>ys[i]+1e-8:y<ys[i]-1e-8);
-  candidate.surfaceContrast=Math.min(...rendered.map((v,i)=>contrast(v,bases[i])));
+  const surfaceContrasts=values.map((y,i)=>(Math.max(y,ys[i])+.05)/(Math.min(y,ys[i])+.05)),maximumContrast=Math.max(...surfaceContrasts);
+  candidate.surfaceContrast=Math.min(...surfaceContrasts);
   candidate.surfaceDelta=Math.min(...candidate.labs.map((v,i)=>delta(v,labs[i])));
   const expression=ink===undefined?colors.map(c=>c.c):candidate.labs.map((v,i)=>Math.hypot(v[1]-labs[i][1],v[2]-labs[i][2]));
   candidate.renderedChroma=Math.max(...colors.map(c=>c.c));
   candidate.maxChroma=Math.max(...expression);
   candidate.meanChroma=expression.reduce((sum,c)=>sum+c,0)/expression.length;
   candidate.onWhite=toOklch(composite(paint,referenceBase));
-  candidate.roles=Object.fromEntries(roles.map(role=>{const family=role.split('/')[0],goal=neutral?0:(referenceChroma?.[role]??(family==='secondary'?(dark?.025:.032):.014)*chromaScale),cap=Math.max((family==='secondary'?.08:.05)*chromaScale,referenceChroma?Math.min(.095,referenceChroma[role]+.025):0);
-   const bounds=neutral?{minimumContrast:neutralFillVisibilityPolicy[family+'Contrast'],minimumDelta:neutralFillVisibilityPolicy[family+'Delta'],maximumContrast:Infinity}:resolveFillAppearanceBounds(role,strength),floorContrast=bounds.minimumContrast,floorDelta=bounds.minimumDelta;
+  candidate.roles=Object.fromEntries(roles.map(role=>{const {goal,cap,bounds,anchor}=roleSettings[role],floorContrast=bounds.minimumContrast,floorDelta=bounds.minimumDelta;
    const visibility=Math.max(0,floorContrast-candidate.surfaceContrast)*3+Math.max(0,floorDelta-candidate.surfaceDelta)*10;
-   const maximumContrast=Math.max(...rendered.map((v,i)=>contrast(v,bases[i]))),prominence=maximumContrast<=bounds.maximumContrast+1e-7;
+   const prominence=maximumContrast<=bounds.maximumContrast+1e-7;
    const error=Math.max(...values.map((y,i)=>Math.abs(y-targets[role][i]))),soft=neutral||candidate.maxChroma<=cap+1e-7;
-   const anchor=referenceChroma?.colors[role],hueError=anchor?angle(candidate.onWhite.h,anchor.h):0,lightnessError=anchor?Math.abs(candidate.onWhite.l-anchor.l):0;
+   const hueError=anchor?angle(candidate.onWhite.h,anchor.h):0,lightnessError=anchor?Math.abs(candidate.onWhite.l-anchor.l):0;
    const expressive=neutral||candidate.meanChroma>=goal-.002;
    const anchored=!anchor||(hueError<=3&&lightnessError<=.025);
    const valid=candidate.readable&&candidate.ordered&&visibility<1e-6&&soft&&expressive&&anchored&&prominence;
@@ -89,16 +94,28 @@ export function solveAlphaRecipe(accent,steps,{backings,dark=false,minimumContra
  // Text and direction are hard priorities; appearance impossibility remains
  // explicit instead of selecting an unreadable paint to hit a target luminance.
  const readable=candidates.filter(c=>c.readable&&c.ordered),pool=readable.length?readable:candidates;
- const familyPairs={};
- for(const family of ['tertiary','secondary']){
-  const normalRole=family+'/normal',activeRole=family+'/active',pairs=[];
-  for(const step of steps){const pigments=pool.filter(c=>c.step===step),alternatives=[];
-   for(const normal of pigments)for(const active of pigments){if(active.percent<=normal.percent)continue;
-    const stats=pairStats(normal,active,dark),valid=stats.valid&&normal.roles[normalRole].valid&&active.roles[activeRole].valid;
+ const familyPairs={tertiary:[],secondary:[]};
+ const compare=(a,b)=>Number(b.valid)-Number(a.valid)||a.score-b.score;
+ // Retain exactly the former stable-sort prefix without allocating every losing pair.
+ const retain=(best,candidate,limit)=>{
+  if(best.length===limit&&compare(best[best.length-1],candidate)<=0)return;
+  let low=0,high=best.length;while(low<high){const mid=(low+high)>>>1;if(compare(best[mid],candidate)<=0)low=mid+1;else high=mid;}
+  best.splice(low,0,candidate);if(best.length>limit)best.pop();
+ };
+ const byStep=new Map(steps.map(step=>[step,[]]));for(const candidate of pool)byStep.get(candidate.step).push(candidate);
+ for(const step of steps){const pigments=byStep.get(step),best={tertiary:[],secondary:[]};
+  for(const normal of pigments)for(const active of pigments){if(active.percent<=normal.percent)continue;
+   const stats=pairStats(normal,active,dark);
+   for(const family of ['tertiary','secondary']){
+    const normalRole=family+'/normal',activeRole=family+'/active',valid=stats.valid&&normal.roles[normalRole].valid&&active.roles[activeRole].valid;
     const score=normal.roles[normalRole].score+active.roles[activeRole].score+stats.penalty;
-    alternatives.push({normal,active,stats,valid,score});
-   }pairs.push(...alternatives.sort((a,b)=>Number(b.valid)-Number(a.valid)||a.score-b.score).slice(0,24));
+    retain(best[family],{normal,active,stats,valid,score},24);
+   }
   }
+  for(const family of ['tertiary','secondary'])familyPairs[family].push(...best[family]);
+ }
+ for(const family of ['tertiary','secondary']){
+  const normalRole=family+'/normal',activeRole=family+'/active',pairs=familyPairs[family];
   const normalPool=[...pool].sort((a,b)=>Number(b.roles[normalRole].valid)-Number(a.roles[normalRole].valid)||a.roles[normalRole].score-b.roles[normalRole].score).slice(0,64),activePool=[...pool].sort((a,b)=>Number(b.roles[activeRole].valid)-Number(a.roles[activeRole].valid)||a.roles[activeRole].score-b.roles[activeRole].score).slice(0,64);
   const mixed=[];for(const normal of normalPool)for(const active of activePool)if(normal.step!==active.step){const stats=pairStats(normal,active,dark),valid=stats.valid&&normal.roles[normalRole].valid&&active.roles[activeRole].valid,score=normal.roles[normalRole].score+active.roles[activeRole].score+stats.penalty+.001;mixed.push({normal,active,stats,valid,score});}pairs.push(...mixed.sort((a,b)=>Number(b.valid)-Number(a.valid)||a.score-b.score).slice(0,64));
   if(!pairs.length){const normal=pool[0],active=pool.at(-1);pairs.push({normal,active,stats:pairStats(normal,active,dark),valid:false,score:Infinity});}

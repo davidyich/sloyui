@@ -370,3 +370,7 @@ h1, h2, h3, p { overflow-wrap: anywhere; }
 .catalog-code-editor.cap-textarea:focus-visible{outline-offset:2px}
 
 .playground-preview > .cap-selection-field { max-width:360px; }
+
+/* Consecutive collapsed groups do not need the section gap used after expanded content. */
+.catalog-nav-scroll .cap-tree-item[aria-level='1'][aria-expanded='false'] + .cap-tree-item[aria-level='1'][aria-expanded='false'],
+.catalog-nav-scroll .cap-tree-entry-root:has(> .cap-tree-item[aria-level='1'][aria-expanded='false']) + .cap-tree-entry-root > .cap-tree-item[aria-level='1'][aria-expanded='false'] { margin-block-start:0; }

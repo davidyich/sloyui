@@ -1,7 +1,7 @@
 {
   "$extensions": {
     "com.sloyui.export": {
-      "version": "0.18.16",
+      "version": "0.19.7",
       "collection": "Sloy UI · Semantic",
       "mode": "Overlay"
     }

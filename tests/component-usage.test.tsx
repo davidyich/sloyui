@@ -9,7 +9,7 @@ afterEach(()=>vi.unstubAllGlobals());
 const response=(content:string)=>({ok:true,json:async()=>({instruction:{content}})});
 
 describe('component instructions',()=>{
- it('covers every canonical stable ID with distinct actionable Russian guidance',()=>{
+ it('covers every canonical stable ID with distinct actionable guidance in its authored language',()=>{
   const active=Object.entries(registry.components).filter(([,record])=>record.status!=='archived');
   const files=readdirSync('docs/components').filter(file=>/^cp-\d+\.md$/.test(file));
   expect(files.sort()).toEqual(active.map(([,record])=>record.id+'.md').sort());
@@ -17,8 +17,9 @@ describe('component instructions',()=>{
   for(const [name,record] of active){
    const text=readFileSync(`docs/components/${record.id}.md`,'utf8'),sections=parseComponentUsage(text);
    expect(text.startsWith(`# ${name}\n`),name).toBe(true);
-   expect(sections.map(section=>section.title),name).toEqual(['Когда выбрать','Как применять','Состояния и доступность','Делать','Не делать']);
-   for(const title of ['Делать','Не делать'])expect(sections.find(section=>section.title===title)!.content.match(/^- /gm)?.length,name).toBeGreaterThanOrEqual(2);
+   const english=sections[0]?.title==='When to choose';
+   expect(sections.map(section=>section.title),name).toEqual(english?['When to choose','How to use','States and accessibility','Do',"Don't"]:['Когда выбрать','Как применять','Состояния и доступность','Делать','Не делать']);
+   for(const title of (english?['Do',"Don't"]:['Делать','Не делать']))expect(sections.find(section=>section.title===title)!.content.match(/^- /gm)?.length,name).toBeGreaterThanOrEqual(2);
    const choose=sections[0].content;expect(choices.has(choose),name).toBe(false);choices.add(choose);
   }
  });

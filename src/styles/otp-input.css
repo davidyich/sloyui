@@ -1,0 +1,22 @@
+.cap-otp-field { min-width:0; grid-template-columns:minmax(0,1fr); }
+.cap-otp { --cap-otp-height:var(--cap-size-control-md); --cap-otp-gap:var(--cap-space-1); position:relative; display:block; direction:ltr; container-type:inline-size; width:calc(var(--cap-otp-count) * var(--cap-otp-height) + (var(--cap-otp-count) - 1) * var(--cap-otp-gap)); max-width:100%; border-radius:var(--cap-radius-base); }
+.cap-otp[data-size='xs'] { --cap-otp-height:var(--cap-size-control-xs); }
+.cap-otp[data-size='sm'] { --cap-otp-height:var(--cap-size-control-sm); }
+.cap-otp[data-size='lg'] { --cap-otp-height:var(--cap-size-control-lg); }
+.cap-otp[data-size='xl'] { --cap-otp-height:var(--cap-size-control-xl); }
+.cap-otp-slots { display:grid; grid-template-columns:repeat(var(--cap-otp-count), minmax(0,1fr)); gap:var(--cap-otp-gap); pointer-events:none; }
+.cap-otp-slot { position:relative; display:grid; place-items:center; height:max(44px,var(--cap-otp-height)); min-width:0; font-family:var(--cap-font-code),monospace; font-size:max(16px,var(--cap-font-size-base)); font-variant-numeric:tabular-nums; line-height:1; color:var(--cap-control-text); background:var(--cap-control-bg); border:var(--cap-border-width) solid var(--cap-control-border); border-radius:var(--cap-radius-base); }
+.cap-otp:hover:not([data-disabled]):not([data-readonly]) .cap-otp-slot { background:var(--cap-control-hover); }
+.cap-otp[data-focused] .cap-otp-slot[data-active] { outline:var(--cap-focus-width) solid var(--cap-focus-ring); outline-offset:var(--cap-focus-offset); background:var(--cap-control-active); }
+.cap-otp-slot[data-selected] { color:var(--cap-control-text); background:var(--cap-control-active); box-shadow:inset 0 -2px var(--cap-focus-ring); }
+.cap-otp[data-invalid] .cap-otp-slot { border-color:var(--cap-status-danger-text); box-shadow:inset 0 -1px var(--cap-status-danger-text); }
+.cap-otp[data-disabled] .cap-otp-slot { color:var(--cap-disabled-text); background:var(--cap-component-input-disabled-background); }
+/* Extend the transparent native text run beyond its last tracking gap. The wrapper clips only the input, leaving slot focus outlines visible. Native hit-testing, selection and drag editing follow the same digit advance as the slots. */
+.cap-otp-input-clip { position:absolute; inset:0; overflow:hidden; border-radius:inherit; }
+.cap-otp-native { --cap-otp-step:calc((100cqw + var(--cap-otp-gap)) / var(--cap-otp-count)); position:absolute; inset:0 auto 0 0; width:calc(100% + var(--cap-otp-step)); height:100%; margin:0; padding:0 0 0 calc((var(--cap-otp-step) - var(--cap-otp-gap) - 1ch) / 2); border:0; outline:0; border-radius:inherit; background:transparent; color:transparent; caret-color:transparent; opacity:0; font-family:var(--cap-font-code),monospace; font-size:max(16px,var(--cap-font-size-base)); font-variant-numeric:tabular-nums; line-height:1; letter-spacing:calc(var(--cap-otp-step) - 1ch); }
+.cap-otp-native::selection { color:transparent; background:transparent; }
+.cap-otp-native:disabled { cursor:not-allowed; }
+.cap-otp-caret { position:absolute; left:50%; top:30%; bottom:30%; width:1px; background:var(--cap-control-text); }
+.cap-otp-caret[data-position='before'] { left:calc(50% - .4em); }
+.cap-otp-caret[data-position='after'] { left:calc(50% + .4em); }
+@media(forced-colors:active) { .cap-otp-slot { border:1px solid CanvasText; } .cap-otp[data-focused] .cap-otp-slot[data-active] { outline:2px solid Highlight; } .cap-otp-slot[data-selected] { color:HighlightText; background:Highlight; } .cap-otp-native { forced-color-adjust:none; } .cap-otp-caret { background:CanvasText; } }
