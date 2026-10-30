@@ -2,6 +2,8 @@ import { useCallback } from 'react';
 import { useLocale } from '../src';
 /** Curated catalogue UI/metadata translations. Never applied to consumer content or DOM. */
 export const catalogueDictionary: Record<string,string> = {
+  "Действия каталога":"Catalogue actions",
+  "Объявление":"Announcement",
   "Загрузка…": "Loading…",
   "Раздел цветов":"Color section",
   "Роли":"Roles",
